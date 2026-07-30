@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install yfinance pandas numpy pyyaml
+      - run: pip install yfinance curl_cffi pandas numpy pyyaml
       - name: Run scan
         env:
           DRY_RUN: "0"
