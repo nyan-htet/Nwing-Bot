@@ -177,12 +177,11 @@ def run_nightly():
     """Build watchlist: liquid + trending names from universe, quality-screened."""
     import universe
     tickers = universe.get_universe()
-    d = data.fetch(tickers, period="1y", interval="1d")
-    spy = d.get("SPY") or data.fetch("SPY", period="1y", interval="1d").get("SPY")
+    d = data.fetch_daily(tickers)
+    spy = d.get("SPY") or data.fetch_daily("SPY").get("SPY")
     if spy is None:
-        raise SystemExit("FATAL: could not download SPY benchmark data "
-                         "(Yahoo likely throttling this runner). "
-                         "Re-run the workflow — retries usually succeed.")
+        raise SystemExit("FATAL: no SPY data from Yahoo OR Stooq — "
+                         "both sources unreachable; re-run later.")
     if len(d) < 20:
         print(f"WARNING: only {len(d)} tickers downloaded — Yahoo throttling; "
               "building a smaller watchlist from what we have.")

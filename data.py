@@ -9,6 +9,12 @@ def fetch(tickers, period="730d", interval="1h", retries=3, chunk=80):
     partial; callers must handle missing tickers."""
     import time
     import yfinance as yf
+    session = None
+    try:  # newer yfinance + curl_cffi can impersonate a browser (beats blocks)
+        from curl_cffi import requests as cffi_requests
+        session = cffi_requests.Session(impersonate="chrome")
+    except Exception:
+        pass
     if isinstance(tickers, str):
         tickers = [tickers]
     out = {}
@@ -16,9 +22,11 @@ def fetch(tickers, period="730d", interval="1h", retries=3, chunk=80):
         batch = tickers[start:start + chunk]
         for attempt in range(retries):
             try:
-                raw = yf.download(batch, period=period, interval=interval,
-                                  group_by="ticker", auto_adjust=True,
-                                  threads=True, progress=False)
+                kw = dict(period=period, interval=interval, group_by="ticker",
+                          auto_adjust=True, threads=True, progress=False)
+                if session is not None:
+                    kw["session"] = session
+                raw = yf.download(batch, **kw)
                 got = 0
                 for t in batch:
                     try:
@@ -82,3 +90,47 @@ def make_sample_daily_long(years=45, seed=3):
     close = 100 * np.exp(log_p)
     times = pd.date_range("1981-01-02", periods=n, freq="B")
     return pd.DataFrame({"time": times, "close": close})
+
+
+def _stooq_symbol(t):
+    return t.lower().replace("-", ".") + ".us"
+
+
+def fetch_daily_stooq(tickers, retries=2):
+    """Daily OHLCV from Stooq (free CSV, no key, tolerant of datacenter IPs).
+    Format: https://stooq.com/q/d/l/?s=spy.us&i=d  Returns {ticker: df}."""
+    import io
+    import time
+    import urllib.request
+    out = {}
+    if isinstance(tickers, str):
+        tickers = [tickers]
+    for t in tickers:
+        url = f"https://stooq.com/q/d/l/?s={_stooq_symbol(t)}&i=d"
+        for attempt in range(retries):
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                raw = urllib.request.urlopen(req, timeout=20).read().decode()
+                if raw.startswith("Date,"):
+                    df = pd.read_csv(io.StringIO(raw))
+                    df.columns = [c.lower() for c in df.columns]
+                    df = df.rename(columns={"date": "time"})
+                    df["time"] = pd.to_datetime(df["time"])
+                    df["volume"] = df.get("volume", 0).fillna(0)
+                    out[t] = df[["time", "open", "high", "low", "close", "volume"]]                         .tail(400).reset_index(drop=True)
+                break
+            except Exception:
+                time.sleep(2 * (attempt + 1))
+    return out
+
+
+def fetch_daily(tickers, period="1y"):
+    """Daily data: yfinance first, Stooq fallback for anything missing."""
+    if isinstance(tickers, str):
+        tickers = [tickers]
+    out = fetch(tickers, period=period, interval="1d", retries=2)
+    missing = [t for t in tickers if t not in out]
+    if missing:
+        print(f"yfinance missing {len(missing)} tickers; trying Stooq fallback…")
+        out.update(fetch_daily_stooq(missing))
+    return out
