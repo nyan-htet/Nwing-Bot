@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SwingBot — Signals & Portal</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2129; --tx:#e6edf3; --mut:#8b98a5; --acc:#2ea043; --warn:#d29922; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--tx); font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif; padding:16px; max-width:860px; margin:auto; }
+  h1 { font-size:1.3rem; margin-bottom:4px; } h2 { font-size:1.05rem; margin:20px 0 8px; }
+  .mut { color:var(--mut); font-size:.85rem; }
+  .card { background:var(--card); border-radius:10px; padding:14px; margin:10px 0; }
+  .sig { border-left:4px solid var(--acc); }
+  .pos { border-left:4px solid var(--warn); }
+  input, select, button { background:#0d1117; color:var(--tx); border:1px solid #30363d; border-radius:6px; padding:8px; font-size:.9rem; }
+  button { background:var(--acc); border:none; cursor:pointer; font-weight:600; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0; }
+  table { width:100%; border-collapse:collapse; font-size:.85rem; }
+  td, th { padding:6px 8px; border-bottom:1px solid #30363d; text-align:left; }
+  .pill { display:inline-block; padding:2px 8px; border-radius:99px; font-size:.75rem; background:#21309a33; }
+</style>
+</head>
+<body>
+<h1>📈 SwingBot</h1>
+<div class="mut" id="meta">Loading signals…</div>
+
+<h2>Current signals</h2>
+<div id="signals"></div>
+
+<h2>Position alerts</h2>
+<div id="posalerts"></div>
+
+<h2>⚙️ Portal — ticker rules</h2>
+<div class="card">
+  <div class="mut">Rules are saved to <code>overrides.yaml</code> in the repo. Needs a GitHub token (fine-grained, contents:write on this repo) — stored only in this browser.</div>
+  <div class="row">
+    <input id="gh_token" type="password" placeholder="GitHub token" style="flex:1">
+    <input id="gh_repo" placeholder="user/repo" >
+  </div>
+  <div class="row">
+    <select id="r_action"><option>exclude</option><option>include</option></select>
+    <select id="r_type"><option>ticker</option><option>sector</option><option>industry</option></select>
+    <input id="r_match" placeholder="e.g. TSLA or Energy" style="flex:1">
+  </div>
+  <div class="row">
+    <label class="mut">From <input id="r_from" type="date"></label>
+    <label class="mut">To <input id="r_to" type="date"></label>
+    <button onclick="addRule()">Add rule</button>
+  </div>
+  <table id="rules_tbl"><thead><tr><th>Action</th><th>Type</th><th>Match</th><th>From</th><th>To</th><th></th></tr></thead><tbody></tbody></table>
+</div>
+
+<h2>💼 Portal — positions</h2>
+<div class="card">
+  <div class="mut">Log fills here so the bot tracks TP / thesis-broken for you. Saved to <code>positions.yaml</code>.</div>
+  <div class="row">
+    <input id="p_ticker" placeholder="Ticker" style="width:90px">
+    <input id="p_entry" placeholder="Entry $" type="number" step="0.01" style="width:100px">
+    <input id="p_shares" placeholder="Shares" type="number" style="width:90px">
+    <input id="p_tp" placeholder="TP $" type="number" step="0.01" style="width:100px">
+    <button onclick="addPos()">Log buy</button>
+  </div>
+  <table id="pos_tbl"><thead><tr><th>Ticker</th><th>Entry</th><th>Shares</th><th>TP</th><th>Status</th><th></th></tr></thead><tbody></tbody></table>
+</div>
+
+<script>
+let rules = [], positions = [];
+const $ = id => document.getElementById(id);
+const hdrs = () => ({ "Authorization": "Bearer " + $("gh_token").value,
+                      "Accept": "application/vnd.github+json" });
+
+// remember token/repo locally in the browser only
+["gh_token","gh_repo"].forEach(k => {
+  try { $(k).value = window.sessionStorage ? "" : ""; } catch(e) {}
+});
+
+async function loadSignals() {
+  try {
+    const r = await fetch("signals.json?t=" + Date.now());
+    const d = await r.json();
+    $("meta").textContent = "Generated " + d.generated + " • Macro: " + (d.macro?.risk||"?")
+      + " (VIX " + (d.macro?.vix||"?") + ") • " + (d.cycles?.line || "");
+    $("signals").innerHTML = (d.signals?.length ? d.signals.map((s,i) => `
+      <div class="card sig"><b>${s.ticker}</b> <span class="pill">${s.setup}</span>
+      <div>Suggested: entry $${s.entry} → TP $${s.tp} (+${(s.tp_pct*100).toFixed(1)}%), ${s.shares} shares ≈ $${Math.round(s.value)}</div>
+      <div class="mut">trend ${s.trend_score}/5 • ADX ${s.adx} • RS ${(s.rs*100).toFixed(1)}% • ${s.reasons.join(", ")}</div>
+      <div class="row mut">My actual fill (correct for spread / your size):</div>
+      <div class="row">
+        <input id="f_entry_${i}" type="number" step="0.01" value="${s.entry}" style="width:100px" title="my entry">
+        <input id="f_shares_${i}" type="number" value="${s.shares}" style="width:80px" title="my shares">
+        <input id="f_tp_${i}" type="number" step="0.01" value="${s.tp}" style="width:100px" title="my TP">
+        <button onclick="logFill('${s.ticker}',${i})">✔ I entered</button>
+        <button style="background:#6e7681" onclick="skipSignal('${s.ticker}')">✖ Skipped</button>
+      </div></div>`).join("")
+      : "<div class='mut'>No active signals.</div>");
+    $("posalerts").innerHTML = (d.position_alerts?.length
+      ? d.position_alerts.map(m => `<div class="card pos">${m}</div>`).join("")
+      : "<div class='mut'>None.</div>");
+  } catch(e) { $("meta").textContent = "No signals.json yet — run a scan first."; }
+}
+
+async function ghGet(path) {
+  const r = await fetch(`https://api.github.com/repos/${$("gh_repo").value}/contents/${path}`, {headers: hdrs()});
+  if (!r.ok) throw new Error("GET " + path + " " + r.status);
+  return r.json();
+}
+async function ghPut(path, content, sha, msg) {
+  const r = await fetch(`https://api.github.com/repos/${$("gh_repo").value}/contents/${path}`, {
+    method: "PUT", headers: hdrs(),
+    body: JSON.stringify({ message: msg, content: btoa(unescape(encodeURIComponent(content))), sha })
+  });
+  if (!r.ok) throw new Error("PUT failed " + r.status);
+}
+const yamlRules = () => "rules:\n" + (rules.length ? rules.map(r =>
+  `  - action: ${r.action}\n    match: ${r.match}\n    type: ${r.type}`
+  + (r.from ? `\n    from: ${r.from}` : "") + (r.to ? `\n    to: ${r.to}` : "")).join("\n") : "  []");
+const yamlPos = () => "positions:\n" + (positions.length ? positions.map(p =>
+  `  - ticker: ${p.ticker}\n    status: ${p.status}\n    entry: ${p.entry}\n    shares: ${p.shares}\n    tp: ${p.tp}`
+  + (p.exit ? `\n    exit: ${p.exit}` : "") + (p.opened ? `\n    opened: ${p.opened}` : "")
+  + (p.skipped_on ? `\n    skipped_on: ${p.skipped_on}` : "")).join("\n") : "  []");
+
+function renderRules() {
+  document.querySelector("#rules_tbl tbody").innerHTML = rules.map((r,i) =>
+    `<tr><td>${r.action}</td><td>${r.type}</td><td>${r.match}</td><td>${r.from||""}</td><td>${r.to||""}</td>
+     <td><button onclick="rules.splice(${i},1);saveRules()">✕</button></td></tr>`).join("");
+}
+function renderPos() {
+  document.querySelector("#pos_tbl tbody").innerHTML = positions.map((p,i) =>
+    `<tr><td>${p.ticker}</td>
+     <td><input type="number" step="0.01" value="${p.entry}" style="width:85px" onchange="positions[${i}].entry=this.value"></td>
+     <td><input type="number" value="${p.shares}" style="width:70px" onchange="positions[${i}].shares=this.value"></td>
+     <td><input type="number" step="0.01" value="${p.tp}" style="width:85px" onchange="positions[${i}].tp=this.value"></td>
+     <td>${p.status}${p.status==="closed" ? ` @ <input type="number" step="0.01" value="${p.exit||""}" style="width:85px" onchange="positions[${i}].exit=this.value">` : ""}</td>
+     <td>${p.status==="open" ? `<button onclick="positions[${i}].status='closed';savePos()">Close</button> `:""}
+         <button style="background:#2f81f7" onclick="savePos()">Save</button></td></tr>`).join("");
+}
+async function saveRules() {
+  try { const f = await ghGet("overrides.yaml");
+    await ghPut("overrides.yaml", "# managed by portal\n" + yamlRules() + "\n", f.sha, "portal: update rules");
+    renderRules(); alert("Rules saved ✓");
+  } catch(e) { alert("Save failed: " + e.message); }
+}
+async function savePos() {
+  try { const f = await ghGet("positions.yaml");
+    await ghPut("positions.yaml", "# managed by portal\n" + yamlPos() + "\n", f.sha, "portal: update positions");
+    renderPos(); alert("Positions saved ✓");
+  } catch(e) { alert("Save failed: " + e.message); }
+}
+function addRule() {
+  rules.push({action:$("r_action").value, type:$("r_type").value, match:$("r_match").value,
+              from:$("r_from").value, to:$("r_to").value});
+  saveRules();
+}
+function logFill(ticker, i) {
+  positions.push({ticker, entry:$(`f_entry_${i}`).value, shares:$(`f_shares_${i}`).value,
+    tp:$(`f_tp_${i}`).value, status:"open", opened: new Date().toISOString().slice(0,10)});
+  savePos();
+}
+function skipSignal(ticker) {
+  positions.push({ticker, entry:0, shares:0, tp:0, status:"skipped",
+    skipped_on: new Date().toISOString().slice(0,10)});
+  savePos();
+}
+function addPos() {
+  positions.push({ticker:$("p_ticker").value.toUpperCase(), entry:$("p_entry").value,
+    shares:$("p_shares").value, tp:$("p_tp").value, status:"open",
+    opened: new Date().toISOString().slice(0,10)});
+  savePos();
+}
+loadSignals();
+</script>
+</body>
+</html>
