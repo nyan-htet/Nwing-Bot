@@ -119,6 +119,9 @@ def run_hourly(offline=False):
     else:
         h1_map = data.fetch(tickers, period="730d", interval="1h")
         spy = data.fetch("SPY", period="730d", interval="1h").get("SPY")
+        if spy is None:
+            raise SystemExit("FATAL: could not download SPY benchmark data "
+                             "(Yahoo likely throttling). Re-run the workflow.")
         spy_daily = data.resample(spy, "1D")
         long_hist = None
         try:
@@ -175,7 +178,14 @@ def run_nightly():
     import universe
     tickers = universe.get_universe()
     d = data.fetch(tickers, period="1y", interval="1d")
-    spy = d.get("SPY") or data.fetch("SPY", period="1y", interval="1d")["SPY"]
+    spy = d.get("SPY") or data.fetch("SPY", period="1y", interval="1d").get("SPY")
+    if spy is None:
+        raise SystemExit("FATAL: could not download SPY benchmark data "
+                         "(Yahoo likely throttling this runner). "
+                         "Re-run the workflow — retries usually succeed.")
+    if len(d) < 20:
+        print(f"WARNING: only {len(d)} tickers downloaded — Yahoo throttling; "
+              "building a smaller watchlist from what we have.")
     scored, meta = [], {}
     for t, df in d.items():
         if len(df) < 120 or float(df["close"].iloc[-1] * df["volume"].iloc[-20:].mean()) < 5e6:

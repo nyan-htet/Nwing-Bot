@@ -3,23 +3,40 @@ import numpy as np
 import pandas as pd
 
 
-def fetch(tickers, period="730d", interval="1h"):
-    """Batch download from Yahoo. Returns {ticker: df}."""
+def fetch(tickers, period="730d", interval="1h", retries=3, chunk=80):
+    """Batch download from Yahoo with retries + chunking (Yahoo throttles
+    datacenter IPs like GitHub runners). Returns {ticker: df} — possibly
+    partial; callers must handle missing tickers."""
+    import time
     import yfinance as yf
-    raw = yf.download(tickers, period=period, interval=interval,
-                      group_by="ticker", auto_adjust=True, threads=True,
-                      progress=False)
-    out = {}
     if isinstance(tickers, str):
         tickers = [tickers]
-    for t in tickers:
-        try:
-            df = raw[t].dropna() if len(tickers) > 1 else raw.dropna()
-            df = df.rename(columns=str.lower).reset_index()
-            df = df.rename(columns={"date": "time", "datetime": "time"})
-            out[t] = df[["time", "open", "high", "low", "close", "volume"]]
-        except Exception:
-            continue
+    out = {}
+    for start in range(0, len(tickers), chunk):
+        batch = tickers[start:start + chunk]
+        for attempt in range(retries):
+            try:
+                raw = yf.download(batch, period=period, interval=interval,
+                                  group_by="ticker", auto_adjust=True,
+                                  threads=True, progress=False)
+                got = 0
+                for t in batch:
+                    try:
+                        df = raw[t].dropna() if len(batch) > 1 else raw.dropna()
+                        if df.empty:
+                            continue
+                        df = df.rename(columns=str.lower).reset_index()
+                        df = df.rename(columns={"date": "time", "datetime": "time"})
+                        out[t] = df[["time", "open", "high", "low", "close", "volume"]]
+                        got += 1
+                    except Exception:
+                        continue
+                if got > 0 or len(batch) == 0:
+                    break  # batch ok
+            except Exception as e:
+                print(f"fetch attempt {attempt+1} failed for batch "
+                      f"{start//chunk+1}: {e}")
+            time.sleep(5 * (attempt + 1))   # back off before retry
     return out
 
 
