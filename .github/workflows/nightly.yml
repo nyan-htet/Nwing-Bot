@@ -1,0 +1,20 @@
+name: nightly-watchlist
+on:
+  schedule:
+    - cron: "30 21 * * 1-5"   # 21:30 UTC weekdays, after US close
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install yfinance pandas numpy pyyaml lxml html5lib
+      - run: python scan.py nightly
+      - run: |
+          git config user.name swingbot && git config user.email bot@users.noreply.github.com
+          git add watchlist.json && git commit -m "nightly: rebuild watchlist" || echo "no changes"
+          git push
