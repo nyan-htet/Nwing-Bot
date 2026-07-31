@@ -1,40 +1,39 @@
-# SwingBot — eToro Long-Only Swing Signal Bot
+# SwingBot — eToro Long-Only Swing Signal Bot (Twelve Data edition)
 
-Scans US stocks/ETFs on 1h/4h/daily, emails + Telegrams you complete BUY
-alerts (entry, TP >= 8%, size >= $250, reasons, macro & cycles context).
-You execute manually on eToro. No stoploss — thesis-broken alerts instead.
+Scans YOUR ticker list (tickers.csv) on 1h/4h/daily via Twelve Data,
+emails + Telegrams complete BUY alerts (entry, TP >= 8%, sizing, reasons,
+leverage/inverse warnings, macro & cycles context). You execute manually
+on eToro. No stoploss — thesis-broken alerts monitor open positions.
 
-## Pipeline
-nightly: universe (S&P500 + IWM holdings) -> liquidity + trend prefilter
-         -> fundamentals screen -> watchlist.json (~150 tickers)
-hourly : watchlist -> your overrides -> daily trend gate (EMA/ADX/RS/52w-high)
-         -> 4h setup (pullback/breakout) -> 1h trigger -> TP>=8% -> fee gate
-         -> alert + docs/signals.json (dashboard)
-         + open-position checks: TP reached / thesis broken
+## Your ticker list = tickers.csv
+Edit it on GitHub (pencil icon) or in Excel and re-upload. Columns:
+symbol,type(etf|stock),leverage(1-4),inverse(yes|no),note
+- etf = commission-free on eToro; stocks get the $2 round-trip fee model
+- inverse: yes -> alert says "THIS IS AN INVERSE ETF (Nx BEAR)"
+- leverage >= 2 -> alert says "THIS IS A Nx LEVERAGED ETF" + decay warning
+- Keep SPY (benchmark). Changes take effect on the next nightly run.
 
-## Files
-scan.py (entry: test | nightly | hourly), config.py (all settings),
-data.py, indicators.py, analysis.py, fundamentals.py, cycles.py,
-universe.py, portfolio_files.py, notify.py,
-overrides.yaml + positions.yaml (managed via portal),
-docs/index.html (dashboard + portal, GitHub Pages),
-.github/workflows/ (hourly + nightly schedules)
+## Jobs (GitHub Actions)
+- nightly-watchlist (21:30 UTC weekdays): daily data for all csv tickers,
+  ranks by trend, caches options context -> watchlist.json
+- hourly.yml (every 4 hours at :15 UTC): 1h candles for watchlist,
+  multi-timeframe scan -> alerts + docs/signals.json (dashboard)
+- check-symbols (manual): probes every csv symbol against Twelve Data
 
-## Local test (your laptop, pre-phase 1)
-pip install pandas numpy yfinance pyyaml
-python scan.py test      # offline synthetic data, prints dry-run alerts
-python scan.py hourly    # real data scan (DRY_RUN=1 prints, doesn't send)
+## Setup
+1. Secrets: TWELVEDATA_KEY (free key from twelvedata.com) + SMTP_HOST/PORT/
+   USER/PASS, EMAIL_TO, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
+2. Settings -> Actions -> General -> Workflow permissions: Read and write
+3. Settings -> Pages -> Deploy from branch -> main -> /docs
+4. Actions -> run nightly-watchlist first, then the 4-hourly scan
 
-## Deploy (when ready)
-1. Push this folder to a PUBLIC GitHub repo (Actions minutes are free there)
-2. Settings -> Pages -> deploy from branch, /docs folder  -> your dashboard URL
-3. Settings -> Secrets -> add SMTP_HOST/PORT/USER/PASS, EMAIL_TO,
-   TELEGRAM_TOKEN, TELEGRAM_CHAT_ID (Gmail: use an App Password)
-4. Actions tab -> enable workflows. Hourly scan runs at :15, nightly at 21:30 UTC
-5. Open dashboard -> portal section -> paste a fine-grained token
-   (contents: read/write on this repo only) to manage rules & positions
+## Free-tier budget (800 req/day)
+~78 tickers nightly (daily bars) + ~78 x 6 scans (1h bars) fits if the
+watchlist stays under ~100 names. Requests are auto-throttled to 8/min,
+so jobs run slowly by design (nightly ~12 min, each scan ~12 min).
 
-## Honest notes
-- Signals are decision support, not advice. Validate on real data first.
-- yfinance is unofficial; occasional gaps happen. The bot degrades gracefully.
-- Cycles/seasonality layer is weak-evidence context, deliberately non-triggering.
+## Notes
+- Fundamentals/earnings/news screens are inactive in the TD-only setup
+  (they degrade to neutral); can be re-enabled later with an FMP key.
+- Local test: pip install pandas numpy pyyaml; python scan.py test
+- Signals are decision support, not financial advice.

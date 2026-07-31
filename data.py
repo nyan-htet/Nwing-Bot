@@ -125,12 +125,59 @@ def fetch_daily_stooq(tickers, retries=2):
 
 
 def fetch_daily(tickers, period="1y"):
-    """Daily data: yfinance first, Stooq fallback for anything missing."""
+    """Daily data from Twelve Data (sole source per user choice)."""
     if isinstance(tickers, str):
         tickers = [tickers]
-    out = fetch(tickers, period=period, interval="1d", retries=2)
-    missing = [t for t in tickers if t not in out]
-    if missing:
-        print(f"yfinance missing {len(missing)} tickers; trying Stooq fallback…")
-        out.update(fetch_daily_stooq(missing))
+    return fetch_td(tickers, interval="1day", outputsize=400)
+
+
+# ---------------- Twelve Data (free API key; datacenter-friendly) -------------
+import os as _os
+TD_KEY = _os.getenv("TWELVEDATA_KEY", "")
+_TD_LAST = [0.0]
+
+
+def _td_throttle(min_interval=8.0):
+    """Free tier: 8 req/min. Space requests ~8s apart."""
+    import time
+    wait = _TD_LAST[0] + min_interval - time.time()
+    if wait > 0:
+        time.sleep(wait)
+    _TD_LAST[0] = time.time()
+
+
+def fetch_td(tickers, interval="1h", outputsize=1500):
+    """Twelve Data time series. interval: 1h | 1day. Returns {ticker: df}."""
+    import json
+    import urllib.request
+    out = {}
+    if isinstance(tickers, str):
+        tickers = [tickers]
+    if not TD_KEY:
+        print("TWELVEDATA_KEY not set — skipping Twelve Data")
+        return out
+    for t in tickers:
+        _td_throttle()
+        url = (f"https://api.twelvedata.com/time_series?symbol={t}"
+               f"&interval={interval}&outputsize={outputsize}&apikey={TD_KEY}")
+        try:
+            raw = json.loads(urllib.request.urlopen(url, timeout=20).read())
+            vals = raw.get("values")
+            if not vals:
+                print(f"TD: no data for {t}: {raw.get('message', '')[:80]}")
+                continue
+            df = pd.DataFrame(vals)[::-1].reset_index(drop=True)
+            df = df.rename(columns={"datetime": "time"})
+            df["time"] = pd.to_datetime(df["time"])
+            for c in ["open", "high", "low", "close", "volume"]:
+                df[c] = pd.to_numeric(df.get(c, 0), errors="coerce")
+            df["volume"] = df["volume"].fillna(0)
+            out[t] = df[["time", "open", "high", "low", "close", "volume"]].dropna()
+        except Exception as e:
+            print(f"TD error {t}: {e}")
     return out
+
+
+def fetch_intraday(tickers):
+    """1h candles from Twelve Data (sole source per user choice)."""
+    return fetch_td(tickers, interval="1h")

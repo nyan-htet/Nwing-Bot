@@ -23,7 +23,7 @@ import notify
 import portfolio_files as pf
 
 
-def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None):
+def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
     h4 = data.resample(h1, "4h")
     daily = data.resample(h1, "1D")
     if len(daily) < 60 or len(h4) < 30:
@@ -65,6 +65,17 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None):
     is_opex, opex_date = oc.near_opex(days=cfg.OPEX_CAUTION_DAYS)
     if is_opex:
         reasons.append(f"⚠ monthly opex {opex_date} — pinning/chop risk")
+    tmeta = tmeta or {}
+    lev = int(tmeta.get("leverage", 1) or 1)
+    if tmeta.get("inverse"):
+        reasons.append(f"🔻 THIS IS AN INVERSE ETF ({lev}x BEAR) — buying it is a "
+                       "bearish bet; it profits when the underlying FALLS")
+    elif lev >= 2:
+        reasons.append(f"⚡ THIS IS A {lev}x LEVERAGED ETF — volatility decay "
+                       "erodes value on multi-week holds; extra caution with "
+                       "no-stoploss style")
+    if tmeta.get("note"):
+        reasons.append(f"({tmeta['note']})")
     if screen.get("notes"):
         reasons.extend(screen["notes"][:1])
     return {"ticker": ticker, "setup": setup, "entry": round(entry, 2),
@@ -105,7 +116,9 @@ def run_hourly(offline=False):
         with open(cfg.WATCHLIST_FILE) as f:
             watch = json.load(f)
     except FileNotFoundError:
-        watch = {"tickers": cfg.SAMPLE_TICKERS + cfg.ETF_TICKERS, "meta": {}}
+        import universe
+        _tk, _m = universe.load()
+        watch = {"tickers": _tk, "meta": _m}
     tickers = pf.apply_overrides(watch["tickers"], watch.get("meta", {}),
                                  cfg.OVERRIDES_FILE)
 
@@ -117,11 +130,13 @@ def run_hourly(offline=False):
         long_hist = data.make_sample_daily_long()
         macro = {"risk": "neutral", "vix": 17.0}
     else:
-        h1_map = data.fetch(tickers, period="730d", interval="1h")
-        spy = data.fetch("SPY", period="730d", interval="1h").get("SPY")
-        if spy is None:
-            raise SystemExit("FATAL: could not download SPY benchmark data "
-                             "(Yahoo likely throttling). Re-run the workflow.")
+        h1_map = data.fetch_intraday(tickers)
+        spy = data.fetch_intraday("SPY").get("SPY")
+        if spy is None or not h1_map:
+            raise SystemExit("FATAL: no intraday data. On GitHub, set the "
+                             "TWELVEDATA_KEY secret (free key from "
+                             "twelvedata.com). Yahoo/keyless sources are "
+                             "blocked from GitHub runners.")
         spy_daily = data.resample(spy, "1D")
         long_hist = None
         try:
@@ -139,17 +154,13 @@ def run_hourly(offline=False):
     decided = pf.recently_decided(cfg.POSITIONS_FILE, cfg.ALERT_COOLDOWN_DAYS)
     signals = []
     for t, h1 in h1_map.items():
-        if t.upper() in decided:
-            continue  # you already opened or skipped this one recently
-        is_etf = t in cfg.ETF_TICKERS
-        screen = {"pass": True, "notes": []} if (offline or is_etf) \
-            else fnd.company_screen(t, cfg)
-        if not screen["pass"]:
-            continue
-        if not offline and not is_etf and fnd.earnings_blocked(t, cfg):
-            continue
-        octx = watch.get("meta", {}).get(t, {}).get("options")
-        sig = build_signal(t, h1, spy_daily, is_etf, screen, octx=octx)
+        if t.upper() in decided or t == "SPY":
+            continue  # already opened/skipped recently, or benchmark
+        tmeta = watch.get("meta", {}).get(t, {})
+        is_etf = tmeta.get("type", "stock") == "etf"
+        screen = {"pass": True, "notes": []}  # fundamentals inactive on TD-only setup
+        octx = tmeta.get("options")
+        sig = build_signal(t, h1, spy_daily, is_etf, screen, octx=octx, tmeta=tmeta)
         if sig:
             signals.append(sig)
 
@@ -174,36 +185,34 @@ def run_hourly(offline=False):
 
 
 def run_nightly():
-    """Build watchlist: liquid + trending names from universe, quality-screened."""
+    """Build watchlist from tickers.csv: keep names with valid data and an
+    intact daily uptrend ranking; cache options context (best effort)."""
     import universe
-    tickers = universe.get_universe()
+    tickers, tmeta = universe.load()
     d = data.fetch_daily(tickers)
-    spy = d.get("SPY") or data.fetch_daily("SPY").get("SPY")
+    spy = d.get("SPY")
     if spy is None:
-        raise SystemExit("FATAL: no SPY data from Yahoo OR Stooq — "
-                         "both sources unreachable; re-run later.")
-    if len(d) < 20:
-        print(f"WARNING: only {len(d)} tickers downloaded — Yahoo throttling; "
-              "building a smaller watchlist from what we have.")
+        raise SystemExit("FATAL: no SPY data from Twelve Data — check "
+                         "TWELVEDATA_KEY secret and quota, then re-run.")
     scored, meta = [], {}
     for t, df in d.items():
-        if len(df) < 120 or float(df["close"].iloc[-1] * df["volume"].iloc[-20:].mean()) < 5e6:
-            continue  # illiquid
+        if t == "SPY" or len(df) < 120:
+            continue
         tr = analysis.daily_trend(df, spy, cfg)
-        if tr["uptrend"]:
-            scored.append((tr["score"] + tr["rs"], t))
+        # keep everything with data; rank by trend so hourly scans strongest first
+        scored.append((tr["score"] + tr["rs"], t))
     scored.sort(reverse=True)
+    top = [t for _, t in scored[:cfg.WATCHLIST_SIZE]]
     import options_context as oc
-    top = [t for _, t in scored[:cfg.WATCHLIST_SIZE]] + cfg.ETF_TICKERS
     for t in top:
-        s = fnd.company_screen(t, cfg)
         spot = float(d[t]["close"].iloc[-1]) if t in d else 0.0
-        meta[t] = {"sector": s.get("sector"), "industry": s.get("industry"),
-                   "options": oc.fetch_context(t, spot) if spot else {"liquid": False}}
+        m = dict(tmeta.get(t, {}))
+        m["options"] = oc.fetch_context(t, spot) if spot else {"liquid": False}
+        meta[t] = m
     with open(cfg.WATCHLIST_FILE, "w") as f:
         json.dump({"tickers": sorted(set(top)), "meta": meta,
-                   "built": dt.datetime.utcnow().isoformat()}, f, indent=2)
-    print(f"Watchlist built: {len(set(top))} tickers")
+                   "built": dt.datetime.now(dt.timezone.utc).isoformat()}, f, indent=2)
+    print(f"Watchlist built from tickers.csv: {len(set(top))} of {len(tickers)} tickers")
 
 
 if __name__ == "__main__":

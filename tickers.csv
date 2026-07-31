@@ -1,0 +1,79 @@
+symbol,type,leverage,inverse,note
+SPY,etf,1,no,benchmark - do not remove
+UNG,etf,1,no,natural gas
+USO,etf,1,no,crude oil
+GLD,etf,1,no,gold
+SLV,etf,1,no,silver
+URA,etf,1,no,uranium
+COPX,etf,1,no,copper miners
+EWY,etf,1,no,south korea
+ERX,etf,2,no,energy bull 2x
+TMF,etf,3,no,20y treasuries bull 3x
+SOXL,etf,3,no,semiconductors bull 3x
+TECL,etf,3,no,tech bull 3x
+FAS,etf,3,no,financials bull 3x
+TNA,etf,3,no,small caps bull 3x
+NAIL,etf,3,no,homebuilders bull 3x
+GUSH,etf,2,no,oil gas E&P bull 2x
+NUGT,etf,2,no,gold miners bull 2x
+JNUG,etf,2,no,junior gold miners bull 2x
+YINN,etf,3,no,china bull 3x
+LABU,etf,3,no,biotech bull 3x
+DPST,etf,3,no,regional banks bull 3x
+DFEN,etf,3,no,defense bull 3x
+SPYU,etf,4,no,S&P500 bull 4x
+TZA,etf,3,yes,small caps BEAR 3x
+SOXS,etf,3,yes,semiconductors BEAR 3x
+SPXS,etf,3,yes,S&P500 BEAR 3x
+FAZ,etf,3,yes,financials BEAR 3x
+JDST,etf,2,yes,junior gold miners BEAR 2x
+NVDA,stock,1,no,
+AAPL,stock,1,no,
+MSFT,stock,1,no,
+AMZN,stock,1,no,
+GOOGL,stock,1,no,
+GOOG,stock,1,no,
+AVGO,stock,1,no,
+META,stock,1,no,
+TSLA,stock,1,no,
+BRK.B,stock,1,no,
+LLY,stock,1,no,
+MU,stock,1,no,
+JPM,stock,1,no,
+WMT,stock,1,no,
+AMD,stock,1,no,
+V,stock,1,no,
+XOM,stock,1,no,
+JNJ,stock,1,no,
+MA,stock,1,no,
+INTC,stock,1,no,
+ABBV,stock,1,no,
+CSCO,stock,1,no,
+BAC,stock,1,no,
+COST,stock,1,no,
+AMAT,stock,1,no,
+LRCX,stock,1,no,
+CVX,stock,1,no,
+UNH,stock,1,no,
+KO,stock,1,no,
+ORCL,stock,1,no,
+CAT,stock,1,no,
+GE,stock,1,no,
+PG,stock,1,no,
+HD,stock,1,no,
+MS,stock,1,no,
+MRK,stock,1,no,
+GS,stock,1,no,
+NFLX,stock,1,no,
+PM,stock,1,no,
+PLTR,stock,1,no,
+RTX,stock,1,no,
+PANW,stock,1,no,
+GEV,stock,1,no,
+DELL,stock,1,no,
+WFC,stock,1,no,
+TXN,stock,1,no,
+KLAC,stock,1,no,
+LIN,stock,1,no,
+AXP,stock,1,no,
+C,stock,1,no,
