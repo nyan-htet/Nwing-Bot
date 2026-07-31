@@ -12,8 +12,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install yfinance curl_cffi pandas numpy pyyaml lxml html5lib
-      - run: python scan.py nightly
+      - run: pip install pandas numpy pyyaml lxml html5lib
+      - name: Build watchlist
+        env:
+          TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+        run: python scan.py nightly
       - run: |
           git config user.name swingbot && git config user.email bot@users.noreply.github.com
           git add watchlist.json && git commit -m "nightly: rebuild watchlist" || echo "no changes"
