@@ -3,6 +3,3 @@ rules:
   - action: exclude
     match: 
     type: ticker
-  - action: exclude
-    match: 
-    type: ticker
