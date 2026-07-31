@@ -1,38 +1,57 @@
 {
-  "generated": "2026-07-31T10:26:41.049417+00:00",
+  "generated": "2026-07-31T12:18:10.214665+00:00",
   "macro": {
     "risk": "neutral",
-    "vix": 17.0
+    "vix": null
   },
   "cycles": {
-    "score": -0.1,
-    "label": "neutral",
-    "line": "Cycles [neutral]: month 7 avg +1.3%, presidential-cycle year 2 avg +7.5%, decade-pos 6 avg +6.9% (informative only)"
+    "line": "cycles n/a"
   },
   "signals": [
     {
-      "ticker": "TZA",
+      "ticker": "GUSH",
       "setup": "pullback",
-      "entry": 152.1,
-      "tp": 170.36,
-      "tp_pct": 0.12001643467783629,
-      "shares": 3,
-      "value": 456.31473269140736,
+      "entry": 39.1,
+      "tp": 43.38,
+      "tp_pct": 0.10933509510665451,
+      "shares": 12,
+      "value": 469.199976,
       "fee_pct": 0.0,
+      "trend_score": 3,
+      "adx": 33.9,
+      "rs": -0.097,
+      "reasons": [
+        "daily uptrend (score 3/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.44 (rsi +0.4, bb +1.0, vwap +1.0, vol -0.4, opt +0.0; RSI=61.3)",
+        "options: n/a",
+        "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
+        "(oil gas E&P bull 2x)"
+      ],
+      "time": "2026-07-31T12:18:09.867424+00:00"
+    },
+    {
+      "ticker": "V",
+      "setup": "pullback",
+      "entry": 366.23,
+      "tp": 410.17,
+      "tp_pct": 0.11999450829423153,
+      "shares": 1,
+      "value": 366.22501,
+      "fee_pct": 0.045511445104436235,
       "trend_score": 5,
-      "adx": 79.0,
-      "rs": 0.136,
+      "adx": 30.6,
+      "rs": 0.077,
       "reasons": [
         "daily uptrend (score 5/5)",
         "4h pullback",
         "1h momentum trigger",
         "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.24 (rsi +0.4, bb +0.0, vwap +1.0, vol -0.4, opt +0.0; RSI=63.1)",
-        "options: n/a",
-        "\ud83d\udd3b THIS IS AN INVERSE ETF (3x BEAR) \u2014 buying it is a bearish bet; it profits when the underlying FALLS",
-        "(small caps BEAR 3x)"
+        "quality +0.49 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.3, opt +0.0; RSI=57.8)",
+        "options: n/a"
       ],
-      "time": "2026-07-31T10:26:40.529615+00:00"
+      "time": "2026-07-31T12:18:10.191990+00:00"
     }
   ],
   "position_alerts": []
