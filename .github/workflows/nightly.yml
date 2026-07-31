@@ -16,6 +16,7 @@ jobs:
       - name: Build watchlist
         env:
           TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+          FMP_KEY: ${{ secrets.FMP_KEY }}
         run: python scan.py nightly
       - run: |
           git config user.name swingbot && git config user.email bot@users.noreply.github.com

@@ -16,6 +16,7 @@ jobs:
       - name: Run scan
         env:
           TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+          FMP_KEY: ${{ secrets.FMP_KEY }}
           DRY_RUN: "0"
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
