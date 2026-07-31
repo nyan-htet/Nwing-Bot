@@ -1,7 +1,7 @@
 name: hourly-scan
 on:
   schedule:
-    - cron: "15 */4 * * *"    # every 4 hours at :15 (UTC)
+    - cron: "15 */4 * * 1-5"    # every 4 hours, Mon-Fri only (UTC)
   workflow_dispatch: {}
 permissions:
   contents: write
