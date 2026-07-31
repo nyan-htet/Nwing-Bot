@@ -101,6 +101,26 @@ def check_positions(get_daily, macro):
     return msgs
 
 
+def log_signals_csv(signals, macro, cyc):
+    """Append each signal to signals_log.csv (permanent history)."""
+    import csv, os
+    path = "signals_log.csv"
+    new = not os.path.exists(path)
+    with open(path, "a", newline="") as f:
+        w = csv.writer(f)
+        if new:
+            w.writerow(["date_utc", "ticker", "setup", "entry", "tp", "tp_pct",
+                        "shares", "value_usd", "trend_score", "adx", "rs_vs_spy",
+                        "quality", "rsi", "macro_risk", "cycles", "reasons"])
+        for s_ in signals:
+            q = next((r for r in s_["reasons"] if r.startswith("quality")), "")
+            w.writerow([s_["time"], s_["ticker"], s_["setup"], s_["entry"],
+                        s_["tp"], round(s_["tp_pct"], 4), s_["shares"],
+                        round(s_["value"], 2), s_["trend_score"], s_["adx"],
+                        s_["rs"], q, "", macro.get("risk", ""),
+                        cyc.get("label", ""), " | ".join(s_["reasons"])])
+
+
 def publish(signals, position_msgs, macro, cyc):
     os.makedirs("docs", exist_ok=True)
     payload = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -144,15 +164,10 @@ def run_hourly(offline=False):
                   f"{', '.join(sorted(failed))} — scanned the rest.")
         else:
             print(f"Intraday data OK for all {len(h1_map)} tickers ✓")
-        long_hist = None
-        try:
-            import yfinance as yf
-            h = yf.Ticker(cfg.CYCLES_SYMBOL).history(period="max")[["Close"]]
-            long_hist = h.rename(columns={"Close": "close"}).reset_index() \
-                         .rename(columns={"Date": "time"})
-        except Exception:
-            pass
-        macro = fnd.macro_context()
+        # ~30y of SPY daily for the cycles layer (TD free tier max output)
+        long_hist = data.fetch_td(["SPY"], interval="1day",
+                                  outputsize=5000).get("SPY")
+        macro = fnd.macro_context(spy_daily)
 
     cyc = cycles.context(long_hist) if long_hist is not None else {"line": "cycles n/a"}
 
@@ -202,6 +217,7 @@ def run_hourly(offline=False):
     for m in pos_msgs:
         notify.send_email("Position alert", m, cfg)
         notify.send_telegram(m, cfg)
+    log_signals_csv(signals, macro, cyc)
     publish(signals, pos_msgs, macro, cyc)
     for k, v in skip_report.items():
         if v:
