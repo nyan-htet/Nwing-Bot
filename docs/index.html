@@ -74,7 +74,7 @@
 </div>
 
 <script>
-let rules = [], positions = [];
+let rules = [], positions = [], signalsData = null;
 const $ = id => document.getElementById(id);
 const hdrs = () => ({ "Authorization": "Bearer " + $("gh_token").value.trim(),
                       "Accept": "application/vnd.github+json" });
@@ -96,13 +96,18 @@ function checkAuth() {
   return true;
 }
 
-async function loadSignals() {
-  try {
-    const r = await fetch("signals.json?t=" + Date.now());
-    const d = await r.json();
-    $("meta").textContent = "Generated " + d.generated + " • Macro: " + (d.macro?.risk||"?")
-      + " (SPY vol " + (d.macro?.vol||"?") + "%) • " + (d.cycles?.line || "");
-    $("signals").innerHTML = (d.signals?.length ? d.signals.map((s,i) => `
+function decidedTickers() {
+  return new Set(positions.filter(p => p.status === "open" || p.status === "skipped")
+                          .map(p => p.ticker.toUpperCase()));
+}
+
+function renderSignals() {
+  const d = signalsData;
+  if (!d) return;
+  const hide = decidedTickers();
+  const list = (d.signals || []).filter(s => !hide.has(s.ticker.toUpperCase()));
+  const skipped = (d.signals || []).length - list.length;
+  $("signals").innerHTML = (list.length ? list.map((s,i) => `
       <div class="card sig"><b>${s.ticker}</b> <span class="pill">${s.setup}</span>
       <div>Suggested: entry $${s.entry} → TP $${s.tp} (+${(s.tp_pct*100).toFixed(1)}%), ${s.shares} shares ≈ $${Math.round(s.value)}</div>
       <div class="mut">trend ${s.trend_score}/5 • ADX ${s.adx} • RS ${(s.rs*100).toFixed(1)}% • ${s.reasons.join(", ")}</div>
@@ -114,11 +119,48 @@ async function loadSignals() {
         <button onclick="logFill('${s.ticker}',${i})">✔ I entered</button>
         <button style="background:#6e7681" onclick="skipSignal('${s.ticker}')">✖ Skipped</button>
       </div></div>`).join("")
-      : "<div class='mut'>No active signals.</div>");
+      : "<div class='mut'>No new signals" + (skipped ? " (" + skipped + " already decided — see Position Portal)" : "") + ".</div>")
+      + (skipped && list.length ? `<div class='mut'>${skipped} signal(s) hidden — already in your Position Portal.</div>` : "");
+}
+
+async function loadSignals() {
+  try {
+    const r = await fetch("signals.json?t=" + Date.now());
+    signalsData = await r.json();
+    const d = signalsData;
+    $("meta").textContent = "Generated " + d.generated + " • Macro: " + (d.macro?.risk||"?")
+      + " (SPY vol " + (d.macro?.vol||"?") + "%) • " + (d.cycles?.line || "");
+    renderSignals();
     $("posalerts").innerHTML = (d.position_alerts?.length
       ? d.position_alerts.map(m => `<div class="card pos">${m}</div>`).join("")
       : "<div class='mut'>None.</div>");
   } catch(e) { $("meta").textContent = "No signals.json yet — run a scan first."; }
+}
+
+// ---- load saved state from the repo so nothing disappears on refresh ----
+function parseSimpleYaml(text, key) {
+  const items = []; let cur = null;
+  for (const raw of text.split("\n")) {
+    const line = raw.replace(/#.*$/, "");
+    if (/^\s*-\s/.test(line)) { cur = {}; items.push(cur);
+      const m = line.match(/-\s*(\w+):\s*(.*)/); if (m && cur) cur[m[1]] = m[2].trim(); }
+    else if (cur) { const m = line.match(/^\s+(\w+):\s*(.*)/); if (m) cur[m[1]] = m[2].trim(); }
+  }
+  return items;
+}
+
+async function loadState() {
+  const repo = ($("gh_repo").value || "").trim() || (location.hostname.split(".")[0] + "/" + location.pathname.split("/")[1]);
+  const base = "https://raw.githubusercontent.com/" + repo + "/main/";
+  try {
+    const p = await (await fetch(base + "positions.yaml?t=" + Date.now())).text();
+    positions = parseSimpleYaml(p, "positions").filter(x => x.ticker);
+  } catch(e) {}
+  try {
+    const o = await (await fetch(base + "overrides.yaml?t=" + Date.now())).text();
+    rules = parseSimpleYaml(o, "rules").filter(x => x.match);
+  } catch(e) {}
+  renderPos(); renderRules(); renderSignals();
 }
 
 async function ghGet(path) {
@@ -126,6 +168,18 @@ async function ghGet(path) {
   if (!r.ok) throw new Error("GET " + path + " " + r.status);
   return r.json();
 }
+async function ghAppendCsv(path, header, row) {
+  let sha = undefined, text = "";
+  try {
+    const f = await ghGet(path);
+    sha = f.sha;
+    text = decodeURIComponent(escape(atob(f.content.replace(/\n/g, ""))));
+  } catch(e) { text = header + "\n"; }
+  if (!text.endsWith("\n")) text += "\n";
+  text += row + "\n";
+  await ghPut(path, text, sha, "portal: log action");
+}
+
 async function ghPut(path, content, sha, msg) {
   const r = await fetch(`https://api.github.com/repos/${$("gh_repo").value}/contents/${path}`, {
     method: "PUT", headers: hdrs(),
@@ -139,7 +193,7 @@ const yamlRules = () => "rules:\n" + (rules.length ? rules.map(r =>
 const yamlPos = () => "positions:\n" + (positions.length ? positions.map(p =>
   `  - ticker: ${p.ticker}\n    status: ${p.status}\n    entry: ${p.entry}\n    shares: ${p.shares}\n    tp: ${p.tp}`
   + (p.exit ? `\n    exit: ${p.exit}` : "") + (p.opened ? `\n    opened: ${p.opened}` : "")
-  + (p.skipped_on ? `\n    skipped_on: ${p.skipped_on}` : "")).join("\n") : "  []");
+  + (p.skipped_on ? `\n    skipped_on: ${p.skipped_on}` : "") + (p.closed_on ? `\n    closed_on: ${p.closed_on}` : "")).join("\n") : "  []");
 
 function renderRules() {
   document.querySelector("#rules_tbl tbody").innerHTML = rules.map((r,i) =>
@@ -153,21 +207,21 @@ function renderPos() {
      <td><input type="number" value="${p.shares}" style="width:70px" onchange="positions[${i}].shares=this.value"></td>
      <td><input type="number" step="0.01" value="${p.tp}" style="width:85px" onchange="positions[${i}].tp=this.value"></td>
      <td>${p.status}${p.status==="closed" ? ` @ <input type="number" step="0.01" value="${p.exit||""}" style="width:85px" onchange="positions[${i}].exit=this.value">` : ""}</td>
-     <td>${p.status==="open" ? `<button onclick="positions[${i}].status='closed';savePos()">Close</button> `:""}
+     <td>${p.status==="open" ? `<button onclick="closePos(${i})">Close</button> `:""}
          <button style="background:#2f81f7" onclick="savePos()">Save</button></td></tr>`).join("");
 }
 async function saveRules() {
   if (!checkAuth()) return;
   try { const f = await ghGet("overrides.yaml");
     await ghPut("overrides.yaml", "# managed by portal\n" + yamlRules() + "\n", f.sha, "portal: update rules");
-    renderRules(); alert("Rules saved ✓");
+    renderRules(); renderSignals(); alert("Rules saved ✓");
   } catch(e) { alert("Save failed: " + e.message + "\nCheck: token pasted, repo is user/repo (nyan-htet/Nwing-Bot), token has Contents read+write on this repo."); }
 }
 async function savePos() {
   if (!checkAuth()) return;
   try { const f = await ghGet("positions.yaml");
     await ghPut("positions.yaml", "# managed by portal\n" + yamlPos() + "\n", f.sha, "portal: update positions");
-    renderPos(); alert("Positions saved ✓");
+    renderPos(); renderSignals(); alert("Positions saved ✓");
   } catch(e) { alert("Save failed: " + e.message + "\nCheck: token pasted, repo is user/repo (nyan-htet/Nwing-Bot), token has Contents read+write on this repo."); }
 }
 async function testToken() {
@@ -185,15 +239,28 @@ function addRule() {
               from:$("r_from").value, to:$("r_to").value});
   saveRules();
 }
+const ACT_HEADER = "date,ticker,action,entry,shares,tp,exit";
+function logAction(ticker, action, entry="", shares="", tp="", exitp="") {
+  const d = new Date().toISOString().slice(0,10);
+  ghAppendCsv("actions_log.csv", ACT_HEADER,
+    [d, ticker, action, entry, shares, tp, exitp].join(",")).catch(()=>{});
+}
 function logFill(ticker, i) {
-  positions.push({ticker, entry:$(`f_entry_${i}`).value, shares:$(`f_shares_${i}`).value,
-    tp:$(`f_tp_${i}`).value, status:"open", opened: new Date().toISOString().slice(0,10)});
-  savePos();
+  const e = $(`f_entry_${i}`).value, sh = $(`f_shares_${i}`).value, tp = $(`f_tp_${i}`).value;
+  positions.push({ticker, entry:e, shares:sh, tp:tp, status:"open",
+    opened: new Date().toISOString().slice(0,10)});
+  savePos(); logAction(ticker, "entered", e, sh, tp);
 }
 function skipSignal(ticker) {
   positions.push({ticker, entry:0, shares:0, tp:0, status:"skipped",
     skipped_on: new Date().toISOString().slice(0,10)});
-  savePos();
+  savePos(); logAction(ticker, "skipped");
+}
+function closePos(i) {
+  const p = positions[i];
+  p.status = "closed";
+  p.closed_on = new Date().toISOString().slice(0,10);
+  savePos(); logAction(p.ticker, "closed", p.entry, p.shares, p.tp, p.exit || "");
 }
 function addPos() {
   positions.push({ticker:$("p_ticker").value.toUpperCase(), entry:$("p_entry").value,
@@ -201,7 +268,7 @@ function addPos() {
     opened: new Date().toISOString().slice(0,10)});
   savePos();
 }
-loadSignals();
+loadSignals().then(loadState);
 </script>
 </body>
 </html>
