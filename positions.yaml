@@ -1,1 +1,14 @@
-positions: []
+# managed by portal
+positions:
+  - ticker: GUSH
+    status: skipped
+    entry: 0
+    shares: 0
+    tp: 0
+    skipped_on: 2026-07-31
+  - ticker: GUSH
+    status: skipped
+    entry: 0
+    shares: 0
+    tp: 0
+    skipped_on: 2026-07-31
