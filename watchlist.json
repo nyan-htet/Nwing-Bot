@@ -1,0 +1,1127 @@
+{
+  "tickers": [
+    "AAPL",
+    "ABBV",
+    "AMAT",
+    "AMD",
+    "AMZN",
+    "AVGO",
+    "AXP",
+    "BAC",
+    "BRK.B",
+    "C",
+    "CAT",
+    "COPX",
+    "COST",
+    "CSCO",
+    "CVX",
+    "DELL",
+    "DFEN",
+    "DPST",
+    "ERX",
+    "EWY",
+    "FAS",
+    "FAZ",
+    "GE",
+    "GEV",
+    "GLD",
+    "GOOG",
+    "GOOGL",
+    "GS",
+    "GUSH",
+    "HD",
+    "INTC",
+    "JDST",
+    "JNJ",
+    "JNUG",
+    "JPM",
+    "KLAC",
+    "KO",
+    "LABU",
+    "LIN",
+    "LLY",
+    "LRCX",
+    "MA",
+    "META",
+    "MRK",
+    "MS",
+    "MSFT",
+    "MU",
+    "NAIL",
+    "NFLX",
+    "NUGT",
+    "NVDA",
+    "ORCL",
+    "PANW",
+    "PG",
+    "PLTR",
+    "PM",
+    "RTX",
+    "SLV",
+    "SOXL",
+    "SOXS",
+    "SPXS",
+    "SPYU",
+    "TECL",
+    "TMF",
+    "TNA",
+    "TSLA",
+    "TXN",
+    "TZA",
+    "UNG",
+    "UNH",
+    "URA",
+    "USO",
+    "V",
+    "WFC",
+    "WMT",
+    "XOM",
+    "YINN"
+  ],
+  "meta": {
+    "PANW": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      }
+    },
+    "FAS": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "financials bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "AAPL": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Consumer Electronics"
+      }
+    },
+    "GE": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Aerospace & Defense"
+      }
+    },
+    "RTX": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Aerospace & Defense"
+      }
+    },
+    "ABBV": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": true,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - General"
+      }
+    },
+    "MRK": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - General"
+      }
+    },
+    "PM": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Defensive",
+        "industry": "Tobacco"
+      }
+    },
+    "MA": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Credit Services"
+      }
+    },
+    "KO": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Defensive",
+        "industry": "Beverages - Non-Alcoholic"
+      }
+    },
+    "JNJ": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - General"
+      }
+    },
+    "V": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Credit Services"
+      }
+    },
+    "BRK.B": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "AXP": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Credit Services"
+      }
+    },
+    "DELL": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Computer Hardware"
+      }
+    },
+    "LABU": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "biotech bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "LLY": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - General"
+      }
+    },
+    "DPST": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "regional banks bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "DFEN": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "defense bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "BAC": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      }
+    },
+    "UNH": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Medical - Healthcare Plans"
+      }
+    },
+    "JPM": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      }
+    },
+    "TNA": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "small caps bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "WFC": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      }
+    },
+    "XOM": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": true,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Energy",
+        "industry": "Oil & Gas Integrated"
+      }
+    },
+    "CVX": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": true,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Energy",
+        "industry": "Oil & Gas Integrated"
+      }
+    },
+    "CSCO": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Communication Equipment"
+      }
+    },
+    "GS": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Capital Markets"
+      }
+    },
+    "MS": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Capital Markets"
+      }
+    },
+    "SPYU": {
+      "type": "etf",
+      "leverage": 4,
+      "inverse": false,
+      "note": "S&P500 bull 4x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "C": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      }
+    },
+    "ERX": {
+      "type": "etf",
+      "leverage": 2,
+      "inverse": false,
+      "note": "energy bull 2x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "GUSH": {
+      "type": "etf",
+      "leverage": 2,
+      "inverse": false,
+      "note": "oil gas E&P bull 2x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "USO": {
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "note": "crude oil",
+      "options": {
+        "liquid": false
+      }
+    },
+    "MU": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "AMAT": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "TECL": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "tech bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "LRCX": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "MSFT": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      }
+    },
+    "JDST": {
+      "type": "etf",
+      "leverage": 2,
+      "inverse": true,
+      "note": "junior gold miners BEAR 2x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "LIN": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Basic Materials",
+        "industry": "Chemicals - Specialty"
+      }
+    },
+    "PG": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Defensive",
+        "industry": "Household & Personal Products"
+      }
+    },
+    "COST": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Defensive",
+        "industry": "Discount Stores"
+      }
+    },
+    "YINN": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "china bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "GEV": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Utilities",
+        "industry": "Renewable Utilities"
+      }
+    },
+    "AMZN": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Specialty Retail"
+      }
+    },
+    "META": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Communication Services",
+        "industry": "Internet Content & Information"
+      }
+    },
+    "SOXS": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": true,
+      "note": "semiconductors BEAR 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "AMD": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": true,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "KLAC": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "HD": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Home Improvement"
+      }
+    },
+    "EWY": {
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "note": "south korea",
+      "options": {
+        "liquid": false
+      }
+    },
+    "TXN": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "NVDA": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "INTC": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "UNG": {
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "note": "natural gas",
+      "options": {
+        "liquid": false
+      }
+    },
+    "CAT": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Agricultural - Machinery"
+      }
+    },
+    "SPXS": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": true,
+      "note": "S&P500 BEAR 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "SOXL": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "semiconductors bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "TMF": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "20y treasuries bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "GOOG": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Communication Services",
+        "industry": "Internet Content & Information"
+      }
+    },
+    "TZA": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": true,
+      "note": "small caps BEAR 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "TSLA": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Auto - Manufacturers"
+      }
+    },
+    "ORCL": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      }
+    },
+    "FAZ": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": true,
+      "note": "financials BEAR 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "URA": {
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "note": "uranium",
+      "options": {
+        "liquid": false
+      }
+    },
+    "COPX": {
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "note": "copper miners",
+      "options": {
+        "liquid": false
+      }
+    },
+    "AVGO": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      }
+    },
+    "GLD": {
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "note": "gold",
+      "options": {
+        "liquid": false
+      }
+    },
+    "PLTR": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": true,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      }
+    },
+    "NAIL": {
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "note": "homebuilders bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "GOOGL": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Communication Services",
+        "industry": "Internet Content & Information"
+      }
+    },
+    "WMT": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Defensive",
+        "industry": "Discount Stores"
+      }
+    },
+    "SLV": {
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "note": "silver",
+      "options": {
+        "liquid": false
+      }
+    },
+    "NFLX": {
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Communication Services",
+        "industry": "Entertainment"
+      }
+    },
+    "NUGT": {
+      "type": "etf",
+      "leverage": 2,
+      "inverse": false,
+      "note": "gold miners bull 2x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "JNUG": {
+      "type": "etf",
+      "leverage": 2,
+      "inverse": false,
+      "note": "junior gold miners bull 2x",
+      "options": {
+        "liquid": false
+      }
+    }
+  },
+  "built": "2026-07-31T11:09:49.358117+00:00"
+}
