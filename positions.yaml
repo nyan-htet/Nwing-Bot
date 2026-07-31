@@ -1,14 +1,8 @@
 # managed by portal
 positions:
-  - ticker: GUSH
-    status: skipped
-    entry: 0
-    shares: 0
-    tp: 0
-    skipped_on: 2026-07-31
-  - ticker: GUSH
-    status: skipped
-    entry: 0
-    shares: 0
-    tp: 0
-    skipped_on: 2026-07-31
+  - ticker: V
+    status: open
+    entry: 366.23
+    shares: 1
+    tp: 410.17
+    opened: 2026-07-31
