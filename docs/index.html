@@ -31,7 +31,7 @@
 <h2>Position alerts</h2>
 <div id="posalerts"></div>
 
-<h2>⚙️ Portal — ticker rules</h2>
+<h2>⚙️ Exclusion Portal</h2>
 <div class="card">
   <div class="mut">Rules are saved to <code>overrides.yaml</code> in the repo. Needs a GitHub token (fine-grained, contents:write on this repo) — stored only in this browser.</div>
   <div class="row">
@@ -51,7 +51,7 @@
   <table id="rules_tbl"><thead><tr><th>Action</th><th>Type</th><th>Match</th><th>From</th><th>To</th><th></th></tr></thead><tbody></tbody></table>
 </div>
 
-<h2>💼 Portal — positions</h2>
+<h2>💼 Position Portal</h2>
 <div class="card">
   <div class="mut">Log fills here so the bot tracks TP / thesis-broken for you. Saved to <code>positions.yaml</code>.</div>
   <div class="row">
@@ -67,20 +67,32 @@
 <script>
 let rules = [], positions = [];
 const $ = id => document.getElementById(id);
-const hdrs = () => ({ "Authorization": "Bearer " + $("gh_token").value,
+const hdrs = () => ({ "Authorization": "Bearer " + $("gh_token").value.trim(),
                       "Accept": "application/vnd.github+json" });
 
-// remember token/repo locally in the browser only
+// remember token/repo on this device so you don't re-paste every visit
 ["gh_token","gh_repo"].forEach(k => {
-  try { $(k).value = window.sessionStorage ? "" : ""; } catch(e) {}
+  try {
+    $(k).value = localStorage.getItem("swingbot_" + k) || "";
+    $(k).addEventListener("change", () =>
+      localStorage.setItem("swingbot_" + k, $(k).value.trim()));
+  } catch(e) {}
 });
+
+function checkAuth() {
+  if (!$("gh_token").value.trim() || !$("gh_repo").value.trim()) {
+    alert("First paste your GitHub token AND user/repo (e.g. nyan-htet/Nwing-Bot) in the Exclusion Portal fields, then try again.");
+    return false;
+  }
+  return true;
+}
 
 async function loadSignals() {
   try {
     const r = await fetch("signals.json?t=" + Date.now());
     const d = await r.json();
     $("meta").textContent = "Generated " + d.generated + " • Macro: " + (d.macro?.risk||"?")
-      + " (VIX " + (d.macro?.vix||"?") + ") • " + (d.cycles?.line || "");
+      + " (SPY vol " + (d.macro?.vol||"?") + "%) • " + (d.cycles?.line || "");
     $("signals").innerHTML = (d.signals?.length ? d.signals.map((s,i) => `
       <div class="card sig"><b>${s.ticker}</b> <span class="pill">${s.setup}</span>
       <div>Suggested: entry $${s.entry} → TP $${s.tp} (+${(s.tp_pct*100).toFixed(1)}%), ${s.shares} shares ≈ $${Math.round(s.value)}</div>
@@ -136,16 +148,18 @@ function renderPos() {
          <button style="background:#2f81f7" onclick="savePos()">Save</button></td></tr>`).join("");
 }
 async function saveRules() {
+  if (!checkAuth()) return;
   try { const f = await ghGet("overrides.yaml");
     await ghPut("overrides.yaml", "# managed by portal\n" + yamlRules() + "\n", f.sha, "portal: update rules");
     renderRules(); alert("Rules saved ✓");
-  } catch(e) { alert("Save failed: " + e.message); }
+  } catch(e) { alert("Save failed: " + e.message + "\nCheck: token pasted, repo is user/repo (nyan-htet/Nwing-Bot), token has Contents read+write on this repo."); }
 }
 async function savePos() {
+  if (!checkAuth()) return;
   try { const f = await ghGet("positions.yaml");
     await ghPut("positions.yaml", "# managed by portal\n" + yamlPos() + "\n", f.sha, "portal: update positions");
     renderPos(); alert("Positions saved ✓");
-  } catch(e) { alert("Save failed: " + e.message); }
+  } catch(e) { alert("Save failed: " + e.message + "\nCheck: token pasted, repo is user/repo (nyan-htet/Nwing-Bot), token has Contents read+write on this repo."); }
 }
 function addRule() {
   rules.push({action:$("r_action").value, type:$("r_type").value, match:$("r_match").value,
