@@ -35,10 +35,6 @@
 <div class="card">
   <div class="mut">Rules are saved to <code>overrides.yaml</code> in the repo. Needs a GitHub token (fine-grained, contents:write on this repo) — stored only in this browser.</div>
   <div class="row">
-    <input id="gh_token" type="password" placeholder="GitHub token" style="flex:1">
-    <input id="gh_repo" placeholder="user/repo" >
-  </div>
-  <div class="row">
     <select id="r_action"><option>exclude</option><option>include</option></select>
     <select id="r_type"><option>ticker</option><option>sector</option><option>industry</option></select>
     <input id="r_match" placeholder="e.g. TSLA or Energy" style="flex:1">
@@ -64,6 +60,19 @@
   <table id="pos_tbl"><thead><tr><th>Ticker</th><th>Entry</th><th>Shares</th><th>TP</th><th>Status</th><th></th></tr></thead><tbody></tbody></table>
 </div>
 
+<h2>🔑 Token Portal</h2>
+<div class="card">
+  <div class="mut">One-time setup per device: paste a fine-grained GitHub token
+  (Contents: Read &amp; write on this repo only) and the repo name. Stored only in
+  this browser — the ✔ / ✖ / Add rule / Log buy buttons all use it to save.</div>
+  <div class="row">
+    <input id="gh_token" type="password" placeholder="GitHub token (github_pat_...)" style="flex:1">
+    <input id="gh_repo" placeholder="nyan-htet/Nwing-Bot">
+    <button onclick="testToken()">Test connection</button>
+  </div>
+  <div class="mut" id="tok_status"></div>
+</div>
+
 <script>
 let rules = [], positions = [];
 const $ = id => document.getElementById(id);
@@ -81,7 +90,7 @@ const hdrs = () => ({ "Authorization": "Bearer " + $("gh_token").value.trim(),
 
 function checkAuth() {
   if (!$("gh_token").value.trim() || !$("gh_repo").value.trim()) {
-    alert("First paste your GitHub token AND user/repo (e.g. nyan-htet/Nwing-Bot) in the Exclusion Portal fields, then try again.");
+    alert("Go to the Token Portal (bottom of page): paste your GitHub token and repo (nyan-htet/Nwing-Bot) first, then press the action button again.");
     return false;
   }
   return true;
@@ -160,6 +169,16 @@ async function savePos() {
     await ghPut("positions.yaml", "# managed by portal\n" + yamlPos() + "\n", f.sha, "portal: update positions");
     renderPos(); alert("Positions saved ✓");
   } catch(e) { alert("Save failed: " + e.message + "\nCheck: token pasted, repo is user/repo (nyan-htet/Nwing-Bot), token has Contents read+write on this repo."); }
+}
+async function testToken() {
+  if (!checkAuth()) return;
+  try {
+    const f = await ghGet("positions.yaml");
+    $("tok_status").textContent = "✅ Connected — repo reachable, token works.";
+  } catch(e) {
+    $("tok_status").textContent = "❌ " + e.message +
+      " — check token permissions (Contents: Read and write) and repo name.";
+  }
 }
 function addRule() {
   rules.push({action:$("r_action").value, type:$("r_type").value, match:$("r_match").value,
