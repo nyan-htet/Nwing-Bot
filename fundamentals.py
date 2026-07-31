@@ -1,67 +1,101 @@
-"""fundamentals.py — Company screen, earnings blocker, macro context.
+"""fundamentals.py — FMP-based fundamentals (free key, datacenter-friendly).
 
-All sources are free tiers. Every function degrades gracefully offline:
-if data can't be fetched, the gate PASSES with a 'no-data' note rather than
-silently blocking everything (you'll see data coverage in the dashboard).
+Design for the 250 req/day free tier:
+- ONE earnings-calendar call (date range) covers ALL tickers -> nightly
+- company screen: 2 calls per stock, run nightly, cached into watchlist.json
+- 4-hourly scans consume the cache: zero FMP requests intraday
+
+Everything degrades gracefully: no key / call fails -> neutral pass with a
+note, never a crash, never a silent block of all trades.
 """
 import datetime as dt
+import json
+import os
+import time
+import urllib.request
+
+FMP_KEY = os.getenv("FMP_KEY", "")
+_BASE_STABLE = "https://financialmodelingprep.com/stable"
+_BASE_V3 = "https://financialmodelingprep.com/api/v3"
 
 
-def company_screen(ticker: str, cfg) -> dict:
-    """Quality gate via yfinance fundamentals."""
+def _get(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    return json.loads(urllib.request.urlopen(req, timeout=20).read())
+
+
+def _fmp(path_stable, path_v3):
+    """Try the new 'stable' API first, fall back to legacy v3."""
+    for base, path in ((_BASE_STABLE, path_stable), (_BASE_V3, path_v3)):
+        if not path:
+            continue
+        try:
+            sep = "&" if "?" in path else "?"
+            out = _get(f"{base}/{path}{sep}apikey={FMP_KEY}")
+            if isinstance(out, dict) and out.get("Error Message"):
+                continue
+            return out
+        except Exception:
+            continue
+    return None
+
+
+def earnings_soon_set(days_ahead=7):
+    """One call: all symbols with earnings in the next `days_ahead` days."""
+    if not FMP_KEY:
+        return set(), "FMP_KEY not set — earnings blocker inactive"
+    today = dt.date.today()
+    to = today + dt.timedelta(days=days_ahead)
+    q = f"earnings-calendar?from={today}&to={to}"
+    data = _fmp(q, f"earning_calendar?from={today}&to={to}")
+    if not isinstance(data, list):
+        return set(), "earnings calendar unavailable on this FMP plan"
+    syms = {str(row.get("symbol", "")).upper() for row in data}
+    return syms, f"earnings calendar loaded ({len(syms)} symbols reporting)"
+
+
+def company_screen(ticker, cfg):
+    """Quality gate from FMP ratios + profile. 2 requests per ticker."""
     out = {"pass": True, "notes": []}
+    if not FMP_KEY:
+        out["notes"].append("no FMP key — screen neutral")
+        return out
     try:
-        import yfinance as yf
-        info = yf.Ticker(ticker).info
-        de = info.get("debtToEquity")
-        if de is not None and de / 100.0 > cfg.MAX_DEBT_TO_EQUITY:
+        ratios = _fmp(f"ratios-ttm?symbol={ticker}", f"ratios-ttm/{ticker}")
+        r = ratios[0] if isinstance(ratios, list) and ratios else {}
+        de = r.get("debtEquityRatioTTM") or r.get("debtToEquityTTM")
+        if de is not None and float(de) > cfg.MAX_DEBT_TO_EQUITY:
             out["pass"] = False
-            out["notes"].append(f"high debt/equity {de/100:.1f}")
-        rg = info.get("revenueGrowth")
-        if rg is not None and rg < cfg.MIN_REV_GROWTH:
+            out["notes"].append(f"high debt/equity {float(de):.1f}")
+        margin = r.get("netProfitMarginTTM")
+        if margin is not None and float(margin) < -0.20:
             out["pass"] = False
-            out["notes"].append(f"revenue shrinking {rg:.0%}")
-        mc = info.get("marketCap")
-        if mc is not None and mc < cfg.SMALLCAP_MIN_MARKETCAP:
+            out["notes"].append(f"deeply unprofitable {float(margin):.0%}")
+        time.sleep(0.3)
+        prof = _fmp(f"profile?symbol={ticker}", f"profile/{ticker}")
+        p = prof[0] if isinstance(prof, list) and prof else {}
+        mc = p.get("mktCap") or p.get("marketCap")
+        if mc is not None and float(mc) < cfg.SMALLCAP_MIN_MARKETCAP:
             out["pass"] = False
             out["notes"].append("microcap, below quality floor")
-        margins = info.get("profitMargins")
-        if margins is not None and margins < -0.20:
-            out["pass"] = False
-            out["notes"].append(f"deeply unprofitable {margins:.0%}")
-        out["pe"] = info.get("trailingPE")
-        out["sector"] = info.get("sector", "Unknown")
-        out["industry"] = info.get("industry", "Unknown")
+        out["sector"] = p.get("sector", "Unknown")
+        out["industry"] = p.get("industry", "Unknown")
     except Exception:
-        out["notes"].append("fundamentals unavailable (offline?) - not blocked")
+        out["notes"].append("FMP screen unavailable — neutral")
     return out
 
 
-def earnings_blocked(ticker: str, cfg) -> bool:
-    """True if earnings within EARNINGS_BLOCK_DAYS trading days from today."""
-    try:
-        import yfinance as yf
-        cal = yf.Ticker(ticker).calendar
-        dates = cal.get("Earnings Date") if isinstance(cal, dict) else None
-        if not dates:
-            return False
-        nxt = min(d for d in dates if d >= dt.date.today())
-        bdays = len([1 for i in range((nxt - dt.date.today()).days)
-                     if (dt.date.today() + dt.timedelta(days=i)).weekday() < 5])
-        return bdays <= cfg.EARNINGS_BLOCK_DAYS
-    except Exception:
-        return False  # no data -> don't block, but flagged in dashboard
-
-
-def macro_context() -> dict:
-    """Risk-on/off context from free sources. Simple + robust:
-    VIX level via yfinance; extend with FRED (10y yield, DXY) later."""
+def macro_context():
+    """Risk regime without extra dependencies: VIX proxy via Twelve Data if
+    available; neutral otherwise."""
     ctx = {"risk": "neutral", "vix": None}
     try:
-        import yfinance as yf
-        vix = yf.Ticker("^VIX").history(period="5d")["Close"].iloc[-1]
-        ctx["vix"] = round(float(vix), 1)
-        ctx["risk"] = "risk-off" if vix > 25 else ("risk-on" if vix < 16 else "neutral")
+        import data as _d
+        vix = _d.fetch_td(["VIX"], interval="1day", outputsize=5).get("VIX")
+        if vix is not None and len(vix):
+            v = float(vix["close"].iloc[-1])
+            ctx["vix"] = round(v, 1)
+            ctx["risk"] = "risk-off" if v > 25 else ("risk-on" if v < 16 else "neutral")
     except Exception:
         pass
     return ctx

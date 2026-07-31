@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-30T06:58:47.181948+00:00",
+  "generated": "2026-07-31T10:26:41.049417+00:00",
   "macro": {
     "risk": "neutral",
     "vix": 17.0
@@ -9,6 +9,31 @@
     "label": "neutral",
     "line": "Cycles [neutral]: month 7 avg +1.3%, presidential-cycle year 2 avg +7.5%, decade-pos 6 avg +6.9% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "TZA",
+      "setup": "pullback",
+      "entry": 152.1,
+      "tp": 170.36,
+      "tp_pct": 0.12001643467783629,
+      "shares": 3,
+      "value": 456.31473269140736,
+      "fee_pct": 0.0,
+      "trend_score": 5,
+      "adx": 79.0,
+      "rs": 0.136,
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.24 (rsi +0.4, bb +0.0, vwap +1.0, vol -0.4, opt +0.0; RSI=63.1)",
+        "options: n/a",
+        "\ud83d\udd3b THIS IS AN INVERSE ETF (3x BEAR) \u2014 buying it is a bearish bet; it profits when the underlying FALLS",
+        "(small caps BEAR 3x)"
+      ],
+      "time": "2026-07-31T10:26:40.529615+00:00"
+    }
+  ],
   "position_alerts": []
 }

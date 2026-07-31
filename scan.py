@@ -158,7 +158,11 @@ def run_hourly(offline=False):
             continue  # already opened/skipped recently, or benchmark
         tmeta = watch.get("meta", {}).get(t, {})
         is_etf = tmeta.get("type", "stock") == "etf"
-        screen = {"pass": True, "notes": []}  # fundamentals inactive on TD-only setup
+        screen = tmeta.get("screen", {"pass": True, "notes": []})
+        if not screen.get("pass", True):
+            continue  # failed nightly FMP quality screen
+        if tmeta.get("earnings_soon"):
+            continue  # earnings within 7 days — blocked per your rules
         octx = tmeta.get("options")
         sig = build_signal(t, h1, spy_daily, is_etf, screen, octx=octx, tmeta=tmeta)
         if sig:
@@ -204,10 +208,17 @@ def run_nightly():
     scored.sort(reverse=True)
     top = [t for _, t in scored[:cfg.WATCHLIST_SIZE]]
     import options_context as oc
+    earn_set, earn_note = fnd.earnings_soon_set(days_ahead=7)
+    print(earn_note)
     for t in top:
         spot = float(d[t]["close"].iloc[-1]) if t in d else 0.0
         m = dict(tmeta.get(t, {}))
         m["options"] = oc.fetch_context(t, spot) if spot else {"liquid": False}
+        if m.get("type", "stock") == "stock":
+            m["earnings_soon"] = t.upper() in earn_set
+            scr = fnd.company_screen(t, cfg)
+            m["screen"] = {"pass": scr["pass"], "notes": scr["notes"][:2],
+                           "sector": scr.get("sector"), "industry": scr.get("industry")}
         meta[t] = m
     with open(cfg.WATCHLIST_FILE, "w") as f:
         json.dump({"tickers": sorted(set(top)), "meta": meta,

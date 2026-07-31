@@ -32,8 +32,14 @@ symbol,type(etf|stock),leverage(1-4),inverse(yes|no),note
 watchlist stays under ~100 names. Requests are auto-throttled to 8/min,
 so jobs run slowly by design (nightly ~12 min, each scan ~12 min).
 
+## Fundamentals (FMP free key)
+Secret FMP_KEY (free at financialmodelingprep.com -> dashboard).
+Nightly: one earnings-calendar call for ALL tickers + 2 screening calls per
+stock (debt/equity, margins, market cap), cached into watchlist.json.
+4-hourly scans read the cache -> zero FMP quota intraday. Stocks reporting
+earnings within 7 days are blocked from new alerts; failed screens too.
+No key -> everything degrades to neutral (clearly noted in logs).
+
 ## Notes
-- Fundamentals/earnings/news screens are inactive in the TD-only setup
-  (they degrade to neutral); can be re-enabled later with an FMP key.
 - Local test: pip install pandas numpy pyyaml; python scan.py test
 - Signals are decision support, not financial advice.
