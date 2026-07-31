@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-31T14:42:27.957947+00:00",
+  "generated": "2026-07-31T18:01:14.049544+00:00",
   "macro": {
     "risk": "neutral",
     "vix": null
@@ -7,6 +7,30 @@
   "cycles": {
     "line": "cycles n/a"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "DFEN",
+      "setup": "pullback",
+      "entry": 74.82,
+      "tp": 83.75,
+      "tp_pct": 0.11935311414060412,
+      "shares": 6,
+      "value": 448.91999999999996,
+      "fee_pct": 0.0,
+      "trend_score": 4,
+      "adx": 26.8,
+      "rs": 0.226,
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.59 (rsi +1.0, bb +1.0, vwap +1.0, vol -0.4, opt +0.0; RSI=50.8)",
+        "options: n/a",
+        "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
+        "(defense bull 3x)"
+      ],
+      "time": "2026-07-31T18:01:13.723815+00:00"
+    }
+  ],
   "position_alerts": []
 }
