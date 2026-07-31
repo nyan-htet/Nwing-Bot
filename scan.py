@@ -138,6 +138,12 @@ def run_hourly(offline=False):
                              "twelvedata.com). Yahoo/keyless sources are "
                              "blocked from GitHub runners.")
         spy_daily = data.resample(spy, "1D")
+        failed = [t for t in tickers if t not in h1_map]
+        if failed:
+            print(f"Intraday data MISSING for {len(failed)} ticker(s): "
+                  f"{', '.join(sorted(failed))} — scanned the rest.")
+        else:
+            print(f"Intraday data OK for all {len(h1_map)} tickers ✓")
         long_hist = None
         try:
             import yfinance as yf
@@ -150,18 +156,32 @@ def run_hourly(offline=False):
 
     cyc = cycles.context(long_hist) if long_hist is not None else {"line": "cycles n/a"}
 
+    if not offline:
+        wanted = [t for t in tickers if t != "SPY"]
+        failed = [t for t in wanted if t not in h1_map]
+        print("---- hourly coverage report ----")
+        print(f"watchlist        : {len(wanted)}")
+        print(f"no 1h data       : {len(failed)}" + (f" -> {', '.join(failed)}" if failed else ""))
+        print("--------------------------------")
+
     # --- scan ---
     decided = pf.recently_decided(cfg.POSITIONS_FILE, cfg.ALERT_COOLDOWN_DAYS)
+    skip_report = {"cooldown": [], "earnings": [], "screen": []}
     signals = []
     for t, h1 in h1_map.items():
-        if t.upper() in decided or t == "SPY":
-            continue  # already opened/skipped recently, or benchmark
+        if t == "SPY":
+            continue
+        if t.upper() in decided:
+            skip_report["cooldown"].append(t)
+            continue
         tmeta = watch.get("meta", {}).get(t, {})
         is_etf = tmeta.get("type", "stock") == "etf"
         screen = tmeta.get("screen", {"pass": True, "notes": []})
         if not screen.get("pass", True):
+            skip_report["screen"].append(t)
             continue  # failed nightly FMP quality screen
         if tmeta.get("earnings_soon"):
+            skip_report["earnings"].append(t)
             continue  # earnings within 7 days — blocked per your rules
         octx = tmeta.get("options")
         sig = build_signal(t, h1, spy_daily, is_etf, screen, octx=octx, tmeta=tmeta)
@@ -183,6 +203,9 @@ def run_hourly(offline=False):
         notify.send_email("Position alert", m, cfg)
         notify.send_telegram(m, cfg)
     publish(signals, pos_msgs, macro, cyc)
+    for k, v in skip_report.items():
+        if v:
+            print(f"blocked ({k}): {', '.join(sorted(v))}")
     print(f"Scan done. {len(signals)} signal(s), {len(pos_msgs)} position alert(s). "
           f"Dashboard data -> {cfg.SIGNALS_FILE}")
     return signals, pos_msgs
@@ -199,14 +222,29 @@ def run_nightly():
         raise SystemExit("FATAL: no SPY data from Twelve Data — check "
                          "TWELVEDATA_KEY secret and quota, then re-run.")
     scored, meta = [], {}
+    no_data = [t for t in tickers if t not in d]
+    short_history = []
     for t, df in d.items():
-        if t == "SPY" or len(df) < 120:
+        if t == "SPY":
+            continue
+        if len(df) < 120:
+            short_history.append(t)
             continue
         tr = analysis.daily_trend(df, spy, cfg)
         # keep everything with data; rank by trend so hourly scans strongest first
         scored.append((tr["score"] + tr["rs"], t))
     scored.sort(reverse=True)
     top = [t for _, t in scored[:cfg.WATCHLIST_SIZE]]
+    cut = [t for _, t in scored[cfg.WATCHLIST_SIZE:]]
+    print("---- nightly coverage report ----")
+    print(f"csv tickers      : {len(tickers)}")
+    print(f"benchmark (excl) : SPY")
+    print(f"no data from TD  : {len(no_data)}" + (f" -> {', '.join(no_data)}" if no_data else ""))
+    print(f"history < 120d   : {len(short_history)}" + (f" -> {', '.join(short_history)}" if short_history else ""))
+    if cut:
+        print(f"over watchlist cap: {len(cut)} -> {', '.join(cut)}")
+    print(f"in watchlist     : {len(top)}")
+    print("---------------------------------")
     import options_context as oc
     earn_set, earn_note = fnd.earnings_soon_set(days_ahead=7)
     print(earn_note)
@@ -224,6 +262,21 @@ def run_nightly():
         json.dump({"tickers": sorted(set(top)), "meta": meta,
                    "built": dt.datetime.now(dt.timezone.utc).isoformat()}, f, indent=2)
     print(f"Watchlist built from tickers.csv: {len(set(top))} of {len(tickers)} tickers")
+    # ---- accounting: name every ticker that is NOT in the watchlist and why ----
+    in_watch = set(top)
+    no_data = [t for t in tickers if t not in d and t != "SPY"]
+    too_short = [t for t in d if t != "SPY" and len(d[t]) < 120 and t not in in_watch]
+    capped = [t for t in d if t != "SPY" and t not in in_watch
+              and t not in no_data and t not in too_short]
+    print(f"Excluded — benchmark (by design): SPY")
+    if no_data:
+        print(f"Excluded — NO DATA from Twelve Data: {', '.join(sorted(no_data))}")
+    if too_short:
+        print(f"Excluded — insufficient history (<120 daily bars): {', '.join(sorted(too_short))}")
+    if capped:
+        print(f"Excluded — below watchlist size cap ({cfg.WATCHLIST_SIZE}): {', '.join(sorted(capped))}")
+    if not (no_data or too_short or capped):
+        print("All non-benchmark tickers made the watchlist ✓")
 
 
 if __name__ == "__main__":
