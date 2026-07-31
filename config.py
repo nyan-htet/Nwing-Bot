@@ -67,10 +67,10 @@ SIGNALS_FILE = "docs/signals.json"   # docs/ is published by GitHub Pages
 # ---- Notifications (set real values via GitHub Secrets / env vars) ----
 import os
 SMTP_HOST = os.getenv("SMTP_HOST", "")
-SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+SMTP_PORT = int(os.getenv("SMTP_PORT") or "587")   # tolerates empty secret
 SMTP_USER = os.getenv("SMTP_USER", "")
 SMTP_PASS = os.getenv("SMTP_PASS", "")
 EMAIL_TO = os.getenv("EMAIL_TO", "")
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
-DRY_RUN = os.getenv("DRY_RUN", "1") == "1"   # 1 = print alerts, don't send
+DRY_RUN = (os.getenv("DRY_RUN") or "1") == "1"   # 1 = print alerts, don't send
