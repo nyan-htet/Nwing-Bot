@@ -1,7 +1,3 @@
-# Include/exclude rules (editable via portal). Examples:
+# managed by portal
 rules:
-  - action: exclude
-    match: TSLA
-    type: ticker
-    from: 2026-01-01
-    to: 2026-12-31
+  []
