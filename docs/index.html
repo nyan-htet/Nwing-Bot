@@ -208,7 +208,8 @@ function renderPos() {
      <td><input type="number" step="0.01" value="${p.tp}" style="width:85px" onchange="positions[${i}].tp=this.value"></td>
      <td>${p.status}${p.status==="closed" ? ` @ <input type="number" step="0.01" value="${p.exit||""}" style="width:85px" onchange="positions[${i}].exit=this.value">` : ""}</td>
      <td>${p.status==="open" ? `<button onclick="closePos(${i})">Close</button> `:""}
-         <button style="background:#2f81f7" onclick="savePos()">Save</button></td></tr>`).join("");
+         <button style="background:#2f81f7" onclick="savePos()">Save</button>
+         <button style="background:#da3633" onclick="deletePos(${i})">Delete</button></td></tr>`).join("");
 }
 async function saveRules() {
   if (!checkAuth()) return;
@@ -245,16 +246,27 @@ function logAction(ticker, action, entry="", shares="", tp="", exitp="") {
   ghAppendCsv("actions_log.csv", ACT_HEADER,
     [d, ticker, action, entry, shares, tp, exitp].join(",")).catch(()=>{});
 }
+function hasActive(ticker) {
+  return positions.some(p => p.ticker === ticker && (p.status === "open" || p.status === "skipped"));
+}
 function logFill(ticker, i) {
+  if (hasActive(ticker)) { alert(ticker + " is already in your Position Portal — edit that row instead."); return; }
   const e = $(`f_entry_${i}`).value, sh = $(`f_shares_${i}`).value, tp = $(`f_tp_${i}`).value;
   positions.push({ticker, entry:e, shares:sh, tp:tp, status:"open",
     opened: new Date().toISOString().slice(0,10)});
   savePos(); logAction(ticker, "entered", e, sh, tp);
 }
 function skipSignal(ticker) {
+  if (hasActive(ticker)) { alert(ticker + " is already logged — nothing to do."); return; }
   positions.push({ticker, entry:0, shares:0, tp:0, status:"skipped",
     skipped_on: new Date().toISOString().slice(0,10)});
   savePos(); logAction(ticker, "skipped");
+}
+function deletePos(i) {
+  const p = positions[i];
+  if (!confirm("Delete " + p.ticker + " (" + p.status + ") from the record entirely?")) return;
+  positions.splice(i, 1);
+  savePos(); logAction(p.ticker, "deleted", p.entry, p.shares, p.tp, p.exit || "");
 }
 function closePos(i) {
   const p = positions[i];
@@ -263,7 +275,10 @@ function closePos(i) {
   savePos(); logAction(p.ticker, "closed", p.entry, p.shares, p.tp, p.exit || "");
 }
 function addPos() {
-  positions.push({ticker:$("p_ticker").value.toUpperCase(), entry:$("p_entry").value,
+  const t = $("p_ticker").value.toUpperCase();
+  if (!t) { alert("Enter a ticker first."); return; }
+  if (hasActive(t)) { alert(t + " is already in the table — edit that row instead."); return; }
+  positions.push({ticker:t, entry:$("p_entry").value,
     shares:$("p_shares").value, tp:$("p_tp").value, status:"open",
     opened: new Date().toISOString().slice(0,10)});
   savePos();
