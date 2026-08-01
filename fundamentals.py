@@ -85,17 +85,18 @@ def company_screen(ticker, cfg):
     return out
 
 
-def macro_context():
-    """Risk regime without extra dependencies: VIX proxy via Twelve Data if
-    available; neutral otherwise."""
-    ctx = {"risk": "neutral", "vix": None}
+def macro_context(spy_daily=None):
+    """Risk regime from SPY's own realized volatility (annualized 20d).
+    No extra API calls; VIX isn't on TD's free tier. Rough mapping:
+    realized vol > 22% ~ stressed, < 13% ~ calm."""
+    ctx = {"risk": "neutral", "vol": None}
     try:
-        import data as _d
-        vix = _d.fetch_td(["VIX"], interval="1day", outputsize=5).get("VIX")
-        if vix is not None and len(vix):
-            v = float(vix["close"].iloc[-1])
-            ctx["vix"] = round(v, 1)
-            ctx["risk"] = "risk-off" if v > 25 else ("risk-on" if v < 16 else "neutral")
+        if spy_daily is not None and len(spy_daily) > 25:
+            r = spy_daily["close"].pct_change().dropna()
+            vol = float(r.iloc[-20:].std() * (252 ** 0.5))
+            ctx["vol"] = round(vol * 100, 1)
+            ctx["risk"] = ("risk-off" if vol > 0.22
+                           else "risk-on" if vol < 0.13 else "neutral")
     except Exception:
         pass
     return ctx

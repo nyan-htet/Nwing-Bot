@@ -14,7 +14,7 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
         f"  (fees {sig['fee_pct']:.1%} of expected profit)",
         f"Why: {', '.join(sig['reasons'])}",
         f"Daily trend score {sig['trend_score']}/5 | ADX {sig['adx']} | RS vs SPY {sig['rs']:+.1%}",
-        f"Macro: {macro.get('risk')} (VIX {macro.get('vix')})",
+        f"Macro: {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)",
         cyc.get("line", ""),
         "No stoploss per your rules — thesis-broken alerts will monitor this position.",
     ]

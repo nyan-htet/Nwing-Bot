@@ -1,35 +1,38 @@
 {
-  "generated": "2026-07-31T18:01:14.049544+00:00",
+  "generated": "2026-07-31T13:06:43.013429+00:00",
   "macro": {
     "risk": "neutral",
-    "vix": null
+    "vix": 17.0
   },
   "cycles": {
-    "line": "cycles n/a"
+    "score": -0.1,
+    "label": "neutral",
+    "line": "Cycles [neutral]: month 7 avg +1.3%, presidential-cycle year 2 avg +7.5%, decade-pos 6 avg +6.9% (informative only)"
   },
   "signals": [
     {
-      "ticker": "DFEN",
+      "ticker": "TZA",
       "setup": "pullback",
-      "entry": 74.82,
-      "tp": 83.75,
-      "tp_pct": 0.11935311414060412,
-      "shares": 6,
-      "value": 448.91999999999996,
+      "entry": 152.1,
+      "tp": 170.36,
+      "tp_pct": 0.12001643467783629,
+      "shares": 3,
+      "value": 456.31473269140736,
       "fee_pct": 0.0,
-      "trend_score": 4,
-      "adx": 26.8,
-      "rs": 0.226,
+      "trend_score": 5,
+      "adx": 79.0,
+      "rs": 0.136,
       "reasons": [
-        "daily uptrend (score 4/5)",
+        "daily uptrend (score 5/5)",
         "4h pullback",
         "1h momentum trigger",
-        "quality +0.59 (rsi +1.0, bb +1.0, vwap +1.0, vol -0.4, opt +0.0; RSI=50.8)",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.24 (rsi +0.4, bb +0.0, vwap +1.0, vol -0.4, opt +0.0; RSI=63.1)",
         "options: n/a",
-        "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
-        "(defense bull 3x)"
+        "\ud83d\udd3b THIS IS AN INVERSE ETF (3x BEAR) \u2014 buying it is a bearish bet; it profits when the underlying FALLS",
+        "(small caps BEAR 3x)"
       ],
-      "time": "2026-07-31T18:01:13.723815+00:00"
+      "time": "2026-07-31T13:06:42.288881+00:00"
     }
   ],
   "position_alerts": []
