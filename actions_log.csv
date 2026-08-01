@@ -1,2 +1,3 @@
 date,ticker,action,entry,shares,tp,exit
 2026-08-01,GUSH,entered,40.2,12,48.66,
+2026-08-01,GUSH,deleted,40.2,12,48.66,
