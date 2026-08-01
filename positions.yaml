@@ -7,8 +7,9 @@ positions:
     tp: 48.66
     opened: 2026-08-01
   - ticker: GUSH
-    status: open
+    status: closed
     entry: 40.2
     shares: 12
     tp: 48.66
     opened: 2026-08-01
+    closed_on: 2026-08-01
