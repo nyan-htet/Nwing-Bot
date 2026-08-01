@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01T08:54:53.683979+00:00",
+  "generated": "2026-08-01T13:30:09.707336+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 12.6
@@ -9,30 +9,6 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 8 avg +0.2%, presidential-cycle year 2 avg +1.6%, decade-pos 6 avg +9.6% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "GUSH",
-      "setup": "pullback",
-      "entry": 40.2,
-      "tp": 48.66,
-      "tp_pct": 0.21044776119402964,
-      "shares": 12,
-      "value": 482.40000000000003,
-      "fee_pct": 0.0,
-      "trend_score": 3,
-      "adx": 33.3,
-      "rs": -0.057,
-      "reasons": [
-        "daily uptrend (score 3/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.24 (rsi +0.4, bb +0.0, vwap +1.0, vol -0.4, opt +0.0; RSI=65.5)",
-        "options: n/a",
-        "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
-        "(oil gas E&P bull 2x)"
-      ],
-      "time": "2026-08-01T08:54:52.222676+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
