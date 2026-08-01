@@ -1,33 +1,34 @@
 """check_symbols.py — Verify ticker availability on Twelve Data (free tier).
 
-Usage:  TWELVEDATA_KEY=yourkey python check_symbols.py
-Or run the 'check-symbols' workflow on GitHub (uses the repo secret).
+Usage:
+  TWELVEDATA_KEY=yourkey python check_symbols.py          # check ALL tickers.csv
+  TWELVEDATA_KEY=yourkey python check_symbols.py sp500    # only category=sp500 rows
+  TWELVEDATA_KEY=yourkey python check_symbols.py AAPL,MSFT  # specific symbols
 
-Requests one 1h candle per symbol (cheapest possible probe), throttled to
-free-tier limits. Prints AVAILABLE / MISSING lists at the end.
+Probes one 1h candle per symbol (cheapest possible), throttled to free-tier
+limits (~8s per symbol). QUOTA WARNING: every probe costs 1 of your 800/day
+Twelve Data requests — checking all 554 costs 554 requests AND ~75 minutes.
+Prefer the category or explicit-symbol modes.
 """
+import csv
 import json
 import os
+import sys
 import time
 import urllib.request
 
 KEY = os.getenv("TWELVEDATA_KEY", "")
 
-ETFS = ["UNG", "USO", "ERX", "COPX", "URA", "EWY", "TZA", "JDST", "SOXS",
-        "SPXS", "FAZ", "SLV", "NUGT", "YINN", "TMF", "TNA", "NAIL", "GUSH",
-        "GLD", "SOXL", "FAS", "DFEN", "JNUG", "DPST", "LABU", "TECL", "SPYU"]
-# Note: "Natgas" mapped to UNG and "oil" to USO — confirm these are the ones
-# you want, or swap for BOIL (2x natgas) / others.
 
-STOCKS = ["NVDA", "AAPL", "MSFT", "AMZN", "GOOGL", "GOOG", "AVGO", "META",
-          "TSLA", "BRK.B", "LLY", "MU", "JPM", "WMT", "AMD", "V", "XOM",
-          "JNJ", "MA", "INTC", "ABBV", "CSCO", "BAC", "COST", "AMAT", "LRCX",
-          "CVX", "UNH", "KO", "ORCL", "CAT", "GE", "PG", "HD", "MS", "MRK",
-          "GS", "NFLX", "PM", "PLTR", "RTX", "PANW", "GEV", "DELL", "WFC",
-          "TXN", "KLAC", "LIN", "AXP", "C"]
-# Note: BRK-B is written BRK.B on Twelve Data; checker tries both.
-
-BENCH = ["SPY"]
+def load_targets():
+    arg = sys.argv[1].strip() if len(sys.argv) > 1 else ""
+    rows = list(csv.DictReader(open("tickers.csv")))
+    if "," in arg or (arg and arg.upper() == arg and "," not in arg and len(arg) <= 6 and arg not in {c["category"] for c in rows if "category" in c}):
+        # explicit symbol list
+        return [s.strip().upper() for s in arg.split(",") if s.strip()]
+    if arg:  # category filter, e.g. sp500
+        return [r["symbol"] for r in rows if r.get("category", "") == arg]
+    return [r["symbol"] for r in rows]
 
 
 def probe(symbol):
@@ -46,7 +47,7 @@ def main():
     if not KEY:
         raise SystemExit("Set TWELVEDATA_KEY first.")
     available, missing = [], []
-    todo = BENCH + ETFS + STOCKS
+    todo = load_targets()
     print(f"Probing {len(todo)} symbols (~8s each on free tier)…\n")
     for s in todo:
         ok, msg = probe(s)
