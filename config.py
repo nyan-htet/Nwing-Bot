@@ -17,7 +17,7 @@ ETF_TICKERS = ["GLD", "SPY", "QQQ", "IWM"]
 # Stock universe is built nightly (S&P 500 + Russell 2000 via universe source);
 # for local testing, SAMPLE_TICKERS is used.
 SAMPLE_TICKERS = ["AAPL", "MSFT", "NVDA", "MU", "AMD", "JPM", "XOM", "CAT"]
-WATCHLIST_SIZE = 38            # quota-fit: 554 nightly + 6 scans x ~40 = ~794/800 TD req/day
+WATCHLIST_SIZE = 120           # Grow plan (no daily limits): wide intraday spotlight
 
 # ---- Technical settings ----
 EMA_FAST = 20

@@ -137,8 +137,8 @@ TD_KEY = _os.getenv("TWELVEDATA_KEY", "")
 _TD_LAST = [0.0]
 
 
-def _td_throttle(min_interval=8.0):
-    """Free tier: 8 req/min. Space requests ~8s apart."""
+def _td_throttle(min_interval=1.2):
+    """Grow plan: 55 req/min. ~1.2s spacing stays safely under the rate cap."""
     import time
     wait = _TD_LAST[0] + min_interval - time.time()
     if wait > 0:
