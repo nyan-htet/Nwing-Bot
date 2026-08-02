@@ -1,3 +1,8 @@
 # managed by portal
 positions:
-  []
+  - ticker: S
+    status: skipped
+    entry: 0
+    shares: 0
+    tp: 0
+    skipped_on: 2026-08-02
