@@ -7,15 +7,35 @@ Levels : TP at resistance, must be >= MIN_TP_PCT above entry. No stoploss —
          instead a 'thesis broken' monitor for open positions.
 Long-only by design.
 """
+import pandas as pd
+
 import indicators as ind
+
+
+def trend_duration(d) -> tuple[str, int]:
+    """Current daily regime and how many WEEKS it has persisted.
+    Uptrend = EMA20 > EMA50; downtrend = EMA20 < EMA50."""
+    up = (d["ema_f"] > d["ema_s"]).values
+    if len(up) == 0:
+        return "unknown", 0
+    cur = bool(up[-1])
+    n = 0
+    for v in up[::-1]:
+        if bool(v) != cur:
+            break
+        n += 1
+    return ("uptrend" if cur else "downtrend"), max(1, round(n / 5))
 
 
 def daily_trend(daily, spy_daily, cfg) -> dict:
     d = daily.copy()
     d["ema_f"] = ind.ema(d["close"], cfg.EMA_FAST)
     d["ema_s"] = ind.ema(d["close"], cfg.EMA_SLOW)
+    d["ema_200"] = ind.ema(d["close"], 200)
     d["adx"] = ind.adx(d, cfg.ADX_PERIOD)
     last = d.iloc[-1]
+    regime, weeks = trend_duration(d)
+    above_200 = bool(last.close > last.ema_200) if not pd.isna(last.ema_200) else None
     hi52 = d["high"].iloc[-252:].max() if len(d) >= 60 else d["high"].max()
     rs = ind.relative_strength(d["close"], spy_daily["close"], cfg.RS_LOOKBACK)
     uptrend = bool(last.ema_f > last.ema_s and last.close > last.ema_s)
@@ -26,6 +46,11 @@ def daily_trend(daily, spy_daily, cfg) -> dict:
     return {"uptrend": uptrend, "strong": strong, "rs": round(rs, 3),
             "near_52w_high": near_high, "higher_highs": higher_highs,
             "adx": round(float(last.adx), 1), "score": score,
+            "regime": regime, "regime_weeks": weeks,
+            "ema20": round(float(last.ema_f), 2),
+            "ema50": round(float(last.ema_s), 2),
+            "ema200": (round(float(last.ema_200), 2) if not pd.isna(last.ema_200) else None),
+            "above_ema200": above_200,
             "runner": uptrend and strong and rs > 0 and near_high}
 
 

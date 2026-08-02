@@ -152,13 +152,14 @@ def run(years=8, max_stocks=None, include_etfs=True):
                          "and that the plan allows daily history.")
     print(f"Downloaded {len(raw)} of {len(tickers)} tickers "
           f"(failed: {', '.join(t for t in tickers if t not in raw) or 'none'})")
-    spy = spy.set_index("time")
+    spy = spy.drop_duplicates(subset="time").sort_values("time").set_index("time")
 
     prepped = {}
     for t, df in raw.items():
         if t == "SPY" or len(df) < 300:
             continue      # SPY = benchmark only, never traded
-        prepped[t] = prep(df).set_index("time")
+        d_ = df.drop_duplicates(subset="time").sort_values("time")
+        prepped[t] = prep(d_).set_index("time")
     print(f"Usable tickers: {len(prepped)}")
     globals()["RUN_INFO"] = {"stocks": len(stocks), "etfs": len(etfs),
                              "tested": len(prepped), "years": years,
@@ -180,6 +181,8 @@ def run(years=8, max_stocks=None, include_etfs=True):
             if day not in d.index:
                 continue
             i = d.index.get_loc(day)
+            if not isinstance(i, (int, np.integer)):
+                i = int(np.atleast_1d(np.arange(len(d))[i])[-1])
             row, p = d.iloc[i], open_pos[t]
             exit_px = reason = None
             if row.high >= p["tp"]:
@@ -206,6 +209,8 @@ def run(years=8, max_stocks=None, include_etfs=True):
                 if t in open_pos or day not in d.index:
                     continue
                 i = d.index.get_loc(day)
+                if not isinstance(i, (int, np.integer)):
+                    i = int(np.atleast_1d(np.arange(len(d))[i])[-1])
                 if i < 260:
                     continue
                 row = d.iloc[i]

@@ -21,12 +21,22 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
         f"Fees        : {sig['fee_pct']:.1%} of expected profit",
         "",
         "═══ TECHNICAL ANALYSIS ═══",
-        f"Daily trend : {sig['trend_score']}/5" + ("  ⭐ RUNNER (near 52w high, beating SPY)" if sig.get("runner") else ""),
-        f"ADX         : {sig['adx']} (trend strength)",
-        f"RS vs SPY   : {sig['rs']:+.1%}",
-        f"Quality     : {sig.get('quality', '')} — rsi {qd.get('rsi', '?')}, bollinger {qd.get('bollinger', '?')}, "
-        f"vwap {qd.get('vwap', '?')}, volume {qd.get('volume', '?')}, options {qd.get('options', '?')}",
-        f"RSI (4h)    : {sig.get('rsi', '?')}",
+        f"Daily regime          : {str(sig.get('regime','?')).upper()} for ~{sig.get('regime_weeks','?')} weeks"
+        + (" — price ABOVE 200 EMA (long-term bullish)" if sig.get("above_ema200")
+           else " — price BELOW 200 EMA (long-term caution)" if sig.get("above_ema200") is False else ""),
+        f"Trend score           : {sig['trend_score']}/5"
+        + ("  ⭐ RUNNER (near 52-week high + outperforming SPY)" if sig.get("runner") else ""),
+        f"Moving averages       : 20 EMA ${sig.get('ema20','?')} | 50 EMA ${sig.get('ema50','?')} | 200 EMA ${sig.get('ema200','?')}",
+        f"ADX (Average Directional Index, trend strength) : {sig['adx']}",
+        f"Relative Strength (RS) vs SPY, 3-month          : {sig['rs']:+.1%}",
+        f"RSI (Relative Strength Index, 4-hour)           : {sig.get('rsi', '?')}"
+        + ("  [40-60 = healthy pullback zone]" if isinstance(sig.get('rsi'), (int, float)) and 40 <= sig['rsi'] <= 60 else ""),
+        f"Quality score         : {sig.get('quality', '')}",
+        f"  • RSI (momentum)               : {qd.get('rsi', '?')}",
+        f"  • Bollinger Bands (volatility) : {qd.get('bollinger', '?')}",
+        f"  • VWAP (Volume-Weighted Avg Price) : {qd.get('vwap', '?')}",
+        f"  • Volume (participation)       : {qd.get('volume', '?')}",
+        f"  • Options positioning          : {qd.get('options', '?')}",
         "",
         "═══ FUNDAMENTAL & MACRO ═══",
         f"Macro       : {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)",
