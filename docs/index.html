@@ -124,7 +124,9 @@ function renderSignals() {
       <div class="card sig"><b>${s.ticker}</b>${s.name ? " — " + s.name : ""} <span class="pill">${s.setup}</span>${(s.sector && s.sector !== "Unknown") ? ` <span class="pill">${s.sector}</span>` : ""}
       <div>Suggested: entry $${s.entry} → TP $${s.tp} (+${(s.tp_pct*100).toFixed(1)}%), ${s.shares} shares ≈ $${Math.round(s.value)}</div>
       <div><b>eToro TP (P/L amount): $<span id="pl_${i}">${(s.pl_amount ?? ((s.tp - s.entry) * s.shares)).toFixed(2)}</span></b> <span class="mut">— set this in eToro's Take Profit box</span></div>
-      <div class="mut"><b>Technical:</b> trend ${s.trend_score}/5${s.runner ? " ⭐RUNNER" : ""} • ADX ${s.adx} • RS vs SPY ${(s.rs*100).toFixed(1)}% • quality ${s.quality ?? ""} • RSI(4h) ${s.rsi ?? ""}</div>
+      <div class="mut"><b>Daily regime:</b> ${(s.regime||"?").toUpperCase()} for ~${s.regime_weeks ?? "?"} weeks${s.above_ema200 === true ? " • above 200 EMA" : s.above_ema200 === false ? " • below 200 EMA" : ""}</div>
+      <div class="mut"><b>Technical:</b> trend ${s.trend_score}/5${s.runner ? " ⭐RUNNER" : ""} • ADX (trend strength) ${s.adx} • Relative Strength (RS) vs SPY ${(s.rs*100).toFixed(1)}% • RSI(4h) ${s.rsi ?? ""} • quality ${s.quality ?? ""}</div>
+      <div class="mut"><b>EMAs:</b> 20 $${s.ema20 ?? "?"} | 50 $${s.ema50 ?? "?"} | 200 $${s.ema200 ?? "?"}</div>
       <div class="mut"><b>Notes:</b> ${(s.warnings && s.warnings.length) ? s.warnings.join(" • ") : "no warnings"}${s.options_note && s.options_note !== "options: n/a" ? " • " + s.options_note : ""}</div>
       <div class="row mut">My actual fill (correct for spread / your size) — P/L amount updates live:</div>
       <div class="row">
