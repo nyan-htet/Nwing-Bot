@@ -28,6 +28,8 @@ import data
 import indicators as ind
 import universe
 
+RUN_INFO = {}
+
 # ---- portfolio rules for the simulation ----
 START_EQUITY = 10_000.0
 POSITION_PCT = cfg.POSITION_PCT          # 5% of equity per trade
@@ -114,25 +116,53 @@ def thesis_broken_at(d, i):
     return bool(row.close < row.ema_s and lower_low)
 
 
-def run(years=8, max_tickers=None):
-    tickers, meta = universe.load()
-    if max_tickers:
-        tickers = tickers[:max_tickers]
+def run(years=8, max_stocks=None, include_etfs=True):
+    """max_stocks: how many STOCKS to test (0 = none, blank/None = all).
+    include_etfs: test the ETF rows from tickers.csv too.
+    SPY is always downloaded as the benchmark (never traded)."""
+    all_tickers, meta = universe.load()
+    stocks = [t for t in all_tickers
+              if meta.get(t, {}).get("type") != "etf" and t != "SPY"]
+    etfs = [t for t in all_tickers
+            if meta.get(t, {}).get("type") == "etf" and t != "SPY"]
+
+    if max_stocks is not None:
+        if max_stocks <= 0:
+            stocks = []
+        elif max_stocks < len(stocks):
+            step = max(1, len(stocks) // max_stocks)
+            stocks = stocks[::step][:max_stocks]
+    if not include_etfs:
+        etfs = []
+
+    tickers = ["SPY"] + sorted(set(stocks + etfs))   # benchmark mandatory
+    print(f"Universe: {len(stocks)} stocks + {len(etfs)} ETFs "
+          f"(+SPY benchmark) | ETFs {'included' if include_etfs else 'excluded'}")
     n_bars = int(years * 252) + 300
 
     print(f"Downloading daily history for {len(tickers)} tickers…")
     raw = data.fetch_td(tickers, interval="1day", outputsize=min(n_bars, 5000))
     spy = raw.get("SPY")
+    if spy is None:                           # retry benchmark alone
+        print("SPY missing from batch — retrying on its own…")
+        spy = data.fetch_td(["SPY"], interval="1day",
+                            outputsize=min(n_bars, 5000)).get("SPY")
     if spy is None:
-        raise SystemExit("No SPY data — check TWELVEDATA_KEY.")
+        raise SystemExit("No SPY data from Twelve Data — check TWELVEDATA_KEY "
+                         "and that the plan allows daily history.")
+    print(f"Downloaded {len(raw)} of {len(tickers)} tickers "
+          f"(failed: {', '.join(t for t in tickers if t not in raw) or 'none'})")
     spy = spy.set_index("time")
 
     prepped = {}
     for t, df in raw.items():
         if t == "SPY" or len(df) < 300:
-            continue
+            continue      # SPY = benchmark only, never traded
         prepped[t] = prep(df).set_index("time")
     print(f"Usable tickers: {len(prepped)}")
+    globals()["RUN_INFO"] = {"stocks": len(stocks), "etfs": len(etfs),
+                             "tested": len(prepped), "years": years,
+                             "include_etfs": include_etfs}
 
     # unified calendar
     all_days = sorted(set().union(*[set(d.index) for d in prepped.values()]))
@@ -263,6 +293,7 @@ def summarize(curve, closed, days):
         "period": f"{ec.index[0].date()} to {ec.index[-1].date()}",
     }
     payload = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(),
+               "universe": RUN_INFO,
                "note": "Daily-bar approximation of the live strategy (no 1h trigger / VWAP).",
                "stats": stats, "yearly_pct": yearly, "monthly_pct": monthly,
                "equity_curve": [[str(t.date()), round(float(v), 2)] for t, v in
@@ -293,6 +324,12 @@ def summarize(curve, closed, days):
 
 
 if __name__ == "__main__":
-    yrs = float(sys.argv[1]) if len(sys.argv) > 1 else 8
-    mx = int(sys.argv[2]) if len(sys.argv) > 2 else None
-    run(yrs, mx)
+    # args: [years] [max_stocks] [include_etfs yes/no]
+    yrs = float(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].strip() else 8
+    mx = None
+    if len(sys.argv) > 2 and str(sys.argv[2]).strip() != "":
+        mx = int(sys.argv[2])
+    inc = True
+    if len(sys.argv) > 3 and str(sys.argv[3]).strip() != "":
+        inc = str(sys.argv[3]).strip().lower() in ("yes", "y", "true", "1")
+    run(yrs, mx, inc)
