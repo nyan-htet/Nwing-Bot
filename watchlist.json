@@ -131,6 +131,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "Altus Power, Inc.",
       "screen": {
         "pass": true,
         "notes": [],
@@ -147,6 +148,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "Aptorum Group Limited",
       "screen": {
         "pass": false,
         "notes": [
@@ -165,6 +167,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "Fortinet, Inc.",
       "screen": {
         "pass": true,
         "notes": [],
@@ -181,6 +184,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "Qualys, Inc.",
       "screen": {
         "pass": true,
         "notes": [],
@@ -197,6 +201,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "IQVIA Holdings Inc.",
       "screen": {
         "pass": true,
         "notes": [],
@@ -213,6 +218,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "Enova International, Inc.",
       "screen": {
         "pass": true,
         "notes": [],
@@ -229,11 +235,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Specialty Retail"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CRL": {
@@ -245,11 +252,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DLTR": {
@@ -261,11 +269,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Discount Stores"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DOC": {
@@ -277,11 +286,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BSET": {
@@ -293,13 +303,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
-        "pass": false,
-        "notes": [
-          "microcap, below quality floor"
-        ],
-        "sector": "Consumer Cyclical",
-        "industry": "Furnishings, Fixtures & Appliances"
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TECH": {
@@ -311,11 +320,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Biotechnology"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CNXN": {
@@ -327,11 +337,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Technology Distributors"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MPC": {
@@ -343,11 +354,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Energy",
-        "industry": "Oil & Gas Refining & Marketing"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SKYW": {
@@ -359,11 +371,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "S": {
@@ -375,11 +388,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BIO": {
@@ -391,11 +405,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Devices"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "VLO": {
@@ -407,11 +422,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Energy",
-        "industry": "Oil & Gas Refining & Marketing"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CYBR": {
@@ -423,11 +439,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MNST": {
@@ -439,11 +456,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Beverages - Non-Alcoholic"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HMC": {
@@ -455,11 +473,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Auto - Manufacturers"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "JBLU": {
@@ -471,11 +490,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PRU": {
@@ -487,11 +507,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Life"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "RTX": {
@@ -503,11 +524,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MMM": {
@@ -519,11 +541,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Conglomerates"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "INCY": {
@@ -535,11 +558,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Biotechnology"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SJM": {
@@ -551,11 +575,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Packaged Foods"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TRV": {
@@ -567,11 +592,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Property & Casualty"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TMO": {
@@ -583,11 +609,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ALL": {
@@ -599,11 +626,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Property & Casualty"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ABBV": {
@@ -615,11 +643,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "STT": {
@@ -631,11 +660,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "GRMN": {
@@ -647,11 +677,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Hardware, Equipment & Parts"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DGX": {
@@ -663,11 +694,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "LH": {
@@ -679,11 +711,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CTAS": {
@@ -695,11 +728,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Specialty Business Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MET": {
@@ -711,11 +745,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Life"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NTCT": {
@@ -727,11 +762,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "IMMR": {
@@ -743,13 +779,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
-        "pass": false,
-        "notes": [
-          "microcap, below quality floor"
-        ],
-        "sector": "Technology",
-        "industry": "Software - Application"
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BXP": {
@@ -761,11 +796,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Office"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "GM": {
@@ -777,11 +813,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Auto - Manufacturers"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EXPE": {
@@ -793,11 +830,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Travel Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BK": {
@@ -809,11 +847,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Investment - Banking & Investment Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AMP": {
@@ -825,11 +864,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AMGN": {
@@ -841,11 +881,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CNC": {
@@ -857,11 +898,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Healthcare Plans"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "GPN": {
@@ -873,11 +915,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MRK": {
@@ -889,11 +932,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HSBC": {
@@ -905,11 +949,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AON": {
@@ -921,11 +966,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Brokers"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MA": {
@@ -937,11 +983,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BIP": {
@@ -953,11 +1000,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Utilities",
-        "industry": "Diversified Utilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SYY": {
@@ -969,11 +1017,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Food Distribution"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SCHW": {
@@ -985,11 +1034,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Capital Markets"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PM": {
@@ -1001,11 +1051,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Tobacco"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BUD": {
@@ -1017,11 +1068,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Beverages - Alcoholic"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "IVZ": {
@@ -1033,11 +1085,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PCAR": {
@@ -1049,11 +1102,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EXPD": {
@@ -1065,11 +1119,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Integrated Freight & Logistics"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SPG": {
@@ -1081,11 +1136,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Retail"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "XRAY": {
@@ -1097,11 +1153,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Instruments & Supplies"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MMC": {
@@ -1113,11 +1170,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Brokers"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "INSU": {
@@ -1129,6 +1187,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
@@ -1145,11 +1204,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Capital Markets"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BF.B": {
@@ -1161,6 +1221,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
@@ -1177,11 +1238,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BMY": {
@@ -1193,11 +1255,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TGT": {
@@ -1209,11 +1272,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Discount Stores"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "FITB": {
@@ -1225,11 +1289,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Regional"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "USB": {
@@ -1241,11 +1306,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MTD": {
@@ -1257,11 +1323,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "V": {
@@ -1273,11 +1340,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "KO": {
@@ -1289,11 +1357,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Beverages - Non-Alcoholic"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "LPLA": {
@@ -1305,11 +1374,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Capital Markets"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "GD": {
@@ -1321,11 +1391,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "UNP": {
@@ -1337,11 +1408,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Railroads"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "REGN": {
@@ -1353,11 +1425,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Biotechnology"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PLUS": {
@@ -1369,11 +1442,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Application"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NNN": {
@@ -1385,11 +1459,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Retail"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BRK.B": {
@@ -1401,6 +1476,7 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
@@ -1417,11 +1493,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "OHI": {
@@ -1433,11 +1510,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SF": {
@@ -1449,11 +1527,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Investment - Banking & Investment Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "FRT": {
@@ -1465,11 +1544,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Retail"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SHW": {
@@ -1481,11 +1561,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Basic Materials",
-        "industry": "Chemicals - Specialty"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CTRE": {
@@ -1497,11 +1578,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EOG": {
@@ -1513,11 +1595,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Energy",
-        "industry": "Oil & Gas Exploration & Production"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ECL": {
@@ -1529,11 +1612,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Basic Materials",
-        "industry": "Chemicals - Specialty"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "VTR": {
@@ -1545,11 +1629,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NSC": {
@@ -1561,11 +1646,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Railroads"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CMA": {
@@ -1577,11 +1663,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Regional"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BALL": {
@@ -1593,11 +1680,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Packaging & Containers"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AWK": {
@@ -1609,11 +1697,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Utilities",
-        "industry": "Regulated Water"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MCK": {
@@ -1625,11 +1714,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Distribution"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NWSA": {
@@ -1641,11 +1731,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Communication Services",
-        "industry": "Publishing"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "LTC": {
@@ -1657,11 +1748,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EXR": {
@@ -1673,11 +1765,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Industrial"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SBRA": {
@@ -1689,11 +1782,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EA": {
@@ -1705,11 +1799,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Electronic Gaming & Multimedia"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DELL": {
@@ -1721,11 +1816,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Computer Hardware"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DDOG": {
@@ -1737,11 +1833,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Application"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "OKTA": {
@@ -1753,11 +1850,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PANW": {
@@ -1769,11 +1867,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CRWD": {
@@ -1785,11 +1884,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NTAP": {
@@ -1801,11 +1901,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Computer Hardware"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HUM": {
@@ -1817,11 +1918,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Healthcare Plans"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AGYS": {
@@ -1833,11 +1935,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Application"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TENB": {
@@ -1849,11 +1952,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CRSR": {
@@ -1865,11 +1969,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Computer Hardware"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ILMN": {
@@ -1881,11 +1986,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "VRNS": {
@@ -1897,11 +2003,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PRGS": {
@@ -1913,11 +2020,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DXCM": {
@@ -1929,11 +2037,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Devices"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HEI": {
@@ -1945,11 +2054,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NET": {
@@ -1961,11 +2071,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "FAS": {
@@ -1986,11 +2097,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Healthcare Plans"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BBVA": {
@@ -2002,11 +2114,12 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DFEN": {
@@ -2027,13 +2140,14 @@
         "liquid": false
       },
       "earnings_soon": false,
+      "name": "",
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     }
   },
-  "built": "2026-08-02T10:05:57.971310+00:00"
+  "built": "2026-08-02T10:50:14.422717+00:00"
 }
