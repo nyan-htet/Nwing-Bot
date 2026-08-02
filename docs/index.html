@@ -115,7 +115,7 @@ function renderSignals() {
   const list = (d.signals || []).filter(s => !hide.has(s.ticker.toUpperCase()));
   const skipped = (d.signals || []).length - list.length;
   $("signals").innerHTML = (list.length ? list.map((s,i) => `
-      <div class="card sig"><b>${s.ticker}</b>${s.name ? " — " + s.name : ""} <span class="pill">${s.setup}</span>${s.sector ? ` <span class="pill">${s.sector}</span>` : ""}
+      <div class="card sig"><b>${s.ticker}</b>${s.name ? " — " + s.name : ""} <span class="pill">${s.setup}</span>${(s.sector && s.sector !== "Unknown") ? ` <span class="pill">${s.sector}</span>` : ""}
       <div>Suggested: entry $${s.entry} → TP $${s.tp} (+${(s.tp_pct*100).toFixed(1)}%), ${s.shares} shares ≈ $${Math.round(s.value)}</div>
       <div><b>eToro TP (P/L amount): $<span id="pl_${i}">${(s.pl_amount ?? ((s.tp - s.entry) * s.shares)).toFixed(2)}</span></b> <span class="mut">— set this in eToro's Take Profit box</span></div>
       <div class="mut"><b>Technical:</b> trend ${s.trend_score}/5${s.runner ? " ⭐RUNNER" : ""} • ADX ${s.adx} • RS vs SPY ${(s.rs*100).toFixed(1)}% • quality ${s.quality ?? ""} • RSI(4h) ${s.rsi ?? ""}</div>
