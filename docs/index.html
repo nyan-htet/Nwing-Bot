@@ -74,7 +74,7 @@
 </div>
 
 <script>
-let rules = [], positions = [], signalsData = null;
+let rules = [], positions = [], signalsData = null, tickerMeta = {};
 const $ = id => document.getElementById(id);
 const hdrs = () => ({ "Authorization": "Bearer " + $("gh_token").value.trim(),
                       "Accept": "application/vnd.github+json" });
@@ -113,6 +113,12 @@ function renderSignals() {
   if (!d) return;
   const hide = decidedTickers();
   const list = (d.signals || []).filter(s => !hide.has(s.ticker.toUpperCase()));
+  list.forEach(s => {                      // LEFT JOIN tickers.csv on symbol
+    const m = tickerMeta[s.ticker.toUpperCase()] || {};
+    if (!s.name && m.name) s.name = m.name;
+    if (!s.name && m.note) s.name = m.note;
+    if (s.pl_amount == null) s.pl_amount = (s.tp - s.entry) * s.shares;
+  });
   const skipped = (d.signals || []).length - list.length;
   $("signals").innerHTML = (list.length ? list.map((s,i) => `
       <div class="card sig"><b>${s.ticker}</b>${s.name ? " — " + s.name : ""} <span class="pill">${s.setup}</span>${(s.sector && s.sector !== "Unknown") ? ` <span class="pill">${s.sector}</span>` : ""}
@@ -144,6 +150,38 @@ async function loadSignals() {
       ? d.position_alerts.map(m => `<div class="card pos">${m}</div>`).join("")
       : "<div class='mut'>None.</div>");
   } catch(e) { $("meta").textContent = "No signals.json yet — run a scan first."; }
+}
+
+// ---- left-join company names from tickers.csv ----
+function parseCsv(text) {
+  const lines = text.trim().split("\n");
+  const head = lines[0].split(",").map(s => s.trim().toLowerCase());
+  const out = {};
+  for (let i = 1; i < lines.length; i++) {
+    // simple split is fine: our csv has no quoted commas
+    const cells = lines[i].split(",");
+    const row = {};
+    head.forEach((k, j) => row[k] = (cells[j] || "").trim());
+    if (row.symbol) out[row.symbol.toUpperCase()] = row;
+  }
+  return out;
+}
+
+async function loadTickerMeta() {
+  const repo = ($("gh_repo").value || "").trim()
+    || (location.hostname.split(".")[0] + "/" + location.pathname.split("/")[1]);
+  const urls = [
+    "https://raw.githubusercontent.com/" + repo + "/main/tickers.csv?t=" + Date.now(),
+    "../tickers.csv?t=" + Date.now()
+  ];
+  for (const u of urls) {
+    try {
+      const r = await fetch(u);
+      if (!r.ok) continue;
+      tickerMeta = parseCsv(await r.text());
+      if (Object.keys(tickerMeta).length) { renderSignals(); return; }
+    } catch(e) {}
+  }
 }
 
 // ---- load saved state from the repo so nothing disappears on refresh ----
@@ -292,7 +330,7 @@ function addPos() {
     opened: new Date().toISOString().slice(0,10)});
   savePos();
 }
-loadSignals().then(loadState);
+loadSignals().then(loadState).then(loadTickerMeta);
 </script>
 </body>
 </html>
