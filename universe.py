@@ -22,6 +22,7 @@ def load():
                 continue
             tickers.append(s)
             meta[s] = {
+                "name": (row.get("name") or "").strip(),
                 "type": row.get("type", "stock").strip().lower(),
                 "leverage": int(row.get("leverage", 1) or 1),
                 "inverse": row.get("inverse", "no").strip().lower() in ("yes", "y", "true"),

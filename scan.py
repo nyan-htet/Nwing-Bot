@@ -282,7 +282,7 @@ def run_nightly():
         if m.get("type", "stock") == "stock":
             m["earnings_soon"] = t.upper() in earn_set
             scr = fnd.company_screen(t, cfg)
-            m["name"] = scr.get("name") or ""
+            m["name"] = m.get("name") or scr.get("name") or ""
             m["screen"] = {"pass": scr["pass"], "notes": scr["notes"][:2],
                            "sector": scr.get("sector"), "industry": scr.get("industry")}
         meta[t] = m
