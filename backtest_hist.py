@@ -30,14 +30,22 @@ import universe
 
 RUN_INFO = {}
 
-# ---- portfolio rules for the simulation ----
+# ---- portfolio rules (overridable per run: see PARAMS) ----
 START_EQUITY = 10_000.0
-POSITION_PCT = cfg.POSITION_PCT          # 5% of equity per trade
-MIN_TRADE = cfg.MIN_TRADE_USD            # $250 floor
-MAX_CONCURRENT = 10                      # portfolio-level cap
-MAX_PER_TICKER = 1
+MIN_TRADE = cfg.MIN_TRADE_USD
 FEE_STOCK = cfg.FEE_PER_STOCK_TRADE
-MAX_HOLD_DAYS = 120                      # give up on stale positions
+
+PARAMS = {
+    "position_pct": cfg.POSITION_PCT,   # share of equity per trade
+    "max_concurrent": 10,
+    "max_hold_days": 120,
+    "exit_mode": "tp",                  # tp | trail | tp_then_trail
+    "trail_ema": 20,                    # trail: exit on close below this EMA
+    "trail_pct": 0.12,                  # trail: or this far below running high
+    "min_score": cfg.SCORE_MIN,
+    "require_rs": False,                # only take RS > 0
+    "require_ema200": False,            # only take price > 200 EMA
+}
 
 
 def prep(df):
@@ -53,6 +61,8 @@ def prep(df):
     d["vol_avg"] = d["volume"].rolling(20).mean()
     d["hi52"] = d["high"].rolling(252, min_periods=60).max()
     d["ret63"] = d["close"].pct_change(cfg.RS_LOOKBACK)
+    d["ema_200"] = ind.ema(d["close"], 200)
+    d["ema_trail"] = ind.ema(d["close"], PARAMS["trail_ema"])
     return d
 
 
@@ -90,8 +100,8 @@ def quality_at(d, i, setup):
     return (wts["rsi"] * s_rsi + wts["bollinger"] * s_bb + wts["volume"] * s_vol) / tot * 0.6
 
 
-def tp_at(d, i, entry):
-    """Nearest daily swing high >= +MIN_TP_PCT, else measured move if blue-sky."""
+def tp_at(d, i, entry, strong=False):
+    """Trend-aware target ladder (mirrors analysis.calc_tp)."""
     min_tp, max_tp = entry * (1 + cfg.MIN_TP_PCT), entry * (1 + cfg.MAX_TP_PCT)
     lb = cfg.SWING_LOOKBACK
     highs = d["high"].values[max(0, i - 252):i]
@@ -101,10 +111,14 @@ def tp_at(d, i, entry):
         if highs[j] == w.max() and min_tp <= highs[j] <= max_tp:
             cands.append(float(highs[j]))
     if cands:
-        return min(cands)
+        cands.sort()
+        pctl = cfg.TP_STRETCH["strong" if strong else "normal"]
+        return round(cands[min(len(cands) - 1, int(round(pctl * (len(cands) - 1))))], 2)
     hi52 = float(d["hi52"].iloc[i] or 0)
-    if hi52 and entry >= hi52 * 0.97:
-        return round(entry * 1.12, 2)
+    atr = float(d["atr"].iloc[i] or 0)
+    if hi52 and (entry >= hi52 * 0.97 or min_tp > hi52):
+        mult = cfg.TP_BLUESKY_ATR * (1.5 if strong else 1.0)
+        return round(min(max(entry + mult * atr, min_tp), max_tp), 2)
     return None
 
 
@@ -184,13 +198,27 @@ def run(years=8, max_stocks=None, include_etfs=True):
             if not isinstance(i, (int, np.integer)):
                 i = int(np.atleast_1d(np.arange(len(d))[i])[-1])
             row, p = d.iloc[i], open_pos[t]
+            p["peak"] = max(p.get("peak", p["entry"]), float(row.high))
+            mode = PARAMS["exit_mode"]
             exit_px = reason = None
-            if row.high >= p["tp"]:
+            hit_tp = row.high >= p["tp"]
+
+            if mode == "tp" and hit_tp:
                 exit_px, reason = p["tp"], "tp"
-            elif thesis_broken_at(d, i):
-                exit_px, reason = row.close, "thesis"
-            elif (day - p["opened"]).days > MAX_HOLD_DAYS:
-                exit_px, reason = row.close, "timeout"
+            elif mode in ("trail", "tp_then_trail"):
+                if mode == "tp_then_trail" and hit_tp and not p.get("trailing"):
+                    p["trailing"] = True          # target reached -> now let it run
+                    reason = None
+                trail_on = (mode == "trail") or p.get("trailing")
+                if trail_on:
+                    below_ema = float(row.close) < float(row.ema_trail)
+                    gave_back = float(row.close) <= p["peak"] * (1 - PARAMS["trail_pct"])
+                    if below_ema or gave_back:
+                        exit_px, reason = float(row.close), "trail"
+            if exit_px is None and thesis_broken_at(d, i):
+                exit_px, reason = float(row.close), "thesis"
+            if exit_px is None and (day - p["opened"]).days > PARAMS["max_hold_days"]:
+                exit_px, reason = float(row.close), "timeout"
             if exit_px is None:
                 continue
             fees = 2 * (FEE_STOCK if meta.get(t, {}).get("type") != "etf" else 0.0)
@@ -203,7 +231,7 @@ def run(years=8, max_stocks=None, include_etfs=True):
             del open_pos[t]
 
         # 2) look for entries
-        if len(open_pos) < MAX_CONCURRENT:
+        if len(open_pos) < PARAMS["max_concurrent"]:
             cands = []
             for t, d in prepped.items():
                 if t in open_pos or day not in d.index:
@@ -224,19 +252,24 @@ def run(years=8, max_stocks=None, include_etfs=True):
                 if st is None:
                     continue
                 q = quality_at(d, i, st)
-                if q < cfg.SCORE_MIN:
+                if q < PARAMS["min_score"]:
+                    continue
+                if PARAMS["require_rs"] and rs <= 0:
+                    continue
+                if PARAMS["require_ema200"] and not (row.close > row.ema_200):
                     continue
                 entry = float(row.close)
-                tp = tp_at(d, i, entry)
+                strong = bool(row.adx >= 30 and rs > 0 and row.close >= (row.hi52 or 1e18) * 0.85)
+                tp = tp_at(d, i, entry, strong)
                 if tp is None:
                     continue
                 score = q + (0.2 if rs > 0 else -0.1) + (0.1 if row.close >= (row.hi52 or 1e18) * 0.85 else 0)
                 cands.append((score, t, entry, tp, st))
             cands.sort(reverse=True)
             for score, t, entry, tp, st in cands:
-                if len(open_pos) >= MAX_CONCURRENT:
+                if len(open_pos) >= PARAMS["max_concurrent"]:
                     break
-                budget = max(equity * POSITION_PCT, MIN_TRADE)
+                budget = max(equity * PARAMS["position_pct"], MIN_TRADE)
                 if budget > equity * 0.9:
                     break
                 shares = int(budget // entry)
@@ -256,10 +289,16 @@ def run(years=8, max_stocks=None, include_etfs=True):
                 mtm += (float(d.loc[day, "close"]) - p["entry"]) * p["shares"]
         curve.append((day, mtm))
 
-    return summarize(curve, closed, days)
+    bh = None
+    try:
+        w = spy.loc[(spy.index >= days[0]) & (spy.index <= days[-1]), "close"]
+        bh = round((float(w.iloc[-1]) / float(w.iloc[0]) - 1) * 100, 2)
+    except Exception:
+        pass
+    return summarize(curve, closed, days, bh)
 
 
-def summarize(curve, closed, days):
+def summarize(curve, closed, days, buy_hold_pct=None):
     ec = pd.DataFrame(curve, columns=["time", "equity"]).set_index("time")
     tr = pd.DataFrame(closed)
     final = float(ec["equity"].iloc[-1])
@@ -296,6 +335,10 @@ def summarize(curve, closed, days):
         "avg_hold_days": round(float((tr.closed - tr.opened).dt.days.mean()), 1) if len(tr) else 0,
         "exits": tr.reason.value_counts().to_dict() if len(tr) else {},
         "period": f"{ec.index[0].date()} to {ec.index[-1].date()}",
+        "buy_hold_spy_pct": buy_hold_pct,
+        "vs_buy_hold_pct": (round((final / START_EQUITY - 1) * 100 - buy_hold_pct, 2)
+                            if buy_hold_pct is not None else None),
+        "params": dict(PARAMS),
     }
     payload = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(),
                "universe": RUN_INFO,

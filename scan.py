@@ -41,7 +41,7 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
     if q["total"] < cfg.SCORE_MIN:
         return None
     entry = float(h1["close"].iloc[-1])
-    tp = analysis.calc_tp(daily, h4, entry, cfg)
+    tp = analysis.calc_tp(daily, h4, entry, cfg, trend=trend)
     if tp is None:
         return None
     value = max(cfg.ACCOUNT_SIZE * cfg.POSITION_PCT, cfg.MIN_TRADE_USD)

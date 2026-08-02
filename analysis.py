@@ -83,12 +83,19 @@ def trigger_1h(h1) -> bool:
     return bool(last.close > last.open and upper_half and last.close > prev.high)
 
 
-def calc_tp(daily, h4, entry, cfg) -> float | None:
-    """TP at nearest meaningful resistance ABOVE min threshold; if price is at
-    52w highs (no resistance overhead), use a measured move. None = skip."""
+def calc_tp(daily, h4, entry, cfg, trend=None) -> float | None:
+    """Trend-aware target.
+
+    Weak trend  -> nearest resistance beyond +MIN_TP_PCT (conservative).
+    Strong trend-> reach further up the resistance ladder (bigger target).
+    Blue sky (no overhead resistance) -> ATR-based measured move, scaled by
+    trend strength. Everything is capped at MAX_TP_PCT (50%).
+    """
     min_tp = entry * (1 + cfg.MIN_TP_PCT)
     max_tp = entry * (1 + cfg.MAX_TP_PCT)
-    # candidate resistances from daily swings above min_tp
+    strong = bool(trend and trend.get("score", 0) >= 4 and trend.get("adx", 0) >= 30)
+    pctl = cfg.TP_STRETCH["strong" if strong else "normal"]
+
     cands = []
     highs = daily["high"].values
     lb = cfg.SWING_LOOKBACK
@@ -96,12 +103,21 @@ def calc_tp(daily, h4, entry, cfg) -> float | None:
         w = highs[j - lb: j + lb + 1]
         if highs[j] == w.max() and min_tp <= highs[j] <= max_tp:
             cands.append(float(highs[j]))
+
     if cands:
-        return min(cands)          # nearest realistic target beyond 8%
-    hi52 = daily["high"].iloc[-252:].max()
-    if entry >= hi52 * 0.97:       # blue sky: measured move = 12% default
-        return round(entry * 1.12, 2)
-    return None                    # resistance closer than 8% -> skip trade
+        cands.sort()
+        idx = min(len(cands) - 1, int(round(pctl * (len(cands) - 1))))
+        return round(cands[idx], 2)          # further up the ladder in strong trends
+
+    # no overhead resistance within range -> blue sky / measured move
+    hi52 = float(daily["high"].iloc[-252:].max())
+    atr = float(ind.atr(daily, cfg.ATR_PERIOD).iloc[-1])
+    if entry >= hi52 * 0.97 or entry * (1 + cfg.MIN_TP_PCT) > hi52:
+        mult = cfg.TP_BLUESKY_ATR * (1.5 if strong else 1.0)
+        target = entry + mult * atr
+        target = max(target, min_tp)          # respect the 8% floor
+        return round(min(target, max_tp), 2)  # respect the 50% ceiling
+    return None
 
 
 def thesis_broken(daily, cfg) -> bool:

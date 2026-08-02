@@ -5,7 +5,15 @@ ACCOUNT_SIZE = 10_000.0        # used for suggested position size only (advisory
 POSITION_PCT = 0.05            # suggested position = 5% of account per trade
 MIN_TRADE_USD = 250.0          # never suggest positions below this
 MIN_TP_PCT = 0.08              # take-profit must be at least 8% above entry
-MAX_TP_PCT = 0.40              # cap TP suggestions at realistic levels
+# Target selection: in strong trends the bot reaches PAST the nearest
+# resistance for a bigger target (up to MAX_TP_PCT). Nearest resistance is
+# only used when the trend is weak.
+TP_STRETCH = {
+    "strong": 0.60,   # trend score >=4 & ADX>=30: aim for the 60th percentile
+    "normal": 0.30,   # otherwise: nearer resistance
+}
+TP_BLUESKY_ATR = 6.0           # no overhead resistance -> target = entry + N*ATR
+MAX_TP_PCT = 0.50              # hard ceiling on any target (50%)
 LONG_ONLY = True               # shorts silently skipped
 FEE_PER_STOCK_TRADE = 1.0      # $1 buy + $1 sell for stocks
 FEE_PER_ETF_TRADE = 0.0        # ETFs commission-free on eToro
@@ -41,7 +49,7 @@ QUALITY_WEIGHTS = {
     "options": 0.20,    # P/C ratio, call-wall vs TP, IV expected move (nightly cache)
 }
 OPEX_CAUTION_DAYS = 1          # flag entries within N trading days of monthly opex
-SCORE_MIN = 0.15               # minimum weighted score to allow an alert
+SCORE_MIN = 0.30               # minimum weighted score to allow an alert (raised: fewer, better)
 RSI_PERIOD = 14
 BB_PERIOD = 20
 
