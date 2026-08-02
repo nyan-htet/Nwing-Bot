@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SwingBot — Signals & Portal</title>
+<title>Nwing-Bot — Signals & Portal</title>
 <style>
   :root { --bg:#0f1419; --card:#1a2129; --tx:#e6edf3; --mut:#8b98a5; --acc:#2ea043; --warn:#d29922; }
   * { box-sizing:border-box; margin:0; }
@@ -22,7 +22,7 @@
 </style>
 </head>
 <body>
-<h1>📈 SwingBot</h1>
+<h1>📈 Nwing-Bot</h1>
 <div class="mut" id="meta">Loading signals…</div>
 
 <h2>Current signals</h2>
@@ -96,6 +96,13 @@ function checkAuth() {
   return true;
 }
 
+function updatePL(i) {
+  const e = parseFloat($(`f_entry_${i}`).value) || 0;
+  const sh = parseFloat($(`f_shares_${i}`).value) || 0;
+  const tp = parseFloat($(`f_tp_${i}`).value) || 0;
+  const el = $(`pl_${i}`);
+  if (el) el.textContent = ((tp - e) * sh).toFixed(2);
+}
 function decidedTickers() {
   return new Set(positions.filter(p => p.status === "open" || p.status === "skipped")
                           .map(p => p.ticker.toUpperCase()));
@@ -108,14 +115,16 @@ function renderSignals() {
   const list = (d.signals || []).filter(s => !hide.has(s.ticker.toUpperCase()));
   const skipped = (d.signals || []).length - list.length;
   $("signals").innerHTML = (list.length ? list.map((s,i) => `
-      <div class="card sig"><b>${s.ticker}</b> <span class="pill">${s.setup}</span>
+      <div class="card sig"><b>${s.ticker}</b>${s.name ? " — " + s.name : ""} <span class="pill">${s.setup}</span>${s.sector ? ` <span class="pill">${s.sector}</span>` : ""}
       <div>Suggested: entry $${s.entry} → TP $${s.tp} (+${(s.tp_pct*100).toFixed(1)}%), ${s.shares} shares ≈ $${Math.round(s.value)}</div>
-      <div class="mut">trend ${s.trend_score}/5 • ADX ${s.adx} • RS ${(s.rs*100).toFixed(1)}% • ${s.reasons.join(", ")}</div>
-      <div class="row mut">My actual fill (correct for spread / your size):</div>
+      <div><b>eToro TP (P/L amount): $<span id="pl_${i}">${(s.pl_amount ?? ((s.tp - s.entry) * s.shares)).toFixed(2)}</span></b> <span class="mut">— set this in eToro's Take Profit box</span></div>
+      <div class="mut"><b>Technical:</b> trend ${s.trend_score}/5${s.runner ? " ⭐RUNNER" : ""} • ADX ${s.adx} • RS vs SPY ${(s.rs*100).toFixed(1)}% • quality ${s.quality ?? ""} • RSI(4h) ${s.rsi ?? ""}</div>
+      <div class="mut"><b>Notes:</b> ${(s.warnings && s.warnings.length) ? s.warnings.join(" • ") : "no warnings"}${s.options_note && s.options_note !== "options: n/a" ? " • " + s.options_note : ""}</div>
+      <div class="row mut">My actual fill (correct for spread / your size) — P/L amount updates live:</div>
       <div class="row">
-        <input id="f_entry_${i}" type="number" step="0.01" value="${s.entry}" style="width:100px" title="my entry">
-        <input id="f_shares_${i}" type="number" value="${s.shares}" style="width:80px" title="my shares">
-        <input id="f_tp_${i}" type="number" step="0.01" value="${s.tp}" style="width:100px" title="my TP">
+        <input id="f_entry_${i}" type="number" step="0.01" value="${s.entry}" style="width:100px" title="my entry" oninput="updatePL(${i})">
+        <input id="f_shares_${i}" type="number" value="${s.shares}" style="width:80px" title="my shares" oninput="updatePL(${i})">
+        <input id="f_tp_${i}" type="number" step="0.01" value="${s.tp}" style="width:100px" title="my TP" oninput="updatePL(${i})">
         <button onclick="logFill('${s.ticker}',${i})">✔ I entered</button>
         <button style="background:#6e7681" onclick="skipSignal('${s.ticker}')">✖ Skipped</button>
       </div></div>`).join("")
