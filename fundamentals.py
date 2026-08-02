@@ -78,6 +78,7 @@ def company_screen(ticker, cfg):
         if mc is not None and float(mc) < cfg.SMALLCAP_MIN_MARKETCAP:
             out["pass"] = False
             out["notes"].append("microcap, below quality floor")
+        out["name"] = p.get("companyName") or ""
         out["sector"] = p.get("sector", "Unknown")
         out["industry"] = p.get("industry", "Unknown")
     except Exception:

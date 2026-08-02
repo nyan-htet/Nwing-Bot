@@ -78,11 +78,21 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
         reasons.append(f"({tmeta['note']})")
     if screen.get("notes"):
         reasons.extend(screen["notes"][:1])
-    return {"ticker": ticker, "setup": setup, "entry": round(entry, 2),
-            "tp": round(tp, 2), "tp_pct": tp / entry - 1, "shares": shares,
-            "value": shares * entry, "fee_pct": fee_frac,
+    tm = tmeta or {}
+    name = tm.get("name") or tm.get("note") or ""
+    warnings = [r for r in reasons if r.startswith(("🔻", "⚡", "⚠"))]
+    return {"ticker": ticker, "name": name, "setup": setup,
+            "entry": round(entry, 2), "tp": round(tp, 2),
+            "tp_pct": tp / entry - 1, "shares": shares,
+            "value": shares * entry,
+            "pl_amount": round((tp - entry) * shares, 2),
+            "fee_pct": fee_frac,
             "trend_score": trend["score"], "adx": trend["adx"],
-            "rs": trend["rs"], "reasons": reasons,
+            "rs": trend["rs"], "runner": trend.get("runner", False),
+            "quality": q["total"], "q_detail": q["detail"],
+            "rsi": q["rsi_value"], "options_note": q.get("options_note") or "",
+            "sector": (tm.get("screen") or {}).get("sector") or "",
+            "warnings": warnings, "reasons": reasons,
             "time": dt.datetime.now(dt.timezone.utc).isoformat()}
 
 
@@ -212,7 +222,8 @@ def run_hourly(offline=False):
     # --- deliver ---
     for s in signals:
         body = notify.format_alert(s, macro, cyc)
-        notify.send_email(f"BUY {s['ticker']} — {s['setup']} (+{s['tp_pct']:.0%} target)", body, cfg)
+        nm = f" ({s['name']})" if s.get("name") else ""
+        notify.send_email(f"BUY {s['ticker']}{nm} — {s['setup']} +{s['tp_pct']:.0%} | eToro TP P/L ${s['pl_amount']:.0f}", body, cfg)
         notify.send_telegram(body, cfg)
     for m in pos_msgs:
         notify.send_email("Position alert", m, cfg)
@@ -271,6 +282,7 @@ def run_nightly():
         if m.get("type", "stock") == "stock":
             m["earnings_soon"] = t.upper() in earn_set
             scr = fnd.company_screen(t, cfg)
+            m["name"] = scr.get("name") or ""
             m["screen"] = {"pass": scr["pass"], "notes": scr["notes"][:2],
                            "sector": scr.get("sector"), "industry": scr.get("industry")}
         meta[t] = m

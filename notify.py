@@ -6,18 +6,37 @@ from email.mime.text import MIMEText
 
 
 def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
+    name = f" — {sig['name']}" if sig.get("name") else ""
+    sector = f"  [{sig['sector']}]" if sig.get("sector") else ""
+    qd = sig.get("q_detail", {})
     lines = [
-        f"🟢 BUY SIGNAL — {sig['ticker']}  ({sig['setup']})",
-        f"Entry zone : ${sig['entry']:.2f}",
-        f"Take profit: ${sig['tp']:.2f}  (+{sig['tp_pct']:.1%})",
-        f"Suggested  : {sig['shares']} shares ≈ ${sig['value']:.0f}"
-        f"  (fees {sig['fee_pct']:.1%} of expected profit)",
-        f"Why: {', '.join(sig['reasons'])}",
-        f"Daily trend score {sig['trend_score']}/5 | ADX {sig['adx']} | RS vs SPY {sig['rs']:+.1%}",
-        f"Macro: {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)",
-        cyc.get("line", ""),
-        "No stoploss per your rules — thesis-broken alerts will monitor this position.",
+        f"🟢 BUY SIGNAL — {sig['ticker']}{name}{sector}",
+        "",
+        "═══ TRADE PLAN ═══",
+        f"Setup       : {sig['setup']}",
+        f"Entry zone  : ${sig['entry']:.2f}",
+        f"Take profit : ${sig['tp']:.2f}  (+{sig['tp_pct']:.1%})",
+        f"Suggested   : {sig['shares']} shares ≈ ${sig['value']:.0f}",
+        f"eToro TP    : set Take Profit as P/L amount = ${sig.get('pl_amount', 0):.2f}",
+        f"Fees        : {sig['fee_pct']:.1%} of expected profit",
+        "",
+        "═══ TECHNICAL ANALYSIS ═══",
+        f"Daily trend : {sig['trend_score']}/5" + ("  ⭐ RUNNER (near 52w high, beating SPY)" if sig.get("runner") else ""),
+        f"ADX         : {sig['adx']} (trend strength)",
+        f"RS vs SPY   : {sig['rs']:+.1%}",
+        f"Quality     : {sig.get('quality', '')} — rsi {qd.get('rsi', '?')}, bollinger {qd.get('bollinger', '?')}, "
+        f"vwap {qd.get('vwap', '?')}, volume {qd.get('volume', '?')}, options {qd.get('options', '?')}",
+        f"RSI (4h)    : {sig.get('rsi', '?')}",
+        "",
+        "═══ FUNDAMENTAL & MACRO ═══",
+        f"Macro       : {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)",
+        f"Cycles      : {cyc.get('line', 'n/a').replace('Cycles ', '')}",
     ]
+    if sig.get("options_note") and sig["options_note"] != "options: n/a":
+        lines.append(f"Options     : {sig['options_note']}")
+    if sig.get("warnings"):
+        lines += ["", "═══ WARNINGS ═══"] + [f"• {w}" for w in sig["warnings"]]
+    lines += ["", "No stoploss per your rules — thesis-broken alerts will monitor this position."]
     return "\n".join(lines)
 
 
