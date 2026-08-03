@@ -1,0 +1,227 @@
+{
+  "generated": "2026-08-03T20:43:22.726578+00:00",
+  "years": 8.0,
+  "max_stocks": 50,
+  "include_etfs": true,
+  "buy_hold_spy_pct": 167.15,
+  "results": [
+    {
+      "variant": "I. 5% / 0.30 / hybrid + 20 slots (more deployed)",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.3,
+        "exit_mode": "tp_then_trail",
+        "max_concurrent": 20
+      },
+      "final_equity": 15102.27,
+      "total_return_pct": 51.02,
+      "cagr_pct": 5.29,
+      "max_drawdown_pct": -33.81,
+      "sharpe": 0.37,
+      "n_trades": 1080,
+      "win_rate_pct": 36.8,
+      "avg_win_pct": 13.84,
+      "avg_loss_pct": -6.29,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -116.13,
+      "exits": {
+        "thesis": 743,
+        "trail": 312,
+        "timeout": 25
+      }
+    },
+    {
+      "variant": "B. 5% / score 0.30 (new default)",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.3,
+        "exit_mode": "tp"
+      },
+      "final_equity": 14215.66,
+      "total_return_pct": 42.16,
+      "cagr_pct": 4.5,
+      "max_drawdown_pct": -16.88,
+      "sharpe": 0.53,
+      "n_trades": 758,
+      "win_rate_pct": 40.9,
+      "avg_win_pct": 12.57,
+      "avg_loss_pct": -6.45,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -124.99,
+      "exits": {
+        "thesis": 506,
+        "tp": 245,
+        "timeout": 7
+      }
+    },
+    {
+      "variant": "G. 5% / 0.30 / hybrid + RS>0 + above 200EMA",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.3,
+        "exit_mode": "tp_then_trail",
+        "require_rs": true,
+        "require_ema200": true
+      },
+      "final_equity": 13664.08,
+      "total_return_pct": 36.64,
+      "cagr_pct": 3.98,
+      "max_drawdown_pct": -21.47,
+      "sharpe": 0.41,
+      "n_trades": 589,
+      "win_rate_pct": 37.5,
+      "avg_win_pct": 14.23,
+      "avg_loss_pct": -6.37,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -130.51,
+      "exits": {
+        "thesis": 411,
+        "trail": 164,
+        "timeout": 14
+      }
+    },
+    {
+      "variant": "A. Baseline 5% / score 0.15 / fixed TP",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.15,
+        "exit_mode": "tp"
+      },
+      "final_equity": 13625.12,
+      "total_return_pct": 36.25,
+      "cagr_pct": 3.94,
+      "max_drawdown_pct": -16.99,
+      "sharpe": 0.47,
+      "n_trades": 763,
+      "win_rate_pct": 40.1,
+      "avg_win_pct": 13.23,
+      "avg_loss_pct": -6.86,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -130.9,
+      "exits": {
+        "thesis": 518,
+        "tp": 238,
+        "timeout": 7
+      }
+    },
+    {
+      "variant": "C. 5% / score 0.40 (very selective)",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.4,
+        "exit_mode": "tp"
+      },
+      "final_equity": 13587.66,
+      "total_return_pct": 35.88,
+      "cagr_pct": 3.91,
+      "max_drawdown_pct": -14.82,
+      "sharpe": 0.51,
+      "n_trades": 601,
+      "win_rate_pct": 40.9,
+      "avg_win_pct": 13.2,
+      "avg_loss_pct": -6.87,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -131.27,
+      "exits": {
+        "thesis": 404,
+        "tp": 190,
+        "timeout": 7
+      }
+    },
+    {
+      "variant": "F. 5% / 0.30 / hybrid + RS>0",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.3,
+        "exit_mode": "tp_then_trail",
+        "require_rs": true
+      },
+      "final_equity": 13161.11,
+      "total_return_pct": 31.61,
+      "cagr_pct": 3.49,
+      "max_drawdown_pct": -19.15,
+      "sharpe": 0.36,
+      "n_trades": 612,
+      "win_rate_pct": 38.4,
+      "avg_win_pct": 13.66,
+      "avg_loss_pct": -6.67,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -135.54,
+      "exits": {
+        "thesis": 422,
+        "trail": 176,
+        "timeout": 14
+      }
+    },
+    {
+      "variant": "E. 5% / score 0.30 + TP then trail",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.3,
+        "exit_mode": "tp_then_trail"
+      },
+      "final_equity": 12130.26,
+      "total_return_pct": 21.3,
+      "cagr_pct": 2.44,
+      "max_drawdown_pct": -18.23,
+      "sharpe": 0.27,
+      "n_trades": 654,
+      "win_rate_pct": 37.6,
+      "avg_win_pct": 12.75,
+      "avg_loss_pct": -6.35,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -145.85,
+      "exits": {
+        "thesis": 446,
+        "trail": 193,
+        "timeout": 15
+      }
+    },
+    {
+      "variant": "H. 5% / 0.30 / hybrid + longer holds 250d",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.3,
+        "exit_mode": "tp_then_trail",
+        "max_hold_days": 250
+      },
+      "final_equity": 11536.26,
+      "total_return_pct": 15.36,
+      "cagr_pct": 1.8,
+      "max_drawdown_pct": -18.49,
+      "sharpe": 0.21,
+      "n_trades": 647,
+      "win_rate_pct": 37.1,
+      "avg_win_pct": 12.68,
+      "avg_loss_pct": -6.31,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -151.79,
+      "exits": {
+        "thesis": 448,
+        "trail": 199
+      }
+    },
+    {
+      "variant": "D. 5% / score 0.30 + trail EMA20",
+      "params": {
+        "position_pct": 0.05,
+        "min_score": 0.3,
+        "exit_mode": "trail"
+      },
+      "final_equity": 9035.97,
+      "total_return_pct": -9.64,
+      "cagr_pct": -1.26,
+      "max_drawdown_pct": -24.84,
+      "sharpe": -0.08,
+      "n_trades": 1410,
+      "win_rate_pct": 26.5,
+      "avg_win_pct": 7.66,
+      "avg_loss_pct": -2.59,
+      "buy_hold_spy_pct": 167.15,
+      "vs_buy_hold_pct": -176.79,
+      "exits": {
+        "trail": 1410
+      }
+    }
+  ]
+}
