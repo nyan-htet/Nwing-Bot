@@ -127,7 +127,21 @@ function renderSignals() {
       <div class="mut"><b>Daily regime:</b> ${(s.regime||"?").toUpperCase()} for ~${s.regime_weeks ?? "?"} weeks${s.above_ema200 === true ? " • above 200 EMA" : s.above_ema200 === false ? " • below 200 EMA" : ""}</div>
       <div class="mut"><b>Technical:</b> trend ${s.trend_score}/5${s.runner ? " ⭐RUNNER" : ""} • ADX (trend strength) ${s.adx} • Relative Strength (RS) vs SPY ${(s.rs*100).toFixed(1)}% • RSI(4h) ${s.rsi ?? ""} • quality ${s.quality ?? ""}</div>
       <div class="mut"><b>EMAs:</b> 20 $${s.ema20 ?? "?"} | 50 $${s.ema50 ?? "?"} | 200 $${s.ema200 ?? "?"}</div>
-      <div class="mut"><b>Notes:</b> ${(s.warnings && s.warnings.length) ? s.warnings.join(" • ") : "no warnings"}${s.options_note && s.options_note !== "options: n/a" ? " • " + s.options_note : ""}</div>
+      <div class="mut"><b>Indicator reads:</b> ${(s.context_notes && s.context_notes.length) ? s.context_notes.join(" • ") : "—"}</div>
+      <div class="mut"><b>Notes:</b> ${(s.warnings && s.warnings.length) ? s.warnings.join(" • ") : "no warnings"}</div>
+      <details style="margin-top:6px"><summary class="mut" style="cursor:pointer">Why this score? (quality ${s.quality ?? ""})</summary>
+        <table style="margin-top:6px">${
+          [["RSI momentum","rsi"],["Bollinger Bands","bollinger"],["VWAP","vwap"],
+           ["Volume","volume"],["Extension from EMA","extension"],["Options","options"]]
+          .map(([label,key]) => {
+            const v = s.q_detail ? s.q_detail[key] : undefined;
+            const note = s.q_notes ? (s.q_notes[key] || "") : "";
+            const col = v === undefined ? "var(--mut)" : (v >= 0.5 ? "#2ea043" : v > -0.2 ? "#8b98a5" : "#da3633");
+            return `<tr><td style="width:150px">${label}</td>
+              <td style="color:${col};width:60px">${v === undefined ? "–" : (v>0?"+":"")+v.toFixed(1)}</td>
+              <td class="mut">${note}</td></tr>`;
+          }).join("")}
+        </table></details>
       <div class="row mut">My actual fill (correct for spread / your size) — P/L amount updates live:</div>
       <div class="row">
         <input id="f_entry_${i}" type="number" step="0.01" value="${s.entry}" style="width:100px" title="my entry" oninput="updatePL(${i})">
