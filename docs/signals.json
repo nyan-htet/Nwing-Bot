@@ -1,14 +1,101 @@
 {
-  "generated": "2026-08-03T15:16:07.681861+00:00",
+  "generated": "2026-08-03T18:07:01.983471+00:00",
   "macro": {
-    "risk": "risk-on",
-    "vol": 12.9
+    "risk": "neutral",
+    "vol": 13.4
   },
   "cycles": {
-    "score": -0.55,
+    "score": -0.54,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +1.8%, decade-pos 6 avg +10.2% (informative only)"
+    "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.4% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "STT",
+      "name": "",
+      "setup": "pullback",
+      "entry": 182.6,
+      "tp": 212.21,
+      "tp_pct": 0.1621577217962762,
+      "shares": 2,
+      "value": 365.2,
+      "pl_amount": 59.22,
+      "fee_pct": 0.033772374197906095,
+      "trend_score": 5,
+      "adx": 27.7,
+      "rs": 0.177,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 16,
+      "ema20": 180.7,
+      "ema50": 172.26,
+      "ema200": 146.48,
+      "above_ema200": true,
+      "quality": 0.45,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 0.3,
+        "volume": -0.4,
+        "options": 0.0
+      },
+      "rsi": 51.5,
+      "options_note": "options: n/a",
+      "sector": "Unknown",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.45 (rsi +1.0, bb +1.0, vwap +0.3, vol -0.4, opt +0.0; RSI=51.5)",
+        "options: n/a"
+      ],
+      "time": "2026-08-03T18:06:59.693364+00:00"
+    },
+    {
+      "ticker": "SYY",
+      "name": "",
+      "setup": "pullback",
+      "entry": 84.77,
+      "tp": 91.84,
+      "tp_pct": 0.08340214698596204,
+      "shares": 5,
+      "value": 423.84999999999997,
+      "pl_amount": 35.35,
+      "fee_pct": 0.05657708628005652,
+      "trend_score": 5,
+      "adx": 25.6,
+      "rs": 0.113,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 7,
+      "ema20": 83.22,
+      "ema50": 81.17,
+      "ema200": 79.64,
+      "above_ema200": true,
+      "quality": 0.45,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 0.3,
+        "volume": -0.4,
+        "options": 0.0
+      },
+      "rsi": 54.8,
+      "options_note": "options: n/a",
+      "sector": "Unknown",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.45 (rsi +1.0, bb +1.0, vwap +0.3, vol -0.4, opt +0.0; RSI=54.8)",
+        "options: n/a"
+      ],
+      "time": "2026-08-03T18:06:59.708314+00:00"
+    }
+  ],
   "position_alerts": []
 }
