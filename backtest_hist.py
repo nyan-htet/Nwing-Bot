@@ -29,6 +29,7 @@ import indicators as ind
 import universe
 
 RUN_INFO = {}
+_CACHE = {}          # reused across sweep variants (download + prep once)
 
 # ---- portfolio rules (overridable per run: see PARAMS) ----
 START_EQUITY = 10_000.0
@@ -154,8 +155,14 @@ def run(years=8, max_stocks=None, include_etfs=True):
           f"(+SPY benchmark) | ETFs {'included' if include_etfs else 'excluded'}")
     n_bars = int(years * 252) + 300
 
-    print(f"Downloading daily history for {len(tickers)} tickers…")
-    raw = data.fetch_td(tickers, interval="1day", outputsize=min(n_bars, 5000))
+    cache_key = (tuple(tickers), n_bars)
+    if _CACHE.get("key") == cache_key:
+        raw = _CACHE["raw"]
+        print(f"Reusing cached history for {len(raw)} tickers (no re-download)")
+    else:
+        print(f"Downloading daily history for {len(tickers)} tickers…")
+        raw = data.fetch_td(tickers, interval="1day", outputsize=min(n_bars, 5000))
+        _CACHE.update({"key": cache_key, "raw": raw})
     spy = raw.get("SPY")
     if spy is None:                           # retry benchmark alone
         print("SPY missing from batch — retrying on its own…")
@@ -168,12 +175,17 @@ def run(years=8, max_stocks=None, include_etfs=True):
           f"(failed: {', '.join(t for t in tickers if t not in raw) or 'none'})")
     spy = spy.drop_duplicates(subset="time").sort_values("time").set_index("time")
 
-    prepped = {}
-    for t, df in raw.items():
-        if t == "SPY" or len(df) < 300:
-            continue      # SPY = benchmark only, never traded
-        d_ = df.drop_duplicates(subset="time").sort_values("time")
-        prepped[t] = prep(d_).set_index("time")
+    prep_key = (cache_key, PARAMS["trail_ema"])
+    if _CACHE.get("prep_key") == prep_key:
+        prepped = _CACHE["prepped"]
+    else:
+        prepped = {}
+        for t, df in raw.items():
+            if t == "SPY" or len(df) < 300:
+                continue      # SPY = benchmark only, never traded
+            d_ = df.drop_duplicates(subset="time").sort_values("time")
+            prepped[t] = prep(d_).set_index("time")
+        _CACHE.update({"prep_key": prep_key, "prepped": prepped})
     print(f"Usable tickers: {len(prepped)}")
     globals()["RUN_INFO"] = {"stocks": len(stocks), "etfs": len(etfs),
                              "tested": len(prepped), "years": years,
