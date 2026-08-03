@@ -42,12 +42,23 @@ SWING_LOOKBACK = 5             # bars each side for swing levels (per timeframe)
 # Each factor scores in [-1, +1]; weighted sum must reach SCORE_MIN to alert.
 # None of these is a hard trigger on its own.
 QUALITY_WEIGHTS = {
-    "rsi": 0.25,        # 4h RSI: healthy zone good, overstretched penalized
-    "bollinger": 0.20,  # position in bands + squeeze-expansion bonus
-    "vwap": 0.20,       # price vs session VWAP (institutional level)
-    "volume": 0.15,     # participation vs 20-bar average
-    "options": 0.20,    # P/C ratio, call-wall vs TP, IV expected move (nightly cache)
+    "rsi": 0.22,        # level + DIRECTION of approach + reset + divergence
+    "bollinger": 0.15,  # band position, squeeze-expansion, band-walk vs snap-back
+    "vwap": 0.15,       # above/below + reclaim + extension from VWAP
+    "volume": 0.13,     # setup-aware: dry-up on pullbacks, surge on breakouts
+    "extension": 0.20,  # distance from EMA20 in ATRs (don't chase stretched moves)
+    "options": 0.15,    # P/C ratio, call-wall vs TP, IV expected move
 }
+
+# ---- context-modifier settings (the "path, not snapshot" logic) ----
+CONTEXT_RULES = True           # master switch for all modifiers below
+RSI_DIR_BARS = 8               # bars back used to judge RSI direction
+RSI_RESET_LOOKBACK = 12        # a dip below RSI_RESET_LEVEL recently = healthy reset
+RSI_RESET_LEVEL = 42
+EXT_GOOD_ATR = 1.0             # <=1 ATR above EMA20 = near the line, ideal entry
+EXT_STRETCHED_ATR = 3.0        # >=3 ATR above EMA20 = parabolic, correction likely
+VWAP_NEAR_PCT = 0.015          # within 1.5% of VWAP = good entry proximity
+EMA_STACK_BONUS = 0.15         # 20>50>200 stacked & rising
 OPEX_CAUTION_DAYS = 1          # flag entries within N trading days of monthly opex
 SCORE_MIN = 0.30               # minimum weighted score to allow an alert (raised: fewer, better)
 RSI_PERIOD = 14

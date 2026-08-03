@@ -130,45 +130,129 @@ def thesis_broken(daily, cfg) -> bool:
 
 
 def quality_score(h1, h4, setup, cfg, octx=None, entry_hint=None) -> dict:
-    """Weighted confirmation from RSI / Bollinger / VWAP / volume.
-    Each factor votes in [-1, +1]; nothing here is a standalone trigger."""
-    scores = {}
-    r = float(ind.rsi(h4["close"], cfg.RSI_PERIOD).iloc[-1])
-    # RSI: for pullbacks, recovering-from-dip is best; overbought is penalized
-    if setup == "pullback":
-        scores["rsi"] = 1.0 if 40 <= r <= 60 else (0.4 if 30 <= r < 40 or 60 < r <= 68 else -1.0 if r > 75 else -0.3)
-    else:  # breakout: strength fine, exhaustion penalized
-        scores["rsi"] = 1.0 if 55 <= r <= 70 else (0.3 if 50 <= r < 55 else -1.0 if r > 80 else -0.3)
+    """Weighted confirmation. Each factor votes in [-1, +1] and is adjusted by
+    CONTEXT (how it got here), not just its level. Nothing is a hard trigger."""
+    scores, notes = {}, {}
 
-    mid, up, lo, width, pos = ind.bollinger(h4["close"], cfg.BB_PERIOD)
+    # ---------- RSI: level + direction of approach + divergence ----------
+    r, r_dir, r_lo, r_hi, r_reset = ind.rsi_context(h4["close"], cfg.RSI_PERIOD)
+    if setup == "pullback":
+        base = 1.0 if 40 <= r <= 60 else (0.4 if (30 <= r < 40 or 60 < r <= 68) else (-1.0 if r > 75 else -0.3))
+    else:
+        base = 1.0 if 55 <= r <= 70 else (0.3 if 50 <= r < 55 else (-1.0 if r > 80 else -0.3))
+    adj = 0.0
+    if r_dir == "rising":
+        adj += 0.3                      # recovering into the zone = good
+    elif r_dir == "falling":
+        adj -= 0.4                      # decaying into the zone = caution
+    if r_reset:
+        adj += 0.3                      # dipped <40 then turned up = clean reset
+    if r_hi and r_hi > 75 and r_dir == "falling":
+        adj -= 0.3                      # coming down off overbought
+    diverg = ind.rsi_divergence(h4, cfg.RSI_PERIOD)
+    if diverg:
+        adj -= 0.5
+    scores["rsi"] = max(-1.0, min(1.0, base + adj))
+    notes["rsi"] = (f"RSI {r:.1f} {r_dir}"
+                    + (f", reset from {r_lo:.0f}" if r_reset else "")
+                    + (f", peaked {r_hi:.0f}" if r_hi and r_hi > 75 else "")
+                    + (", BEARISH DIVERGENCE" if diverg else ""))
+
+    # ---------- Bollinger: position + squeeze/expansion + band walk ----------
+    mid, up, lo_b, width, pos = ind.bollinger(h4["close"], cfg.BB_PERIOD)
     p = float(pos.iloc[-1]); w_now = float(width.iloc[-1])
     w_avg = float(width.iloc[-60:].mean()) if len(width.dropna()) >= 60 else w_now
-    if setup == "pullback":   # best: bouncing from mid/lower half, not hugging upper band
-        scores["bollinger"] = 1.0 if 0.3 <= p <= 0.7 else (0.3 if p < 0.3 else -0.6 if p > 0.95 else 0.0)
-    else:                     # breakout: expansion from a squeeze is the prize
-        squeeze_expand = w_avg > 0 and w_now > 1.1 * w_avg
-        scores["bollinger"] = 1.0 if (p > 0.8 and squeeze_expand) else (0.2 if p > 0.8 else -0.4)
+    expanding = w_avg > 0 and w_now > 1.1 * w_avg
+    contracting = w_avg > 0 and w_now < 0.9 * w_avg
+    if setup == "pullback":
+        b = 1.0 if 0.3 <= p <= 0.7 else (0.3 if p < 0.3 else (-0.6 if p > 0.95 else 0.0))
+        if p > 0.9 and contracting:
+            b -= 0.3                    # tagging upper band as bands shrink = exhaustion
+    else:
+        b = 1.0 if (p > 0.8 and expanding) else (0.2 if p > 0.8 else -0.4)
+        if p > 0.9 and expanding:
+            b = 1.0                     # healthy band walk
+        if p > 0.9 and contracting:
+            b = -0.5                    # snap-back risk
+    scores["bollinger"] = max(-1.0, min(1.0, b))
+    notes["bollinger"] = (f"band position {p:.0%}, "
+                          + ("expanding" if expanding else "contracting" if contracting else "stable"))
 
+    # ---------- VWAP: reclaim vs rejection + extension ----------
     vw = ind.vwap(h1)
-    above = float(h1["close"].iloc[-1]) > float(vw.iloc[-1])
-    recent = (h1["close"].iloc[-7:] > vw.iloc[-7:]).mean()  # fraction of day above VWAP
-    scores["vwap"] = 1.0 if above and recent > 0.7 else (0.3 if above else -0.7)
+    px = float(h1["close"].iloc[-1]); v = float(vw.iloc[-1])
+    above = px > v
+    recent_frac = float((h1["close"].iloc[-7:] > vw.iloc[-7:]).mean())
+    dipped = bool((h1["low"].iloc[-7:] < vw.iloc[-7:]).any())
+    atr_h1 = float(ind.atr(h1, cfg.ATR_PERIOD).iloc[-1]) or 1e-9
+    ext = (px - v) / atr_h1
+    if above and dipped and recent_frac >= 0.4:
+        vs, vnote = 1.0, "reclaimed VWAP after dip (buyers defended)"
+    elif above and recent_frac > 0.7:
+        vs, vnote = 0.8, "holding above VWAP"
+    elif above:
+        vs, vnote = 0.3, "just above VWAP"
+    else:
+        vs, vnote = -0.7, "below VWAP (sellers in control)"
+    if ext > 2.0:
+        vs -= 0.5
+        vnote += f", stretched {ext:.1f} ATR above"
+    scores["vwap"] = max(-1.0, min(1.0, vs))
+    notes["vwap"] = vnote
 
-    vol_avg = float(h4["volume"].rolling(20).mean().iloc[-1]) or 1e9
-    ratio = float(h4["volume"].iloc[-1]) / vol_avg
-    scores["volume"] = 1.0 if ratio >= 1.5 else (0.3 if ratio >= 1.0 else -0.4)
+    # ---------- Volume: setup-aware (dry-up on pullbacks, surge on breakouts) ----------
+    ratio, vtrend = ind.volume_context(h4)
+    if setup == "pullback":
+        if vtrend == "drying up":
+            vol = 1.0                   # sellers exhausted = ideal pullback
+        elif ratio >= cfg.VOL_SPIKE:
+            vol = 0.2                   # heavy volume on a dip = distribution risk
+        else:
+            vol = 0.5
+    else:
+        vol = 1.0 if ratio >= cfg.VOL_SPIKE else (0.3 if ratio >= 1.0 else -0.6)
+    scores["volume"] = vol
+    notes["volume"] = f"{ratio:.1f}x average, {vtrend}"
 
+    # ---------- NEW: extension from EMA20 (don't chase parabolic moves) ----------
+    e20 = ind.ema(h4["close"], cfg.EMA_FAST)
+    e50 = ind.ema(h4["close"], cfg.EMA_SLOW)
+    e200 = ind.ema(h4["close"], 200)
+    atr4 = ind.atr(h4, cfg.ATR_PERIOD)
+    ex = ind.ema_extension(h4, e20, atr4)
+    slope = ind.ema_slope(e20)
+    stack = ind.ema_stack(e20, e50, e200)
+    if ex <= 1.0:
+        es = 1.0                        # near the line = clean entry
+    elif ex <= 2.0:
+        es = 0.4
+    elif ex <= 3.0:
+        es = -0.2
+    else:
+        es = -1.0                       # parabolic, correction likely
+    if slope <= 0:
+        es -= 0.4                       # flat/falling EMA = no real trend
+    if stack.startswith("bullish"):
+        es += 0.2
+    scores["extension"] = max(-1.0, min(1.0, es))
+    notes["extension"] = (f"{ex:+.1f} ATR from 20 EMA, slope {slope:+.1f}%, {stack}")
+
+    # ---------- Options (unchanged) ----------
     options_note = None
     if "options" in cfg.QUALITY_WEIGHTS:
         import options_context as oc
-        entry = entry_hint or float(h1["close"].iloc[-1])
-        tp_guess = entry * (1 + cfg.MIN_TP_PCT)   # conservative: score vs min TP
-        v, options_note = oc.score(octx, entry, tp_guess)
-        scores["options"] = v
+        entry = entry_hint or px
+        v_, options_note = oc.score(octx, entry, entry * (1 + cfg.MIN_TP_PCT))
+        scores["options"] = v_
+        notes["options"] = options_note
 
-    total = sum(cfg.QUALITY_WEIGHTS[k] * v for k, v in scores.items())
+    wts = cfg.QUALITY_WEIGHTS
+    total = sum(wts.get(k, 0) * v for k, v in scores.items())
     detail = {k: round(v, 2) for k, v in scores.items()}
-    return {"total": round(total, 2), "detail": detail, "rsi_value": round(r, 1),
+    return {"total": round(total, 2), "detail": detail, "notes": notes,
+            "rsi_value": round(r, 1), "rsi_dir": r_dir, "divergence": diverg,
+            "ema_extension_atr": round(ex, 2), "ema_slope_pct": round(slope, 2),
+            "ema_stack": stack, "volume_trend": vtrend,
             "options_note": options_note}
 
 

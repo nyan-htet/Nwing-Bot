@@ -5,10 +5,19 @@ import urllib.request
 from email.mime.text import MIMEText
 
 
+def _fmt(v):
+    """Score with a visual cue."""
+    if v is None:
+        return "  ?  "
+    mark = "✓" if v >= 0.5 else ("·" if v > -0.2 else "✗")
+    return f"{mark} {v:+.1f}"
+
+
 def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
     name = f" — {sig['name']}" if sig.get("name") else ""
     sector = f"  [{sig['sector']}]" if sig.get("sector") else ""
     qd = sig.get("q_detail", {})
+    qn = sig.get("q_notes", {})
     lines = [
         f"🟢 BUY SIGNAL — {sig['ticker']}{name}{sector}",
         "",
@@ -31,17 +40,21 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
         f"Relative Strength (RS) vs SPY, 3-month          : {sig['rs']:+.1%}",
         f"RSI (Relative Strength Index, 4-hour)           : {sig.get('rsi', '?')}"
         + ("  [40-60 = healthy pullback zone]" if isinstance(sig.get('rsi'), (int, float)) and 40 <= sig['rsi'] <= 60 else ""),
-        f"Quality score         : {sig.get('quality', '')}",
-        f"  • RSI (momentum)               : {qd.get('rsi', '?')}",
-        f"  • Bollinger Bands (volatility) : {qd.get('bollinger', '?')}",
-        f"  • VWAP (Volume-Weighted Avg Price) : {qd.get('vwap', '?')}",
-        f"  • Volume (participation)       : {qd.get('volume', '?')}",
-        f"  • Options positioning          : {qd.get('options', '?')}",
+        f"Quality score         : {sig.get('quality', '')}  (weighted; realistic max ~0.8)",
+        f"  • RSI momentum        {_fmt(qd.get('rsi'))} — {qn.get('rsi', '')}",
+        f"  • Bollinger Bands     {_fmt(qd.get('bollinger'))} — {qn.get('bollinger', '')}",
+        f"  • VWAP                {_fmt(qd.get('vwap'))} — {qn.get('vwap', '')}",
+        f"  • Volume              {_fmt(qd.get('volume'))} — {qn.get('volume', '')}",
+        f"  • Extension from EMA  {_fmt(qd.get('extension'))} — {qn.get('extension', '')}",
+        f"  • Options positioning {_fmt(qd.get('options'))} — {qn.get('options', 'n/a')}",
         "",
         "═══ FUNDAMENTAL & MACRO ═══",
         f"Macro       : {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)",
         f"Cycles      : {cyc.get('line', 'n/a').replace('Cycles ', '')}",
     ]
+    if sig.get("context_notes"):
+        lines += ["", "═══ WHAT THE INDICATORS ARE SAYING ═══"] + \
+                 [f"• {c}" for c in sig["context_notes"]]
     if sig.get("options_note") and sig["options_note"] != "options: n/a":
         lines.append(f"Options     : {sig['options_note']}")
     if sig.get("warnings"):

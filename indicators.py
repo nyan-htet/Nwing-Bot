@@ -80,3 +80,116 @@ def vwap(df):
     pv = (tp * d["volume"]).groupby(day).cumsum()
     vv = d["volume"].groupby(day).cumsum().replace(0, 1e-9)
     return pv / vv
+
+
+def slope_pct(series, bars=10):
+    """% change of a series over `bars` (EMA slope, RSI direction, etc)."""
+    if len(series) <= bars:
+        return 0.0
+    a, b = float(series.iloc[-bars - 1]), float(series.iloc[-1])
+    return (b - a) / abs(a) if a else 0.0
+
+
+def extension_atr(close, ema, atr_val):
+    """How far price is above/below an EMA, measured in ATRs."""
+    if not atr_val or atr_val <= 0:
+        return 0.0
+    return float((close - ema) / atr_val)
+
+
+def bearish_divergence(df, rsi_series, lookback=30):
+    """Price makes a higher high while RSI makes a lower high."""
+    if len(df) < lookback + 5:
+        return False
+    h = df["high"].iloc[-lookback:]
+    r = rsi_series.iloc[-lookback:]
+    half = lookback // 2
+    p1, p2 = float(h.iloc[:half].max()), float(h.iloc[half:].max())
+    r1, r2 = float(r.iloc[:half].max()), float(r.iloc[half:].max())
+    return bool(p2 > p1 and r2 < r1 - 3)
+
+
+
+def rsi_context(close, period=14, lookback=8):
+    """How RSI ARRIVED at its current level.
+    Returns (value, direction, recent_min, recent_max, reset_flag).
+    reset_flag = RSI dipped below 40 within lookback and is now rising
+    (the 'oversold -> recovering' pattern)."""
+    r = rsi(close, period)
+    if len(r.dropna()) < lookback + 2:
+        return float(r.iloc[-1]), "flat", None, None, False
+    now = float(r.iloc[-1])
+    prev = float(r.iloc[-lookback])
+    win = r.iloc[-lookback:]
+    lo, hi = float(win.min()), float(win.max())
+    if now > prev + 3:
+        direction = "rising"
+    elif now < prev - 3:
+        direction = "falling"
+    else:
+        direction = "flat"
+    reset = bool(lo < 40 and direction == "rising")
+    return now, direction, lo, hi, reset
+
+
+def rsi_divergence(df, period=14, lookback=30):
+    """Bearish divergence: price higher high, RSI lower high over lookback."""
+    if len(df) < lookback + 5:
+        return False
+    r = rsi(df["close"], period)
+    half = lookback // 2
+    p_recent, p_prior = df["high"].iloc[-half:].max(), df["high"].iloc[-lookback:-half].max()
+    r_recent, r_prior = r.iloc[-half:].max(), r.iloc[-lookback:-half].max()
+    return bool(p_recent > p_prior and r_recent < r_prior - 2)
+
+
+def ema_extension(df, ema_series, atr_series):
+    """How far price sits above its EMA, measured in ATRs (stretch gauge)."""
+    a = float(atr_series.iloc[-1])
+    if not a:
+        return 0.0
+    return float((df["close"].iloc[-1] - ema_series.iloc[-1]) / a)
+
+
+def ema_slope(ema_series, bars=10):
+    """% change of the EMA over N bars — is the trend actually moving up?"""
+    if len(ema_series) < bars + 1:
+        return 0.0
+    old = float(ema_series.iloc[-bars - 1])
+    return float((ema_series.iloc[-1] - old) / old * 100) if old else 0.0
+
+
+def ema_stack(fast, slow, long_):
+    """Textbook structure: 20 > 50 > 200 (bullish stack)."""
+    try:
+        f, s, l = float(fast.iloc[-1]), float(slow.iloc[-1]), float(long_.iloc[-1])
+    except Exception:
+        return "unknown"
+    if f > s > l:
+        return "bullish stack (20>50>200)"
+    if f < s < l:
+        return "bearish stack (20<50<200)"
+    return "mixed / tangled"
+
+
+def volume_context(df, period=20):
+    """Volume vs average AND whether it is drying up (pullbacks) or
+    surging (breakouts). Returns (ratio, trend)."""
+    avg = df["volume"].rolling(period).mean()
+    if len(avg.dropna()) < 3:
+        return 1.0, "flat"
+    ratio = float(df["volume"].iloc[-1] / (avg.iloc[-1] or 1))
+    recent = float(df["volume"].iloc[-3:].mean())
+    prior = float(df["volume"].iloc[-8:-3].mean() or 1)
+    trend = "drying up" if recent < prior * 0.8 else ("surging" if recent > prior * 1.3 else "steady")
+    return ratio, trend
+
+
+def adx_context(df, period=14, lookback=8):
+    """ADX level plus whether trend strength is building or fading."""
+    a = adx(df, period)
+    now = float(a.iloc[-1])
+    if len(a) < lookback + 1:
+        return now, "flat"
+    prev = float(a.iloc[-lookback])
+    return now, ("rising" if now > prev + 2 else "falling" if now < prev - 2 else "flat")
