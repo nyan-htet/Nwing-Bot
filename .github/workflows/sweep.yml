@@ -1,0 +1,40 @@
+name: strategy-sweep
+on:
+  workflow_dispatch:
+    inputs:
+      years:
+        description: "Years of history"
+        required: false
+        default: "6"
+      max_stocks:
+        description: "How many STOCKS (0 = none, blank = all)"
+        required: false
+        default: "50"
+      include_etfs:
+        description: "Include ETFs? yes / no"
+        required: false
+        default: "yes"
+permissions:
+  contents: write
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pandas numpy pyyaml
+      - name: Run strategy sweep
+        env:
+          TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+        run: |
+          python sweep.py "${{ github.event.inputs.years }}" \
+                          "${{ github.event.inputs.max_stocks }}" \
+                          "${{ github.event.inputs.include_etfs }}"
+      - name: Publish results
+        run: |
+          git config user.name swingbot && git config user.email bot@users.noreply.github.com
+          git add docs/sweep.json docs/backtest.json backtest_trades.csv || true
+          git commit -m "sweep: update results" || echo "no changes"
+          git push
