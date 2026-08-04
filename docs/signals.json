@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03T21:21:48.092469+00:00",
+  "generated": "2026-08-04T03:36:03.655788+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 13.3
@@ -12,7 +12,7 @@
   "signals": [
     {
       "ticker": "CNC",
-      "name": "",
+      "name": "Centene",
       "setup": "pullback",
       "entry": 63.76,
       "tp": 69.36,
@@ -52,7 +52,7 @@
       "ext_atr": null,
       "rsi": 49.2,
       "options_note": "options: n/a",
-      "sector": "Unknown",
+      "sector": "Healthcare",
       "warnings": [],
       "reasons": [
         "daily uptrend (score 5/5)",
@@ -62,11 +62,11 @@
         "quality +0.70 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=49.2)",
         "options: n/a"
       ],
-      "time": "2026-08-03T21:21:38.418875+00:00"
+      "time": "2026-08-04T03:35:49.189245+00:00"
     },
     {
       "ticker": "ECL",
-      "name": "",
+      "name": "Ecolab",
       "setup": "pullback",
       "entry": 279.41,
       "tp": 306.52,
@@ -106,7 +106,7 @@
       "ext_atr": null,
       "rsi": 56.9,
       "options_note": "options: n/a",
-      "sector": "Unknown",
+      "sector": "Basic Materials",
       "warnings": [],
       "reasons": [
         "daily uptrend (score 5/5)",
@@ -116,11 +116,173 @@
         "quality +0.55 (rsi +0.6, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=56.9)",
         "options: n/a"
       ],
-      "time": "2026-08-03T21:21:38.526969+00:00"
+      "time": "2026-08-04T03:35:49.293656+00:00"
+    },
+    {
+      "ticker": "EW",
+      "name": "Edwards Lifesciences",
+      "setup": "pullback",
+      "entry": 88.82,
+      "tp": 96.29,
+      "tp_pct": 0.08410267957667217,
+      "shares": 5,
+      "value": 444.09999999999997,
+      "pl_amount": 37.35,
+      "fee_pct": 0.05354752342704141,
+      "trend_score": 5,
+      "adx": 26.1,
+      "rs": 0.011,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 1,
+      "ema20": 86.78,
+      "ema50": 86.74,
+      "ema200": 83.36,
+      "above_ema200": true,
+      "quality": 0.31,
+      "q_detail": {
+        "rsi": 0.7,
+        "bollinger": -0.9,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.4,
+        "options": 0.0
+      },
+      "q_notes": {
+        "rsi": "RSI 60.7 rising",
+        "bollinger": "band position 107%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.8x average, steady",
+        "extension": "+1.7 ATR from 20 EMA, slope +0.6%, mixed / tangled",
+        "options": "options: n/a"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 60.7,
+      "options_note": "options: n/a",
+      "sector": "Healthcare",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.31 (rsi +0.7, bb -0.9, vwap +1.0, vol +0.5, opt +0.0; RSI=60.7)",
+        "options: n/a"
+      ],
+      "time": "2026-08-04T03:35:49.326543+00:00"
+    },
+    {
+      "ticker": "HBAN",
+      "name": "Huntington Bancshares",
+      "setup": "pullback",
+      "entry": 17.37,
+      "tp": 19.45,
+      "tp_pct": 0.11974668969487601,
+      "shares": 28,
+      "value": 486.36,
+      "pl_amount": 58.24,
+      "fee_pct": 0.03434065934065937,
+      "trend_score": 5,
+      "adx": 33.6,
+      "rs": 0.02,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 7,
+      "ema20": 17.49,
+      "ema50": 17.29,
+      "ema200": 16.95,
+      "above_ema200": true,
+      "quality": 0.77,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 0.6,
+        "options": 0.0
+      },
+      "q_notes": {
+        "rsi": "RSI 48.5 rising, reset from 30",
+        "bollinger": "band position 49%, expanding",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.6x average, drying up",
+        "extension": "+0.1 ATR from 20 EMA, slope -2.3%, mixed / tangled",
+        "options": "options: n/a"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 48.5,
+      "options_note": "options: n/a",
+      "sector": "Financial Services",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.77 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=48.5)",
+        "options: n/a"
+      ],
+      "time": "2026-08-04T03:35:49.406128+00:00"
+    },
+    {
+      "ticker": "IR",
+      "name": "Ingersoll Rand",
+      "setup": "pullback",
+      "entry": 87.78,
+      "tp": 100.96,
+      "tp_pct": 0.15014809751651859,
+      "shares": 5,
+      "value": 438.9,
+      "pl_amount": 65.9,
+      "fee_pct": 0.030349013657056164,
+      "trend_score": 5,
+      "adx": 31.6,
+      "rs": 0.106,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 5,
+      "ema20": 82.74,
+      "ema50": 80.33,
+      "ema200": 80.91,
+      "above_ema200": true,
+      "quality": 0.32,
+      "q_detail": {
+        "rsi": 0.7,
+        "bollinger": -0.9,
+        "vwap": 1.0,
+        "volume": 0.2,
+        "extension": 0.6,
+        "options": 0.0
+      },
+      "q_notes": {
+        "rsi": "RSI 64.5 rising",
+        "bollinger": "band position 98%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.5x average, steady",
+        "extension": "+1.6 ATR from 20 EMA, slope +2.0%, bullish stack (20>50>200)",
+        "options": "options: n/a"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 64.5,
+      "options_note": "options: n/a",
+      "sector": "Industrials",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.32 (rsi +0.7, bb -0.9, vwap +1.0, vol +0.2, opt +0.0; RSI=64.5)",
+        "options: n/a"
+      ],
+      "time": "2026-08-04T03:35:49.471786+00:00"
     },
     {
       "ticker": "ITW",
-      "name": "",
+      "name": "Illinois Tool Works",
       "setup": "pullback",
       "entry": 288.5,
       "tp": 359.72,
@@ -160,7 +322,7 @@
       "ext_atr": null,
       "rsi": 58.6,
       "options_note": "options: n/a",
-      "sector": "Unknown",
+      "sector": "Industrials",
       "warnings": [],
       "reasons": [
         "daily uptrend (score 5/5)",
@@ -170,11 +332,11 @@
         "quality +0.66 (rsi +0.6, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=58.6)",
         "options: n/a"
       ],
-      "time": "2026-08-03T21:21:38.679524+00:00"
+      "time": "2026-08-04T03:35:49.485238+00:00"
     },
     {
       "ticker": "IVZ",
-      "name": "",
+      "name": "Invesco",
       "setup": "pullback",
       "entry": 30.91,
       "tp": 37.27,
@@ -214,7 +376,7 @@
       "ext_atr": null,
       "rsi": 63.0,
       "options_note": "options: n/a",
-      "sector": "Unknown",
+      "sector": "Financial Services",
       "warnings": [],
       "reasons": [
         "daily uptrend (score 5/5)",
@@ -224,11 +386,65 @@
         "quality +0.47 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=63.0)",
         "options: n/a"
       ],
-      "time": "2026-08-03T21:21:38.690894+00:00"
+      "time": "2026-08-04T03:35:49.498699+00:00"
+    },
+    {
+      "ticker": "NWS",
+      "name": "News Corp (B)",
+      "setup": "pullback",
+      "entry": 31.8,
+      "tp": 35.2,
+      "tp_pct": 0.10691823899371067,
+      "shares": 15,
+      "value": 477.0,
+      "pl_amount": 51.0,
+      "fee_pct": 0.03921568627450978,
+      "trend_score": 5,
+      "adx": 25.4,
+      "rs": 0.011,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 4,
+      "ema20": 31.14,
+      "ema50": 30.52,
+      "ema200": 30.17,
+      "above_ema200": true,
+      "quality": 0.48,
+      "q_detail": {
+        "rsi": 0.1,
+        "bollinger": 1.0,
+        "vwap": 0.3,
+        "volume": 0.5,
+        "extension": 1.0,
+        "options": 0.0
+      },
+      "q_notes": {
+        "rsi": "RSI 54.8 falling, BEARISH DIVERGENCE",
+        "bollinger": "band position 68%, stable",
+        "vwap": "just above VWAP",
+        "volume": "1.2x average, steady",
+        "extension": "+0.6 ATR from 20 EMA, slope +1.7%, bullish stack (20>50>200)",
+        "options": "options: n/a"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 54.8,
+      "options_note": "options: n/a",
+      "sector": "Communication Services",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.48 (rsi +0.1, bb +1.0, vwap +0.3, vol +0.5, opt +0.0; RSI=54.8)",
+        "options: n/a"
+      ],
+      "time": "2026-08-04T03:35:49.623434+00:00"
     },
     {
       "ticker": "NWSA",
-      "name": "",
+      "name": "News Corp (A)",
       "setup": "pullback",
       "entry": 27.95,
       "tp": 31.61,
@@ -268,7 +484,7 @@
       "ext_atr": null,
       "rsi": 53.3,
       "options_note": "options: n/a",
-      "sector": "Unknown",
+      "sector": "Communication Services",
       "warnings": [],
       "reasons": [
         "daily uptrend (score 5/5)",
@@ -278,61 +494,7 @@
         "quality +0.48 (rsi +0.1, bb +1.0, vwap +0.3, vol +0.5, opt +0.0; RSI=53.3)",
         "options: n/a"
       ],
-      "time": "2026-08-03T21:21:38.808523+00:00"
-    },
-    {
-      "ticker": "USB",
-      "name": "",
-      "setup": "pullback",
-      "entry": 63.94,
-      "tp": 70.94,
-      "tp_pct": 0.10956440134511602,
-      "shares": 7,
-      "value": 447.545,
-      "pl_amount": 49.03,
-      "fee_pct": 0.04078719282145409,
-      "trend_score": 5,
-      "adx": 25.1,
-      "rs": 0.102,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 8,
-      "ema20": 62.81,
-      "ema50": 60.58,
-      "ema200": 55.76,
-      "above_ema200": true,
-      "quality": 0.79,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 1.0,
-        "options": 0.0
-      },
-      "q_notes": {
-        "rsi": "RSI 57.6 rising",
-        "bollinger": "band position 69%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.7x average, steady",
-        "extension": "+0.8 ATR from 20 EMA, slope +0.0%, bullish stack (20>50>200)",
-        "options": "options: n/a"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 57.6,
-      "options_note": "options: n/a",
-      "sector": "Unknown",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.79 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=57.6)",
-        "options: n/a"
-      ],
-      "time": "2026-08-03T21:21:38.972765+00:00"
+      "time": "2026-08-04T03:35:49.636242+00:00"
     }
   ],
   "position_alerts": []
