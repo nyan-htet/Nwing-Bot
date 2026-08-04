@@ -84,18 +84,30 @@ def trigger_1h(h1) -> bool:
 
 
 def calc_tp(daily, h4, entry, cfg, trend=None) -> float | None:
-    """Trend-aware target.
+    """Target inside [MIN_TP_PCT, MAX_TP_PCT], chosen in this order:
 
-    Weak trend  -> nearest resistance beyond +MIN_TP_PCT (conservative).
-    Strong trend-> reach further up the resistance ladder (bigger target).
-    Blue sky (no overhead resistance) -> ATR-based measured move, scaled by
-    trend strength. Everything is capped at MAX_TP_PCT (50%).
+      1. Fibonacci extension of the last up-leg (1.272 / 1.618 / 2.0) that
+         falls inside the window — a structural projection of how far this
+         move is likely to travel.
+      2. Swing-high resistance inside the window (nearest in weak trends,
+         further up the ladder in strong ones).
+      3. Blue-sky ATR measured move.
+
+    Returns None (skip the trade) if nothing sensible sits inside the window,
+    e.g. the only resistance is below +MIN_TP_PCT.
     """
     min_tp = entry * (1 + cfg.MIN_TP_PCT)
     max_tp = entry * (1 + cfg.MAX_TP_PCT)
     strong = bool(trend and trend.get("score", 0) >= 4 and trend.get("adx", 0) >= 30)
-    pctl = cfg.TP_STRETCH["strong" if strong else "normal"]
 
+    # 1) Fibonacci extension targets inside the window
+    if getattr(cfg, "USE_FIB_TARGETS", False):
+        fibs = [f for f in ind.fib_extension_targets(daily, entry)
+                if min_tp <= f <= max_tp]
+        if fibs:
+            return round(fibs[-1] if strong else fibs[0], 2)
+
+    # 2) structural resistance inside the window
     cands = []
     highs = daily["high"].values
     lb = cfg.SWING_LOOKBACK
@@ -103,20 +115,20 @@ def calc_tp(daily, h4, entry, cfg, trend=None) -> float | None:
         w = highs[j - lb: j + lb + 1]
         if highs[j] == w.max() and min_tp <= highs[j] <= max_tp:
             cands.append(float(highs[j]))
-
     if cands:
         cands.sort()
-        idx = min(len(cands) - 1, int(round(pctl * (len(cands) - 1))))
-        return round(cands[idx], 2)          # further up the ladder in strong trends
+        pctl = cfg.TP_STRETCH["strong" if strong else "normal"]
+        return round(cands[min(len(cands) - 1, int(round(pctl * (len(cands) - 1))))], 2)
 
-    # no overhead resistance within range -> blue sky / measured move
+    # 3) blue sky: ATR measured move, clamped to the window
     hi52 = float(daily["high"].iloc[-252:].max())
     atr = float(ind.atr(daily, cfg.ATR_PERIOD).iloc[-1])
-    if entry >= hi52 * 0.97 or entry * (1 + cfg.MIN_TP_PCT) > hi52:
+    if entry >= hi52 * 0.97 or min_tp > hi52:
         mult = cfg.TP_BLUESKY_ATR * (1.5 if strong else 1.0)
         target = entry + mult * atr
-        target = max(target, min_tp)          # respect the 8% floor
-        return round(min(target, max_tp), 2)  # respect the 50% ceiling
+        if target < min_tp:
+            return None               # move too small to be worth it
+        return round(min(target, max_tp), 2)
     return None
 
 

@@ -39,7 +39,7 @@ FEE_STOCK = cfg.FEE_PER_STOCK_TRADE
 PARAMS = {
     "position_pct": cfg.POSITION_PCT,   # share of equity per trade
     "max_concurrent": 10,
-    "max_hold_days": 120,
+    "max_hold_days": 500,
     "exit_mode": "tp",                  # tp | trail | tp_then_trail
     "trail_ema": 20,                    # trail: exit on close below this EMA
     "trail_pct": 0.12,                  # trail: or this far below running high
@@ -111,6 +111,12 @@ def tp_at(d, i, entry, strong=False):
         w = highs[j - lb:j + lb + 1]
         if highs[j] == w.max() and min_tp <= highs[j] <= max_tp:
             cands.append(float(highs[j]))
+    if getattr(cfg, "USE_FIB_TARGETS", False):
+        sub = d.iloc[max(0, i - 120):i + 1]
+        fibs = [f for f in ind.fib_extension_targets(sub, entry)
+                if min_tp <= f <= max_tp]
+        if fibs:
+            return round(fibs[-1] if strong else fibs[0], 2)
     if cands:
         cands.sort()
         pctl = cfg.TP_STRETCH["strong" if strong else "normal"]
@@ -119,7 +125,8 @@ def tp_at(d, i, entry, strong=False):
     atr = float(d["atr"].iloc[i] or 0)
     if hi52 and (entry >= hi52 * 0.97 or min_tp > hi52):
         mult = cfg.TP_BLUESKY_ATR * (1.5 if strong else 1.0)
-        return round(min(max(entry + mult * atr, min_tp), max_tp), 2)
+        t = entry + mult * atr
+        return round(min(t, max_tp), 2) if t >= min_tp else None
     return None
 
 

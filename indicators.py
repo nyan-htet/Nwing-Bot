@@ -193,3 +193,28 @@ def adx_context(df, period=14, lookback=8):
         return now, "flat"
     prev = float(a.iloc[-lookback])
     return now, ("rising" if now > prev + 2 else "falling" if now < prev - 2 else "flat")
+
+
+
+def swing_leg(df, lookback=120):
+    """Most recent completed up-leg: (swing_low, swing_high) before now."""
+    if len(df) < 30:
+        return None, None
+    win = df.iloc[-lookback:] if len(df) > lookback else df
+    hi_idx = int(win["high"].values.argmax())
+    lo_before = win["low"].values[:hi_idx + 1]
+    if len(lo_before) < 2:
+        return None, None
+    lo_idx = int(lo_before.argmin())
+    return float(win["low"].values[lo_idx]), float(win["high"].values[hi_idx])
+
+
+def fib_extension_targets(df, entry, lookback=120):
+    """Projected targets from the last up-leg: 1.272 / 1.618 / 2.0 extensions.
+    Returns a sorted list of prices ABOVE entry."""
+    lo, hi = swing_leg(df, lookback)
+    if lo is None or hi is None or hi <= lo:
+        return []
+    leg = hi - lo
+    out = [lo + leg * r for r in (1.272, 1.618, 2.0)]
+    return sorted(p for p in out if p > entry)

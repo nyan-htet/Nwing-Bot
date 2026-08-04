@@ -4,7 +4,7 @@
 ACCOUNT_SIZE = 10_000.0        # used for suggested position size only (advisory)
 POSITION_PCT = 0.05            # suggested position = 5% of account per trade
 MIN_TRADE_USD = 250.0          # never suggest positions below this
-MIN_TP_PCT = 0.08              # take-profit must be at least 8% above entry
+MIN_TP_PCT = 0.09              # skip anything not worth at least +9%
 # Target selection: in strong trends the bot reaches PAST the nearest
 # resistance for a bigger target (up to MAX_TP_PCT). Nearest resistance is
 # only used when the trend is weak.
@@ -13,7 +13,9 @@ TP_STRETCH = {
     "normal": 0.30,   # otherwise: nearer resistance
 }
 TP_BLUESKY_ATR = 6.0           # no overhead resistance -> target = entry + N*ATR
-MAX_TP_PCT = 0.50              # hard ceiling on any target (50%)
+USE_FIB_TARGETS = True         # prefer Fibonacci extension levels inside the
+                               # MIN..MAX window when they exist
+MAX_TP_PCT = 0.20              # cap at +20%; runners re-alert in stages via the ledger
 LONG_ONLY = True               # shorts silently skipped
 FEE_PER_STOCK_TRADE = 1.0      # $1 buy + $1 sell for stocks
 FEE_PER_ETF_TRADE = 0.0        # ETFs commission-free on eToro
@@ -60,7 +62,7 @@ EXT_STRETCHED_ATR = 3.0        # >=3 ATR above EMA20 = parabolic, correction lik
 VWAP_NEAR_PCT = 0.015          # within 1.5% of VWAP = good entry proximity
 EMA_STACK_BONUS = 0.15         # 20>50>200 stacked & rising
 OPEX_CAUTION_DAYS = 1          # flag entries within N trading days of monthly opex
-SCORE_MIN = 0.30               # minimum weighted score to allow an alert (raised: fewer, better)
+SCORE_MIN = 0.50               # very selective (realistic max ~0.8)
 RSI_PERIOD = 14
 BB_PERIOD = 20
 
