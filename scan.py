@@ -21,6 +21,7 @@ import fundamentals as fnd
 import cycles
 import notify
 import portfolio_files as pf
+import alerts_ledger as al
 
 
 def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
@@ -197,13 +198,24 @@ def run_hourly(offline=False):
 
     # --- scan ---
     decided = pf.recently_decided(cfg.POSITIONS_FILE, cfg.ALERT_COOLDOWN_DAYS)
-    skip_report = {"cooldown": [], "earnings": [], "screen": []}
+    ledger = al.load()
+    skip_report = {"cooldown": [], "earnings": [], "screen": [],
+                   "already_alerted": [], "target_cleared": []}
     signals = []
     for t, h1 in h1_map.items():
         if t == "SPY":
             continue
         if t.upper() in decided:
             skip_report["cooldown"].append(t)
+            continue
+        px_now = float(h1["close"].iloc[-1])
+        cleared = al.clear_if_cleared(ledger, t, px_now)
+        if cleared:
+            skip_report["target_cleared"].append(
+                f"{t} (passed old TP {cleared['tp']}) — eligible again")
+        elif al.is_muted(ledger, t, px_now):
+            al.bump_muted(ledger, t)
+            skip_report["already_alerted"].append(t)
             continue
         tmeta = watch.get("meta", {}).get(t, {})
         is_etf = tmeta.get("type", "stock") == "etf"
@@ -217,6 +229,11 @@ def run_hourly(offline=False):
         octx = tmeta.get("options")
         sig = build_signal(t, h1, spy_daily, is_etf, screen, octx=octx, tmeta=tmeta)
         if sig:
+            if cleared:
+                sig["reasons"].insert(0, f"↑ new leg: cleared previous target "
+                                         f"${cleared['tp']} (old entry ${cleared['entry']})")
+                sig["new_leg"] = True
+            al.record(ledger, t, sig["entry"], sig["tp"])
             signals.append(sig)
 
     # --- open positions ---
@@ -234,11 +251,17 @@ def run_hourly(offline=False):
     for m in pos_msgs:
         notify.send_email("Position alert", m, cfg)
         notify.send_telegram(m, cfg)
+    al.save(ledger)
     log_signals_csv(signals, macro, cyc)
     publish(signals, pos_msgs, macro, cyc)
+    labels = {"cooldown": "you entered/skipped recently",
+              "earnings": "earnings within 7 days",
+              "screen": "failed fundamentals screen",
+              "already_alerted": "already alerted, price below its target",
+              "target_cleared": "target cleared -> eligible again"}
     for k, v in skip_report.items():
         if v:
-            print(f"blocked ({k}): {', '.join(sorted(v))}")
+            print(f"[{labels.get(k, k)}] {len(v)}: {', '.join(sorted(v))}")
     print(f"Scan done. {len(signals)} signal(s), {len(pos_msgs)} position alert(s). "
           f"Dashboard data -> {cfg.SIGNALS_FILE}")
     return signals, pos_msgs
