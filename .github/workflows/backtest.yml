@@ -14,11 +14,9 @@ on:
         description: "Include ETFs? yes / no"
         required: false
         default: "yes"
-
 permissions:
   contents: write
 
-  
 jobs:
   backtest:
     runs-on: ubuntu-latest
