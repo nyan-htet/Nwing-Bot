@@ -259,6 +259,12 @@ def run_hourly(offline=False):
     for m in pos_msgs:
         notify.send_email("Position alert", m, cfg)
         notify.send_telegram(m, cfg)
+
+    if not signals and not pos_msgs:
+        when = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M")
+        note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when)
+        notify.send_email(f"No new signals — {when} UTC", note, cfg)
+        notify.send_telegram(note, cfg)
     al.save(ledger)
     log_signals_csv(signals, macro, cyc)
     publish(signals, pos_msgs, macro, cyc)
