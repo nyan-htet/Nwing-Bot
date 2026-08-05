@@ -4,6 +4,8 @@
 ACCOUNT_SIZE = 10_000.0        # used for suggested position size only (advisory)
 POSITION_PCT = 0.05            # suggested position = 5% of account per trade
 MIN_TRADE_USD = 250.0          # never suggest positions below this
+FRACTIONAL_SHARES = True       # eToro supports fractional units
+SHARE_DECIMALS = 2             # round suggested units to this many decimals
 MIN_TP_PCT = 0.09              # skip anything not worth at least +9%
 # Target selection: in strong trends the bot reaches PAST the nearest
 # resistance for a bigger target (up to MAX_TP_PCT). Nearest resistance is
@@ -61,9 +63,9 @@ EXT_STRETCHED_ATR = 3.0        # >=3 ATR above EMA20 = parabolic, correction lik
 VWAP_NEAR_PCT = 0.015          # within 1.5% of VWAP = good entry proximity
 EMA_STACK_BONUS = 0.15         # 20>50>200 stacked & rising
 OPEX_CAUTION_DAYS = 1          # flag entries within N trading days of monthly opex
-SCORE_MIN = 0.35               # fallback / ETFs
-SCORE_MIN_STOCK = 0.60         # stocks must clear a higher bar
-SCORE_MIN_ETF = 0.40           # ETFs (broad baskets, less single-name risk)
+SCORE_MIN = 0.50               # fallback / ETFs
+SCORE_MIN_STOCK = 0.70         # stocks must clear a higher bar
+SCORE_MIN_ETF = 0.50           # ETFs (broad baskets, less single-name risk)
 RSI_PERIOD = 14
 BB_PERIOD = 20
 

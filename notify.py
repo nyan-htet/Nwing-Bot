@@ -32,7 +32,7 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
         "═══ TRADE PLAN ═══",
         f"Entry price   : ${entry:.2f}",
         f"Exit price    : ${sig['tp']:.2f}   (+{sig['tp_pct']:.1%})",
-        f"Shares        : {shares}  (≈ ${shares * entry:,.0f})",
+        f"Shares        : {shares:g}  (≈ ${shares * entry:,.0f})",
         "-------",
         (f"Time frame    : {sig['eta_days_low']}-{sig['eta_days_high']} trading days "
          "(informative, from ATR and moving-average pace only)"

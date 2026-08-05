@@ -357,9 +357,16 @@ def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
                 budget = max(equity * PARAMS["position_pct"], MIN_TRADE)
                 if budget > equity * 0.9:
                     break
-                shares = int(budget // entry)
-                if shares < 1 or shares * entry < MIN_TRADE:
-                    continue
+                if getattr(cfg, "FRACTIONAL_SHARES", False):
+                    shares = round(budget / entry, getattr(cfg, "SHARE_DECIMALS", 2))
+                    if shares <= 0:
+                        continue
+                    if shares * entry < MIN_TRADE * 0.95:
+                        shares = round(MIN_TRADE / entry, getattr(cfg, "SHARE_DECIMALS", 2))
+                else:
+                    shares = int(budget // entry)
+                    if shares < 1 or shares * entry < MIN_TRADE:
+                        continue
                 is_etf = meta.get(t, {}).get("type") == "etf"
                 fees = 2 * (FEE_STOCK if not is_etf else 0.0)
                 if (tp - entry) * shares <= fees * 3:

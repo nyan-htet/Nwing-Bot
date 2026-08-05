@@ -49,9 +49,19 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
     if tp is None:
         return None
     value = max(cfg.ACCOUNT_SIZE * cfg.POSITION_PCT, cfg.MIN_TRADE_USD)
-    shares = int(value // entry)
-    if shares < 1 or shares * entry < cfg.MIN_TRADE_USD:
-        return None
+    if getattr(cfg, "FRACTIONAL_SHARES", False):
+        dec = getattr(cfg, "SHARE_DECIMALS", 2)
+        shares = round(value / entry, dec)          # eToro allows fractions
+        if shares <= 0:
+            return None
+        # a single unit priced above the budget is fine (e.g. 0.09 of BKNG),
+        # but do not go below the minimum trade size
+        if shares * entry < cfg.MIN_TRADE_USD * 0.95:
+            shares = round(cfg.MIN_TRADE_USD / entry, dec)
+    else:
+        shares = int(value // entry)
+        if shares < 1 or shares * entry < cfg.MIN_TRADE_USD:
+            return None
     ok, fee_frac = analysis.fee_check(entry, tp, shares, is_etf, cfg)
     if not ok:
         return None
