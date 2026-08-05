@@ -40,13 +40,13 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
         f"Relative Strength (RS) vs SPY, 3-month          : {sig['rs']:+.1%}",
         f"RSI (Relative Strength Index, 4-hour)           : {sig.get('rsi', '?')}"
         + ("  [40-60 = healthy pullback zone]" if isinstance(sig.get('rsi'), (int, float)) and 40 <= sig['rsi'] <= 60 else ""),
-        f"Quality score         : {sig.get('quality', '')}  (weighted; realistic max ~0.8)",
+        f"Quality score         : {sig.get('quality', '')}  (max 1.0; stocks need 0.70, ETFs 0.50)",
         f"  • RSI momentum        {_fmt(qd.get('rsi'))} — {qn.get('rsi', '')}",
         f"  • Bollinger Bands     {_fmt(qd.get('bollinger'))} — {qn.get('bollinger', '')}",
         f"  • VWAP                {_fmt(qd.get('vwap'))} — {qn.get('vwap', '')}",
         f"  • Volume              {_fmt(qd.get('volume'))} — {qn.get('volume', '')}",
         f"  • Extension from EMA  {_fmt(qd.get('extension'))} — {qn.get('extension', '')}",
-        f"  • Options positioning {_fmt(qd.get('options'))} — {qn.get('options', 'n/a')}",
+
         "",
         "═══ FUNDAMENTAL & MACRO ═══",
         f"Macro       : {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)",

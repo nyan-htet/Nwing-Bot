@@ -39,7 +39,9 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
         return None
     q = analysis.quality_score(h1, h4, setup, cfg, octx=octx,
                                entry_hint=float(h1["close"].iloc[-1]))
-    if q["total"] < cfg.SCORE_MIN:
+    floor = (getattr(cfg, "SCORE_MIN_ETF", cfg.SCORE_MIN) if is_etf
+             else getattr(cfg, "SCORE_MIN_STOCK", cfg.SCORE_MIN))
+    if q["total"] < floor:
         return None
     entry = float(h1["close"].iloc[-1])
     tp = analysis.calc_tp(daily, h4, entry, cfg, trend=trend)

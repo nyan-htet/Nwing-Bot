@@ -44,6 +44,8 @@ PARAMS = {
     "trail_ema": 20,                    # trail: exit on close below this EMA
     "trail_pct": 0.12,                  # trail: or this far below running high
     "min_score": cfg.SCORE_MIN,
+    "min_score_stock": getattr(cfg, "SCORE_MIN_STOCK", cfg.SCORE_MIN),
+    "min_score_etf": getattr(cfg, "SCORE_MIN_ETF", cfg.SCORE_MIN),
     "require_rs": False,                # only take RS > 0
     "require_ema200": False,            # only take price > 200 EMA
 }
@@ -96,7 +98,7 @@ def quality_at(d, i, setup):
         s_bb = 1.0 if (p > 0.8 and w_avg and w_now > 1.1 * w_avg) else (0.2 if p > 0.8 else -0.4)
     ratio = float(row.volume) / float(row.vol_avg or 1e18)
     s_vol = 1.0 if ratio >= cfg.VOL_SPIKE else (0.3 if ratio >= 1.0 else -0.4)
-    wts = {"rsi": 0.25, "bollinger": 0.20, "volume": 0.15}
+    wts = {"rsi": 0.26, "bollinger": 0.18, "volume": 0.15}
     tot = sum(wts.values())
     return (wts["rsi"] * s_rsi + wts["bollinger"] * s_bb + wts["volume"] * s_vol) / tot * 0.6
 
@@ -271,7 +273,10 @@ def run(years=8, max_stocks=None, include_etfs=True):
                 if st is None:
                     continue
                 q = quality_at(d, i, st)
-                if q < PARAMS["min_score"]:
+                is_etf_t = meta.get(t, {}).get("type") == "etf"
+                floor = PARAMS.get("min_score_etf" if is_etf_t else "min_score_stock",
+                                   PARAMS["min_score"])
+                if q < floor:
                     continue
                 if PARAMS["require_rs"] and rs <= 0:
                     continue

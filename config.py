@@ -44,12 +44,11 @@ SWING_LOOKBACK = 5             # bars each side for swing levels (per timeframe)
 # Each factor scores in [-1, +1]; weighted sum must reach SCORE_MIN to alert.
 # None of these is a hard trigger on its own.
 QUALITY_WEIGHTS = {
-    "rsi": 0.22,        # level + DIRECTION of approach + reset + divergence
-    "bollinger": 0.15,  # band position, squeeze-expansion, band-walk vs snap-back
-    "vwap": 0.15,       # above/below + reclaim + extension from VWAP
-    "volume": 0.13,     # setup-aware: dry-up on pullbacks, surge on breakouts
+    "rsi": 0.26,        # level + DIRECTION of approach + reset + divergence
+    "bollinger": 0.18,  # band position, squeeze-expansion, band-walk vs snap-back
+    "vwap": 0.21,       # above/below + reclaim + extension from VWAP
+    "volume": 0.15,     # setup-aware: dry-up on pullbacks, surge on breakouts
     "extension": 0.20,  # distance from EMA20 in ATRs (don't chase stretched moves)
-    "options": 0.15,    # P/C ratio, call-wall vs TP, IV expected move
 }
 
 # ---- context-modifier settings (the "path, not snapshot" logic) ----
@@ -62,7 +61,9 @@ EXT_STRETCHED_ATR = 3.0        # >=3 ATR above EMA20 = parabolic, correction lik
 VWAP_NEAR_PCT = 0.015          # within 1.5% of VWAP = good entry proximity
 EMA_STACK_BONUS = 0.15         # 20>50>200 stacked & rising
 OPEX_CAUTION_DAYS = 1          # flag entries within N trading days of monthly opex
-SCORE_MIN = 0.50               # very selective (realistic max ~0.8)
+SCORE_MIN = 0.50               # fallback / ETFs
+SCORE_MIN_STOCK = 0.70         # stocks must clear a higher bar
+SCORE_MIN_ETF = 0.50           # ETFs (broad baskets, less single-name risk)
 RSI_PERIOD = 14
 BB_PERIOD = 20
 

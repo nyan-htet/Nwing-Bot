@@ -251,12 +251,15 @@ def quality_score(h1, h4, setup, cfg, octx=None, entry_hint=None) -> dict:
 
     # ---------- Options (unchanged) ----------
     options_note = None
-    if "options" in cfg.QUALITY_WEIGHTS:
+    if "options" in cfg.QUALITY_WEIGHTS:   # only if re-enabled in config
         import options_context as oc
         entry = entry_hint or px
         v_, options_note = oc.score(octx, entry, entry * (1 + cfg.MIN_TP_PCT))
         scores["options"] = v_
         notes["options"] = options_note
+    else:
+        scores.pop("options", None)
+        notes.pop("options", None)
 
     wts = cfg.QUALITY_WEIGHTS
     total = sum(wts.get(k, 0) * v for k, v in scores.items())
