@@ -548,3 +548,39 @@ BIP,Brookfield Infrastructure,stock,1,no,sp500,
 BEP,Brookfield Renewable,stock,1,no,sp500,
 BBU,Brookfield Business,stock,1,no,sp500,
 BN,Brookfield Corp,stock,1,no,sp500,
+VOO,Vanguard S&P 500,etf,1,no,etoro-etf,sp500
+VTI,Vanguard Total US Market,etf,1,no,etoro-etf,us-total
+QQQ,Invesco Nasdaq 100,etf,1,no,etoro-etf,nasdaq100
+VUG,Vanguard Growth,etf,1,no,etoro-etf,us-growth
+IEFA,iShares Core MSCI EAFE,etf,1,no,etoro-etf,intl-dev
+VTV,Vanguard Value,etf,1,no,etoro-etf,us-value
+VXUS,Vanguard Total International,etf,1,no,etoro-etf,intl-total
+IEMG,iShares Core MSCI Emerging Mkts,etf,1,no,etoro-etf,emerging
+VGT,Vanguard Information Technology,etf,1,no,etoro-etf,us-tech
+IJH,iShares Core S&P Mid-Cap,etf,1,no,etoro-etf,us-midcap
+VIG,Vanguard Dividend Appreciation,etf,1,no,etoro-etf,dividend
+FLKR,Franklin FTSE South Korea,etf,1,no,etoro-etf,korea
+SOXX,iShares Semiconductor,etf,1,no,etoro-etf,semis
+EPU,iShares MSCI Peru,etf,1,no,etoro-etf,peru
+EWT,iShares MSCI Taiwan,etf,1,no,etoro-etf,taiwan
+XBI,SPDR S&P Biotech,etf,1,no,etoro-etf,biotech
+SILJ,Amplify Junior Silver Miners,etf,1,no,etoro-etf,silver-miners
+XES,SPDR Oil & Gas Equipment,etf,1,no,etoro-etf,energy-services
+CRAK,VanEck Oil Refiners,etf,1,no,etoro-etf,refiners
+AIA,iShares Asia 50,etf,1,no,etoro-etf,asia
+ARKG,ARK Genomic Revolution,etf,1,no,etoro-etf,genomics
+BOAT,SonicShares Global Shipping,etf,1,no,etoro-etf,shipping
+IHE,iShares US Pharmaceuticals,etf,1,no,etoro-etf,pharma
+GDXJ,VanEck Junior Gold Miners,etf,1,no,etoro-etf,gold-miners
+EMXC,iShares EM ex-China,etf,1,no,etoro-etf,em-ex-china
+UGA,US Gasoline Fund,etf,1,no,etoro-etf,gasoline
+LIT,Global X Lithium & Battery,etf,1,no,etoro-etf,lithium
+DBO,Invesco DB Oil,etf,1,no,etoro-etf,crude
+NANR,SPDR Natural Resources,etf,1,no,etoro-etf,natres
+GRID,First Trust Smart Grid,etf,1,no,etoro-etf,infra-grid
+RWR,SPDR Dow Jones REIT,etf,1,no,etoro-etf,reit
+PAVE,Global X US Infrastructure,etf,1,no,etoro-etf,infrastructure
+IGF,iShares Global Infrastructure,etf,1,no,etoro-etf,infra-global
+COLO,Global X Data Center & Digital Infra,etf,1,no,etoro-etf,data-centers
+QCLN,First Trust Clean Energy,etf,1,no,etoro-etf,clean-energy
+TAN,Invesco Solar,etf,1,no,etoro-etf,solar
