@@ -91,7 +91,7 @@ function card(s) {
     <div class="big">${s.ticker}${name ? " — " + name : ""}
       <span class="pill">${s.setup}</span>${s.new_leg ? '<span class="pill">new leg</span>' : ""}</div>
     <div>Entry $${s.entry} → <span class="tp">TP $${s.tp} (+${(s.tp_pct * 100).toFixed(1)}%)</span>
-      &nbsp;·&nbsp; ${s.shares} shares ≈ $${Math.round(s.value)}</div>
+      &nbsp;·&nbsp; ${s.shares} units ≈ $${Math.round(s.value)}</div>
     <div class="mut">Time frame: ${s.eta_days_low ? s.eta_days_low + "-" + s.eta_days_high + " trading days (estimate from ATR + MA pace)" : "not estimable"}</div>
     <div class="big">eToro Take Profit → P/L amount: <span class="tp">$${pl.toFixed(2)}</span></div>
     <div class="mut"><b>Daily regime:</b> ${(s.regime || "?").toUpperCase()} for ~${s.regime_weeks ?? "?"} weeks${
