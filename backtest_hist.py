@@ -39,7 +39,7 @@ FEE_STOCK = cfg.FEE_PER_STOCK_TRADE
 PARAMS = {
     "position_pct": cfg.POSITION_PCT,   # share of equity per trade
     "max_concurrent": 10,
-    "max_hold_days": 500,
+    "max_hold_days": 2000,   # effectively no forced exit; thesis-broken does the work
     "exit_mode": "tp",                  # tp | trail | tp_then_trail
     "trail_ema": 20,                    # trail: exit on close below this EMA
     "trail_pct": 0.12,                  # trail: or this far below running high

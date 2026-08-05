@@ -32,7 +32,7 @@ VARIANTS = [
     ("G. 5% / 0.30 / hybrid + RS>0 + above 200EMA",
      {"position_pct": 0.05, "min_score": 0.30, "exit_mode": "tp_then_trail",
       "require_rs": True, "require_ema200": True}),
-    ("H. 5% / 0.30 / hybrid + longer holds 250d",
+    ("H. 5% / 0.30 / hybrid + capped holds 250d",
      {"position_pct": 0.05, "min_score": 0.30, "exit_mode": "tp_then_trail",
       "max_hold_days": 250}),
     ("I. 5% / 0.30 / hybrid + 20 slots (more deployed)",
