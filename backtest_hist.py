@@ -443,16 +443,20 @@ def summarize(curve, closed, days, buy_hold_pct=None):
         else:
             dist.append({"bucket": label, "count": 0, "pct_of_trades": 0, "total_pnl": 0})
 
-    # ---- capital utilisation: daily -> monthly averages ----
-    util_monthly = []
+    # ---- capital utilisation: daily -> YEARLY averages ----
+    util_yearly = []
+    util_monthly = []          # kept for the JSON, page shows yearly
     if "deployed" in ec.columns:
-        m = ec.resample("ME").agg({"deployed": "mean", "n_open": "mean",
+        y = ec.resample("YE").agg({"deployed": "mean", "n_open": "mean",
                                    "equity": "mean"})
-        for ts, row in m.iterrows():
-            util_monthly.append({
-                "month": ts.strftime("%Y-%m"),
+        peak = ec.resample("YE").agg({"n_open": "max", "deployed": "max"})
+        for ts, row in y.iterrows():
+            util_yearly.append({
+                "year": int(ts.year),
                 "avg_deployed": round(float(row["deployed"]), 0),
                 "avg_positions": round(float(row["n_open"]), 1),
+                "max_positions": int(peak.loc[ts, "n_open"]),
+                "peak_deployed": round(float(peak.loc[ts, "deployed"]), 0),
                 "avg_equity": round(float(row["equity"]), 0),
                 "avg_utilisation_pct": round(float(row["deployed"] / row["equity"] * 100), 1)
                 if row["equity"] else 0})
@@ -465,6 +469,7 @@ def summarize(curve, closed, days, buy_hold_pct=None):
     payload = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(),
                "universe": RUN_INFO,
                "distribution": dist,
+               "utilisation_yearly": util_yearly,
                "utilisation_monthly": util_monthly,
                "note": "Daily-bar approximation of the live strategy (no 1h trigger / VWAP).",
                "stats": stats, "yearly_pct": yearly, "monthly_pct": monthly,
@@ -495,12 +500,16 @@ def summarize(curve, closed, days, buy_hold_pct=None):
         if d_["count"]:
             print(f"  {d_['bucket']:<14} {d_['count']:>4} trades "
                   f"({d_['pct_of_trades']:>4.1f}%)  P/L ${d_['total_pnl']:>9,.0f}")
-    if util_monthly:
+    if util_yearly:
         print(f"\nCapital utilisation: avg ${stats.get('avg_deployed_usd', 0):,.0f} deployed "
               f"({stats.get('avg_utilisation_pct', 0)}% of equity), "
               f"avg {stats.get('avg_open_positions', 0)} positions "
               f"(max {stats.get('max_open_positions', 0)}), "
               f"{stats.get('days_fully_idle_pct', 0)}% of days fully in cash")
+        print("  year   avg deployed   avg pos   max pos   utilisation")
+        for u in util_yearly:
+            print(f"  {u['year']}   ${u['avg_deployed']:>10,.0f}   {u['avg_positions']:>7.1f}"
+                  f"   {u['max_positions']:>7}   {u['avg_utilisation_pct']:>9.1f}%")
 
     print("\nYearly returns (%):")
     for y, v in sorted(yearly.items()):
