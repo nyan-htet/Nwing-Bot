@@ -172,10 +172,14 @@ def run_hourly(offline=False):
         h1_map = data.fetch_intraday(tickers)
         spy = data.fetch_intraday("SPY").get("SPY")
         if spy is None or not h1_map:
-            raise SystemExit("FATAL: no intraday data. On GitHub, set the "
-                             "TWELVEDATA_KEY secret (free key from "
-                             "twelvedata.com). Yahoo/keyless sources are "
-                             "blocked from GitHub runners.")
+            raise SystemExit(
+                "FATAL: no intraday data returned.\n"
+                "  • If the log is full of 'HTTP Error 429: Too Many Requests',\n"
+                "    another job (backtest/sweep/nightly) was running at the same\n"
+                "    time and you exceeded the per-minute rate limit. Wait for the\n"
+                "    other job to finish and re-run — nothing is broken.\n"
+                "  • If instead you see auth/plan errors, check the TWELVEDATA_KEY\n"
+                "    secret and your plan status.")
         spy_daily = data.resample(spy, "1D")
         failed = [t for t in tickers if t not in h1_map]
         if failed:
