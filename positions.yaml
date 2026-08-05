@@ -1,8 +1,2 @@
-# managed by portal
-positions:
-  - ticker: STT
-    status: open
-    entry: 182.6
-    shares: 2
-    tp: 212.21
-    opened: 2026-08-03
+# Your confirmed trades. status: open | closed | skipped
+positions: []
