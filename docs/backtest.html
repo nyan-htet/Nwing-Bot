@@ -35,7 +35,7 @@
 <h2>Trade outcome distribution</h2>
 <div class="card"><table id="dist"></table></div>
 
-<h2>Capital utilisation</h2>
+<h2>Capital utilisation <span class='mut' style='font-size:.8rem'>(daily averages, rolled up by year)</span></h2>
 <div class="card">
   <div id="util_summary" class="mut"></div>
   <table id="util" style="margin-top:8px"></table>
@@ -108,12 +108,13 @@ fetch("backtest.json?t=" + Date.now()).then(r => r.json()).then(d => {
     + ` (<b>${s2.avg_utilisation_pct ?? "?"}%</b> of equity) &nbsp;·&nbsp; `
     + `average <b>${s2.avg_open_positions ?? "?"}</b> open positions (max ${s2.max_open_positions ?? "?"})`
     + ` &nbsp;·&nbsp; <b>${s2.days_fully_idle_pct ?? "?"}%</b> of days fully in cash`;
-  const um = d.utilisation_monthly || [];
-  if (um.length) {
-    $("util").innerHTML = "<tr><th>Month</th><th>Avg deployed</th><th>Avg positions</th><th>Avg equity</th><th>Utilisation</th></tr>"
-      + um.map(m => `<tr><td>${m.month}</td><td>$${m.avg_deployed.toLocaleString()}</td>
-          <td>${m.avg_positions}</td><td>$${m.avg_equity.toLocaleString()}</td>
-          <td>${m.avg_utilisation_pct}%</td></tr>`).join("");
+  const uy = d.utilisation_yearly || [];
+  if (uy.length) {
+    $("util").innerHTML = "<tr><th>Year</th><th>Avg deployed</th><th>Avg positions</th><th>Max positions</th><th>Avg equity</th><th>Utilisation</th></tr>"
+      + uy.map(u => `<tr><td><b>${u.year}</b></td><td>$${u.avg_deployed.toLocaleString()}</td>
+          <td>${u.avg_positions}</td><td>${u.max_positions}</td>
+          <td>$${u.avg_equity.toLocaleString()}</td>
+          <td>${u.avg_utilisation_pct}%</td></tr>`).join("");
   }
 
   // monthly table
