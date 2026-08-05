@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T08:55:29.236786+00:00",
+  "generated": "2026-08-05T09:46:00.299780+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 14.5
@@ -9,58 +9,6 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.4% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "BSET",
-      "name": "",
-      "setup": "pullback",
-      "entry": 19.97,
-      "tp": 22.26,
-      "tp_pct": 0.11467200801201827,
-      "shares": 25,
-      "value": 499.25,
-      "pl_amount": 57.25,
-      "fee_pct": 0.03493449781659384,
-      "trend_score": 5,
-      "adx": 28.0,
-      "rs": 0.341,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 8,
-      "ema20": 19.63,
-      "ema50": 18.29,
-      "ema200": 16.36,
-      "above_ema200": true,
-      "quality": 0.71,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 0.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 0.8
-      },
-      "q_notes": {
-        "rsi": "RSI 52.9 rising, reset from 35",
-        "bollinger": "band position 72%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "1.0x average, steady",
-        "extension": "+0.4 ATR from 20 EMA, slope -2.0%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 52.9,
-      "options_note": "",
-      "sector": "Unknown",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.71 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.9)"
-      ],
-      "time": "2026-08-05T08:55:26.508549+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
