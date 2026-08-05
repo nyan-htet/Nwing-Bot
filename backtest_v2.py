@@ -2,9 +2,13 @@
 
 Same engine as backtest_hist.py, one difference in how trades end:
 
+  * price falls to the hard STOP LOSS            -> exit at the stop
   * target hit inside the estimated time window  -> take profit, move on
   * window expires without the target being hit  -> EXIT AT MARKET, whatever
     the price is (small profit, break-even, or loss)
+
+Both the stop-loss percentage and which end of the time estimate to use
+(min or max) are set from the workflow inputs.
 
 The window is the upper bound of the ATR + moving-average estimate shown in
 live alerts ("Time frame: 24-35 trading days"), so the simulation matches the
@@ -59,6 +63,8 @@ PARAMS = {
     "use_thesis_exit": False, # False = hold to target or 2000-day timeout only
     "time_exit": True,        # v2: exit at market when the ETA window expires
     "eta_buffer": 1.0,        # multiply the estimated window (1.0 = as estimated)
+    "eta_bound": "low",       # "low" = min of the estimate, "high" = max
+    "stop_loss_pct": 0.15,    # hard stop; 0 disables it
     "exit_mode": "tp",                  # tp | trail | tp_then_trail
     "trail_ema": 20,                    # trail: exit on close below this EMA
     "trail_pct": 0.12,                  # trail: or this far below running high
@@ -301,11 +307,17 @@ def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
             p["peak"] = max(p.get("peak", p["entry"]), float(row.high))
             mode = PARAMS["exit_mode"]
             exit_px = reason = None
-            hit_tp = row.high >= p["tp"]
 
-            if mode == "tp" and hit_tp:
+            # hard stop first — if both stop and target are touched in one bar,
+            # assume the stop filled (conservative)
+            if p.get("stop") and row.low <= p["stop"]:
+                exit_px, reason = float(p["stop"]), "stop"
+
+            hit_tp = exit_px is None and row.high >= p["tp"]
+
+            if exit_px is None and mode == "tp" and hit_tp:
                 exit_px, reason = p["tp"], "tp"
-            elif mode in ("trail", "tp_then_trail"):
+            elif exit_px is None and mode in ("trail", "tp_then_trail"):
                 if mode == "tp_then_trail" and hit_tp and not p.get("trailing"):
                     p["trailing"] = True          # target reached -> now let it run
                     reason = None
@@ -319,8 +331,10 @@ def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
                     and thesis_broken_at(d, i)):
                 exit_px, reason = float(row.close), "thesis"
             # v2: ETA window expired -> exit at market, whatever the price
-            if (exit_px is None and PARAMS.get("time_exit") and p.get("eta_hi")
-                    and p["bars"] >= p["eta_hi"] * PARAMS.get("eta_buffer", 1.0)):
+            eta_key = "eta_lo" if PARAMS.get("eta_bound", "low") == "low" else "eta_hi"
+            eta_n = p.get(eta_key) or p.get("eta_hi")
+            if (exit_px is None and PARAMS.get("time_exit") and eta_n
+                    and p["bars"] >= eta_n * PARAMS.get("eta_buffer", 1.0)):
                 exit_px, reason = float(row.close), "time-exit"
             if exit_px is None and (day - p["opened"]).days > PARAMS["max_hold_days"]:
                 exit_px, reason = float(row.close), "timeout"
@@ -369,10 +383,10 @@ def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
                 entry = float(row.close)
                 strong = bool(row.adx >= 30 and rs > 0 and row.close >= (row.hi52 or 1e18) * 0.85)
                 tp = tp_at(d, i, entry, strong)
-                eta_hi = None
+                eta_lo = eta_hi = None
                 if tp:
-                    _lo, eta_hi = ind.time_to_target(d.iloc[max(0, i - 300):i + 1].reset_index(),
-                                                     entry, tp)
+                    eta_lo, eta_hi = ind.time_to_target(
+                        d.iloc[max(0, i - 300):i + 1].reset_index(), entry, tp)
                 if tp is None:
                     continue
                 score = q + (0.2 if rs > 0 else -0.1) + (0.1 if row.close >= (row.hi52 or 1e18) * 0.85 else 0)
@@ -393,7 +407,9 @@ def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
                     continue
                 open_pos[t] = {"entry": entry, "tp": tp, "shares": shares,
                                "opened": day, "setup": st, "bars": 0,
-                               "eta_hi": eta_hi}
+                               "eta_lo": eta_lo, "eta_hi": eta_hi,
+                               "stop": entry * (1 - PARAMS["stop_loss_pct"])
+                               if PARAMS.get("stop_loss_pct") else None}
         # 3) mark to market + utilisation
         mtm = equity
         deployed = 0.0
@@ -573,6 +589,14 @@ if __name__ == "__main__":
     inc = True
     if len(sys.argv) > 3 and str(sys.argv[3]).strip() != "":
         inc = str(sys.argv[3]).strip().lower() in ("yes", "y", "true", "1")
+    # args 7,8: stop-loss % (e.g. 15 or 0 to disable) and eta bound (low|high)
+    if len(sys.argv) > 7 and str(sys.argv[7]).strip():
+        PARAMS["stop_loss_pct"] = max(0.0, float(sys.argv[7]) / 100.0)
+    if len(sys.argv) > 8 and str(sys.argv[8]).strip():
+        PARAMS["eta_bound"] = "high" if str(sys.argv[8]).strip().lower().startswith("h") else "low"
+    print(f"v2 settings: stop-loss {PARAMS['stop_loss_pct']:.0%} | "
+          f"time exit at ETA {PARAMS['eta_bound']} bound")
+
     if len(sys.argv) > 2 and str(sys.argv[2]).strip().lower().startswith("strat"):
         ns = int(sys.argv[4]) if len(sys.argv) > 4 and sys.argv[4].strip() else 30
         ne = int(sys.argv[5]) if len(sys.argv) > 5 and sys.argv[5].strip() else 10
