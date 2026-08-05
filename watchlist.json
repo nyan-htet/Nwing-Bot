@@ -1,6 +1,5 @@
 {
   "tickers": [
-    "AAL",
     "ABBV",
     "AGYS",
     "ALL",
@@ -64,7 +63,6 @@
     "IVZ",
     "JBLU",
     "KO",
-    "LABU",
     "LH",
     "LMT",
     "LPLA",
@@ -117,16 +115,19 @@
     "V",
     "VLO",
     "VRNS",
+    "VTI",
     "WELL",
     "WSM",
+    "XBI",
     "XRAY"
   ],
   "meta": {
     "AMPS": {
-      "name": "Altus Power",
+      "name": "Altus Power, Inc.",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -144,6 +145,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -163,6 +165,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -180,6 +183,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -197,6 +201,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -214,6 +219,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -231,6 +237,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -244,10 +251,11 @@
       }
     },
     "CRSR": {
-      "name": "Corsair Gaming",
+      "name": "Corsair Gaming, Inc.",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -261,10 +269,11 @@
       }
     },
     "ENVA": {
-      "name": "Enova International",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -273,8 +282,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BBY": {
@@ -282,6 +291,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -290,8 +300,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Specialty Retail"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DXCM": {
@@ -299,6 +309,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -307,15 +318,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Devices"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PRGS": {
-      "name": "Progress Software Corporation",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -324,27 +336,26 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BSET": {
-      "name": "Bassett Furniture Industries",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
       },
       "earnings_soon": false,
       "screen": {
-        "pass": false,
-        "notes": [
-          "microcap, below quality floor"
-        ],
-        "sector": "Consumer Cyclical",
-        "industry": "Furnishings, Fixtures & Appliances"
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DLTR": {
@@ -352,6 +363,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -360,8 +372,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Discount Stores"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "WSM": {
@@ -369,6 +381,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -377,8 +390,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Specialty Retail"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SKYW": {
@@ -386,6 +399,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -394,8 +408,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "FAS": {
@@ -403,6 +417,7 @@
       "type": "etf",
       "leverage": 3,
       "inverse": false,
+      "sector": "ETF:financials bull 3x",
       "note": "financials bull 3x",
       "options": {
         "liquid": false
@@ -413,6 +428,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -421,15 +437,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CNXN": {
-      "name": "PC Connection",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -438,8 +455,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Technology Distributors"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HEI": {
@@ -447,6 +464,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -455,8 +473,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "JBLU": {
@@ -464,6 +482,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -472,8 +491,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "S": {
@@ -481,6 +500,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -489,8 +509,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BBVA": {
@@ -498,6 +518,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -506,8 +527,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "GRMN": {
@@ -515,6 +536,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -523,8 +545,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Hardware, Equipment & Parts"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DOC": {
@@ -532,6 +554,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -540,15 +563,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PRLB": {
-      "name": "Proto Labs",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -557,8 +581,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Manufacturing - Miscellaneous"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BIO": {
@@ -566,6 +590,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -574,8 +599,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Devices"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "IQV": {
@@ -583,6 +608,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -591,8 +617,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NWG": {
@@ -600,6 +626,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -608,8 +635,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TECH": {
@@ -617,6 +644,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -625,8 +653,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Biotechnology"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MMM": {
@@ -634,6 +662,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -642,8 +671,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Conglomerates"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "GPN": {
@@ -651,6 +680,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -659,8 +689,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CRL": {
@@ -668,6 +698,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -676,8 +707,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "RTX": {
@@ -685,6 +716,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -693,8 +725,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "XRAY": {
@@ -702,6 +734,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -710,8 +743,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Instruments & Supplies"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EXPE": {
@@ -719,6 +752,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -727,8 +761,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Travel Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TRV": {
@@ -736,6 +770,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -744,8 +779,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Property & Casualty"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HMC": {
@@ -753,6 +788,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -761,8 +797,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Auto - Manufacturers"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "STT": {
@@ -770,6 +806,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -778,8 +815,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ING": {
@@ -787,6 +824,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -795,8 +833,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MNST": {
@@ -804,6 +842,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -812,8 +851,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Beverages - Non-Alcoholic"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "INCY": {
@@ -821,6 +860,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -829,8 +869,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Biotechnology"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SJM": {
@@ -838,6 +878,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -846,8 +887,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Packaged Foods"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NET": {
@@ -855,6 +896,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -863,8 +905,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PRU": {
@@ -872,6 +914,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -880,8 +923,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Life"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DGX": {
@@ -889,6 +932,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -897,8 +941,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "VLO": {
@@ -906,6 +950,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Energy",
       "note": "",
       "options": {
         "liquid": false
@@ -914,27 +959,26 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Energy",
-        "industry": "Oil & Gas Refining & Marketing"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "IMMR": {
-      "name": "Immersion Corporation",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
       },
       "earnings_soon": false,
       "screen": {
-        "pass": false,
-        "notes": [
-          "microcap, below quality floor"
-        ],
-        "sector": "Technology",
-        "industry": "Software - Application"
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "LH": {
@@ -942,6 +986,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -950,8 +995,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HSBC": {
@@ -959,6 +1004,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -967,8 +1013,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TMO": {
@@ -976,6 +1022,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -984,8 +1031,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CNC": {
@@ -993,6 +1040,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -1001,8 +1049,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Healthcare Plans"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BXP": {
@@ -1010,6 +1058,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -1018,8 +1067,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Office"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "CTAS": {
@@ -1027,6 +1076,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1035,8 +1085,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Specialty Business Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MET": {
@@ -1044,6 +1094,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1052,8 +1103,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Life"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ALL": {
@@ -1061,6 +1112,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1069,8 +1121,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Property & Casualty"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MPC": {
@@ -1078,6 +1130,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Energy",
       "note": "",
       "options": {
         "liquid": false
@@ -1086,8 +1139,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Energy",
-        "industry": "Oil & Gas Refining & Marketing"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PCAR": {
@@ -1095,6 +1148,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1103,8 +1157,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MSFT": {
@@ -1112,6 +1166,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1120,8 +1175,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "IVZ": {
@@ -1129,6 +1184,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1137,8 +1193,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EXPD": {
@@ -1146,6 +1202,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1154,8 +1211,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Integrated Freight & Logistics"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AMGN": {
@@ -1163,6 +1220,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -1171,8 +1229,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ABBV": {
@@ -1180,6 +1238,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -1188,8 +1247,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SPYU": {
@@ -1197,16 +1256,18 @@
       "type": "etf",
       "leverage": 4,
       "inverse": false,
+      "sector": "ETF:S&P500 bull 4x",
       "note": "S&P500 bull 4x",
       "options": {
         "liquid": false
       }
     },
     "NTCT": {
-      "name": "NetScout Systems",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1215,8 +1276,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "IR": {
@@ -1224,6 +1285,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1232,8 +1294,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BEN": {
@@ -1241,6 +1303,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1249,8 +1312,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "COF": {
@@ -1258,6 +1321,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1266,8 +1330,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BK": {
@@ -1275,6 +1339,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1283,8 +1348,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Investment - Banking & Investment Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AMP": {
@@ -1292,6 +1357,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1300,8 +1366,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "GM": {
@@ -1309,6 +1375,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -1317,15 +1384,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Auto - Manufacturers"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DELL": {
-      "name": "Dell Technologies Inc.",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1334,8 +1402,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Computer Hardware"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ITW": {
@@ -1343,6 +1411,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1351,8 +1420,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "LMT": {
@@ -1360,6 +1429,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1368,8 +1438,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SHW": {
@@ -1377,6 +1447,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Materials",
       "note": "",
       "options": {
         "liquid": false
@@ -1385,8 +1456,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Basic Materials",
-        "industry": "Chemicals - Specialty"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BMY": {
@@ -1394,6 +1465,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -1402,8 +1474,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "USB": {
@@ -1411,6 +1483,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1419,8 +1492,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SCHW": {
@@ -1428,6 +1501,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1436,8 +1510,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Capital Markets"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TGT": {
@@ -1445,6 +1519,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -1453,8 +1528,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Discount Stores"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MA": {
@@ -1462,6 +1537,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1470,8 +1546,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "V": {
@@ -1479,6 +1555,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1487,8 +1564,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EMR": {
@@ -1496,6 +1573,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1504,8 +1582,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "MMC": {
@@ -1513,6 +1591,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1521,8 +1600,19 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Brokers"
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "XBI": {
+      "name": "SPDR S&P Biotech",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:biotech",
+      "note": "biotech",
+      "options": {
+        "liquid": false
       }
     },
     "CDW": {
@@ -1530,6 +1620,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -1538,8 +1629,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Information Technology Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "RJF": {
@@ -1547,6 +1638,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1555,8 +1647,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Capital Markets"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NWSA": {
@@ -1564,6 +1656,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Communication",
       "note": "",
       "options": {
         "liquid": false
@@ -1572,8 +1665,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Communication Services",
-        "industry": "Publishing"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "UNP": {
@@ -1581,6 +1674,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1589,8 +1683,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Railroads"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "FAST": {
@@ -1598,6 +1692,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1606,8 +1701,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Distribution"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BALL": {
@@ -1615,6 +1710,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1623,15 +1719,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Packaging & Containers"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PLUS": {
-      "name": "ePlus inc.",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1640,8 +1737,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Application"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NWS": {
@@ -1649,6 +1746,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Communication",
       "note": "",
       "options": {
         "liquid": false
@@ -1657,8 +1755,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Communication Services",
-        "industry": "Publishing"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "UPS": {
@@ -1666,6 +1764,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1674,8 +1773,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Integrated Freight & Logistics"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BRK.B": {
@@ -1683,6 +1782,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1700,6 +1800,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -1708,8 +1809,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "PM": {
@@ -1717,6 +1818,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -1725,8 +1827,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Tobacco"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "KO": {
@@ -1734,6 +1836,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -1742,8 +1845,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Beverages - Non-Alcoholic"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BIP": {
@@ -1751,6 +1854,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1759,8 +1863,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Utilities",
-        "industry": "Diversified Utilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AXP": {
@@ -1768,6 +1872,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1776,8 +1881,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "NDSN": {
@@ -1785,6 +1890,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1793,8 +1899,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "STE": {
@@ -1802,6 +1908,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -1810,8 +1917,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Specialties"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TDY": {
@@ -1819,6 +1926,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1827,8 +1935,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Hardware, Equipment & Parts"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BF.B": {
@@ -1836,6 +1944,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -1853,6 +1962,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -1861,8 +1971,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Biotechnology"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ETN": {
@@ -1870,6 +1980,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -1878,8 +1989,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Electrical Equipment & Parts"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "LPLA": {
@@ -1887,6 +1998,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1895,8 +2007,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Capital Markets"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "WELL": {
@@ -1904,6 +2016,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -1912,8 +2025,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SF": {
@@ -1921,6 +2034,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1929,8 +2043,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Investment - Banking & Investment Services"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "BLK": {
@@ -1938,6 +2052,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1946,8 +2061,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HBAN": {
@@ -1955,6 +2070,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -1963,8 +2079,19 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Regional"
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "VTI": {
+      "name": "Vanguard Total US Market",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:us-total",
+      "note": "us-total",
+      "options": {
+        "liquid": false
       }
     },
     "DDOG": {
@@ -1972,6 +2099,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1980,8 +2108,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Application"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "OKTA": {
@@ -1989,6 +2117,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1997,8 +2126,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "TENB": {
@@ -2006,6 +2135,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -2014,15 +2144,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "AGYS": {
-      "name": "Agilysys",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -2031,15 +2162,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Application"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "VRNS": {
-      "name": "Varonis Systems",
+      "name": "",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -2048,8 +2180,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "HUM": {
@@ -2057,6 +2189,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -2065,8 +2198,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Healthcare Plans"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "DFEN": {
@@ -2074,6 +2207,7 @@
       "type": "etf",
       "leverage": 3,
       "inverse": false,
+      "sector": "ETF:defense bull 3x",
       "note": "defense bull 3x",
       "options": {
         "liquid": false
@@ -2084,6 +2218,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -2092,8 +2227,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "UAL": {
@@ -2101,6 +2236,7 @@
       "type": "stock",
       "leverage": 1,
       "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -2109,37 +2245,10 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services"
-      }
-    },
-    "AAL": {
-      "name": "American Airlines",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services"
-      }
-    },
-    "LABU": {
-      "name": "Direxion Biotech Bull 3x",
-      "type": "etf",
-      "leverage": 3,
-      "inverse": false,
-      "note": "biotech bull 3x",
-      "options": {
-        "liquid": false
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     }
   },
-  "built": "2026-08-04T22:47:50.431850+00:00"
+  "built": "2026-08-05T08:29:44.998571+00:00"
 }
