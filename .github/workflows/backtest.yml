@@ -6,17 +6,28 @@ on:
         description: "Years of history (e.g. 8)"
         required: false
         default: "8"
-      max_stocks:
-        description: "How many STOCKS to test (0 = none, blank = all)"
+      mode:
+        description: "'strat' for sector-balanced sample, or a number = max stocks, or blank = all"
         required: false
-        default: "50"
+        default: "strat"
       include_etfs:
-        description: "Include ETFs? yes / no"
+        description: "Include ETFs? yes / no (ignored in strat mode)"
         required: false
         default: "yes"
+      n_stocks:
+        description: "strat mode: how many stocks (spread across sectors)"
+        required: false
+        default: "30"
+      n_etfs:
+        description: "strat mode: how many ETFs (spread across exposures)"
+        required: false
+        default: "10"
+      n_baseline:
+        description: "strat mode: baseline block (GLD/QQQ/VOO + random)"
+        required: false
+        default: "10"
 permissions:
   contents: write
-
 jobs:
   backtest:
     runs-on: ubuntu-latest
@@ -31,8 +42,11 @@ jobs:
           TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
         run: |
           python backtest_hist.py "${{ github.event.inputs.years }}" \
-                                  "${{ github.event.inputs.max_stocks }}" \
-                                  "${{ github.event.inputs.include_etfs }}"
+                                  "${{ github.event.inputs.mode }}" \
+                                  "${{ github.event.inputs.include_etfs }}" \
+                                  "${{ github.event.inputs.n_stocks }}" \
+                                  "${{ github.event.inputs.n_etfs }}" \
+                                  "${{ github.event.inputs.n_baseline }}"
       - name: Publish results
         run: |
           git config user.name swingbot && git config user.email bot@users.noreply.github.com
