@@ -137,7 +137,7 @@ TD_KEY = _os.getenv("TWELVEDATA_KEY", "")
 _TD_LAST = [0.0]
 
 
-def _td_throttle(min_interval=1.2):
+def _td_throttle(min_interval=1.6):
     """Grow plan: 55 req/min. ~1.2s spacing stays safely under the rate cap."""
     import time
     wait = _TD_LAST[0] + min_interval - time.time()
@@ -156,15 +156,32 @@ def fetch_td(tickers, interval="1h", outputsize=1500):
     if not TD_KEY:
         print("TWELVEDATA_KEY not set — skipping Twelve Data")
         return out
+    import time as _time
     for t in tickers:
-        _td_throttle()
         url = (f"https://api.twelvedata.com/time_series?symbol={t}"
                f"&interval={interval}&outputsize={outputsize}&apikey={TD_KEY}")
+        raw = None
+        for attempt in range(4):                 # retry on 429 / transient errors
+            _td_throttle()
+            try:
+                raw = json.loads(urllib.request.urlopen(url, timeout=25).read())
+                break
+            except Exception as e:
+                msg = str(e)
+                if "429" in msg or "Too Many" in msg:
+                    wait = 20 * (attempt + 1)    # 20s, 40s, 60s
+                    print(f"TD rate limit on {t}; waiting {wait}s "
+                          f"(attempt {attempt + 1}/4)")
+                    _time.sleep(wait)
+                    continue
+                print(f"TD error {t}: {msg[:80]}")
+                break
+        if raw is None:
+            continue
         try:
-            raw = json.loads(urllib.request.urlopen(url, timeout=20).read())
             vals = raw.get("values")
             if not vals:
-                print(f"TD: no data for {t}: {raw.get('message', '')[:80]}")
+                print(f"TD: no data for {t}: {str(raw.get('message', ''))[:80]}")
                 continue
             df = pd.DataFrame(vals)[::-1].reset_index(drop=True)
             df = df.rename(columns={"datetime": "time"})
@@ -174,7 +191,7 @@ def fetch_td(tickers, interval="1h", outputsize=1500):
             df["volume"] = df["volume"].fillna(0)
             out[t] = df[["time", "open", "high", "low", "close", "volume"]].dropna()
         except Exception as e:
-            print(f"TD error {t}: {e}")
+            print(f"TD parse error {t}: {str(e)[:80]}")
     return out
 
 
