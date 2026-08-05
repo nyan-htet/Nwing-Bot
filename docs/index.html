@@ -71,7 +71,7 @@ async function loadTickerMeta() {
 }
 
 const FACTORS = [["RSI momentum","rsi"],["Bollinger Bands","bollinger"],["VWAP","vwap"],
-                 ["Volume","volume"],["Extension from EMA","extension"],["Options","options"]];
+                 ["Volume","volume"],["Extension from EMA","extension"]];
 
 function card(s) {
   const m = tickerMeta[s.ticker.toUpperCase()] || {};
@@ -79,6 +79,7 @@ function card(s) {
   const pl = (s.pl_amount != null) ? s.pl_amount : (s.tp - s.entry) * s.shares;
   const factors = FACTORS.map(([label, key]) => {
     const v = s.q_detail ? s.q_detail[key] : undefined;
+    if (v === undefined) return "";
     const note = s.q_notes ? (s.q_notes[key] || "") : "";
     const col = v === undefined ? "var(--mut)" : (v >= 0.5 ? "#2ea043" : v > -0.2 ? "#8b98a5" : "#da3633");
     return `<tr><td style="width:150px">${label}</td>
