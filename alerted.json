@@ -2,25 +2,25 @@
   "BBY": {
     "alerted": "2026-08-04T18:06:56.814501+00:00",
     "entry": 86.83,
-    "scans_muted": 6,
+    "scans_muted": 7,
     "tp": 101.1
   },
   "BF.B": {
     "alerted": "2026-08-04T21:35:50.842967+00:00",
     "entry": 28.49,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "tp": 33.59
   },
   "BSET": {
     "alerted": "2026-08-05T08:55:26.508585+00:00",
     "entry": 19.97,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "tp": 22.26
   },
   "CNC": {
     "alerted": "2026-08-04T11:03:17.683857+00:00",
     "entry": 63.76,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "tp": 69.36
   },
   "ECL": {
@@ -38,85 +38,85 @@
   "EXPD": {
     "alerted": "2026-08-04T14:39:54.437109+00:00",
     "entry": 174.42,
-    "scans_muted": 7,
+    "scans_muted": 8,
     "tp": 212.27
   },
   "HBAN": {
     "alerted": "2026-08-04T11:03:17.988564+00:00",
     "entry": 17.37,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "tp": 19.45
   },
   "INCY": {
     "alerted": "2026-08-04T21:35:51.284192+00:00",
     "entry": 120.6,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "tp": 144.37
   },
   "IR": {
     "alerted": "2026-08-04T11:03:18.059639+00:00",
     "entry": 87.78,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "tp": 100.96
   },
   "ITW": {
     "alerted": "2026-08-04T11:03:18.077718+00:00",
     "entry": 288.5,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "tp": 359.72
   },
   "IVZ": {
     "alerted": "2026-08-04T11:03:18.095974+00:00",
     "entry": 30.91,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "tp": 37.27
   },
   "KO": {
     "alerted": "2026-08-04T18:06:57.239713+00:00",
     "entry": 86.48,
-    "scans_muted": 6,
+    "scans_muted": 7,
     "tp": 95.5
   },
   "NWS": {
     "alerted": "2026-08-04T11:03:18.263363+00:00",
     "entry": 31.8,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "tp": 35.2
   },
   "NWSA": {
     "alerted": "2026-08-04T11:03:18.280761+00:00",
     "entry": 27.95,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "tp": 31.61
   },
   "UNP": {
     "alerted": "2026-08-04T21:35:51.784629+00:00",
     "entry": 296.32,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "tp": 338.91
   },
   "UPS": {
     "alerted": "2026-08-05T03:31:51.666600+00:00",
     "entry": 109.1,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "tp": 127.77
   },
   "V": {
     "alerted": "2026-08-04T18:06:57.658368+00:00",
     "entry": 370.64,
-    "scans_muted": 6,
+    "scans_muted": 7,
     "tp": 423.46
   },
   "VLO": {
     "alerted": "2026-08-04T21:35:51.804698+00:00",
     "entry": 308.69,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "tp": 354.42
   },
   "VRNS": {
     "alerted": "2026-08-04T21:35:51.824912+00:00",
     "entry": 43.34,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "tp": 49.54
   }
 }
