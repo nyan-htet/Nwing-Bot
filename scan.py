@@ -248,7 +248,9 @@ def run_hourly(offline=False):
     for s in signals:
         body = notify.format_alert(s, macro, cyc)
         nm = f" ({s['name']})" if s.get("name") else ""
-        notify.send_email(f"BUY {s['ticker']}{nm} — {s['setup']} +{s['tp_pct']:.0%} | eToro TP P/L ${s['pl_amount']:.0f}", body, cfg)
+        sec = f" — {s['sector']}" if s.get("sector") and s["sector"] != "Unknown" else ""
+        notify.send_email(f"BUY {s['ticker']}{nm}{sec} — {s['setup']} "
+                          f"+{s['tp_pct']:.0%} | eToro TP ${s['pl_amount']:.0f}", body, cfg)
         notify.send_telegram(body, cfg)
     for m in pos_msgs:
         notify.send_email("Position alert", m, cfg)

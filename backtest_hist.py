@@ -39,7 +39,8 @@ FEE_STOCK = cfg.FEE_PER_STOCK_TRADE
 PARAMS = {
     "position_pct": cfg.POSITION_PCT,   # share of equity per trade
     "max_concurrent": 10,
-    "max_hold_days": 2000,   # effectively no forced exit; thesis-broken does the work
+    "max_hold_days": 2000,   # only forced exit
+    "use_thesis_exit": False, # False = hold to target or 2000-day timeout only
     "exit_mode": "tp",                  # tp | trail | tp_then_trail
     "trail_ema": 20,                    # trail: exit on close below this EMA
     "trail_pct": 0.12,                  # trail: or this far below running high
@@ -295,7 +296,8 @@ def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
                     gave_back = float(row.close) <= p["peak"] * (1 - PARAMS["trail_pct"])
                     if below_ema or gave_back:
                         exit_px, reason = float(row.close), "trail"
-            if exit_px is None and thesis_broken_at(d, i):
+            if (exit_px is None and PARAMS.get("use_thesis_exit")
+                    and thesis_broken_at(d, i)):
                 exit_px, reason = float(row.close), "thesis"
             if exit_px is None and (day - p["opened"]).days > PARAMS["max_hold_days"]:
                 exit_px, reason = float(row.close), "timeout"

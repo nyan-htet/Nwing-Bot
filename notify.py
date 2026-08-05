@@ -14,20 +14,28 @@ def _fmt(v):
 
 
 def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
-    name = f" — {sig['name']}" if sig.get("name") else ""
-    sector = f"  [{sig['sector']}]" if sig.get("sector") else ""
+    name = sig.get("name") or ""
+    sector = sig.get("sector") or ""
+    header = f"🟢 BUY — {sig['ticker']}"
+    if name:
+        header += f" — {name}"
+    if sector and sector != "Unknown":
+        header += f" — {sector}"
+
     qd = sig.get("q_detail", {})
     qn = sig.get("q_notes", {})
+    shares, entry = sig.get("shares", 0), sig.get("entry", 0)
+
     lines = [
-        f"🟢 BUY SIGNAL — {sig['ticker']}{name}{sector}",
+        header,
         "",
         "═══ TRADE PLAN ═══",
-        f"Setup       : {sig['setup']}",
-        f"Entry zone  : ${sig['entry']:.2f}",
-        f"Take profit : ${sig['tp']:.2f}  (+{sig['tp_pct']:.1%})",
-        f"Suggested   : {sig['shares']} shares ≈ ${sig['value']:.0f}",
-        f"eToro TP    : set Take Profit as P/L amount = ${sig.get('pl_amount', 0):.2f}",
-        f"Fees        : {sig['fee_pct']:.1%} of expected profit",
+        f"Entry price   : ${entry:.2f}",
+        f"Exit price    : ${sig['tp']:.2f}   (+{sig['tp_pct']:.1%})",
+        f"Shares        : {shares}  (≈ ${shares * entry:,.0f})",
+        f"eToro TP      : set Take Profit P/L amount = ${sig.get('pl_amount', 0):.2f}",
+        f"Fees          : {sig['fee_pct']:.1%} of expected profit",
+        f"Strategy type : {sig.get('setup', '')}",
         "",
         "═══ TECHNICAL ANALYSIS ═══",
         f"Daily regime          : {str(sig.get('regime','?')).upper()} for ~{sig.get('regime_weeks','?')} weeks"
@@ -46,17 +54,11 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
         f"  • VWAP                {_fmt(qd.get('vwap'))} — {qn.get('vwap', '')}",
         f"  • Volume              {_fmt(qd.get('volume'))} — {qn.get('volume', '')}",
         f"  • Extension from EMA  {_fmt(qd.get('extension'))} — {qn.get('extension', '')}",
-
         "",
         "═══ FUNDAMENTAL & MACRO ═══",
         f"Macro       : {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)",
         f"Cycles      : {cyc.get('line', 'n/a').replace('Cycles ', '')}",
     ]
-    if sig.get("context_notes"):
-        lines += ["", "═══ WHAT THE INDICATORS ARE SAYING ═══"] + \
-                 [f"• {c}" for c in sig["context_notes"]]
-    if sig.get("options_note") and sig["options_note"] != "options: n/a":
-        lines.append(f"Options     : {sig['options_note']}")
     if sig.get("warnings"):
         lines += ["", "═══ WARNINGS ═══"] + [f"• {w}" for w in sig["warnings"]]
     lines += ["", "No stoploss per your rules — thesis-broken alerts will monitor this position."]
