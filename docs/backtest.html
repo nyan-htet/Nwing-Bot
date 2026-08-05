@@ -32,6 +32,15 @@
 <h2>Equity curve</h2>
 <div class="card"><svg id="chart" viewBox="0 0 900 300" style="width:100%;height:300px"></svg></div>
 
+<h2>Trade outcome distribution</h2>
+<div class="card"><table id="dist"></table></div>
+
+<h2>Capital utilisation</h2>
+<div class="card">
+  <div id="util_summary" class="mut"></div>
+  <table id="util" style="margin-top:8px"></table>
+</div>
+
 <h2>Monthly / yearly returns (%)</h2>
 <div class="card" style="overflow-x:auto"><table id="months"></table></div>
 
@@ -76,6 +85,35 @@ fetch("backtest.json?t=" + Date.now()).then(r => r.json()).then(d => {
        <text x="6" y="${Y(min)+4}" fill="#8b98a5" font-size="11">$${Math.round(min/1000)}k</text>
        <text x="40" y="298" fill="#8b98a5" font-size="11">${pts[0][0]}</text>
        <text x="800" y="298" fill="#8b98a5" font-size="11">${pts[pts.length-1][0]}</text>`;
+  }
+
+  // distribution
+  const dist = (d.distribution || []).filter(b => b.count > 0);
+  if (dist.length) {
+    const maxN = Math.max(...dist.map(b => b.count));
+    $("dist").innerHTML = "<tr><th>Outcome</th><th>Trades</th><th>% of all</th><th>Total P/L</th><th style='width:35%'></th></tr>"
+      + dist.map(b => {
+          const win = b.bucket.startsWith("win");
+          const w = Math.round(b.count / maxN * 100);
+          return `<tr><td>${b.bucket}</td><td>${b.count}</td><td>${b.pct_of_trades}%</td>
+            <td class="${b.total_pnl >= 0 ? "pos" : "neg"}">$${b.total_pnl.toLocaleString()}</td>
+            <td><div style="background:${win ? "#2ea043" : "#da3633"};height:10px;width:${w}%;border-radius:3px"></div></td></tr>`;
+        }).join("");
+  } else { $("dist").innerHTML = "<tr><td class='mut'>No trades.</td></tr>"; }
+
+  // utilisation
+  const s2 = d.stats || {};
+  $("util_summary").innerHTML =
+    `Average deployed: <b>$${(s2.avg_deployed_usd || 0).toLocaleString()}</b>`
+    + ` (<b>${s2.avg_utilisation_pct ?? "?"}%</b> of equity) &nbsp;·&nbsp; `
+    + `average <b>${s2.avg_open_positions ?? "?"}</b> open positions (max ${s2.max_open_positions ?? "?"})`
+    + ` &nbsp;·&nbsp; <b>${s2.days_fully_idle_pct ?? "?"}%</b> of days fully in cash`;
+  const um = d.utilisation_monthly || [];
+  if (um.length) {
+    $("util").innerHTML = "<tr><th>Month</th><th>Avg deployed</th><th>Avg positions</th><th>Avg equity</th><th>Utilisation</th></tr>"
+      + um.map(m => `<tr><td>${m.month}</td><td>$${m.avg_deployed.toLocaleString()}</td>
+          <td>${m.avg_positions}</td><td>$${m.avg_equity.toLocaleString()}</td>
+          <td>${m.avg_utilisation_pct}%</td></tr>`).join("");
   }
 
   // monthly table
