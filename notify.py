@@ -33,8 +33,16 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
         f"Entry price   : ${entry:.2f}",
         f"Exit price    : ${sig['tp']:.2f}   (+{sig['tp_pct']:.1%})",
         f"Shares        : {shares}  (≈ ${shares * entry:,.0f})",
-        f"eToro TP      : set Take Profit P/L amount = ${sig.get('pl_amount', 0):.2f}",
-        f"Fees          : {sig['fee_pct']:.1%} of expected profit",
+        "-------",
+        (f"Time frame    : {sig['eta_days_low']}-{sig['eta_days_high']} trading days "
+         "(informative, from ATR and moving-average pace only)"
+         + ("  [wide range: volatile but slow-advancing]"
+            if sig.get("eta_days_high", 0) >= 3 * sig.get("eta_days_low", 1) else "")
+         if sig.get("eta_days_low") else
+         "Time frame    : not estimable for this setup"),
+        "-------",
+        f"eToro TP      : ${sig.get('pl_amount', 0):.2f}",
+        f"eToro Fees    : {sig['fee_pct']:.1%} of profit",
         f"Strategy type : {sig.get('setup', '')}",
         "",
         "═══ TECHNICAL ANALYSIS ═══",
@@ -68,25 +76,19 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
 def format_no_signal(watch_n: int, skip_report: dict, macro: dict, cyc: dict,
                      when: str) -> str:
     """Compact status note for scans that produced no new signals."""
-    def block(key, label):
-        v = sorted(skip_report.get(key) or [])
-        return f"{label} ({len(v)}): {', '.join(v)}" if v else None
-
-    lines = [f"Run completed {when} UTC",
+    lines = ["Result: NO NEW SIGNAL 🚦",
+             f"Run completed {when} UTC",
              f"{watch_n} tickers scanned from the nightly watchlist",
-             "Result: no new signals", ""]
-    for key, label in (("already_alerted", "Alerted earlier, still below target"),
+             ""]
+    for key, label in (("already_alerted", "Still Active"),
                        ("cooldown", "Entered/skipped recently"),
-                       ("earnings", "Blocked - earnings within 7 days"),
-                       ("screen", "Blocked - failed fundamentals screen"),
-                       ("target_cleared", "Cleared old target, now eligible")):
-        line = block(key, label)
-        if line:
-            lines.append(line)
-    lines += ["", f"Macro: {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)"]
-    if cyc.get("line"):
-        lines.append(cyc["line"])
-    return "\n".join(lines)
+                       ("earnings", "Earnings within 7 days"),
+                       ("screen", "Failed fundamental"),
+                       ("target_cleared", "Cleared target, eligible again")):
+        v = sorted(skip_report.get(key) or [])
+        if v:
+            lines.append(f"{label} ({len(v)}): {', '.join(v)}")
+    return "\n".join(lines).rstrip()
 
 
 def send_email(subject: str, body: str, cfg):

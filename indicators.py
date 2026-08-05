@@ -218,3 +218,46 @@ def fib_extension_targets(df, entry, lookback=120):
     leg = hi - lo
     out = [lo + leg * r for r in (1.272, 1.618, 2.0)]
     return sorted(p for p in out if p > entry)
+
+
+
+def time_to_target(daily, entry, target, atr_period=14, ema_period=20):
+    """Rough estimate of how many TRADING DAYS the move may take.
+
+    Two independent paths:
+      ATR   : distance / (daily ATR * 0.4)   — 0.4 because price zigzags,
+              so a stock ranging 2%/day nets far less than 2%/day.
+      SLOPE : distance / current EMA20 daily drift — the trend's actual pace.
+    Returns (low, high) as trading days, or (None, None) if not computable.
+    Estimate only — real hold times vary widely.
+    """
+    if target <= entry:
+        return None, None
+    dist = target - entry
+    ests = []
+
+    a = float(atr(daily, atr_period).iloc[-1] or 0)
+    if a > 0:
+        ests.append(dist / (a * 0.4))
+
+    e = ema(daily["close"], ema_period)
+    if len(e) > 11:
+        drift = (float(e.iloc[-1]) - float(e.iloc[-11])) / 10.0   # per-day drift
+        if drift > 0:
+            ests.append(dist / drift)
+
+    if not ests:
+        return None, None
+    lo, hi = min(ests), max(ests)
+    if len(ests) == 1:                     # single method -> widen by +/-35%
+        lo, hi = lo * 0.65, hi * 1.35
+    lo = max(3, int(round(lo)))
+    hi = min(250, int(round(hi)))
+    if hi <= lo:
+        hi = lo + max(3, int(lo * 0.4))
+    # If the two methods disagree wildly, the stock is volatile but not
+    # actually advancing -> cap the range and let the caller flag it.
+    wide = hi > 3 * lo
+    if wide:
+        hi = 3 * lo
+    return lo, hi

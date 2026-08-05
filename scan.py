@@ -16,6 +16,7 @@ import sys
 
 import config as cfg
 import data
+import indicators as ind
 import analysis
 import fundamentals as fnd
 import cycles
@@ -81,6 +82,7 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
         reasons.append(f"({tmeta['note']})")
     if screen.get("notes"):
         reasons.extend(screen["notes"][:1])
+    eta_lo, eta_hi = ind.time_to_target(daily, entry, tp)
     tm = tmeta or {}
     name = tm.get("name") or tm.get("note") or ""
     warnings = [r for r in reasons if r.startswith(("🔻", "⚡", "⚠"))]
@@ -89,6 +91,7 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
             "tp_pct": tp / entry - 1, "shares": shares,
             "value": shares * entry,
             "pl_amount": round((tp - entry) * shares, 2),
+            "eta_days_low": eta_lo, "eta_days_high": eta_hi,
             "fee_pct": fee_frac,
             "trend_score": trend["score"], "adx": trend["adx"],
             "rs": trend["rs"], "runner": trend.get("runner", False),
@@ -263,7 +266,7 @@ def run_hourly(offline=False):
     if not signals and not pos_msgs:
         when = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M")
         note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when)
-        notify.send_email(f"No new signals — {when} UTC", note, cfg)
+        notify.send_email(f"NO NEW SIGNAL — {when} UTC", note, cfg)
         notify.send_telegram(note, cfg)
     al.save(ledger)
     log_signals_csv(signals, macro, cyc)
