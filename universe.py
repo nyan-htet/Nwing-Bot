@@ -26,6 +26,7 @@ def load():
                 "type": row.get("type", "stock").strip().lower(),
                 "leverage": int(row.get("leverage", 1) or 1),
                 "inverse": row.get("inverse", "no").strip().lower() in ("yes", "y", "true"),
+                "sector": (row.get("sector") or "Other").strip(),
                 "note": (row.get("note") or "").strip(),
             }
     return tickers, meta

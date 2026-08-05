@@ -140,11 +140,66 @@ def thesis_broken_at(d, i):
     return bool(row.close < row.ema_s and lower_low)
 
 
-def run(years=8, max_stocks=None, include_etfs=True):
+def stratified_sample(all_tickers, meta, n_stocks=30, n_etfs=10, n_baseline=10,
+                      seed=42):
+    """Balanced sample: n_stocks spread evenly across sectors, n_etfs spread
+    across ETF exposures, plus a baseline block (SPY, GLD + random others).
+    Deterministic for a given seed so runs are comparable."""
+    import random
+    from collections import defaultdict
+    rng = random.Random(seed)
+
+    stocks_by_sector = defaultdict(list)
+    etfs_by_sector = defaultdict(list)
+    for t in all_tickers:
+        if t == "SPY":
+            continue
+        m = meta.get(t, {})
+        (etfs_by_sector if m.get("type") == "etf" else stocks_by_sector)[
+            m.get("sector", "Other")].append(t)
+
+    def spread(groups, n):
+        keys = sorted(groups)
+        for k in keys:
+            rng.shuffle(groups[k])
+        picked, i = [], 0
+        while len(picked) < n and any(groups[k] for k in keys):
+            k = keys[i % len(keys)]
+            if groups[k]:
+                picked.append(groups[k].pop())
+            i += 1
+        return picked
+
+    stocks = spread(stocks_by_sector, n_stocks)
+    etfs = spread(etfs_by_sector, n_etfs)
+
+    chosen = set(stocks + etfs)
+    baseline = [t for t in ("GLD", "QQQ", "VOO") if t in all_tickers and t not in chosen]
+    pool = [t for t in all_tickers if t not in chosen and t not in baseline and t != "SPY"]
+    rng.shuffle(pool)
+    baseline += pool[:max(0, n_baseline - len(baseline))]
+
+    print(f"Stratified sample: {len(stocks)} stocks across "
+          f"{len({meta.get(t, {}).get('sector') for t in stocks})} sectors, "
+          f"{len(etfs)} ETFs across "
+          f"{len({meta.get(t, {}).get('sector') for t in etfs})} exposures, "
+          f"{len(baseline)} baseline/random")
+    return stocks, etfs, baseline
+
+
+def run(years=8, max_stocks=None, include_etfs=True, stratified=False,
+        n_stocks=30, n_etfs=10, n_baseline=10):
     """max_stocks: how many STOCKS to test (0 = none, blank/None = all).
     include_etfs: test the ETF rows from tickers.csv too.
     SPY is always downloaded as the benchmark (never traded)."""
     all_tickers, meta = universe.load()
+    if stratified:
+        s_, e_, b_ = stratified_sample(all_tickers, meta, n_stocks, n_etfs, n_baseline)
+        stocks, etfs = s_ + [t for t in b_ if meta.get(t, {}).get("type") != "etf"], \
+                       e_ + [t for t in b_ if meta.get(t, {}).get("type") == "etf"]
+        tickers = ["SPY"] + sorted(set(stocks + etfs))
+        print(f"Universe: {len(stocks)} stocks + {len(etfs)} ETFs (+SPY benchmark) | stratified")
+        return _run_core(tickers, meta, stocks, etfs, years, True)
     stocks = [t for t in all_tickers
               if meta.get(t, {}).get("type") != "etf" and t != "SPY"]
     etfs = [t for t in all_tickers
@@ -162,6 +217,10 @@ def run(years=8, max_stocks=None, include_etfs=True):
     tickers = ["SPY"] + sorted(set(stocks + etfs))   # benchmark mandatory
     print(f"Universe: {len(stocks)} stocks + {len(etfs)} ETFs "
           f"(+SPY benchmark) | ETFs {'included' if include_etfs else 'excluded'}")
+    return _run_core(tickers, meta, stocks, etfs, years, include_etfs)
+
+
+def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
     n_bars = int(years * 252) + 300
 
     cache_key = (tuple(tickers), n_bars)
@@ -449,12 +508,19 @@ def summarize(curve, closed, days, buy_hold_pct=None):
 
 
 if __name__ == "__main__":
-    # args: [years] [max_stocks] [include_etfs yes/no]
+    # args: [years] [max_stocks|"strat"] [include_etfs yes/no] [n_stocks] [n_etfs] [n_baseline]
     yrs = float(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].strip() else 8
     mx = None
-    if len(sys.argv) > 2 and str(sys.argv[2]).strip() != "":
+    if (len(sys.argv) > 2 and str(sys.argv[2]).strip() != ""
+            and not str(sys.argv[2]).strip().lower().startswith("strat")):
         mx = int(sys.argv[2])
     inc = True
     if len(sys.argv) > 3 and str(sys.argv[3]).strip() != "":
         inc = str(sys.argv[3]).strip().lower() in ("yes", "y", "true", "1")
-    run(yrs, mx, inc)
+    if len(sys.argv) > 2 and str(sys.argv[2]).strip().lower().startswith("strat"):
+        ns = int(sys.argv[4]) if len(sys.argv) > 4 and sys.argv[4].strip() else 30
+        ne = int(sys.argv[5]) if len(sys.argv) > 5 and sys.argv[5].strip() else 10
+        nb = int(sys.argv[6]) if len(sys.argv) > 6 and sys.argv[6].strip() else 10
+        run(yrs, stratified=True, n_stocks=ns, n_etfs=ne, n_baseline=nb)
+    else:
+        run(yrs, mx, inc)
