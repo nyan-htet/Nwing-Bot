@@ -1,66 +1,66 @@
 {
-  "generated": "2026-08-05T08:50:22.999462+00:00",
+  "generated": "2026-08-05T09:20:37.958702+00:00",
   "universe": {
-    "stocks": 34,
-    "etfs": 16,
-    "tested": 49,
-    "years": 8.0,
+    "stocks": 37,
+    "etfs": 18,
+    "tested": 54,
+    "years": 6.0,
     "include_etfs": true
   },
   "distribution": [
     {
       "bucket": "loss > 20%",
-      "count": 2,
-      "pct_of_trades": 0.8,
-      "total_pnl": -246.72
+      "count": 3,
+      "pct_of_trades": 1.4,
+      "total_pnl": -349.73
     },
     {
       "bucket": "loss 15-20%",
       "count": 4,
-      "pct_of_trades": 1.5,
-      "total_pnl": -312.54
+      "pct_of_trades": 1.8,
+      "total_pnl": -321.2
     },
     {
       "bucket": "loss 10-15%",
-      "count": 17,
-      "pct_of_trades": 6.5,
-      "total_pnl": -914.68
+      "count": 12,
+      "pct_of_trades": 5.4,
+      "total_pnl": -651.91
     },
     {
       "bucket": "loss 5-10%",
-      "count": 45,
-      "pct_of_trades": 17.2,
-      "total_pnl": -1529.41
+      "count": 42,
+      "pct_of_trades": 19.0,
+      "total_pnl": -1480.79
     },
     {
       "bucket": "loss 0-5%",
-      "count": 83,
-      "pct_of_trades": 31.8,
-      "total_pnl": -1119.98
+      "count": 73,
+      "pct_of_trades": 33.0,
+      "total_pnl": -938.67
     },
     {
       "bucket": "win 0-5%",
-      "count": 18,
-      "pct_of_trades": 6.9,
-      "total_pnl": 144.65
+      "count": 15,
+      "pct_of_trades": 6.8,
+      "total_pnl": 149.39
     },
     {
       "bucket": "win 5-10%",
-      "count": 19,
-      "pct_of_trades": 7.3,
-      "total_pnl": 780.1
+      "count": 17,
+      "pct_of_trades": 7.7,
+      "total_pnl": 630.05
     },
     {
       "bucket": "win 10-15%",
-      "count": 47,
-      "pct_of_trades": 18.0,
-      "total_pnl": 2701.88
+      "count": 33,
+      "pct_of_trades": 14.9,
+      "total_pnl": 1819.32
     },
     {
       "bucket": "win 15-20%",
-      "count": 26,
+      "count": 22,
       "pct_of_trades": 10.0,
-      "total_pnl": 2119.47
+      "total_pnl": 1788.57
     },
     {
       "bucket": "win > 20%",
@@ -71,705 +71,537 @@
   ],
   "utilisation_monthly": [
     {
-      "month": "2018-08",
-      "avg_deployed": 193.0,
-      "avg_positions": 0.5,
-      "avg_equity": 9999.0,
-      "avg_utilisation_pct": 1.9
-    },
-    {
-      "month": "2018-09",
-      "avg_deployed": 848.0,
-      "avg_positions": 1.9,
-      "avg_equity": 9967.0,
-      "avg_utilisation_pct": 8.5
-    },
-    {
-      "month": "2018-10",
-      "avg_deployed": 1274.0,
-      "avg_positions": 3.0,
-      "avg_equity": 9839.0,
-      "avg_utilisation_pct": 13.0
-    },
-    {
-      "month": "2018-11",
-      "avg_deployed": 949.0,
-      "avg_positions": 2.0,
-      "avg_equity": 9769.0,
-      "avg_utilisation_pct": 9.7
-    },
-    {
-      "month": "2018-12",
-      "avg_deployed": 731.0,
-      "avg_positions": 1.5,
-      "avg_equity": 9766.0,
-      "avg_utilisation_pct": 7.5
-    },
-    {
-      "month": "2019-01",
-      "avg_deployed": 92.0,
-      "avg_positions": 0.2,
-      "avg_equity": 9728.0,
-      "avg_utilisation_pct": 0.9
-    },
-    {
-      "month": "2019-02",
-      "avg_deployed": 1635.0,
-      "avg_positions": 3.6,
-      "avg_equity": 9768.0,
-      "avg_utilisation_pct": 16.7
-    },
-    {
-      "month": "2019-03",
-      "avg_deployed": 2092.0,
-      "avg_positions": 4.8,
-      "avg_equity": 9773.0,
-      "avg_utilisation_pct": 21.4
-    },
-    {
-      "month": "2019-04",
-      "avg_deployed": 2164.0,
-      "avg_positions": 5.0,
-      "avg_equity": 9800.0,
-      "avg_utilisation_pct": 22.1
-    },
-    {
-      "month": "2019-05",
-      "avg_deployed": 1667.0,
-      "avg_positions": 3.9,
-      "avg_equity": 9624.0,
-      "avg_utilisation_pct": 17.3
-    },
-    {
-      "month": "2019-06",
-      "avg_deployed": 1313.0,
-      "avg_positions": 2.8,
-      "avg_equity": 9596.0,
-      "avg_utilisation_pct": 13.7
-    },
-    {
-      "month": "2019-07",
-      "avg_deployed": 1535.0,
-      "avg_positions": 3.3,
-      "avg_equity": 9620.0,
-      "avg_utilisation_pct": 16.0
-    },
-    {
-      "month": "2019-08",
-      "avg_deployed": 639.0,
-      "avg_positions": 1.5,
-      "avg_equity": 9664.0,
-      "avg_utilisation_pct": 6.6
-    },
-    {
-      "month": "2019-09",
-      "avg_deployed": 1027.0,
-      "avg_positions": 2.7,
-      "avg_equity": 9642.0,
-      "avg_utilisation_pct": 10.6
-    },
-    {
-      "month": "2019-10",
-      "avg_deployed": 1604.0,
-      "avg_positions": 3.9,
-      "avg_equity": 9622.0,
-      "avg_utilisation_pct": 16.7
-    },
-    {
-      "month": "2019-11",
-      "avg_deployed": 2038.0,
-      "avg_positions": 4.8,
-      "avg_equity": 9626.0,
-      "avg_utilisation_pct": 21.2
-    },
-    {
-      "month": "2019-12",
-      "avg_deployed": 2026.0,
-      "avg_positions": 4.9,
-      "avg_equity": 9653.0,
-      "avg_utilisation_pct": 21.0
-    },
-    {
-      "month": "2020-01",
-      "avg_deployed": 1708.0,
-      "avg_positions": 4.0,
-      "avg_equity": 9701.0,
-      "avg_utilisation_pct": 17.6
-    },
-    {
-      "month": "2020-02",
-      "avg_deployed": 328.0,
-      "avg_positions": 1.0,
-      "avg_equity": 9673.0,
-      "avg_utilisation_pct": 3.4
-    },
-    {
-      "month": "2020-03",
-      "avg_deployed": 323.0,
-      "avg_positions": 0.8,
-      "avg_equity": 9576.0,
-      "avg_utilisation_pct": 3.4
-    },
-    {
-      "month": "2020-04",
-      "avg_deployed": 196.0,
-      "avg_positions": 0.5,
-      "avg_equity": 9551.0,
-      "avg_utilisation_pct": 2.1
-    },
-    {
-      "month": "2020-05",
-      "avg_deployed": 530.0,
-      "avg_positions": 1.4,
-      "avg_equity": 9572.0,
-      "avg_utilisation_pct": 5.5
-    },
-    {
-      "month": "2020-06",
-      "avg_deployed": 2329.0,
-      "avg_positions": 5.5,
-      "avg_equity": 9628.0,
-      "avg_utilisation_pct": 24.2
-    },
-    {
-      "month": "2020-07",
-      "avg_deployed": 1519.0,
-      "avg_positions": 3.6,
-      "avg_equity": 9827.0,
-      "avg_utilisation_pct": 15.5
-    },
-    {
       "month": "2020-08",
-      "avg_deployed": 1109.0,
-      "avg_positions": 2.3,
-      "avg_equity": 9876.0,
-      "avg_utilisation_pct": 11.2
-    },
-    {
-      "month": "2020-09",
-      "avg_deployed": 970.0,
-      "avg_positions": 2.2,
-      "avg_equity": 9825.0,
-      "avg_utilisation_pct": 9.9
-    },
-    {
-      "month": "2020-10",
-      "avg_deployed": 784.0,
-      "avg_positions": 1.6,
-      "avg_equity": 9923.0,
-      "avg_utilisation_pct": 7.9
-    },
-    {
-      "month": "2020-11",
-      "avg_deployed": 2806.0,
-      "avg_positions": 6.5,
-      "avg_equity": 10149.0,
-      "avg_utilisation_pct": 27.7
-    },
-    {
-      "month": "2020-12",
-      "avg_deployed": 2753.0,
-      "avg_positions": 6.5,
-      "avg_equity": 10340.0,
-      "avg_utilisation_pct": 26.6
-    },
-    {
-      "month": "2021-01",
-      "avg_deployed": 3231.0,
-      "avg_positions": 7.1,
-      "avg_equity": 10523.0,
-      "avg_utilisation_pct": 30.7
-    },
-    {
-      "month": "2021-02",
-      "avg_deployed": 2048.0,
-      "avg_positions": 4.1,
-      "avg_equity": 10720.0,
-      "avg_utilisation_pct": 19.1
-    },
-    {
-      "month": "2021-03",
-      "avg_deployed": 2516.0,
-      "avg_positions": 5.3,
-      "avg_equity": 10791.0,
-      "avg_utilisation_pct": 23.3
-    },
-    {
-      "month": "2021-04",
-      "avg_deployed": 3305.0,
-      "avg_positions": 6.7,
-      "avg_equity": 10953.0,
-      "avg_utilisation_pct": 30.2
-    },
-    {
-      "month": "2021-05",
-      "avg_deployed": 2832.0,
-      "avg_positions": 5.5,
-      "avg_equity": 11085.0,
-      "avg_utilisation_pct": 25.5
-    },
-    {
-      "month": "2021-06",
-      "avg_deployed": 2982.0,
-      "avg_positions": 6.0,
-      "avg_equity": 11186.0,
-      "avg_utilisation_pct": 26.7
-    },
-    {
-      "month": "2021-07",
-      "avg_deployed": 1486.0,
-      "avg_positions": 3.3,
-      "avg_equity": 11239.0,
-      "avg_utilisation_pct": 13.2
-    },
-    {
-      "month": "2021-08",
-      "avg_deployed": 917.0,
-      "avg_positions": 2.0,
-      "avg_equity": 11259.0,
-      "avg_utilisation_pct": 8.1
-    },
-    {
-      "month": "2021-09",
-      "avg_deployed": 549.0,
-      "avg_positions": 1.2,
-      "avg_equity": 11287.0,
-      "avg_utilisation_pct": 4.9
-    },
-    {
-      "month": "2021-10",
-      "avg_deployed": 1040.0,
-      "avg_positions": 1.9,
-      "avg_equity": 11291.0,
-      "avg_utilisation_pct": 9.2
-    },
-    {
-      "month": "2021-11",
-      "avg_deployed": 620.0,
-      "avg_positions": 1.2,
-      "avg_equity": 11242.0,
-      "avg_utilisation_pct": 5.5
-    },
-    {
-      "month": "2021-12",
-      "avg_deployed": 428.0,
-      "avg_positions": 1.3,
-      "avg_equity": 11134.0,
-      "avg_utilisation_pct": 3.8
-    },
-    {
-      "month": "2022-01",
-      "avg_deployed": 542.0,
-      "avg_positions": 1.1,
-      "avg_equity": 11085.0,
-      "avg_utilisation_pct": 4.9
-    },
-    {
-      "month": "2022-02",
-      "avg_deployed": 1270.0,
-      "avg_positions": 2.4,
-      "avg_equity": 11106.0,
-      "avg_utilisation_pct": 11.4
-    },
-    {
-      "month": "2022-03",
-      "avg_deployed": 678.0,
-      "avg_positions": 1.3,
-      "avg_equity": 11162.0,
-      "avg_utilisation_pct": 6.1
-    },
-    {
-      "month": "2022-04",
-      "avg_deployed": 1419.0,
-      "avg_positions": 2.6,
-      "avg_equity": 11223.0,
-      "avg_utilisation_pct": 12.6
-    },
-    {
-      "month": "2022-05",
-      "avg_deployed": 380.0,
-      "avg_positions": 0.7,
-      "avg_equity": 11154.0,
-      "avg_utilisation_pct": 3.4
-    },
-    {
-      "month": "2022-06",
-      "avg_deployed": 1253.0,
-      "avg_positions": 2.3,
-      "avg_equity": 11173.0,
-      "avg_utilisation_pct": 11.2
-    },
-    {
-      "month": "2022-07",
-      "avg_deployed": 1577.0,
-      "avg_positions": 2.9,
-      "avg_equity": 11183.0,
-      "avg_utilisation_pct": 14.1
-    },
-    {
-      "month": "2022-08",
-      "avg_deployed": 1326.0,
-      "avg_positions": 2.3,
-      "avg_equity": 11235.0,
-      "avg_utilisation_pct": 11.8
-    },
-    {
-      "month": "2022-09",
-      "avg_deployed": 1454.0,
-      "avg_positions": 2.7,
-      "avg_equity": 11163.0,
-      "avg_utilisation_pct": 13.0
-    },
-    {
-      "month": "2022-10",
-      "avg_deployed": 336.0,
-      "avg_positions": 0.6,
-      "avg_equity": 11084.0,
-      "avg_utilisation_pct": 3.0
-    },
-    {
-      "month": "2022-11",
-      "avg_deployed": 1545.0,
-      "avg_positions": 3.0,
-      "avg_equity": 11154.0,
-      "avg_utilisation_pct": 13.9
-    },
-    {
-      "month": "2022-12",
-      "avg_deployed": 3708.0,
-      "avg_positions": 7.3,
-      "avg_equity": 11104.0,
-      "avg_utilisation_pct": 33.4
-    },
-    {
-      "month": "2023-01",
-      "avg_deployed": 3078.0,
-      "avg_positions": 5.7,
-      "avg_equity": 11167.0,
-      "avg_utilisation_pct": 27.6
-    },
-    {
-      "month": "2023-02",
-      "avg_deployed": 3478.0,
-      "avg_positions": 6.8,
-      "avg_equity": 10991.0,
-      "avg_utilisation_pct": 31.6
-    },
-    {
-      "month": "2023-03",
-      "avg_deployed": 625.0,
-      "avg_positions": 1.2,
-      "avg_equity": 10849.0,
-      "avg_utilisation_pct": 5.8
-    },
-    {
-      "month": "2023-04",
-      "avg_deployed": 1956.0,
-      "avg_positions": 4.0,
-      "avg_equity": 10829.0,
-      "avg_utilisation_pct": 18.1
-    },
-    {
-      "month": "2023-05",
-      "avg_deployed": 2025.0,
-      "avg_positions": 4.4,
-      "avg_equity": 10761.0,
-      "avg_utilisation_pct": 18.8
-    },
-    {
-      "month": "2023-06",
-      "avg_deployed": 1471.0,
-      "avg_positions": 3.1,
-      "avg_equity": 10756.0,
-      "avg_utilisation_pct": 13.7
-    },
-    {
-      "month": "2023-07",
-      "avg_deployed": 1982.0,
-      "avg_positions": 4.1,
-      "avg_equity": 10781.0,
-      "avg_utilisation_pct": 18.4
-    },
-    {
-      "month": "2023-08",
-      "avg_deployed": 2038.0,
-      "avg_positions": 4.3,
-      "avg_equity": 10571.0,
-      "avg_utilisation_pct": 19.3
-    },
-    {
-      "month": "2023-09",
-      "avg_deployed": 2082.0,
-      "avg_positions": 4.1,
-      "avg_equity": 10547.0,
-      "avg_utilisation_pct": 19.7
-    },
-    {
-      "month": "2023-10",
-      "avg_deployed": 1477.0,
-      "avg_positions": 3.0,
-      "avg_equity": 10417.0,
-      "avg_utilisation_pct": 14.2
-    },
-    {
-      "month": "2023-11",
-      "avg_deployed": 1150.0,
-      "avg_positions": 2.4,
-      "avg_equity": 10299.0,
-      "avg_utilisation_pct": 11.2
-    },
-    {
-      "month": "2023-12",
-      "avg_deployed": 1004.0,
-      "avg_positions": 2.1,
-      "avg_equity": 10320.0,
-      "avg_utilisation_pct": 9.7
-    },
-    {
-      "month": "2024-01",
-      "avg_deployed": 1941.0,
-      "avg_positions": 4.5,
-      "avg_equity": 10284.0,
-      "avg_utilisation_pct": 18.9
-    },
-    {
-      "month": "2024-02",
-      "avg_deployed": 1869.0,
-      "avg_positions": 4.1,
-      "avg_equity": 10254.0,
-      "avg_utilisation_pct": 18.2
-    },
-    {
-      "month": "2024-03",
-      "avg_deployed": 2446.0,
-      "avg_positions": 5.1,
-      "avg_equity": 10409.0,
-      "avg_utilisation_pct": 23.5
-    },
-    {
-      "month": "2024-04",
-      "avg_deployed": 1904.0,
-      "avg_positions": 3.8,
-      "avg_equity": 10555.0,
-      "avg_utilisation_pct": 18.0
-    },
-    {
-      "month": "2024-05",
-      "avg_deployed": 993.0,
-      "avg_positions": 2.0,
-      "avg_equity": 10566.0,
-      "avg_utilisation_pct": 9.4
-    },
-    {
-      "month": "2024-06",
-      "avg_deployed": 2941.0,
-      "avg_positions": 6.1,
-      "avg_equity": 10527.0,
-      "avg_utilisation_pct": 27.9
-    },
-    {
-      "month": "2024-07",
-      "avg_deployed": 4272.0,
-      "avg_positions": 8.7,
-      "avg_equity": 10528.0,
-      "avg_utilisation_pct": 40.6
-    },
-    {
-      "month": "2024-08",
-      "avg_deployed": 636.0,
-      "avg_positions": 1.3,
-      "avg_equity": 10329.0,
-      "avg_utilisation_pct": 6.2
-    },
-    {
-      "month": "2024-09",
-      "avg_deployed": 1670.0,
-      "avg_positions": 3.4,
-      "avg_equity": 10354.0,
-      "avg_utilisation_pct": 16.1
-    },
-    {
-      "month": "2024-10",
-      "avg_deployed": 2234.0,
-      "avg_positions": 4.6,
-      "avg_equity": 10360.0,
-      "avg_utilisation_pct": 21.6
-    },
-    {
-      "month": "2024-11",
-      "avg_deployed": 925.0,
-      "avg_positions": 1.8,
-      "avg_equity": 10281.0,
-      "avg_utilisation_pct": 9.0
-    },
-    {
-      "month": "2024-12",
-      "avg_deployed": 483.0,
-      "avg_positions": 1.2,
-      "avg_equity": 10271.0,
-      "avg_utilisation_pct": 4.7
-    },
-    {
-      "month": "2025-01",
-      "avg_deployed": 1064.0,
-      "avg_positions": 2.8,
-      "avg_equity": 10236.0,
-      "avg_utilisation_pct": 10.4
-    },
-    {
-      "month": "2025-02",
-      "avg_deployed": 1360.0,
-      "avg_positions": 3.6,
-      "avg_equity": 10206.0,
-      "avg_utilisation_pct": 13.3
-    },
-    {
-      "month": "2025-03",
-      "avg_deployed": 831.0,
-      "avg_positions": 2.2,
-      "avg_equity": 10181.0,
-      "avg_utilisation_pct": 8.2
-    },
-    {
-      "month": "2025-04",
-      "avg_deployed": 464.0,
-      "avg_positions": 1.1,
-      "avg_equity": 10193.0,
-      "avg_utilisation_pct": 4.6
-    },
-    {
-      "month": "2025-05",
-      "avg_deployed": 1442.0,
-      "avg_positions": 2.9,
-      "avg_equity": 10223.0,
-      "avg_utilisation_pct": 14.1
-    },
-    {
-      "month": "2025-06",
-      "avg_deployed": 2424.0,
-      "avg_positions": 4.9,
-      "avg_equity": 10329.0,
-      "avg_utilisation_pct": 23.5
-    },
-    {
-      "month": "2025-07",
-      "avg_deployed": 1843.0,
-      "avg_positions": 3.8,
-      "avg_equity": 10472.0,
-      "avg_utilisation_pct": 17.6
-    },
-    {
-      "month": "2025-08",
-      "avg_deployed": 2993.0,
-      "avg_positions": 6.1,
-      "avg_equity": 10501.0,
-      "avg_utilisation_pct": 28.5
-    },
-    {
-      "month": "2025-09",
-      "avg_deployed": 3035.0,
-      "avg_positions": 6.3,
-      "avg_equity": 10756.0,
-      "avg_utilisation_pct": 28.2
-    },
-    {
-      "month": "2025-10",
-      "avg_deployed": 2411.0,
-      "avg_positions": 4.5,
-      "avg_equity": 11054.0,
-      "avg_utilisation_pct": 21.8
-    },
-    {
-      "month": "2025-11",
-      "avg_deployed": 2852.0,
-      "avg_positions": 5.5,
-      "avg_equity": 11119.0,
-      "avg_utilisation_pct": 25.6
-    },
-    {
-      "month": "2025-12",
-      "avg_deployed": 2262.0,
-      "avg_positions": 4.4,
-      "avg_equity": 11279.0,
-      "avg_utilisation_pct": 20.1
-    },
-    {
-      "month": "2026-01",
-      "avg_deployed": 1498.0,
-      "avg_positions": 3.1,
-      "avg_equity": 11469.0,
-      "avg_utilisation_pct": 13.1
-    },
-    {
-      "month": "2026-02",
-      "avg_deployed": 554.0,
-      "avg_positions": 1.1,
-      "avg_equity": 11552.0,
+      "avg_deployed": 486.0,
+      "avg_positions": 0.9,
+      "avg_equity": 10035.0,
       "avg_utilisation_pct": 4.8
     },
     {
+      "month": "2020-09",
+      "avg_deployed": 1152.0,
+      "avg_positions": 2.6,
+      "avg_equity": 9957.0,
+      "avg_utilisation_pct": 11.6
+    },
+    {
+      "month": "2020-10",
+      "avg_deployed": 1273.0,
+      "avg_positions": 2.6,
+      "avg_equity": 10058.0,
+      "avg_utilisation_pct": 12.7
+    },
+    {
+      "month": "2020-11",
+      "avg_deployed": 3451.0,
+      "avg_positions": 7.8,
+      "avg_equity": 10323.0,
+      "avg_utilisation_pct": 33.4
+    },
+    {
+      "month": "2020-12",
+      "avg_deployed": 3571.0,
+      "avg_positions": 8.3,
+      "avg_equity": 10507.0,
+      "avg_utilisation_pct": 34.0
+    },
+    {
+      "month": "2021-01",
+      "avg_deployed": 3940.0,
+      "avg_positions": 8.7,
+      "avg_equity": 10657.0,
+      "avg_utilisation_pct": 37.0
+    },
+    {
+      "month": "2021-02",
+      "avg_deployed": 2720.0,
+      "avg_positions": 5.4,
+      "avg_equity": 10869.0,
+      "avg_utilisation_pct": 25.0
+    },
+    {
+      "month": "2021-03",
+      "avg_deployed": 3075.0,
+      "avg_positions": 6.3,
+      "avg_equity": 10890.0,
+      "avg_utilisation_pct": 28.2
+    },
+    {
+      "month": "2021-04",
+      "avg_deployed": 3866.0,
+      "avg_positions": 7.7,
+      "avg_equity": 11109.0,
+      "avg_utilisation_pct": 34.8
+    },
+    {
+      "month": "2021-05",
+      "avg_deployed": 3474.0,
+      "avg_positions": 6.8,
+      "avg_equity": 11195.0,
+      "avg_utilisation_pct": 31.0
+    },
+    {
+      "month": "2021-06",
+      "avg_deployed": 2695.0,
+      "avg_positions": 5.5,
+      "avg_equity": 11233.0,
+      "avg_utilisation_pct": 24.0
+    },
+    {
+      "month": "2021-07",
+      "avg_deployed": 2195.0,
+      "avg_positions": 4.7,
+      "avg_equity": 11243.0,
+      "avg_utilisation_pct": 19.5
+    },
+    {
+      "month": "2021-08",
+      "avg_deployed": 1401.0,
+      "avg_positions": 3.0,
+      "avg_equity": 11262.0,
+      "avg_utilisation_pct": 12.4
+    },
+    {
+      "month": "2021-09",
+      "avg_deployed": 779.0,
+      "avg_positions": 1.7,
+      "avg_equity": 11287.0,
+      "avg_utilisation_pct": 6.9
+    },
+    {
+      "month": "2021-10",
+      "avg_deployed": 583.0,
+      "avg_positions": 1.0,
+      "avg_equity": 11284.0,
+      "avg_utilisation_pct": 5.2
+    },
+    {
+      "month": "2021-11",
+      "avg_deployed": 458.0,
+      "avg_positions": 0.9,
+      "avg_equity": 11234.0,
+      "avg_utilisation_pct": 4.1
+    },
+    {
+      "month": "2021-12",
+      "avg_deployed": 1128.0,
+      "avg_positions": 2.7,
+      "avg_equity": 11106.0,
+      "avg_utilisation_pct": 10.2
+    },
+    {
+      "month": "2022-01",
+      "avg_deployed": 804.0,
+      "avg_positions": 1.7,
+      "avg_equity": 11044.0,
+      "avg_utilisation_pct": 7.3
+    },
+    {
+      "month": "2022-02",
+      "avg_deployed": 84.0,
+      "avg_positions": 0.2,
+      "avg_equity": 11014.0,
+      "avg_utilisation_pct": 0.8
+    },
+    {
+      "month": "2022-03",
+      "avg_deployed": 801.0,
+      "avg_positions": 1.4,
+      "avg_equity": 11064.0,
+      "avg_utilisation_pct": 7.2
+    },
+    {
+      "month": "2022-04",
+      "avg_deployed": 1351.0,
+      "avg_positions": 2.5,
+      "avg_equity": 11100.0,
+      "avg_utilisation_pct": 12.2
+    },
+    {
+      "month": "2022-05",
+      "avg_deployed": 49.0,
+      "avg_positions": 0.1,
+      "avg_equity": 10966.0,
+      "avg_utilisation_pct": 0.5
+    },
+    {
+      "month": "2022-06",
+      "avg_deployed": 718.0,
+      "avg_positions": 1.4,
+      "avg_equity": 10946.0,
+      "avg_utilisation_pct": 6.6
+    },
+    {
+      "month": "2022-07",
+      "avg_deployed": 670.0,
+      "avg_positions": 1.2,
+      "avg_equity": 10839.0,
+      "avg_utilisation_pct": 6.2
+    },
+    {
+      "month": "2022-08",
+      "avg_deployed": 737.0,
+      "avg_positions": 1.3,
+      "avg_equity": 10839.0,
+      "avg_utilisation_pct": 6.8
+    },
+    {
+      "month": "2022-09",
+      "avg_deployed": 1345.0,
+      "avg_positions": 2.6,
+      "avg_equity": 10776.0,
+      "avg_utilisation_pct": 12.5
+    },
+    {
+      "month": "2022-10",
+      "avg_deployed": 175.0,
+      "avg_positions": 0.3,
+      "avg_equity": 10710.0,
+      "avg_utilisation_pct": 1.6
+    },
+    {
+      "month": "2022-11",
+      "avg_deployed": 826.0,
+      "avg_positions": 1.7,
+      "avg_equity": 10692.0,
+      "avg_utilisation_pct": 7.7
+    },
+    {
+      "month": "2022-12",
+      "avg_deployed": 3096.0,
+      "avg_positions": 6.5,
+      "avg_equity": 10680.0,
+      "avg_utilisation_pct": 29.0
+    },
+    {
+      "month": "2023-01",
+      "avg_deployed": 2442.0,
+      "avg_positions": 4.6,
+      "avg_equity": 10787.0,
+      "avg_utilisation_pct": 22.6
+    },
+    {
+      "month": "2023-02",
+      "avg_deployed": 2156.0,
+      "avg_positions": 4.3,
+      "avg_equity": 10674.0,
+      "avg_utilisation_pct": 20.2
+    },
+    {
+      "month": "2023-03",
+      "avg_deployed": 313.0,
+      "avg_positions": 0.8,
+      "avg_equity": 10584.0,
+      "avg_utilisation_pct": 3.0
+    },
+    {
+      "month": "2023-04",
+      "avg_deployed": 1773.0,
+      "avg_positions": 4.0,
+      "avg_equity": 10565.0,
+      "avg_utilisation_pct": 16.8
+    },
+    {
+      "month": "2023-05",
+      "avg_deployed": 2112.0,
+      "avg_positions": 4.8,
+      "avg_equity": 10507.0,
+      "avg_utilisation_pct": 20.1
+    },
+    {
+      "month": "2023-06",
+      "avg_deployed": 1731.0,
+      "avg_positions": 3.6,
+      "avg_equity": 10517.0,
+      "avg_utilisation_pct": 16.5
+    },
+    {
+      "month": "2023-07",
+      "avg_deployed": 2518.0,
+      "avg_positions": 5.3,
+      "avg_equity": 10581.0,
+      "avg_utilisation_pct": 23.8
+    },
+    {
+      "month": "2023-08",
+      "avg_deployed": 2201.0,
+      "avg_positions": 4.7,
+      "avg_equity": 10347.0,
+      "avg_utilisation_pct": 21.3
+    },
+    {
+      "month": "2023-09",
+      "avg_deployed": 1856.0,
+      "avg_positions": 3.7,
+      "avg_equity": 10272.0,
+      "avg_utilisation_pct": 18.1
+    },
+    {
+      "month": "2023-10",
+      "avg_deployed": 875.0,
+      "avg_positions": 1.8,
+      "avg_equity": 10152.0,
+      "avg_utilisation_pct": 8.6
+    },
+    {
+      "month": "2023-11",
+      "avg_deployed": 600.0,
+      "avg_positions": 1.4,
+      "avg_equity": 10003.0,
+      "avg_utilisation_pct": 6.0
+    },
+    {
+      "month": "2023-12",
+      "avg_deployed": 1387.0,
+      "avg_positions": 3.0,
+      "avg_equity": 10003.0,
+      "avg_utilisation_pct": 13.9
+    },
+    {
+      "month": "2024-01",
+      "avg_deployed": 1962.0,
+      "avg_positions": 4.5,
+      "avg_equity": 9950.0,
+      "avg_utilisation_pct": 19.7
+    },
+    {
+      "month": "2024-02",
+      "avg_deployed": 1740.0,
+      "avg_positions": 4.0,
+      "avg_equity": 9937.0,
+      "avg_utilisation_pct": 17.5
+    },
+    {
+      "month": "2024-03",
+      "avg_deployed": 2210.0,
+      "avg_positions": 5.0,
+      "avg_equity": 10082.0,
+      "avg_utilisation_pct": 21.9
+    },
+    {
+      "month": "2024-04",
+      "avg_deployed": 1826.0,
+      "avg_positions": 3.9,
+      "avg_equity": 10092.0,
+      "avg_utilisation_pct": 18.1
+    },
+    {
+      "month": "2024-05",
+      "avg_deployed": 1898.0,
+      "avg_positions": 3.9,
+      "avg_equity": 10140.0,
+      "avg_utilisation_pct": 18.7
+    },
+    {
+      "month": "2024-06",
+      "avg_deployed": 3303.0,
+      "avg_positions": 7.1,
+      "avg_equity": 10067.0,
+      "avg_utilisation_pct": 32.8
+    },
+    {
+      "month": "2024-07",
+      "avg_deployed": 4010.0,
+      "avg_positions": 8.7,
+      "avg_equity": 10074.0,
+      "avg_utilisation_pct": 39.8
+    },
+    {
+      "month": "2024-08",
+      "avg_deployed": 906.0,
+      "avg_positions": 2.1,
+      "avg_equity": 9972.0,
+      "avg_utilisation_pct": 9.1
+    },
+    {
+      "month": "2024-09",
+      "avg_deployed": 1523.0,
+      "avg_positions": 3.8,
+      "avg_equity": 10040.0,
+      "avg_utilisation_pct": 15.2
+    },
+    {
+      "month": "2024-10",
+      "avg_deployed": 1921.0,
+      "avg_positions": 4.7,
+      "avg_equity": 10128.0,
+      "avg_utilisation_pct": 19.0
+    },
+    {
+      "month": "2024-11",
+      "avg_deployed": 502.0,
+      "avg_positions": 1.1,
+      "avg_equity": 10049.0,
+      "avg_utilisation_pct": 5.0
+    },
+    {
+      "month": "2024-12",
+      "avg_deployed": 669.0,
+      "avg_positions": 1.7,
+      "avg_equity": 9991.0,
+      "avg_utilisation_pct": 6.7
+    },
+    {
+      "month": "2025-01",
+      "avg_deployed": 1466.0,
+      "avg_positions": 3.7,
+      "avg_equity": 9946.0,
+      "avg_utilisation_pct": 14.7
+    },
+    {
+      "month": "2025-02",
+      "avg_deployed": 2694.0,
+      "avg_positions": 6.7,
+      "avg_equity": 9911.0,
+      "avg_utilisation_pct": 27.2
+    },
+    {
+      "month": "2025-03",
+      "avg_deployed": 2139.0,
+      "avg_positions": 5.1,
+      "avg_equity": 9836.0,
+      "avg_utilisation_pct": 21.7
+    },
+    {
+      "month": "2025-04",
+      "avg_deployed": 385.0,
+      "avg_positions": 1.0,
+      "avg_equity": 9756.0,
+      "avg_utilisation_pct": 3.9
+    },
+    {
+      "month": "2025-05",
+      "avg_deployed": 1316.0,
+      "avg_positions": 2.8,
+      "avg_equity": 9790.0,
+      "avg_utilisation_pct": 13.4
+    },
+    {
+      "month": "2025-06",
+      "avg_deployed": 2674.0,
+      "avg_positions": 5.6,
+      "avg_equity": 9906.0,
+      "avg_utilisation_pct": 27.0
+    },
+    {
+      "month": "2025-07",
+      "avg_deployed": 2409.0,
+      "avg_positions": 5.0,
+      "avg_equity": 9995.0,
+      "avg_utilisation_pct": 24.1
+    },
+    {
+      "month": "2025-08",
+      "avg_deployed": 2208.0,
+      "avg_positions": 4.5,
+      "avg_equity": 10018.0,
+      "avg_utilisation_pct": 22.0
+    },
+    {
+      "month": "2025-09",
+      "avg_deployed": 2201.0,
+      "avg_positions": 4.9,
+      "avg_equity": 10261.0,
+      "avg_utilisation_pct": 21.5
+    },
+    {
+      "month": "2025-10",
+      "avg_deployed": 2332.0,
+      "avg_positions": 4.7,
+      "avg_equity": 10497.0,
+      "avg_utilisation_pct": 22.2
+    },
+    {
+      "month": "2025-11",
+      "avg_deployed": 2489.0,
+      "avg_positions": 5.2,
+      "avg_equity": 10507.0,
+      "avg_utilisation_pct": 23.7
+    },
+    {
+      "month": "2025-12",
+      "avg_deployed": 2257.0,
+      "avg_positions": 4.7,
+      "avg_equity": 10605.0,
+      "avg_utilisation_pct": 21.3
+    },
+    {
+      "month": "2026-01",
+      "avg_deployed": 2422.0,
+      "avg_positions": 5.0,
+      "avg_equity": 10776.0,
+      "avg_utilisation_pct": 22.5
+    },
+    {
+      "month": "2026-02",
+      "avg_deployed": 1821.0,
+      "avg_positions": 3.6,
+      "avg_equity": 10882.0,
+      "avg_utilisation_pct": 16.7
+    },
+    {
       "month": "2026-03",
-      "avg_deployed": 1227.0,
-      "avg_positions": 2.3,
-      "avg_equity": 11509.0,
-      "avg_utilisation_pct": 10.7
+      "avg_deployed": 699.0,
+      "avg_positions": 1.4,
+      "avg_equity": 10785.0,
+      "avg_utilisation_pct": 6.5
     },
     {
       "month": "2026-04",
-      "avg_deployed": 478.0,
-      "avg_positions": 0.8,
-      "avg_equity": 11507.0,
-      "avg_utilisation_pct": 4.2
+      "avg_deployed": 0.0,
+      "avg_positions": 0.0,
+      "avg_equity": 10761.0,
+      "avg_utilisation_pct": 0.0
     },
     {
       "month": "2026-05",
-      "avg_deployed": 1119.0,
-      "avg_positions": 2.1,
-      "avg_equity": 11593.0,
-      "avg_utilisation_pct": 9.7
+      "avg_deployed": 641.0,
+      "avg_positions": 1.3,
+      "avg_equity": 10800.0,
+      "avg_utilisation_pct": 5.9
     },
     {
       "month": "2026-06",
-      "avg_deployed": 1778.0,
-      "avg_positions": 3.4,
-      "avg_equity": 11592.0,
-      "avg_utilisation_pct": 15.3
+      "avg_deployed": 2109.0,
+      "avg_positions": 4.4,
+      "avg_equity": 10812.0,
+      "avg_utilisation_pct": 19.5
     },
     {
       "month": "2026-07",
-      "avg_deployed": 1770.0,
-      "avg_positions": 3.4,
-      "avg_equity": 11524.0,
-      "avg_utilisation_pct": 15.4
+      "avg_deployed": 2756.0,
+      "avg_positions": 6.0,
+      "avg_equity": 10642.0,
+      "avg_utilisation_pct": 25.9
     },
     {
       "month": "2026-08",
-      "avg_deployed": 739.0,
-      "avg_positions": 1.5,
-      "avg_equity": 11587.0,
-      "avg_utilisation_pct": 6.4
+      "avg_deployed": 1754.0,
+      "avg_positions": 3.5,
+      "avg_equity": 10639.0,
+      "avg_utilisation_pct": 16.5
     }
   ],
   "note": "Daily-bar approximation of the live strategy (no 1h trigger / VWAP).",
   "stats": {
     "start_equity": 10000.0,
-    "final_equity": 11615.63,
-    "total_return_pct": 16.16,
-    "cagr_pct": 1.89,
-    "max_drawdown_pct": -10.31,
-    "sharpe": 0.54,
-    "n_trades": 261,
-    "win_rate_pct": 41.8,
-    "avg_win_pct": 11.34,
-    "avg_loss_pct": -5.59,
-    "avg_hold_days": 36.9,
+    "final_equity": 10673.89,
+    "total_return_pct": 6.74,
+    "cagr_pct": 1.09,
+    "max_drawdown_pct": -14.19,
+    "sharpe": 0.28,
+    "n_trades": 221,
+    "win_rate_pct": 39.4,
+    "avg_win_pct": 11.07,
+    "avg_loss_pct": -5.68,
+    "avg_hold_days": 36.1,
     "exits": {
-      "thesis": 172,
-      "tp": 89
+      "thesis": 155,
+      "tp": 66
     },
-    "period": "2018-08-06 to 2026-08-04",
-    "buy_hold_spy_pct": 170.98,
-    "vs_buy_hold_pct": -154.82,
+    "period": "2020-08-04 to 2026-08-04",
+    "buy_hold_spy_pct": 133.69,
+    "vs_buy_hold_pct": -126.95,
     "params": {
       "position_pct": 0.05,
       "max_concurrent": 10,
@@ -783,2465 +615,1603 @@
       "require_rs": false,
       "require_ema200": false
     },
-    "avg_deployed_usd": 1572.0,
-    "avg_utilisation_pct": 14.9,
-    "avg_open_positions": 3.3,
+    "avg_deployed_usd": 1727.0,
+    "avg_utilisation_pct": 16.5,
+    "avg_open_positions": 3.7,
     "max_open_positions": 10,
-    "days_fully_idle_pct": 6.5
+    "days_fully_idle_pct": 9.6
   },
   "yearly_pct": {
-    "2018": -2.72,
-    "2019": -0.15,
-    "2020": 6.95,
-    "2021": 7.38,
-    "2022": -0.39,
-    "2023": -6.42,
-    "2024": -0.85,
-    "2025": 10.31,
-    "2026": 2.18
+    "2020": 5.56,
+    "2021": 5.71,
+    "2022": -3.9,
+    "2023": -5.88,
+    "2024": -0.54,
+    "2025": 6.72,
+    "2026": 0.02
   },
   "monthly_pct": {
-    "2018": {
-      "9": -0.53,
-      "10": -2.08,
-      "11": 0.6,
-      "12": -0.64
-    },
-    "2019": {
-      "1": 0.05,
-      "2": 0.67,
-      "3": -0.33,
-      "4": -0.25,
-      "5": -1.63,
-      "6": 0.25,
-      "7": 0.44,
-      "8": 0.04,
-      "9": -0.28,
-      "10": 0.19,
-      "11": -0.55,
-      "12": 1.27
-    },
     "2020": {
-      "1": -0.51,
-      "2": -0.19,
-      "3": -0.94,
-      "4": -0.18,
-      "5": 0.51,
-      "6": 1.17,
-      "7": 1.37,
-      "8": 0.77,
-      "9": -0.97,
-      "10": 1.08,
-      "11": 3.3,
-      "12": 1.5
+      "9": -1.41,
+      "10": 1.13,
+      "11": 3.73,
+      "12": 1.32
     },
     "2021": {
-      "1": 0.99,
-      "2": 2.21,
-      "3": 0.82,
-      "4": 2.08,
-      "5": 0.36,
-      "6": 0.99,
-      "7": 0.38,
-      "8": 0.42,
-      "9": -0.2,
-      "10": -0.1,
-      "11": -0.76,
-      "12": -0.46
+      "1": 0.29,
+      "2": 2.54,
+      "3": 0.93,
+      "4": 2.09,
+      "5": 0.03,
+      "6": 0.51,
+      "7": -0.06,
+      "8": 0.5,
+      "9": -0.27,
+      "10": 0.2,
+      "11": -1.34,
+      "12": -0.31
     },
     "2022": {
-      "1": -0.34,
-      "2": 0.27,
-      "3": 0.97,
-      "4": -0.77,
-      "5": 0.35,
-      "6": 0.36,
-      "7": 0.01,
-      "8": 0.08,
-      "9": -1.27,
-      "10": 0.44,
-      "11": 0.85,
-      "12": -1.48
+      "1": -0.79,
+      "2": 0.09,
+      "3": 0.77,
+      "4": -1.16,
+      "5": -0.16,
+      "6": -0.51,
+      "7": -0.8,
+      "8": 0.02,
+      "9": -1.05,
+      "10": 0.04,
+      "11": 0.18,
+      "12": -0.84
     },
     "2023": {
-      "1": 1.36,
-      "2": -3.12,
-      "3": -0.04,
-      "4": -0.42,
-      "5": -0.69,
-      "6": 0.3,
-      "7": 0.24,
-      "8": -2.64,
-      "9": 0.23,
-      "10": -1.25,
-      "11": -1.16,
-      "12": 0.73
+      "1": 1.79,
+      "2": -2.28,
+      "3": 0.02,
+      "4": -0.44,
+      "5": -0.72,
+      "6": 0.64,
+      "7": 0.65,
+      "8": -3.17,
+      "9": -0.43,
+      "10": -1.13,
+      "11": -1.35,
+      "12": 0.57
     },
     "2024": {
-      "1": -1.38,
-      "2": 1.16,
-      "3": 1.75,
-      "4": 0.36,
-      "5": 0.06,
-      "6": -0.57,
-      "7": -0.16,
-      "8": -1.32,
-      "9": 0.89,
-      "10": -1.17,
-      "11": -0.39,
-      "12": -0.01
+      "1": -1.51,
+      "2": 1.65,
+      "3": 0.89,
+      "4": -0.84,
+      "5": 1.06,
+      "6": -1.33,
+      "7": 0.59,
+      "8": -0.74,
+      "9": 1.37,
+      "10": -0.32,
+      "11": -0.73,
+      "12": -0.56
     },
     "2025": {
-      "1": -0.5,
-      "2": -0.18,
-      "3": -0.16,
-      "4": 0.63,
-      "5": -0.32,
-      "6": 1.91,
-      "7": 0.68,
-      "8": 1.16,
-      "9": 3.05,
-      "10": 2.14,
-      "11": 0.42,
-      "12": 1.07
+      "1": -0.54,
+      "2": -0.33,
+      "3": -0.48,
+      "4": -0.97,
+      "5": 0.58,
+      "6": 1.43,
+      "7": 0.46,
+      "8": 0.91,
+      "9": 3.06,
+      "10": 1.84,
+      "11": -0.3,
+      "12": 0.89
     },
     "2026": {
-      "1": 1.99,
-      "2": 0.17,
-      "3": -0.62,
-      "4": 0.52,
-      "5": 0.69,
-      "6": -0.79,
-      "7": -0.09,
-      "8": 0.78
+      "1": 2.11,
+      "2": 0.06,
+      "3": -1.0,
+      "4": 0.0,
+      "5": 0.73,
+      "6": -0.59,
+      "7": -1.96,
+      "8": 1.03
     }
   },
   "equity_curve": [
     [
-      "2018-08-12",
-      10000.0
-    ],
-    [
-      "2018-08-19",
-      10000.0
-    ],
-    [
-      "2018-08-26",
-      10004.8
-    ],
-    [
-      "2018-09-02",
-      9991.6
-    ],
-    [
-      "2018-09-09",
-      9976.4
-    ],
-    [
-      "2018-09-16",
-      9971.2
-    ],
-    [
-      "2018-09-23",
-      9955.35
-    ],
-    [
-      "2018-09-30",
-      9938.61
-    ],
-    [
-      "2018-10-07",
-      9942.96
-    ],
-    [
-      "2018-10-14",
-      9851.16
-    ],
-    [
-      "2018-10-21",
-      9812.48
-    ],
-    [
-      "2018-10-28",
-      9724.56
-    ],
-    [
-      "2018-11-04",
-      9738.56
-    ],
-    [
-      "2018-11-11",
-      9772.3
-    ],
-    [
-      "2018-11-18",
-      9775.1
-    ],
-    [
-      "2018-11-25",
-      9766.93
-    ],
-    [
-      "2018-12-02",
-      9790.28
-    ],
-    [
-      "2018-12-09",
-      9790.35
-    ],
-    [
-      "2018-12-16",
-      9795.66
-    ],
-    [
-      "2018-12-23",
-      9755.75
-    ],
-    [
-      "2018-12-30",
-      9728.09
-    ],
-    [
-      "2019-01-06",
-      9728.09
-    ],
-    [
-      "2019-01-13",
-      9728.09
-    ],
-    [
-      "2019-01-20",
-      9728.09
-    ],
-    [
-      "2019-01-27",
-      9728.09
-    ],
-    [
-      "2019-02-03",
-      9734.32
-    ],
-    [
-      "2019-02-10",
-      9727.01
-    ],
-    [
-      "2019-02-17",
-      9761.81
-    ],
-    [
-      "2019-02-24",
-      9809.87
-    ],
-    [
-      "2019-03-03",
-      9815.81
-    ],
-    [
-      "2019-03-10",
-      9721.97
-    ],
-    [
-      "2019-03-17",
-      9796.24
-    ],
-    [
-      "2019-03-24",
-      9744.38
-    ],
-    [
-      "2019-03-31",
-      9766.32
-    ],
-    [
-      "2019-04-07",
-      9834.55
-    ],
-    [
-      "2019-04-14",
-      9822.8
-    ],
-    [
-      "2019-04-21",
-      9800.42
-    ],
-    [
-      "2019-04-28",
-      9760.44
-    ],
-    [
-      "2019-05-05",
-      9722.54
-    ],
-    [
-      "2019-05-12",
-      9649.28
-    ],
-    [
-      "2019-05-19",
-      9641.16
-    ],
-    [
-      "2019-05-26",
-      9527.8
-    ],
-    [
-      "2019-06-02",
-      9583.52
-    ],
-    [
-      "2019-06-09",
-      9598.98
-    ],
-    [
-      "2019-06-16",
-      9588.58
-    ],
-    [
-      "2019-06-23",
-      9607.62
-    ],
-    [
-      "2019-06-30",
-      9607.2
-    ],
-    [
-      "2019-07-07",
-      9622.82
-    ],
-    [
-      "2019-07-14",
-      9595.66
-    ],
-    [
-      "2019-07-21",
-      9610.45
-    ],
-    [
-      "2019-07-28",
-      9632.64
-    ],
-    [
-      "2019-08-04",
-      9675.75
-    ],
-    [
-      "2019-08-11",
-      9691.42
-    ],
-    [
-      "2019-08-18",
-      9650.02
-    ],
-    [
-      "2019-08-25",
-      9654.19
-    ],
-    [
-      "2019-09-01",
-      9652.93
-    ],
-    [
-      "2019-09-08",
-      9647.44
-    ],
-    [
-      "2019-09-15",
-      9644.73
-    ],
-    [
-      "2019-09-22",
-      9651.81
-    ],
-    [
-      "2019-09-29",
-      9617.74
-    ],
-    [
-      "2019-10-06",
-      9640.53
-    ],
-    [
-      "2019-10-13",
-      9601.55
-    ],
-    [
-      "2019-10-20",
-      9618.87
-    ],
-    [
-      "2019-10-27",
-      9641.62
-    ],
-    [
-      "2019-11-03",
-      9674.33
-    ],
-    [
-      "2019-11-10",
-      9677.07
-    ],
-    [
-      "2019-11-17",
-      9591.26
-    ],
-    [
-      "2019-11-24",
-      9591.08
-    ],
-    [
-      "2019-12-01",
-      9591.59
-    ],
-    [
-      "2019-12-08",
-      9596.89
-    ],
-    [
-      "2019-12-15",
-      9670.96
-    ],
-    [
-      "2019-12-22",
-      9690.89
-    ],
-    [
-      "2019-12-29",
-      9709.65
-    ],
-    [
-      "2020-01-05",
-      9689.61
-    ],
-    [
-      "2020-01-12",
-      9695.13
-    ],
-    [
-      "2020-01-19",
-      9727.38
-    ],
-    [
-      "2020-01-26",
-      9710.69
-    ],
-    [
-      "2020-02-02",
-      9664.16
-    ],
-    [
-      "2020-02-09",
-      9676.95
-    ],
-    [
-      "2020-02-16",
-      9681.9
-    ],
-    [
-      "2020-02-23",
-      9678.11
-    ],
-    [
-      "2020-03-01",
-      9645.44
-    ],
-    [
-      "2020-03-08",
-      9595.62
-    ],
-    [
-      "2020-03-15",
-      9554.42
-    ],
-    [
-      "2020-03-22",
-      9554.42
-    ],
-    [
-      "2020-03-29",
-      9554.42
-    ],
-    [
-      "2020-04-05",
-      9554.42
-    ],
-    [
-      "2020-04-12",
-      9554.42
-    ],
-    [
-      "2020-04-19",
-      9547.28
-    ],
-    [
-      "2020-04-26",
-      9557.6
-    ],
-    [
-      "2020-05-03",
-      9541.91
-    ],
-    [
-      "2020-05-10",
-      9563.51
-    ],
-    [
-      "2020-05-17",
-      9571.58
-    ],
-    [
-      "2020-05-24",
-      9595.49
-    ],
-    [
-      "2020-05-31",
-      9585.97
-    ],
-    [
-      "2020-06-07",
-      9584.03
-    ],
-    [
-      "2020-06-14",
-      9564.03
-    ],
-    [
-      "2020-06-21",
-      9666.55
-    ],
-    [
-      "2020-06-28",
-      9640.63
-    ],
-    [
-      "2020-07-05",
-      9756.3
-    ],
-    [
-      "2020-07-12",
-      9826.34
-    ],
-    [
-      "2020-07-19",
-      9835.96
-    ],
-    [
-      "2020-07-26",
-      9834.55
-    ],
-    [
-      "2020-08-02",
-      9831.19
-    ],
-    [
       "2020-08-09",
-      9864.35
+      10010.4
     ],
     [
       "2020-08-16",
-      9864.76
+      10023.01
     ],
     [
       "2020-08-23",
-      9869.71
+      10036.66
     ],
     [
       "2020-08-30",
-      9918.4
+      10074.75
     ],
     [
       "2020-09-06",
-      9867.62
+      10026.36
     ],
     [
       "2020-09-13",
-      9834.79
+      9965.29
     ],
     [
       "2020-09-20",
-      9809.31
+      9919.0
     ],
     [
       "2020-09-27",
-      9765.51
+      9886.26
     ],
     [
       "2020-10-04",
-      9821.67
+      9941.07
     ],
     [
       "2020-10-11",
-      9923.61
+      10062.9
     ],
     [
       "2020-10-18",
-      9948.7
+      10084.48
     ],
     [
       "2020-10-25",
-      9959.52
+      10103.85
     ],
     [
       "2020-11-01",
-      9917.64
+      10044.42
     ],
     [
       "2020-11-08",
-      10080.52
+      10254.25
     ],
     [
       "2020-11-15",
-      10155.6
+      10343.66
     ],
     [
       "2020-11-22",
-      10190.74
+      10371.67
     ],
     [
       "2020-11-29",
-      10281.03
+      10451.8
     ],
     [
       "2020-12-06",
-      10324.22
+      10510.37
     ],
     [
       "2020-12-13",
-      10320.72
+      10471.32
     ],
     [
       "2020-12-20",
-      10386.25
+      10551.1
     ],
     [
       "2020-12-27",
-      10358.31
+      10519.19
     ],
     [
       "2021-01-03",
-      10398.63
+      10556.01
     ],
     [
       "2021-01-10",
-      10541.41
+      10692.0
     ],
     [
       "2021-01-17",
-      10491.09
+      10629.22
     ],
     [
       "2021-01-24",
-      10586.49
+      10721.91
     ],
     [
       "2021-01-31",
-      10501.79
+      10586.83
     ],
     [
       "2021-02-07",
-      10642.89
+      10786.34
     ],
     [
       "2021-02-14",
-      10754.09
+      10937.38
     ],
     [
       "2021-02-21",
-      10832.24
+      11005.62
     ],
     [
       "2021-02-28",
-      10733.56
+      10856.03
     ],
     [
       "2021-03-07",
-      10786.44
+      10845.69
     ],
     [
       "2021-03-14",
-      10829.08
+      10941.99
     ],
     [
       "2021-03-21",
-      10777.56
+      10883.83
     ],
     [
       "2021-03-28",
-      10837.52
+      10971.48
     ],
     [
       "2021-04-04",
-      10853.21
+      10994.7
     ],
     [
       "2021-04-11",
-      10871.74
+      11023.11
     ],
     [
       "2021-04-18",
-      11019.59
+      11184.61
     ],
     [
       "2021-04-25",
-      10996.89
+      11167.76
     ],
     [
       "2021-05-02",
-      11047.12
+      11185.67
     ],
     [
       "2021-05-09",
-      11141.43
+      11269.68
     ],
     [
       "2021-05-16",
-      11092.36
+      11229.18
     ],
     [
       "2021-05-23",
-      11035.82
+      11128.27
     ],
     [
       "2021-05-30",
-      11086.97
+      11188.52
     ],
     [
       "2021-06-06",
-      11168.91
+      11222.87
     ],
     [
       "2021-06-13",
-      11200.36
+      11238.52
     ],
     [
       "2021-06-20",
-      11194.77
+      11253.34
     ],
     [
       "2021-06-27",
-      11201.56
+      11259.35
     ],
     [
       "2021-07-04",
-      11226.92
+      11271.82
     ],
     [
       "2021-07-11",
-      11245.38
+      11275.2
     ],
     [
       "2021-07-18",
-      11243.24
+      11234.06
     ],
     [
       "2021-07-25",
-      11241.64
+      11238.85
     ],
     [
       "2021-08-01",
-      11240.17
+      11238.31
     ],
     [
       "2021-08-08",
-      11246.63
+      11247.41
     ],
     [
       "2021-08-15",
-      11242.77
+      11248.11
     ],
     [
       "2021-08-22",
-      11272.64
+      11277.77
     ],
     [
       "2021-08-29",
-      11292.99
+      11299.05
     ],
     [
       "2021-09-05",
-      11316.96
+      11324.55
     ],
     [
       "2021-09-12",
-      11295.06
+      11294.58
     ],
     [
       "2021-09-19",
-      11275.66
+      11274.04
     ],
     [
       "2021-09-26",
-      11279.46
+      11277.84
     ],
     [
       "2021-10-03",
-      11265.41
+      11263.79
     ],
     [
       "2021-10-10",
-      11281.27
+      11283.55
     ],
     [
       "2021-10-17",
-      11315.94
+      11294.76
     ],
     [
       "2021-10-24",
-      11308.65
+      11285.07
     ],
     [
       "2021-10-31",
-      11254.11
+      11286.59
     ],
     [
       "2021-11-07",
-      11276.7
+      11270.25
     ],
     [
       "2021-11-14",
-      11238.18
+      11259.61
     ],
     [
       "2021-11-21",
-      11236.11
+      11197.93
     ],
     [
       "2021-11-28",
-      11176.98
+      11143.6
     ],
     [
       "2021-12-05",
-      11166.58
+      11133.2
     ],
     [
       "2021-12-12",
-      11132.86
+      11110.37
     ],
     [
       "2021-12-19",
-      11133.19
+      11100.14
     ],
     [
       "2021-12-26",
-      11120.49
+      11083.95
     ],
     [
       "2022-01-02",
-      11117.09
+      11101.41
     ],
     [
       "2022-01-09",
-      11092.49
+      11069.38
     ],
     [
       "2022-01-16",
-      11087.94
+      11053.25
     ],
     [
       "2022-01-23",
-      11073.33
+      11029.8
     ],
     [
       "2022-01-30",
-      11081.01
+      11013.4
     ],
     [
       "2022-02-06",
-      11115.55
+      11013.4
     ],
     [
       "2022-02-13",
-      11128.91
+      11013.4
     ],
     [
       "2022-02-20",
-      11099.14
+      11013.4
     ],
     [
       "2022-02-27",
-      11091.8
+      11017.14
     ],
     [
       "2022-03-06",
-      11143.55
+      11042.47
     ],
     [
       "2022-03-13",
-      11143.55
+      11042.81
     ],
     [
       "2022-03-20",
-      11139.56
+      11046.04
     ],
     [
       "2022-03-27",
-      11220.48
+      11108.34
     ],
     [
       "2022-04-03",
-      11262.91
+      11141.44
     ],
     [
       "2022-04-10",
-      11255.09
+      11134.98
     ],
     [
       "2022-04-17",
-      11300.28
+      11147.87
     ],
     [
       "2022-04-24",
-      11175.26
+      11071.17
     ],
     [
       "2022-05-01",
-      11130.9
+      10980.2
     ],
     [
       "2022-05-08",
-      11153.89
+      10976.8
     ],
     [
       "2022-05-15",
-      11150.4
+      10962.5
     ],
     [
       "2022-05-22",
-      11155.87
+      10962.5
     ],
     [
       "2022-05-29",
-      11169.37
+      10962.5
     ],
     [
       "2022-06-05",
-      11169.37
+      10962.5
     ],
     [
       "2022-06-12",
-      11169.37
+      10962.5
     ],
     [
       "2022-06-19",
-      11125.54
+      10911.74
     ],
     [
       "2022-06-26",
-      11211.3
+      10938.53
     ],
     [
       "2022-07-03",
-      11265.14
+      10931.55
     ],
     [
       "2022-07-10",
-      11180.34
+      10846.73
     ],
     [
       "2022-07-17",
-      11169.75
+      10843.83
     ],
     [
       "2022-07-24",
-      11185.21
+      10818.73
     ],
     [
       "2022-07-31",
-      11209.84
+      10818.97
     ],
     [
       "2022-08-07",
-      11208.97
+      10834.21
     ],
     [
       "2022-08-14",
-      11249.94
+      10847.19
     ],
     [
       "2022-08-21",
-      11261.41
+      10856.23
     ],
     [
       "2022-08-28",
-      11237.25
+      10833.51
     ],
     [
       "2022-09-04",
-      11183.44
+      10798.87
     ],
     [
       "2022-09-11",
-      11279.36
+      10882.95
     ],
     [
       "2022-09-18",
-      11170.72
+      10784.91
     ],
     [
       "2022-09-25",
-      11075.92
+      10707.35
     ],
     [
       "2022-10-02",
-      11076.5
+      10707.93
     ],
     [
       "2022-10-09",
-      11076.5
+      10707.93
     ],
     [
       "2022-10-16",
-      11076.5
+      10707.93
     ],
     [
       "2022-10-23",
-      11076.5
+      10707.93
     ],
     [
       "2022-10-30",
-      11114.02
+      10719.0
     ],
     [
       "2022-11-06",
-      11090.11
+      10656.12
     ],
     [
       "2022-11-13",
-      11188.92
+      10708.93
     ],
     [
       "2022-11-20",
-      11165.26
+      10694.66
     ],
     [
       "2022-11-27",
-      11176.3
+      10692.35
     ],
     [
       "2022-12-04",
-      11261.64
+      10774.33
     ],
     [
       "2022-12-11",
-      11102.09
+      10698.66
     ],
     [
       "2022-12-18",
-      11058.17
+      10642.36
     ],
     [
       "2022-12-25",
-      11072.28
+      10656.5
     ],
     [
       "2023-01-01",
-      11052.22
+      10641.37
     ],
     [
       "2023-01-08",
-      11102.29
+      10710.86
     ],
     [
       "2023-01-15",
-      11198.89
+      10811.45
     ],
     [
       "2023-01-22",
-      11202.55
+      10835.01
     ],
     [
       "2023-01-29",
-      11236.74
+      10867.61
     ],
     [
       "2023-02-05",
-      11074.77
+      10739.64
     ],
     [
       "2023-02-12",
-      11028.25
+      10676.07
     ],
     [
       "2023-02-19",
-      10977.83
+      10661.87
     ],
     [
       "2023-02-26",
-      10830.54
+      10568.51
     ],
     [
       "2023-03-05",
-      10878.95
+      10591.46
     ],
     [
       "2023-03-12",
-      10843.75
+      10577.42
     ],
     [
       "2023-03-19",
-      10850.45
+      10588.54
     ],
     [
       "2023-03-26",
-      10850.09
+      10588.3
     ],
     [
       "2023-04-02",
-      10848.8
+      10587.44
     ],
     [
       "2023-04-09",
-      10859.7
+      10595.07
     ],
     [
       "2023-04-16",
-      10832.66
+      10568.16
     ],
     [
       "2023-04-23",
-      10809.31
+      10546.92
     ],
     [
       "2023-04-30",
-      10803.52
+      10540.58
     ],
     [
       "2023-05-07",
-      10803.43
+      10558.73
     ],
     [
       "2023-05-14",
-      10743.66
+      10491.03
     ],
     [
       "2023-05-21",
-      10761.57
+      10507.43
     ],
     [
       "2023-05-28",
-      10739.6
+      10485.89
     ],
     [
       "2023-06-04",
-      10751.39
+      10483.28
     ],
     [
       "2023-06-11",
-      10758.76
+      10511.75
     ],
     [
       "2023-06-18",
-      10781.42
+      10556.21
     ],
     [
       "2023-06-25",
-      10730.7
+      10489.5
     ],
     [
       "2023-07-02",
-      10761.07
+      10531.06
     ],
     [
       "2023-07-09",
-      10735.86
+      10529.19
     ],
     [
       "2023-07-16",
-      10793.66
+      10616.21
     ],
     [
       "2023-07-23",
-      10783.14
+      10605.51
     ],
     [
       "2023-07-30",
-      10782.42
+      10581.05
     ],
     [
       "2023-08-06",
-      10690.66
+      10485.63
     ],
     [
       "2023-08-13",
-      10606.73
+      10400.2
     ],
     [
       "2023-08-20",
-      10505.8
+      10272.02
     ],
     [
       "2023-08-27",
-      10468.3
+      10231.46
     ],
     [
       "2023-09-03",
-      10533.39
+      10287.77
     ],
     [
       "2023-09-10",
-      10550.27
+      10284.9
     ],
     [
       "2023-09-17",
-      10572.14
+      10301.01
     ],
     [
       "2023-09-24",
-      10538.74
+      10248.59
     ],
     [
       "2023-10-01",
-      10526.18
+      10219.5
     ],
     [
       "2023-10-08",
-      10391.95
+      10141.69
     ],
     [
       "2023-10-15",
-      10396.47
+      10151.61
     ],
     [
       "2023-10-22",
-      10428.93
+      10173.47
     ],
     [
       "2023-10-29",
-      10439.51
+      10157.4
     ],
     [
       "2023-11-05",
-      10384.57
+      10092.46
     ],
     [
       "2023-11-12",
-      10299.0
+      10006.54
     ],
     [
       "2023-11-19",
-      10273.87
+      9967.81
     ],
     [
       "2023-11-26",
-      10275.42
+      9967.81
     ],
     [
       "2023-12-03",
-      10284.24
+      9972.85
     ],
     [
       "2023-12-10",
-      10284.85
+      9964.36
     ],
     [
       "2023-12-17",
-      10336.46
+      10013.03
     ],
     [
       "2023-12-24",
-      10349.67
+      10034.41
     ],
     [
       "2023-12-31",
-      10349.69
+      10025.06
     ],
     [
       "2024-01-07",
-      10349.24
+      10013.2
     ],
     [
       "2024-01-14",
-      10307.98
+      9971.99
     ],
     [
       "2024-01-21",
-      10238.7
+      9903.48
     ],
     [
       "2024-01-28",
-      10233.61
+      9899.44
     ],
     [
       "2024-02-04",
-      10206.76
+      9887.81
     ],
     [
       "2024-02-11",
-      10238.91
+      9915.52
     ],
     [
       "2024-02-18",
-      10255.65
+      9936.66
     ],
     [
       "2024-02-25",
-      10274.46
+      9969.64
     ],
     [
       "2024-03-03",
-      10339.59
+      10053.72
     ],
     [
       "2024-03-10",
-      10376.01
+      10084.23
     ],
     [
       "2024-03-17",
-      10404.43
+      10061.66
     ],
     [
       "2024-03-24",
-      10447.17
+      10100.09
     ],
     [
       "2024-03-31",
-      10506.27
+      10125.25
     ],
     [
       "2024-04-07",
-      10567.4
+      10126.16
     ],
     [
       "2024-04-14",
-      10565.32
+      10086.92
     ],
     [
       "2024-04-21",
-      10555.18
+      10082.24
     ],
     [
       "2024-04-28",
-      10570.64
+      10058.56
     ],
     [
       "2024-05-05",
-      10550.36
+      10086.75
     ],
     [
       "2024-05-12",
-      10572.32
+      10163.44
     ],
     [
       "2024-05-19",
-      10590.38
+      10198.41
     ],
     [
       "2024-05-26",
-      10571.21
+      10155.97
     ],
     [
       "2024-06-02",
-      10549.64
+      10056.68
     ],
     [
       "2024-06-09",
-      10521.55
+      10107.44
     ],
     [
       "2024-06-16",
-      10519.61
+      10025.41
     ],
     [
       "2024-06-23",
-      10529.99
+      10063.68
     ],
     [
       "2024-06-30",
-      10489.61
+      10012.23
     ],
     [
       "2024-07-07",
-      10507.36
+      10023.24
     ],
     [
       "2024-07-14",
-      10597.52
+      10120.48
     ],
     [
       "2024-07-21",
-      10536.37
+      10104.83
     ],
     [
       "2024-07-28",
-      10528.34
+      10097.27
     ],
     [
       "2024-08-04",
-      10374.71
+      10004.01
     ],
     [
       "2024-08-11",
-      10311.64
+      9944.08
     ],
     [
       "2024-08-18",
-      10321.12
+      9961.33
     ],
     [
       "2024-08-25",
-      10329.58
+      9987.97
     ],
     [
       "2024-09-01",
-      10334.26
+      9995.97
     ],
     [
       "2024-09-08",
-      10317.52
+      9983.58
     ],
     [
       "2024-09-15",
-      10340.83
+      10030.08
     ],
     [
       "2024-09-22",
-      10351.2
+      10049.42
     ],
     [
       "2024-09-29",
-      10417.23
+      10110.53
     ],
     [
       "2024-10-06",
-      10375.31
+      10126.46
     ],
     [
       "2024-10-13",
-      10345.56
+      10123.68
     ],
     [
       "2024-10-20",
-      10384.33
+      10157.71
     ],
     [
       "2024-10-27",
-      10346.79
+      10141.22
     ],
     [
       "2024-11-03",
-      10299.81
+      10095.8
     ],
     [
       "2024-11-10",
-      10338.12
+      10086.8
     ],
     [
       "2024-11-17",
-      10247.16
+      10019.64
     ],
     [
       "2024-11-24",
-      10256.78
+      10020.16
     ],
     [
       "2024-12-01",
-      10262.76
+      10026.56
     ],
     [
       "2024-12-08",
-      10269.19
+      10005.06
     ],
     [
       "2024-12-15",
-      10269.19
+      9989.11
     ],
     [
       "2024-12-22",
-      10269.19
+      9978.36
     ],
     [
       "2024-12-29",
-      10273.56
+      9982.73
     ],
     [
       "2025-01-05",
-      10262.3
+      9971.47
     ],
     [
       "2025-01-12",
-      10219.06
+      9928.23
     ],
     [
       "2025-01-19",
-      10254.42
+      9963.51
     ],
     [
       "2025-01-26",
-      10221.94
+      9955.89
     ],
     [
       "2025-02-02",
-      10209.98
+      9917.14
     ],
     [
       "2025-02-09",
-      10200.78
+      9911.13
     ],
     [
       "2025-02-16",
-      10201.46
+      9928.02
     ],
     [
       "2025-02-23",
-      10215.31
+      9926.44
     ],
     [
       "2025-03-02",
-      10191.1
+      9884.81
     ],
     [
       "2025-03-09",
-      10181.66
+      9837.33
     ],
     [
       "2025-03-16",
-      10181.59
+      9844.68
     ],
     [
       "2025-03-23",
-      10181.96
+      9838.49
     ],
     [
       "2025-03-30",
-      10171.99
+      9820.86
     ],
     [
       "2025-04-06",
-      10169.57
+      9763.16
     ],
     [
       "2025-04-13",
-      10185.63
+      9742.3
     ],
     [
       "2025-04-20",
-      10188.91
+      9742.3
     ],
     [
       "2025-04-27",
-      10230.95
+      9742.3
     ],
     [
       "2025-05-04",
-      10238.79
+      9742.3
     ],
     [
       "2025-05-11",
-      10234.15
+      9740.34
     ],
     [
       "2025-05-18",
-      10218.29
+      9823.74
     ],
     [
       "2025-05-25",
-      10209.9
+      9824.88
     ],
     [
       "2025-06-01",
-      10205.87
+      9798.39
     ],
     [
       "2025-06-08",
-      10272.78
+      9890.51
     ],
     [
       "2025-06-15",
-      10360.59
+      9934.12
     ],
     [
       "2025-06-22",
-      10353.4
+      9913.57
     ],
     [
       "2025-06-29",
-      10401.92
+      9935.79
     ],
     [
       "2025-07-06",
-      10344.78
+      9862.81
     ],
     [
       "2025-07-13",
-      10487.03
+      9985.01
     ],
     [
       "2025-07-20",
-      10461.39
+      10013.15
     ],
     [
       "2025-07-27",
-      10513.82
+      10022.44
     ],
     [
       "2025-08-03",
-      10407.77
+      9938.88
     ],
     [
       "2025-08-10",
-      10448.1
+      9972.94
     ],
     [
       "2025-08-17",
-      10486.77
+      10013.1
     ],
     [
       "2025-08-24",
-      10598.52
+      10089.34
     ],
     [
       "2025-08-31",
-      10593.31
+      10075.17
     ],
     [
       "2025-09-07",
-      10683.88
+      10163.4
     ],
     [
       "2025-09-14",
-      10676.51
+      10246.34
     ],
     [
       "2025-09-21",
-      10786.13
+      10339.11
     ],
     [
       "2025-09-28",
-      10888.22
+      10357.04
     ],
     [
       "2025-10-05",
-      10997.79
+      10462.31
     ],
     [
       "2025-10-12",
-      10917.69
+      10378.63
     ],
     [
       "2025-10-19",
-      11036.0
+      10427.89
     ],
     [
       "2025-10-26",
-      11111.58
+      10555.31
     ],
     [
       "2025-11-02",
-      11149.55
+      10575.33
     ],
     [
       "2025-11-09",
-      11063.49
+      10467.69
     ],
     [
       "2025-11-16",
-      11126.48
+      10507.71
     ],
     [
       "2025-11-23",
-      11072.5
+      10456.21
     ],
     [
       "2025-11-30",
-      11196.86
+      10544.05
     ],
     [
       "2025-12-07",
-      11274.49
+      10597.03
     ],
     [
       "2025-12-14",
-      11287.69
+      10604.42
     ],
     [
       "2025-12-21",
-      11282.61
+      10618.56
     ],
     [
       "2025-12-28",
-      11335.21
+      10668.58
     ],
     [
       "2026-01-04",
-      11367.59
+      10671.68
     ],
     [
       "2026-01-11",
-      11434.15
+      10733.42
     ],
     [
       "2026-01-18",
-      11463.01
+      10779.31
     ],
     [
       "2026-01-25",
-      11515.96
+      10837.02
     ],
     [
       "2026-02-01",
-      11541.41
+      10862.57
     ],
     [
       "2026-02-08",
-      11553.1
+      10887.14
     ],
     [
       "2026-02-15",
-      11542.5
+      10871.61
     ],
     [
       "2026-02-22",
-      11550.18
+      10893.63
     ],
     [
       "2026-03-01",
-      11560.54
+      10869.28
     ],
     [
       "2026-03-08",
-      11529.3
+      10812.38
     ],
     [
       "2026-03-15",
-      11472.68
+      10756.95
     ],
     [
       "2026-03-22",
-      11473.39
+      10760.75
     ],
     [
       "2026-03-29",
-      11503.19
+      10760.75
     ],
     [
       "2026-04-05",
-      11483.79
+      10760.75
     ],
     [
       "2026-04-12",
-      11496.29
+      10760.75
     ],
     [
       "2026-04-19",
-      11485.09
+      10760.75
     ],
     [
       "2026-04-26",
-      11536.54
+      10760.75
     ],
     [
       "2026-05-03",
-      11549.14
+      10760.75
     ],
     [
       "2026-05-10",
-      11558.02
+      10771.01
     ],
     [
       "2026-05-17",
-      11594.83
+      10797.41
     ],
     [
       "2026-05-24",
-      11601.92
+      10809.41
     ],
     [
       "2026-05-31",
-      11628.86
+      10839.44
     ],
     [
       "2026-06-07",
-      11550.63
+      10766.96
     ],
     [
       "2026-06-14",
-      11606.5
+      10827.56
     ],
     [
       "2026-06-21",
-      11593.11
+      10820.85
     ],
     [
       "2026-06-28",
-      11527.54
+      10756.63
     ],
     [
       "2026-07-05",
-      11510.33
+      10743.55
     ],
     [
       "2026-07-12",
-      11528.97
+      10701.59
     ],
     [
       "2026-07-19",
-      11529.24
+      10602.32
     ],
     [
       "2026-07-26",
-      11539.49
+      10616.19
     ],
     [
       "2026-08-02",
-      11526.22
+      10564.57
     ],
     [
       "2026-08-09",
-      11615.63
+      10673.89
     ]
   ],
   "deployed_curve": [
     [
-      "2018-08-12",
-      0.0
-    ],
-    [
-      "2018-08-19",
-      0.0
-    ],
-    [
-      "2018-08-26",
-      390.64
-    ],
-    [
-      "2018-09-02",
-      383.0
-    ],
-    [
-      "2018-09-09",
-      372.2
-    ],
-    [
-      "2018-09-16",
-      364.6
-    ],
-    [
-      "2018-09-23",
-      666.33
-    ],
-    [
-      "2018-09-30",
-      1892.53
-    ],
-    [
-      "2018-10-07",
-      1784.35
-    ],
-    [
-      "2018-10-14",
-      1687.94
-    ],
-    [
-      "2018-10-21",
-      1316.83
-    ],
-    [
-      "2018-10-28",
-      620.04
-    ],
-    [
-      "2018-11-04",
-      821.65
-    ],
-    [
-      "2018-11-11",
-      944.04
-    ],
-    [
-      "2018-11-18",
-      953.65
-    ],
-    [
-      "2018-11-25",
-      950.11
-    ],
-    [
-      "2018-12-02",
-      957.18
-    ],
-    [
-      "2018-12-09",
-      968.73
-    ],
-    [
-      "2018-12-16",
-      971.38
-    ],
-    [
-      "2018-12-23",
-      941.5
-    ],
-    [
-      "2018-12-30",
-      113.77
-    ],
-    [
-      "2019-01-06",
-      0.0
-    ],
-    [
-      "2019-01-13",
-      0.0
-    ],
-    [
-      "2019-01-20",
-      0.0
-    ],
-    [
-      "2019-01-27",
-      0.0
-    ],
-    [
-      "2019-02-03",
-      581.68
-    ],
-    [
-      "2019-02-10",
-      1169.08
-    ],
-    [
-      "2019-02-17",
-      1663.45
-    ],
-    [
-      "2019-02-24",
-      1761.11
-    ],
-    [
-      "2019-03-03",
-      2224.08
-    ],
-    [
-      "2019-03-10",
-      2169.52
-    ],
-    [
-      "2019-03-17",
-      2201.49
-    ],
-    [
-      "2019-03-24",
-      2201.32
-    ],
-    [
-      "2019-03-31",
-      1768.03
-    ],
-    [
-      "2019-04-07",
-      1729.28
-    ],
-    [
-      "2019-04-14",
-      2099.31
-    ],
-    [
-      "2019-04-21",
-      2308.94
-    ],
-    [
-      "2019-04-28",
-      2188.28
-    ],
-    [
-      "2019-05-05",
-      2876.66
-    ],
-    [
-      "2019-05-12",
-      2380.99
-    ],
-    [
-      "2019-05-19",
-      1196.82
-    ],
-    [
-      "2019-05-26",
-      1384.35
-    ],
-    [
-      "2019-06-02",
-      898.58
-    ],
-    [
-      "2019-06-09",
-      1112.71
-    ],
-    [
-      "2019-06-16",
-      1391.61
-    ],
-    [
-      "2019-06-23",
-      1422.74
-    ],
-    [
-      "2019-06-30",
-      1324.2
-    ],
-    [
-      "2019-07-07",
-      1444.42
-    ],
-    [
-      "2019-07-14",
-      1421.78
-    ],
-    [
-      "2019-07-21",
-      1594.8
-    ],
-    [
-      "2019-07-28",
-      1751.81
-    ],
-    [
-      "2019-08-04",
-      1184.96
-    ],
-    [
-      "2019-08-11",
-      893.78
-    ],
-    [
-      "2019-08-18",
-      703.5
-    ],
-    [
-      "2019-08-25",
-      426.39
-    ],
-    [
-      "2019-09-01",
-      433.67
-    ],
-    [
-      "2019-09-08",
-      506.86
-    ],
-    [
-      "2019-09-15",
-      716.26
-    ],
-    [
-      "2019-09-22",
-      814.39
-    ],
-    [
-      "2019-09-29",
-      1868.4
-    ],
-    [
-      "2019-10-06",
-      1681.31
-    ],
-    [
-      "2019-10-13",
-      1446.9
-    ],
-    [
-      "2019-10-20",
-      1627.19
-    ],
-    [
-      "2019-10-27",
-      1792.94
-    ],
-    [
-      "2019-11-03",
-      1473.53
-    ],
-    [
-      "2019-11-10",
-      2010.89
-    ],
-    [
-      "2019-11-17",
-      2092.56
-    ],
-    [
-      "2019-11-24",
-      2013.37
-    ],
-    [
-      "2019-12-01",
-      2118.49
-    ],
-    [
-      "2019-12-08",
-      1905.7
-    ],
-    [
-      "2019-12-15",
-      2025.46
-    ],
-    [
-      "2019-12-22",
-      2069.69
-    ],
-    [
-      "2019-12-29",
-      2087.06
-    ],
-    [
-      "2020-01-05",
-      2327.68
-    ],
-    [
-      "2020-01-12",
-      2357.36
-    ],
-    [
-      "2020-01-19",
-      1978.54
-    ],
-    [
-      "2020-01-26",
-      1417.05
-    ],
-    [
-      "2020-02-02",
-      679.4
-    ],
-    [
-      "2020-02-09",
-      303.67
-    ],
-    [
-      "2020-02-16",
-      309.14
-    ],
-    [
-      "2020-02-23",
-      309.13
-    ],
-    [
-      "2020-03-01",
-      385.51
-    ],
-    [
-      "2020-03-08",
-      1090.63
-    ],
-    [
-      "2020-03-15",
-      330.19
-    ],
-    [
-      "2020-03-22",
-      0.0
-    ],
-    [
-      "2020-03-29",
-      0.0
-    ],
-    [
-      "2020-04-05",
-      0.0
-    ],
-    [
-      "2020-04-12",
-      0.0
-    ],
-    [
-      "2020-04-19",
-      150.76
-    ],
-    [
-      "2020-04-26",
-      378.57
-    ],
-    [
-      "2020-05-03",
-      366.79
-    ],
-    [
-      "2020-05-10",
-      381.93
-    ],
-    [
-      "2020-05-17",
-      395.8
-    ],
-    [
-      "2020-05-24",
-      421.99
-    ],
-    [
-      "2020-05-31",
-      1058.85
-    ],
-    [
-      "2020-06-07",
-      1569.24
-    ],
-    [
-      "2020-06-14",
-      1942.22
-    ],
-    [
-      "2020-06-21",
-      2440.43
-    ],
-    [
-      "2020-06-28",
-      3070.65
-    ],
-    [
-      "2020-07-05",
-      3090.02
-    ],
-    [
-      "2020-07-12",
-      1781.39
-    ],
-    [
-      "2020-07-19",
-      1236.71
-    ],
-    [
-      "2020-07-26",
-      1232.24
-    ],
-    [
-      "2020-08-02",
-      1183.12
-    ],
-    [
       "2020-08-09",
-      1513.93
+      491.73
     ],
     [
       "2020-08-16",
-      1066.75
+      503.23
     ],
     [
       "2020-08-23",
-      990.49
+      521.74
     ],
     [
       "2020-08-30",
-      905.66
+      434.46
     ],
     [
       "2020-09-06",
-      899.3
+      734.54
     ],
     [
       "2020-09-13",
-      1153.56
+      1644.6
     ],
     [
       "2020-09-20",
-      1364.73
+      1836.25
     ],
     [
       "2020-09-27",
-      758.55
+      634.47
     ],
     [
       "2020-10-04",
-      627.74
+      913.49
     ],
     [
       "2020-10-11",
-      828.29
+      1314.47
     ],
     [
       "2020-10-18",
-      560.91
+      1053.48
     ],
     [
       "2020-10-25",
-      640.04
+      1135.18
     ],
     [
       "2020-11-01",
-      1103.23
+      1590.85
     ],
     [
       "2020-11-08",
-      2209.64
+      3030.34
     ],
     [
       "2020-11-15",
-      2984.81
+      3446.08
     ],
     [
       "2020-11-22",
-      3058.33
+      3513.99
     ],
     [
       "2020-11-29",
-      2979.91
+      3794.43
     ],
     [
       "2020-12-06",
-      2768.14
+      3710.58
     ],
     [
       "2020-12-13",
-      2470.79
+      3408.39
     ],
     [
       "2020-12-20",
-      2612.1
+      3543.51
     ],
     [
       "2020-12-27",
-      2790.85
+      3713.67
     ],
     [
       "2021-01-03",
-      3270.66
+      3568.2
     ],
     [
       "2021-01-10",
-      3668.8
+      4086.31
     ],
     [
       "2021-01-17",
-      3596.99
+      4425.42
     ],
     [
       "2021-01-24",
-      3138.94
+      4066.14
     ],
     [
       "2021-01-31",
-      2500.53
+      3206.0
     ],
     [
       "2021-02-07",
-      2870.97
+      3330.65
     ],
     [
       "2021-02-14",
-      2031.91
+      2362.05
     ],
     [
       "2021-02-21",
-      1732.1
+      2644.5
     ],
     [
       "2021-02-28",
-      1493.86
+      2528.01
     ],
     [
       "2021-03-07",
-      2026.96
+      3161.68
     ],
     [
       "2021-03-14",
-      2489.03
+      2516.45
     ],
     [
       "2021-03-21",
-      2492.36
+      3029.44
     ],
     [
       "2021-03-28",
-      2834.54
+      3369.41
     ],
     [
       "2021-04-04",
-      3024.24
+      3591.36
     ],
     [
       "2021-04-11",
-      3970.88
+      4552.68
     ],
     [
       "2021-04-18",
-      3350.43
+      3940.58
     ],
     [
       "2021-04-25",
-      2910.74
+      3507.98
     ],
     [
       "2021-05-02",
-      2960.08
+      3430.7
     ],
     [
       "2021-05-09",
-      3043.03
+      3494.6
     ],
     [
       "2021-05-16",
-      2893.02
+      4047.36
     ],
     [
       "2021-05-23",
-      2554.17
+      3322.95
     ],
     [
       "2021-05-30",
-      2837.16
+      3030.92
     ],
     [
       "2021-06-06",
-      3601.48
+      3068.4
     ],
     [
       "2021-06-13",
-      3327.47
+      2771.23
     ],
     [
       "2021-06-20",
-      2541.92
+      1980.82
     ],
     [
       "2021-06-27",
-      2796.12
+      2649.14
     ],
     [
       "2021-07-04",
-      2488.35
+      3346.77
     ],
     [
       "2021-07-11",
-      1724.53
+      2995.8
     ],
     [
       "2021-07-18",
-      1870.24
+      2450.29
     ],
     [
       "2021-07-25",
-      1194.01
+      1666.47
     ],
     [
       "2021-08-01",
-      883.26
+      1361.23
     ],
     [
       "2021-08-08",
-      885.05
+      1365.08
     ],
     [
       "2021-08-15",
-      882.6
+      1366.45
     ],
     [
       "2021-08-22",
-      895.58
+      1380.87
     ],
     [
       "2021-08-29",
-      926.84
+      1413.12
     ],
     [
       "2021-09-05",
-      769.03
+      1257.12
     ],
     [
       "2021-09-12",
-      527.26
+      1010.19
     ],
     [
       "2021-09-19",
-      737.09
+      1024.94
     ],
     [
       "2021-09-26",
@@ -3249,35 +2219,35 @@
     ],
     [
       "2021-10-03",
-      146.04
+      258.64
     ],
     [
       "2021-10-10",
-      1064.72
+      573.84
     ],
     [
       "2021-10-17",
-      1098.15
+      587.25
     ],
     [
       "2021-10-24",
-      1115.27
+      588.09
     ],
     [
       "2021-10-31",
-      1089.04
+      588.51
     ],
     [
       "2021-11-07",
-      1068.75
+      578.21
     ],
     [
       "2021-11-14",
-      1063.12
+      452.39
     ],
     [
       "2021-11-21",
-      100.01
+      520.37
     ],
     [
       "2021-11-28",
@@ -3289,99 +2259,99 @@
     ],
     [
       "2021-12-12",
-      610.6
+      1113.97
     ],
     [
       "2021-12-19",
-      529.44
+      1327.86
     ],
     [
       "2021-12-26",
-      289.25
+      1265.87
     ],
     [
       "2022-01-02",
-      281.04
+      1278.65
     ],
     [
       "2022-01-09",
-      52.04
+      1046.16
     ],
     [
       "2022-01-16",
-      343.84
+      1329.5
     ],
     [
       "2022-01-23",
-      573.73
+      813.77
     ],
     [
       "2022-01-30",
-      1005.78
+      189.88
     ],
     [
       "2022-02-06",
-      1571.26
-    ],
-    [
-      "2022-02-13",
-      1577.57
-    ],
-    [
-      "2022-02-20",
-      1114.33
-    ],
-    [
-      "2022-02-27",
-      944.27
-    ],
-    [
-      "2022-03-06",
-      467.73
-    ],
-    [
-      "2022-03-13",
       0.0
     ],
     [
+      "2022-02-13",
+      0.0
+    ],
+    [
+      "2022-02-20",
+      0.0
+    ],
+    [
+      "2022-02-27",
+      263.5
+    ],
+    [
+      "2022-03-06",
+      547.4
+    ],
+    [
+      "2022-03-13",
+      557.26
+    ],
+    [
       "2022-03-20",
-      303.03
+      656.04
     ],
     [
       "2022-03-27",
-      1170.52
+      1119.82
     ],
     [
       "2022-04-03",
-      1627.0
+      1145.95
     ],
     [
       "2022-04-10",
-      1637.27
+      1356.06
     ],
     [
       "2022-04-17",
-      1532.95
+      1664.02
     ],
     [
       "2022-04-24",
-      1595.34
+      1650.12
     ],
     [
       "2022-05-01",
-      882.31
+      834.21
     ],
     [
       "2022-05-08",
-      559.69
+      217.64
     ],
     [
       "2022-05-15",
-      544.32
+      0.0
     ],
     [
       "2022-05-22",
-      565.83
+      0.0
     ],
     [
       "2022-05-29",
@@ -3397,63 +2367,63 @@
     ],
     [
       "2022-06-19",
-      958.93
+      522.44
     ],
     [
       "2022-06-26",
-      2671.78
+      1549.37
     ],
     [
       "2022-07-03",
-      2698.74
+      1565.87
     ],
     [
       "2022-07-10",
-      1906.1
+      810.01
     ],
     [
       "2022-07-17",
-      1658.3
+      580.72
     ],
     [
       "2022-07-24",
-      1451.43
+      569.82
     ],
     [
       "2022-07-31",
-      1140.86
+      568.05
     ],
     [
       "2022-08-07",
-      1133.05
+      554.24
     ],
     [
       "2022-08-14",
-      1173.92
+      590.09
     ],
     [
       "2022-08-21",
-      1191.72
+      600.44
     ],
     [
       "2022-08-28",
-      1597.37
+      998.87
     ],
     [
       "2022-09-04",
-      1660.91
+      1073.39
     ],
     [
       "2022-09-11",
-      2141.35
+      2072.24
     ],
     [
       "2022-09-18",
-      2202.74
+      2373.23
     ],
     [
       "2022-09-25",
-      1421.93
+      1082.2
     ],
     [
       "2022-10-02",
@@ -3469,459 +2439,459 @@
     ],
     [
       "2022-10-23",
-      110.04
+      104.25
     ],
     [
       "2022-10-30",
-      1078.72
+      527.31
     ],
     [
       "2022-11-06",
-      1494.03
+      497.33
     ],
     [
       "2022-11-13",
-      1173.51
+      483.06
     ],
     [
       "2022-11-20",
-      1379.35
+      792.93
     ],
     [
       "2022-11-27",
-      1529.81
+      940.32
     ],
     [
       "2022-12-04",
-      3543.75
+      2621.14
     ],
     [
       "2022-12-11",
-      4775.46
+      3728.17
     ],
     [
       "2022-12-18",
-      4002.07
+      3273.35
     ],
     [
       "2022-12-25",
-      2954.33
+      2767.24
     ],
     [
       "2023-01-01",
-      2175.0
+      2076.41
     ],
     [
       "2023-01-08",
-      2070.05
+      2016.52
     ],
     [
       "2023-01-15",
-      2952.04
+      2652.69
     ],
     [
       "2023-01-22",
-      3401.83
+      2679.49
     ],
     [
       "2023-01-29",
-      3599.04
+      2506.37
     ],
     [
       "2023-02-05",
-      3703.25
+      2394.35
     ],
     [
       "2023-02-12",
-      4006.28
+      2470.34
     ],
     [
       "2023-02-19",
-      4641.02
+      3059.01
     ],
     [
       "2023-02-26",
-      2530.96
+      1357.44
     ],
     [
       "2023-03-05",
-      1153.22
+      585.89
     ],
     [
       "2023-03-12",
-      618.67
+      97.85
     ],
     [
       "2023-03-19",
-      422.66
+      216.22
     ],
     [
       "2023-03-26",
-      550.22
+      366.82
     ],
     [
       "2023-04-02",
-      549.19
+      366.13
     ],
     [
       "2023-04-09",
-      1365.34
+      1178.63
     ],
     [
       "2023-04-16",
-      1681.41
+      1494.48
     ],
     [
       "2023-04-23",
-      1961.63
+      1776.13
     ],
     [
       "2023-04-30",
-      2698.95
+      2522.35
     ],
     [
       "2023-05-07",
-      3105.33
+      2944.59
     ],
     [
       "2023-05-14",
-      2456.53
+      2782.88
     ],
     [
       "2023-05-21",
-      1860.16
+      1778.97
     ],
     [
       "2023-05-28",
-      1133.14
+      1232.62
     ],
     [
       "2023-06-04",
-      897.2
+      1387.45
     ],
     [
       "2023-06-11",
-      911.83
+      1407.76
     ],
     [
       "2023-06-18",
-      1428.1
+      1853.95
     ],
     [
       "2023-06-25",
-      1875.76
+      1914.72
     ],
     [
       "2023-07-02",
-      1893.76
+      1882.14
     ],
     [
       "2023-07-09",
-      1880.96
+      2282.41
     ],
     [
       "2023-07-16",
-      1912.54
+      2337.3
     ],
     [
       "2023-07-23",
-      2055.19
+      2486.61
     ],
     [
       "2023-07-30",
-      1981.21
+      2790.42
     ],
     [
       "2023-08-06",
-      2625.57
+      3328.98
     ],
     [
       "2023-08-13",
-      2556.86
+      3025.7
     ],
     [
       "2023-08-20",
-      1634.04
+      2017.83
     ],
     [
       "2023-08-27",
-      1773.31
+      1261.73
     ],
     [
       "2023-09-03",
-      1680.46
+      1563.97
     ],
     [
       "2023-09-10",
-      1990.14
+      1962.66
     ],
     [
       "2023-09-17",
-      2040.8
+      1993.83
     ],
     [
       "2023-09-24",
-      1764.2
+      1917.82
     ],
     [
       "2023-10-01",
-      2550.63
+      1526.81
     ],
     [
       "2023-10-08",
-      1888.92
+      999.14
     ],
     [
       "2023-10-15",
-      1021.64
+      517.97
     ],
     [
       "2023-10-22",
-      1507.21
+      988.88
     ],
     [
       "2023-10-29",
-      1490.3
+      967.74
     ],
     [
       "2023-11-05",
-      1671.37
+      1127.62
     ],
     [
       "2023-11-12",
-      1748.81
+      1202.66
     ],
     [
       "2023-11-19",
-      1140.0
+      585.98
     ],
     [
       "2023-11-26",
-      546.32
-    ],
-    [
-      "2023-12-03",
-      763.02
-    ],
-    [
-      "2023-12-10",
-      882.13
-    ],
-    [
-      "2023-12-17",
-      1011.85
-    ],
-    [
-      "2023-12-24",
-      888.72
-    ],
-    [
-      "2023-12-31",
-      1271.95
-    ],
-    [
-      "2024-01-07",
-      1390.9
-    ],
-    [
-      "2024-01-14",
-      1784.48
-    ],
-    [
-      "2024-01-21",
-      1881.16
-    ],
-    [
-      "2024-01-28",
-      2390.0
-    ],
-    [
-      "2024-02-04",
-      2505.58
-    ],
-    [
-      "2024-02-11",
-      1862.54
-    ],
-    [
-      "2024-02-18",
-      1707.93
-    ],
-    [
-      "2024-02-25",
-      1881.86
-    ],
-    [
-      "2024-03-03",
-      1634.5
-    ],
-    [
-      "2024-03-10",
-      1876.01
-    ],
-    [
-      "2024-03-17",
-      2276.01
-    ],
-    [
-      "2024-03-24",
-      2905.2
-    ],
-    [
-      "2024-03-31",
-      2942.84
-    ],
-    [
-      "2024-04-07",
-      2892.66
-    ],
-    [
-      "2024-04-14",
-      2133.56
-    ],
-    [
-      "2024-04-21",
-      1273.16
-    ],
-    [
-      "2024-04-28",
-      1488.76
-    ],
-    [
-      "2024-05-05",
-      1205.64
-    ],
-    [
-      "2024-05-12",
-      1043.72
-    ],
-    [
-      "2024-05-19",
-      942.56
-    ],
-    [
-      "2024-05-26",
-      711.24
-    ],
-    [
-      "2024-06-02",
-      1523.55
-    ],
-    [
-      "2024-06-09",
-      3064.73
-    ],
-    [
-      "2024-06-16",
-      2218.39
-    ],
-    [
-      "2024-06-23",
-      2627.14
-    ],
-    [
-      "2024-06-30",
-      3868.95
-    ],
-    [
-      "2024-07-07",
-      4636.86
-    ],
-    [
-      "2024-07-14",
-      4542.72
-    ],
-    [
-      "2024-07-21",
-      4461.89
-    ],
-    [
-      "2024-07-28",
-      4135.36
-    ],
-    [
-      "2024-08-04",
-      2556.03
-    ],
-    [
-      "2024-08-11",
-      562.17
-    ],
-    [
-      "2024-08-18",
-      475.06
-    ],
-    [
-      "2024-08-25",
-      486.38
-    ],
-    [
-      "2024-09-01",
-      592.31
-    ],
-    [
-      "2024-09-08",
-      985.8
-    ],
-    [
-      "2024-09-15",
-      1301.46
-    ],
-    [
-      "2024-09-22",
-      1687.77
-    ],
-    [
-      "2024-09-29",
-      2464.5
-    ],
-    [
-      "2024-10-06",
-      2941.68
-    ],
-    [
-      "2024-10-13",
-      2427.85
-    ],
-    [
-      "2024-10-20",
-      2003.4
-    ],
-    [
-      "2024-10-27",
-      1998.57
-    ],
-    [
-      "2024-11-03",
-      1770.03
-    ],
-    [
-      "2024-11-10",
-      1385.01
-    ],
-    [
-      "2024-11-17",
-      1125.22
-    ],
-    [
-      "2024-11-24",
-      543.89
-    ],
-    [
-      "2024-12-01",
-      543.0
-    ],
-    [
-      "2024-12-08",
-      445.3
-    ],
-    [
-      "2024-12-15",
       0.0
     ],
     [
+      "2023-12-03",
+      197.79
+    ],
+    [
+      "2023-12-10",
+      1243.94
+    ],
+    [
+      "2023-12-17",
+      1470.89
+    ],
+    [
+      "2023-12-24",
+      1348.85
+    ],
+    [
+      "2023-12-31",
+      1729.6
+    ],
+    [
+      "2024-01-07",
+      1606.3
+    ],
+    [
+      "2024-01-14",
+      1766.5
+    ],
+    [
+      "2024-01-21",
+      1863.67
+    ],
+    [
+      "2024-01-28",
+      2363.46
+    ],
+    [
+      "2024-02-04",
+      2291.76
+    ],
+    [
+      "2024-02-11",
+      1587.76
+    ],
+    [
+      "2024-02-18",
+      1864.68
+    ],
+    [
+      "2024-02-25",
+      1748.62
+    ],
+    [
+      "2024-03-03",
+      1519.46
+    ],
+    [
+      "2024-03-10",
+      1771.37
+    ],
+    [
+      "2024-03-17",
+      1947.77
+    ],
+    [
+      "2024-03-24",
+      2646.04
+    ],
+    [
+      "2024-03-31",
+      2658.01
+    ],
+    [
+      "2024-04-07",
+      2675.98
+    ],
+    [
+      "2024-04-14",
+      2171.47
+    ],
+    [
+      "2024-04-21",
+      880.19
+    ],
+    [
+      "2024-04-28",
+      1509.93
+    ],
+    [
+      "2024-05-05",
+      1867.75
+    ],
+    [
+      "2024-05-12",
+      1979.87
+    ],
+    [
+      "2024-05-19",
+      1899.7
+    ],
+    [
+      "2024-05-26",
+      1683.23
+    ],
+    [
+      "2024-06-02",
+      2297.84
+    ],
+    [
+      "2024-06-09",
+      3542.73
+    ],
+    [
+      "2024-06-16",
+      2576.76
+    ],
+    [
+      "2024-06-23",
+      3033.1
+    ],
+    [
+      "2024-06-30",
+      4060.94
+    ],
+    [
+      "2024-07-07",
+      4509.53
+    ],
+    [
+      "2024-07-14",
+      4217.56
+    ],
+    [
+      "2024-07-21",
+      3921.01
+    ],
+    [
+      "2024-07-28",
+      3792.03
+    ],
+    [
+      "2024-08-04",
+      2888.93
+    ],
+    [
+      "2024-08-11",
+      1025.48
+    ],
+    [
+      "2024-08-18",
+      872.95
+    ],
+    [
+      "2024-08-25",
+      708.22
+    ],
+    [
+      "2024-09-01",
+      495.95
+    ],
+    [
+      "2024-09-08",
+      691.27
+    ],
+    [
+      "2024-09-15",
+      1292.64
+    ],
+    [
+      "2024-09-22",
+      1701.46
+    ],
+    [
+      "2024-09-29",
+      2202.98
+    ],
+    [
+      "2024-10-06",
+      2640.28
+    ],
+    [
+      "2024-10-13",
+      2297.65
+    ],
+    [
+      "2024-10-20",
+      1595.6
+    ],
+    [
+      "2024-10-27",
+      1594.74
+    ],
+    [
+      "2024-11-03",
+      1403.94
+    ],
+    [
+      "2024-11-10",
+      977.2
+    ],
+    [
+      "2024-11-17",
+      480.2
+    ],
+    [
+      "2024-11-24",
+      0.0
+    ],
+    [
+      "2024-12-01",
+      469.05
+    ],
+    [
+      "2024-12-08",
+      456.75
+    ],
+    [
+      "2024-12-15",
+      432.6
+    ],
+    [
       "2024-12-22",
-      224.53
+      562.21
     ],
     [
       "2024-12-29",
@@ -3937,271 +2907,271 @@
     ],
     [
       "2025-01-19",
-      1191.41
+      1175.84
     ],
     [
       "2025-01-26",
-      1033.08
+      1498.69
     ],
     [
       "2025-02-02",
-      905.71
+      2226.82
     ],
     [
       "2025-02-09",
-      1056.67
+      2380.83
     ],
     [
       "2025-02-16",
-      1503.24
+      2828.22
     ],
     [
       "2025-02-23",
-      1589.65
+      2947.94
     ],
     [
       "2025-03-02",
-      1288.77
+      2617.37
     ],
     [
       "2025-03-09",
-      1163.38
+      2314.93
     ],
     [
       "2025-03-16",
-      718.14
+      2062.02
     ],
     [
       "2025-03-23",
-      737.5
+      2106.2
     ],
     [
       "2025-03-30",
-      725.95
+      2082.43
     ],
     [
       "2025-04-06",
-      372.82
+      1727.59
     ],
     [
       "2025-04-13",
-      513.47
+      307.9
     ],
     [
       "2025-04-20",
-      483.77
+      0.0
     ],
     [
       "2025-04-27",
-      501.13
+      0.0
     ],
     [
       "2025-05-04",
-      533.33
+      0.0
     ],
     [
       "2025-05-11",
-      535.91
+      192.92
     ],
     [
       "2025-05-18",
-      1482.41
+      1704.98
     ],
     [
       "2025-05-25",
-      1666.31
+      1572.01
     ],
     [
       "2025-06-01",
-      2448.65
+      2321.35
     ],
     [
       "2025-06-08",
-      2487.52
+      2361.36
     ],
     [
       "2025-06-15",
-      2853.67
+      2695.29
     ],
     [
       "2025-06-22",
-      2477.77
+      2857.04
     ],
     [
       "2025-06-29",
-      2072.78
+      2758.95
     ],
     [
       "2025-07-06",
-      1823.83
+      2805.18
     ],
     [
       "2025-07-13",
-      1748.28
+      2537.82
     ],
     [
       "2025-07-20",
-      1503.57
+      2008.09
     ],
     [
       "2025-07-27",
-      1950.16
+      2445.29
     ],
     [
       "2025-08-03",
-      2293.58
+      2221.18
     ],
     [
       "2025-08-10",
-      2807.04
+      2110.54
     ],
     [
       "2025-08-17",
-      2714.13
+      2296.22
     ],
     [
       "2025-08-24",
-      3345.2
+      2384.45
     ],
     [
       "2025-08-31",
-      3154.13
+      2105.3
     ],
     [
       "2025-09-07",
-      4164.98
+      3346.53
     ],
     [
       "2025-09-14",
-      3454.8
+      2604.5
     ],
     [
       "2025-09-21",
-      2623.11
+      1521.13
     ],
     [
       "2025-09-28",
-      2083.53
+      1362.45
     ],
     [
       "2025-10-05",
-      2233.89
+      1941.46
     ],
     [
       "2025-10-12",
-      2150.7
+      1970.21
     ],
     [
       "2025-10-19",
-      2633.53
+      2599.73
     ],
     [
       "2025-10-26",
-      2322.66
+      2444.45
     ],
     [
       "2025-11-02",
-      2694.01
+      2541.0
     ],
     [
       "2025-11-09",
-      2935.93
+      2815.02
     ],
     [
       "2025-11-16",
-      3282.38
+      2921.61
     ],
     [
       "2025-11-23",
-      2862.56
+      2151.9
     ],
     [
       "2025-11-30",
-      2326.23
+      2067.6
     ],
     [
       "2025-12-07",
-      1930.39
+      2293.43
     ],
     [
       "2025-12-14",
-      2360.75
+      2288.47
     ],
     [
       "2025-12-21",
-      2505.7
+      2366.41
     ],
     [
       "2025-12-28",
-      2430.61
+      2298.13
     ],
     [
       "2026-01-04",
-      1977.76
+      1896.99
     ],
     [
       "2026-01-11",
-      1822.26
+      2267.23
     ],
     [
       "2026-01-18",
-      1624.9
+      2934.9
     ],
     [
       "2026-01-25",
-      1430.05
+      2608.16
     ],
     [
       "2026-02-01",
-      1013.8
+      1977.85
     ],
     [
       "2026-02-08",
-      707.92
+      1678.3
     ],
     [
       "2026-02-15",
-      497.71
+      1581.49
     ],
     [
       "2026-02-22",
-      499.07
+      2003.81
     ],
     [
       "2026-03-01",
-      511.56
+      2018.61
     ],
     [
       "2026-03-08",
-      1012.96
+      1379.69
     ],
     [
       "2026-03-15",
-      2097.65
+      1302.19
     ],
     [
       "2026-03-22",
-      1468.14
+      393.23
     ],
     [
       "2026-03-29",
-      590.16
+      0.0
     ],
     [
       "2026-04-05",
-      575.88
+      0.0
     ],
     [
       "2026-04-12",
-      587.89
+      0.0
     ],
     [
       "2026-04-19",
-      586.01
+      0.0
     ],
     [
       "2026-04-26",
-      603.68
+      0.0
     ],
     [
       "2026-05-03",
@@ -4209,69 +3179,62 @@
     ],
     [
       "2026-05-10",
-      626.64
+      463.72
     ],
     [
       "2026-05-17",
-      1648.86
+      960.98
     ],
     [
       "2026-05-24",
-      1032.38
+      491.88
     ],
     [
       "2026-05-31",
-      1392.59
+      776.57
     ],
     [
       "2026-06-07",
-      1658.36
+      969.6
     ],
     [
       "2026-06-14",
-      1345.95
+      1396.38
     ],
     [
       "2026-06-21",
-      2153.74
+      2989.29
     ],
     [
       "2026-06-28",
-      1840.3
+      2687.95
     ],
     [
       "2026-07-05",
-      2042.23
+      3178.99
     ],
     [
       "2026-07-12",
-      1969.41
+      3029.1
     ],
     [
       "2026-07-19",
-      2368.92
+      2847.99
     ],
     [
       "2026-07-26",
-      1704.1
+      2807.47
     ],
     [
       "2026-08-02",
-      881.79
+      2047.22
     ],
     [
       "2026-08-09",
-      738.55
+      1753.89
     ]
   ],
   "top_trades": [
-    {
-      "ticker": "XES",
-      "opened": "2022-01-24",
-      "closed": "2022-03-04",
-      "ret": 0.19785059901338964,
-      "pnl": 101.06999999999996
-    },
     {
       "ticker": "QCLN",
       "opened": "2020-09-17",
@@ -4280,11 +3243,18 @@
       "pnl": 98.76000000000005
     },
     {
-      "ticker": "IVZ",
-      "opened": "2025-10-14",
-      "closed": "2026-01-05",
-      "ret": 0.17526652452025582,
-      "pnl": 92.52999999999999
+      "ticker": "DFEN",
+      "opened": "2024-09-12",
+      "closed": "2024-10-14",
+      "ret": 0.19130978430759615,
+      "pnl": 91.80000000000001
+    },
+    {
+      "ticker": "DBO",
+      "opened": "2021-01-05",
+      "closed": "2021-02-12",
+      "ret": 0.17816091954023006,
+      "pnl": 91.45000000000005
     },
     {
       "ticker": "DBO",
@@ -4294,20 +3264,6 @@
       "pnl": 90.64999999999998
     },
     {
-      "ticker": "AGYS",
-      "opened": "2022-06-17",
-      "closed": "2022-06-30",
-      "ret": 0.16637301787062686,
-      "pnl": 90.54000000000009
-    },
-    {
-      "ticker": "DBO",
-      "opened": "2021-01-05",
-      "closed": "2021-02-12",
-      "ret": 0.17816091954023006,
-      "pnl": 89.90000000000003
-    },
-    {
       "ticker": "YINN",
       "opened": "2025-07-18",
       "closed": "2025-09-11",
@@ -4315,11 +3271,18 @@
       "pnl": 89.42999999999995
     },
     {
-      "ticker": "XES",
-      "opened": "2026-03-09",
-      "closed": "2026-04-27",
-      "ret": 0.16075949367088604,
-      "pnl": 88.9
+      "ticker": "IVZ",
+      "opened": "2025-10-14",
+      "closed": "2026-01-05",
+      "ret": 0.17526652452025582,
+      "pnl": 88.41999999999999
+    },
+    {
+      "ticker": "DFEN",
+      "opened": "2021-03-01",
+      "closed": "2021-03-12",
+      "ret": 0.16296697347049283,
+      "pnl": 87.29000000000005
     },
     {
       "ticker": "XBI",
@@ -4334,6 +3297,13 @@
       "closed": "2020-11-09",
       "ret": 0.1765190525231719,
       "pnl": 85.7
+    },
+    {
+      "ticker": "AIA",
+      "opened": "2025-05-12",
+      "closed": "2025-09-11",
+      "ret": 0.1865387143420536,
+      "pnl": 85.14000000000007
     }
   ],
   "worst_trades": [
@@ -4345,11 +3315,18 @@
       "pnl": -129.84000000000003
     },
     {
+      "ticker": "MKSI",
+      "opened": "2026-06-30",
+      "closed": "2026-07-24",
+      "ret": -0.25993705620362084,
+      "pnl": -117.62
+    },
+    {
       "ticker": "YINN",
       "opened": "2023-02-01",
       "closed": "2023-02-16",
       "ret": -0.21606036231884063,
-      "pnl": -116.88001360000004
+      "pnl": -102.27001190000004
     },
     {
       "ticker": "DBO",
@@ -4366,18 +3343,11 @@
       "pnl": -83.93999999999997
     },
     {
-      "ticker": "XES",
-      "opened": "2022-04-18",
-      "closed": "2022-04-29",
-      "ret": -0.14885357272837574,
-      "pnl": -73.62000000000006
-    },
-    {
       "ticker": "NFLX",
       "opened": "2020-09-01",
       "closed": "2020-09-18",
       "ret": -0.15558350552511002,
-      "pnl": -71.27199999999999
+      "pnl": -79.93099999999998
     },
     {
       "ticker": "COPX",
@@ -4387,11 +3357,11 @@
       "pnl": -66.24000000000004
     },
     {
-      "ticker": "COP",
-      "opened": "2018-09-21",
-      "closed": "2018-10-24",
-      "ret": -0.13883062401678037,
-      "pnl": -65.54000000000002
+      "ticker": "DFEN",
+      "opened": "2021-01-12",
+      "closed": "2021-01-28",
+      "ret": -0.12878338278931756,
+      "pnl": -65.10000000000005
     },
     {
       "ticker": "TMF",
