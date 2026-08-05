@@ -1,0 +1,56 @@
+name: backtest-v2-hindsight
+on:
+  workflow_dispatch:
+    inputs:
+      years:
+        description: "Years of history"
+        required: false
+        default: "8"
+      mode:
+        description: "'strat' for sector-balanced sample, a number = max stocks, blank = all"
+        required: false
+        default: "strat"
+      include_etfs:
+        description: "Include ETFs? yes / no (ignored in strat mode)"
+        required: false
+        default: "yes"
+      n_stocks:
+        description: "strat: how many stocks"
+        required: false
+        default: "30"
+      n_etfs:
+        description: "strat: how many ETFs"
+        required: false
+        default: "10"
+      n_baseline:
+        description: "strat: baseline block"
+        required: false
+        default: "10"
+permissions:
+  contents: write
+jobs:
+  backtest_v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pandas numpy pyyaml
+      - name: Run hindsight backtest (v2)
+        env:
+          TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+        run: |
+          python backtest_v2.py "${{ github.event.inputs.years }}" \
+                                "${{ github.event.inputs.mode }}" \
+                                "${{ github.event.inputs.include_etfs }}" \
+                                "${{ github.event.inputs.n_stocks }}" \
+                                "${{ github.event.inputs.n_etfs }}" \
+                                "${{ github.event.inputs.n_baseline }}"
+      - name: Publish results
+        run: |
+          git config user.name swingbot && git config user.email bot@users.noreply.github.com
+          git add docs/backtest_v2.json backtest_v2_trades.csv || true
+          git commit -m "backtest v2: update results" || echo "no changes"
+          git pull --rebase --autostash origin main || true
+          git push || (sleep 5 && git pull --rebase --autostash origin main && git push)
