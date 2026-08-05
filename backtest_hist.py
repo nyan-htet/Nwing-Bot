@@ -305,13 +305,15 @@ def run(years=8, max_stocks=None, include_etfs=True):
                     continue
                 open_pos[t] = {"entry": entry, "tp": tp, "shares": shares,
                                "opened": day, "setup": st}
-        # 3) mark to market
+        # 3) mark to market + utilisation
         mtm = equity
+        deployed = 0.0
         for t, p in open_pos.items():
             d = prepped[t]
-            if day in d.index:
-                mtm += (float(d.loc[day, "close"]) - p["entry"]) * p["shares"]
-        curve.append((day, mtm))
+            px = float(d.loc[day, "close"]) if day in d.index else p["entry"]
+            mtm += (px - p["entry"]) * p["shares"]
+            deployed += px * p["shares"]
+        curve.append((day, mtm, deployed, len(open_pos)))
 
     bh = None
     try:
@@ -323,7 +325,7 @@ def run(years=8, max_stocks=None, include_etfs=True):
 
 
 def summarize(curve, closed, days, buy_hold_pct=None):
-    ec = pd.DataFrame(curve, columns=["time", "equity"]).set_index("time")
+    ec = pd.DataFrame(curve, columns=["time", "equity", "deployed", "n_open"]).set_index("time")
     tr = pd.DataFrame(closed)
     final = float(ec["equity"].iloc[-1])
     dd = float((ec["equity"] / ec["equity"].cummax() - 1).min() * 100)
@@ -364,12 +366,51 @@ def summarize(curve, closed, days, buy_hold_pct=None):
                             if buy_hold_pct is not None else None),
         "params": dict(PARAMS),
     }
+    # ---- return distribution (buckets of trade outcomes) ----
+    buckets = [(-1.0, -0.20, "loss > 20%"), (-0.20, -0.15, "loss 15-20%"),
+               (-0.15, -0.10, "loss 10-15%"), (-0.10, -0.05, "loss 5-10%"),
+               (-0.05, 0.0, "loss 0-5%"), (0.0, 0.05, "win 0-5%"),
+               (0.05, 0.10, "win 5-10%"), (0.10, 0.15, "win 10-15%"),
+               (0.15, 0.20, "win 15-20%"), (0.20, 10.0, "win > 20%")]
+    dist = []
+    for lo_, hi_, label in buckets:
+        if len(tr):
+            sel = tr[(tr.ret > lo_) & (tr.ret <= hi_)]
+            dist.append({"bucket": label, "count": int(len(sel)),
+                         "pct_of_trades": round(len(sel) / len(tr) * 100, 1),
+                         "total_pnl": round(float(sel.pnl.sum()), 2)})
+        else:
+            dist.append({"bucket": label, "count": 0, "pct_of_trades": 0, "total_pnl": 0})
+
+    # ---- capital utilisation: daily -> monthly averages ----
+    util_monthly = []
+    if "deployed" in ec.columns:
+        m = ec.resample("ME").agg({"deployed": "mean", "n_open": "mean",
+                                   "equity": "mean"})
+        for ts, row in m.iterrows():
+            util_monthly.append({
+                "month": ts.strftime("%Y-%m"),
+                "avg_deployed": round(float(row["deployed"]), 0),
+                "avg_positions": round(float(row["n_open"]), 1),
+                "avg_equity": round(float(row["equity"]), 0),
+                "avg_utilisation_pct": round(float(row["deployed"] / row["equity"] * 100), 1)
+                if row["equity"] else 0})
+        stats["avg_deployed_usd"] = round(float(ec["deployed"].mean()), 0)
+        stats["avg_utilisation_pct"] = round(float((ec["deployed"] / ec["equity"]).mean() * 100), 1)
+        stats["avg_open_positions"] = round(float(ec["n_open"].mean()), 1)
+        stats["max_open_positions"] = int(ec["n_open"].max())
+        stats["days_fully_idle_pct"] = round(float((ec["n_open"] == 0).mean() * 100), 1)
+
     payload = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(),
                "universe": RUN_INFO,
+               "distribution": dist,
+               "utilisation_monthly": util_monthly,
                "note": "Daily-bar approximation of the live strategy (no 1h trigger / VWAP).",
                "stats": stats, "yearly_pct": yearly, "monthly_pct": monthly,
                "equity_curve": [[str(t.date()), round(float(v), 2)] for t, v in
                                 ec["equity"].resample("W").last().dropna().items()],
+               "deployed_curve": [[str(t.date()), round(float(v), 2)] for t, v in
+                                  ec["deployed"].resample("W").mean().dropna().items()],
                "top_trades": (tr.nlargest(10, "pnl")[["ticker", "opened", "closed", "ret", "pnl"]]
                               .assign(opened=lambda x: x.opened.astype(str),
                                       closed=lambda x: x.closed.astype(str))
@@ -388,6 +429,18 @@ def summarize(curve, closed, days, buy_hold_pct=None):
     print("\n================ BACKTEST SUMMARY ================")
     for k, v in stats.items():
         print(f"{k:>20}: {v}")
+    print("\nTrade outcome distribution:")
+    for d_ in dist:
+        if d_["count"]:
+            print(f"  {d_['bucket']:<14} {d_['count']:>4} trades "
+                  f"({d_['pct_of_trades']:>4.1f}%)  P/L ${d_['total_pnl']:>9,.0f}")
+    if util_monthly:
+        print(f"\nCapital utilisation: avg ${stats.get('avg_deployed_usd', 0):,.0f} deployed "
+              f"({stats.get('avg_utilisation_pct', 0)}% of equity), "
+              f"avg {stats.get('avg_open_positions', 0)} positions "
+              f"(max {stats.get('max_open_positions', 0)}), "
+              f"{stats.get('days_fully_idle_pct', 0)}% of days fully in cash")
+
     print("\nYearly returns (%):")
     for y, v in sorted(yearly.items()):
         print(f"  {y}: {v:+.2f}%")
