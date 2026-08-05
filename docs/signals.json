@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T03:31:54.044951+00:00",
+  "generated": "2026-08-05T05:39:50.260800+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 14.5
@@ -9,61 +9,6 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.4% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "UPS",
-      "name": "UPS",
-      "setup": "pullback",
-      "entry": 109.1,
-      "tp": 127.77,
-      "tp_pct": 0.17112742751837628,
-      "shares": 4,
-      "value": 436.399992,
-      "pl_amount": 74.68,
-      "fee_pct": 0.02678092910755982,
-      "trend_score": 5,
-      "adx": 36.2,
-      "rs": 0.047,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 9,
-      "ema20": 109.76,
-      "ema50": 108.75,
-      "ema200": 102.7,
-      "above_ema200": true,
-      "quality": 0.77,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 0.6,
-        "options": 0.0
-      },
-      "q_notes": {
-        "rsi": "RSI 49.8 rising, reset from 26",
-        "bollinger": "band position 49%, expanding",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.7x average, drying up",
-        "extension": "+0.3 ATR from 20 EMA, slope -3.6%, mixed / tangled",
-        "options": "options: n/a"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 49.8,
-      "options_note": "options: n/a",
-      "sector": "Industrials",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.77 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=49.8)",
-        "options: n/a"
-      ],
-      "time": "2026-08-05T03:31:51.666570+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
