@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nwing-Bot — Backtest v2 (time-boxed)</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2129; --tx:#e6edf3; --mut:#8b98a5; --pos:#2ea043; --neg:#da3633; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--tx); font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif; padding:16px; max-width:1000px; margin:auto; }
+  h1 { font-size:1.3rem; } h2 { font-size:1.05rem; margin:22px 0 8px; }
+  .mut { color:var(--mut); font-size:.85rem; }
+  .card { background:var(--card); border-radius:10px; padding:14px; margin:10px 0; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
+  .kpi { background:var(--card); border-radius:10px; padding:12px; }
+  .kpi .v { font-size:1.5rem; font-weight:700; } .kpi .l { color:var(--mut); font-size:.78rem; }
+  table { width:100%; border-collapse:collapse; font-size:.82rem; }
+  td,th { padding:5px 6px; border-bottom:1px solid #30363d; text-align:right; }
+  th:first-child, td:first-child { text-align:left; }
+  .pos { color:var(--pos); } .neg { color:var(--neg); }
+  a { color:#58a6ff; }
+</style>
+</head>
+<body>
+<h1>⏱️ Nwing-Bot — Backtest v2 (time-boxed exits)</h1>
+<div class="mut" id="meta">Loading…</div>
+<div class="mut" style="margin-top:6px">⚠️ <b>v2 rule:</b> target hit inside the estimated time window → take profit; window expires → exit at market (profit, break-even or loss).
+Daily-bar approximation (no 1h trigger / VWAP factor). Past performance does not predict future results.
+<a href="backtest.html">← compare with the standard backtest</a></div>
+
+<h2>Headline</h2>
+<div class="kpis" id="kpis"></div>
+
+<h2>Equity curve</h2>
+<div class="card"><svg id="chart" viewBox="0 0 900 300" style="width:100%;height:300px"></svg></div>
+
+<h2>Trade outcome distribution</h2>
+<div class="card"><table id="dist"></table></div>
+
+<h2>Capital utilisation <span class='mut' style='font-size:.8rem'>(daily averages, rolled up by year)</span></h2>
+<div class="card">
+  <div id="util_summary" class="mut"></div>
+  <table id="util" style="margin-top:8px"></table>
+</div>
+
+<h2>Monthly / yearly returns (%)</h2>
+<div class="card" style="overflow-x:auto"><table id="months"></table></div>
+
+<h2>Best & worst trades</h2>
+<div class="card" style="overflow-x:auto"><table id="trades"></table></div>
+<p class="mut"><a href="index.html">← back to signals</a> &nbsp;·&nbsp; <a href="backtest.html">standard backtest →</a></p>
+
+<script>
+const $ = id => document.getElementById(id);
+const cls = v => v >= 0 ? "pos" : "neg";
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+fetch("backtest_v2.json?t=" + Date.now()).then(r => r.json()).then(d => {
+  const s = d.stats;
+  $("meta").textContent = `Period ${s.period} • generated ${d.generated?.slice(0,10)}`;
+  const kpis = [
+    ["Final equity", "$" + s.final_equity.toLocaleString(), s.total_return_pct],
+    ["Total return", s.total_return_pct + "%", s.total_return_pct],
+    ["CAGR", s.cagr_pct + "%", s.cagr_pct],
+    ["Max drawdown", s.max_drawdown_pct + "%", -1],
+    ["Win rate", s.win_rate_pct + "%", 1],
+    ["Trades", s.n_trades, 1],
+    ["Sharpe", s.sharpe, s.sharpe],
+    ["Avg hold", s.avg_hold_days + "d", 1],
+  ];
+  $("kpis").innerHTML = kpis.map(([l,v,c]) =>
+    `<div class="kpi"><div class="v ${cls(c)}">${v}</div><div class="l">${l}</div></div>`).join("");
+
+  // equity chart
+  const pts = d.equity_curve || [];
+  if (pts.length > 1) {
+    const vals = pts.map(p => p[1]);
+    const min = Math.min(...vals), max = Math.max(...vals);
+    const X = i => 40 + i * (840 / (pts.length - 1));
+    const Y = v => 280 - ((v - min) / ((max - min) || 1)) * 250;
+    const path = pts.map((p,i) => `${i?"L":"M"}${X(i).toFixed(1)},${Y(p[1]).toFixed(1)}`).join(" ");
+    const base = Y(d.stats.start_equity);
+    $("chart").innerHTML =
+      `<line x1="40" y1="${base}" x2="880" y2="${base}" stroke="#30363d" stroke-dasharray="4"/>
+       <path d="${path}" fill="none" stroke="#2ea043" stroke-width="2"/>
+       <text x="6" y="${Y(max)+4}" fill="#8b98a5" font-size="11">$${Math.round(max/1000)}k</text>
+       <text x="6" y="${Y(min)+4}" fill="#8b98a5" font-size="11">$${Math.round(min/1000)}k</text>
+       <text x="40" y="298" fill="#8b98a5" font-size="11">${pts[0][0]}</text>
+       <text x="800" y="298" fill="#8b98a5" font-size="11">${pts[pts.length-1][0]}</text>`;
+  }
+
+  // distribution
+  const dist = (d.distribution || []).filter(b => b.count > 0);
+  if (dist.length) {
+    const maxN = Math.max(...dist.map(b => b.count));
+    $("dist").innerHTML = "<tr><th>Outcome</th><th>Trades</th><th>% of all</th><th>Total P/L</th><th style='width:35%'></th></tr>"
+      + dist.map(b => {
+          const win = b.bucket.startsWith("win");
+          const w = Math.round(b.count / maxN * 100);
+          return `<tr><td>${b.bucket}</td><td>${b.count}</td><td>${b.pct_of_trades}%</td>
+            <td class="${b.total_pnl >= 0 ? "pos" : "neg"}">$${b.total_pnl.toLocaleString()}</td>
+            <td><div style="background:${win ? "#2ea043" : "#da3633"};height:10px;width:${w}%;border-radius:3px"></div></td></tr>`;
+        }).join("");
+  } else { $("dist").innerHTML = "<tr><td class='mut'>No trades.</td></tr>"; }
+
+  // utilisation
+  const s2 = d.stats || {};
+  $("util_summary").innerHTML =
+    `Average deployed: <b>$${(s2.avg_deployed_usd || 0).toLocaleString()}</b>`
+    + ` (<b>${s2.avg_utilisation_pct ?? "?"}%</b> of equity) &nbsp;·&nbsp; `
+    + `average <b>${s2.avg_open_positions ?? "?"}</b> open positions (max ${s2.max_open_positions ?? "?"})`
+    + ` &nbsp;·&nbsp; <b>${s2.days_fully_idle_pct ?? "?"}%</b> of days fully in cash`;
+  const uy = d.utilisation_yearly || [];
+  if (uy.length) {
+    $("util").innerHTML = "<tr><th>Year</th><th>Avg deployed</th><th>Avg positions</th><th>Max positions</th><th>Avg equity</th><th>Utilisation</th></tr>"
+      + uy.map(u => `<tr><td><b>${u.year}</b></td><td>$${u.avg_deployed.toLocaleString()}</td>
+          <td>${u.avg_positions}</td><td>${u.max_positions}</td>
+          <td>$${u.avg_equity.toLocaleString()}</td>
+          <td>${u.avg_utilisation_pct}%</td></tr>`).join("");
+  }
+
+  // monthly table
+  const years = Object.keys(d.monthly_pct || {}).sort();
+  let html = "<tr><th>Year</th>" + MON.map(m => `<th>${m}</th>`).join("") + "<th>Year</th></tr>";
+  for (const y of years) {
+    const row = d.monthly_pct[y] || {};
+    html += `<tr><td><b>${y}</b></td>` + MON.map((_,i) => {
+      const v = row[i+1];
+      return v === undefined ? "<td class='mut'>–</td>" : `<td class="${cls(v)}">${v.toFixed(1)}</td>`;
+    }).join("") + `<td class="${cls(d.yearly_pct[y]||0)}"><b>${(d.yearly_pct[y]??0).toFixed(1)}</b></td></tr>`;
+  }
+  $("months").innerHTML = html;
+
+  // trades
+  const mk = (t,label) => `<tr><td>${label}</td><td>${t.ticker}</td><td>${t.opened?.slice(0,10)}</td>
+    <td>${t.closed?.slice(0,10)}</td><td class="${cls(t.ret)}">${(t.ret*100).toFixed(1)}%</td>
+    <td class="${cls(t.pnl)}">$${t.pnl.toFixed(0)}</td></tr>`;
+  $("trades").innerHTML = "<tr><th></th><th>Ticker</th><th>Opened</th><th>Closed</th><th>Return</th><th>P/L</th></tr>"
+    + (d.top_trades||[]).map(t => mk(t,"🏆")).join("") + (d.worst_trades||[]).map(t => mk(t,"💥")).join("");
+}).catch(e => $("meta").textContent = "No backtest.json yet — run the backtest workflow.");
+</script>
+</body>
+</html>
