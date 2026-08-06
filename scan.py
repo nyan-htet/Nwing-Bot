@@ -118,6 +118,42 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
             "time": dt.datetime.now(dt.timezone.utc).isoformat()}
 
 
+def monitor_alerted(ledger, get_daily, get_price):
+    """Every signal the bot has sent is followed until its target is reached.
+
+    🎯 target reached  -> notify, clear the mute (it may re-alert with a new leg)
+    ⚠️  thesis broken  -> notify ONCE, keep following (your call whether to act)
+
+    Independent of positions.yaml and of any equity/sizing limits — the
+    suggested position size is advice for you, not a cap on what is tracked.
+    """
+    msgs = []
+    for t in al.tracked(ledger):
+        e = ledger.get(t) or {}
+        px = get_price(t)
+        if px is None:
+            continue
+        tp = float(e.get("tp", 0) or 0)
+        entry = float(e.get("entry", 0) or 0)
+        if tp and px > tp:
+            gain = (px / entry - 1) * 100 if entry else 0
+            msgs.append(f"🎯 {t} reached its target ${tp:.2f} (now ${px:.2f}, "
+                        f"signalled at ${entry:.2f}, {gain:+.1f}%). "
+                        "Tracking stops here — a new signal may follow if the trend continues.")
+            ledger.pop(t, None)
+            continue
+        if not e.get("thesis_warned"):
+            daily = get_daily(t)
+            if daily is not None and len(daily) >= 60 and analysis.thesis_broken(daily, cfg):
+                chg = (px / entry - 1) * 100 if entry else 0
+                msgs.append(f"⚠️ {t} thesis broken — daily close below EMA{cfg.THESIS_EMA} "
+                            f"with a lower-low structure break (now ${px:.2f}, "
+                            f"signalled at ${entry:.2f}, {chg:+.1f}%, target ${tp:.2f}). "
+                            "The reason for the signal is gone. Your call.")
+                al.mark_thesis_warned(ledger, t)
+    return msgs
+
+
 def check_positions(get_daily, macro):
     msgs = []
     for p in pf.open_positions(cfg.POSITIONS_FILE):
@@ -277,10 +313,27 @@ def run_hourly(offline=False):
             signals.append(sig)
 
     # --- open positions ---
+    daily_cache = {}
+
     def get_daily(t):
+        if t in daily_cache:
+            return daily_cache[t]
         h1 = h1_map.get(t)
-        return data.resample(h1, "1D") if h1 is not None else None
+        d = data.resample(h1, "1D") if h1 is not None else None
+        if d is None and not offline:          # alerted ticker left the watchlist
+            d = data.fetch_td([t], interval="1day", outputsize=400).get(t)
+        daily_cache[t] = d
+        return d
+
+    def get_price(t):
+        h1 = h1_map.get(t)
+        if h1 is not None and len(h1):
+            return float(h1["close"].iloc[-1])
+        d = get_daily(t)
+        return float(d["close"].iloc[-1]) if d is not None and len(d) else None
+
     pos_msgs = check_positions(get_daily, macro)
+    pos_msgs += monitor_alerted(ledger, get_daily, get_price)
 
     # --- deliver ---
     for s in signals:
@@ -294,12 +347,13 @@ def run_hourly(offline=False):
         notify.send_email("Position alert", m, cfg)
         notify.send_telegram(m, cfg)
 
+    al.save(ledger)
+
     if not signals and not pos_msgs:
         when = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M")
         note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when)
         notify.send_email(f"NO NEW SIGNAL — {when} UTC", note, cfg)
         notify.send_telegram(note, cfg)
-    al.save(ledger)
     log_signals_csv(signals, macro, cyc)
     publish(signals, pos_msgs, macro, cyc)
     labels = {"cooldown": "you entered/skipped recently",

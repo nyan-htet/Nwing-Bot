@@ -75,7 +75,20 @@ def record(ledger, ticker, entry, tp):
         "entry": round(float(entry), 4),
         "tp": round(float(tp), 4),
         "alerted": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "thesis_warned": False,
     }
+
+
+def mark_thesis_warned(ledger, ticker):
+    e = ledger.get(ticker.upper())
+    if e:
+        e["thesis_warned"] = True
+        e["thesis_warned_on"] = dt.datetime.now(dt.timezone.utc).isoformat()
+
+
+def tracked(ledger):
+    """Every ticker the bot has alerted and is still following."""
+    return sorted(ledger.keys())
 
 
 def bump_muted(ledger, ticker):
