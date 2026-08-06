@@ -154,41 +154,6 @@ def monitor_alerted(ledger, get_daily, get_price):
     return msgs
 
 
-def check_positions(get_daily, macro):
-    msgs = []
-    for p in pf.open_positions(cfg.POSITIONS_FILE):
-        daily = get_daily(p["ticker"])
-        if daily is None or len(daily) < 60:
-            continue
-        px = float(daily["close"].iloc[-1])
-        if px >= float(p["tp"]):
-            msgs.append(f"🎯 {p['ticker']} hit your TP ${p['tp']} (now ${px:.2f}). Consider closing.")
-        elif analysis.thesis_broken(daily, cfg):
-            msgs.append(f"⚠️ {p['ticker']} thesis broken: daily close below EMA{cfg.THESIS_EMA} "
-                        f"with structure break (now ${px:.2f}, entry ${p['entry']}). Your call.")
-    return msgs
-
-
-def log_signals_csv(signals, macro, cyc):
-    """Append each signal to signals_log.csv (permanent history)."""
-    import csv, os
-    path = "signals_log.csv"
-    new = not os.path.exists(path)
-    with open(path, "a", newline="") as f:
-        w = csv.writer(f)
-        if new:
-            w.writerow(["date_utc", "ticker", "setup", "entry", "tp", "tp_pct",
-                        "shares", "value_usd", "trend_score", "adx", "rs_vs_spy",
-                        "quality", "rsi", "macro_risk", "cycles", "reasons"])
-        for s_ in signals:
-            q = next((r for r in s_["reasons"] if r.startswith("quality")), "")
-            w.writerow([s_["time"], s_["ticker"], s_["setup"], s_["entry"],
-                        s_["tp"], round(s_["tp_pct"], 4), s_["shares"],
-                        round(s_["value"], 2), s_["trend_score"], s_["adx"],
-                        s_["rs"], q, "", macro.get("risk", ""),
-                        cyc.get("label", ""), " | ".join(s_["reasons"])])
-
-
 def publish(signals, position_msgs, macro, cyc):
     """Write docs/signals.json only when the CONTENT changed.
 
@@ -273,16 +238,12 @@ def run_hourly(offline=False):
         print("--------------------------------")
 
     # --- scan ---
-    decided = pf.recently_decided(cfg.POSITIONS_FILE, cfg.ALERT_COOLDOWN_DAYS)
     ledger = al.load()
-    skip_report = {"cooldown": [], "earnings": [], "screen": [],
+    skip_report = {"earnings": [], "screen": [],
                    "already_alerted": [], "target_cleared": []}
     signals = []
     for t, h1 in h1_map.items():
         if t == "SPY":
-            continue
-        if t.upper() in decided:
-            skip_report["cooldown"].append(t)
             continue
         px_now = float(h1["close"].iloc[-1])
         cleared = al.clear_if_cleared(ledger, t, px_now)
@@ -332,8 +293,7 @@ def run_hourly(offline=False):
         d = get_daily(t)
         return float(d["close"].iloc[-1]) if d is not None and len(d) else None
 
-    pos_msgs = check_positions(get_daily, macro)
-    pos_msgs += monitor_alerted(ledger, get_daily, get_price)
+    pos_msgs = monitor_alerted(ledger, get_daily, get_price)
 
     # --- deliver ---
     for s in signals:

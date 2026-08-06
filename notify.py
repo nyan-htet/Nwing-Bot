@@ -89,7 +89,6 @@ def format_no_signal(watch_n: int, skip_report: dict, macro: dict, cyc: dict,
         lines += [f"• {u}" for u in updates]
         lines.append("")
     for key, label in (("already_alerted", "Still Active"),
-                       ("cooldown", "Entered/skipped recently"),
                        ("earnings", "Earnings within 7 days"),
                        ("screen", "Failed fundamental"),
                        ("target_cleared", "Cleared target, eligible again")):

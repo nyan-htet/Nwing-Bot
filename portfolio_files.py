@@ -1,24 +1,15 @@
-"""portfolio_files.py — Reads your two control files.
+"""portfolio_files.py — reads overrides.yaml (include/exclude rules).
 
-overrides.yaml — include/exclude rules from the portal:
+Position tracking now happens automatically via alerts_ledger.py, so
+positions.yaml is no longer used.
+
+overrides.yaml format:
   rules:
-    - action: exclude          # or include (force into watchlist)
+    - action: exclude          # or include
       match: TSLA              # ticker, sector, or industry name
       type: ticker             # ticker | sector | industry
-      from: 2026-01-01         # effective from (optional)
-      to: 2026-12-31           # effective to (optional)
-
-positions.yaml — your trade decisions (via portal or manual edit):
-  positions:
-    - ticker: NVDA
-      status: open             # open | closed | skipped
-      entry: 132.50            # YOUR actual fill price (corrected for spread)
-      shares: 4                # YOUR actual size (any amount, not fixed $250)
-      tp: 148.00               # YOUR chosen target (editable any time)
-      exit: 149.10             # actual exit price once closed (optional)
-      opened: 2026-07-20
-  'skipped' = you saw the alert but didn't enter; the bot logs it and
-  won't re-alert that ticker during the cooldown window.
+      from: 2026-01-01         # optional
+      to: 2026-12-31           # optional
 """
 import datetime as dt
 
@@ -35,8 +26,7 @@ def load_yaml(path, key):
 
 
 def _active(rule, today):
-    f = rule.get("from")
-    t = rule.get("to")
+    f, t = rule.get("from"), rule.get("to")
     if f and today < dt.date.fromisoformat(str(f)):
         return False
     if t and today > dt.date.fromisoformat(str(t)):
@@ -47,45 +37,21 @@ def _active(rule, today):
 def apply_overrides(tickers: list[str], meta: dict, path, today=None) -> list[str]:
     """meta: {ticker: {'sector':..., 'industry':...}} (may be partial)."""
     today = today or dt.date.today()
-    rules = load_yaml(path, "rules")
     out = list(tickers)
-    for r in rules:
+    for r in load_yaml(path, "rules"):
         if not _active(r, today):
             continue
         m = str(r.get("match", "")).lower()
         typ = r.get("type", "ticker")
+
         def hits(t):
             if typ == "ticker":
                 return t.lower() == m
-            info = meta.get(t, {})
-            return str(info.get(typ, "")).lower() == m
+            return str(meta.get(t, {}).get(typ, "")).lower() == m
+
         if r.get("action") == "exclude":
             out = [t for t in out if not hits(t)]
-        elif r.get("action") == "include":
-            if typ == "ticker" and r["match"].upper() not in out:
+        elif r.get("action") == "include" and typ == "ticker":
+            if r["match"].upper() not in out:
                 out.append(r["match"].upper())
-    return out
-
-
-def open_positions(path):
-    return [p for p in load_yaml(path, "positions") if p.get("status") == "open"]
-
-
-def recently_decided(path, cooldown_days=3, today=None):
-    """Tickers with an open position OR skipped/opened within cooldown —
-    suppresses duplicate alerts for these."""
-    import datetime as dt
-    today = today or dt.date.today()
-    out = set()
-    for p in load_yaml(path, "positions"):
-        t = str(p.get("ticker", "")).upper()
-        if p.get("status") == "open":
-            out.add(t)
-        else:
-            d = p.get("opened") or p.get("skipped_on")
-            try:
-                if d and (today - dt.date.fromisoformat(str(d))).days <= cooldown_days:
-                    out.add(t)
-            except Exception:
-                pass
     return out
