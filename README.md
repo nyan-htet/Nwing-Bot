@@ -19,12 +19,20 @@ the full reasoning behind the score — by **email + Telegram**, with a read-onl
 | Direction | Long only (shorts skipped) |
 | Stop loss | None — "thesis broken" alerts instead |
 | Take profit | **+9% minimum, +20% cap** |
-| Position size | 5% of a $10,000 reference account, min $250 (advisory) |
+| Position size | 5% of a $10,000 reference account, min $250, **fractional units** (advisory) |
 | Quality floor | **Stocks 0.70 · ETFs 0.50** (score max = 1.00) |
 | Watchlist | Top 120 of the universe, ranked nightly |
 | Repeat alerts | **Muted until price clears that signal's target** |
 | Earnings | Blocked within 7 days (US stocks) |
 | Fees modelled | $1 buy + $1 sell (stocks), $0 (ETFs) |
+
+### Fractional units
+eToro supports fractional shares, so sizing is fractional to 2 decimals
+(`FRACTIONAL_SHARES` / `SHARE_DECIMALS` in config). This matters: with whole
+shares only, anything priced above the ~$500 budget produced **zero shares and
+was silently skipped** — BKNG, CMG, ORLY, ASML, MTD and similar names never
+alerted at all. Now a $5,400 stock sizes to 0.09 units (~$486), and every
+trade deploys roughly the full budget regardless of share price.
 
 ### Why the 20% cap is not a limit
 A ticker alerts once, then goes silent until price **exceeds** its target.
@@ -66,6 +74,13 @@ EVERY 4 HOURS (weekdays, :15 UTC)
 Options factor was removed (free chain data became unusable) and the remaining
 five were renormalized, so a perfect setup now scores 1.00.
 
+### Time-frame estimate (informative)
+Each alert carries an estimated window, e.g. `Time frame: 24-35 trading days`,
+from two independent calculations: distance ÷ (daily ATR × 0.4) and distance ÷
+the 20 EMA's current daily drift. Ranges are capped at 3× and tagged
+`[wide range: volatile but slow-advancing]` when the methods disagree badly.
+It is an estimate, **not a deadline** — the live system has no time-based exit.
+
 ### Target selection
 1. **Fibonacci extension** (1.272 / 1.618 / 2.0 of the last up-leg) inside 9–20%
 2. Swing-high resistance inside the window
@@ -104,7 +119,8 @@ cannot reach +9% swings.
 | `resend.yml` | manual | Re-send current signals (0 API cost) |
 | `check-symbols.yml` | manual | Verify symbols (`sp500` / blank / `AAPL,MSFT`) |
 | `probe-formats.yml` | manual | Find TD format for foreign listings (.L/.DE) |
-| `backtest.yml` | manual | Historical simulation → `backtest.html` |
+| `backtest.yml` | manual | Standard simulation → `backtest.html` |
+| `backtest-v2.yml` | manual | Stop-loss + time-boxed simulation → `backtest_v2.html` |
 | `sweep.yml` | manual | 9 strategy variants vs buy & hold SPY |
 
 All need `permissions: contents: write` plus repo Settings → Actions →
@@ -124,7 +140,11 @@ General → Workflow permissions → **Read and write**.
 | `TELEGRAM_TOKEN` | @BotFather → `/newbot` |
 | `TELEGRAM_CHAT_ID` | your ID (@userinfobot) **or** a channel ID (`-100…`, bot must be admin with Post Messages) |
 
-Daily usage: Twelve Data ≈ 574 (nightly) + ~122 per scan — unlimited on Grow.
+Daily usage: Twelve Data ≈ 574 (nightly) + ~122 per scan — no daily cap on Grow,
+but there IS a **55 requests/minute** limit. Requests are paced at ~37/min, and
+429 responses are retried with backoff — still, **do not run two heavy jobs at
+once** (nightly / backtest / sweep). Scans fire at :15 past every 4th hour, so
+start long jobs just after one finishes.
 **FMP ≈ 240 of 250 → run nightly only once per day.**
 
 ---
@@ -138,13 +158,26 @@ Daily usage: Twelve Data ≈ 574 (nightly) + ~122 per scan — unlimited on Grow
   measured fairly. (`include_etfs` is ignored in this mode.)
 - `mode: <number>` — that many stocks; `mode:` blank — the whole universe
 
-The results page shows: equity curve, monthly/yearly grid, **trade outcome
-distribution** (loss >20% … win >20% with counts and P/L), **capital
-utilisation** (average deployed $, % of equity, average/max open positions,
-% of days in cash, monthly table), best/worst trades, and **buy & hold SPY**.
-
 `sweep.yml` compares 9 variants (score thresholds, trailing exits, RS filter,
 200-EMA filter, longer holds, more slots) against the benchmark.
+
+### Two backtest flows, fully separate
+| | `backtest.yml` → `backtest.html` | `backtest-v2.yml` → `backtest_v2.html` |
+|---|---|---|
+| Exit rules | target, or 2000-day backstop | **hard stop-loss**, target, or **time-boxed exit** |
+| Thesis exit | off | off |
+| Extra inputs | – | `stop_loss_pct` (default 15), `eta_bound` (low/high) |
+| Outputs | `backtest.json`, `backtest_trades.csv` | `backtest_v2.json`, `backtest_v2_trades.csv` |
+
+v2 answers the question the standard run hides: if the target is not reached
+inside the estimated window, the position is closed **at market** — profit,
+break-even or loss — so unresolved trades appear in the statistics instead of
+sitting open forever.
+
+Both pages show: equity curve, monthly/yearly returns, **trade outcome
+distribution** (loss >20% … win >20%), **capital utilisation** (daily averages
+rolled up by year: deployed $, avg/max positions, % of equity, % of days in
+cash), best/worst trades, and **buy & hold SPY**.
 
 Two limitations, stated plainly:
 1. Backtests use **daily bars** — no 1h trigger, no VWAP factor.
@@ -168,6 +201,7 @@ portfolio_files.py   positions.yaml / overrides.yaml helpers
 notify.py            email + Telegram formatting
 resend.py            re-send current signals, no rescan
 backtest_hist.py     portfolio simulation + stratified sampler
+backtest_v2.py       v2: stop-loss + time-boxed exits (separate outputs)
 sweep.py             variant comparison
 check_symbols.py     Twelve Data availability probe
 probe_formats.py     symbol-format probe for non-US listings
@@ -175,12 +209,46 @@ tickers.csv          YOUR UNIVERSE — edit this
 alerted.json         which tickers are currently muted
 signals_log.csv      every signal ever generated
 docs/index.html      read-only signals dashboard
-docs/backtest.html   backtest results
+docs/backtest.html   standard backtest results
+docs/backtest_v2.html v2 (stop-loss + time-boxed) results
 ```
 
 ---
 
-## 8. Daily routine
+## 8. Alert formats
+
+**Signal** — header is `BUY — TICKER — Company — Sector`, then:
+```
+═══ TRADE PLAN ═══
+Entry price   : $43.34
+Exit price    : $49.54   (+14.3%)
+Shares        : 11  (≈ $477)
+-------
+Time frame    : 24-35 trading days (informative, from ATR and moving-average pace only)
+-------
+eToro TP      : $68.20
+eToro Fees    : 2.9% of profit
+Strategy type : pullback
+```
+followed by TECHNICAL ANALYSIS (regime, trend score, EMAs, ADX, RS, RSI,
+factor-by-factor quality breakdown) and FUNDAMENTAL & MACRO.
+
+**Quiet scan** — when nothing fires:
+```
+Result: NO NEW SIGNAL 🚦
+Run completed 2026-08-05 12:15 UTC
+120 tickers scanned from the nightly watchlist
+
+Still Active (8): BF.B, BSET, INCY, KO, UNP, UPS, VLO, VRNS
+Failed fundamental (1): APM
+```
+
+Telegram delivery can target your private chat or a channel (bot must be an
+admin with Post Messages; channel IDs look like `-1001234567890`).
+
+---
+
+## 9. Daily routine
 
 1. Alert arrives (Telegram / email)
 2. Read the plan and the factor breakdown
@@ -190,7 +258,7 @@ docs/backtest.html   backtest results
 
 ---
 
-## 9. Honest notes
+## 10. Honest notes
 
 - **Decision support, not financial advice.** You own every trade.
 - Backtests to date show the strategy **underperforming buy & hold SPY** in a
@@ -201,5 +269,7 @@ docs/backtest.html   backtest results
   rule is most dangerous there.
 - No stoploss means a broken position can sit at a large loss indefinitely.
   Thesis-broken alerts exist so you are never blindsided — acting is your call.
+- Backtests produced before the fractional-shares fix understated results:
+  they silently excluded every stock above the position budget.
 - Don't tune after every quiet week. Change one setting, re-run the *same*
   stratified backtest, and judge on evidence.
