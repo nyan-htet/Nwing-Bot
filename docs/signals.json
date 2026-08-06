@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T21:34:13.997829+00:00",
+  "generated": "2026-08-06T03:35:45.089341+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 14.5
@@ -9,113 +9,6 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.3% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "NWS",
-      "name": "News Corp (B)",
-      "setup": "breakout",
-      "entry": 33.12,
-      "tp": 37.87,
-      "tp_pct": 0.14341787439613518,
-      "shares": 15.1,
-      "value": 500.11199999999997,
-      "pl_amount": 71.72,
-      "eta_days_low": 12,
-      "eta_days_high": 36,
-      "fee_pct": 0.027884280237016383,
-      "trend_score": 5,
-      "adx": 28.0,
-      "rs": 0.047,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 4,
-      "ema20": 31.47,
-      "ema50": 30.7,
-      "ema200": 30.19,
-      "above_ema200": true,
-      "quality": 0.72,
-      "q_detail": {
-        "rsi": 0.8,
-        "bollinger": 1.0,
-        "vwap": 0.3,
-        "volume": 1.0,
-        "extension": 0.6
-      },
-      "q_notes": {
-        "rsi": "RSI 63.1 rising, BEARISH DIVERGENCE",
-        "bollinger": "band position 92%, expanding",
-        "vwap": "just above VWAP",
-        "volume": "2.0x average, surging",
-        "extension": "+1.9 ATR from 20 EMA, slope +1.4%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 63.1,
-      "options_note": "",
-      "sector": "Unknown",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h breakout",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.72 (rsi +0.8, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=63.1)"
-      ],
-      "time": "2026-08-05T21:34:09.984975+00:00"
-    },
-    {
-      "ticker": "SJM",
-      "name": "J.M. Smucker",
-      "setup": "pullback",
-      "entry": 119.23,
-      "tp": 138.36,
-      "tp_pct": 0.1604461964270738,
-      "shares": 4.19,
-      "value": 499.5737000000001,
-      "pl_amount": 80.15,
-      "eta_days_low": 13,
-      "eta_days_high": 39,
-      "fee_pct": 0.02495174955429936,
-      "trend_score": 5,
-      "adx": 29.6,
-      "rs": 0.183,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 11,
-      "ema20": 117.34,
-      "ema50": 112.86,
-      "ema200": 106.81,
-      "above_ema200": true,
-      "quality": 1.0,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 52.2 flat",
-        "bollinger": "band position 43%, stable",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.5x average, drying up",
-        "extension": "+0.1 ATR from 20 EMA, slope +0.3%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 52.2,
-      "options_note": "",
-      "sector": "Unknown",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=52.2)"
-      ],
-      "time": "2026-08-05T21:34:10.182121+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
