@@ -154,12 +154,33 @@ def log_signals_csv(signals, macro, cyc):
 
 
 def publish(signals, position_msgs, macro, cyc):
+    """Write docs/signals.json only when the CONTENT changed.
+
+    The timestamp alone changes every scan, which would trigger a GitHub Pages
+    rebuild six times a weekday for no reason (and those deploys queue up and
+    time out). Comparing everything except 'generated' means quiet scans make
+    no commit at all.
+    """
     os.makedirs("docs", exist_ok=True)
     payload = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(),
                "macro": macro, "cycles": cyc, "signals": signals,
                "position_alerts": position_msgs}
+
+    def meaningful(d):
+        return json.dumps({k: v for k, v in d.items() if k != "generated"},
+                          sort_keys=True, default=str)
+
+    try:
+        with open(cfg.SIGNALS_FILE) as f:
+            if meaningful(json.load(f)) == meaningful(payload):
+                print("Dashboard unchanged — skipping write (no Pages rebuild)")
+                return
+    except Exception:
+        pass
+
     with open(cfg.SIGNALS_FILE, "w") as f:
         json.dump(payload, f, indent=2, default=str)
+    print("Dashboard data updated")
 
 
 def run_hourly(offline=False):
