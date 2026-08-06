@@ -2,19 +2,19 @@
   "ALL": {
     "alerted": "2026-08-05T14:35:10.682987+00:00",
     "entry": 265.88,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "tp": 297.89
   },
   "BF.B": {
     "alerted": "2026-08-05T12:29:03.056988+00:00",
     "entry": 28.49,
-    "scans_muted": 6,
+    "scans_muted": 7,
     "tp": 33.59
   },
   "BMY": {
     "alerted": "2026-08-05T17:56:17.193993+00:00",
     "entry": 63.91,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "tp": 72.09
   },
   "BSET": {
@@ -32,37 +32,37 @@
   "KO": {
     "alerted": "2026-08-05T12:29:03.392848+00:00",
     "entry": 86.56,
-    "scans_muted": 6,
+    "scans_muted": 7,
     "tp": 95.5
   },
   "MET": {
     "alerted": "2026-08-05T17:56:17.651719+00:00",
     "entry": 96.3,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "tp": 106.09
   },
   "NWS": {
     "alerted": "2026-08-05T21:34:09.985007+00:00",
     "entry": 33.12,
-    "scans_muted": 3,
+    "scans_muted": 4,
     "tp": 37.87
   },
   "PLUS": {
     "alerted": "2026-08-05T17:56:17.808481+00:00",
     "entry": 94.42,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "tp": 104.95
   },
   "SJM": {
     "alerted": "2026-08-05T21:34:10.182150+00:00",
     "entry": 119.23,
-    "scans_muted": 3,
+    "scans_muted": 4,
     "tp": 138.36
   },
   "TRV": {
     "alerted": "2026-08-05T14:35:11.756237+00:00",
     "entry": 384.79,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "tp": 429.71
   },
   "UNP": {
