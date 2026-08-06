@@ -1,0 +1,71 @@
+{
+  "generated": "2026-08-06T23:32:39.989978+00:00",
+  "results": [
+    {
+      "ticker": "GLD",
+      "name": "SPDR Gold",
+      "type": "etf",
+      "sector": "ETF:gold",
+      "gates": [
+        {
+          "gate": "daily trend",
+          "pass": false,
+          "detail": "EMA20 $376.8 vs EMA50 $384.99 \u2192 uptrend False; ADX 21.5 (needs \u226525); RS vs SPY -14.8%; score 0/5; downtrend ~19w; below 200 EMA"
+        }
+      ],
+      "stopped_at": "daily trend",
+      "muted": null,
+      "price": 389.65,
+      "trend": {
+        "uptrend": false,
+        "strong": false,
+        "rs": -0.148,
+        "near_52w_high": false,
+        "higher_highs": false,
+        "adx": 21.5,
+        "score": 0,
+        "regime": "downtrend",
+        "regime_weeks": 19,
+        "ema20": 376.8,
+        "ema50": 384.99,
+        "ema200": 399.07,
+        "above_ema200": false,
+        "runner": false
+      },
+      "why": "No established daily uptrend. After a sharp reversal the 20 EMA needs weeks to cross back above the 50 EMA."
+    },
+    {
+      "ticker": "SOXL",
+      "name": "Direxion Semis Bull 3x",
+      "type": "etf",
+      "sector": "ETF:semiconductors bull 3x",
+      "gates": [
+        {
+          "gate": "daily trend",
+          "pass": false,
+          "detail": "EMA20 $143.02 vs EMA50 $162.02 \u2192 uptrend False; ADX 27.2 (needs \u226525); RS vs SPY -17.9%; score 1/5; downtrend ~3w; above 200 EMA"
+        }
+      ],
+      "stopped_at": "daily trend",
+      "muted": null,
+      "price": 132.46,
+      "trend": {
+        "uptrend": false,
+        "strong": true,
+        "rs": -0.179,
+        "near_52w_high": false,
+        "higher_highs": false,
+        "adx": 27.2,
+        "score": 1,
+        "regime": "downtrend",
+        "regime_weeks": 3,
+        "ema20": 143.02,
+        "ema50": 162.02,
+        "ema200": 117.56,
+        "above_ema200": true,
+        "runner": false
+      },
+      "why": "No established daily uptrend. After a sharp reversal the 20 EMA needs weeks to cross back above the 50 EMA."
+    }
+  ]
+}
