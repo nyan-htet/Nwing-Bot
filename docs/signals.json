@@ -1,14 +1,121 @@
 {
-  "generated": "2026-08-06T14:35:54.817043+00:00",
+  "generated": "2026-08-06T21:39:17.326087+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 14.2
+    "vol": 14.3
   },
   "cycles": {
-    "score": -0.49,
+    "score": -0.5,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.3% (informative only)"
+    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.2% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "FTNT",
+      "name": "Fortinet",
+      "setup": "pullback",
+      "entry": 160.12,
+      "tp": 192.14,
+      "tp_pct": 0.19997501873594792,
+      "shares": 3.12,
+      "value": 499.5744,
+      "pl_amount": 99.9,
+      "eta_days_low": 11,
+      "eta_days_high": 33,
+      "fee_pct": 0.02001953907013246,
+      "trend_score": 5,
+      "adx": 32.6,
+      "rs": 0.433,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 15,
+      "ema20": 158.13,
+      "ema50": 148.13,
+      "ema200": 113.41,
+      "above_ema200": true,
+      "quality": 0.75,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 0.3,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 51.7 falling",
+        "bollinger": "band position 60%, expanding",
+        "vwap": "just above VWAP",
+        "volume": "0.8x average, drying up",
+        "extension": "+0.1 ATR from 20 EMA, slope +3.6%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 51.7,
+      "options_note": "",
+      "sector": "Technology",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.75 (rsi +0.6, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=51.7)"
+      ],
+      "time": "2026-08-06T21:39:13.465882+00:00"
+    },
+    {
+      "ticker": "STE",
+      "name": "Steris",
+      "setup": "pullback",
+      "entry": 231.56,
+      "tp": 267.0,
+      "tp_pct": 0.15304888581793064,
+      "shares": 2.16,
+      "value": 500.16960000000006,
+      "pl_amount": 76.55,
+      "eta_days_low": 12,
+      "eta_days_high": 33,
+      "fee_pct": 0.026126578045313938,
+      "trend_score": 5,
+      "adx": 34.9,
+      "rs": 0.033,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 2,
+      "ema20": 223.61,
+      "ema50": 218.74,
+      "ema200": 228.76,
+      "above_ema200": true,
+      "quality": 0.78,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.2,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 58.8 falling",
+        "bollinger": "band position 63%, expanding",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.5x average, surging",
+        "extension": "+0.6 ATR from 20 EMA, slope +2.5%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 58.8,
+      "options_note": "",
+      "sector": "Healthcare",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.78 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.2, opt +0.0; RSI=58.8)"
+      ],
+      "time": "2026-08-06T21:39:13.959483+00:00"
+    }
+  ],
   "position_alerts": []
 }
