@@ -14,6 +14,7 @@
     "AGYS",
     "AIA",
     "AJG",
+    "ALGN",
     "ALGT",
     "ALK",
     "ALL",
@@ -25,6 +26,7 @@
     "AMGN",
     "AMP",
     "AMPS",
+    "AMT",
     "AMZN",
     "ANET",
     "AON",
@@ -87,9 +89,11 @@
     "CL",
     "CLX",
     "CMA",
+    "CMCSA",
     "CMG",
     "CMI",
     "CNC",
+    "CNXC",
     "CNXN",
     "COF",
     "COLD",
@@ -215,7 +219,6 @@
     "IDCC",
     "IDXX",
     "IEFA",
-    "IEMG",
     "IGF",
     "IHE",
     "IJH",
@@ -225,7 +228,6 @@
     "INFY",
     "ING",
     "INH",
-    "INOD",
     "INTU",
     "IQV",
     "IR",
@@ -234,7 +236,6 @@
     "ITW",
     "IVZ",
     "JBHT",
-    "JBL",
     "JBLU",
     "JCI",
     "JNJ",
@@ -253,15 +254,15 @@
     "LCID",
     "LECO",
     "LH",
-    "LHX",
     "LIN",
     "LIVE",
     "LLY",
     "LMT",
+    "LOGI",
     "LPLA",
     "LRCX",
-    "LSCC",
     "LTC",
+    "LULU",
     "LUV",
     "LW",
     "LYG",
@@ -269,6 +270,7 @@
     "MAA",
     "MAR",
     "MC",
+    "MCD",
     "MCK",
     "MCO",
     "MDLZ",
@@ -292,6 +294,7 @@
     "NANR",
     "NDSN",
     "NEE",
+    "NEM",
     "NET",
     "NHI",
     "NNN",
@@ -311,6 +314,7 @@
     "OHI",
     "OKTA",
     "ORLY",
+    "OUT",
     "PANW",
     "PAR",
     "PATH",
@@ -318,8 +322,6 @@
     "PAYC",
     "PAYX",
     "PCAR",
-    "PDFS",
-    "PEAK",
     "PEG",
     "PFE",
     "PG",
@@ -369,15 +371,14 @@
     "SNA",
     "SNX",
     "SNY",
-    "SOXX",
     "SPG",
     "SPGI",
     "SPR",
     "SPYU",
     "STE",
     "STT",
-    "STX",
     "SWK",
+    "SWKS",
     "SYK",
     "SYY",
     "T",
@@ -415,7 +416,6 @@
     "UNP",
     "UPS",
     "USB",
-    "USO",
     "V",
     "VGT",
     "VIG",
@@ -508,8 +508,44 @@
         "industry": "Software - Infrastructure"
       }
     },
+    "CRSR": {
+      "name": "Corsair Gaming",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Computer Hardware"
+      }
+    },
     "PANW": {
       "name": "Palo Alto Networks",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      }
+    },
+    "CRWD": {
+      "name": "CrowdStrike",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -544,24 +580,6 @@
         "industry": "Computer Hardware"
       }
     },
-    "CRWD": {
-      "name": "CrowdStrike",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
-      }
-    },
     "PAYC": {
       "name": "Paycom",
       "type": "stock",
@@ -580,44 +598,8 @@
         "industry": "Software - Application"
       }
     },
-    "HUM": {
-      "name": "Humana",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Healthcare Plans"
-      }
-    },
-    "ENVA": {
-      "name": "Enova International",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
-      }
-    },
-    "FTNT": {
-      "name": "Fortinet",
+    "NET": {
+      "name": "Cloudflare",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -652,12 +634,12 @@
         "industry": "Medical - Diagnostics & Research"
       }
     },
-    "PRGS": {
-      "name": "Progress Software",
+    "TECH": {
+      "name": "Bio-Techne",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -666,8 +648,26 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Healthcare",
+        "industry": "Biotechnology"
+      }
+    },
+    "ENVA": {
+      "name": "Enova International",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Credit Services"
       }
     },
     "BSET": {
@@ -690,8 +690,26 @@
         "industry": "Furnishings, Fixtures & Appliances"
       }
     },
-    "TECH": {
-      "name": "Bio-Techne",
+    "PRGS": {
+      "name": "Progress Software",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      }
+    },
+    "HUM": {
+      "name": "Humana",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -705,15 +723,15 @@
         "pass": true,
         "notes": [],
         "sector": "Healthcare",
-        "industry": "Biotechnology"
+        "industry": "Medical - Healthcare Plans"
       }
     },
-    "BBY": {
-      "name": "Best Buy",
+    "FTNT": {
+      "name": "Fortinet",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Consumer",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -722,19 +740,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Specialty Retail"
-      }
-    },
-    "FAS": {
-      "name": "Direxion Financial Bull 3x",
-      "type": "etf",
-      "leverage": 3,
-      "inverse": false,
-      "sector": "ETF:financials bull 3x",
-      "note": "financials bull 3x",
-      "options": {
-        "liquid": false
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
       }
     },
     "DXCM": {
@@ -753,42 +760,6 @@
         "notes": [],
         "sector": "Healthcare",
         "industry": "Medical - Devices"
-      }
-    },
-    "ANET": {
-      "name": "Arista Networks",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Computer Hardware"
-      }
-    },
-    "WSM": {
-      "name": "Williams-Sonoma",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Specialty Retail"
       }
     },
     "DLTR": {
@@ -827,8 +798,91 @@
         "industry": "Medical - Devices"
       }
     },
-    "CNXN": {
-      "name": "PC Connection (Connection Inc)",
+    "WSM": {
+      "name": "Williams-Sonoma",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Specialty Retail"
+      }
+    },
+    "BBY": {
+      "name": "Best Buy",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Specialty Retail"
+      }
+    },
+    "FAS": {
+      "name": "Direxion Financial Bull 3x",
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "sector": "ETF:financials bull 3x",
+      "note": "financials bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "EXPE": {
+      "name": "Expedia",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Travel Services"
+      }
+    },
+    "IQV": {
+      "name": "IQVIA",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Medical - Diagnostics & Research"
+      }
+    },
+    "ANET": {
+      "name": "Arista Networks",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -842,7 +896,7 @@
         "pass": true,
         "notes": [],
         "sector": "Technology",
-        "industry": "Technology Distributors"
+        "industry": "Computer Hardware"
       }
     },
     "DFEN": {
@@ -856,22 +910,76 @@
         "liquid": false
       }
     },
-    "CSCO": {
-      "name": "Cisco",
+    "HMC": {
+      "name": "Honda",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
       },
-      "earnings_soon": true,
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Auto - Manufacturers"
+      }
+    },
+    "GRMN": {
+      "name": "Garmin",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
       "screen": {
         "pass": true,
         "notes": [],
         "sector": "Technology",
-        "industry": "Communication Equipment"
+        "industry": "Hardware, Equipment & Parts"
+      }
+    },
+    "GPC": {
+      "name": "Genuine Parts",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Specialty Retail"
+      }
+    },
+    "BKNG": {
+      "name": "Booking Holdings",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Travel Services"
       }
     },
     "S": {
@@ -892,8 +1000,134 @@
         "industry": "Software - Infrastructure"
       }
     },
-    "IQV": {
-      "name": "IQVIA",
+    "TRV": {
+      "name": "Travelers",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Insurance - Property & Casualty"
+      }
+    },
+    "SWK": {
+      "name": "Stanley Black & Decker",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Manufacturing - Tools & Accessories"
+      }
+    },
+    "PRLB": {
+      "name": "Proto Labs",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Manufacturing - Miscellaneous"
+      }
+    },
+    "TMO": {
+      "name": "Thermo Fisher",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Medical - Diagnostics & Research"
+      }
+    },
+    "MMM": {
+      "name": "3M",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Conglomerates"
+      }
+    },
+    "BBVA": {
+      "name": "BBVA",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      }
+    },
+    "MTD": {
+      "name": "Mettler-Toledo",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Medical - Diagnostics & Research"
+      }
+    },
+    "DGX": {
+      "name": "Quest Diagnostics",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -928,30 +1162,12 @@
         "industry": "Airlines, Airports & Air Services"
       }
     },
-    "TRV": {
-      "name": "Travelers",
+    "RTX": {
+      "name": "RTX Corp",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Property & Casualty"
-      }
-    },
-    "PRLB": {
-      "name": "Proto Labs",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -961,61 +1177,7 @@
         "pass": true,
         "notes": [],
         "sector": "Industrials",
-        "industry": "Manufacturing - Miscellaneous"
-      }
-    },
-    "ALL": {
-      "name": "Allstate",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Property & Casualty"
-      }
-    },
-    "BBVA": {
-      "name": "BBVA",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
-      }
-    },
-    "HMC": {
-      "name": "Honda",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Auto - Manufacturers"
+        "industry": "Aerospace & Defense"
       }
     },
     "CYBR": {
@@ -1036,12 +1198,12 @@
         "industry": "Software - Infrastructure"
       }
     },
-    "COR": {
-      "name": "Cencora",
+    "CNXN": {
+      "name": "PC Connection (Connection Inc)",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Healthcare",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1050,80 +1212,26 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Distribution"
+        "sector": "Technology",
+        "industry": "Technology Distributors"
       }
     },
-    "MET": {
-      "name": "MetLife",
+    "CSCO": {
+      "name": "Cisco",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
       },
-      "earnings_soon": false,
+      "earnings_soon": true,
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Life"
-      }
-    },
-    "RTX": {
-      "name": "RTX Corp",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
-      }
-    },
-    "SWK": {
-      "name": "Stanley Black & Decker",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Manufacturing - Tools & Accessories"
-      }
-    },
-    "MMM": {
-      "name": "3M",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Conglomerates"
+        "sector": "Technology",
+        "industry": "Communication Equipment"
       }
     },
     "HEI": {
@@ -1144,26 +1252,8 @@
         "industry": "Aerospace & Defense"
       }
     },
-    "GPN": {
-      "name": "Global Payments",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Credit Services"
-      }
-    },
-    "DGX": {
-      "name": "Quest Diagnostics",
+    "LH": {
+      "name": "Labcorp",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -1180,44 +1270,8 @@
         "industry": "Medical - Diagnostics & Research"
       }
     },
-    "GRMN": {
-      "name": "Garmin",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Hardware, Equipment & Parts"
-      }
-    },
-    "MNST": {
-      "name": "Monster Beverage",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Beverages - Non-Alcoholic"
-      }
-    },
-    "NWG": {
-      "name": "NatWest",
+    "MET": {
+      "name": "MetLife",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -1231,7 +1285,43 @@
         "pass": true,
         "notes": [],
         "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "industry": "Insurance - Life"
+      }
+    },
+    "ALL": {
+      "name": "Allstate",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Insurance - Property & Casualty"
+      }
+    },
+    "GPN": {
+      "name": "Global Payments",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Credit Services"
       }
     },
     "GE": {
@@ -1252,24 +1342,6 @@
         "industry": "Aerospace & Defense"
       }
     },
-    "MPC": {
-      "name": "Marathon Petroleum",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Energy",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Energy",
-        "industry": "Oil & Gas Refining & Marketing"
-      }
-    },
     "AMGN": {
       "name": "Amgen",
       "type": "stock",
@@ -1286,312 +1358,6 @@
         "notes": [],
         "sector": "Healthcare",
         "industry": "Drug Manufacturers - General"
-      }
-    },
-    "LH": {
-      "name": "Labcorp",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
-      }
-    },
-    "TMO": {
-      "name": "Thermo Fisher",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
-      }
-    },
-    "PRU": {
-      "name": "Prudential",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Insurance - Life"
-      }
-    },
-    "AMP": {
-      "name": "Ameriprise",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
-      }
-    },
-    "EXPE": {
-      "name": "Expedia",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Travel Services"
-      }
-    },
-    "DT": {
-      "name": "Dynatrace",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Application"
-      }
-    },
-    "BKNG": {
-      "name": "Booking Holdings",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Travel Services"
-      }
-    },
-    "PH": {
-      "name": "Parker Hannifin",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
-      }
-    },
-    "JBLU": {
-      "name": "JetBlue",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services"
-      }
-    },
-    "ABBV": {
-      "name": "AbbVie",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
-      }
-    },
-    "SCHW": {
-      "name": "Charles Schwab",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Capital Markets"
-      }
-    },
-    "SAN": {
-      "name": "Banco Santander",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
-      }
-    },
-    "XRAY": {
-      "name": "Dentsply Sirona",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Instruments & Supplies"
-      }
-    },
-    "ING": {
-      "name": "ING Group",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
-      }
-    },
-    "AVT": {
-      "name": "Avnet",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Technology Distributors"
-      }
-    },
-    "DB": {
-      "name": "Deutsche Bank",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Regional"
-      }
-    },
-    "SJM": {
-      "name": "J.M. Smucker",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Consumer Defensive",
-        "industry": "Packaged Foods"
       }
     },
     "BAC": {
@@ -1612,6 +1378,78 @@
         "industry": "Banks - Diversified"
       }
     },
+    "PH": {
+      "name": "Parker Hannifin",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Industrial - Machinery"
+      }
+    },
+    "ABBV": {
+      "name": "AbbVie",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - General"
+      }
+    },
+    "MPC": {
+      "name": "Marathon Petroleum",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Energy",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Energy",
+        "industry": "Oil & Gas Refining & Marketing"
+      }
+    },
+    "MSI": {
+      "name": "Motorola Solutions",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Communication Equipment"
+      }
+    },
     "CTAS": {
       "name": "Cintas",
       "type": "stock",
@@ -1628,6 +1466,42 @@
         "notes": [],
         "sector": "Industrials",
         "industry": "Specialty Business Services"
+      }
+    },
+    "SCHW": {
+      "name": "Charles Schwab",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Capital Markets"
+      }
+    },
+    "NWG": {
+      "name": "NatWest",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
       }
     },
     "MSFT": {
@@ -1648,8 +1522,8 @@
         "industry": "Software - Infrastructure"
       }
     },
-    "IVZ": {
-      "name": "Invesco",
+    "PRU": {
+      "name": "Prudential",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -1663,15 +1537,15 @@
         "pass": true,
         "notes": [],
         "sector": "Financial Services",
-        "industry": "Asset Management"
+        "industry": "Insurance - Life"
       }
     },
-    "EXPD": {
-      "name": "Expeditors",
+    "DT": {
+      "name": "Dynatrace",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1680,8 +1554,26 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Integrated Freight & Logistics"
+        "sector": "Technology",
+        "industry": "Software - Application"
+      }
+    },
+    "SAN": {
+      "name": "Banco Santander",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
       }
     },
     "TGT": {
@@ -1702,78 +1594,6 @@
         "industry": "Discount Stores"
       }
     },
-    "BK": {
-      "name": "BNY Mellon",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Investment - Banking & Investment Services"
-      }
-    },
-    "RJF": {
-      "name": "Raymond James",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Financial - Capital Markets"
-      }
-    },
-    "CNC": {
-      "name": "Centene",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Healthcare Plans"
-      }
-    },
-    "ZBH": {
-      "name": "Zimmer Biomet",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Devices"
-      }
-    },
     "LPLA": {
       "name": "LPL Financial",
       "type": "stock",
@@ -1792,8 +1612,8 @@
         "industry": "Financial - Capital Markets"
       }
     },
-    "PCAR": {
-      "name": "PACCAR",
+    "JBLU": {
+      "name": "JetBlue",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -1807,29 +1627,11 @@
         "pass": true,
         "notes": [],
         "sector": "Industrials",
-        "industry": "Industrial - Machinery"
+        "industry": "Airlines, Airports & Air Services"
       }
     },
-    "BXP": {
-      "name": "BXP Inc",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Office"
-      }
-    },
-    "MMC": {
-      "name": "Marsh McLennan",
+    "DB": {
+      "name": "Deutsche Bank",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -1843,7 +1645,43 @@
         "pass": true,
         "notes": [],
         "sector": "Financial Services",
-        "industry": "Insurance - Brokers"
+        "industry": "Banks - Regional"
+      }
+    },
+    "AMP": {
+      "name": "Ameriprise",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Asset Management"
+      }
+    },
+    "ING": {
+      "name": "ING Group",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
       }
     },
     "MCK": {
@@ -1864,12 +1702,12 @@
         "industry": "Medical - Distribution"
       }
     },
-    "USB": {
-      "name": "U.S. Bancorp",
+    "AVT": {
+      "name": "Avnet",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -1878,8 +1716,116 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
+        "sector": "Technology",
+        "industry": "Technology Distributors"
+      }
+    },
+    "CNC": {
+      "name": "Centene",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Medical - Healthcare Plans"
+      }
+    },
+    "FAST": {
+      "name": "Fastenal",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Industrial - Distribution"
+      }
+    },
+    "BXP": {
+      "name": "BXP Inc",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Real Estate",
+        "industry": "REIT - Office"
+      }
+    },
+    "ZBH": {
+      "name": "Zimmer Biomet",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Medical - Devices"
+      }
+    },
+    "SHW": {
+      "name": "Sherwin-Williams",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Materials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Basic Materials",
+        "industry": "Chemicals - Specialty"
+      }
+    },
+    "PCAR": {
+      "name": "PACCAR",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Industrial - Machinery"
       }
     },
     "ITW": {
@@ -1900,6 +1846,60 @@
         "industry": "Industrial - Machinery"
       }
     },
+    "MMC": {
+      "name": "Marsh McLennan",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Insurance - Brokers"
+      }
+    },
+    "BMY": {
+      "name": "Bristol-Myers Squibb",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - General"
+      }
+    },
+    "IBEX": {
+      "name": "IBEX Limited",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Information Technology Services"
+      }
+    },
     "HSBC": {
       "name": "HSBC",
       "type": "stock",
@@ -1918,6 +1918,114 @@
         "industry": "Banks - Diversified"
       }
     },
+    "IR": {
+      "name": "Ingersoll Rand",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Industrial - Machinery"
+      }
+    },
+    "WAT": {
+      "name": "Waters Corp",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Medical - Diagnostics & Research"
+      }
+    },
+    "STE": {
+      "name": "Steris",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Healthcare",
+        "industry": "Medical - Specialties"
+      }
+    },
+    "IVZ": {
+      "name": "Invesco",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Asset Management"
+      }
+    },
+    "RJF": {
+      "name": "Raymond James",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Financial - Capital Markets"
+      }
+    },
+    "EXPD": {
+      "name": "Expeditors",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Integrated Freight & Logistics"
+      }
+    },
     "MA": {
       "name": "Mastercard",
       "type": "stock",
@@ -1934,24 +2042,6 @@
         "notes": [],
         "sector": "Financial Services",
         "industry": "Financial - Credit Services"
-      }
-    },
-    "FAST": {
-      "name": "Fastenal",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Distribution"
       }
     },
     "IMMR": {
@@ -1974,44 +2064,8 @@
         "industry": "Software - Application"
       }
     },
-    "BMY": {
-      "name": "Bristol-Myers Squibb",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
-      }
-    },
-    "IR": {
-      "name": "Ingersoll Rand",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Industrial - Machinery"
-      }
-    },
-    "SHW": {
-      "name": "Sherwin-Williams",
+    "ECL": {
+      "name": "Ecolab",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -2026,89 +2080,6 @@
         "notes": [],
         "sector": "Basic Materials",
         "industry": "Chemicals - Specialty"
-      }
-    },
-    "IBEX": {
-      "name": "IBEX Limited",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Information Technology Services"
-      }
-    },
-    "ZION": {
-      "name": "Zions Bancorp",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Banks - Regional"
-      }
-    },
-    "ETN": {
-      "name": "Eaton",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Industrials",
-        "industry": "Electrical Equipment & Parts"
-      }
-    },
-    "SPYU": {
-      "name": "MAX S&P500 4x",
-      "type": "etf",
-      "leverage": 4,
-      "inverse": false,
-      "sector": "ETF:S&P500 bull 4x",
-      "note": "S&P500 bull 4x",
-      "options": {
-        "liquid": false
-      }
-    },
-    "BEN": {
-      "name": "Franklin Resources",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
       }
     },
     "EMR": {
@@ -2129,8 +2100,8 @@
         "industry": "Industrial - Machinery"
       }
     },
-    "JCI": {
-      "name": "Johnson Controls",
+    "ETN": {
+      "name": "Eaton",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -2143,16 +2114,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Basic Materials",
-        "industry": "Construction Materials"
+        "sector": "Industrials",
+        "industry": "Electrical Equipment & Parts"
       }
     },
-    "WELL": {
-      "name": "Welltower",
+    "TDY": {
+      "name": "Teledyne",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -2161,8 +2132,19 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
+        "sector": "Technology",
+        "industry": "Hardware, Equipment & Parts"
+      }
+    },
+    "SPYU": {
+      "name": "MAX S&P500 4x",
+      "type": "etf",
+      "leverage": 4,
+      "inverse": false,
+      "sector": "ETF:S&P500 bull 4x",
+      "note": "S&P500 bull 4x",
+      "options": {
+        "liquid": false
       }
     },
     "GM": {
@@ -2183,24 +2165,6 @@
         "industry": "Auto - Manufacturers"
       }
     },
-    "NET": {
-      "name": "Cloudflare",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
-      }
-    },
     "KO": {
       "name": "Coca-Cola",
       "type": "stock",
@@ -2219,12 +2183,12 @@
         "industry": "Beverages - Non-Alcoholic"
       }
     },
-    "ECL": {
-      "name": "Ecolab",
+    "WELL": {
+      "name": "Welltower",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Materials",
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -2233,16 +2197,16 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Basic Materials",
-        "industry": "Chemicals - Specialty"
+        "sector": "Real Estate",
+        "industry": "REIT - Healthcare Facilities"
       }
     },
-    "BRK.B": {
-      "name": "Berkshire Hathaway",
+    "SPG": {
+      "name": "Simon Property",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -2251,8 +2215,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
+        "sector": "Real Estate",
+        "industry": "REIT - Retail"
       }
     },
     "CRAK": {
@@ -2264,96 +2228,6 @@
       "note": "refiners",
       "options": {
         "liquid": false
-      }
-    },
-    "NWSA": {
-      "name": "News Corp (A)",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Communication",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Communication Services",
-        "industry": "Publishing"
-      }
-    },
-    "NWS": {
-      "name": "News Corp (B)",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Communication",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Communication Services",
-        "industry": "Publishing"
-      }
-    },
-    "SF": {
-      "name": "Stifel",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Investment - Banking & Investment Services"
-      }
-    },
-    "MSI": {
-      "name": "Motorola Solutions",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Communication Equipment"
-      }
-    },
-    "TDY": {
-      "name": "Teledyne",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Technology",
-        "industry": "Hardware, Equipment & Parts"
       }
     },
     "REGN": {
@@ -2392,12 +2266,12 @@
         "industry": "Industrial - Machinery"
       }
     },
-    "AAPL": {
-      "name": "Apple",
+    "BRK.B": {
+      "name": "Berkshire Hathaway",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -2406,30 +2280,12 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Consumer Electronics"
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
-    "STE": {
-      "name": "Steris",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Specialties"
-      }
-    },
-    "BALL": {
-      "name": "Ball Corp",
+    "JCI": {
+      "name": "Johnson Controls",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -2442,44 +2298,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Consumer Cyclical",
-        "industry": "Packaging & Containers"
-      }
-    },
-    "MTD": {
-      "name": "Mettler-Toledo",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Healthcare",
-        "industry": "Medical - Diagnostics & Research"
-      }
-    },
-    "WY": {
-      "name": "Weyerhaeuser",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Specialty"
+        "sector": "Basic Materials",
+        "industry": "Construction Materials"
       }
     },
     "DOC": {
@@ -2500,8 +2320,26 @@
         "industry": "REIT - Healthcare Facilities"
       }
     },
-    "HBAN": {
-      "name": "Huntington Bancshares",
+    "WY": {
+      "name": "Weyerhaeuser",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Real Estate",
+        "industry": "REIT - Specialty"
+      }
+    },
+    "SF": {
+      "name": "Stifel",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -2515,15 +2353,15 @@
         "pass": true,
         "notes": [],
         "sector": "Financial Services",
-        "industry": "Banks - Regional"
+        "industry": "Investment - Banking & Investment Services"
       }
     },
-    "SCWX": {
-      "name": "SecureWorks",
+    "BEN": {
+      "name": "Franklin Resources",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -2532,8 +2370,37 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Technology",
-        "industry": "Software - Infrastructure"
+        "sector": "Financial Services",
+        "industry": "Asset Management"
+      }
+    },
+    "BALL": {
+      "name": "Ball Corp",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Consumer Cyclical",
+        "industry": "Packaging & Containers"
+      }
+    },
+    "VIG": {
+      "name": "Vanguard Dividend Appreciation",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:dividend",
+      "note": "dividend",
+      "options": {
+        "liquid": false
       }
     },
     "VTR": {
@@ -2554,12 +2421,12 @@
         "industry": "REIT - Healthcare Facilities"
       }
     },
-    "ERJ": {
-      "name": "Embraer",
+    "AAPL": {
+      "name": "Apple",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -2568,80 +2435,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
-      }
-    },
-    "BLK": {
-      "name": "BlackRock",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Financial Services",
-        "industry": "Asset Management"
-      }
-    },
-    "XOM": {
-      "name": "Exxon Mobil",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Energy",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Energy",
-        "industry": "Oil & Gas Integrated"
-      }
-    },
-    "OHI": {
-      "name": "Omega Healthcare",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Healthcare Facilities"
-      }
-    },
-    "NNN": {
-      "name": "NNN REIT",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Real Estate",
-        "industry": "REIT - Retail"
+        "sector": "Technology",
+        "industry": "Consumer Electronics"
       }
     },
     "BIP": {
@@ -2662,19 +2457,26 @@
         "industry": "Diversified Utilities"
       }
     },
-    "VTI": {
-      "name": "Vanguard Total US Market",
-      "type": "etf",
+    "ERJ": {
+      "name": "Embraer",
+      "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "ETF:us-total",
-      "note": "us-total",
+      "sector": "Industrials",
+      "note": "",
       "options": {
         "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Industrials",
+        "industry": "Aerospace & Defense"
       }
     },
-    "DELL": {
-      "name": "Dell Technologies",
+    "SCWX": {
+      "name": "SecureWorks",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -2688,7 +2490,83 @@
         "pass": true,
         "notes": [],
         "sector": "Technology",
-        "industry": "Computer Hardware"
+        "industry": "Software - Infrastructure"
+      }
+    },
+    "XOM": {
+      "name": "Exxon Mobil",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Energy",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Energy",
+        "industry": "Oil & Gas Integrated"
+      }
+    },
+    "NWSA": {
+      "name": "News Corp (A)",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Communication",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Communication Services",
+        "industry": "Publishing"
+      }
+    },
+    "VTI": {
+      "name": "Vanguard Total US Market",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:us-total",
+      "note": "us-total",
+      "options": {
+        "liquid": false
+      }
+    },
+    "KEY": {
+      "name": "KeyCorp",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Financial Services",
+        "industry": "Banks - Regional"
+      }
+    },
+    "IJH": {
+      "name": "iShares Core S&P Mid-Cap",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:us-midcap",
+      "note": "us-midcap",
+      "options": {
+        "liquid": false
       }
     },
     "OKTA": {
@@ -2709,6 +2587,24 @@
         "industry": "Software - Infrastructure"
       }
     },
+    "DELL": {
+      "name": "Dell Technologies",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Computer Hardware"
+      }
+    },
     "TENB": {
       "name": "Tenable",
       "type": "stock",
@@ -2727,8 +2623,8 @@
         "industry": "Software - Infrastructure"
       }
     },
-    "CRSR": {
-      "name": "Corsair Gaming",
+    "TEAM": {
+      "name": "Atlassian",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -2742,7 +2638,25 @@
         "pass": true,
         "notes": [],
         "sector": "Technology",
-        "industry": "Computer Hardware"
+        "industry": "Software - Application"
+      }
+    },
+    "APPN": {
+      "name": "Appian Corporation",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
       }
     },
     "VRNS": {
@@ -2759,8 +2673,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
       }
     },
     "RH": {
@@ -2777,8 +2691,73 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
+        "sector": "Consumer Cyclical",
+        "industry": "Specialty Retail"
+      }
+    },
+    "ARKG": {
+      "name": "ARK Genomic Revolution",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:genomics",
+      "note": "genomics",
+      "options": {
+        "liquid": false
+      }
+    },
+    "ASAN": {
+      "name": "Asana",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Application"
+      }
+    },
+    "PATH": {
+      "name": "UiPath",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      }
+    },
+    "NOW": {
+      "name": "ServiceNow",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Technology",
+        "industry": "Software - Application"
       }
     },
     "ILMN": {
@@ -2795,19 +2774,8 @@
       "screen": {
         "pass": true,
         "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "ARKG": {
-      "name": "ARK Genomic Revolution",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:genomics",
-      "note": "genomics",
-      "options": {
-        "liquid": false
+        "sector": "Healthcare",
+        "industry": "Medical - Diagnostics & Research"
       }
     },
     "UAL": {
@@ -2846,142 +2814,12 @@
         "industry": "Unknown"
       }
     },
-    "VLO": {
-      "name": "Valero Energy",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Energy",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PATH": {
-      "name": "UiPath",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "APPN": {
-      "name": "Appian Corporation",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "PAYX": {
       "name": "Paychex",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "DPST": {
-      "name": "Direxion Regional Banks Bull 3x",
-      "type": "etf",
-      "leverage": 3,
-      "inverse": false,
-      "sector": "ETF:regional banks bull 3x",
-      "note": "regional banks bull 3x",
-      "options": {
-        "liquid": false
-      }
-    },
-    "DAL": {
-      "name": "Delta Air Lines",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "AMG": {
-      "name": "Affiliated Managers Group",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "COLO": {
-      "name": "Global X Data Center & Digital Infra",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:data-centers",
-      "note": "data-centers",
-      "options": {
-        "liquid": false
-      }
-    },
-    "STT": {
-      "name": "State Street",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -3012,156 +2850,12 @@
         "industry": "Unknown"
       }
     },
-    "TASK": {
-      "name": "TaskUs",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "BRO": {
       "name": "Brown & Brown",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "LLY": {
-      "name": "Eli Lilly",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "AAL": {
-      "name": "American Airlines",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "INCY": {
-      "name": "Incyte",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "BCS": {
-      "name": "Barclays",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "RACE": {
-      "name": "Ferrari",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "COO": {
-      "name": "Cooper Companies",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "TEAM": {
-      "name": "Atlassian",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -3192,8 +2886,120 @@
         "industry": "Unknown"
       }
     },
-    "UBS": {
-      "name": "UBS",
+    "COLO": {
+      "name": "Global X Data Center & Digital Infra",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:data-centers",
+      "note": "data-centers",
+      "options": {
+        "liquid": false
+      }
+    },
+    "DPST": {
+      "name": "Direxion Regional Banks Bull 3x",
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "sector": "ETF:regional banks bull 3x",
+      "note": "regional banks bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "LLY": {
+      "name": "Eli Lilly",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "PLTR": {
+      "name": "Palantir",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "DAL": {
+      "name": "Delta Air Lines",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "COO": {
+      "name": "Cooper Companies",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "VLO": {
+      "name": "Valero Energy",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Energy",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "STT": {
+      "name": "State Street",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3228,120 +3034,8 @@
         "industry": "Unknown"
       }
     },
-    "IT": {
-      "name": "Gartner",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "LYG": {
-      "name": "Lloyds Banking",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "ARW": {
-      "name": "Arrow Electronics",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "JPM": {
-      "name": "JPMorgan Chase",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "SYY": {
-      "name": "Sysco",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "XBI": {
-      "name": "SPDR S&P Biotech",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:biotech",
-      "note": "biotech",
-      "options": {
-        "liquid": false
-      }
-    },
-    "IHE": {
-      "name": "iShares US Pharmaceuticals",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:pharma",
-      "note": "pharma",
-      "options": {
-        "liquid": false
-      }
-    },
-    "JNJ": {
-      "name": "Johnson & Johnson",
+    "COR": {
+      "name": "Cencora",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3358,8 +3052,26 @@
         "industry": "Unknown"
       }
     },
-    "V": {
-      "name": "Visa",
+    "INCY": {
+      "name": "Incyte",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CS": {
+      "name": "Credit Suisse Group (acquired by UBS, 2023)",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3376,8 +3088,8 @@
         "industry": "Unknown"
       }
     },
-    "PNC": {
-      "name": "PNC Financial",
+    "AMG": {
+      "name": "Affiliated Managers Group",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3394,8 +3106,8 @@
         "industry": "Unknown"
       }
     },
-    "NTRS": {
-      "name": "Northern Trust",
+    "BK": {
+      "name": "BNY Mellon",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3412,8 +3124,44 @@
         "industry": "Unknown"
       }
     },
-    "AON": {
-      "name": "Aon",
+    "RACE": {
+      "name": "Ferrari",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "SJM": {
+      "name": "J.M. Smucker",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "UBS": {
+      "name": "UBS",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3448,26 +3196,8 @@
         "industry": "Unknown"
       }
     },
-    "GEHC": {
-      "name": "GE HealthCare",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "FITB": {
-      "name": "Fifth Third",
+    "JPM": {
+      "name": "JPMorgan Chase",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3484,199 +3214,8 @@
         "industry": "Unknown"
       }
     },
-    "CLX": {
-      "name": "Clorox",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "MRK": {
-      "name": "Merck",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "COF": {
-      "name": "Capital One",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "WAT": {
-      "name": "Waters Corp",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "CSX": {
-      "name": "CSX Corp",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PLTR": {
-      "name": "Palantir",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "LMT": {
-      "name": "Lockheed Martin",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "LUV": {
-      "name": "Southwest Airlines",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "TNA": {
-      "name": "Direxion Small Cap Bull 3x",
-      "type": "etf",
-      "leverage": 3,
-      "inverse": false,
-      "sector": "ETF:small caps bull 3x",
-      "note": "small caps bull 3x",
-      "options": {
-        "liquid": false
-      }
-    },
-    "AMBA": {
-      "name": "Ambarella",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PJT": {
-      "name": "PJT Partners",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "CFG": {
-      "name": "Citizens Financial",
+    "BCS": {
+      "name": "Barclays",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3711,8 +3250,66 @@
         "industry": "Unknown"
       }
     },
-    "RF": {
-      "name": "Regions Financial",
+    "JNJ": {
+      "name": "Johnson & Johnson",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "IHE": {
+      "name": "iShares US Pharmaceuticals",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:pharma",
+      "note": "pharma",
+      "options": {
+        "liquid": false
+      }
+    },
+    "IT": {
+      "name": "Gartner",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "XBI": {
+      "name": "SPDR S&P Biotech",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:biotech",
+      "note": "biotech",
+      "options": {
+        "liquid": false
+      }
+    },
+    "PNC": {
+      "name": "PNC Financial",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3729,8 +3326,44 @@
         "industry": "Unknown"
       }
     },
-    "MS": {
-      "name": "Morgan Stanley",
+    "SYY": {
+      "name": "Sysco",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "LMT": {
+      "name": "Lockheed Martin",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "NTRS": {
+      "name": "Northern Trust",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3747,12 +3380,12 @@
         "industry": "Unknown"
       }
     },
-    "SNA": {
-      "name": "Snap-on",
+    "FITB": {
+      "name": "Fifth Third",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -3765,30 +3398,12 @@
         "industry": "Unknown"
       }
     },
-    "UNP": {
-      "name": "Union Pacific",
+    "LYG": {
+      "name": "Lloyds Banking",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "SNX": {
-      "name": "TD Synnex",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -3819,48 +3434,12 @@
         "industry": "Unknown"
       }
     },
-    "GD": {
-      "name": "General Dynamics",
+    "MRK": {
+      "name": "Merck",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "DEO": {
-      "name": "Diageo",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "CTS": {
-      "name": "CTS Corporation",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -3891,8 +3470,289 @@
         "industry": "Unknown"
       }
     },
+    "USB": {
+      "name": "U.S. Bancorp",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "DXC": {
+      "name": "DXC Technology",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "COF": {
+      "name": "Capital One",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "TNA": {
+      "name": "Direxion Small Cap Bull 3x",
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "sector": "ETF:small caps bull 3x",
+      "note": "small caps bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "AON": {
+      "name": "Aon",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "DEO": {
+      "name": "Diageo",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CLX": {
+      "name": "Clorox",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CFG": {
+      "name": "Citizens Financial",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "LUV": {
+      "name": "Southwest Airlines",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "V": {
+      "name": "Visa",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "RF": {
+      "name": "Regions Financial",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "AMBA": {
+      "name": "Ambarella",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
     "HLNE": {
       "name": "Hamilton Lane",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "TASK": {
+      "name": "TaskUs",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "GEHC": {
+      "name": "GE HealthCare",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "GD": {
+      "name": "General Dynamics",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "ZION": {
+      "name": "Zions Bancorp",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3927,44 +3787,8 @@
         "industry": "Unknown"
       }
     },
-    "JBHT": {
-      "name": "J.B. Hunt",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "SPG": {
-      "name": "Simon Property",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "CVS": {
-      "name": "CVS Health",
+    "EW": {
+      "name": "Edwards Lifesciences",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -3981,12 +3805,12 @@
         "industry": "Unknown"
       }
     },
-    "CB": {
-      "name": "Chubb",
+    "CSX": {
+      "name": "CSX Corp",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -3999,44 +3823,8 @@
         "industry": "Unknown"
       }
     },
-    "CHD": {
-      "name": "Church & Dwight",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PM": {
-      "name": "Philip Morris",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "TROW": {
-      "name": "T. Rowe Price",
+    "MS": {
+      "name": "Morgan Stanley",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -4071,8 +3859,8 @@
         "industry": "Unknown"
       }
     },
-    "FELE": {
-      "name": "Franklin Electric",
+    "SNA": {
+      "name": "Snap-on",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -4089,23 +3877,12 @@
         "industry": "Unknown"
       }
     },
-    "VGT": {
-      "name": "Vanguard Information Technology",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:us-tech",
-      "note": "us-tech",
-      "options": {
-        "liquid": false
-      }
-    },
-    "UNH": {
-      "name": "UnitedHealth",
+    "GS": {
+      "name": "Goldman Sachs",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Healthcare",
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -4118,12 +3895,12 @@
         "industry": "Unknown"
       }
     },
-    "NSC": {
-      "name": "Norfolk Southern",
+    "PM": {
+      "name": "Philip Morris",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -4154,8 +3931,26 @@
         "industry": "Unknown"
       }
     },
-    "HIG": {
-      "name": "Hartford Financial",
+    "UNP": {
+      "name": "Union Pacific",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "PJT": {
+      "name": "PJT Partners",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -4172,12 +3967,12 @@
         "industry": "Unknown"
       }
     },
-    "BAM": {
-      "name": "Brookfield Asset Mgmt",
+    "CHD": {
+      "name": "Church & Dwight",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -4190,15 +3985,40 @@
         "industry": "Unknown"
       }
     },
-    "VTV": {
-      "name": "Vanguard Value",
-      "type": "etf",
+    "FELE": {
+      "name": "Franklin Electric",
+      "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "ETF:us-value",
-      "note": "us-value",
+      "sector": "Industrials",
+      "note": "",
       "options": {
         "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "DSP": {
+      "name": "Viant Technology",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "SGLY": {
@@ -4219,12 +4039,84 @@
         "industry": "Unknown"
       }
     },
-    "WST": {
-      "name": "West Pharmaceutical",
+    "CB": {
+      "name": "Chubb",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Healthcare",
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "QRVO": {
+      "name": "Qorvo",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "JBHT": {
+      "name": "J.B. Hunt",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "ESS": {
+      "name": "Essex Property",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "HBAN": {
+      "name": "Huntington Bancshares",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -4255,12 +4147,124 @@
         "industry": "Unknown"
       }
     },
-    "EW": {
-      "name": "Edwards Lifesciences",
+    "KRC": {
+      "name": "Kilroy Realty",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "WST": {
+      "name": "West Pharmaceutical",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "HIG": {
+      "name": "Hartford Financial",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "VTV": {
+      "name": "Vanguard Value",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:us-value",
+      "note": "us-value",
+      "options": {
+        "liquid": false
+      }
+    },
+    "TROW": {
+      "name": "T. Rowe Price",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "AWK": {
+      "name": "American Water Works",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Utilities",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "VGT": {
+      "name": "Vanguard Information Technology",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:us-tech",
+      "note": "us-tech",
+      "options": {
+        "liquid": false
+      }
+    },
+    "DE": {
+      "name": "Deere",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -4291,12 +4295,12 @@
         "industry": "Unknown"
       }
     },
-    "FUJHY": {
-      "name": "Subaru Corp (ADR)",
+    "CTS": {
+      "name": "CTS Corporation",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Other",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -4309,37 +4313,8 @@
         "industry": "Unknown"
       }
     },
-    "VIG": {
-      "name": "Vanguard Dividend Appreciation",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:dividend",
-      "note": "dividend",
-      "options": {
-        "liquid": false
-      }
-    },
-    "AWK": {
-      "name": "American Water Works",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Utilities",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "HWM": {
-      "name": "Howmet Aerospace",
+    "NSC": {
+      "name": "Norfolk Southern",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -4356,48 +4331,12 @@
         "industry": "Unknown"
       }
     },
-    "CMA": {
-      "name": "Comerica",
+    "UNH": {
+      "name": "UnitedHealth",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "DE": {
-      "name": "Deere",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "LAMR": {
-      "name": "Lamar Advertising",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Communication",
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -4428,6 +4367,96 @@
         "industry": "Unknown"
       }
     },
+    "CRM": {
+      "name": "Salesforce",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "MCO": {
+      "name": "Moody's",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "WM": {
+      "name": "Waste Management",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CVS": {
+      "name": "CVS Health",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "NNN": {
+      "name": "NNN REIT",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
     "PSA": {
       "name": "Public Storage",
       "type": "stock",
@@ -4446,12 +4475,66 @@
         "industry": "Unknown"
       }
     },
-    "TFX": {
-      "name": "Teleflex",
+    "BAM": {
+      "name": "Brookfield Asset Mgmt",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Healthcare",
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CMA": {
+      "name": "Comerica",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "TJX": {
+      "name": "TJX Companies",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "TEL": {
+      "name": "TE Connectivity",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -4475,8 +4558,26 @@
         "liquid": false
       }
     },
-    "KEY": {
-      "name": "KeyCorp",
+    "BUD": {
+      "name": "AB InBev",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "BLK": {
+      "name": "BlackRock",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -4511,23 +4612,12 @@
         "industry": "Unknown"
       }
     },
-    "BOAT": {
-      "name": "SonicShares Global Shipping",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:shipping",
-      "note": "shipping",
-      "options": {
-        "liquid": false
-      }
-    },
-    "CTRE": {
-      "name": "CareTrust REIT",
+    "PFE": {
+      "name": "Pfizer",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -4540,8 +4630,8 @@
         "industry": "Unknown"
       }
     },
-    "PLUS": {
-      "name": "ePlus",
+    "NVDA": {
+      "name": "NVIDIA",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -4569,6 +4659,35 @@
         "liquid": false
       }
     },
+    "LECO": {
+      "name": "Lincoln Electric",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "BOAT": {
+      "name": "SonicShares Global Shipping",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:shipping",
+      "note": "shipping",
+      "options": {
+        "liquid": false
+      }
+    },
     "IEFA": {
       "name": "iShares Core MSCI EAFE",
       "type": "etf",
@@ -4580,12 +4699,12 @@
         "liquid": false
       }
     },
-    "NVDA": {
-      "name": "NVIDIA",
+    "NWS": {
+      "name": "News Corp (B)",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
+      "sector": "Communication",
       "note": "",
       "options": {
         "liquid": false
@@ -4598,44 +4717,8 @@
         "industry": "Unknown"
       }
     },
-    "INH": {
-      "name": "INDUS Holding AG",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "WM": {
-      "name": "Waste Management",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "BF.B": {
-      "name": "Brown-Forman",
+    "ALW": {
+      "name": "Alliance Witan PLC",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -4663,12 +4746,12 @@
         "liquid": false
       }
     },
-    "MDLZ": {
-      "name": "Mondelez",
+    "BF.B": {
+      "name": "Brown-Forman",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Consumer",
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -4735,24 +4818,6 @@
         "industry": "Unknown"
       }
     },
-    "BA": {
-      "name": "Boeing",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "AMZN": {
       "name": "Amazon",
       "type": "stock",
@@ -4778,6 +4843,107 @@
       "inverse": false,
       "sector": "ETF:natres",
       "note": "natres",
+      "options": {
+        "liquid": false
+      }
+    },
+    "AVGO": {
+      "name": "Broadcom",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "PLUS": {
+      "name": "ePlus",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "INH": {
+      "name": "INDUS Holding AG",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CTRE": {
+      "name": "CareTrust REIT",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "BA": {
+      "name": "Boeing",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "UGA": {
+      "name": "US Gasoline Fund",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:gasoline",
+      "note": "gasoline",
       "options": {
         "liquid": false
       }
@@ -4829,42 +4995,6 @@
         "liquid": false
       }
     },
-    "GPC": {
-      "name": "Genuine Parts",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "NOW": {
-      "name": "ServiceNow",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "APH": {
       "name": "Amphenol",
       "type": "stock",
@@ -4883,12 +5013,30 @@
         "industry": "Unknown"
       }
     },
-    "ALK": {
-      "name": "Alaska Air",
+    "DFS": {
+      "name": "Discover Financial",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "QMCO": {
+      "name": "Quantum Corporation",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -4919,12 +5067,12 @@
         "industry": "Unknown"
       }
     },
-    "ASAN": {
-      "name": "Asana",
+    "LW": {
+      "name": "Lamb Weston",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -4937,8 +5085,62 @@
         "industry": "Unknown"
       }
     },
-    "AXON": {
-      "name": "Axon Enterprise",
+    "ALK": {
+      "name": "Alaska Air",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "HRL": {
+      "name": "Hormel Foods",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "DHR": {
+      "name": "Danaher",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "AAL": {
+      "name": "American Airlines",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -4973,84 +5175,12 @@
         "industry": "Unknown"
       }
     },
-    "LW": {
-      "name": "Lamb Weston",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "HRL": {
-      "name": "Hormel Foods",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "DFS": {
-      "name": "Discover Financial",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "MZDAY": {
       "name": "Mazda Motor Corp (ADR)",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Other",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "LCID": {
-      "name": "Lucid Group",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -5081,8 +5211,8 @@
         "industry": "Unknown"
       }
     },
-    "DHR": {
-      "name": "Danaher",
+    "MDT": {
+      "name": "Medtronic",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -5117,142 +5247,12 @@
         "industry": "Unknown"
       }
     },
-    "ASML": {
-      "name": "ASML",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "GS": {
-      "name": "Goldman Sachs",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "PHM": {
       "name": "PulteGroup",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "MDT": {
-      "name": "Medtronic",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "EPU": {
-      "name": "iShares MSCI Peru",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:peru",
-      "note": "peru",
-      "options": {
-        "liquid": false
-      }
-    },
-    "MKC": {
-      "name": "McCormick",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "VRSK": {
-      "name": "Verisk",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "EWT": {
-      "name": "iShares MSCI Taiwan",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:taiwan",
-      "note": "taiwan",
-      "options": {
-        "liquid": false
-      }
-    },
-    "PPG": {
-      "name": "PPG Industries",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Materials",
       "note": "",
       "options": {
         "liquid": false
@@ -5283,8 +5283,98 @@
         "industry": "Unknown"
       }
     },
-    "QRVO": {
-      "name": "Qorvo",
+    "TTWO": {
+      "name": "Take-Two Interactive",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Communication",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "VRSK": {
+      "name": "Verisk",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "LCID": {
+      "name": "Lucid Group",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "XRAY": {
+      "name": "Dentsply Sirona",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "MKC": {
+      "name": "McCormick",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "ASML": {
+      "name": "ASML",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -5301,12 +5391,124 @@
         "industry": "Unknown"
       }
     },
-    "ESS": {
-      "name": "Essex Property",
+    "PPG": {
+      "name": "PPG Industries",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Materials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "AOS": {
+      "name": "A.O. Smith",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "ODFL": {
+      "name": "Old Dominion Freight",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "EPU": {
+      "name": "iShares MSCI Peru",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:peru",
+      "note": "peru",
+      "options": {
+        "liquid": false
+      }
+    },
+    "FUJHY": {
+      "name": "Subaru Corp (ADR)",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "C": {
+      "name": "Citigroup",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "EWT": {
+      "name": "iShares MSCI Taiwan",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:taiwan",
+      "note": "taiwan",
+      "options": {
+        "liquid": false
+      }
+    },
+    "FE": {
+      "name": "FirstEnergy",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Utilities",
       "note": "",
       "options": {
         "liquid": false
@@ -5337,6 +5539,42 @@
         "industry": "Unknown"
       }
     },
+    "SNX": {
+      "name": "TD Synnex",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "ISUZY": {
+      "name": "Isuzu Motors (ADR)",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
     "ERX": {
       "name": "Direxion Energy Bull 2x",
       "type": "etf",
@@ -5348,12 +5586,12 @@
         "liquid": false
       }
     },
-    "MC": {
-      "name": "Moelis & Company",
+    "ADBE": {
+      "name": "Adobe",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -5366,8 +5604,8 @@
         "industry": "Unknown"
       }
     },
-    "TJX": {
-      "name": "TJX Companies",
+    "MNST": {
+      "name": "Monster Beverage",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -5384,66 +5622,12 @@
         "industry": "Unknown"
       }
     },
-    "ELV": {
-      "name": "Elevance Health",
+    "IDXX": {
+      "name": "IDEXX Labs",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "NTCT": {
-      "name": "NetScout Systems",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "DSP": {
-      "name": "Viant Technology",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "BUD": {
-      "name": "AB InBev",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -5474,15 +5658,76 @@
         "industry": "Unknown"
       }
     },
-    "IJH": {
-      "name": "iShares Core S&P Mid-Cap",
-      "type": "etf",
+    "ELV": {
+      "name": "Elevance Health",
+      "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "ETF:us-midcap",
-      "note": "us-midcap",
+      "sector": "Healthcare",
+      "note": "",
       "options": {
         "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "HWM": {
+      "name": "Howmet Aerospace",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "KIM": {
+      "name": "Kimco Realty",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "UPS": {
+      "name": "UPS",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "EOG": {
@@ -5521,6 +5766,24 @@
         "industry": "Unknown"
       }
     },
+    "COP": {
+      "name": "ConocoPhillips",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Energy",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
     "CUBE": {
       "name": "CubeSmart",
       "type": "stock",
@@ -5539,8 +5802,8 @@
         "industry": "Unknown"
       }
     },
-    "KIM": {
-      "name": "Kimco Realty",
+    "OHI": {
+      "name": "Omega Healthcare",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -5575,12 +5838,113 @@
         "industry": "Unknown"
       }
     },
-    "IDXX": {
-      "name": "IDEXX Labs",
+    "FRT": {
+      "name": "Federal Realty",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Healthcare",
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "COPX": {
+      "name": "Global X Copper Miners",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:copper miners",
+      "note": "copper miners",
+      "options": {
+        "liquid": false
+      }
+    },
+    "TAP": {
+      "name": "Molson Coors",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "LAMR": {
+      "name": "Lamar Advertising",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Communication",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "ADSK": {
+      "name": "Autodesk",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "MDLZ": {
+      "name": "Mondelez",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "DOMO": {
+      "name": "Domo",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -5604,12 +5968,12 @@
         "liquid": false
       }
     },
-    "LECO": {
-      "name": "Lincoln Electric",
+    "TM": {
+      "name": "Toyota",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -5622,120 +5986,12 @@
         "industry": "Unknown"
       }
     },
-    "TEL": {
-      "name": "TE Connectivity",
+    "TFX": {
+      "name": "Teleflex",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "FRT": {
-      "name": "Federal Realty",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "TT": {
-      "name": "Trane Technologies",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "TDG": {
-      "name": "TransDigm",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "COP": {
-      "name": "ConocoPhillips",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Energy",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "ADBE": {
-      "name": "Adobe",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "HR": {
-      "name": "Healthcare Realty Trust",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -5766,30 +6022,12 @@
         "industry": "Unknown"
       }
     },
-    "SBUX": {
-      "name": "Starbucks",
+    "COLD": {
+      "name": "Americold Realty Trust",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "CRM": {
-      "name": "Salesforce",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -5820,12 +6058,12 @@
         "industry": "Unknown"
       }
     },
-    "ADC": {
-      "name": "Agree Realty",
+    "SBUX": {
+      "name": "Starbucks",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -5838,12 +6076,30 @@
         "industry": "Unknown"
       }
     },
-    "ADM": {
-      "name": "Archer-Daniels-Midland",
+    "ORLY": {
+      "name": "O'Reilly Automotive",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "MED": {
+      "name": "Medifast",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -5892,24 +6148,6 @@
         "industry": "Unknown"
       }
     },
-    "TM": {
-      "name": "Toyota",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "REG": {
       "name": "Regency Centers",
       "type": "stock",
@@ -5928,12 +6166,66 @@
         "industry": "Unknown"
       }
     },
-    "ORLY": {
-      "name": "O'Reilly Automotive",
+    "ADC": {
+      "name": "Agree Realty",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "HR": {
+      "name": "Healthcare Realty Trust",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "ADM": {
+      "name": "Archer-Daniels-Midland",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "FIS": {
+      "name": "FIS",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -5964,26 +6256,8 @@
         "industry": "Unknown"
       }
     },
-    "TAP": {
-      "name": "Molson Coors",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "DOMO": {
-      "name": "Domo",
+    "EPAM": {
+      "name": "EPAM Systems",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -6000,26 +6274,8 @@
         "industry": "Unknown"
       }
     },
-    "CI": {
-      "name": "Cigna",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "ADSK": {
-      "name": "Autodesk",
+    "ACN": {
+      "name": "Accenture",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -6036,15 +6292,40 @@
         "industry": "Unknown"
       }
     },
-    "UGA": {
-      "name": "US Gasoline Fund",
-      "type": "etf",
+    "PLD": {
+      "name": "Prologis",
+      "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "ETF:gasoline",
-      "note": "gasoline",
+      "sector": "RealEstate",
+      "note": "",
       "options": {
         "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "DIS": {
+      "name": "Walt Disney",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Communication",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
       }
     },
     "ICE": {
@@ -6065,8 +6346,8 @@
         "industry": "Unknown"
       }
     },
-    "DXC": {
-      "name": "DXC Technology",
+    "TTEC": {
+      "name": "TTEC Holdings",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -6101,12 +6382,12 @@
         "industry": "Unknown"
       }
     },
-    "FIS": {
-      "name": "FIS",
+    "BYDDY": {
+      "name": "BYD Company (ADR)",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -6155,24 +6436,6 @@
         "industry": "Unknown"
       }
     },
-    "BYDDY": {
-      "name": "BYD Company (ADR)",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "YINN": {
       "name": "Direxion China Bull 3x",
       "type": "etf",
@@ -6184,8 +6447,26 @@
         "liquid": false
       }
     },
-    "TTEC": {
-      "name": "TTEC Holdings",
+    "AXON": {
+      "name": "Axon Enterprise",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "AMAT": {
+      "name": "Applied Materials",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -6200,89 +6481,6 @@
         "notes": [],
         "sector": "Unknown",
         "industry": "Unknown"
-      }
-    },
-    "INOD": {
-      "name": "Innodata",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "QMCO": {
-      "name": "Quantum Corporation",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "CS": {
-      "name": "Credit Suisse Group (acquired by UBS, 2023)",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "AMD": {
-      "name": "Advanced Micro Devices",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "TECL": {
-      "name": "Direxion Tech Bull 3x",
-      "type": "etf",
-      "leverage": 3,
-      "inverse": false,
-      "sector": "ETF:tech bull 3x",
-      "note": "tech bull 3x",
-      "options": {
-        "liquid": false
       }
     },
     "PAR": {
@@ -6291,24 +6489,6 @@
       "leverage": 1,
       "inverse": false,
       "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "FSLR": {
-      "name": "First Solar",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -6339,12 +6519,12 @@
         "industry": "Unknown"
       }
     },
-    "STX": {
-      "name": "Seagate",
+    "FSLR": {
+      "name": "First Solar",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -6357,30 +6537,12 @@
         "industry": "Unknown"
       }
     },
-    "PGR": {
-      "name": "Progressive",
+    "HD": {
+      "name": "Home Depot",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "KLAC": {
-      "name": "KLA Corp",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -6429,102 +6591,12 @@
         "industry": "Unknown"
       }
     },
-    "HD": {
-      "name": "Home Depot",
+    "PGR": {
+      "name": "Progressive",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "KRC": {
-      "name": "Kilroy Realty",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "TOELY": {
-      "name": "Tokyo Electron (ADR)",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "ODFL": {
-      "name": "Old Dominion Freight",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "KDP": {
-      "name": "Keurig Dr Pepper",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "ARE": {
-      "name": "Alexandria Real Estate",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -6555,8 +6627,37 @@
         "industry": "Unknown"
       }
     },
-    "CEVA": {
-      "name": "CEVA Inc",
+    "TECL": {
+      "name": "Direxion Tech Bull 3x",
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "sector": "ETF:tech bull 3x",
+      "note": "tech bull 3x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "ARE": {
+      "name": "Alexandria Real Estate",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "KLAC": {
+      "name": "KLA Corp",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -6573,48 +6674,12 @@
         "industry": "Unknown"
       }
     },
-    "FE": {
-      "name": "FirstEnergy",
+    "SWKS": {
+      "name": "Skyworks",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Utilities",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "AOS": {
-      "name": "A.O. Smith",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "ISUZY": {
-      "name": "Isuzu Motors (ADR)",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -6645,12 +6710,12 @@
         "industry": "Unknown"
       }
     },
-    "C": {
-      "name": "Citigroup",
+    "ARW": {
+      "name": "Arrow Electronics",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -6663,12 +6728,12 @@
         "industry": "Unknown"
       }
     },
-    "MCO": {
-      "name": "Moody's",
+    "MAA": {
+      "name": "Mid-America Apartment",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -6681,12 +6746,12 @@
         "industry": "Unknown"
       }
     },
-    "UPS": {
-      "name": "UPS",
+    "HUBB": {
+      "name": "Hubbell",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Industrials",
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -6699,52 +6764,12 @@
         "industry": "Unknown"
       }
     },
-    "KKR": {
-      "name": "KKR & Co",
+    "UDR": {
+      "name": "UDR Inc",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PAVE": {
-      "name": "Global X US Infrastructure",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:infrastructure",
-      "note": "infrastructure",
-      "options": {
-        "liquid": false
-      }
-    },
-    "VXUS": {
-      "name": "Vanguard Total International",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:intl-total",
-      "note": "intl-total",
-      "options": {
-        "liquid": false
-      }
-    },
-    "HII": {
-      "name": "Huntington Ingalls",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Healthcare",
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -6775,12 +6800,12 @@
         "industry": "Unknown"
       }
     },
-    "ALW": {
-      "name": "Alliance Witan PLC",
+    "TT": {
+      "name": "Trane Technologies",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Other",
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -6793,12 +6818,23 @@
         "industry": "Unknown"
       }
     },
-    "AVGO": {
-      "name": "Broadcom",
+    "PAVE": {
+      "name": "Global X US Infrastructure",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:infrastructure",
+      "note": "infrastructure",
+      "options": {
+        "liquid": false
+      }
+    },
+    "SPGI": {
+      "name": "S&P Global",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -6829,12 +6865,77 @@
         "industry": "Unknown"
       }
     },
-    "PG": {
-      "name": "Procter & Gamble",
+    "HII": {
+      "name": "Huntington Ingalls",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Consumer",
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "VXUS": {
+      "name": "Vanguard Total International",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:intl-total",
+      "note": "intl-total",
+      "options": {
+        "liquid": false
+      }
+    },
+    "FOXA": {
+      "name": "Fox Corp (A)",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Communication",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "GILD": {
+      "name": "Gilead Sciences",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "KKR": {
+      "name": "KKR & Co",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -6865,24 +6966,6 @@
         "industry": "Unknown"
       }
     },
-    "SPGI": {
-      "name": "S&P Global",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "AEE": {
       "name": "Ameren",
       "type": "stock",
@@ -6901,12 +6984,30 @@
         "industry": "Unknown"
       }
     },
-    "CSG": {
-      "name": "CSG Systems International",
+    "PG": {
+      "name": "Procter & Gamble",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Other",
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "TXN": {
+      "name": "Texas Instruments",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -6937,6 +7038,46 @@
         "industry": "Unknown"
       }
     },
+    "GUSH": {
+      "name": "Direxion Oil&Gas Bull 2x",
+      "type": "etf",
+      "leverage": 2,
+      "inverse": false,
+      "sector": "ETF:oil gas E&P bull 2x",
+      "note": "oil gas E&P bull 2x",
+      "options": {
+        "liquid": false
+      }
+    },
+    "IGF": {
+      "name": "iShares Global Infrastructure",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:infra-global",
+      "note": "infra-global",
+      "options": {
+        "liquid": false
+      }
+    },
+    "TXT": {
+      "name": "Textron",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
     "KMI": {
       "name": "Kinder Morgan",
       "type": "stock",
@@ -6955,8 +7096,44 @@
         "industry": "Unknown"
       }
     },
-    "PFE": {
-      "name": "Pfizer",
+    "PEG": {
+      "name": "PSEG",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Utilities",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "LULU": {
+      "name": "Lululemon",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CI": {
+      "name": "Cigna",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -6973,12 +7150,66 @@
         "industry": "Unknown"
       }
     },
-    "BKR": {
-      "name": "Baker Hughes",
+    "CSG": {
+      "name": "CSG Systems International",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "WMB": {
+      "name": "Williams Companies",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Energy",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "INFY": {
+      "name": "Infosys",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "BEP": {
+      "name": "Brookfield Renewable",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -7009,124 +7240,8 @@
         "industry": "Unknown"
       }
     },
-    "RDWR": {
-      "name": "Radware",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "IGF": {
-      "name": "iShares Global Infrastructure",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:infra-global",
-      "note": "infra-global",
-      "options": {
-        "liquid": false
-      }
-    },
-    "WMB": {
-      "name": "Williams Companies",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Energy",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "GUSH": {
-      "name": "Direxion Oil&Gas Bull 2x",
-      "type": "etf",
-      "leverage": 2,
-      "inverse": false,
-      "sector": "ETF:oil gas E&P bull 2x",
-      "note": "oil gas E&P bull 2x",
-      "options": {
-        "liquid": false
-      }
-    },
-    "EMXC": {
-      "name": "iShares EM ex-China",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:em-ex-china",
-      "note": "em-ex-china",
-      "options": {
-        "liquid": false
-      }
-    },
-    "CASY": {
-      "name": "Casey's",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PLD": {
-      "name": "Prologis",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "IEMG": {
-      "name": "iShares Core MSCI Emerging Mkts",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:emerging",
-      "note": "emerging",
-      "options": {
-        "liquid": false
-      }
-    },
-    "CTVA": {
-      "name": "Corteva",
+    "NEM": {
+      "name": "Newmont",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -7143,59 +7258,12 @@
         "industry": "Unknown"
       }
     },
-    "DIS": {
-      "name": "Walt Disney",
+    "CASY": {
+      "name": "Casey's",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Communication",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "COLD": {
-      "name": "Americold Realty Trust",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "RealEstate",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "GRID": {
-      "name": "First Trust Smart Grid",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:infra-grid",
-      "note": "infra-grid",
-      "options": {
-        "liquid": false
-      }
-    },
-    "TXT": {
-      "name": "Textron",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -7226,6 +7294,17 @@
         "industry": "Unknown"
       }
     },
+    "EMXC": {
+      "name": "iShares EM ex-China",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:em-ex-china",
+      "note": "em-ex-china",
+      "options": {
+        "liquid": false
+      }
+    },
     "WEC": {
       "name": "WEC Energy",
       "type": "stock",
@@ -7244,12 +7323,12 @@
         "industry": "Unknown"
       }
     },
-    "MED": {
-      "name": "Medifast",
+    "BKR": {
+      "name": "Baker Hughes",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Healthcare",
+      "sector": "Energy",
       "note": "",
       "options": {
         "liquid": false
@@ -7298,66 +7377,30 @@
         "industry": "Unknown"
       }
     },
-    "ACN": {
-      "name": "Accenture",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "BEP": {
-      "name": "Brookfield Renewable",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "BN": {
-      "name": "Brookfield Corp",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Financials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "CMI": {
       "name": "Cummins",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CTVA": {
+      "name": "Corteva",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Materials",
       "note": "",
       "options": {
         "liquid": false
@@ -7388,6 +7431,53 @@
         "industry": "Unknown"
       }
     },
+    "GRID": {
+      "name": "First Trust Smart Grid",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:infra-grid",
+      "note": "infra-grid",
+      "options": {
+        "liquid": false
+      }
+    },
+    "BN": {
+      "name": "Brookfield Corp",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "OUT": {
+      "name": "Outfront Media",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Communication",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
     "DBO": {
       "name": "Invesco DB Oil",
       "type": "etf",
@@ -7399,48 +7489,12 @@
         "liquid": false
       }
     },
-    "FCFS": {
-      "name": "FirstCash Holdings",
+    "PODD": {
+      "name": "Insulet",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Other",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "EPAM": {
-      "name": "EPAM Systems",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PNR": {
-      "name": "Pentair",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Industrials",
+      "sector": "Healthcare",
       "note": "",
       "options": {
         "liquid": false
@@ -7471,23 +7525,12 @@
         "industry": "Unknown"
       }
     },
-    "USO": {
-      "name": "US Oil Fund",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:crude oil",
-      "note": "crude oil",
-      "options": {
-        "liquid": false
-      }
-    },
-    "PODD": {
-      "name": "Insulet",
+    "PNR": {
+      "name": "Pentair",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Healthcare",
+      "sector": "Industrials",
       "note": "",
       "options": {
         "liquid": false
@@ -7500,8 +7543,8 @@
         "industry": "Unknown"
       }
     },
-    "WPG": {
-      "name": "Washington Prime Group",
+    "FCFS": {
+      "name": "FirstCash Holdings",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -7524,6 +7567,24 @@
       "leverage": 1,
       "inverse": false,
       "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "WPG": {
+      "name": "Washington Prime Group",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -7608,24 +7669,6 @@
         "industry": "Unknown"
       }
     },
-    "AMAT": {
-      "name": "Applied Materials",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "ALGT": {
       "name": "Allegiant",
       "type": "stock",
@@ -7642,6 +7685,17 @@
         "notes": [],
         "sector": "Unknown",
         "industry": "Unknown"
+      }
+    },
+    "NAIL": {
+      "name": "Direxion Homebuilders Bull 3x",
+      "type": "etf",
+      "leverage": 3,
+      "inverse": false,
+      "sector": "ETF:homebuilders bull 3x",
+      "note": "homebuilders bull 3x",
+      "options": {
+        "liquid": false
       }
     },
     "RIVN": {
@@ -7662,19 +7716,8 @@
         "industry": "Unknown"
       }
     },
-    "SOXX": {
-      "name": "iShares Semiconductor",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:semis",
-      "note": "semis",
-      "options": {
-        "liquid": false
-      }
-    },
-    "LSCC": {
-      "name": "Lattice Semiconductor",
+    "AMD": {
+      "name": "Advanced Micro Devices",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
@@ -7709,34 +7752,12 @@
         "industry": "Unknown"
       }
     },
-    "NAIL": {
-      "name": "Direxion Homebuilders Bull 3x",
-      "type": "etf",
-      "leverage": 3,
-      "inverse": false,
-      "sector": "ETF:homebuilders bull 3x",
-      "note": "homebuilders bull 3x",
-      "options": {
-        "liquid": false
-      }
-    },
-    "COPX": {
-      "name": "Global X Copper Miners",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:copper miners",
-      "note": "copper miners",
-      "options": {
-        "liquid": false
-      }
-    },
-    "TTWO": {
-      "name": "Take-Two Interactive",
+    "CNXC": {
+      "name": "Concentrix",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Communication",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -7749,12 +7770,12 @@
         "industry": "Unknown"
       }
     },
-    "UDR": {
-      "name": "UDR Inc",
+    "CEVA": {
+      "name": "CEVA Inc",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -7767,12 +7788,12 @@
         "industry": "Unknown"
       }
     },
-    "HUBB": {
-      "name": "Hubbell",
+    "KDP": {
+      "name": "Keurig Dr Pepper",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Other",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -7821,12 +7842,48 @@
         "industry": "Unknown"
       }
     },
-    "MAA": {
-      "name": "Mid-America Apartment",
+    "WIT": {
+      "name": "Wipro",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "ALGN": {
+      "name": "Align Technology",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Healthcare",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "RDWR": {
+      "name": "Radware",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -7857,30 +7914,12 @@
         "industry": "Unknown"
       }
     },
-    "MAR": {
-      "name": "Marriott",
+    "MC": {
+      "name": "Moelis & Company",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Consumer",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "CMG": {
-      "name": "Chipotle",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Consumer",
+      "sector": "Financials",
       "note": "",
       "options": {
         "liquid": false
@@ -7911,12 +7950,12 @@
         "industry": "Unknown"
       }
     },
-    "PEAK": {
-      "name": "Healthpeak Properties (former ticker, now DOC)",
+    "ENTG": {
+      "name": "Entegris",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "RealEstate",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -7947,24 +7986,6 @@
         "industry": "Unknown"
       }
     },
-    "WIT": {
-      "name": "Wipro",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
     "AVB": {
       "name": "AvalonBay",
       "type": "stock",
@@ -7983,23 +8004,12 @@
         "industry": "Unknown"
       }
     },
-    "AIA": {
-      "name": "iShares Asia 50",
-      "type": "etf",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "ETF:asia",
-      "note": "asia",
-      "options": {
-        "liquid": false
-      }
-    },
-    "SNY": {
-      "name": "Sanofi",
+    "TOELY": {
+      "name": "Tokyo Electron (ADR)",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Other",
+      "sector": "Technology",
       "note": "",
       "options": {
         "liquid": false
@@ -8012,12 +8022,12 @@
         "industry": "Unknown"
       }
     },
-    "WAL": {
-      "name": "Western Alliance",
+    "CMG": {
+      "name": "Chipotle",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Financials",
+      "sector": "Consumer",
       "note": "",
       "options": {
         "liquid": false
@@ -8030,84 +8040,12 @@
         "industry": "Unknown"
       }
     },
-    "WWD": {
-      "name": "Woodward",
+    "TDG": {
+      "name": "TransDigm",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Industrials",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "JBL": {
-      "name": "Jabil",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "FOXA": {
-      "name": "Fox Corp (A)",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Communication",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "INFY": {
-      "name": "Infosys",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "CHTR": {
-      "name": "Charter Communications",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Communication",
       "note": "",
       "options": {
         "liquid": false
@@ -8138,12 +8076,12 @@
         "industry": "Unknown"
       }
     },
-    "GILD": {
-      "name": "Gilead Sciences",
+    "SNY": {
+      "name": "Sanofi",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Healthcare",
+      "sector": "Other",
       "note": "",
       "options": {
         "liquid": false
@@ -8156,12 +8094,149 @@
         "industry": "Unknown"
       }
     },
-    "TXN": {
-      "name": "Texas Instruments",
+    "MAR": {
+      "name": "Marriott",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CMCSA": {
+      "name": "Comcast",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Communication",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "MCD": {
+      "name": "McDonald's",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Consumer",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "WAL": {
+      "name": "Western Alliance",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Financials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "CHTR": {
+      "name": "Charter Communications",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Communication",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "AIA": {
+      "name": "iShares Asia 50",
+      "type": "etf",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "ETF:asia",
+      "note": "asia",
+      "options": {
+        "liquid": false
+      }
+    },
+    "NTCT": {
+      "name": "NetScout Systems",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
       "sector": "Technology",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "WWD": {
+      "name": "Woodward",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "Industrials",
+      "note": "",
+      "options": {
+        "liquid": false
+      },
+      "earnings_soon": false,
+      "screen": {
+        "pass": true,
+        "notes": [],
+        "sector": "Unknown",
+        "industry": "Unknown"
+      }
+    },
+    "AMT": {
+      "name": "American Tower",
+      "type": "stock",
+      "leverage": 1,
+      "inverse": false,
+      "sector": "RealEstate",
       "note": "",
       "options": {
         "liquid": false
@@ -8192,66 +8267,12 @@
         "industry": "Unknown"
       }
     },
-    "ENTG": {
-      "name": "Entegris",
+    "LOGI": {
+      "name": "Logitech",
       "type": "stock",
       "leverage": 1,
       "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PEG": {
-      "name": "PSEG",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Utilities",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "PDFS": {
-      "name": "PDF Solutions",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Technology",
-      "note": "",
-      "options": {
-        "liquid": false
-      },
-      "earnings_soon": false,
-      "screen": {
-        "pass": true,
-        "notes": [],
-        "sector": "Unknown",
-        "industry": "Unknown"
-      }
-    },
-    "LHX": {
-      "name": "L3Harris",
-      "type": "stock",
-      "leverage": 1,
-      "inverse": false,
-      "sector": "Other",
+      "sector": "Communication",
       "note": "",
       "options": {
         "liquid": false
@@ -8265,5 +8286,5 @@
       }
     }
   },
-  "built": "2026-08-07T01:27:06.401511+00:00"
+  "built": "2026-08-07T22:26:16.934827+00:00"
 }
