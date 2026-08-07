@@ -319,6 +319,7 @@ def run_hourly(offline=False):
         return float(d["close"].iloc[-1]) if d is not None and len(d) else None
 
     pos_msgs = monitor_alerted(ledger, get_daily, get_price)
+    al.save(ledger)          # persist immediately — nothing after this can lose it
 
     # --- deliver ---
     for s in signals:
