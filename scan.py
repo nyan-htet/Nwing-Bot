@@ -154,6 +154,31 @@ def monitor_alerted(ledger, get_daily, get_price):
     return msgs
 
 
+def log_signals_csv(signals, macro, cyc):
+    """Append each signal to signals_log.csv (permanent history)."""
+    import csv
+    path = "signals_log.csv"
+    new = not os.path.exists(path)
+    with open(path, "a", newline="") as f:
+        w = csv.writer(f)
+        if new:
+            w.writerow(["date_utc", "ticker", "name", "setup", "entry", "tp",
+                        "tp_pct", "shares", "value_usd", "eta_days_low",
+                        "eta_days_high", "trend_score", "adx", "rs_vs_spy",
+                        "quality", "rsi", "regime", "regime_weeks",
+                        "macro_risk", "cycles", "reasons"])
+        for s_ in signals:
+            w.writerow([s_.get("time"), s_.get("ticker"), s_.get("name", ""),
+                        s_.get("setup"), s_.get("entry"), s_.get("tp"),
+                        round(s_.get("tp_pct", 0), 4), s_.get("shares"),
+                        round(s_.get("value", 0), 2), s_.get("eta_days_low"),
+                        s_.get("eta_days_high"), s_.get("trend_score"),
+                        s_.get("adx"), s_.get("rs"), s_.get("quality"),
+                        s_.get("rsi"), s_.get("regime"), s_.get("regime_weeks"),
+                        macro.get("risk", ""), cyc.get("label", ""),
+                        " | ".join(s_.get("reasons", []))])
+
+
 def publish(signals, position_msgs, macro, cyc):
     """Write docs/signals.json only when the CONTENT changed.
 
