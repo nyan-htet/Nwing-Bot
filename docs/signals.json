@@ -1,14 +1,67 @@
 {
-  "generated": "2026-08-07T08:59:47.274758+00:00",
+  "generated": "2026-08-07T13:47:56.404452+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 14.3
   },
   "cycles": {
-    "score": -0.5,
+    "score": -0.49,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.2% (informative only)"
+    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.4% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "ICE",
+      "name": "Intercontinental Exchange",
+      "setup": "pullback",
+      "entry": 151.26,
+      "tp": 187.02,
+      "tp_pct": 0.2363732522394475,
+      "shares": 1.65,
+      "value": 249.58724999999995,
+      "pl_amount": 59.0,
+      "eta_days_low": 23,
+      "eta_days_high": 45,
+      "fee_pct": 0.03390074708771392,
+      "trend_score": 4,
+      "adx": 52.0,
+      "rs": -0.075,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 1,
+      "ema20": 146.8,
+      "ema50": 144.67,
+      "ema200": 152.97,
+      "above_ema200": false,
+      "quality": 1.0,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 59.1 flat",
+        "bollinger": "band position 52%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.0x average, drying up",
+        "extension": "+0.7 ATR from 20 EMA, slope +0.9%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 59.1,
+      "options_note": "",
+      "sector": "Unknown",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=59.1)"
+      ],
+      "time": "2026-08-07T13:47:51.766144+00:00"
+    }
+  ],
   "position_alerts": []
 }
