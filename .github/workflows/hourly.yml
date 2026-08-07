@@ -27,6 +27,8 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scan.py hourly
       - name: Publish dashboard data
+        if: always()          # commit the ledger even if the scan step failed,
+                              # otherwise alerts are re-sent on the next run
         run: |
           git config user.name swingbot && git config user.email bot@users.noreply.github.com
           git add docs/signals.json watchlist.json signals_log.csv alerted.json || true
