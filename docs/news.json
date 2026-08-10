@@ -1,58 +1,85 @@
 {
-  "generated": "2026-08-10 20:16",
+  "generated": "2026-08-10 20:17",
   "provider": "anthropic",
   "fmp_endpoint": "https://financialmodelingprep.com/stable/news/stock",
   "results": [
     {
-      "ticker": "ADM",
+      "ticker": "AAL",
       "entry": null,
       "tp": null,
-      "headlines": [],
+      "headlines": [
+        {
+          "date": "2026-08-10 14:01 UTC",
+          "title": "American Airlines Advances Sustainable Aviation With eSAF Flight",
+          "site": "zacks.com",
+          "url": "https://www.zacks.com/stock/news/2972213/american-airlines-advances-sustainable-aviation-with-esaf-flight?cid=CS-STOCKNEWSAPI-FT-analyst_blog|company_news_corporate_actions-2972213",
+          "text": "AAL's first passenger flight using eSAF shows the fuel can work in existing aircraft and infrastructure, advancing its lower-carbon strategy."
+        }
+      ],
       "risk": "unknown",
       "company_specific": null,
       "summary": "",
       "reason": "",
       "diagnostics": {
-        "status": "NO_NEWS",
+        "status": "OK",
         "http_error": null,
-        "message": "FMP responded successfully but returned no usable recent articles",
+        "message": "1 usable article(s)",
         "source": "FMP /stable/news/stock"
       },
-      "llm_ok": false
+      "llm_ok": false,
+      "llm_provider": "anthropic"
     },
     {
-      "ticker": "EYE",
+      "ticker": "GM",
       "entry": null,
       "tp": null,
-      "headlines": [],
+      "headlines": [
+        {
+          "date": "2026-08-10 09:00 UTC",
+          "title": "Captiva Verde Welcomes General Daniel R. Hokanson to the Advisory Board",
+          "site": "newsfilecorp.com",
+          "url": "https://www.newsfilecorp.com/release/308836/Captiva-Verde-Welcomes-General-Daniel-R.-Hokanson-to-the-Advisory-Board",
+          "text": "Jacksonville, Florida--(Newsfile Corp. - August 10, 2026) - Captiva Verde Corp. (CSE: PWR) (OTC Pink: CPIVF) (the \"Company or Captiva\") announces the appointment of Daniel R. Hokanson to the Advisory Board."
+        }
+      ],
       "risk": "unknown",
       "company_specific": null,
       "summary": "",
       "reason": "",
       "diagnostics": {
-        "status": "NO_NEWS",
+        "status": "OK",
         "http_error": null,
-        "message": "FMP responded successfully but returned no usable recent articles",
+        "message": "1 usable article(s)",
         "source": "FMP /stable/news/stock"
       },
-      "llm_ok": false
+      "llm_ok": false,
+      "llm_provider": "anthropic"
     },
     {
-      "ticker": "UGA",
+      "ticker": "NWS",
       "entry": null,
       "tp": null,
-      "headlines": [],
+      "headlines": [
+        {
+          "date": "2026-08-10 06:00 UTC",
+          "title": "Realtor.com\u00ae's 2026 Hottest ZIP Codes in America: Peabody, Mass. Claims the Top Spot as Buyers Chase Space, Character Near Major Metros",
+          "site": "prnewswire.com",
+          "url": "https://www.prnewswire.com/news-releases/realtorcoms-2026-hottest-zip-codes-in-america-peabody-mass-claims-the-top-spot-as-buyers-chase-space-character-near-major-metros-302846697.html",
+          "text": "/PRNewswire/ -- Peabody, Mass. (01960) joins the Hottest ZIPs for the third time since previously ranked No. 5 in 2018 and No.3 in 2021. For the fourth"
+        }
+      ],
       "risk": "unknown",
       "company_specific": null,
       "summary": "",
       "reason": "",
       "diagnostics": {
-        "status": "NO_NEWS",
+        "status": "OK",
         "http_error": null,
-        "message": "FMP responded successfully but returned no usable recent articles",
+        "message": "1 usable article(s)",
         "source": "FMP /stable/news/stock"
       },
-      "llm_ok": false
+      "llm_ok": false,
+      "llm_provider": "anthropic"
     }
   ]
 }
