@@ -50,3 +50,4 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-10 21:33 UTC,FAS,auto-failed,False,0,0,NO_NEWS,,
 2026-08-10 21:33 UTC,TAP,auto-failed,False,3,1,OK,,
 2026-08-10 21:33 UTC,TM,auto-failed,False,3,0,NO_NEWS,,
+2026-08-10 21:40 UTC,TM,openai-failed,False,3,0,NO_NEWS,,
