@@ -1,0 +1,56 @@
+name: news-followup
+# Optional LLM news check on tickers that just alerted.
+# Runs AFTER hourly-scan finishes — no change to hourly.yml needed.
+# To pause: disable this workflow in the Actions tab, or set NEWS_ENABLED=0.
+on:
+  workflow_run:
+    workflows: ["hourly-scan"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      symbols:
+        description: "Blank = tickers alerted in the last 90 min. Or NVDA,UPS to test"
+        required: false
+        default: ""
+      provider:
+        description: "anthropic | openai | both | auto"
+        required: false
+        default: "auto"
+permissions:
+  contents: write
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main            # get the alerted.json the scan just pushed
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pandas numpy pyyaml
+      - name: News check
+        env:
+          NEWS_ENABLED: "1"
+          LLM_PROVIDER: ${{ github.event.inputs.provider || 'auto' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FMP_KEY: ${{ secrets.FMP_KEY }}
+          DRY_RUN: "0"
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python news_llm.py "${{ github.event.inputs.symbols }}"
+      - name: Publish news log
+        if: always()
+        run: |
+          git config user.name swingbot && git config user.email bot@users.noreply.github.com
+          git add news_log.csv docs/news.json || true
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "news: update checks"
+          git pull --rebase --autostash origin main || true
+          git push || (sleep 5 && git pull --rebase --autostash origin main && git push)
