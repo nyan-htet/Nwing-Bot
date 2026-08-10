@@ -415,11 +415,17 @@ def news(ticker):
             age = (now - d).total_seconds() / 3600
             if age < -2 or age > NEWS_MAX_AGE_HOURS:
                 continue
+        site = str(a.get("site") or a.get("publisher") or "").strip()
+        # YouTube/video commentary is usually lower-value for this report and
+        # tends to create noisy "news" results. Keep the FMP article feed focused
+        # on written company/market reporting.
+        if "youtube" in site.lower() or "youtu.be" in str(a.get("url") or "").lower():
+            continue
+
         out.append({
             "date": d.strftime("%Y-%m-%d %H:%M UTC") if d else str(a.get("publishedDate") or a.get("date") or ""),
             "title": title,
-            "site": str(a.get("site") or a.get("publisher") or ""),
-            "url": str(a.get("url") or ""),
+            "site": site,
             "text": str(a.get("text") or a.get("content") or "")[:1000],
         })
         if len(out) >= NEWS_LIMIT:
@@ -710,14 +716,18 @@ def provider():
     wanted = os.getenv("LLM_PROVIDER", "auto").strip().lower()
     has_a = bool(os.getenv("ANTHROPIC_API_KEY", "").strip())
     has_o = bool(os.getenv("OPENAI_API_KEY", "").strip())
-    if wanted == "both" and has_a and has_o:
-        return "both"
-    if wanted == "anthropic" and has_a:
-        return "anthropic"
-    if wanted == "openai" and has_o:
-        return "openai"
+
     if wanted == "both":
+        return "both" if (has_a and has_o) else ("anthropic" if has_a else ("openai" if has_o else None))
+    if wanted == "anthropic":
         return "anthropic" if has_a else ("openai" if has_o else None)
+    if wanted == "openai":
+        return "openai" if has_o else ("anthropic" if has_a else None)
+
+    # auto: prefer Anthropic, but the caller will fall back to OpenAI if
+    # Anthropic is unavailable or returns an unusable response.
+    if has_a and has_o:
+        return "auto"
     return "anthropic" if has_a else ("openai" if has_o else None)
 
 
@@ -817,6 +827,22 @@ def ask(prompt, which):
                 result["overall_summary"] += f" Provider check: Anthropic={a.get('overall_assessment')}; OpenAI={o.get('overall_assessment')}."
             return result, "both"
         return (a, "anthropic") if a else (o, "openai")
+
+    if which == "auto":
+        # Anthropic is preferred, but a failed/free-tier/unavailable Anthropic
+        # call must not make the whole report unusable when OpenAI is available.
+        if os.getenv("ANTHROPIC_API_KEY", "").strip():
+            a = parse_llm(call_llm("anthropic", prompt))
+            if a:
+                return a, "anthropic"
+            print("  Anthropic unavailable/unusable; trying OpenAI fallback.")
+        if os.getenv("OPENAI_API_KEY", "").strip():
+            o = parse_llm(call_llm("openai", prompt))
+            if o:
+                return o, "openai"
+            print("  OpenAI fallback also unavailable/unusable.")
+        return None, "auto-failed"
+
     result = parse_llm(call_llm(which, prompt))
     return result, which
 
@@ -850,6 +876,11 @@ def format_financial_lines(results):
 
 
 def format_report(row):
+    """Build ONE compact notification for ONE ticker.
+
+    Deliberately contains no URLs. The report is kept compact enough for a
+    single Telegram message, like hourly-scan.
+    """
     sig = row.get("signal") or {}
     alert = row.get("alert") or {}
     llm = row.get("llm") or {}
@@ -869,32 +900,34 @@ def format_report(row):
         etoro = fnum(alert.get("pl_amount"))
     potential = fnum(sig.get("tp_pct"))
 
+    overall = str(llm.get("overall_assessment") or "insufficient_data").lower()
+    title_icon = icon_assessment(overall)
+
     lines = [
-        f"🟢 {ticker} — {name}",
+        f"{title_icon} {ticker} — {name}",
         f"Entry: ${entry:.2f}" if entry is not None else "Entry: n/a",
         f"eToro TP value: ${etoro:.2f}" if etoro is not None else "eToro TP value: n/a",
         f"Scanner potential: {fmt_pct(potential)}" if potential is not None else "Scanner potential: n/a",
         "",
         "═══ TECHNICAL SETUP ═══",
-        f"Setup: {sig.get('setup', 'n/a')} | Regime: {sig.get('regime', 'n/a')} | Trend: {sig.get('trend_score', 'n/a')}/5 | ADX: {sig.get('adx', 'n/a')}",
-        f"RS vs SPY: {fmt_pct(sig.get('rs'))} | RSI: {sig.get('rsi', 'n/a')} | Quality: {sig.get('quality', 'n/a')}",
+        f"Setup: {sig.get('setup', 'n/a')} | Regime: {sig.get('regime', 'n/a')}",
+        f"Trend: {sig.get('trend_score', 'n/a')}/5 | ADX: {sig.get('adx', 'n/a')} | RSI: {sig.get('rsi', 'n/a')}",
+        f"RS vs SPY: {fmt_pct(sig.get('rs'))} | Quality: {sig.get('quality', 'n/a')}",
         f"EMA20/50/200: {sig.get('ema20', 'n/a')} / {sig.get('ema50', 'n/a')} / {sig.get('ema200', 'n/a')}",
-        f"Scanner timeframe: {sig.get('eta_days_low', 'n/a')}-{sig.get('eta_days_high', 'n/a')} trading days",
-        f"Technical look-alike: {llm.get('technical_lookalike') or 'not available'}",
-        llm.get("technical_interpretation") or "Technical interpretation unavailable.",
-        "",
-        "═══ LAST 3 FINANCIAL RESULTS ═══",
+        f"Technical look-alike: {llm.get('technical_lookalike') or 'unavailable'}",
     ]
+    if llm.get("technical_interpretation"):
+        lines.append(f"🧠 {llm['technical_interpretation']}")
+
+    lines += ["", "═══ LAST 3 FINANCIAL RESULTS ═══"]
     if results:
         lines.extend(format_financial_lines(results))
         if llm.get("financial_interpretation"):
-            lines += ["", f"🧠 {llm['financial_interpretation']}"]
+            lines.append(f"🧠 {llm['financial_interpretation']}")
     else:
-        lines.append("- Not applicable / unavailable (common for ETFs or unavailable FMP statements).")
-    lines += [
-        "",
-        "═══ NEXT FINANCIAL REPORT ═══",
-    ]
+        lines.append("- Not available / not applicable.")
+
+    lines += ["", "═══ NEXT FINANCIAL REPORT ═══"]
     d = parse_dt(next_e.get("date") or next_e.get("earningsDate"))
     if d:
         days = (d.date() - dt.date.today()).days
@@ -908,15 +941,26 @@ def format_report(row):
     if llm.get("earnings_interpretation"):
         lines.append(f"🧠 {llm['earnings_interpretation']}")
 
-    lines += [
-        "",
-        "═══ ANALYST VIEW ═══",
-        f"Assessment: {icon_assessment(llm.get('analyst_assessment'))} {llm.get('analyst_assessment') or 'unknown'}",
-    ]
+    lines += ["", "═══ ANALYST VIEW ═══"]
+    lines.append(
+        f"Assessment: {icon_assessment(llm.get('analyst_assessment'))} "
+        f"{llm.get('analyst_assessment') or 'unknown'}"
+    )
     g = analysts.get("grades_consensus") or {}
-    for key in ("strongBuy", "strongBuyCount", "buy", "buyCount", "hold", "holdCount", "sell", "sellCount", "strongSell", "strongSellCount"):
-        if key in g:
-            lines.append(f"{key}: {g[key]}")
+    # Display only counts that exist, in one compact line.
+    counts = []
+    for label, keys in (
+        ("Strong Buy", ("strongBuy", "strongBuyCount")),
+        ("Buy", ("buy", "buyCount")),
+        ("Hold", ("hold", "holdCount")),
+        ("Sell", ("sell", "sellCount")),
+        ("Strong Sell", ("strongSell", "strongSellCount")),
+    ):
+        value = next((g[k] for k in keys if g.get(k) is not None), None)
+        if value is not None:
+            counts.append(f"{label}: {value}")
+    if counts:
+        lines.append(" | ".join(counts))
     if llm.get("analyst_interpretation"):
         lines.append(f"🧠 {llm['analyst_interpretation']}")
 
@@ -925,33 +969,75 @@ def format_report(row):
     if nd.get("status") == "FMP_ERROR":
         lines.append(f"⚠️ FMP news error: {nd.get('message')}")
     elif news_rows:
-        for n in news_rows[:NEWS_LIMIT]:
-            lines.append(f"- {n.get('date')} — {n.get('title')} [{n.get('site')}]" + (f"\n  {n.get('url')}" if n.get('url') else ""))
+        # Titles + source only. No URLs, including YouTube URLs.
+        for n in news_rows[:5]:
+            source = f" [{n.get('site')}]" if n.get("site") else ""
+            lines.append(f"- {n.get('date')} — {n.get('title')}{source}")
     else:
         lines.append("- No recent usable company-specific news returned by FMP.")
-    lines.append(f"🧠 {icon_assessment(llm.get('news_assessment'))} {llm.get('news_interpretation') or 'News interpretation unavailable.'}")
+    if llm.get("news_interpretation"):
+        lines.append(
+            f"🧠 {icon_assessment(llm.get('news_assessment'))} "
+            f"{llm['news_interpretation']}"
+        )
 
     lines += [
         "",
         "═══ SECTOR / INDUSTRY ═══",
         f"Sector: {sector.get('sector', 'Unknown')} | Industry: {sector.get('industry', 'Unknown')}",
-        f"Assessment: {icon_assessment(llm.get('sector_assessment'))} {llm.get('sector_assessment') or 'unknown'}",
-        llm.get("sector_interpretation") or "Sector interpretation unavailable.",
+        f"Assessment: {icon_assessment(llm.get('sector_assessment'))} "
+        f"{llm.get('sector_assessment') or 'unknown'}",
+    ]
+    if llm.get("sector_interpretation"):
+        lines.append(f"🧠 {llm['sector_interpretation']}")
+
+    lines += [
         "",
         "═══ MACRO ═══",
-        f"Assessment: {icon_assessment(llm.get('macro_assessment'))} {llm.get('macro_assessment') or 'unknown'}",
-        llm.get("macro_interpretation") or "Macro interpretation unavailable.",
+        f"Assessment: {icon_assessment(llm.get('macro_assessment'))} "
+        f"{llm.get('macro_assessment') or 'unknown'}",
+    ]
+    if llm.get("macro_interpretation"):
+        lines.append(f"🧠 {llm['macro_interpretation']}")
+
+    lines += [
         "",
         "═══ OVERALL ═══",
-        f"{icon_assessment(llm.get('overall_assessment'))} {str(llm.get('overall_assessment') or 'insufficient_data').upper()}",
+        f"{icon_assessment(overall)} {overall.upper()}",
         llm.get("overall_summary") or "Overall interpretation unavailable.",
         f"Key positive: {llm.get('key_positive') or 'n/a'}",
         f"Key risk: {llm.get('key_risk') or 'n/a'}",
         "",
-        f"(Technical data: hourly-scan | fundamental/news/macro data: FMP | interpretation: {row.get('llm_provider', 'none')})",
+        "(Technical: hourly-scan | fundamentals/news/macro: FMP | interpretation: "
+        f"{row.get('llm_provider') or 'LLM'})",
     ]
-    return "\n".join(lines)
 
+    report = "\n".join(lines)
+
+    # Telegram's practical limit is ~4096 chars. Keep each ticker as ONE
+    # message; trim only the news list if an unusually verbose response grows
+    # beyond the safe limit.
+    if len(report) > 3850:
+        # Remove the last news item(s) first, preserving all other sections.
+        marker = "═══ RECENT NEWS ═══"
+        if marker in report:
+            before, after = report.split(marker, 1)
+            news_part, rest = after.split("═══ SECTOR / INDUSTRY ═══", 1)
+            news_lines = news_part.strip().splitlines()
+            header = news_lines[:1]
+            items = [x for x in news_lines[1:] if x.startswith("- ")]
+            tail = [x for x in news_lines[1:] if not x.startswith("- ")]
+            while len("\n".join([before, marker, *header, *items, *tail, "═══ SECTOR / INDUSTRY ═══", rest])) > 3850 and items:
+                items.pop()
+            news_part = "\n".join(header + items + tail)
+            report = "\n".join([before.rstrip(), marker, news_part, "═══ SECTOR / INDUSTRY ═══", rest]).strip()
+
+    if len(report) > 4000:
+        # Final hard safety: preserve the whole report structure but trim only
+        # the longest free-text interpretation fields.
+        report = report[:3950] + "\n…"
+
+    return report
 
 def split_telegram(text, limit=3900):
     if len(text) <= limit:
@@ -1074,14 +1160,15 @@ def main():
         rows.append(row)
 
     when = utc_now().strftime("%Y-%m-%d %H:%M UTC")
-    subject = f"Signal intelligence — {', '.join(tickers)} — {when}"
 
-    # Email can carry the complete multi-ticker report. Telegram is split to
-    # stay below Telegram's message-size limit.
-    full_report = "\n\n".join(row["report"] for row in rows)
-    notify.send_email(subject, full_report, cfg)
-    for chunk in split_telegram(full_report):
-        notify.send_telegram(chunk, cfg)
+    # Send exactly ONE notification per ticker, matching hourly-scan behavior.
+    # Do not combine multiple tickers into one Telegram message.
+    for row in rows:
+        ticker = row["ticker"]
+        report = row["report"]
+        subject = f"Signal intelligence — {ticker} — {when}"
+        notify.send_email(subject, report, cfg)
+        notify.send_telegram(report, cfg)
 
     with open("news_log.csv", "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
