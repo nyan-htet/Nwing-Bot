@@ -1,13 +1,14 @@
 name: news-followup
 
-# Optional news risk check on tickers that just alerted.
-# Runs after hourly-scan completes, and can also be run manually.
+# Rich signal-intelligence follow-up.
+# Runs after a successful hourly-scan and can also be run manually.
 #
-# Manual testing:
-#   symbols = AAPL,NVDA
-#   provider = anthropic | openai | both | auto
-#
-# NEWS_ENABLED=0 disables the module without changing hourly-scan.
+# The workflow combines:
+#   1) alerted.json      -> which tickers just triggered + trade values
+#   2) docs/signals.json  -> full technical analysis from hourly-scan
+#   3) FMP Starter        -> earnings, statements, estimates, ratings, news,
+#                            sector/industry and macro data
+#   4) Anthropic/OpenAI   -> interpretation only; no new trading signal
 
 on:
   workflow_run:
@@ -17,11 +18,11 @@ on:
   workflow_dispatch:
     inputs:
       symbols:
-        description: "Blank = alerts from the last 90 min; e.g. AAPL,NVDA for a manual test"
+        description: "Blank = alerts from last 90 min; e.g. AAPL,NVDA for a manual test"
         required: false
         default: ""
       provider:
-        description: "anthropic | openai | both | auto"
+        description: "auto | anthropic | openai | both"
         required: false
         default: "auto"
 
@@ -29,12 +30,10 @@ permissions:
   contents: write
 
 jobs:
-  news:
-    # Do not run automatically when hourly-scan itself failed.
-    # Manual runs always execute.
+  intelligence:
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       - name: Checkout latest main
@@ -42,6 +41,11 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+
+      - name: Refresh from main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -51,28 +55,24 @@ jobs:
       - name: Install dependencies
         run: pip install --disable-pip-version-check pandas numpy pyyaml
 
-      - name: News check
+      - name: Build signal intelligence report
         env:
           NEWS_ENABLED: "1"
+          NEWS_LOOKBACK_MIN: "90"
+          NEWS_MAX_TICKERS: "12"
+          NEWS_HEADLINES_PER_TICKER: "8"
+          NEWS_MAX_AGE_HOURS: "48"
 
-          # For workflow_run there is no github.event.inputs.provider,
-          # so auto is used. For manual runs, the selected provider is used.
           LLM_PROVIDER: ${{ github.event.inputs.provider || 'auto' }}
-
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
-          # Optional model overrides. Leave unset to use the defaults
-          # in news_llm.py.
           ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
 
           FMP_KEY: ${{ secrets.FMP_KEY }}
 
-          # Keep this 0 so normal workflow runs actually notify.
           DRY_RUN: "0"
-
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
@@ -86,25 +86,21 @@ jobs:
           set -e
           python news_llm.py "${{ github.event.inputs.symbols }}"
 
-      - name: Publish news log
+      - name: Publish intelligence data
         if: always()
         run: |
-          git config user.name "swingbot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name swingbot
+          git config user.email bot@users.noreply.github.com
 
-          git add news_log.csv docs/news.json || true
+          git add docs/news.json news_log.csv || true
 
           if git diff --cached --quiet; then
-            echo "No news output changes to commit."
+            echo "No intelligence output changes to commit."
             exit 0
           fi
 
-          git commit -m "news: update news checks"
-
-          # hourly-scan and this workflow both publish to main, so rebase
-          # before pushing to avoid losing a newer main commit.
-          git pull --rebase --autostash origin main
-
+          git commit -m "news: publish signal intelligence"
+          git pull --rebase --autostash origin main || true
           git push || (
             sleep 5
             git pull --rebase --autostash origin main
