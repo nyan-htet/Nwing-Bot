@@ -48,7 +48,8 @@ BASE = "https://financialmodelingprep.com/stable"
 FMP_KEY = os.getenv("FMP_KEY", "").strip()
 NEWS_ENABLED = os.getenv("NEWS_ENABLED", "1") != "0"
 
-# Transparent LLM diagnostics; never stores API keys.\nLLM_DIAGNOSTICS = []
+# Transparent LLM diagnostics; never stores API keys.
+LLM_DIAGNOSTICS = []
 LOOKBACK_MIN = int(os.getenv("NEWS_LOOKBACK_MIN", "90"))
 MAX_TICKERS = int(os.getenv("NEWS_MAX_TICKERS", "12"))
 NEWS_LIMIT = int(os.getenv("NEWS_HEADLINES_PER_TICKER", "8"))
