@@ -29,3 +29,7 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-10 20:37 UTC,RJF,auto-failed,False,3,0,NO_NEWS,,
 2026-08-10 20:37 UTC,MPC,auto-failed,False,3,6,OK,,
 2026-08-10 20:37 UTC,FANG,auto-failed,False,3,0,NO_NEWS,,
+2026-08-10 20:44 UTC,EYE,auto-failed,False,3,0,NO_NEWS,,
+2026-08-10 20:44 UTC,AAL,auto-failed,False,3,1,OK,,
+2026-08-10 20:44 UTC,AAPL,auto-failed,False,3,4,OK,,
+2026-08-10 20:44 UTC,UGA,auto-failed,False,3,0,NO_NEWS,,
