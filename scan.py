@@ -365,6 +365,12 @@ def run_nightly():
     if spy is None:
         raise SystemExit("FATAL: no SPY data from Twelve Data — check "
                          "TWELVEDATA_KEY secret and quota, then re-run.")
+    # previous watchlist, to report what changed
+    try:
+        prev = set(json.load(open(cfg.WATCHLIST_FILE)).get("tickers", []))
+    except Exception:
+        prev = set()
+
     scored, meta = [], {}
     no_data = [t for t in tickers if t not in d]
     short_history = []
@@ -407,6 +413,40 @@ def run_nightly():
         json.dump({"tickers": sorted(set(top)), "meta": meta,
                    "built": dt.datetime.now(dt.timezone.utc).isoformat()}, f, indent=2)
     print(f"Watchlist built from tickers.csv: {len(set(top))} of {len(tickers)} tickers")
+
+    # ---- nightly summary notification ----
+    ledger = al.load()
+    screen_failed = [t for t, m in meta.items()
+                     if not (m.get("screen") or {}).get("pass", True)]
+    earnings_soon = [t for t, m in meta.items() if m.get("earnings_soon")]
+    macro = fnd.macro_context(spy)
+    cyc_line = ""
+    try:
+        long_hist = data.fetch_td(["SPY"], interval="1day", outputsize=5000).get("SPY")
+        if long_hist is not None:
+            cyc_line = cycles.context(long_hist).get("line", "")
+    except Exception:
+        pass
+    top_ranked = [(t, analysis.daily_trend(d[t], spy, cfg)["score"],
+                   analysis.daily_trend(d[t], spy, cfg)["rs"])
+                  for _, t in scored[:10] if t in d]
+    info = {
+        "when": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M"),
+        "watchlist_n": len(set(top)), "csv_n": len(tickers),
+        "tracked": list(ledger.keys()),
+        "thesis_warned": [t for t, e in ledger.items() if e.get("thesis_warned")],
+        "earnings": earnings_soon, "screen_failed": screen_failed,
+        "new_entrants": sorted(set(top) - prev) if prev else [],
+        "dropped": sorted(prev - set(top)) if prev else [],
+        "top": top_ranked,
+        "macro_risk": macro.get("risk"), "macro_vol": macro.get("vol"),
+        "cycles": cyc_line, "no_data": no_data, "short_history": short_history,
+    }
+    note = notify.format_nightly(info)
+    print("\n" + note)
+    notify.send_email(f"Nightly complete — watchlist {info['watchlist_n']} "
+                      f"({info['when']} UTC)", note, cfg)
+    notify.send_telegram(note, cfg)
     # ---- accounting: name every ticker that is NOT in the watchlist and why ----
     in_watch = set(top)
     no_data = [t for t in tickers if t not in d and t != "SPY"]

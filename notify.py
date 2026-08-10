@@ -98,6 +98,60 @@ def format_no_signal(watch_n: int, skip_report: dict, macro: dict, cyc: dict,
     return "\n".join(lines).rstrip()
 
 
+def format_nightly(info: dict) -> str:
+    """Nightly completion summary."""
+    L = [f"Nightly process run completed {info['when']} UTC",
+         f"{info['watchlist_n']} tickers on the new watchlist "
+         f"(ranked from {info['csv_n']} in tickers.csv).",
+         ""]
+
+    if info.get("tracked"):
+        t = sorted(info["tracked"])
+        L.append(f"Still Active ({len(t)}): {', '.join(t)}")
+    if info.get("earnings"):
+        e = sorted(info["earnings"])
+        L.append(f"Earnings within 7 days ({len(e)}): {', '.join(e)}")
+    if info.get("screen_failed"):
+        s = sorted(info["screen_failed"])
+        L.append(f"Failed fundamental ({len(s)}): {', '.join(s)}")
+
+    # what changed in the watchlist — the actionable part
+    if info.get("new_entrants"):
+        ne = info["new_entrants"]
+        L += ["", f"New to the watchlist ({len(ne)}): {', '.join(sorted(ne)[:25])}"
+                  + (" …" if len(ne) > 25 else "")]
+    if info.get("dropped"):
+        dr = info["dropped"]
+        L.append(f"Dropped out ({len(dr)}): {', '.join(sorted(dr)[:25])}"
+                 + (" …" if len(dr) > 25 else ""))
+
+    if info.get("top"):
+        L += ["", "Strongest trends now:"]
+        for t, sc, rs in info["top"][:10]:
+            L.append(f"  {t:<6} score {sc}/5, RS vs SPY {rs:+.0%}")
+
+    if info.get("thesis_warned"):
+        tw = sorted(info["thesis_warned"])
+        L += ["", f"⚠️ Tracked signals already flagged thesis-broken "
+                  f"({len(tw)}): {', '.join(tw)}"]
+
+    L += ["", f"Macro: {info.get('macro_risk','?')} "
+              f"(SPY 20d realized vol {info.get('macro_vol','?')}%)"]
+    if info.get("cycles"):
+        L.append(info["cycles"])
+
+    problems = []
+    if info.get("no_data"):
+        problems.append(f"no data from Twelve Data ({len(info['no_data'])}): "
+                        f"{', '.join(sorted(info['no_data'])[:20])}")
+    if info.get("short_history"):
+        problems.append(f"insufficient history ({len(info['short_history'])}): "
+                        f"{', '.join(sorted(info['short_history'])[:20])}")
+    if problems:
+        L += ["", "Data notes (consider pruning tickers.csv):"] + [f"  • {p}" for p in problems]
+    return "\n".join(L)
+
+
 def send_email(subject: str, body: str, cfg):
     if cfg.DRY_RUN or not cfg.SMTP_HOST:
         print(f"[DRY-RUN email] {subject}\n{body}\n")
