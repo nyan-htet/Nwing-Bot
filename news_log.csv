@@ -19,3 +19,7 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-10 20:24,AAL,,,unknown,,,,1,OK,1 usable article(s),False
 2026-08-10 20:24,ADM,,,unknown,,,,0,NO_NEWS,FMP responded successfully but returned no usable recent articles,False
 2026-08-10 20:24,EYE,,,unknown,,,,0,NO_NEWS,FMP responded successfully but returned no usable recent articles,False
+2026-08-10 20:28 UTC,AAL,anthropic,False,3,1,OK,,
+2026-08-10 20:28 UTC,AAPL,anthropic,False,3,8,OK,,
+2026-08-10 20:28 UTC,ADM,anthropic,False,3,0,NO_NEWS,,
+2026-08-10 20:28 UTC,EYE,anthropic,False,3,0,NO_NEWS,,
