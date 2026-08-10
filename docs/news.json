@@ -1,99 +1,174 @@
 {
-  "generated": "2026-08-10 17:53",
+  "generated": "2026-08-10 19:56",
   "provider": "anthropic",
+  "fmp_endpoint": "https://financialmodelingprep.com/stable/news/stock",
   "results": [
+    {
+      "ticker": "AAPL",
+      "entry": null,
+      "tp": null,
+      "headlines": [
+        {
+          "date": "2026-08-10 15:00 UTC",
+          "title": "Bull v. Bear: AAPL Valuation Hits Roadblock, Earnings Runway Still Wide",
+          "site": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=68ufEA3f9Nk",
+          "text": "Characteristics and Risks of Standardized Options: https://bit.ly/2v9tH6D. Apple (AAPL) got a downgrade and price target cut from Jefferies, with the firm hinting toward the iPhone maker canceling its all-glass model."
+        },
+        {
+          "date": "2026-08-10 14:24 UTC",
+          "title": "Apple playing catch-up with AI-enabled security flaw hunters",
+          "site": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=m54XfrIUI24",
+          "text": "CNBC's MacKenzie Sigalos joins 'The Exchange' to discuss how Apple is racing to fix vulnerability for Macs."
+        },
+        {
+          "date": "2026-08-10 14:21 UTC",
+          "title": "Apple reportedly testing Chinese-made memory chips for iPhones, MacBooks amid global shortage",
+          "site": "foxbusiness.com",
+          "url": "https://www.foxbusiness.com/markets/apple-testing-chinese-made-cxmt-memory-chips-iphones-macbooks-amid-global-shortage",
+          "text": "Apple is reportedly testing CXMT memory chips for iPhones and MacBooks sold in China but needs White House approval under U.S. restrictions."
+        },
+        {
+          "date": "2026-08-10 14:10 UTC",
+          "title": "The Data Science Disconnect: High Performance With Low Assets",
+          "site": "etftrends.com",
+          "url": "https://www.etftrends.com/equity-etf-content-hub/data-science-disconnect-high-performance-with-low-assets/",
+          "text": "Many investors know the JPMorgan Nasdaq Equity Premium Income ETF (JEPQ) for its options strategy. However, its underlying performance relies heavily on an engine that gets far less spotlight."
+        },
+        {
+          "date": "2026-08-10 14:03 UTC",
+          "title": "Apple Stock Falls Amid Concerns About iPhone Setback",
+          "site": "investopedia.com",
+          "url": "https://www.investopedia.com/market-update-apple-stock-analyst-concerns-about-iphone-setback-aapl-12037746",
+          "text": "Apple could be changing its iPhone lineup plans, according to Wall Street analysts, which could push back future price increases."
+        },
+        {
+          "date": "2026-08-10 13:44 UTC",
+          "title": "Apple downgraded by Jefferies on iPhone pricing concerns",
+          "site": "proactiveinvestors.com",
+          "url": "https://www.proactiveinvestors.com/companies/news/1096824",
+          "text": "Apple Inc (NASDAQ:AAPL, XETRA:APC) shares fell about 2% on Monday after Jefferies downgraded the stock to Underperform, citing challenges in Apple's efforts to develop higher-priced iPhone models and lift average selling prices. Along with the rating downgrade, Jefferies lowered its price target to $263.66 from $285.56, implying downside from current levels of about $306."
+        },
+        {
+          "date": "2026-08-10 13:00 UTC",
+          "title": "The Big 3: INTC, UBER, AAPL",
+          "site": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=iy5RysMCSUw",
+          "text": "@ProsperTradingAcademy's Scott Bauer turns to stocks that recently experienced volatile moves, both to the upside and downside. He sees Intel (INTC) as a long-term trading opportunity, believes Uber Technologies (UBER) is experiencing \"top-heavy\" movement, and highlights a great \"entry point\" for Apple (AAPL)."
+        },
+        {
+          "date": "2026-08-10 12:54 UTC",
+          "title": "Apple races to fix string of security flaws",
+          "site": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=JLONg-KbnuM",
+          "text": "CNBC's MacKenzie Sigalos joins 'Squawk on the Street' to discuss how Apple is racing to fix vulnerability for Macs."
+        }
+      ],
+      "risk": "unknown",
+      "company_specific": null,
+      "summary": "",
+      "reason": "",
+      "diagnostics": {
+        "status": "OK",
+        "http_error": null,
+        "message": "8 usable article(s)",
+        "source": "FMP /stable/news/stock"
+      },
+      "llm_ok": false,
+      "llm_provider": "anthropic"
+    },
     {
       "ticker": "NVDA",
       "entry": null,
       "tp": null,
       "headlines": [
-        "2026-08-10 \u2014 Taalas Buyout Boosts AMD's AI Inference Abilities Against NVDA & GOOGL (zacks.com)",
-        "2026-08-10 \u2014 Why Nvidia stock is slipping over 3% on Monday (invezz.com)",
-        "2026-08-10 \u2014 Dow Slips While the S&P 500 Clings to Friday's Record High (fool.com)",
-        "2026-08-10 \u2014 Wall Street giants partner with Nvidia on $500 billion AI financing deal, FT reports (reuters.com)",
-        "2026-08-10 \u2014 Nvidia Stock Slips as Its AI Investments Draw Fresh Scrutiny (barrons.com)",
-        "2026-08-10 \u2014 The Mag 7 Face-Off: Only 2 Come Out on Top (247wallst.com)",
-        "2026-08-10 \u2014 Nvidia Built the AI Brain, Now TSMC Wants to Give It Eyes (benzinga.com)",
-        "2026-08-10 \u2014 Semis Surge, Michael Burry's Shorts Feel the Pressure \u2014 But Don't Expect Him to Run for Cover After His Latest \u201c1987-Style\u201d Crash Warning (247wallst.com)"
+        {
+          "date": "2026-08-10 15:42 UTC",
+          "title": "This Nvidia change could spell good news for Micron",
+          "site": "marketwatch.com",
+          "url": "https://www.marketwatch.com/story/this-nvidia-change-could-spell-good-news-for-micron-80449e59",
+          "text": "An analyst says that Nvidia's move to downgrade some chip capabilities could end up boosting consumption of high-bandwidth memory."
+        },
+        {
+          "date": "2026-08-10 15:22 UTC",
+          "title": "Nvidia Stock Loses $130 Billion In Market Value As Firm Reportedly Enters $500 Billion AI Financing Deal",
+          "site": "forbes.com",
+          "url": "https://www.forbes.com/sites/antoniopequenoiv/2026/08/10/nvidia-stock-loses-130-billion-in-market-value-as-firm-reportedly-enters-500-billion-ai-financing-deal/",
+          "text": "Nvidia's tumble, paired with a positive day of trading for Oracle, allowed Oracle co-founder Larry Ellison to overtake Nvidia chief Jensen Huang as the world's seventh-wealthiest person. Ellison's estimated net worth reached $192 billion in the afternoon while Huang's dropped to $188.6 billion."
+        },
+        {
+          "date": "2026-08-10 14:58 UTC",
+          "title": "Nvidia teams up with Wall Street asset managers on $500 billion AI infrastructure push",
+          "site": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/08/10/nvidia-wall-street-asset-managers-500-billion-ai-push.html",
+          "text": "Nvidia is partnering with Apollo Global Management, Blackstone, BlackRock's Global Infrastructure Partners unit, Brookfield Asset Management, Goldman Sachs and KKR on a $500 billion AI financing effort, a person familiar with the matter told CNBC. An announcement could be made as early as Monday, the person said."
+        },
+        {
+          "date": "2026-08-10 14:40 UTC",
+          "title": "Nvidia Just Added $562 Billion in a Week",
+          "site": "gurufocus.com",
+          "url": "https://www.gurufocus.com/news/9021719/nvidia-just-added-562-billion-in-a-week",
+          "text": "Nvidia Corp. (NVDA, Financials), the best producer of AI processors, is emerging from its best week in more than a year after a new endorsement from Elon Musk g"
+        },
+        {
+          "date": "2026-08-10 14:26 UTC",
+          "title": "Nvidia Stock Falls. A $3 Billion AI Infrastructure Bet Could Be Next",
+          "site": "gurufocus.com",
+          "url": "https://www.gurufocus.com/news/9021530/nvidia-stock-falls-a-3-billion-ai-infrastructure-bet-could-be-next",
+          "text": "Nvidia (NVDA) shares slipped about 1.5% Monday after a Reuters report said the chipmaker is considering an investment of as much as $3 billion in power infrastr"
+        },
+        {
+          "date": "2026-08-10 14:18 UTC",
+          "title": "Nvidia, Wall Street Firms Strike AI Financing Deal Targeting $500 Billion",
+          "site": "wsj.com",
+          "url": "https://www.wsj.com/business/deals/nvidia-wall-street-firms-strike-ai-financing-deal-targeting-500-billion-c50377db",
+          "text": "Apollo, Blackstone and BlackRock were among the firms that committed to the deal."
+        },
+        {
+          "date": "2026-08-10 14:04 UTC",
+          "title": "BofA: Nvidia's next earnings report could kick off a \"multi-quarter upgrade cycle\"",
+          "site": "proactiveinvestors.com",
+          "url": "https://www.proactiveinvestors.com/companies/news/1096826",
+          "text": "Nvidia Corp (NASDAQ:NVDA, XETRA:NVD) is set to report second-quarter earnings after the market closes on August 26 and Bank of America thinks the chipmaker is about to do what it usually does: beat expectations and raise its outlook, only this time with an extra catalyst behind it. In a note maintaining its Buy rating and $350 price objective on the stock, BofA analysts said they expect Nvidia to post revenue of $94 billion to $95 billion, a $3 billion to $4 billion beat above the company's own $91 billion guidance."
+        },
+        {
+          "date": "2026-08-10 13:21 UTC",
+          "title": "Taalas Buyout Boosts AMD's AI Inference Abilities Against NVDA & GOOGL",
+          "site": "zacks.com",
+          "url": "https://www.zacks.com/stock/news/2972158/taalas-buyout-boosts-amd-s-ai-inference-abilities-against-nvda-googl?cid=CS-STOCKNEWSAPI-FT-analyst_blog|quick_take-2972158",
+          "text": "AMD's Taalas acquisition adds specialized AI inference silicon to its roadmap, aiming to boost performance and efficiency against fierce competition."
+        }
       ],
       "risk": "unknown",
       "company_specific": null,
       "summary": "",
-      "reason": ""
-    },
-    {
-      "ticker": "UPS",
-      "entry": null,
-      "tp": null,
-      "headlines": [
-        "2026-08-06 \u2014 Boomers Should Buy These High-Yield Dividend August Bargains Hand-Over-Fist (247wallst.com)",
-        "2026-08-05 \u2014 UPS Announces Quarterly Dividend (businesswire.com)",
-        "2026-08-05 \u2014 2 Magnificent Industrial Stocks Down 40% to Buy and Hold Forever (fool.com)",
-        "2026-08-05 \u2014 5 Relatively Secure And Cheap Dividend Stocks, Yields Up To 8% (August 2026) (seekingalpha.com)",
-        "2026-08-04 \u2014 5 Big Dividends at Serious Risk of Getting Cut (247wallst.com)",
-        "2026-08-04 \u2014 Is United Parcel Service (UPS) the Best Dividend Stock in the Industrial Sector? (fool.com)",
-        "2026-08-04 \u2014 GLP-1 Demand Is Creating a New Dividend Angle in These 4 Logistics Stocks (marketbeat.com)",
-        "2026-08-03 \u2014 United Parcel Service, Inc. $UPS Stake Decreased by First National Bank of Mount Dora Trust Investment Services (defenseworld.net)"
-      ],
-      "risk": "unknown",
-      "company_specific": null,
-      "summary": "",
-      "reason": ""
-    },
-    {
-      "ticker": "UGA",
-      "entry": null,
-      "tp": null,
-      "headlines": [
-        "2026-07-24 \u2014 HSBC Warns: Brutal Commodity \u2018Super-Squeeze' Coming as Iran Conflict Widens (247wallst.com)",
-        "2026-07-24 \u2014 Gasoline ETF (UGA) Hits New 52-Week High (zacks.com)",
-        "2026-07-02 \u2014 Top-Performing ETF Areas of 1H 2026 (zacks.com)",
-        "2026-06-23 \u2014 Beyond AI: Where Investors Can Still Find Dividend Growth In 2026 (seekingalpha.com)",
-        "2026-06-23 \u2014 UGA: A Seasonal Long Put Spreads Could Be Interesting (seekingalpha.com)",
-        "2026-06-04 \u2014 Look to State Street, Invesco, VanEck for Top-Performing ETFs in 2026 (etftrends.com)"
-      ],
-      "risk": "unknown",
-      "company_specific": null,
-      "summary": "",
-      "reason": ""
-    },
-    {
-      "ticker": "EYE",
-      "entry": null,
-      "tp": null,
-      "headlines": [
-        "2026-07-29 \u2014 National Vision Holdings, Inc. Announces Second Quarter 2026 Earnings Release and Conference Call (businesswire.com)",
-        "2026-07-22 \u2014 Fifth Third Bancorp Has $2.09 Million Stake in National Vision Holdings, Inc. $EYE (defenseworld.net)",
-        "2026-06-24 \u2014 Rise Nano Optics Announces Strategic Partnership with SportifEye Optics to Produce and Commercialize SpectraGuard(TM) Lenses in the United States (newsfilecorp.com)",
-        "2026-06-12 \u2014 Why Is National Vision (EYE) Up 3% Since Last Earnings Report? (zacks.com)",
-        "2026-06-03 \u2014 National Vision and Smart Glasses: Early Investing Signals (zacks.com)",
-        "2026-06-02 \u2014 EYE Stock: Valuation, Price Target, and Key Upside Drivers (zacks.com)",
-        "2026-05-28 \u2014 National Vision Holdings Inc (EYE) Shares Surge 4.9% -- What GF Score of 74 Tells Investors (gurufocus.com)",
-        "2026-05-27 \u2014 Why National Vision (EYE) is a Top Value Stock for the Long-Term (zacks.com)"
-      ],
-      "risk": "unknown",
-      "company_specific": null,
-      "summary": "",
-      "reason": ""
+      "reason": "",
+      "diagnostics": {
+        "status": "OK",
+        "http_error": null,
+        "message": "8 usable article(s)",
+        "source": "FMP /stable/news/stock"
+      },
+      "llm_ok": false,
+      "llm_provider": "anthropic"
     },
     {
       "ticker": "ADM",
       "entry": null,
       "tp": null,
-      "headlines": [
-        "2026-08-07 \u2014 Archer Daniels Earnings Boost Biofuels and Crush Capacity Growth Prospects Now (zacks.com)",
-        "2026-08-07 \u2014 ADM Stock: Growth Gains vs. Valuation and Execution Risks Remain Ahead (zacks.com)",
-        "2026-08-07 \u2014 Is Archer Daniels Midland (ADM) Stock Undervalued Right Now? (zacks.com)",
-        "2026-08-05 \u2014 ADM Declares Cash Dividend (businesswire.com)",
-        "2026-08-05 \u2014 ADM Q2 Earnings Call Highlights Biofuel-Led Outlook Raise (zacks.com)",
-        "2026-08-05 \u2014 Is Archer Daniels Midland (ADM) Outperforming Other Consumer Staples Stocks This Year? (zacks.com)",
-        "2026-08-05 \u2014 Here Are Wednesday\u2019s Top Wall Street Analyst Research Calls: Archer-Daniels Midland, Best Buy, Burlington Stores, Dell Technologies, e.l.f. Beauty, Humana, Transdigm, Vale, and More (247wallst.com)",
-        "2026-08-05 \u2014 Archer-Daniels-Midland Analysts Increase Their Forecasts Following Strong Q2 Results (benzinga.com)"
-      ],
+      "headlines": [],
       "risk": "unknown",
       "company_specific": null,
       "summary": "",
-      "reason": ""
+      "reason": "",
+      "diagnostics": {
+        "status": "NO_NEWS",
+        "http_error": null,
+        "message": "FMP responded successfully but returned no usable recent articles",
+        "source": "FMP /stable/news/stock"
+      },
+      "llm_ok": false
     }
   ]
 }

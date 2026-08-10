@@ -7,3 +7,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-10 17:53,UGA,,,unknown,,,,6
 2026-08-10 17:53,EYE,,,unknown,,,,8
 2026-08-10 17:53,ADM,,,unknown,,,,8
+2026-08-10 19:56,AAPL,,,unknown,,,,8,OK,8 usable article(s),False
+2026-08-10 19:56,NVDA,,,unknown,,,,8,OK,8 usable article(s),False
+2026-08-10 19:56,ADM,,,unknown,,,,0,NO_NEWS,FMP responded successfully but returned no usable recent articles,False
