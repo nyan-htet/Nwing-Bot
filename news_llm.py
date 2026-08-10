@@ -80,6 +80,9 @@ NEXT EARNINGS / FORWARD EXPECTATIONS
 ANALYST / RATINGS DATA
 {analysts}
 
+VALUATION
+{valuation}
+
 RECENT NEWS
 {news}
 
@@ -99,6 +102,8 @@ Return ONLY valid JSON with exactly these keys:
   "earnings_interpretation": "1-2 short sentences about the next earnings date, estimate direction and event risk",
   "analyst_assessment": "positive|mixed|negative|unknown",
   "analyst_interpretation": "1 short sentence about ratings and estimate direction",
+  "valuation_assessment": "attractive|reasonable|expensive|very_expensive|unknown",
+  "valuation_interpretation": "1-2 short sentences explaining whether valuation is supportive or a headwind; compare valuation with growth/industry/history only when supplied",
   "news_assessment": "positive|mixed|negative|no_major_risk|no_recent_news|error",
   "news_interpretation": "1-2 short sentences summarizing meaningful company-specific news risk; do not overreact to routine analyst notes",
   "sector_assessment": "supportive|neutral|headwind|unknown",
@@ -154,6 +159,170 @@ def pct_change(new, old):
     if a is None or b in (None, 0):
         return None
     return (a / b) - 1
+
+
+def quarter_label(result):
+    """Return a readable fiscal quarter label such as Q1 2026."""
+    fiscal = str(result.get("fiscal_period") or "").strip()
+    date_value = fiscal[:10] if fiscal else str(result.get("date") or "")[:10]
+    try:
+        d = dt.date.fromisoformat(date_value)
+        return f"Q{((d.month - 1) // 3) + 1} {d.year}"
+    except Exception:
+        return str(result.get("date") or "Latest result")
+
+
+def title_case_assessment(value):
+    value = str(value or "").strip().lower()
+    return {
+        "positive": "Positive",
+        "mixed": "Mixed",
+        "negative": "Negative",
+        "supportive": "Supportive",
+        "neutral": "Neutral",
+        "headwind": "Headwind",
+        "caution": "Caution",
+        "insufficient_data": "Insufficient Data",
+        "no_major_risk": "No Major Risk",
+        "no_recent_news": "No Recent News",
+        "error": "Data Error",
+        "unknown": "Unknown",
+    }.get(value, value.replace("_", " ").title() if value else "Unknown")
+
+
+def assessment_icon(value):
+    value = str(value or "").strip().lower()
+    if value in {"positive", "supportive", "strong", "bullish", "attractive", "good"}:
+        return "🟢"
+    if value in {"mixed", "neutral", "caution", "expensive", "moderate"}:
+        return "🟡"
+    if value in {"negative", "headwind", "weak", "bearish", "very_expensive", "bad"}:
+        return "🔴"
+    if value in {"insufficient_data", "unknown", "error"}:
+        return "⚪"
+    return "⚪"
+
+
+def financial_result_label(result):
+    surprise = fnum(result.get("eps_surprise_pct"))
+    rev_growth = fnum(result.get("revenue_yoy"))
+    margin = fnum(result.get("operating_margin"))
+
+    score = 0
+    if surprise is not None:
+        if surprise >= 0.05:
+            score += 2
+        elif surprise <= -0.05:
+            score -= 2
+    if rev_growth is not None:
+        if rev_growth > 0.03:
+            score += 1
+        elif rev_growth < -0.03:
+            score -= 1
+    if margin is not None and margin > 0.10:
+        score += 1
+
+    if score >= 2:
+        return "Strong"
+    if score <= -2:
+        return "Weak"
+    return "Mixed"
+
+
+def fallback_technical_summary(sig):
+    """Readable summary if LLM is unavailable; uses hourly-scan values only."""
+    if not sig:
+        return "Technical data from hourly-scan was not available."
+
+    trend = fnum(sig.get("trend_score"))
+    adx = fnum(sig.get("adx"))
+    rsi = fnum(sig.get("rsi"))
+    rs = fnum(sig.get("rs"))
+    quality = fnum(sig.get("quality"))
+    setup = str(sig.get("setup") or "").replace("_", " ").strip()
+    regime = str(sig.get("regime") or "").replace("_", " ").strip().lower()
+
+    bullish = sum([
+        1 if trend is not None and trend >= 4 else 0,
+        1 if adx is not None and adx >= 20 else 0,
+        1 if rsi is not None and 50 <= rsi <= 70 else 0,
+        1 if rs is not None and rs > 0 else 0,
+        1 if quality is not None and quality >= 0.70 else 0,
+    ])
+
+    if bullish >= 4:
+        tone = "The scanner shows a strong bullish setup with supportive momentum and trend conditions."
+        look = "Bullish continuation"
+    elif bullish >= 2:
+        tone = "The scanner shows a constructive setup, although some technical conditions are mixed."
+        look = "Constructive / mixed"
+    else:
+        tone = "The scanner shows limited technical confirmation and should be treated cautiously."
+        look = "Mixed / weakening"
+
+    if setup:
+        tone += f" The setup resembles {setup}, with the broader regime in a {regime or 'mixed'} phase."
+    return tone, look
+
+
+def fallback_overall(row):
+    """Conservative non-LLM fallback so a provider failure never creates a raw-data report."""
+    sig = row.get("signal") or {}
+    results = row.get("financials") or []
+    news_rows = row.get("news") or []
+    analysts = row.get("analysts") or {}
+
+    t_summary, t_look = fallback_technical_summary(sig)
+    t_score = 0
+    trend = fnum(sig.get("trend_score"))
+    quality = fnum(sig.get("quality"))
+    if trend is not None and trend >= 4:
+        t_score += 1
+    if quality is not None and quality >= 0.70:
+        t_score += 1
+
+    f_labels = [financial_result_label(r).lower() for r in results]
+    f_score = f_labels.count("strong") - f_labels.count("weak")
+
+    g = analysts.get("grades_consensus") or {}
+    buys = sum(fnum(g.get(k)) or 0 for k in ("strongBuy", "buy"))
+    sells = sum(fnum(g.get(k)) or 0 for k in ("strongSell", "sell"))
+    a_score = 1 if buys > sells else -1 if sells > buys else 0
+
+    if t_score + f_score + a_score >= 2:
+        overall = "supportive"
+    elif t_score + f_score + a_score <= -2:
+        overall = "caution"
+    else:
+        overall = "mixed"
+
+    return {
+        "technical_lookalike": t_look,
+        "technical_interpretation": t_summary,
+        "technical_assessment": "positive" if t_score >= 2 else "mixed",
+        "financial_assessment": "positive" if f_score > 0 else "negative" if f_score < 0 else "mixed",
+        "financial_interpretation": (
+            "Recent financial results are broadly improving."
+            if f_score > 0 else
+            "Recent financial results are showing some weakness."
+            if f_score < 0 else
+            "Recent financial results are mixed."
+        ),
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "The next earnings event could not be confidently assessed from the available data.",
+        "analyst_assessment": "positive" if a_score > 0 else "negative" if a_score < 0 else "unknown",
+        "analyst_interpretation": "Analyst ratings lean positive." if a_score > 0 else "Analyst ratings lean negative." if a_score < 0 else "Analyst ratings are mixed or unavailable.",
+        "news_assessment": "no_recent_news" if not news_rows else "mixed",
+        "news_interpretation": "No recent usable company-specific news was found." if not news_rows else "Recent news requires manual review.",
+        "sector_assessment": "unknown",
+        "sector_interpretation": "Sector conditions could not be confidently assessed.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "Macro conditions are being treated as neutral because the LLM interpretation was unavailable.",
+        "overall_assessment": overall,
+        "overall_summary": "The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.",
+        "key_positive": "The technical scanner remains the primary signal.",
+        "key_risk": "LLM interpretation was unavailable for this run.",
+    }
 
 
 def fmt_money(v, digits=2):
@@ -643,6 +812,42 @@ def analyst_data(grades, estimates):
     return out
 
 
+def valuation_data(ticker):
+    """Fetch compact valuation/TTM metrics. Raw values are kept for the LLM/JSON,
+    while the notification only shows the interpretation."""
+    out = {}
+    for endpoint, key in (("ratios-ttm", "ratios"), ("key-metrics-ttm", "metrics")):
+        try:
+            data = fmp(endpoint, {"symbol": ticker}, endpoint)
+            if isinstance(data, list) and data:
+                out[key] = data[0]
+            elif isinstance(data, dict):
+                out[key] = data
+        except Exception as exc:
+            print(f"  {ticker} {endpoint} unavailable: {exc}")
+    return out
+
+
+def valuation_text(valuation):
+    if not valuation:
+        return "Valuation data unavailable."
+
+    ratios = valuation.get("ratios") or {}
+    metrics = valuation.get("metrics") or {}
+    keys = [
+        "priceToEarningsRatioTTM", "priceToSalesRatioTTM",
+        "priceToBookRatioTTM", "priceToFreeCashFlowsRatioTTM",
+        "enterpriseValueOverEBITDATTM", "pegRatioTTM",
+    ]
+    vals = {}
+    for k in keys:
+        if ratios.get(k) is not None:
+            vals[k] = ratios[k]
+        elif metrics.get(k) is not None:
+            vals[k] = metrics[k]
+    return json.dumps(vals, default=str)
+
+
 def sector_data(profile_row, sectors, industries):
     sector = str(profile_row.get("sector") or "Unknown")
     industry = str(profile_row.get("industry") or "Unknown")
@@ -827,9 +1032,9 @@ def parse_llm(text):
         print(f"  LLM raw response (first 1200 chars): {cleaned[:1200]}")
         return None
     expected = [
-        "technical_lookalike", "technical_interpretation", "financial_assessment",
+        "technical_lookalike", "technical_interpretation", "technical_assessment", "financial_assessment",
         "financial_interpretation", "earnings_assessment", "earnings_interpretation",
-        "analyst_assessment", "analyst_interpretation", "news_assessment",
+        "analyst_assessment", "analyst_interpretation", "valuation_assessment", "valuation_interpretation", "news_assessment",
         "news_interpretation", "sector_assessment", "sector_interpretation",
         "macro_assessment", "macro_interpretation", "overall_assessment",
         "overall_summary", "key_positive", "key_risk",
@@ -888,26 +1093,15 @@ def icon_assessment(value):
 
 def format_financial_lines(results):
     lines = []
-    for r in results:
-        surprise = r.get("eps_surprise_pct")
-        label = "strong/positive" if surprise is not None and surprise >= 0.05 else "weak/negative" if surprise is not None and surprise <= -0.05 else "mixed/neutral"
-        details = [
-            f"EPS {r.get('eps_actual') if r.get('eps_actual') is not None else 'n/a'} vs est {r.get('eps_estimate') if r.get('eps_estimate') is not None else 'n/a'}",
-            f"surprise {fmt_pct(surprise)}",
-            f"revenue {fmt_money(r.get('revenue'))}",
-            f"rev growth {fmt_pct(r.get('revenue_yoy'))}",
-            f"operating margin {fmt_pct(r.get('operating_margin'))}",
-        ]
-        lines.append(f"- {r.get('date')} — {label} — " + ", ".join(details))
+    for r in results[:3]:
+        label = financial_result_label(r)
+        icon = "🟢" if label == "Strong" else "🔴" if label == "Weak" else "🟡"
+        lines.append(f"{quarter_label(r)} — {icon} {label}")
     return lines
 
 
 def format_report(row):
-    """Build ONE compact notification for ONE ticker.
-
-    Deliberately contains no URLs. The report is kept compact enough for a
-    single Telegram message, like hourly-scan.
-    """
+    """One readable message per ticker. Raw data stays in docs/news.json."""
     sig = row.get("signal") or {}
     alert = row.get("alert") or {}
     llm = row.get("llm") or {}
@@ -916,8 +1110,16 @@ def format_report(row):
     forward = row.get("forward") or {}
     next_e = forward.get("next_earnings") or {}
     analysts = row.get("analysts") or {}
+    valuation = row.get("valuation") or {}
     sector = row.get("sector") or {}
     news_rows = row.get("news") or []
+    macro = row.get("macro") or {}
+    scan_macro = macro.get("hourly_scan_macro") or {}
+    cycles = macro.get("hourly_scan_cycles") or {}
+
+    # If LLM failed, use a deterministic fallback so the notification remains useful.
+    if not llm:
+        llm = fallback_overall(row)
 
     ticker = row["ticker"]
     name = prof.get("companyName") or sig.get("name") or ticker
@@ -928,16 +1130,14 @@ def format_report(row):
     potential = fnum(sig.get("tp_pct"))
 
     overall = str(llm.get("overall_assessment") or "insufficient_data").lower()
-    title_icon = icon_assessment(overall)
-
     lines = [
-        f"{title_icon} {ticker} — {name}",
+        f"{assessment_icon(overall)} {ticker} — {name}",
         f"Entry: ${entry:.2f}" if entry is not None else "Entry: n/a",
-        f"eToro TP value: ${etoro:.2f}" if etoro is not None else "eToro TP value: n/a",
-        f"Scanner potential: {fmt_pct(potential)}" if potential is not None else "Scanner potential: n/a",
+        f"eToro TP Value: ${etoro:.2f}" if etoro is not None else "eToro TP Value: n/a",
+        f"Scanner Potential: {fmt_pct(potential)}" if potential is not None else "Scanner Potential: n/a",
         "",
         "═══ ANALYST VIEW ═══",
-        f"Assessment: {icon_assessment(llm.get('analyst_assessment'))} {llm.get('analyst_assessment') or 'unknown'}",
+        f"{assessment_icon(llm.get('analyst_assessment'))} {title_case_assessment(llm.get('analyst_assessment'))}",
     ]
 
     g = analysts.get("grades_consensus") or {}
@@ -951,7 +1151,7 @@ def format_report(row):
     ):
         value = next((g[k] for k in keys if g.get(k) is not None), None)
         if value is not None:
-            counts.append(f"{label}: {value}")
+            counts.append(f"{label}: {int(value) if float(value).is_integer() else value}")
     if counts:
         lines.append(" | ".join(counts))
     if llm.get("analyst_interpretation"):
@@ -960,129 +1160,121 @@ def format_report(row):
     lines += [
         "",
         "═══ TECHNICAL SETUP ═══",
-        f"Assessment: {icon_assessment(llm.get('technical_assessment'))} {llm.get('technical_assessment') or 'unknown'}",
-        f"Setup type: {llm.get('technical_lookalike') or 'unavailable'}",
+        f"{assessment_icon(llm.get('technical_assessment'))} {title_case_assessment(llm.get('technical_assessment'))}",
+        f"Setup: {str(llm.get('technical_lookalike') or 'Unavailable').replace('_', ' ').title()}",
     ]
     if llm.get("technical_interpretation"):
         lines.append(f"🧠 {llm['technical_interpretation']}")
 
-    lines += ["", "═══ LAST 3 FINANCIAL RESULTS ═══"]
+    lines += ["", "═══ FINANCIAL RESULTS ═══"]
     if results:
         lines.extend(format_financial_lines(results))
         if llm.get("financial_interpretation"):
             lines.append(f"🧠 {llm['financial_interpretation']}")
     else:
-        lines.append("- Not available / not applicable.")
+        lines.append("⚪ Not available / not applicable.")
+
+    lines += ["", "═══ VALUATION ═══"]
+    val = str(llm.get("valuation_assessment") or "unknown").lower()
+    val_label = {
+        "attractive": "Attractive",
+        "reasonable": "Reasonable",
+        "expensive": "Expensive",
+        "very_expensive": "Very Expensive",
+        "unknown": "Unknown",
+    }.get(val, title_case_assessment(val))
+    lines.append(f"{assessment_icon(val)} {val_label}")
+    if llm.get("valuation_interpretation"):
+        lines.append(f"🧠 {llm['valuation_interpretation']}")
+    elif not valuation:
+        lines.append("⚪ Valuation data unavailable.")
 
     lines += ["", "═══ NEXT FINANCIAL REPORT ═══"]
     d = parse_dt(next_e.get("date") or next_e.get("earningsDate"))
     if d:
         days = (d.date() - dt.date.today()).days
         lines.append(f"Expected: {d.date().isoformat()} ({days:+d} days)")
-        if next_e.get("epsEstimated") is not None:
-            lines.append(f"EPS estimate: {next_e.get('epsEstimated')}")
-        if next_e.get("revenueEstimated") is not None:
-            lines.append(f"Revenue estimate: {fmt_money(next_e.get('revenueEstimated'))}")
+        if llm.get("earnings_assessment"):
+            lines.append(
+                f"{assessment_icon(llm.get('earnings_assessment'))} "
+                f"{title_case_assessment(llm.get('earnings_assessment'))}"
+            )
+        if llm.get("earnings_interpretation"):
+            lines.append(f"🧠 {llm['earnings_interpretation']}")
     else:
-        lines.append("Expected date: unavailable")
-    if llm.get("earnings_interpretation"):
-        lines.append(f"🧠 {llm['earnings_interpretation']}")
+        lines.append("⚪ Expected date unavailable.")
+        if llm.get("earnings_interpretation"):
+            lines.append(f"🧠 {llm['earnings_interpretation']}")
 
     lines += ["", "═══ RECENT NEWS ═══"]
-    if news_rows:
-        visible_news = [
-            n for n in news_rows
-            if str(n.get("site") or "").lower() not in {"youtube.com", "youtube", "youtu.be"}
-        ]
+    visible_news = [
+        n for n in news_rows
+        if str(n.get("site") or "").lower() not in {"youtube.com", "youtube", "youtu.be"}
+    ]
+    if visible_news:
         for n in visible_news[:5]:
-            lines.append(f"- {n.get('date')} — {n.get('title')}")
+            lines.append(f"• {n.get('date')} — {n.get('title')}")
         if llm.get("news_interpretation"):
-            lines.append(f"🧠 {llm['news_interpretation']}")
+            lines.append(
+                f"{assessment_icon(llm.get('news_assessment'))} "
+                f"{llm['news_interpretation']}"
+            )
     else:
-        lines.append("No recent usable company-specific news.")
-
-
-    macro = row.get("macro") or {}
-    scan_macro = macro.get("hourly_scan_macro") or {}
-    cycles = macro.get("hourly_scan_cycles") or {}
-    sector = row.get("sector") or {}
+        lines.append("⚪ No recent usable company-specific news.")
 
     lines += [
         "",
         "═══ SECTOR & MACRO ═══",
-        f"Sector: {sector.get('sector') or 'unknown'} | Industry: {sector.get('industry') or 'unknown'}",
-        f"Sector outlook: {icon_assessment(llm.get('sector_assessment'))} {llm.get('sector_assessment') or 'unknown'}",
-        f"Macro outlook: {icon_assessment(llm.get('macro_assessment'))} {llm.get('macro_assessment') or 'unknown'}",
+        f"Sector: {sector.get('sector') or 'Unknown'} | Industry: {sector.get('industry') or 'Unknown'}",
+        f"Sector: {assessment_icon(llm.get('sector_assessment'))} {title_case_assessment(llm.get('sector_assessment'))}",
+        f"Macro: {assessment_icon(llm.get('macro_assessment'))} {title_case_assessment(llm.get('macro_assessment'))}",
     ]
 
-    # Surface the actionable calendar context instead of dumping economic numbers.
+    # Only show actionable upcoming events, not a dump of unrelated global events.
     calendar = macro.get("calendar") or []
-    if calendar:
-        shown = []
-        for event in calendar[:4]:
-            if isinstance(event, dict):
-                name_ev = event.get("event") or event.get("name") or event.get("title")
-                date_ev = event.get("date") or event.get("releaseDate")
-                if name_ev:
-                    shown.append(f"{name_ev}" + (f" — {date_ev}" if date_ev else ""))
-        if shown:
-            lines.append("Upcoming: " + " | ".join(shown))
+    relevant = []
+    keywords = ("CPI", "PPI", "FOMC", "FED", "JOBS", "PAYROLL", "GDP", "PCE",
+                "UNEMPLOYMENT", "RETAIL SALES", "PMI", "ISM", "CONSUMER CONFIDENCE")
+    for event in calendar:
+        if not isinstance(event, dict):
+            continue
+        ev_name = str(event.get("event") or event.get("name") or event.get("title") or "").strip()
+        if ev_name and any(k in ev_name.upper() for k in keywords):
+            ev_date = event.get("date") or event.get("releaseDate")
+            relevant.append(f"{ev_name}" + (f" — {ev_date}" if ev_date else ""))
+    if relevant:
+        lines.append("Upcoming: " + " | ".join(relevant[:3]))
 
     if scan_macro.get("risk") is not None:
-        lines.append(f"Hourly-scan macro risk: {scan_macro.get('risk')}")
-    if scan_macro.get("vol") is not None:
-        lines.append(f"Market volatility: {scan_macro.get('vol')}")
-
+        lines.append(f"Hourly-Scan Macro Risk: {str(scan_macro.get('risk')).title()}")
     if cycles:
-        if cycles.get("line"):
-            lines.append(f"Cycle context: {cycles.get('line')}")
+        cycle_line = cycles.get("line")
+        if cycle_line:
+            lines.append(f"Cycle Context: {cycle_line}")
         elif cycles.get("label") is not None:
-            lines.append(f"Cycle context: {cycles.get('label')}")
+            lines.append(f"Cycle Context: {cycles.get('label')}")
 
     if llm.get("sector_interpretation"):
         lines.append(f"🧠 Sector: {llm['sector_interpretation']}")
     if llm.get("macro_interpretation"):
         lines.append(f"🧠 Macro: {llm['macro_interpretation']}")
 
-
     lines += [
         "",
-        "═══ OVERALL ═══",
-        f"{icon_assessment(overall)} {overall.upper()}",
-        llm.get("overall_summary") or "Overall interpretation unavailable.",
-        f"Key positive: {llm.get('key_positive') or 'n/a'}",
-        f"Key risk: {llm.get('key_risk') or 'n/a'}",
-        "",
-        "(Technical: hourly-scan | fundamentals/news/macro: FMP | interpretation: "
-        f"{row.get('llm_provider') or 'LLM'})",
+        "═══ OVERALL ASSESSMENT ═══",
+        f"{assessment_icon(overall)} {title_case_assessment(overall)}",
+        f"🧠 {llm.get('overall_summary') or 'Interpretation unavailable.'}",
+        f"🟢 Key Positive: {llm.get('key_positive') or 'n/a'}",
+        f"🔴 Key Risk: {llm.get('key_risk') or 'n/a'}",
     ]
 
-    report = "\n".join(lines)
+    provider_used = row.get("llm_provider") or "none"
+    lines += [
+        "",
+        f"(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: {provider_used})",
+    ]
+    return "\n".join(lines)
 
-    # Telegram's practical limit is ~4096 chars. Keep each ticker as ONE
-    # message; trim only the news list if an unusually verbose response grows
-    # beyond the safe limit.
-    if len(report) > 3850:
-        # Remove the last news item(s) first, preserving all other sections.
-        marker = "═══ RECENT NEWS ═══"
-        if marker in report:
-            before, after = report.split(marker, 1)
-            news_part, rest = after.split("═══ SECTOR / INDUSTRY ═══", 1)
-            news_lines = news_part.strip().splitlines()
-            header = news_lines[:1]
-            items = [x for x in news_lines[1:] if x.startswith("- ")]
-            tail = [x for x in news_lines[1:] if not x.startswith("- ")]
-            while len("\n".join([before, marker, *header, *items, *tail, "═══ SECTOR / INDUSTRY ═══", rest])) > 3850 and items:
-                items.pop()
-            news_part = "\n".join(header + items + tail)
-            report = "\n".join([before.rstrip(), marker, news_part, "═══ SECTOR / INDUSTRY ═══", rest]).strip()
-
-    if len(report) > 4000:
-        # Final hard safety: preserve the whole report structure but trim only
-        # the longest free-text interpretation fields.
-        report = report[:3950] + "\n…"
-
-    return report
 
 def split_telegram(text, limit=3900):
     if len(text) <= limit:
@@ -1161,6 +1353,7 @@ def main():
         fin, health = build_financials(ticker, earn, inc, bal, cf)
         forward = forward_data(earnings_cal.get(ticker, []), estimates)
         analysts = analyst_data(grades, estimates)
+        valuation = valuation_data(ticker)
         sector = sector_data(prof, sectors, industries)
 
         prompt = PROMPT.format(
@@ -1171,6 +1364,7 @@ def main():
             financials=financial_text(fin, health),
             forward=forward_text(forward),
             analysts=analysts_text(analysts),
+            valuation=valuation_text(valuation),
             news=news_text(news_rows, news_diag),
             sector=sector_text(sector),
             macro=macro_text(macro),
@@ -1192,6 +1386,7 @@ def main():
             "financial_health": health,
             "forward": forward,
             "analysts": analysts,
+            "valuation": valuation,
             "news": news_rows,
             "news_diag": news_diag,
             "sector": sector,
