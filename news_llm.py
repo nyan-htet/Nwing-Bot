@@ -47,6 +47,8 @@ import notify
 BASE = "https://financialmodelingprep.com/stable"
 FMP_KEY = os.getenv("FMP_KEY", "").strip()
 NEWS_ENABLED = os.getenv("NEWS_ENABLED", "1") != "0"
+
+# Transparent LLM diagnostics; never stores API keys.\nLLM_DIAGNOSTICS = []
 LOOKBACK_MIN = int(os.getenv("NEWS_LOOKBACK_MIN", "90"))
 MAX_TICKERS = int(os.getenv("NEWS_MAX_TICKERS", "12"))
 NEWS_LIMIT = int(os.getenv("NEWS_HEADLINES_PER_TICKER", "8"))
@@ -950,17 +952,16 @@ def provider():
     has_o = bool(os.getenv("OPENAI_API_KEY", "").strip())
 
     if wanted == "both":
-        return "both" if (has_a and has_o) else ("anthropic" if has_a else ("openai" if has_o else None))
+        return "both" if (has_a and has_o) else ("openai" if has_o else ("anthropic" if has_a else None))
     if wanted == "anthropic":
         return "anthropic" if has_a else ("openai" if has_o else None)
     if wanted == "openai":
         return "openai" if has_o else ("anthropic" if has_a else None)
 
-    # auto: prefer Anthropic, but the caller will fall back to OpenAI if
-    # Anthropic is unavailable or returns an unusable response.
-    if has_a and has_o:
+    # V6 auto order: OpenAI GPT-5.6 Luna first, Claude Haiku 4.5 second.
+    if has_o and has_a:
         return "auto"
-    return "anthropic" if has_a else ("openai" if has_o else None)
+    return "openai" if has_o else ("anthropic" if has_a else None)
 
 
 def post_json(url, payload, headers):
@@ -981,10 +982,17 @@ def post_json(url, payload, headers):
 
 
 def call_llm(which, prompt):
+    if which == "anthropic":
+        model = os.getenv("ANTHROPIC_MODEL", "").strip() or "claude-haiku-4-5"
+        provider_name = "Anthropic"
+    else:
+        model = os.getenv("OPENAI_MODEL", "").strip() or "gpt-5.6-luna"
+        provider_name = "OpenAI"
+
+    diag = {"provider": which, "provider_name": provider_name, "model": model, "status": "started"}
+
     try:
-        common = os.getenv("LLM_MODEL", "").strip()
         if which == "anthropic":
-            model = os.getenv("ANTHROPIC_MODEL", "").strip() or common or "claude-sonnet-4-6"
             resp = post_json(
                 "https://api.anthropic.com/v1/messages",
                 {
@@ -998,24 +1006,37 @@ def call_llm(which, prompt):
                     "anthropic-version": "2023-06-01",
                 },
             )
-            text = "".join(x.get("text", "") for x in resp.get("content", []) if x.get("type") == "text")
+            text_out = "".join(
+                x.get("text", "") for x in resp.get("content", [])
+                if x.get("type") == "text"
+            )
         else:
-            model = os.getenv("OPENAI_MODEL", "").strip() or common or "gpt-4o-mini"
+            # GPT-5.6 Luna supports Chat Completions. Use the newer
+            # max_completion_tokens parameter rather than legacy max_tokens.
             resp = post_json(
                 "https://api.openai.com/v1/chat/completions",
                 {
                     "model": model,
-                    "temperature": 0,
-                    "max_tokens": 900,
+                    "max_completion_tokens": 1200,
                     "messages": [{"role": "user", "content": prompt}],
                 },
                 {"Authorization": f"Bearer {os.getenv('OPENAI_API_KEY', '')}"},
             )
-            text = resp["choices"][0]["message"]["content"]
-        print(f"  {which}: received {len(text)} chars")
-        return text
+            choices = resp.get("choices") or []
+            if not choices:
+                raise RuntimeError("OpenAI returned no choices")
+            text_out = choices[0].get("message", {}).get("content") or ""
+
+        diag["status"] = "received" if text_out.strip() else "empty_response"
+        diag["chars"] = len(text_out)
+        LLM_DIAGNOSTICS.append(diag)
+        print(f"  {provider_name} [{model}]: {diag['status']} ({len(text_out)} chars)")
+        return text_out
     except Exception as e:
-        print(f"  {which.upper()} LLM ERROR: {str(e)[:900]}")
+        diag["status"] = "error"
+        diag["error"] = str(e)[:1000]
+        LLM_DIAGNOSTICS.append(diag)
+        print(f"  {provider_name} [{model}] ERROR: {diag['error']}")
         return None
 
 
@@ -1045,38 +1066,52 @@ def parse_llm(text):
 
 
 def ask(prompt, which):
+    def try_one(name):
+        raw = call_llm(name, prompt)
+        parsed = parse_llm(raw)
+        if parsed:
+            return parsed, name
+        if raw:
+            print(f"  {name}: response received but JSON was not usable.")
+        return None, name
+
     if which == "both":
-        a = parse_llm(call_llm("anthropic", prompt))
-        o = parse_llm(call_llm("openai", prompt))
+        a, _ = try_one("anthropic")
+        o, _ = try_one("openai")
         if not a and not o:
             return None, "both-failed"
         if a and o:
-            # Prefer the more cautious overall assessment if the providers disagree.
             rank = {"supportive": 0, "mixed": 1, "caution": 2, "insufficient_data": 3}
-            chosen = max((a, "anthropic"), (o, "openai"), key=lambda x: rank.get(x[0].get("overall_assessment"), 3))
+            chosen = max(
+                ((a, "anthropic"), (o, "openai")),
+                key=lambda x: rank.get(x[0].get("overall_assessment"), 3),
+            )
             result = dict(chosen[0])
             if a.get("overall_assessment") != o.get("overall_assessment"):
-                result["overall_summary"] += f" Provider check: Anthropic={a.get('overall_assessment')}; OpenAI={o.get('overall_assessment')}."
+                result["overall_summary"] += (
+                    f" Provider check: Anthropic={a.get('overall_assessment')}; "
+                    f"OpenAI={o.get('overall_assessment')}."
+                )
             return result, "both"
         return (a, "anthropic") if a else (o, "openai")
 
     if which == "auto":
-        # Anthropic is preferred, but a failed/free-tier/unavailable Anthropic
-        # call must not make the whole report unusable when OpenAI is available.
-        if os.getenv("ANTHROPIC_API_KEY", "").strip():
-            a = parse_llm(call_llm("anthropic", prompt))
-            if a:
-                return a, "anthropic"
-            print("  Anthropic unavailable/unusable; trying OpenAI fallback.")
+        # OpenAI GPT-5.6 Luna first; Claude Haiku 4.5 fallback.
         if os.getenv("OPENAI_API_KEY", "").strip():
-            o = parse_llm(call_llm("openai", prompt))
+            o, _ = try_one("openai")
             if o:
-                return o, "openai"
-            print("  OpenAI fallback also unavailable/unusable.")
+                return o, "openai:gpt-5.6-luna"
+            print("  OpenAI GPT-5.6 Luna unavailable/unusable; trying Claude Haiku 4.5.")
+        if os.getenv("ANTHROPIC_API_KEY", "").strip():
+            a, _ = try_one("anthropic")
+            if a:
+                return a, "anthropic:claude-haiku-4-5"
+            print("  Claude Haiku 4.5 also unavailable/unusable.")
         return None, "auto-failed"
 
-    result = parse_llm(call_llm(which, prompt))
-    return result, which
+    result, used = try_one(which)
+    return (result, used) if result else (None, f"{which}-failed")
+
 
 
 # ---------------------------------------------------------------------------
@@ -1269,6 +1304,16 @@ def format_report(row):
     ]
 
     provider_used = row.get("llm_provider") or "none"
+    if provider_used == "auto-failed":
+        diag = row.get("llm_diagnostics") or []
+        if diag:
+            last = diag[-1]
+            err = last.get("error") or last.get("status") or "unknown error"
+            lines += [
+                "",
+                f"⚠️ LLM unavailable: {last.get('provider_name', last.get('provider', 'provider'))} "
+                f"[{last.get('model', 'unknown model')}] — {err}",
+            ]
     lines += [
         "",
         f"(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: {provider_used})",
@@ -1330,9 +1375,18 @@ def main():
     macro = macro_data()
 
     chosen_provider = provider()
+    print(
+        "LLM configuration: "
+        f"provider={chosen_provider or 'none'} | "
+        f"OpenAI key={'present' if os.getenv('OPENAI_API_KEY', '').strip() else 'missing'} "
+        f"(model={os.getenv('OPENAI_MODEL', '').strip() or 'gpt-5.6-luna'}) | "
+        f"Anthropic key={'present' if os.getenv('ANTHROPIC_API_KEY', '').strip() else 'missing'} "
+        f"(model={os.getenv('ANTHROPIC_MODEL', '').strip() or 'claude-haiku-4-5'})"
+    )
     rows = []
 
     for ticker, alert in targets:
+        LLM_DIAGNOSTICS.clear()
         print(f"\n=== {ticker} ===")
         sig = signals.get(ticker, {})
         prof = profile(ticker)
@@ -1394,6 +1448,7 @@ def main():
             "llm": llm_result or {},
             "llm_provider": llm_used,
             "llm_ok": bool(llm_result),
+            "llm_diagnostics": list(LLM_DIAGNOSTICS),
             "is_etf": is_etf,
         }
         row["report"] = format_report(row)
@@ -1428,6 +1483,8 @@ def main():
         json.dump({
             "generated": when,
             "provider": chosen_provider or "none",
+            "openai_model_default": "gpt-5.6-luna",
+            "anthropic_model_default": "claude-haiku-4-5",
             "purpose": "signal intelligence follow-up",
             "source_files": ["alerted.json", "docs/signals.json"],
             "results": rows,
