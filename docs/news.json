@@ -1,160 +1,44 @@
 {
-  "generated": "2026-08-10 19:56",
+  "generated": "2026-08-10 20:16",
   "provider": "anthropic",
   "fmp_endpoint": "https://financialmodelingprep.com/stable/news/stock",
   "results": [
     {
-      "ticker": "AAPL",
-      "entry": null,
-      "tp": null,
-      "headlines": [
-        {
-          "date": "2026-08-10 15:00 UTC",
-          "title": "Bull v. Bear: AAPL Valuation Hits Roadblock, Earnings Runway Still Wide",
-          "site": "youtube.com",
-          "url": "https://www.youtube.com/watch?v=68ufEA3f9Nk",
-          "text": "Characteristics and Risks of Standardized Options: https://bit.ly/2v9tH6D. Apple (AAPL) got a downgrade and price target cut from Jefferies, with the firm hinting toward the iPhone maker canceling its all-glass model."
-        },
-        {
-          "date": "2026-08-10 14:24 UTC",
-          "title": "Apple playing catch-up with AI-enabled security flaw hunters",
-          "site": "youtube.com",
-          "url": "https://www.youtube.com/watch?v=m54XfrIUI24",
-          "text": "CNBC's MacKenzie Sigalos joins 'The Exchange' to discuss how Apple is racing to fix vulnerability for Macs."
-        },
-        {
-          "date": "2026-08-10 14:21 UTC",
-          "title": "Apple reportedly testing Chinese-made memory chips for iPhones, MacBooks amid global shortage",
-          "site": "foxbusiness.com",
-          "url": "https://www.foxbusiness.com/markets/apple-testing-chinese-made-cxmt-memory-chips-iphones-macbooks-amid-global-shortage",
-          "text": "Apple is reportedly testing CXMT memory chips for iPhones and MacBooks sold in China but needs White House approval under U.S. restrictions."
-        },
-        {
-          "date": "2026-08-10 14:10 UTC",
-          "title": "The Data Science Disconnect: High Performance With Low Assets",
-          "site": "etftrends.com",
-          "url": "https://www.etftrends.com/equity-etf-content-hub/data-science-disconnect-high-performance-with-low-assets/",
-          "text": "Many investors know the JPMorgan Nasdaq Equity Premium Income ETF (JEPQ) for its options strategy. However, its underlying performance relies heavily on an engine that gets far less spotlight."
-        },
-        {
-          "date": "2026-08-10 14:03 UTC",
-          "title": "Apple Stock Falls Amid Concerns About iPhone Setback",
-          "site": "investopedia.com",
-          "url": "https://www.investopedia.com/market-update-apple-stock-analyst-concerns-about-iphone-setback-aapl-12037746",
-          "text": "Apple could be changing its iPhone lineup plans, according to Wall Street analysts, which could push back future price increases."
-        },
-        {
-          "date": "2026-08-10 13:44 UTC",
-          "title": "Apple downgraded by Jefferies on iPhone pricing concerns",
-          "site": "proactiveinvestors.com",
-          "url": "https://www.proactiveinvestors.com/companies/news/1096824",
-          "text": "Apple Inc (NASDAQ:AAPL, XETRA:APC) shares fell about 2% on Monday after Jefferies downgraded the stock to Underperform, citing challenges in Apple's efforts to develop higher-priced iPhone models and lift average selling prices. Along with the rating downgrade, Jefferies lowered its price target to $263.66 from $285.56, implying downside from current levels of about $306."
-        },
-        {
-          "date": "2026-08-10 13:00 UTC",
-          "title": "The Big 3: INTC, UBER, AAPL",
-          "site": "youtube.com",
-          "url": "https://www.youtube.com/watch?v=iy5RysMCSUw",
-          "text": "@ProsperTradingAcademy's Scott Bauer turns to stocks that recently experienced volatile moves, both to the upside and downside. He sees Intel (INTC) as a long-term trading opportunity, believes Uber Technologies (UBER) is experiencing \"top-heavy\" movement, and highlights a great \"entry point\" for Apple (AAPL)."
-        },
-        {
-          "date": "2026-08-10 12:54 UTC",
-          "title": "Apple races to fix string of security flaws",
-          "site": "youtube.com",
-          "url": "https://www.youtube.com/watch?v=JLONg-KbnuM",
-          "text": "CNBC's MacKenzie Sigalos joins 'Squawk on the Street' to discuss how Apple is racing to fix vulnerability for Macs."
-        }
-      ],
-      "risk": "unknown",
-      "company_specific": null,
-      "summary": "",
-      "reason": "",
-      "diagnostics": {
-        "status": "OK",
-        "http_error": null,
-        "message": "8 usable article(s)",
-        "source": "FMP /stable/news/stock"
-      },
-      "llm_ok": false,
-      "llm_provider": "anthropic"
-    },
-    {
-      "ticker": "NVDA",
-      "entry": null,
-      "tp": null,
-      "headlines": [
-        {
-          "date": "2026-08-10 15:42 UTC",
-          "title": "This Nvidia change could spell good news for Micron",
-          "site": "marketwatch.com",
-          "url": "https://www.marketwatch.com/story/this-nvidia-change-could-spell-good-news-for-micron-80449e59",
-          "text": "An analyst says that Nvidia's move to downgrade some chip capabilities could end up boosting consumption of high-bandwidth memory."
-        },
-        {
-          "date": "2026-08-10 15:22 UTC",
-          "title": "Nvidia Stock Loses $130 Billion In Market Value As Firm Reportedly Enters $500 Billion AI Financing Deal",
-          "site": "forbes.com",
-          "url": "https://www.forbes.com/sites/antoniopequenoiv/2026/08/10/nvidia-stock-loses-130-billion-in-market-value-as-firm-reportedly-enters-500-billion-ai-financing-deal/",
-          "text": "Nvidia's tumble, paired with a positive day of trading for Oracle, allowed Oracle co-founder Larry Ellison to overtake Nvidia chief Jensen Huang as the world's seventh-wealthiest person. Ellison's estimated net worth reached $192 billion in the afternoon while Huang's dropped to $188.6 billion."
-        },
-        {
-          "date": "2026-08-10 14:58 UTC",
-          "title": "Nvidia teams up with Wall Street asset managers on $500 billion AI infrastructure push",
-          "site": "cnbc.com",
-          "url": "https://www.cnbc.com/2026/08/10/nvidia-wall-street-asset-managers-500-billion-ai-push.html",
-          "text": "Nvidia is partnering with Apollo Global Management, Blackstone, BlackRock's Global Infrastructure Partners unit, Brookfield Asset Management, Goldman Sachs and KKR on a $500 billion AI financing effort, a person familiar with the matter told CNBC. An announcement could be made as early as Monday, the person said."
-        },
-        {
-          "date": "2026-08-10 14:40 UTC",
-          "title": "Nvidia Just Added $562 Billion in a Week",
-          "site": "gurufocus.com",
-          "url": "https://www.gurufocus.com/news/9021719/nvidia-just-added-562-billion-in-a-week",
-          "text": "Nvidia Corp. (NVDA, Financials), the best producer of AI processors, is emerging from its best week in more than a year after a new endorsement from Elon Musk g"
-        },
-        {
-          "date": "2026-08-10 14:26 UTC",
-          "title": "Nvidia Stock Falls. A $3 Billion AI Infrastructure Bet Could Be Next",
-          "site": "gurufocus.com",
-          "url": "https://www.gurufocus.com/news/9021530/nvidia-stock-falls-a-3-billion-ai-infrastructure-bet-could-be-next",
-          "text": "Nvidia (NVDA) shares slipped about 1.5% Monday after a Reuters report said the chipmaker is considering an investment of as much as $3 billion in power infrastr"
-        },
-        {
-          "date": "2026-08-10 14:18 UTC",
-          "title": "Nvidia, Wall Street Firms Strike AI Financing Deal Targeting $500 Billion",
-          "site": "wsj.com",
-          "url": "https://www.wsj.com/business/deals/nvidia-wall-street-firms-strike-ai-financing-deal-targeting-500-billion-c50377db",
-          "text": "Apollo, Blackstone and BlackRock were among the firms that committed to the deal."
-        },
-        {
-          "date": "2026-08-10 14:04 UTC",
-          "title": "BofA: Nvidia's next earnings report could kick off a \"multi-quarter upgrade cycle\"",
-          "site": "proactiveinvestors.com",
-          "url": "https://www.proactiveinvestors.com/companies/news/1096826",
-          "text": "Nvidia Corp (NASDAQ:NVDA, XETRA:NVD) is set to report second-quarter earnings after the market closes on August 26 and Bank of America thinks the chipmaker is about to do what it usually does: beat expectations and raise its outlook, only this time with an extra catalyst behind it. In a note maintaining its Buy rating and $350 price objective on the stock, BofA analysts said they expect Nvidia to post revenue of $94 billion to $95 billion, a $3 billion to $4 billion beat above the company's own $91 billion guidance."
-        },
-        {
-          "date": "2026-08-10 13:21 UTC",
-          "title": "Taalas Buyout Boosts AMD's AI Inference Abilities Against NVDA & GOOGL",
-          "site": "zacks.com",
-          "url": "https://www.zacks.com/stock/news/2972158/taalas-buyout-boosts-amd-s-ai-inference-abilities-against-nvda-googl?cid=CS-STOCKNEWSAPI-FT-analyst_blog|quick_take-2972158",
-          "text": "AMD's Taalas acquisition adds specialized AI inference silicon to its roadmap, aiming to boost performance and efficiency against fierce competition."
-        }
-      ],
-      "risk": "unknown",
-      "company_specific": null,
-      "summary": "",
-      "reason": "",
-      "diagnostics": {
-        "status": "OK",
-        "http_error": null,
-        "message": "8 usable article(s)",
-        "source": "FMP /stable/news/stock"
-      },
-      "llm_ok": false,
-      "llm_provider": "anthropic"
-    },
-    {
       "ticker": "ADM",
+      "entry": null,
+      "tp": null,
+      "headlines": [],
+      "risk": "unknown",
+      "company_specific": null,
+      "summary": "",
+      "reason": "",
+      "diagnostics": {
+        "status": "NO_NEWS",
+        "http_error": null,
+        "message": "FMP responded successfully but returned no usable recent articles",
+        "source": "FMP /stable/news/stock"
+      },
+      "llm_ok": false
+    },
+    {
+      "ticker": "EYE",
+      "entry": null,
+      "tp": null,
+      "headlines": [],
+      "risk": "unknown",
+      "company_specific": null,
+      "summary": "",
+      "reason": "",
+      "diagnostics": {
+        "status": "NO_NEWS",
+        "http_error": null,
+        "message": "FMP responded successfully but returned no usable recent articles",
+        "source": "FMP /stable/news/stock"
+      },
+      "llm_ok": false
+    },
+    {
+      "ticker": "UGA",
       "entry": null,
       "tp": null,
       "headlines": [],
