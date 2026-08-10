@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-10 20:28 UTC",
-  "provider": "anthropic",
+  "generated": "2026-08-10 20:37 UTC",
+  "provider": "auto",
   "purpose": "signal intelligence follow-up",
   "source_files": [
     "alerted.json",
@@ -8,41 +8,477 @@
   ],
   "results": [
     {
-      "ticker": "AAL",
+      "ticker": "UGA",
       "alert": {},
-      "signal": {},
+      "signal": {
+        "ticker": "UGA",
+        "name": "US Gasoline Fund",
+        "setup": "pullback",
+        "entry": 117.44,
+        "tp": 142.34,
+        "tp_pct": 0.2120231607629428,
+        "shares": 2.13,
+        "value": 250.14719999999997,
+        "pl_amount": 53.04,
+        "eta_days_low": 10,
+        "eta_days_high": 22,
+        "fee_pct": 0.0,
+        "trend_score": 4,
+        "adx": 28.6,
+        "rs": -0.063,
+        "runner": false,
+        "regime": "uptrend",
+        "regime_weeks": 4,
+        "ema20": 114.21,
+        "ema50": 111.6,
+        "ema200": 94.77,
+        "above_ema200": true,
+        "quality": 0.84,
+        "q_detail": {
+          "rsi": 1.0,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 0.2
+        },
+        "q_notes": {
+          "rsi": "RSI 56.6 rising, reset from 29",
+          "bollinger": "band position 65%, expanding",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.0x average, drying up",
+          "extension": "+1.3 ATR from 20 EMA, slope -3.8%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 56.6,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 4/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "quality +0.84 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=56.6)",
+          "(gasoline)"
+        ],
+        "time": "2026-08-10T17:19:44.382040+00:00"
+      },
       "profile": {
-        "symbol": "AAL",
-        "price": 15,
-        "marketCap": 9929549265,
-        "beta": 1.347,
-        "lastDividend": 0.4,
-        "range": "10.09-18.79",
-        "change": -0.94,
-        "changePercentage": -5.89711,
-        "volume": 38154086,
-        "averageVolume": 92891598,
-        "companyName": "American Airlines Group Inc.",
+        "symbol": "UGA",
+        "price": 118.35,
+        "marketCap": 108445880,
+        "beta": 1.62,
+        "lastDividend": 0,
+        "range": "60.4-126.75",
+        "change": 6.704,
+        "changePercentage": 6.00469,
+        "volume": 67048,
+        "averageVolume": 61797,
+        "companyName": "United States Gasoline Fund, LP",
         "currency": "USD",
-        "cik": "0000006201",
-        "isin": "US02376R1023",
-        "cusip": "02376R102",
+        "cik": "0001396878",
+        "isin": "US91201T1025",
+        "cusip": "91201T102",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management",
+        "website": "https://www.uscfinvestments.com/uga",
+        "description": "United States Gasoline Fund, LP is an exchange traded fund launched and managed by United States Commodity Funds LLC. The fund invests in the commodity markets of the United States. It invests through derivatives in gasoline, other types of gasoline, crude oil, diesel-heating oil, natural gas and other petroleum-based fuels. The fund employs market neutral strategy and uses derivatives such as futures to create its portfolio. The fund seeks to track the daily changes in percentage terms of the spot price of gasoline traded on the New York Mercantile Exchange. United States Gasoline Fund, LP was formed on February 26, 2008 and is domiciled in the United States.",
+        "ceo": "",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": "0",
+        "phone": "1-877-527-6403",
+        "address": "1990 N. California Boulevard, Suite 940",
+        "city": "Walnut Creek",
+        "state": "CA",
+        "zip": "94596",
+        "image": "https://images.financialmodelingprep.com/symbol/UGA.png",
+        "ipoDate": "2008-02-26",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2023-09-30",
+          "fiscal_period": "",
+          "eps_actual": 4.92,
+          "eps_estimate": null,
+          "eps_surprise": null,
+          "eps_surprise_pct": null,
+          "revenue": null,
+          "net_income": null,
+          "operating_margin": null,
+          "gross_margin": null,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        },
+        {
+          "date": "2023-06-30",
+          "fiscal_period": "",
+          "eps_actual": 1.43,
+          "eps_estimate": null,
+          "eps_surprise": null,
+          "eps_surprise_pct": null,
+          "revenue": null,
+          "net_income": null,
+          "operating_margin": null,
+          "gross_margin": null,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        },
+        {
+          "date": "2023-03-31",
+          "fiscal_period": "",
+          "eps_actual": 1.53,
+          "eps_estimate": null,
+          "eps_surprise": null,
+          "eps_surprise_pct": null,
+          "revenue": null,
+          "net_income": null,
+          "operating_margin": null,
+          "gross_margin": null,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": []
+      },
+      "analysts": {
+        "grades_consensus": {},
+        "estimate_direction": {}
+      },
+      "news": [],
+      "news_diag": {
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
+      },
+      "sector": {
+        "sector": "Financial Services",
+        "industry": "Asset Management",
+        "sector_snapshot": {
+          "date": "2026-08-10",
+          "sector": "Financial Services",
+          "exchange": "NASDAQ",
+          "averageChange": 0.4304439124918513
+        },
+        "industry_snapshot": {}
+      },
+      "macro": {
+        "treasury": {
+          "date": "2026-08-07",
+          "month1": 3.79,
+          "month2": 3.83,
+          "month3": 3.87,
+          "month6": 3.96,
+          "year1": 4.01,
+          "year2": 4.19,
+          "year3": 4.25,
+          "year5": 4.35,
+          "year7": 4.49,
+          "year10": 4.65,
+          "year20": 5.2,
+          "year30": 5.19
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-10 02:30:00",
+            "country": "KR",
+            "event": "3-Year KTB Auction",
+            "currency": "KRW",
+            "previous": 3.765,
+            "estimate": null,
+            "actual": 3.78,
+            "change": 0.015,
+            "impact": "Low",
+            "changePercentage": 0.398,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 03:00:00",
+            "country": "ID",
+            "event": "Consumer Confidence (Jul)",
+            "currency": "IDR",
+            "previous": 117.8,
+            "estimate": 116,
+            "actual": 116.8,
+            "change": -1,
+            "impact": "Low",
+            "changePercentage": -0.849,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 03:15:00",
+            "country": "ID",
+            "event": "Motorbike Sales YoY (Jul)",
+            "currency": "IDR",
+            "previous": 1.1,
+            "estimate": null,
+            "actual": 8.3,
+            "change": 7.2,
+            "impact": "Low",
+            "changePercentage": 654.545,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 04:30:00",
+            "country": "NL",
+            "event": "Manufacturing Production MoM (Jun)",
+            "currency": "EUR",
+            "previous": 1.1,
+            "estimate": 0.3,
+            "actual": -1.3,
+            "change": -2.4,
+            "impact": "Low",
+            "changePercentage": -218.182,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "EE",
+            "event": "Balance of Trade (Jun)",
+            "currency": "EUR",
+            "previous": -218,
+            "estimate": -290,
+            "actual": -413,
+            "change": -195,
+            "impact": "Low",
+            "changePercentage": -89.45,
+            "unit": "M"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "JP",
+            "event": "Eco Watchers Survey Current (Jul)",
+            "currency": "JPY",
+            "previous": 44,
+            "estimate": 44.4,
+            "actual": 45.7,
+            "change": 1.7,
+            "impact": "Low",
+            "changePercentage": 3.864,
+            "unit": null
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "JP",
+            "event": "Eco Watchers Survey Outlook (Jul)",
+            "currency": "JPY",
+            "previous": 45.7,
+            "estimate": 46,
+            "actual": 45.8,
+            "change": 0.1,
+            "impact": "Low",
+            "changePercentage": 0.219,
+            "unit": null
+          },
+          {
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EGP",
+            "previous": -0.4,
+            "estimate": 0.5,
+            "actual": 0,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 100,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
+            "event": "CPI YoY (Jul)",
+            "currency": "EGP",
+            "previous": 14.3,
+            "estimate": 15.6,
+            "actual": 14.9,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 4.196,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
+            "event": "Inflation Rate YoY (Jul)",
+            "currency": "EGP",
+            "previous": 14.3,
+            "estimate": 15.6,
+            "actual": 14.9,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 4.196,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 06:00:00",
+            "country": "LT",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EUR",
+            "previous": 0.5,
+            "estimate": 0.3,
+            "actual": 0.2,
+            "change": -0.3,
+            "impact": "Low",
+            "changePercentage": -60,
+            "unit": "%"
+          }
+        ]
+      },
+      "llm": {},
+      "llm_provider": "auto-failed",
+      "llm_ok": false,
+      "is_etf": true,
+      "report": "⚪ UGA — United States Gasoline Fund, LP\nEntry: $117.44\neToro TP value: $53.04\nScanner potential: +21.2%\n\n═══ TECHNICAL SETUP ═══\nSetup: pullback | Regime: uptrend\nTrend: 4/5 | ADX: 28.6 | RSI: 56.6\nRS vs SPY: -6.3% | Quality: 0.84\nEMA20/50/200: 114.21 / 111.6 / 94.77\nTechnical look-alike: unavailable\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2023-09-30 — mixed/neutral — EPS 4.92 vs est n/a, surprise n/a, revenue n/a, rev growth n/a, operating margin n/a\n- 2023-06-30 — mixed/neutral — EPS 1.43 vs est n/a, surprise n/a, revenue n/a, rev growth n/a, operating margin n/a\n- 2023-03-31 — mixed/neutral — EPS 1.53 vs est n/a, surprise n/a, revenue n/a, rev growth n/a, operating margin n/a\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected date: unavailable\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\n\n═══ RECENT NEWS ═══\n- No recent usable company-specific news returned by FMP.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Financial Services | Industry: Asset Management\nAssessment: ⚪ unknown\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical: hourly-scan | fundamentals/news/macro: FMP | interpretation: auto-failed)"
+    },
+    {
+      "ticker": "EYE",
+      "alert": {},
+      "signal": {
+        "ticker": "EYE",
+        "name": "National Vision Holdings",
+        "setup": "pullback",
+        "entry": 22.42,
+        "tp": 26.92,
+        "tp_pct": 0.2007136485280998,
+        "shares": 11.15,
+        "value": 249.98300000000003,
+        "pl_amount": 50.18,
+        "eta_days_low": 14,
+        "eta_days_high": 26,
+        "fee_pct": 0.03986048829098156,
+        "trend_score": 3,
+        "adx": 43.9,
+        "rs": -0.017,
+        "runner": false,
+        "regime": "uptrend",
+        "regime_weeks": 2,
+        "ema20": 21.45,
+        "ema50": 20.58,
+        "ema200": 23.3,
+        "above_ema200": false,
+        "quality": 0.9,
+        "q_detail": {
+          "rsi": 0.6,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 60.0 falling",
+          "bollinger": "band position 54%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.0x average, drying up",
+          "extension": "+0.6 ATR from 20 EMA, slope +3.9%, mixed / tangled"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 60.0,
+        "options_note": "",
+        "sector": "Unknown",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 3/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=60.0)"
+        ],
+        "time": "2026-08-10T17:19:42.207687+00:00"
+      },
+      "profile": {
+        "symbol": "EYE",
+        "price": 22.43,
+        "marketCap": 1797017581,
+        "beta": 1.009,
+        "lastDividend": 0,
+        "range": "14.75-30.02",
+        "change": -0.12,
+        "changePercentage": -0.53215,
+        "volume": 2546901,
+        "averageVolume": 2090139,
+        "companyName": "National Vision Holdings, Inc.",
+        "currency": "USD",
+        "cik": "0001710155",
+        "isin": "US63845R1077",
+        "cusip": "63845R107",
         "exchangeFullName": "NASDAQ Global Select",
         "exchange": "NASDAQ",
-        "industry": "Airlines, Airports & Air Services",
-        "website": "https://www.aa.com",
-        "description": "American Airlines Group Inc. functions as a prominent network air carrier, delivering scheduled air transportation for both passengers and freight. Its operations are anchored by key hubs located in Charlotte, Chicago, Dallas/Fort Worth, Los Angeles, Miami, New York, Philadelphia, Phoenix, and Washington, D.C. Additionally, it expands its global reach through strategic partner gateways situated in London, Madrid, Seattle/Tacoma, Sydney, and Tokyo. As of December 31, 2021, the company maintained a substantial mainline fleet comprising 865 aircraft. This enterprise, established in 1930 and headquartered in Fort Worth, Texas, previously operated under the name AMR Corporation until its rebranding to American Airlines Group Inc. in December 2013.",
-        "ceo": "Robert D. Isom Jr.",
-        "sector": "Industrials",
+        "industry": "Specialty Retail",
+        "website": "https://www.nationalvision.com",
+        "description": "National Vision Holdings, Inc. operates as a leading optical retail chain across the United States, conducting business through its various subsidiary companies. The company's operations are categorized into two primary divisions: Owned & Host, and Legacy. It offers a comprehensive range of vision care products, including eyeglasses, contact lenses, and optical accessories. Eye examinations and optometric services are also provided through its extensive network of branded stores, which include America's Best, Eyeglass World, Vista Optical, Fred Meyer, Vista Optical military, and Vision Center outlets, alongside health maintenance organization services. As of January 1, 2022, National Vision maintained a significant retail footprint with 1,278 physical stores and a robust online presence through multiple e-commerce platforms. Established in 1990, the company is headquartered in Duluth, Georgia.",
+        "ceo": "Alexander N. Wilkes",
+        "sector": "Consumer Cyclical",
         "country": "US",
-        "fullTimeEmployees": "143400",
-        "phone": "682 278 9000",
-        "address": "1 Skyview Drive",
-        "city": "Fort Worth",
-        "state": "TX",
-        "zip": "76155",
-        "image": "https://images.financialmodelingprep.com/symbol/AAL.png",
-        "ipoDate": "2005-09-27",
+        "fullTimeEmployees": "13138",
+        "phone": "770 822 3600",
+        "address": "Building 2200",
+        "city": "Duluth",
+        "state": "GA",
+        "zip": "30096",
+        "image": "https://images.financialmodelingprep.com/symbol/EYE.png",
+        "ipoDate": "2017-10-27",
         "defaultImage": false,
         "isEtf": false,
         "isActivelyTrading": true,
@@ -51,631 +487,152 @@
       },
       "financials": [
         {
-          "date": "2026-07-23",
+          "date": "2026-05-13",
+          "fiscal_period": "",
+          "eps_actual": 0.45,
+          "eps_estimate": 0.43,
+          "eps_surprise": 0.020000000000000018,
+          "eps_surprise_pct": 0.046511627906976785,
+          "revenue": 543880000.0,
+          "net_income": 31181000.0,
+          "operating_margin": 0.08312495403397809,
+          "gross_margin": 0.5539861734206075,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-03-04",
           "fiscal_period": "",
           "eps_actual": 0.15,
-          "eps_estimate": 0.03,
-          "eps_surprise": 0.12,
-          "eps_surprise_pct": 4.0,
-          "revenue": 16735000000.0,
-          "net_income": 71000000.0,
-          "operating_margin": 0.0266507319988049,
-          "gross_margin": 0.20729011054675828,
+          "eps_estimate": 0.0603,
+          "eps_surprise": 0.0897,
+          "eps_surprise_pct": 1.4875621890547264,
+          "revenue": 543880000.0,
+          "net_income": 31181000.0,
+          "operating_margin": 0.08312495403397809,
+          "gross_margin": 0.5539861734206075,
           "revenue_yoy": 0.0,
           "net_income_yoy": 0.0
         },
         {
-          "date": "2026-04-23",
+          "date": "2025-11-05",
           "fiscal_period": "",
-          "eps_actual": -0.4,
-          "eps_estimate": -0.46336,
-          "eps_surprise": 0.06335999999999997,
-          "eps_surprise_pct": 0.13674033149171264,
-          "revenue": 16735000000.0,
-          "net_income": 71000000.0,
-          "operating_margin": 0.0266507319988049,
-          "gross_margin": 0.20729011054675828,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-01-27",
-          "fiscal_period": "",
-          "eps_actual": 0.16,
-          "eps_estimate": 0.38,
-          "eps_surprise": -0.22,
-          "eps_surprise_pct": -0.5789473684210527,
-          "revenue": 16735000000.0,
-          "net_income": 71000000.0,
-          "operating_margin": 0.0266507319988049,
-          "gross_margin": 0.20729011054675828,
+          "eps_actual": 0.13,
+          "eps_estimate": 0.12,
+          "eps_surprise": 0.010000000000000009,
+          "eps_surprise_pct": 0.08333333333333341,
+          "revenue": 543880000.0,
+          "net_income": 31181000.0,
+          "operating_margin": 0.08312495403397809,
+          "gross_margin": 0.5539861734206075,
           "revenue_yoy": null,
           "net_income_yoy": null
         }
       ],
       "financial_health": {
-        "cash": 1028000000.0,
-        "total_debt": 35729000000.0,
-        "total_liabilities": 68205000000.0,
-        "equity": -3972000000.0,
-        "operating_cash_flow": 471000000.0,
-        "capital_expenditure": -822000000.0,
-        "free_cash_flow": -351000000.0
+        "cash": 67898000.0,
+        "total_debt": 692127000.0,
+        "total_liabilities": 1122477000.0,
+        "equity": 898006000.0,
+        "operating_cash_flow": 61705000.0,
+        "capital_expenditure": -17569000.0,
+        "free_cash_flow": 44136000.0
       },
       "forward": {
         "next_earnings": {},
         "estimates": [
           {
-            "date": "2030-12-31",
+            "date": "2030-01-03",
             "period": null,
-            "revenue_avg": 77516000000.0,
-            "eps_avg": 3.2,
-            "revenue_low": 73009192436.0,
-            "revenue_high": 79256975247.0,
-            "eps_low": 2.95814,
-            "eps_high": 3.29343,
+            "revenue_avg": 2478200000.0,
+            "eps_avg": 1.63,
+            "revenue_low": 2436753878.0,
+            "revenue_high": 2520084183.0,
+            "eps_low": 1.59456,
+            "eps_high": 1.66581,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 1
+          },
+          {
+            "date": "2029-01-03",
+            "period": null,
+            "revenue_avg": 2361743407.0,
+            "eps_avg": 1.51038,
+            "revenue_low": 2337932417.0,
+            "revenue_high": 2415141365.0,
+            "eps_low": 1.47754,
+            "eps_high": 1.54357,
+            "num_analysts_revenue": 4,
+            "num_analysts_eps": 1
+          },
+          {
+            "date": "2028-01-03",
+            "period": null,
+            "revenue_avg": 2182454204.0,
+            "eps_avg": 1.17884,
+            "revenue_low": 2152142340.0,
+            "revenue_high": 2222870022.0,
+            "eps_low": 1.00892,
+            "eps_high": 1.28504,
             "num_analysts_revenue": 8,
-            "num_analysts_eps": 4
-          },
-          {
-            "date": "2029-12-31",
-            "period": null,
-            "revenue_avg": 71695000000.0,
-            "eps_avg": 3.265,
-            "revenue_low": 67526627428.0,
-            "revenue_high": 73305238149.0,
-            "eps_low": 3.01822,
-            "eps_high": 3.36033,
-            "num_analysts_revenue": 13,
-            "num_analysts_eps": 2
-          },
-          {
-            "date": "2028-12-31",
-            "period": null,
-            "revenue_avg": 69012106595.0,
-            "eps_avg": 3.3105,
-            "revenue_low": 60695870246.0,
-            "revenue_high": 71769453007.0,
-            "eps_low": 2.08014,
-            "eps_high": 4.29235,
-            "num_analysts_revenue": 17,
             "num_analysts_eps": 7
           },
           {
-            "date": "2027-12-31",
+            "date": "2027-01-03",
             "period": null,
-            "revenue_avg": 65901745880.0,
-            "eps_avg": 2.56404,
-            "revenue_low": 60859803961.0,
-            "revenue_high": 68407438227.0,
-            "eps_low": 1.10934,
-            "eps_high": 4.18619,
-            "num_analysts_revenue": 16,
-            "num_analysts_eps": 14
+            "revenue_avg": 2063637636.0,
+            "eps_avg": 0.9632,
+            "revenue_low": 2033584660.0,
+            "revenue_high": 2073655294.0,
+            "eps_low": 0.88911,
+            "eps_high": 1.01612,
+            "num_analysts_revenue": 8,
+            "num_analysts_eps": 7
           }
         ]
       },
       "analysts": {
         "grades_consensus": {
-          "symbol": "AAL",
+          "symbol": "EYE",
           "strongBuy": 0,
-          "buy": 17,
-          "hold": 18,
-          "sell": 3,
-          "strongSell": 0,
-          "consensus": "Hold"
-        },
-        "estimate_direction": {
-          "revenueAvg": {
-            "latest": 77516000000,
-            "prior": 71695000000,
-            "change": 0.0811911569844479
-          },
-          "epsAvg": {
-            "latest": 3.2,
-            "prior": 3.265,
-            "change": -0.019908116385911168
-          }
-        }
-      },
-      "news": [
-        {
-          "date": "2026-08-10 14:01 UTC",
-          "title": "American Airlines Advances Sustainable Aviation With eSAF Flight",
-          "site": "zacks.com",
-          "url": "https://www.zacks.com/stock/news/2972213/american-airlines-advances-sustainable-aviation-with-esaf-flight?cid=CS-STOCKNEWSAPI-FT-analyst_blog|company_news_corporate_actions-2972213",
-          "text": "AAL's first passenger flight using eSAF shows the fuel can work in existing aircraft and infrastructure, advancing its lower-carbon strategy."
-        }
-      ],
-      "news_diag": {
-        "status": "OK",
-        "message": "1 usable article(s)"
-      },
-      "sector": {
-        "sector": "Industrials",
-        "industry": "Airlines, Airports & Air Services",
-        "sector_snapshot": {
-          "date": "2026-08-10",
-          "sector": "Industrials",
-          "exchange": "NASDAQ",
-          "averageChange": 0.658470782630638
-        },
-        "industry_snapshot": {
-          "date": "2026-08-10",
-          "industry": "Airlines, Airports & Air Services",
-          "exchange": "NASDAQ",
-          "averageChange": -2.2243419818754995
-        }
-      },
-      "macro": {
-        "treasury": {
-          "date": "2026-08-07",
-          "month1": 3.79,
-          "month2": 3.83,
-          "month3": 3.87,
-          "month6": 3.96,
-          "year1": 4.01,
-          "year2": 4.19,
-          "year3": 4.25,
-          "year5": 4.35,
-          "year7": 4.49,
-          "year10": 4.65,
-          "year20": 5.2,
-          "year30": 5.19
-        },
-        "indicators": {
-          "GDP": [
-            {
-              "name": "GDP",
-              "date": "2025-10-01",
-              "value": 31422.526
-            }
-          ],
-          "CPI": [
-            {
-              "name": "CPI",
-              "date": "2025-11-01",
-              "value": 325.063
-            },
-            {
-              "name": "CPI",
-              "date": "2025-09-01",
-              "value": 324.245
-            }
-          ],
-          "unemploymentRate": [
-            {
-              "name": "unemploymentRate",
-              "date": "2025-11-01",
-              "value": 4.5
-            },
-            {
-              "name": "unemploymentRate",
-              "date": "2025-09-01",
-              "value": 4.4
-            }
-          ]
-        },
-        "calendar": [
-          {
-            "date": "2026-08-10 02:30:00",
-            "country": "KR",
-            "event": "3-Year KTB Auction",
-            "currency": "KRW",
-            "previous": 3.765,
-            "estimate": null,
-            "actual": 3.78,
-            "change": 0.015,
-            "impact": "Low",
-            "changePercentage": 0.398,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 03:00:00",
-            "country": "ID",
-            "event": "Consumer Confidence (Jul)",
-            "currency": "IDR",
-            "previous": 117.8,
-            "estimate": 116,
-            "actual": 116.8,
-            "change": -1,
-            "impact": "Low",
-            "changePercentage": -0.849,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 03:15:00",
-            "country": "ID",
-            "event": "Motorbike Sales YoY (Jul)",
-            "currency": "IDR",
-            "previous": 1.1,
-            "estimate": null,
-            "actual": 8.3,
-            "change": 7.2,
-            "impact": "Low",
-            "changePercentage": 654.545,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 04:30:00",
-            "country": "NL",
-            "event": "Manufacturing Production MoM (Jun)",
-            "currency": "EUR",
-            "previous": 1.1,
-            "estimate": 0.3,
-            "actual": -1.3,
-            "change": -2.4,
-            "impact": "Low",
-            "changePercentage": -218.182,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
-            "country": "EE",
-            "event": "Balance of Trade (Jun)",
-            "currency": "EUR",
-            "previous": -218,
-            "estimate": -290,
-            "actual": -413,
-            "change": -195,
-            "impact": "Low",
-            "changePercentage": -89.45,
-            "unit": "M"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
-            "country": "JP",
-            "event": "Eco Watchers Survey Outlook (Jul)",
-            "currency": "JPY",
-            "previous": 45.7,
-            "estimate": 46,
-            "actual": 45.8,
-            "change": 0.1,
-            "impact": "Low",
-            "changePercentage": 0.219,
-            "unit": null
-          },
-          {
-            "date": "2026-08-10 05:00:00",
-            "country": "JP",
-            "event": "Eco Watchers Survey Current (Jul)",
-            "currency": "JPY",
-            "previous": 44,
-            "estimate": 44.4,
-            "actual": 45.7,
-            "change": 1.7,
-            "impact": "Low",
-            "changePercentage": 3.864,
-            "unit": null
-          },
-          {
-            "date": "2026-08-10 05:00:00",
-            "country": "FI",
-            "event": "Industrial Production YoY (Jun)",
-            "currency": "EUR",
-            "previous": 0.4,
-            "estimate": 1.1,
-            "actual": 4.5,
-            "change": 4.1,
-            "impact": "Low",
-            "changePercentage": 1025,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 05:50:00",
-            "country": "EG",
-            "event": "Inflation Rate MoM (Jul)",
-            "currency": "EGP",
-            "previous": -0.4,
-            "estimate": 0.5,
-            "actual": 0,
-            "change": 0.4,
-            "impact": "Low",
-            "changePercentage": 100,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 05:50:00",
-            "country": "EG",
-            "event": "Inflation Rate YoY (Jul)",
-            "currency": "EGP",
-            "previous": 14.3,
-            "estimate": 15.6,
-            "actual": 14.9,
-            "change": 0.6,
-            "impact": "Low",
-            "changePercentage": 4.196,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 05:50:00",
-            "country": "EG",
-            "event": "CPI YoY (Jul)",
-            "currency": "EGP",
-            "previous": 14.3,
-            "estimate": 15.6,
-            "actual": 14.9,
-            "change": 0.6,
-            "impact": "Low",
-            "changePercentage": 4.196,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 06:00:00",
-            "country": "SE",
-            "event": "New Orders YoY (Jun)",
-            "currency": "SEK",
-            "previous": 1.6,
-            "estimate": 2,
-            "actual": 29.9,
-            "change": 28.3,
-            "impact": "Low",
-            "changePercentage": 1768.75,
-            "unit": "%"
-          }
-        ]
-      },
-      "llm": {},
-      "llm_provider": "anthropic",
-      "llm_ok": false,
-      "is_etf": false,
-      "report": "🟢 AAL — American Airlines Group Inc.\nEntry: n/a\neToro TP value: n/a\nScanner potential: n/a\n\n═══ TECHNICAL SETUP ═══\nSetup: n/a | Regime: n/a | Trend: n/a/5 | ADX: n/a\nRS vs SPY: n/a | RSI: n/a | Quality: n/a\nEMA20/50/200: n/a / n/a / n/a\nScanner timeframe: n/a-n/a trading days\nTechnical look-alike: not available\nTechnical interpretation unavailable.\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-07-23 — strong/positive — EPS 0.15 vs est 0.03, surprise +400.0%, revenue $16.73B, rev growth +0.0%, operating margin +2.7%\n- 2026-04-23 — strong/positive — EPS -0.4 vs est -0.46336, surprise +13.7%, revenue $16.73B, rev growth +0.0%, operating margin +2.7%\n- 2026-01-27 — weak/negative — EPS 0.16 vs est 0.38, surprise -57.9%, revenue $16.73B, rev growth n/a, operating margin +2.7%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected date: unavailable\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nstrongBuy: 0\nbuy: 17\nhold: 18\nsell: 3\nstrongSell: 0\n\n═══ RECENT NEWS ═══\n- 2026-08-10 14:01 UTC — American Airlines Advances Sustainable Aviation With eSAF Flight [zacks.com]\n  https://www.zacks.com/stock/news/2972213/american-airlines-advances-sustainable-aviation-with-esaf-flight?cid=CS-STOCKNEWSAPI-FT-analyst_blog|company_news_corporate_actions-2972213\n🧠 ⚪ News interpretation unavailable.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Industrials | Industry: Airlines, Airports & Air Services\nAssessment: ⚪ unknown\nSector interpretation unavailable.\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\nMacro interpretation unavailable.\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical data: hourly-scan | fundamental/news/macro data: FMP | interpretation: anthropic)"
-    },
-    {
-      "ticker": "AAPL",
-      "alert": {},
-      "signal": {},
-      "profile": {
-        "symbol": "AAPL",
-        "price": 308.26,
-        "marketCap": 4527524360560,
-        "beta": 1.086,
-        "lastDividend": 1.05,
-        "range": "223.78-344.57",
-        "change": -5.07,
-        "changePercentage": -1.6181,
-        "volume": 43391681,
-        "averageVolume": 53465052,
-        "companyName": "Apple Inc.",
-        "currency": "USD",
-        "cik": "0000320193",
-        "isin": "US0378331005",
-        "cusip": "037833100",
-        "exchangeFullName": "NASDAQ Global Select",
-        "exchange": "NASDAQ",
-        "industry": "Consumer Electronics",
-        "website": "https://www.apple.com",
-        "description": "Apple Inc. is a global technology corporation that specializes in the conceptualization, production, and sale of a diverse suite of electronic devices. Its comprehensive hardware lineup features the well-known iPhone smartphones, Mac personal computers, and versatile iPad tablets. The company also supplies a range of wearables, smart home products, and accessories, including AirPods, Apple TV, Apple Watch, items from the Beats brand, and HomePod speakers. Beyond its device offerings, Apple delivers essential support services like AppleCare and robust cloud solutions. It oversees key digital platforms, prominently the App Store, which acts as a central hub for customers to discover and download countless applications and digital content, from e-books and music to videos, games, and podcasts. The company also generates revenue via advertising, leveraging both its proprietary ad platforms and third-party licensing deals. Apple's ecosystem is further bolstered by a wide array of subscription-based services: Apple Arcade for gaming, Apple Fitness+ for personalized wellness, Apple Music for curated audio experiences and on-demand radio, Apple News+ for access to news and magazines, and Apple TV+ for exclusive original video programming. Its financial services portfolio includes the co-branded Apple Card and the mobile payment system, Apple Pay. Additionally, Apple strategically licenses its intellectual property. The company serves a broad clientele that spans individual consumers, small and medium-sized enterprises, as well as institutional clients in the education, corporate, and governmental sectors. Products are distributed through a multi-channel strategy, utilizing Apple's own physical retail locations and online storefronts, a dedicated direct sales team, and collaborations with external partners such as mobile network providers, wholesalers, general retailers, and authorized resellers. The App Store additionally functions as the primary conduit for third-party applications designed for its devices. Founded in 1976, Apple Inc. is headquartered in Cupertino, California.",
-        "ceo": "Timothy D. Cook",
-        "sector": "Technology",
-        "country": "US",
-        "fullTimeEmployees": "166000",
-        "phone": "(408) 996-1010",
-        "address": "One Apple Park Way",
-        "city": "Cupertino",
-        "state": "CA",
-        "zip": "95014",
-        "image": "https://images.financialmodelingprep.com/symbol/AAPL.png",
-        "ipoDate": "1980-12-12",
-        "defaultImage": false,
-        "isEtf": false,
-        "isActivelyTrading": true,
-        "isAdr": false,
-        "isFund": false
-      },
-      "financials": [
-        {
-          "date": "2026-07-30",
-          "fiscal_period": "",
-          "eps_actual": 2.02,
-          "eps_estimate": 1.89,
-          "eps_surprise": 0.13000000000000012,
-          "eps_surprise_pct": 0.06878306878306885,
-          "revenue": 109417000000.0,
-          "net_income": 29789000000.0,
-          "operating_margin": 0.3262290137729969,
-          "gross_margin": 0.500562069879452,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-04-30",
-          "fiscal_period": "",
-          "eps_actual": 2.01,
-          "eps_estimate": 1.95,
-          "eps_surprise": 0.05999999999999983,
-          "eps_surprise_pct": 0.030769230769230684,
-          "revenue": 109417000000.0,
-          "net_income": 29789000000.0,
-          "operating_margin": 0.3262290137729969,
-          "gross_margin": 0.500562069879452,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-01-29",
-          "fiscal_period": "",
-          "eps_actual": 2.85,
-          "eps_estimate": 2.67,
-          "eps_surprise": 0.18000000000000016,
-          "eps_surprise_pct": 0.06741573033707872,
-          "revenue": 109417000000.0,
-          "net_income": 29789000000.0,
-          "operating_margin": 0.3262290137729969,
-          "gross_margin": 0.500562069879452,
-          "revenue_yoy": null,
-          "net_income_yoy": null
-        }
-      ],
-      "financial_health": {
-        "cash": 39544000000.0,
-        "total_debt": 84307000000.0,
-        "total_liabilities": 275746000000.0,
-        "equity": 107520000000.0,
-        "operating_cash_flow": 34369000000.0,
-        "capital_expenditure": -2455000000.0,
-        "free_cash_flow": 31914000000.0
-      },
-      "forward": {
-        "next_earnings": {
-          "symbol": "AAPL",
-          "date": "2026-10-29",
-          "epsActual": null,
-          "epsEstimated": 1.98,
-          "revenueActual": null,
-          "revenueEstimated": 113441200000,
-          "lastUpdated": "2026-08-10"
-        },
-        "estimates": [
-          {
-            "date": "2030-09-27",
-            "period": null,
-            "revenue_avg": 675265666667.0,
-            "eps_avg": 13.09,
-            "revenue_low": 647705013712.0,
-            "revenue_high": 729076348551.0,
-            "eps_low": 12.39546,
-            "eps_high": 14.44605,
-            "num_analysts_revenue": 16,
-            "num_analysts_eps": 14
-          },
-          {
-            "date": "2029-09-27",
-            "period": null,
-            "revenue_avg": 483092000000.0,
-            "eps_avg": 11.80245,
-            "revenue_low": 463374825539.0,
-            "revenue_high": 521588715020.0,
-            "eps_low": 11.17623,
-            "eps_high": 13.02512,
-            "num_analysts_revenue": 12,
-            "num_analysts_eps": 8
-          },
-          {
-            "date": "2028-09-27",
-            "period": null,
-            "revenue_avg": 557766197052.0,
-            "eps_avg": 10.6768,
-            "revenue_low": 523759741036.0,
-            "revenue_high": 642331026026.0,
-            "eps_low": 9.40032,
-            "eps_high": 11.85343,
-            "num_analysts_revenue": 21,
-            "num_analysts_eps": 19
-          },
-          {
-            "date": "2027-09-27",
-            "period": null,
-            "revenue_avg": 520726659294.0,
-            "eps_avg": 9.59026,
-            "revenue_low": 497075965856.0,
-            "revenue_high": 564586303340.0,
-            "eps_low": 9.00086,
-            "eps_high": 10.37946,
-            "num_analysts_revenue": 30,
-            "num_analysts_eps": 31
-          }
-        ]
-      },
-      "analysts": {
-        "grades_consensus": {
-          "symbol": "AAPL",
-          "strongBuy": 1,
-          "buy": 70,
-          "hold": 32,
-          "sell": 8,
+          "buy": 10,
+          "hold": 4,
+          "sell": 0,
           "strongSell": 0,
           "consensus": "Buy"
         },
         "estimate_direction": {
           "revenueAvg": {
-            "latest": 675265666667,
-            "prior": 483092000000,
-            "change": 0.39779931496899135
+            "latest": 2478200000,
+            "prior": 2361743407,
+            "change": 0.049309587423779
           },
           "epsAvg": {
-            "latest": 13.09,
-            "prior": 11.80245,
-            "change": 0.10909175637261748
+            "latest": 1.63,
+            "prior": 1.51038,
+            "change": 0.07919861226975988
           }
         }
       },
-      "news": [
-        {
-          "date": "2026-08-10 15:00 UTC",
-          "title": "Bull v. Bear: AAPL Valuation Hits Roadblock, Earnings Runway Still Wide",
-          "site": "youtube.com",
-          "url": "https://www.youtube.com/watch?v=68ufEA3f9Nk",
-          "text": "Characteristics and Risks of Standardized Options: https://bit.ly/2v9tH6D. Apple (AAPL) got a downgrade and price target cut from Jefferies, with the firm hinting toward the iPhone maker canceling its all-glass model."
-        },
-        {
-          "date": "2026-08-10 14:24 UTC",
-          "title": "Apple playing catch-up with AI-enabled security flaw hunters",
-          "site": "youtube.com",
-          "url": "https://www.youtube.com/watch?v=m54XfrIUI24",
-          "text": "CNBC's MacKenzie Sigalos joins 'The Exchange' to discuss how Apple is racing to fix vulnerability for Macs."
-        },
-        {
-          "date": "2026-08-10 14:21 UTC",
-          "title": "Apple reportedly testing Chinese-made memory chips for iPhones, MacBooks amid global shortage",
-          "site": "foxbusiness.com",
-          "url": "https://www.foxbusiness.com/markets/apple-testing-chinese-made-cxmt-memory-chips-iphones-macbooks-amid-global-shortage",
-          "text": "Apple is reportedly testing CXMT memory chips for iPhones and MacBooks sold in China but needs White House approval under U.S. restrictions."
-        },
-        {
-          "date": "2026-08-10 14:10 UTC",
-          "title": "The Data Science Disconnect: High Performance With Low Assets",
-          "site": "etftrends.com",
-          "url": "https://www.etftrends.com/equity-etf-content-hub/data-science-disconnect-high-performance-with-low-assets/",
-          "text": "Many investors know the JPMorgan Nasdaq Equity Premium Income ETF (JEPQ) for its options strategy. However, its underlying performance relies heavily on an engine that gets far less spotlight."
-        },
-        {
-          "date": "2026-08-10 14:03 UTC",
-          "title": "Apple Stock Falls Amid Concerns About iPhone Setback",
-          "site": "investopedia.com",
-          "url": "https://www.investopedia.com/market-update-apple-stock-analyst-concerns-about-iphone-setback-aapl-12037746",
-          "text": "Apple could be changing its iPhone lineup plans, according to Wall Street analysts, which could push back future price increases."
-        },
-        {
-          "date": "2026-08-10 13:44 UTC",
-          "title": "Apple downgraded by Jefferies on iPhone pricing concerns",
-          "site": "proactiveinvestors.com",
-          "url": "https://www.proactiveinvestors.com/companies/news/1096824",
-          "text": "Apple Inc (NASDAQ:AAPL, XETRA:APC) shares fell about 2% on Monday after Jefferies downgraded the stock to Underperform, citing challenges in Apple's efforts to develop higher-priced iPhone models and lift average selling prices. Along with the rating downgrade, Jefferies lowered its price target to $263.66 from $285.56, implying downside from current levels of about $306."
-        },
-        {
-          "date": "2026-08-10 13:00 UTC",
-          "title": "The Big 3: INTC, UBER, AAPL",
-          "site": "youtube.com",
-          "url": "https://www.youtube.com/watch?v=iy5RysMCSUw",
-          "text": "@ProsperTradingAcademy's Scott Bauer turns to stocks that recently experienced volatile moves, both to the upside and downside. He sees Intel (INTC) as a long-term trading opportunity, believes Uber Technologies (UBER) is experiencing \"top-heavy\" movement, and highlights a great \"entry point\" for Apple (AAPL)."
-        },
-        {
-          "date": "2026-08-10 12:54 UTC",
-          "title": "Apple races to fix string of security flaws",
-          "site": "youtube.com",
-          "url": "https://www.youtube.com/watch?v=JLONg-KbnuM",
-          "text": "CNBC's MacKenzie Sigalos joins 'Squawk on the Street' to discuss how Apple is racing to fix vulnerability for Macs."
-        }
-      ],
+      "news": [],
       "news_diag": {
-        "status": "OK",
-        "message": "8 usable article(s)"
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
       },
       "sector": {
-        "sector": "Technology",
-        "industry": "Consumer Electronics",
+        "sector": "Consumer Cyclical",
+        "industry": "Specialty Retail",
         "sector_snapshot": {
           "date": "2026-08-10",
-          "sector": "Technology",
+          "sector": "Consumer Cyclical",
           "exchange": "NASDAQ",
-          "averageChange": -1.0380241706025917
+          "averageChange": 1.1631049994393905
         },
         "industry_snapshot": {
           "date": "2026-08-10",
-          "industry": "Consumer Electronics",
+          "industry": "Specialty Retail",
           "exchange": "NASDAQ",
-          "averageChange": 0.09440553530444262
+          "averageChange": 1.0237004490912582
         }
       },
       "macro": {
@@ -782,6 +739,19 @@
           },
           {
             "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
             "country": "EE",
             "event": "Balance of Trade (Jun)",
             "currency": "EUR",
@@ -792,19 +762,6 @@
             "impact": "Low",
             "changePercentage": -89.45,
             "unit": "M"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
-            "country": "JP",
-            "event": "Eco Watchers Survey Outlook (Jul)",
-            "currency": "JPY",
-            "previous": 45.7,
-            "estimate": 46,
-            "actual": 45.8,
-            "change": 0.1,
-            "impact": "Low",
-            "changePercentage": 0.219,
-            "unit": null
           },
           {
             "date": "2026-08-10 05:00:00",
@@ -821,16 +778,16 @@
           },
           {
             "date": "2026-08-10 05:00:00",
-            "country": "FI",
-            "event": "Industrial Production YoY (Jun)",
-            "currency": "EUR",
-            "previous": 0.4,
-            "estimate": 1.1,
-            "actual": 4.5,
-            "change": 4.1,
+            "country": "JP",
+            "event": "Eco Watchers Survey Outlook (Jul)",
+            "currency": "JPY",
+            "previous": 45.7,
+            "estimate": 46,
+            "actual": 45.8,
+            "change": 0.1,
             "impact": "Low",
-            "changePercentage": 1025,
-            "unit": "%"
+            "changePercentage": 0.219,
+            "unit": null
           },
           {
             "date": "2026-08-10 05:50:00",
@@ -848,7 +805,7 @@
           {
             "date": "2026-08-10 05:50:00",
             "country": "EG",
-            "event": "Inflation Rate YoY (Jul)",
+            "event": "CPI YoY (Jul)",
             "currency": "EGP",
             "previous": 14.3,
             "estimate": 15.6,
@@ -861,7 +818,7 @@
           {
             "date": "2026-08-10 05:50:00",
             "country": "EG",
-            "event": "CPI YoY (Jul)",
+            "event": "Inflation Rate YoY (Jul)",
             "currency": "EGP",
             "previous": 14.3,
             "estimate": 15.6,
@@ -873,24 +830,24 @@
           },
           {
             "date": "2026-08-10 06:00:00",
-            "country": "SE",
-            "event": "New Orders YoY (Jun)",
-            "currency": "SEK",
-            "previous": 1.6,
-            "estimate": 2,
-            "actual": 29.9,
-            "change": 28.3,
+            "country": "LT",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EUR",
+            "previous": 0.5,
+            "estimate": 0.3,
+            "actual": 0.2,
+            "change": -0.3,
             "impact": "Low",
-            "changePercentage": 1768.75,
+            "changePercentage": -60,
             "unit": "%"
           }
         ]
       },
       "llm": {},
-      "llm_provider": "anthropic",
+      "llm_provider": "auto-failed",
       "llm_ok": false,
       "is_etf": false,
-      "report": "🟢 AAPL — Apple Inc.\nEntry: n/a\neToro TP value: n/a\nScanner potential: n/a\n\n═══ TECHNICAL SETUP ═══\nSetup: n/a | Regime: n/a | Trend: n/a/5 | ADX: n/a\nRS vs SPY: n/a | RSI: n/a | Quality: n/a\nEMA20/50/200: n/a / n/a / n/a\nScanner timeframe: n/a-n/a trading days\nTechnical look-alike: not available\nTechnical interpretation unavailable.\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-07-30 — strong/positive — EPS 2.02 vs est 1.89, surprise +6.9%, revenue $109.42B, rev growth +0.0%, operating margin +32.6%\n- 2026-04-30 — mixed/neutral — EPS 2.01 vs est 1.95, surprise +3.1%, revenue $109.42B, rev growth +0.0%, operating margin +32.6%\n- 2026-01-29 — strong/positive — EPS 2.85 vs est 2.67, surprise +6.7%, revenue $109.42B, rev growth n/a, operating margin +32.6%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-10-29 (+80 days)\nEPS estimate: 1.98\nRevenue estimate: $113.44B\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nstrongBuy: 1\nbuy: 70\nhold: 32\nsell: 8\nstrongSell: 0\n\n═══ RECENT NEWS ═══\n- 2026-08-10 15:00 UTC — Bull v. Bear: AAPL Valuation Hits Roadblock, Earnings Runway Still Wide [youtube.com]\n  https://www.youtube.com/watch?v=68ufEA3f9Nk\n- 2026-08-10 14:24 UTC — Apple playing catch-up with AI-enabled security flaw hunters [youtube.com]\n  https://www.youtube.com/watch?v=m54XfrIUI24\n- 2026-08-10 14:21 UTC — Apple reportedly testing Chinese-made memory chips for iPhones, MacBooks amid global shortage [foxbusiness.com]\n  https://www.foxbusiness.com/markets/apple-testing-chinese-made-cxmt-memory-chips-iphones-macbooks-amid-global-shortage\n- 2026-08-10 14:10 UTC — The Data Science Disconnect: High Performance With Low Assets [etftrends.com]\n  https://www.etftrends.com/equity-etf-content-hub/data-science-disconnect-high-performance-with-low-assets/\n- 2026-08-10 14:03 UTC — Apple Stock Falls Amid Concerns About iPhone Setback [investopedia.com]\n  https://www.investopedia.com/market-update-apple-stock-analyst-concerns-about-iphone-setback-aapl-12037746\n- 2026-08-10 13:44 UTC — Apple downgraded by Jefferies on iPhone pricing concerns [proactiveinvestors.com]\n  https://www.proactiveinvestors.com/companies/news/1096824\n- 2026-08-10 13:00 UTC — The Big 3: INTC, UBER, AAPL [youtube.com]\n  https://www.youtube.com/watch?v=iy5RysMCSUw\n- 2026-08-10 12:54 UTC — Apple races to fix string of security flaws [youtube.com]\n  https://www.youtube.com/watch?v=JLONg-KbnuM\n🧠 ⚪ News interpretation unavailable.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Technology | Industry: Consumer Electronics\nAssessment: ⚪ unknown\nSector interpretation unavailable.\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\nMacro interpretation unavailable.\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical data: hourly-scan | fundamental/news/macro data: FMP | interpretation: anthropic)"
+      "report": "⚪ EYE — National Vision Holdings, Inc.\nEntry: $22.42\neToro TP value: $50.18\nScanner potential: +20.1%\n\n═══ TECHNICAL SETUP ═══\nSetup: pullback | Regime: uptrend\nTrend: 3/5 | ADX: 43.9 | RSI: 60.0\nRS vs SPY: -1.7% | Quality: 0.9\nEMA20/50/200: 21.45 / 20.58 / 23.3\nTechnical look-alike: unavailable\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-05-13 — mixed/neutral — EPS 0.45 vs est 0.43, surprise +4.7%, revenue $543.88M, rev growth +0.0%, operating margin +8.3%\n- 2026-03-04 — strong/positive — EPS 0.15 vs est 0.0603, surprise +148.8%, revenue $543.88M, rev growth +0.0%, operating margin +8.3%\n- 2025-11-05 — strong/positive — EPS 0.13 vs est 0.12, surprise +8.3%, revenue $543.88M, rev growth n/a, operating margin +8.3%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected date: unavailable\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nStrong Buy: 0 | Buy: 10 | Hold: 4 | Sell: 0 | Strong Sell: 0\n\n═══ RECENT NEWS ═══\n- No recent usable company-specific news returned by FMP.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Consumer Cyclical | Industry: Specialty Retail\nAssessment: ⚪ unknown\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical: hourly-scan | fundamentals/news/macro: FMP | interpretation: auto-failed)"
     },
     {
       "ticker": "ADM",
@@ -1247,6 +1204,19 @@
           },
           {
             "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
             "country": "EE",
             "event": "Balance of Trade (Jun)",
             "currency": "EUR",
@@ -1257,19 +1227,6 @@
             "impact": "Low",
             "changePercentage": -89.45,
             "unit": "M"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
-            "country": "JP",
-            "event": "Eco Watchers Survey Outlook (Jul)",
-            "currency": "JPY",
-            "previous": 45.7,
-            "estimate": 46,
-            "actual": 45.8,
-            "change": 0.1,
-            "impact": "Low",
-            "changePercentage": 0.219,
-            "unit": null
           },
           {
             "date": "2026-08-10 05:00:00",
@@ -1286,16 +1243,16 @@
           },
           {
             "date": "2026-08-10 05:00:00",
-            "country": "FI",
-            "event": "Industrial Production YoY (Jun)",
-            "currency": "EUR",
-            "previous": 0.4,
-            "estimate": 1.1,
-            "actual": 4.5,
-            "change": 4.1,
+            "country": "JP",
+            "event": "Eco Watchers Survey Outlook (Jul)",
+            "currency": "JPY",
+            "previous": 45.7,
+            "estimate": 46,
+            "actual": 45.8,
+            "change": 0.1,
             "impact": "Low",
-            "changePercentage": 1025,
-            "unit": "%"
+            "changePercentage": 0.219,
+            "unit": null
           },
           {
             "date": "2026-08-10 05:50:00",
@@ -1313,7 +1270,7 @@
           {
             "date": "2026-08-10 05:50:00",
             "country": "EG",
-            "event": "Inflation Rate YoY (Jul)",
+            "event": "CPI YoY (Jul)",
             "currency": "EGP",
             "previous": 14.3,
             "estimate": 15.6,
@@ -1326,7 +1283,7 @@
           {
             "date": "2026-08-10 05:50:00",
             "country": "EG",
-            "event": "CPI YoY (Jul)",
+            "event": "Inflation Rate YoY (Jul)",
             "currency": "EGP",
             "previous": 14.3,
             "estimate": 15.6,
@@ -1338,112 +1295,61 @@
           },
           {
             "date": "2026-08-10 06:00:00",
-            "country": "SE",
-            "event": "New Orders YoY (Jun)",
-            "currency": "SEK",
-            "previous": 1.6,
-            "estimate": 2,
-            "actual": 29.9,
-            "change": 28.3,
+            "country": "LT",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EUR",
+            "previous": 0.5,
+            "estimate": 0.3,
+            "actual": 0.2,
+            "change": -0.3,
             "impact": "Low",
-            "changePercentage": 1768.75,
+            "changePercentage": -60,
             "unit": "%"
           }
         ]
       },
       "llm": {},
-      "llm_provider": "anthropic",
+      "llm_provider": "auto-failed",
       "llm_ok": false,
       "is_etf": false,
-      "report": "🟢 ADM — Archer-Daniels-Midland Company\nEntry: $79.99\neToro TP value: $46.42\nScanner potential: +18.5%\n\n═══ TECHNICAL SETUP ═══\nSetup: pullback | Regime: uptrend | Trend: 4/5 | ADX: 26.2\nRS vs SPY: -4.4% | RSI: 49.8 | Quality: 0.92\nEMA20/50/200: 80.33 / 79.66 / 72.37\nScanner timeframe: 9-19 trading days\nTechnical look-alike: not available\nTechnical interpretation unavailable.\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-08-04 — strong/positive — EPS 1.84 vs est 1.49, surprise +23.5%, revenue $22.68B, rev growth +0.0%, operating margin +4.0%\n- 2026-05-05 — strong/positive — EPS 0.71 vs est 0.66, surprise +7.6%, revenue $22.68B, rev growth +0.0%, operating margin +4.0%\n- 2026-02-03 — strong/positive — EPS 0.87 vs est 0.797, surprise +9.2%, revenue $22.68B, rev growth n/a, operating margin +4.0%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-03 (+85 days)\nEPS estimate: 1.48\nRevenue estimate: $22.48B\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nstrongBuy: 0\nbuy: 12\nhold: 22\nsell: 2\nstrongSell: 0\n\n═══ RECENT NEWS ═══\n- No recent usable company-specific news returned by FMP.\n🧠 ⚪ News interpretation unavailable.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Consumer Defensive | Industry: Agricultural Farm Products\nAssessment: ⚪ unknown\nSector interpretation unavailable.\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\nMacro interpretation unavailable.\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical data: hourly-scan | fundamental/news/macro data: FMP | interpretation: anthropic)"
+      "report": "⚪ ADM — Archer-Daniels-Midland Company\nEntry: $79.99\neToro TP value: $46.42\nScanner potential: +18.5%\n\n═══ TECHNICAL SETUP ═══\nSetup: pullback | Regime: uptrend\nTrend: 4/5 | ADX: 26.2 | RSI: 49.8\nRS vs SPY: -4.4% | Quality: 0.92\nEMA20/50/200: 80.33 / 79.66 / 72.37\nTechnical look-alike: unavailable\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-08-04 — strong/positive — EPS 1.84 vs est 1.49, surprise +23.5%, revenue $22.68B, rev growth +0.0%, operating margin +4.0%\n- 2026-05-05 — strong/positive — EPS 0.71 vs est 0.66, surprise +7.6%, revenue $22.68B, rev growth +0.0%, operating margin +4.0%\n- 2026-02-03 — strong/positive — EPS 0.87 vs est 0.797, surprise +9.2%, revenue $22.68B, rev growth n/a, operating margin +4.0%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-03 (+85 days)\nEPS estimate: 1.48\nRevenue estimate: $22.48B\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nStrong Buy: 0 | Buy: 12 | Hold: 22 | Sell: 2 | Strong Sell: 0\n\n═══ RECENT NEWS ═══\n- No recent usable company-specific news returned by FMP.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Consumer Defensive | Industry: Agricultural Farm Products\nAssessment: ⚪ unknown\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical: hourly-scan | fundamentals/news/macro: FMP | interpretation: auto-failed)"
     },
     {
-      "ticker": "EYE",
+      "ticker": "RJF",
       "alert": {},
-      "signal": {
-        "ticker": "EYE",
-        "name": "National Vision Holdings",
-        "setup": "pullback",
-        "entry": 22.42,
-        "tp": 26.92,
-        "tp_pct": 0.2007136485280998,
-        "shares": 11.15,
-        "value": 249.98300000000003,
-        "pl_amount": 50.18,
-        "eta_days_low": 14,
-        "eta_days_high": 26,
-        "fee_pct": 0.03986048829098156,
-        "trend_score": 3,
-        "adx": 43.9,
-        "rs": -0.017,
-        "runner": false,
-        "regime": "uptrend",
-        "regime_weeks": 2,
-        "ema20": 21.45,
-        "ema50": 20.58,
-        "ema200": 23.3,
-        "above_ema200": false,
-        "quality": 0.9,
-        "q_detail": {
-          "rsi": 0.6,
-          "bollinger": 1.0,
-          "vwap": 1.0,
-          "volume": 1.0,
-          "extension": 1.0
-        },
-        "q_notes": {
-          "rsi": "RSI 60.0 falling",
-          "bollinger": "band position 54%, contracting",
-          "vwap": "reclaimed VWAP after dip (buyers defended)",
-          "volume": "0.0x average, drying up",
-          "extension": "+0.6 ATR from 20 EMA, slope +3.9%, mixed / tangled"
-        },
-        "context_notes": [],
-        "ext_atr": null,
-        "rsi": 60.0,
-        "options_note": "",
-        "sector": "Unknown",
-        "warnings": [],
-        "reasons": [
-          "daily uptrend (score 3/5)",
-          "4h pullback",
-          "1h momentum trigger",
-          "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=60.0)"
-        ],
-        "time": "2026-08-10T17:19:42.207687+00:00"
-      },
+      "signal": {},
       "profile": {
-        "symbol": "EYE",
-        "price": 22.43,
-        "marketCap": 1797017581,
-        "beta": 1.009,
-        "lastDividend": 0,
-        "range": "14.75-30.02",
-        "change": -0.12,
-        "changePercentage": -0.53215,
-        "volume": 2546901,
-        "averageVolume": 2090139,
-        "companyName": "National Vision Holdings, Inc.",
+        "symbol": "RJF",
+        "price": 179.09,
+        "marketCap": 34403189000,
+        "beta": 0.92,
+        "lastDividend": 2.12,
+        "range": "138.82-182.73",
+        "change": 2.53,
+        "changePercentage": 1.43294,
+        "volume": 783647,
+        "averageVolume": 1388339,
+        "companyName": "Raymond James Financial, Inc.",
         "currency": "USD",
-        "cik": "0001710155",
-        "isin": "US63845R1077",
-        "cusip": "63845R107",
-        "exchangeFullName": "NASDAQ Global Select",
-        "exchange": "NASDAQ",
-        "industry": "Specialty Retail",
-        "website": "https://www.nationalvision.com",
-        "description": "National Vision Holdings, Inc. operates as a leading optical retail chain across the United States, conducting business through its various subsidiary companies. The company's operations are categorized into two primary divisions: Owned & Host, and Legacy. It offers a comprehensive range of vision care products, including eyeglasses, contact lenses, and optical accessories. Eye examinations and optometric services are also provided through its extensive network of branded stores, which include America's Best, Eyeglass World, Vista Optical, Fred Meyer, Vista Optical military, and Vision Center outlets, alongside health maintenance organization services. As of January 1, 2022, National Vision maintained a significant retail footprint with 1,278 physical stores and a robust online presence through multiple e-commerce platforms. Established in 1990, the company is headquartered in Duluth, Georgia.",
-        "ceo": "Alexander N. Wilkes",
-        "sector": "Consumer Cyclical",
+        "cik": "0000720005",
+        "isin": "US7547301090",
+        "cusip": "754730109",
+        "exchangeFullName": "New York Stock Exchange",
+        "exchange": "NYSE",
+        "industry": "Financial - Capital Markets",
+        "website": "https://www.raymondjames.com",
+        "description": "Raymond James Financial, Inc. operates as a comprehensive financial services firm, extending a wide array of services to individuals, businesses, and governmental entities throughout the United States, Canada, and Europe. Its diverse operations are categorized into several key segments: Private Client Group, Capital Markets, Asset Management, Banking, and an \"Other\" category. The Private Client Group division equips clients with various investment solutions, personalized portfolio management, a selection of insurance and annuity products, and mutual funds. This segment also provides essential backing to third-party product partners, covering aspects like sales and marketing support, distribution, accounting, and general administrative assistance. Additionally, it facilitates margin loans and offers securities borrowing and lending services. Within the Capital Markets segment, the company engages in investment banking activities, which include orchestrating equity and debt offerings, along with offering expert advisory services for mergers and acquisitions. It further provides robust brokerage services for both fixed income and equity securities. The Asset Management segment specializes in delivering sophisticated asset and portfolio management services, complemented by administrative support functions such as detailed record-keeping, for both individual (retail) and institutional clients. Raymond James Bank maintains a portfolio of insured deposit accounts and a diverse range of lending products. These include commercial and industrial loans, financing for commercial real estate (CRE) and CRE construction, tax-exempt loans, residential mortgages, and securities-based loans. The bank also plays a role in loan syndication. Finally, the Other segment encompasses the firm's private equity activities, comprising direct investments and those made through third-party private equity funds, as well as the management of legacy private equity portfolios. Established in 1962, the company's corporate headquarters are situated in St. Petersburg, Florida.",
+        "ceo": "Paul Marone Shoukry",
+        "sector": "Financial Services",
         "country": "US",
-        "fullTimeEmployees": "13138",
-        "phone": "770 822 3600",
-        "address": "Building 2200",
-        "city": "Duluth",
-        "state": "GA",
-        "zip": "30096",
-        "image": "https://images.financialmodelingprep.com/symbol/EYE.png",
-        "ipoDate": "2017-10-27",
+        "fullTimeEmployees": "19500",
+        "phone": "727 567 1000",
+        "address": "880 Carillon Parkway",
+        "city": "Saint Petersburg",
+        "state": "FL",
+        "zip": "33716",
+        "image": "https://images.financialmodelingprep.com/symbol/RJF.png",
+        "ipoDate": "1983-07-01",
         "defaultImage": false,
         "isEtf": false,
         "isActivelyTrading": true,
@@ -1452,130 +1358,130 @@
       },
       "financials": [
         {
-          "date": "2026-05-13",
+          "date": "2026-07-22",
           "fiscal_period": "",
-          "eps_actual": 0.45,
-          "eps_estimate": 0.43,
-          "eps_surprise": 0.020000000000000018,
-          "eps_surprise_pct": 0.046511627906976785,
-          "revenue": 543880000.0,
-          "net_income": 31181000.0,
-          "operating_margin": 0.08312495403397809,
-          "gross_margin": 0.5539861734206075,
+          "eps_actual": 3.14,
+          "eps_estimate": 2.93,
+          "eps_surprise": 0.20999999999999996,
+          "eps_surprise_pct": 0.07167235494880544,
+          "revenue": 4362000000.0,
+          "net_income": 595000000.0,
+          "operating_margin": 0.171939477303989,
+          "gross_margin": 0.6620816139385602,
           "revenue_yoy": 0.0,
           "net_income_yoy": 0.0
         },
         {
-          "date": "2026-03-04",
+          "date": "2026-04-22",
           "fiscal_period": "",
-          "eps_actual": 0.15,
-          "eps_estimate": 0.0603,
-          "eps_surprise": 0.0897,
-          "eps_surprise_pct": 1.4875621890547264,
-          "revenue": 543880000.0,
-          "net_income": 31181000.0,
-          "operating_margin": 0.08312495403397809,
-          "gross_margin": 0.5539861734206075,
+          "eps_actual": 2.83,
+          "eps_estimate": 2.76,
+          "eps_surprise": 0.07000000000000028,
+          "eps_surprise_pct": 0.025362318840579816,
+          "revenue": 4362000000.0,
+          "net_income": 595000000.0,
+          "operating_margin": 0.171939477303989,
+          "gross_margin": 0.6620816139385602,
           "revenue_yoy": 0.0,
           "net_income_yoy": 0.0
         },
         {
-          "date": "2025-11-05",
+          "date": "2026-01-28",
           "fiscal_period": "",
-          "eps_actual": 0.13,
-          "eps_estimate": 0.12,
-          "eps_surprise": 0.010000000000000009,
-          "eps_surprise_pct": 0.08333333333333341,
-          "revenue": 543880000.0,
-          "net_income": 31181000.0,
-          "operating_margin": 0.08312495403397809,
-          "gross_margin": 0.5539861734206075,
+          "eps_actual": 2.86,
+          "eps_estimate": 2.83,
+          "eps_surprise": 0.029999999999999805,
+          "eps_surprise_pct": 0.01060070671378085,
+          "revenue": 4362000000.0,
+          "net_income": 595000000.0,
+          "operating_margin": 0.171939477303989,
+          "gross_margin": 0.6620816139385602,
           "revenue_yoy": null,
           "net_income_yoy": null
         }
       ],
       "financial_health": {
-        "cash": 67898000.0,
-        "total_debt": 692127000.0,
-        "total_liabilities": 1122477000.0,
-        "equity": 898006000.0,
-        "operating_cash_flow": 61705000.0,
-        "capital_expenditure": -17569000.0,
-        "free_cash_flow": 44136000.0
+        "cash": 11400000000.0,
+        "total_debt": 5300000000.0,
+        "total_liabilities": 81500000000.0,
+        "equity": 12700000000.0,
+        "operating_cash_flow": 584000000.0,
+        "capital_expenditure": -62000000.0,
+        "free_cash_flow": 522000000.0
       },
       "forward": {
         "next_earnings": {},
         "estimates": [
           {
-            "date": "2030-01-03",
+            "date": "2029-09-30",
             "period": null,
-            "revenue_avg": 2478200000.0,
-            "eps_avg": 1.63,
-            "revenue_low": 2436753878.0,
-            "revenue_high": 2520084183.0,
-            "eps_low": 1.59456,
-            "eps_high": 1.66581,
+            "revenue_avg": 20834637600.0,
+            "eps_avg": 20.4884,
+            "revenue_low": 20074070956.0,
+            "revenue_high": 21314480025.0,
+            "eps_low": 19.51609,
+            "eps_high": 21.10183,
             "num_analysts_revenue": 2,
             "num_analysts_eps": 1
           },
           {
-            "date": "2029-01-03",
+            "date": "2028-09-30",
             "period": null,
-            "revenue_avg": 2361743407.0,
-            "eps_avg": 1.51038,
-            "revenue_low": 2337932417.0,
-            "revenue_high": 2415141365.0,
-            "eps_low": 1.47754,
-            "eps_high": 1.54357,
+            "revenue_avg": 18933785171.0,
+            "eps_avg": 16.75082,
+            "revenue_low": 17288452764.0,
+            "revenue_high": 20157693045.0,
+            "eps_low": 15.19336,
+            "eps_high": 18.3083,
             "num_analysts_revenue": 4,
-            "num_analysts_eps": 1
+            "num_analysts_eps": 2
           },
           {
-            "date": "2028-01-03",
+            "date": "2027-09-30",
             "period": null,
-            "revenue_avg": 2182454204.0,
-            "eps_avg": 1.17884,
-            "revenue_low": 2152142340.0,
-            "revenue_high": 2222870022.0,
-            "eps_low": 1.00892,
-            "eps_high": 1.28504,
-            "num_analysts_revenue": 8,
-            "num_analysts_eps": 7
+            "revenue_avg": 17557849659.0,
+            "eps_avg": 14.32436,
+            "revenue_low": 16837683670.0,
+            "revenue_high": 18024436073.0,
+            "eps_low": 4.27929,
+            "eps_high": 16.66671,
+            "num_analysts_revenue": 7,
+            "num_analysts_eps": 9
           },
           {
-            "date": "2027-01-03",
+            "date": "2026-09-30",
             "period": null,
-            "revenue_avg": 2063637636.0,
-            "eps_avg": 0.9632,
-            "revenue_low": 2033584660.0,
-            "revenue_high": 2073655294.0,
-            "eps_low": 0.88911,
-            "eps_high": 1.01612,
-            "num_analysts_revenue": 8,
-            "num_analysts_eps": 7
+            "revenue_avg": 15749897780.0,
+            "eps_avg": 12.16569,
+            "revenue_low": 15679540865.0,
+            "revenue_high": 15840356669.0,
+            "eps_low": 11.74236,
+            "eps_high": 12.40759,
+            "num_analysts_revenue": 7,
+            "num_analysts_eps": 9
           }
         ]
       },
       "analysts": {
         "grades_consensus": {
-          "symbol": "EYE",
-          "strongBuy": 0,
-          "buy": 10,
-          "hold": 4,
+          "symbol": "RJF",
+          "strongBuy": 1,
+          "buy": 11,
+          "hold": 14,
           "sell": 0,
           "strongSell": 0,
-          "consensus": "Buy"
+          "consensus": "Hold"
         },
         "estimate_direction": {
           "revenueAvg": {
-            "latest": 2478200000,
-            "prior": 2361743407,
-            "change": 0.049309587423779
+            "latest": 20834637600,
+            "prior": 18933785171,
+            "change": 0.10039473944763277
           },
           "epsAvg": {
-            "latest": 1.63,
-            "prior": 1.51038,
-            "change": 0.07919861226975988
+            "latest": 20.4884,
+            "prior": 16.75082,
+            "change": 0.22312818118754763
           }
         }
       },
@@ -1585,19 +1491,19 @@
         "message": "0 usable article(s)"
       },
       "sector": {
-        "sector": "Consumer Cyclical",
-        "industry": "Specialty Retail",
+        "sector": "Financial Services",
+        "industry": "Financial - Capital Markets",
         "sector_snapshot": {
           "date": "2026-08-10",
-          "sector": "Consumer Cyclical",
+          "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": 1.1631049994393905
+          "averageChange": 0.4304439124918513
         },
         "industry_snapshot": {
           "date": "2026-08-10",
-          "industry": "Specialty Retail",
+          "industry": "Financial - Capital Markets",
           "exchange": "NASDAQ",
-          "averageChange": 1.0237004490912582
+          "averageChange": 0.8584262608668292
         }
       },
       "macro": {
@@ -1704,6 +1610,19 @@
           },
           {
             "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
             "country": "EE",
             "event": "Balance of Trade (Jun)",
             "currency": "EUR",
@@ -1714,19 +1633,6 @@
             "impact": "Low",
             "changePercentage": -89.45,
             "unit": "M"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
-            "country": "JP",
-            "event": "Eco Watchers Survey Outlook (Jul)",
-            "currency": "JPY",
-            "previous": 45.7,
-            "estimate": 46,
-            "actual": 45.8,
-            "change": 0.1,
-            "impact": "Low",
-            "changePercentage": 0.219,
-            "unit": null
           },
           {
             "date": "2026-08-10 05:00:00",
@@ -1743,16 +1649,16 @@
           },
           {
             "date": "2026-08-10 05:00:00",
-            "country": "FI",
-            "event": "Industrial Production YoY (Jun)",
-            "currency": "EUR",
-            "previous": 0.4,
-            "estimate": 1.1,
-            "actual": 4.5,
-            "change": 4.1,
+            "country": "JP",
+            "event": "Eco Watchers Survey Outlook (Jul)",
+            "currency": "JPY",
+            "previous": 45.7,
+            "estimate": 46,
+            "actual": 45.8,
+            "change": 0.1,
             "impact": "Low",
-            "changePercentage": 1025,
-            "unit": "%"
+            "changePercentage": 0.219,
+            "unit": null
           },
           {
             "date": "2026-08-10 05:50:00",
@@ -1770,6 +1676,19 @@
           {
             "date": "2026-08-10 05:50:00",
             "country": "EG",
+            "event": "CPI YoY (Jul)",
+            "currency": "EGP",
+            "previous": 14.3,
+            "estimate": 15.6,
+            "actual": 14.9,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 4.196,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
             "event": "Inflation Rate YoY (Jul)",
             "currency": "EGP",
             "previous": 14.3,
@@ -1778,6 +1697,431 @@
             "change": 0.6,
             "impact": "Low",
             "changePercentage": 4.196,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 06:00:00",
+            "country": "LT",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EUR",
+            "previous": 0.5,
+            "estimate": 0.3,
+            "actual": 0.2,
+            "change": -0.3,
+            "impact": "Low",
+            "changePercentage": -60,
+            "unit": "%"
+          }
+        ]
+      },
+      "llm": {},
+      "llm_provider": "auto-failed",
+      "llm_ok": false,
+      "is_etf": false,
+      "report": "⚪ RJF — Raymond James Financial, Inc.\nEntry: n/a\neToro TP value: n/a\nScanner potential: n/a\n\n═══ TECHNICAL SETUP ═══\nSetup: n/a | Regime: n/a\nTrend: n/a/5 | ADX: n/a | RSI: n/a\nRS vs SPY: n/a | Quality: n/a\nEMA20/50/200: n/a / n/a / n/a\nTechnical look-alike: unavailable\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-07-22 — strong/positive — EPS 3.14 vs est 2.93, surprise +7.2%, revenue $4.36B, rev growth +0.0%, operating margin +17.2%\n- 2026-04-22 — mixed/neutral — EPS 2.83 vs est 2.76, surprise +2.5%, revenue $4.36B, rev growth +0.0%, operating margin +17.2%\n- 2026-01-28 — mixed/neutral — EPS 2.86 vs est 2.83, surprise +1.1%, revenue $4.36B, rev growth n/a, operating margin +17.2%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected date: unavailable\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nStrong Buy: 1 | Buy: 11 | Hold: 14 | Sell: 0 | Strong Sell: 0\n\n═══ RECENT NEWS ═══\n- No recent usable company-specific news returned by FMP.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Financial Services | Industry: Financial - Capital Markets\nAssessment: ⚪ unknown\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical: hourly-scan | fundamentals/news/macro: FMP | interpretation: auto-failed)"
+    },
+    {
+      "ticker": "MPC",
+      "alert": {},
+      "signal": {},
+      "profile": {
+        "symbol": "MPC",
+        "price": 320.32,
+        "marketCap": 93513259840,
+        "beta": 0.513,
+        "lastDividend": 3.91,
+        "range": "158-326.92",
+        "change": 22.12,
+        "changePercentage": 7.41784,
+        "volume": 3021898,
+        "averageVolume": 2295499,
+        "companyName": "Marathon Petroleum Corporation",
+        "currency": "USD",
+        "cik": "0001510295",
+        "isin": "US56585A1025",
+        "cusip": "56585A102",
+        "exchangeFullName": "New York Stock Exchange",
+        "exchange": "NYSE",
+        "industry": "Oil & Gas Refining & Marketing",
+        "website": "https://www.marathonpetroleum.com",
+        "description": "Marathon Petroleum Corporation (MPC) functions as a prominent integrated energy enterprise, primarily concentrating its downstream operations across the United States. Its business is bifurcated into two main divisions: Refining & Marketing, and Midstream. The Refining & Marketing segment is responsible for processing crude oil and various other raw materials at its refineries, strategically located in the U.S. Gulf Coast, Mid-Continent, and West Coast regions. This division also acquires refined petroleum products and ethanol for subsequent distribution. Key outputs from this segment encompass a diverse array of transportation fuels, including different gasoline blends, heavy fuel oil, and asphalt. Additionally, it manufactures chemicals such as aromatics, propane, propylene, and sulfur. MPC sells these refined goods through multiple channels, including wholesale marketers domestically and globally, purchasers on the open spot market, and independent entrepreneurs who manage primarily Marathon-branded retail locations. It also supplies fuel via long-term agreements to direct dealer sites, predominantly under the ARCO brand. The Midstream segment handles the comprehensive movement, storage, distribution, and commercialization of crude oil and refined products. This is achieved through its extensive network of refining logistics assets, pipelines, terminals, towboats, and barges. Moreover, this segment engages in the collection, processing, and transportation of natural gas, alongside the gathering, transport, fractionation, storage, and marketing of natural gas liquids. By December 31, 2021, the corporation supported 7,159 branded jobber retail points, managed by independent entrepreneurs, spanning 37 U.S. states, the District of Columbia, and Mexico. Marathon Petroleum Corporation, established in 1887, maintains its corporate headquarters in Findlay, Ohio.",
+        "ceo": "Maryann T. Mannen",
+        "sector": "Energy",
+        "country": "US",
+        "fullTimeEmployees": "18500",
+        "phone": "419 422 2121",
+        "address": "539 South Main Street",
+        "city": "Findlay",
+        "state": "OH",
+        "zip": "45840-3229",
+        "image": "https://images.financialmodelingprep.com/symbol/MPC.png",
+        "ipoDate": "2011-06-24",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-08-04",
+          "fiscal_period": "",
+          "eps_actual": 17.73,
+          "eps_estimate": 14.27,
+          "eps_surprise": 3.460000000000001,
+          "eps_surprise_pct": 0.24246671338472325,
+          "revenue": 51994000000.0,
+          "net_income": 5138000000.0,
+          "operating_margin": 0.1408239412239874,
+          "gross_margin": 0.17175058660614687,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-05-05",
+          "fiscal_period": "",
+          "eps_actual": 1.65,
+          "eps_estimate": 0.739,
+          "eps_surprise": 0.9109999999999999,
+          "eps_surprise_pct": 1.2327469553450607,
+          "revenue": 51994000000.0,
+          "net_income": 5138000000.0,
+          "operating_margin": 0.1408239412239874,
+          "gross_margin": 0.17175058660614687,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-02-03",
+          "fiscal_period": "",
+          "eps_actual": 4.07,
+          "eps_estimate": 2.72,
+          "eps_surprise": 1.35,
+          "eps_surprise_pct": 0.4963235294117647,
+          "revenue": 51994000000.0,
+          "net_income": 5138000000.0,
+          "operating_margin": 0.1408239412239874,
+          "gross_margin": 0.17175058660614687,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 7768000000.0,
+        "total_debt": 34292000000.0,
+        "total_liabilities": 68590000000.0,
+        "equity": 19077000000.0,
+        "operating_cash_flow": 10327000000.0,
+        "capital_expenditure": -1186000000.0,
+        "free_cash_flow": 9141000000.0
+      },
+      "forward": {
+        "next_earnings": {
+          "symbol": "MPC",
+          "date": "2026-11-03",
+          "epsActual": null,
+          "epsEstimated": 17.71,
+          "revenueActual": null,
+          "revenueEstimated": 42868110000,
+          "lastUpdated": "2026-08-10"
+        },
+        "estimates": [
+          {
+            "date": "2030-12-31",
+            "period": null,
+            "revenue_avg": 170700569493.0,
+            "eps_avg": 40.1,
+            "revenue_low": 126181654094.0,
+            "revenue_high": 210100808921.0,
+            "eps_low": 26.50443,
+            "eps_high": 52.13238,
+            "num_analysts_revenue": 5,
+            "num_analysts_eps": 1
+          },
+          {
+            "date": "2029-12-31",
+            "period": null,
+            "revenue_avg": 162316065151.0,
+            "eps_avg": 23.58,
+            "revenue_low": 119983838646.0,
+            "revenue_high": 199781035824.0,
+            "eps_low": 15.5854,
+            "eps_high": 30.6554,
+            "num_analysts_revenue": 3,
+            "num_analysts_eps": 1
+          },
+          {
+            "date": "2028-12-31",
+            "period": null,
+            "revenue_avg": 152869857451.0,
+            "eps_avg": 19.66161,
+            "revenue_low": 125982447266.0,
+            "revenue_high": 206042263447.0,
+            "eps_low": 12.71962,
+            "eps_high": 27.13519,
+            "num_analysts_revenue": 7,
+            "num_analysts_eps": 5
+          },
+          {
+            "date": "2027-12-31",
+            "period": null,
+            "revenue_avg": 153469533613.0,
+            "eps_avg": 30.76935,
+            "revenue_low": 105025749760.0,
+            "revenue_high": 186816230813.0,
+            "eps_low": 23.49028,
+            "eps_high": 42.12471,
+            "num_analysts_revenue": 8,
+            "num_analysts_eps": 11
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "MPC",
+          "strongBuy": 0,
+          "buy": 25,
+          "hold": 8,
+          "sell": 0,
+          "strongSell": 0,
+          "consensus": "Buy"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 170700569493,
+            "prior": 162316065151,
+            "change": 0.05165541891494252
+          },
+          "epsAvg": {
+            "latest": 40.1,
+            "prior": 23.58,
+            "change": 0.700593723494487
+          }
+        }
+      },
+      "news": [
+        {
+          "date": "2026-08-10 14:10 UTC",
+          "title": "The Data Science Disconnect: High Performance With Low Assets",
+          "site": "etftrends.com",
+          "text": "Many investors know the JPMorgan Nasdaq Equity Premium Income ETF (JEPQ) for its options strategy. However, its underlying performance relies heavily on an engine that gets far less spotlight."
+        },
+        {
+          "date": "2026-08-10 13:46 UTC",
+          "title": "3 Reasons Growth Investors Will Love Marathon Petroleum (MPC)",
+          "site": "zacks.com",
+          "text": "Marathon Petroleum (MPC) is well positioned to outperform the market, as it exhibits above-average growth in financials."
+        },
+        {
+          "date": "2026-08-10 11:26 UTC",
+          "title": "MPC Jumps 18.1% in 3 Months as Refining Strength Builds Momentum",
+          "site": "zacks.com",
+          "text": "MPC's rally has fundamental support from stronger refining economics, disciplined operations and rising midstream cash flow."
+        },
+        {
+          "date": "2026-08-10 11:26 UTC",
+          "title": "Marathon Petroleum Q2 Earnings Beat on Strong Refining Margins",
+          "site": "zacks.com",
+          "text": "Independent oil refiner and marketer Marathon Petroleum Corporation MPC reported second-quarter 2026 earnings of $17.73 per share, which beat the Zacks Consensus Estimate of $14.52 by 22.1%. Earnings per share also surged 347.7% from the year-ago level of $3.96 per share, primarily reflecting significantly stronger Refining & Marketing performance."
+        },
+        {
+          "date": "2026-08-10 10:41 UTC",
+          "title": "Are Oils-Energy Stocks Lagging Marathon Petroleum (MPC) This Year?",
+          "site": "zacks.com",
+          "text": "Here is how Marathon Petroleum (MPC) and PBF Energy (PBF) have performed compared to their sector so far this year."
+        },
+        {
+          "date": "2026-08-10 10:30 UTC",
+          "title": "Should You Invest in Marathon Petroleum (MPC) Based on Bullish Wall Street Views?",
+          "site": "zacks.com",
+          "text": "The recommendations of Wall Street analysts are often relied on by investors when deciding whether to buy, sell, or hold a stock. Media reports about these brokerage-firm-employed (or sell-side) analysts changing their ratings often affect a stock's price."
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "6 usable article(s)"
+      },
+      "sector": {
+        "sector": "Energy",
+        "industry": "Oil & Gas Refining & Marketing",
+        "sector_snapshot": {
+          "date": "2026-08-10",
+          "sector": "Energy",
+          "exchange": "NASDAQ",
+          "averageChange": 3.704825529311795
+        },
+        "industry_snapshot": {
+          "date": "2026-08-10",
+          "industry": "Oil & Gas Refining & Marketing",
+          "exchange": "NASDAQ",
+          "averageChange": -2.1441022608833737
+        }
+      },
+      "macro": {
+        "treasury": {
+          "date": "2026-08-07",
+          "month1": 3.79,
+          "month2": 3.83,
+          "month3": 3.87,
+          "month6": 3.96,
+          "year1": 4.01,
+          "year2": 4.19,
+          "year3": 4.25,
+          "year5": 4.35,
+          "year7": 4.49,
+          "year10": 4.65,
+          "year20": 5.2,
+          "year30": 5.19
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-10 02:30:00",
+            "country": "KR",
+            "event": "3-Year KTB Auction",
+            "currency": "KRW",
+            "previous": 3.765,
+            "estimate": null,
+            "actual": 3.78,
+            "change": 0.015,
+            "impact": "Low",
+            "changePercentage": 0.398,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 03:00:00",
+            "country": "ID",
+            "event": "Consumer Confidence (Jul)",
+            "currency": "IDR",
+            "previous": 117.8,
+            "estimate": 116,
+            "actual": 116.8,
+            "change": -1,
+            "impact": "Low",
+            "changePercentage": -0.849,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 03:15:00",
+            "country": "ID",
+            "event": "Motorbike Sales YoY (Jul)",
+            "currency": "IDR",
+            "previous": 1.1,
+            "estimate": null,
+            "actual": 8.3,
+            "change": 7.2,
+            "impact": "Low",
+            "changePercentage": 654.545,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 04:30:00",
+            "country": "NL",
+            "event": "Manufacturing Production MoM (Jun)",
+            "currency": "EUR",
+            "previous": 1.1,
+            "estimate": 0.3,
+            "actual": -1.3,
+            "change": -2.4,
+            "impact": "Low",
+            "changePercentage": -218.182,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "EE",
+            "event": "Balance of Trade (Jun)",
+            "currency": "EUR",
+            "previous": -218,
+            "estimate": -290,
+            "actual": -413,
+            "change": -195,
+            "impact": "Low",
+            "changePercentage": -89.45,
+            "unit": "M"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "JP",
+            "event": "Eco Watchers Survey Current (Jul)",
+            "currency": "JPY",
+            "previous": 44,
+            "estimate": 44.4,
+            "actual": 45.7,
+            "change": 1.7,
+            "impact": "Low",
+            "changePercentage": 3.864,
+            "unit": null
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "JP",
+            "event": "Eco Watchers Survey Outlook (Jul)",
+            "currency": "JPY",
+            "previous": 45.7,
+            "estimate": 46,
+            "actual": 45.8,
+            "change": 0.1,
+            "impact": "Low",
+            "changePercentage": 0.219,
+            "unit": null
+          },
+          {
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EGP",
+            "previous": -0.4,
+            "estimate": 0.5,
+            "actual": 0,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 100,
             "unit": "%"
           },
           {
@@ -1794,25 +2138,452 @@
             "unit": "%"
           },
           {
-            "date": "2026-08-10 06:00:00",
-            "country": "SE",
-            "event": "New Orders YoY (Jun)",
-            "currency": "SEK",
-            "previous": 1.6,
-            "estimate": 2,
-            "actual": 29.9,
-            "change": 28.3,
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
+            "event": "Inflation Rate YoY (Jul)",
+            "currency": "EGP",
+            "previous": 14.3,
+            "estimate": 15.6,
+            "actual": 14.9,
+            "change": 0.6,
             "impact": "Low",
-            "changePercentage": 1768.75,
+            "changePercentage": 4.196,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 06:00:00",
+            "country": "LT",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EUR",
+            "previous": 0.5,
+            "estimate": 0.3,
+            "actual": 0.2,
+            "change": -0.3,
+            "impact": "Low",
+            "changePercentage": -60,
             "unit": "%"
           }
         ]
       },
       "llm": {},
-      "llm_provider": "anthropic",
+      "llm_provider": "auto-failed",
       "llm_ok": false,
       "is_etf": false,
-      "report": "🟢 EYE — National Vision Holdings, Inc.\nEntry: $22.42\neToro TP value: $50.18\nScanner potential: +20.1%\n\n═══ TECHNICAL SETUP ═══\nSetup: pullback | Regime: uptrend | Trend: 3/5 | ADX: 43.9\nRS vs SPY: -1.7% | RSI: 60.0 | Quality: 0.9\nEMA20/50/200: 21.45 / 20.58 / 23.3\nScanner timeframe: 14-26 trading days\nTechnical look-alike: not available\nTechnical interpretation unavailable.\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-05-13 — mixed/neutral — EPS 0.45 vs est 0.43, surprise +4.7%, revenue $543.88M, rev growth +0.0%, operating margin +8.3%\n- 2026-03-04 — strong/positive — EPS 0.15 vs est 0.0603, surprise +148.8%, revenue $543.88M, rev growth +0.0%, operating margin +8.3%\n- 2025-11-05 — strong/positive — EPS 0.13 vs est 0.12, surprise +8.3%, revenue $543.88M, rev growth n/a, operating margin +8.3%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected date: unavailable\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nstrongBuy: 0\nbuy: 10\nhold: 4\nsell: 0\nstrongSell: 0\n\n═══ RECENT NEWS ═══\n- No recent usable company-specific news returned by FMP.\n🧠 ⚪ News interpretation unavailable.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Consumer Cyclical | Industry: Specialty Retail\nAssessment: ⚪ unknown\nSector interpretation unavailable.\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\nMacro interpretation unavailable.\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical data: hourly-scan | fundamental/news/macro data: FMP | interpretation: anthropic)"
+      "report": "⚪ MPC — Marathon Petroleum Corporation\nEntry: n/a\neToro TP value: n/a\nScanner potential: n/a\n\n═══ TECHNICAL SETUP ═══\nSetup: n/a | Regime: n/a\nTrend: n/a/5 | ADX: n/a | RSI: n/a\nRS vs SPY: n/a | Quality: n/a\nEMA20/50/200: n/a / n/a / n/a\nTechnical look-alike: unavailable\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-08-04 — strong/positive — EPS 17.73 vs est 14.27, surprise +24.2%, revenue $51.99B, rev growth +0.0%, operating margin +14.1%\n- 2026-05-05 — strong/positive — EPS 1.65 vs est 0.739, surprise +123.3%, revenue $51.99B, rev growth +0.0%, operating margin +14.1%\n- 2026-02-03 — strong/positive — EPS 4.07 vs est 2.72, surprise +49.6%, revenue $51.99B, rev growth n/a, operating margin +14.1%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-03 (+85 days)\nEPS estimate: 17.71\nRevenue estimate: $42.87B\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nStrong Buy: 0 | Buy: 25 | Hold: 8 | Sell: 0 | Strong Sell: 0\n\n═══ RECENT NEWS ═══\n- 2026-08-10 14:10 UTC — The Data Science Disconnect: High Performance With Low Assets [etftrends.com]\n- 2026-08-10 13:46 UTC — 3 Reasons Growth Investors Will Love Marathon Petroleum (MPC) [zacks.com]\n- 2026-08-10 11:26 UTC — MPC Jumps 18.1% in 3 Months as Refining Strength Builds Momentum [zacks.com]\n- 2026-08-10 11:26 UTC — Marathon Petroleum Q2 Earnings Beat on Strong Refining Margins [zacks.com]\n- 2026-08-10 10:41 UTC — Are Oils-Energy Stocks Lagging Marathon Petroleum (MPC) This Year? [zacks.com]\n\n═══ SECTOR / INDUSTRY ═══\nSector: Energy | Industry: Oil & Gas Refining & Marketing\nAssessment: ⚪ unknown\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical: hourly-scan | fundamentals/news/macro: FMP | interpretation: auto-failed)"
+    },
+    {
+      "ticker": "FANG",
+      "alert": {},
+      "signal": {},
+      "profile": {
+        "symbol": "FANG",
+        "price": 198.97,
+        "marketCap": 55972847610,
+        "beta": 0.419,
+        "lastDividend": 4.15,
+        "range": "134.3-214.51",
+        "change": 10.93,
+        "changePercentage": 5.81259,
+        "volume": 1592457,
+        "averageVolume": 2535691,
+        "companyName": "Diamondback Energy, Inc.",
+        "currency": "USD",
+        "cik": "0001539838",
+        "isin": "US25278X1090",
+        "cusip": "25278X109",
+        "exchangeFullName": "NASDAQ Global Select",
+        "exchange": "NASDAQ",
+        "industry": "Oil & Gas Exploration & Production",
+        "website": "https://www.diamondbackenergy.com",
+        "description": "Diamondback Energy, Inc. operates as an independent enterprise focused on oil and natural gas. Its core business involves the acquisition, development, exploration, and production of unconventional and onshore hydrocarbon reserves, predominantly located within the Permian Basin across West Texas and New Mexico. The company's development efforts primarily target significant geological formations, including the Spraberry and Wolfcamp in the Midland Basin, as well as the Wolfcamp and Bone Spring within the Delaware Basin – both crucial components of the broader Permian. As of December 31, 2021, Diamondback Energy's asset base included approximately 524,700 gross acres under its control in the Permian Basin. At that time, its estimated proved oil and natural gas reserves amounted to 1,788,991 thousand barrels of crude oil equivalent. The company also maintained working interests in 5,289 gross producing wells and held royalty interests in an additional 6,455 wells. Beyond its direct well operations, Diamondback Energy possesses mineral interests spanning roughly 930,871 gross acres and 27,027 net royalty acres across the Permian Basin and the Eagle Ford Shale. Furthermore, it manages a portfolio of midstream infrastructure, owning, operating, developing, and acquiring assets such as 866 miles of crude oil gathering pipelines, natural gas gathering pipelines, and an integrated water system within the Midland and Delaware Basins of the Permian. Established in 2007, Diamondback Energy, Inc. is headquartered in Midland, Texas.",
+        "ceo": "Matthew Kaes Van't Hof",
+        "sector": "Energy",
+        "country": "US",
+        "fullTimeEmployees": "1762",
+        "phone": "432 221 7400",
+        "address": "Fasken Center",
+        "city": "Midland",
+        "state": "TX",
+        "zip": "79701",
+        "image": "https://images.financialmodelingprep.com/symbol/FANG.png",
+        "ipoDate": "2012-10-12",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-08-03",
+          "fiscal_period": "",
+          "eps_actual": 6.48,
+          "eps_estimate": 6.08,
+          "eps_surprise": 0.40000000000000036,
+          "eps_surprise_pct": 0.06578947368421058,
+          "revenue": 5562000000.0,
+          "net_income": 1882000000.0,
+          "operating_margin": 0.45163610212153904,
+          "gross_margin": 0.45163610212153904,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-05-04",
+          "fiscal_period": "",
+          "eps_actual": 4.23,
+          "eps_estimate": 3.74,
+          "eps_surprise": 0.4900000000000002,
+          "eps_surprise_pct": 0.13101604278074871,
+          "revenue": 5562000000.0,
+          "net_income": 1882000000.0,
+          "operating_margin": 0.45163610212153904,
+          "gross_margin": 0.45163610212153904,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-02-23",
+          "fiscal_period": "",
+          "eps_actual": 1.74,
+          "eps_estimate": 2.0,
+          "eps_surprise": -0.26,
+          "eps_surprise_pct": -0.13,
+          "revenue": 5562000000.0,
+          "net_income": 1882000000.0,
+          "operating_margin": 0.45163610212153904,
+          "gross_margin": 0.45163610212153904,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 462000000.0,
+        "total_debt": 12614000000.0,
+        "total_liabilities": 26233000000.0,
+        "equity": 37900000000.0,
+        "operating_cash_flow": 3589000000.0,
+        "capital_expenditure": -996000000.0,
+        "free_cash_flow": 2593000000.0
+      },
+      "forward": {
+        "next_earnings": {
+          "symbol": "FANG",
+          "date": "2026-11-02",
+          "epsActual": null,
+          "epsEstimated": 4.83,
+          "revenueActual": null,
+          "revenueEstimated": 4365345000,
+          "lastUpdated": "2026-08-10"
+        },
+        "estimates": [
+          {
+            "date": "2030-12-31",
+            "period": null,
+            "revenue_avg": 16038000000.0,
+            "eps_avg": 16.715,
+            "revenue_low": 15034358622.0,
+            "revenue_high": 17477903173.0,
+            "eps_low": 15.35519,
+            "eps_high": 18.66589,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 4
+          },
+          {
+            "date": "2029-12-31",
+            "period": null,
+            "revenue_avg": 16092500000.0,
+            "eps_avg": 17.09,
+            "revenue_low": 15085448069.0,
+            "revenue_high": 17537296222.0,
+            "eps_low": 15.69968,
+            "eps_high": 19.08466,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 4
+          },
+          {
+            "date": "2028-12-31",
+            "period": null,
+            "revenue_avg": 17159104842.0,
+            "eps_avg": 18.61353,
+            "revenue_low": 16606237942.0,
+            "revenue_high": 18155242921.0,
+            "eps_low": 14.82107,
+            "eps_high": 25.23155,
+            "num_analysts_revenue": 4,
+            "num_analysts_eps": 10
+          },
+          {
+            "date": "2027-12-31",
+            "period": null,
+            "revenue_avg": 16731593276.0,
+            "eps_avg": 17.42347,
+            "revenue_low": 15379648011.0,
+            "revenue_high": 19079708735.0,
+            "eps_low": 14.8325,
+            "eps_high": 21.55643,
+            "num_analysts_revenue": 8,
+            "num_analysts_eps": 16
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "FANG",
+          "strongBuy": 1,
+          "buy": 47,
+          "hold": 5,
+          "sell": 0,
+          "strongSell": 0,
+          "consensus": "Buy"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 16038000000,
+            "prior": 16092500000,
+            "change": -0.003386670809383263
+          },
+          "epsAvg": {
+            "latest": 16.715,
+            "prior": 17.09,
+            "change": -0.021942656524283177
+          }
+        }
+      },
+      "news": [],
+      "news_diag": {
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
+      },
+      "sector": {
+        "sector": "Energy",
+        "industry": "Oil & Gas Exploration & Production",
+        "sector_snapshot": {
+          "date": "2026-08-10",
+          "sector": "Energy",
+          "exchange": "NASDAQ",
+          "averageChange": 3.704825529311795
+        },
+        "industry_snapshot": {
+          "date": "2026-08-10",
+          "industry": "Oil & Gas Exploration & Production",
+          "exchange": "NASDAQ",
+          "averageChange": 4.133330571420357
+        }
+      },
+      "macro": {
+        "treasury": {
+          "date": "2026-08-07",
+          "month1": 3.79,
+          "month2": 3.83,
+          "month3": 3.87,
+          "month6": 3.96,
+          "year1": 4.01,
+          "year2": 4.19,
+          "year3": 4.25,
+          "year5": 4.35,
+          "year7": 4.49,
+          "year10": 4.65,
+          "year20": 5.2,
+          "year30": 5.19
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-10 02:30:00",
+            "country": "KR",
+            "event": "3-Year KTB Auction",
+            "currency": "KRW",
+            "previous": 3.765,
+            "estimate": null,
+            "actual": 3.78,
+            "change": 0.015,
+            "impact": "Low",
+            "changePercentage": 0.398,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 03:00:00",
+            "country": "ID",
+            "event": "Consumer Confidence (Jul)",
+            "currency": "IDR",
+            "previous": 117.8,
+            "estimate": 116,
+            "actual": 116.8,
+            "change": -1,
+            "impact": "Low",
+            "changePercentage": -0.849,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 03:15:00",
+            "country": "ID",
+            "event": "Motorbike Sales YoY (Jul)",
+            "currency": "IDR",
+            "previous": 1.1,
+            "estimate": null,
+            "actual": 8.3,
+            "change": 7.2,
+            "impact": "Low",
+            "changePercentage": 654.545,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 04:30:00",
+            "country": "NL",
+            "event": "Manufacturing Production MoM (Jun)",
+            "currency": "EUR",
+            "previous": 1.1,
+            "estimate": 0.3,
+            "actual": -1.3,
+            "change": -2.4,
+            "impact": "Low",
+            "changePercentage": -218.182,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "EE",
+            "event": "Balance of Trade (Jun)",
+            "currency": "EUR",
+            "previous": -218,
+            "estimate": -290,
+            "actual": -413,
+            "change": -195,
+            "impact": "Low",
+            "changePercentage": -89.45,
+            "unit": "M"
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "JP",
+            "event": "Eco Watchers Survey Current (Jul)",
+            "currency": "JPY",
+            "previous": 44,
+            "estimate": 44.4,
+            "actual": 45.7,
+            "change": 1.7,
+            "impact": "Low",
+            "changePercentage": 3.864,
+            "unit": null
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "JP",
+            "event": "Eco Watchers Survey Outlook (Jul)",
+            "currency": "JPY",
+            "previous": 45.7,
+            "estimate": 46,
+            "actual": 45.8,
+            "change": 0.1,
+            "impact": "Low",
+            "changePercentage": 0.219,
+            "unit": null
+          },
+          {
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EGP",
+            "previous": -0.4,
+            "estimate": 0.5,
+            "actual": 0,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 100,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
+            "event": "CPI YoY (Jul)",
+            "currency": "EGP",
+            "previous": 14.3,
+            "estimate": 15.6,
+            "actual": 14.9,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 4.196,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 05:50:00",
+            "country": "EG",
+            "event": "Inflation Rate YoY (Jul)",
+            "currency": "EGP",
+            "previous": 14.3,
+            "estimate": 15.6,
+            "actual": 14.9,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 4.196,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-10 06:00:00",
+            "country": "LT",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "EUR",
+            "previous": 0.5,
+            "estimate": 0.3,
+            "actual": 0.2,
+            "change": -0.3,
+            "impact": "Low",
+            "changePercentage": -60,
+            "unit": "%"
+          }
+        ]
+      },
+      "llm": {},
+      "llm_provider": "auto-failed",
+      "llm_ok": false,
+      "is_etf": false,
+      "report": "⚪ FANG — Diamondback Energy, Inc.\nEntry: n/a\neToro TP value: n/a\nScanner potential: n/a\n\n═══ TECHNICAL SETUP ═══\nSetup: n/a | Regime: n/a\nTrend: n/a/5 | ADX: n/a | RSI: n/a\nRS vs SPY: n/a | Quality: n/a\nEMA20/50/200: n/a / n/a / n/a\nTechnical look-alike: unavailable\n\n═══ LAST 3 FINANCIAL RESULTS ═══\n- 2026-08-03 — strong/positive — EPS 6.48 vs est 6.08, surprise +6.6%, revenue $5.56B, rev growth +0.0%, operating margin +45.2%\n- 2026-05-04 — strong/positive — EPS 4.23 vs est 3.74, surprise +13.1%, revenue $5.56B, rev growth +0.0%, operating margin +45.2%\n- 2026-02-23 — weak/negative — EPS 1.74 vs est 2.0, surprise -13.0%, revenue $5.56B, rev growth n/a, operating margin +45.2%\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-02 (+84 days)\nEPS estimate: 4.83\nRevenue estimate: $4.37B\n\n═══ ANALYST VIEW ═══\nAssessment: ⚪ unknown\nStrong Buy: 1 | Buy: 47 | Hold: 5 | Sell: 0 | Strong Sell: 0\n\n═══ RECENT NEWS ═══\n- No recent usable company-specific news returned by FMP.\n\n═══ SECTOR / INDUSTRY ═══\nSector: Energy | Industry: Oil & Gas Exploration & Production\nAssessment: ⚪ unknown\n\n═══ MACRO ═══\nAssessment: ⚪ unknown\n\n═══ OVERALL ═══\n⚪ INSUFFICIENT_DATA\nOverall interpretation unavailable.\nKey positive: n/a\nKey risk: n/a\n\n(Technical: hourly-scan | fundamentals/news/macro: FMP | interpretation: auto-failed)"
     }
   ]
 }
