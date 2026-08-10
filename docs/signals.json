@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-10T02:43:15.735701+00:00",
+  "generated": "2026-08-10T05:53:45.917560+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 14.3
@@ -9,59 +9,6 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "TTEC",
-      "name": "TTEC Holdings",
-      "setup": "pullback",
-      "entry": 2.55,
-      "tp": 2.9,
-      "tp_pct": 0.13725490196078427,
-      "shares": 98.04,
-      "value": 250.002,
-      "pl_amount": 34.31,
-      "eta_days_low": 6,
-      "eta_days_high": 14,
-      "fee_pct": 0.05828524800373023,
-      "trend_score": 3,
-      "adx": 40.4,
-      "rs": -0.106,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 1,
-      "ema20": 2.4,
-      "ema50": 2.37,
-      "ema200": 2.73,
-      "above_ema200": false,
-      "quality": 0.75,
-      "q_detail": {
-        "rsi": 0.6,
-        "bollinger": 1.0,
-        "vwap": 0.3,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 56.7 falling",
-        "bollinger": "band position 57%, contracting",
-        "vwap": "just above VWAP",
-        "volume": "0.5x average, drying up",
-        "extension": "+0.6 ATR from 20 EMA, slope +7.1%, mixed / tangled"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 56.7,
-      "options_note": "",
-      "sector": "Unknown",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 3/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.75 (rsi +0.6, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=56.7)"
-      ],
-      "time": "2026-08-10T02:43:13.745394+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
