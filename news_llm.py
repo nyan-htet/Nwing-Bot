@@ -266,29 +266,45 @@ def load_signals():
 def technical_text(sig):
     if not sig:
         return "No matching hourly-scan signal record was found."
+
     qd = sig.get("q_detail") or {}
     qn = sig.get("q_notes") or {}
-    lines = [
+    regime = str(sig.get("regime") or "unknown").upper()
+    weeks = sig.get("regime_weeks")
+    above_200 = sig.get("above_ema200")
+
+    if above_200 is True:
+        regime_line = f"{regime} for ~{weeks} weeks — price ABOVE 200 EMA (long-term bullish)"
+    elif above_200 is False:
+        regime_line = f"{regime} for ~{weeks} weeks — price BELOW 200 EMA (long-term bearish)"
+    else:
+        regime_line = f"{regime} for ~{weeks} weeks — 200 EMA position unavailable"
+
+    quality = fnum(sig.get("quality"))
+    quality_line = (
+        f"{quality:.2f} (max 1.0; stocks need 0.70, ETFs 0.50)"
+        if quality is not None else "n/a"
+    )
+
+    return "\n".join([
         f"Setup: {sig.get('setup', 'n/a')}",
-        f"Daily regime: {sig.get('regime', 'n/a')} for ~{sig.get('regime_weeks', 'n/a')} weeks",
+        f"Daily regime: {regime_line}",
         f"Trend score: {sig.get('trend_score', 'n/a')}/5",
         f"ADX: {sig.get('adx', 'n/a')}",
         f"Relative strength vs SPY (3m): {fmt_pct(sig.get('rs'))}",
         f"RSI (4h): {sig.get('rsi', 'n/a')}",
         f"EMA20 / EMA50 / EMA200: {sig.get('ema20', 'n/a')} / {sig.get('ema50', 'n/a')} / {sig.get('ema200', 'n/a')}",
-        f"Above EMA200: {sig.get('above_ema200', 'n/a')}",
-        f"Quality: {sig.get('quality', 'n/a')}",
+        f"Quality score: {quality_line}",
+        f"  • RSI momentum: +{qd.get('rsi', 'n/a')} — {qn.get('rsi', '')}",
+        f"  • Bollinger Bands: +{qd.get('bollinger', 'n/a')} — {qn.get('bollinger', '')}",
+        f"  • VWAP: +{qd.get('vwap', 'n/a')} — {qn.get('vwap', '')}",
+        f"  • Volume: +{qd.get('volume', 'n/a')} — {qn.get('volume', '')}",
+        f"  • Extension from EMA: +{qd.get('extension', 'n/a')} — {qn.get('extension', '')}",
         f"Runner: {sig.get('runner', False)}",
-        f"Bollinger: {qd.get('bollinger', 'n/a')} — {qn.get('bollinger', '')}",
-        f"VWAP: {qd.get('vwap', 'n/a')} — {qn.get('vwap', '')}",
-        f"Volume: {qd.get('volume', 'n/a')} — {qn.get('volume', '')}",
-        f"Extension: {qd.get('extension', 'n/a')} — {qn.get('extension', '')}",
         f"Options context: {sig.get('options_note') or 'none'}",
         f"Reasons: {'; '.join(sig.get('reasons') or []) or 'n/a'}",
         f"Warnings: {'; '.join(sig.get('warnings') or []) or 'none'}",
-    ]
-    return "\n".join(lines)
-
+    ])
 
 def trade_text(sig, alert):
     entry = fnum((sig or {}).get("entry")) or fnum(alert.get("entry"))
@@ -456,7 +472,18 @@ def earnings_calendar_all(tickers):
 
 
 def macro_data():
-    out = {"treasury": {}, "indicators": {}, "calendar": []}
+    out = {
+        "hourly_scan_macro": {},
+        "hourly_scan_cycles": {},
+        "treasury": {},
+        "indicators": {},
+        "calendar": [],
+    }
+
+    scan_doc = load_json("docs/signals.json", {})
+    if isinstance(scan_doc, dict):
+        out["hourly_scan_macro"] = scan_doc.get("macro") or {}
+        out["hourly_scan_cycles"] = scan_doc.get("cycles") or {}
     try:
         rows = fmp("treasury-rates", {}, "treasury rates")
         if isinstance(rows, list) and rows:
@@ -903,17 +930,70 @@ def format_report(row):
     overall = str(llm.get("overall_assessment") or "insufficient_data").lower()
     title_icon = icon_assessment(overall)
 
+    qd = sig.get("q_detail") or {}
+    qn = sig.get("q_notes") or {}
+    regime = str(sig.get("regime") or "unknown").upper()
+    weeks = sig.get("regime_weeks")
+    above_200 = sig.get("above_ema200")
+
+    if above_200 is True:
+        regime_line = f"{regime} for ~{weeks} weeks — price ABOVE 200 EMA (long-term bullish)"
+    elif above_200 is False:
+        regime_line = f"{regime} for ~{weeks} weeks — price BELOW 200 EMA (long-term bearish)"
+    else:
+        regime_line = f"{regime} for ~{weeks} weeks — 200 EMA position unavailable"
+
+    quality = fnum(sig.get("quality"))
+    quality_line = (
+        f"{quality:.2f} (max 1.0; stocks need 0.70, ETFs 0.50)"
+        if quality is not None else "n/a"
+    )
+
     lines = [
         f"{title_icon} {ticker} — {name}",
         f"Entry: ${entry:.2f}" if entry is not None else "Entry: n/a",
         f"eToro TP value: ${etoro:.2f}" if etoro is not None else "eToro TP value: n/a",
         f"Scanner potential: {fmt_pct(potential)}" if potential is not None else "Scanner potential: n/a",
         "",
+        "═══ ANALYST VIEW ═══",
+        f"Assessment: {icon_assessment(llm.get('analyst_assessment'))} {llm.get('analyst_assessment') or 'unknown'}",
+    ]
+
+    g = analysts.get("grades_consensus") or {}
+    counts = []
+    for label, keys in (
+        ("Strong Buy", ("strongBuy", "strongBuyCount")),
+        ("Buy", ("buy", "buyCount")),
+        ("Hold", ("hold", "holdCount")),
+        ("Sell", ("sell", "sellCount")),
+        ("Strong Sell", ("strongSell", "strongSellCount")),
+    ):
+        value = next((g[k] for k in keys if g.get(k) is not None), None)
+        if value is not None:
+            counts.append(f"{label}: {value}")
+    if counts:
+        lines.append(" | ".join(counts))
+    if llm.get("analyst_interpretation"):
+        lines.append(f"🧠 {llm['analyst_interpretation']}")
+
+    lines += [
+        "",
         "═══ TECHNICAL SETUP ═══",
-        f"Setup: {sig.get('setup', 'n/a')} | Regime: {sig.get('regime', 'n/a')}",
-        f"Trend: {sig.get('trend_score', 'n/a')}/5 | ADX: {sig.get('adx', 'n/a')} | RSI: {sig.get('rsi', 'n/a')}",
-        f"RS vs SPY: {fmt_pct(sig.get('rs'))} | Quality: {sig.get('quality', 'n/a')}",
-        f"EMA20/50/200: {sig.get('ema20', 'n/a')} / {sig.get('ema50', 'n/a')} / {sig.get('ema200', 'n/a')}",
+        f"Setup: {sig.get('setup', 'n/a')}",
+        f"Daily regime          : {regime_line}",
+        f"Trend score           : {sig.get('trend_score', 'n/a')}/5",
+        f"ADX                   : {sig.get('adx', 'n/a')}",
+        f"RS vs SPY (3m)        : {fmt_pct(sig.get('rs'))}",
+        f"RSI (4h)              : {sig.get('rsi', 'n/a')}",
+        f"EMA20 / EMA50 / EMA200: {sig.get('ema20', 'n/a')} / {sig.get('ema50', 'n/a')} / {sig.get('ema200', 'n/a')}",
+        "",
+        f"Quality score         : {quality_line}",
+        f"  • RSI momentum       : +{qd.get('rsi', 'n/a')} — {qn.get('rsi', '')}",
+        f"  • Bollinger Bands    : +{qd.get('bollinger', 'n/a')} — {qn.get('bollinger', '')}",
+        f"  • VWAP               : +{qd.get('vwap', 'n/a')} — {qn.get('vwap', '')}",
+        f"  • Volume             : +{qd.get('volume', 'n/a')} — {qn.get('volume', '')}",
+        f"  • Extension from EMA: +{qd.get('extension', 'n/a')} — {qn.get('extension', '')}",
+        "",
         f"Technical look-alike: {llm.get('technical_lookalike') or 'unavailable'}",
     ]
     if llm.get("technical_interpretation"):
@@ -941,37 +1021,17 @@ def format_report(row):
     if llm.get("earnings_interpretation"):
         lines.append(f"🧠 {llm['earnings_interpretation']}")
 
-    lines += ["", "═══ ANALYST VIEW ═══"]
-    lines.append(
-        f"Assessment: {icon_assessment(llm.get('analyst_assessment'))} "
-        f"{llm.get('analyst_assessment') or 'unknown'}"
-    )
-    g = analysts.get("grades_consensus") or {}
-    # Display only counts that exist, in one compact line.
-    counts = []
-    for label, keys in (
-        ("Strong Buy", ("strongBuy", "strongBuyCount")),
-        ("Buy", ("buy", "buyCount")),
-        ("Hold", ("hold", "holdCount")),
-        ("Sell", ("sell", "sellCount")),
-        ("Strong Sell", ("strongSell", "strongSellCount")),
-    ):
-        value = next((g[k] for k in keys if g.get(k) is not None), None)
-        if value is not None:
-            counts.append(f"{label}: {value}")
-    if counts:
-        lines.append(" | ".join(counts))
-    if llm.get("analyst_interpretation"):
-        lines.append(f"🧠 {llm['analyst_interpretation']}")
-
     lines += ["", "═══ RECENT NEWS ═══"]
     nd = row.get("news_diag") or {}
     if nd.get("status") == "FMP_ERROR":
         lines.append(f"⚠️ FMP news error: {nd.get('message')}")
     elif news_rows:
-        # Titles + source only. No URLs, including YouTube URLs.
-        for n in news_rows[:5]:
-            source = f" [{n.get('site')}]" if n.get("site") else ""
+        visible_news = [
+            n for n in news_rows
+            if str(n.get("site") or "").lower() not in {"youtube.com", "youtube", "youtu.be"}
+        ]
+        for n in visible_news[:5]:
+            source = f" [{n.get('site')}]" if n.get('site') else ""
             lines.append(f"- {n.get('date')} — {n.get('title')}{source}")
     else:
         lines.append("- No recent usable company-specific news returned by FMP.")
@@ -991,14 +1051,46 @@ def format_report(row):
     if llm.get("sector_interpretation"):
         lines.append(f"🧠 {llm['sector_interpretation']}")
 
+    macro = row.get("macro") or {}
+    scan_macro = macro.get("hourly_scan_macro") or {}
+    cycles = macro.get("hourly_scan_cycles") or {}
+
     lines += [
         "",
         "═══ MACRO ═══",
-        f"Assessment: {icon_assessment(llm.get('macro_assessment'))} "
-        f"{llm.get('macro_assessment') or 'unknown'}",
+        f"Assessment: {icon_assessment(llm.get('macro_assessment'))} {llm.get('macro_assessment') or 'unknown'}",
     ]
+
+    if scan_macro:
+        parts = []
+        if scan_macro.get("risk") is not None:
+            parts.append(f"Hourly-scan macro risk: {scan_macro.get('risk')}")
+        if scan_macro.get("vol") is not None:
+            parts.append(f"Volatility: {scan_macro.get('vol')}")
+        if parts:
+            lines.append(" | ".join(parts))
+
+    if cycles:
+        if cycles.get("line"):
+            lines.append(cycles.get("line"))
+        elif cycles.get("label") is not None or cycles.get("score") is not None:
+            lines.append(
+                f"Hourly-scan cycles: {cycles.get('label', 'n/a')}"
+                + (f" (score {cycles.get('score')})" if cycles.get("score") is not None else "")
+            )
+
+    if macro.get("treasury"):
+        tr = macro.get("treasury") or {}
+        rates = []
+        for key in ("year1", "year2", "year5", "year10", "year30"):
+            if tr.get(key) is not None:
+                rates.append(f"{key}: {tr.get(key)}%")
+        if rates:
+            lines.append("Treasury: " + " | ".join(rates))
+
     if llm.get("macro_interpretation"):
         lines.append(f"🧠 {llm['macro_interpretation']}")
+
 
     lines += [
         "",
