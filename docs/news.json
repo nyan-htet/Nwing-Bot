@@ -1,12 +1,57 @@
 {
-  "generated": "2026-08-10 17:20",
+  "generated": "2026-08-10 17:53",
   "provider": "anthropic",
   "results": [
     {
+      "ticker": "NVDA",
+      "entry": null,
+      "tp": null,
+      "headlines": [
+        "2026-08-10 \u2014 Taalas Buyout Boosts AMD's AI Inference Abilities Against NVDA & GOOGL (zacks.com)",
+        "2026-08-10 \u2014 Why Nvidia stock is slipping over 3% on Monday (invezz.com)",
+        "2026-08-10 \u2014 Dow Slips While the S&P 500 Clings to Friday's Record High (fool.com)",
+        "2026-08-10 \u2014 Wall Street giants partner with Nvidia on $500 billion AI financing deal, FT reports (reuters.com)",
+        "2026-08-10 \u2014 Nvidia Stock Slips as Its AI Investments Draw Fresh Scrutiny (barrons.com)",
+        "2026-08-10 \u2014 The Mag 7 Face-Off: Only 2 Come Out on Top (247wallst.com)",
+        "2026-08-10 \u2014 Nvidia Built the AI Brain, Now TSMC Wants to Give It Eyes (benzinga.com)",
+        "2026-08-10 \u2014 Semis Surge, Michael Burry's Shorts Feel the Pressure \u2014 But Don't Expect Him to Run for Cover After His Latest \u201c1987-Style\u201d Crash Warning (247wallst.com)"
+      ],
+      "risk": "unknown",
+      "company_specific": null,
+      "summary": "",
+      "reason": ""
+    },
+    {
+      "ticker": "UPS",
+      "entry": null,
+      "tp": null,
+      "headlines": [
+        "2026-08-06 \u2014 Boomers Should Buy These High-Yield Dividend August Bargains Hand-Over-Fist (247wallst.com)",
+        "2026-08-05 \u2014 UPS Announces Quarterly Dividend (businesswire.com)",
+        "2026-08-05 \u2014 2 Magnificent Industrial Stocks Down 40% to Buy and Hold Forever (fool.com)",
+        "2026-08-05 \u2014 5 Relatively Secure And Cheap Dividend Stocks, Yields Up To 8% (August 2026) (seekingalpha.com)",
+        "2026-08-04 \u2014 5 Big Dividends at Serious Risk of Getting Cut (247wallst.com)",
+        "2026-08-04 \u2014 Is United Parcel Service (UPS) the Best Dividend Stock in the Industrial Sector? (fool.com)",
+        "2026-08-04 \u2014 GLP-1 Demand Is Creating a New Dividend Angle in These 4 Logistics Stocks (marketbeat.com)",
+        "2026-08-03 \u2014 United Parcel Service, Inc. $UPS Stake Decreased by First National Bank of Mount Dora Trust Investment Services (defenseworld.net)"
+      ],
+      "risk": "unknown",
+      "company_specific": null,
+      "summary": "",
+      "reason": ""
+    },
+    {
       "ticker": "UGA",
-      "entry": 117.44,
-      "tp": 142.34,
-      "headlines": [],
+      "entry": null,
+      "tp": null,
+      "headlines": [
+        "2026-07-24 \u2014 HSBC Warns: Brutal Commodity \u2018Super-Squeeze' Coming as Iran Conflict Widens (247wallst.com)",
+        "2026-07-24 \u2014 Gasoline ETF (UGA) Hits New 52-Week High (zacks.com)",
+        "2026-07-02 \u2014 Top-Performing ETF Areas of 1H 2026 (zacks.com)",
+        "2026-06-23 \u2014 Beyond AI: Where Investors Can Still Find Dividend Growth In 2026 (seekingalpha.com)",
+        "2026-06-23 \u2014 UGA: A Seasonal Long Put Spreads Could Be Interesting (seekingalpha.com)",
+        "2026-06-04 \u2014 Look to State Street, Invesco, VanEck for Top-Performing ETFs in 2026 (etftrends.com)"
+      ],
       "risk": "unknown",
       "company_specific": null,
       "summary": "",
@@ -14,9 +59,18 @@
     },
     {
       "ticker": "EYE",
-      "entry": 22.42,
-      "tp": 26.92,
-      "headlines": [],
+      "entry": null,
+      "tp": null,
+      "headlines": [
+        "2026-07-29 \u2014 National Vision Holdings, Inc. Announces Second Quarter 2026 Earnings Release and Conference Call (businesswire.com)",
+        "2026-07-22 \u2014 Fifth Third Bancorp Has $2.09 Million Stake in National Vision Holdings, Inc. $EYE (defenseworld.net)",
+        "2026-06-24 \u2014 Rise Nano Optics Announces Strategic Partnership with SportifEye Optics to Produce and Commercialize SpectraGuard(TM) Lenses in the United States (newsfilecorp.com)",
+        "2026-06-12 \u2014 Why Is National Vision (EYE) Up 3% Since Last Earnings Report? (zacks.com)",
+        "2026-06-03 \u2014 National Vision and Smart Glasses: Early Investing Signals (zacks.com)",
+        "2026-06-02 \u2014 EYE Stock: Valuation, Price Target, and Key Upside Drivers (zacks.com)",
+        "2026-05-28 \u2014 National Vision Holdings Inc (EYE) Shares Surge 4.9% -- What GF Score of 74 Tells Investors (gurufocus.com)",
+        "2026-05-27 \u2014 Why National Vision (EYE) is a Top Value Stock for the Long-Term (zacks.com)"
+      ],
       "risk": "unknown",
       "company_specific": null,
       "summary": "",
@@ -24,9 +78,18 @@
     },
     {
       "ticker": "ADM",
-      "entry": 79.99,
-      "tp": 94.82,
-      "headlines": [],
+      "entry": null,
+      "tp": null,
+      "headlines": [
+        "2026-08-07 \u2014 Archer Daniels Earnings Boost Biofuels and Crush Capacity Growth Prospects Now (zacks.com)",
+        "2026-08-07 \u2014 ADM Stock: Growth Gains vs. Valuation and Execution Risks Remain Ahead (zacks.com)",
+        "2026-08-07 \u2014 Is Archer Daniels Midland (ADM) Stock Undervalued Right Now? (zacks.com)",
+        "2026-08-05 \u2014 ADM Declares Cash Dividend (businesswire.com)",
+        "2026-08-05 \u2014 ADM Q2 Earnings Call Highlights Biofuel-Led Outlook Raise (zacks.com)",
+        "2026-08-05 \u2014 Is Archer Daniels Midland (ADM) Outperforming Other Consumer Staples Stocks This Year? (zacks.com)",
+        "2026-08-05 \u2014 Here Are Wednesday\u2019s Top Wall Street Analyst Research Calls: Archer-Daniels Midland, Best Buy, Burlington Stores, Dell Technologies, e.l.f. Beauty, Humana, Transdigm, Vale, and More (247wallst.com)",
+        "2026-08-05 \u2014 Archer-Daniels-Midland Analysts Increase Their Forecasts Following Strong Q2 Results (benzinga.com)"
+      ],
       "risk": "unknown",
       "company_specific": null,
       "summary": "",
