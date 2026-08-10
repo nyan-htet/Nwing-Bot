@@ -1,0 +1,36 @@
+{
+  "generated": "2026-08-10 17:20",
+  "provider": "anthropic",
+  "results": [
+    {
+      "ticker": "UGA",
+      "entry": 117.44,
+      "tp": 142.34,
+      "headlines": [],
+      "risk": "unknown",
+      "company_specific": null,
+      "summary": "",
+      "reason": ""
+    },
+    {
+      "ticker": "EYE",
+      "entry": 22.42,
+      "tp": 26.92,
+      "headlines": [],
+      "risk": "unknown",
+      "company_specific": null,
+      "summary": "",
+      "reason": ""
+    },
+    {
+      "ticker": "ADM",
+      "entry": 79.99,
+      "tp": 94.82,
+      "headlines": [],
+      "risk": "unknown",
+      "company_specific": null,
+      "summary": "",
+      "reason": ""
+    }
+  ]
+}
