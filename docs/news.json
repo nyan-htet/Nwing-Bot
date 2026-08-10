@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-10 21:27 UTC",
+  "generated": "2026-08-10 21:33 UTC",
   "provider": "auto",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -489,19 +489,6 @@
           },
           {
             "date": "2026-08-10 05:00:00",
-            "country": "FI",
-            "event": "Industrial Production YoY (Jun)",
-            "currency": "EUR",
-            "previous": 0.4,
-            "estimate": 1.1,
-            "actual": 4.5,
-            "change": 4.1,
-            "impact": "Low",
-            "changePercentage": 1025,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
             "country": "JP",
             "event": "Eco Watchers Survey Outlook (Jul)",
             "currency": "JPY",
@@ -512,6 +499,19 @@
             "impact": "Low",
             "changePercentage": 0.219,
             "unit": null
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
           },
           {
             "date": "2026-08-10 05:00:00",
@@ -568,14 +568,14 @@
           {
             "date": "2026-08-10 06:00:00",
             "country": "SE",
-            "event": "Industrial Production MoM (Jun)",
+            "event": "Industrial Production YoY",
             "currency": "SEK",
-            "previous": 0.6,
-            "estimate": -0.6,
-            "actual": -0.4,
-            "change": -1,
+            "previous": 6.9,
+            "estimate": null,
+            "actual": null,
+            "change": null,
             "impact": "Low",
-            "changePercentage": -166.667,
+            "changePercentage": null,
             "unit": "%"
           }
         ]
@@ -596,11 +596,11 @@
           "provider_name": "Anthropic",
           "model": "claude-haiku-4-5",
           "status": "error",
-          "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdumxaxCgRJmUQkwmci6M\"}"
+          "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdunR1mfk5QtJCgmnfdc4\"}"
         }
       ],
       "is_etf": false,
-      "report": "🟢 BRO — Brown & Brown, Inc.\nEntry: $71.60\neToro TP Value: $61.11\nScanner Potential: +24.5%\n\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 10 | Hold: 20 | Sell: 1 | Strong Sell: 0\n🧠 Analyst ratings lean positive.\n\n═══ TECHNICAL SETUP ═══\n🟢 Positive\nSetup: Bullish Continuation\n🧠 The scanner shows a strong bullish setup with supportive momentum and trend conditions. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 Recent financial results are mixed.\n\n═══ VALUATION ═══\n⚪ Unknown\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: Financial Services | Industry: Insurance - Brokers\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n⚠️ LLM unavailable: Anthropic [claude-haiku-4-5] — HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdumxaxCgRJmUQkwmci6M\"}\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: auto-failed)"
+      "report": "🟢 BRO — Brown & Brown, Inc.\nEntry: $71.60\neToro TP Value: $61.11\nScanner Potential: +24.5%\n\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 10 | Hold: 20 | Sell: 1 | Strong Sell: 0\n🧠 Analyst ratings lean positive.\n\n═══ TECHNICAL SETUP ═══\n🟢 Positive\nSetup: Bullish Continuation\n🧠 The scanner shows a strong bullish setup with supportive momentum and trend conditions. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 Recent financial results are mixed.\n\n═══ VALUATION ═══\n⚪ Unknown\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: Financial Services | Industry: Insurance - Brokers\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n⚠️ LLM unavailable: Anthropic [claude-haiku-4-5] — HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdunR1mfk5QtJCgmnfdc4\"}\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: auto-failed)"
     },
     {
       "ticker": "FAS",
@@ -861,19 +861,6 @@
           },
           {
             "date": "2026-08-10 05:00:00",
-            "country": "FI",
-            "event": "Industrial Production YoY (Jun)",
-            "currency": "EUR",
-            "previous": 0.4,
-            "estimate": 1.1,
-            "actual": 4.5,
-            "change": 4.1,
-            "impact": "Low",
-            "changePercentage": 1025,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
             "country": "JP",
             "event": "Eco Watchers Survey Outlook (Jul)",
             "currency": "JPY",
@@ -884,6 +871,19 @@
             "impact": "Low",
             "changePercentage": 0.219,
             "unit": null
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
           },
           {
             "date": "2026-08-10 05:00:00",
@@ -940,14 +940,14 @@
           {
             "date": "2026-08-10 06:00:00",
             "country": "SE",
-            "event": "Industrial Production MoM (Jun)",
+            "event": "Industrial Production YoY",
             "currency": "SEK",
-            "previous": 0.6,
-            "estimate": -0.6,
-            "actual": -0.4,
-            "change": -1,
+            "previous": 6.9,
+            "estimate": null,
+            "actual": null,
+            "change": null,
             "impact": "Low",
-            "changePercentage": -166.667,
+            "changePercentage": null,
             "unit": "%"
           }
         ]
@@ -968,11 +968,11 @@
           "provider_name": "Anthropic",
           "model": "claude-haiku-4-5",
           "status": "error",
-          "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cdumxer7Sg6LAtAWtTyYn\"}"
+          "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdunR8dv7a243smBGd7LY\"}"
         }
       ],
       "is_etf": true,
-      "report": "🟡 FAS — Direxion Daily Financial Bull 3X ETF\nEntry: $181.31\neToro TP Value: $38.36\nScanner Potential: +15.3%\n\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings are mixed or unavailable.\n\n═══ TECHNICAL SETUP ═══\n🟡 Mixed\nSetup: Bullish Continuation\n🧠 The scanner shows a strong bullish setup with supportive momentum and trend conditions. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n⚪ Valuation data unavailable.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: Financial Services | Industry: Asset Management - Leveraged\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n⚠️ LLM unavailable: Anthropic [claude-haiku-4-5] — HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cdumxer7Sg6LAtAWtTyYn\"}\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: auto-failed)"
+      "report": "🟡 FAS — Direxion Daily Financial Bull 3X ETF\nEntry: $181.31\neToro TP Value: $38.36\nScanner Potential: +15.3%\n\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings are mixed or unavailable.\n\n═══ TECHNICAL SETUP ═══\n🟡 Mixed\nSetup: Bullish Continuation\n🧠 The scanner shows a strong bullish setup with supportive momentum and trend conditions. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n⚪ Valuation data unavailable.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: Financial Services | Industry: Asset Management - Leveraged\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n⚠️ LLM unavailable: Anthropic [claude-haiku-4-5] — HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdunR8dv7a243smBGd7LY\"}\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: auto-failed)"
     },
     {
       "ticker": "TAP",
@@ -1469,19 +1469,6 @@
           },
           {
             "date": "2026-08-10 05:00:00",
-            "country": "FI",
-            "event": "Industrial Production YoY (Jun)",
-            "currency": "EUR",
-            "previous": 0.4,
-            "estimate": 1.1,
-            "actual": 4.5,
-            "change": 4.1,
-            "impact": "Low",
-            "changePercentage": 1025,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
             "country": "JP",
             "event": "Eco Watchers Survey Outlook (Jul)",
             "currency": "JPY",
@@ -1492,6 +1479,19 @@
             "impact": "Low",
             "changePercentage": 0.219,
             "unit": null
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
           },
           {
             "date": "2026-08-10 05:00:00",
@@ -1548,14 +1548,14 @@
           {
             "date": "2026-08-10 06:00:00",
             "country": "SE",
-            "event": "Industrial Production MoM (Jun)",
+            "event": "Industrial Production YoY",
             "currency": "SEK",
-            "previous": 0.6,
-            "estimate": -0.6,
-            "actual": -0.4,
-            "change": -1,
+            "previous": 6.9,
+            "estimate": null,
+            "actual": null,
+            "change": null,
             "impact": "Low",
-            "changePercentage": -166.667,
+            "changePercentage": null,
             "unit": "%"
           }
         ]
@@ -1576,11 +1576,11 @@
           "provider_name": "Anthropic",
           "model": "claude-haiku-4-5",
           "status": "error",
-          "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdumxhKvuQC3JZjhzcH8G\"}"
+          "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdunRGn4ToewvDY4shhcn\"}"
         }
       ],
       "is_etf": false,
-      "report": "🟢 TAP — Molson Coors Beverage Company\nEntry: $42.52\neToro TP Value: $36.28\nScanner Potential: +14.5%\n\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 11 | Hold: 20 | Sell: 6 | Strong Sell: 0\n🧠 Analyst ratings lean positive.\n\n═══ TECHNICAL SETUP ═══\n🟡 Mixed\nSetup: Constructive / Mixed\n🧠 The scanner shows a constructive setup, although some technical conditions are mixed. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 Recent financial results are broadly improving.\n\n═══ VALUATION ═══\n⚪ Unknown\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-03 (+85 days)\n⚪ Unknown\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n• 2026-08-09 05:04 UTC — Molson Coors Beverage Q2 Earnings Call Highlights\n🟡 Recent news requires manual review.\n\n═══ SECTOR & MACRO ═══\nSector: Consumer Defensive | Industry: Beverages - Alcoholic\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n⚠️ LLM unavailable: Anthropic [claude-haiku-4-5] — HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdumxhKvuQC3JZjhzcH8G\"}\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: auto-failed)"
+      "report": "🟢 TAP — Molson Coors Beverage Company\nEntry: $42.52\neToro TP Value: $36.28\nScanner Potential: +14.5%\n\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 11 | Hold: 20 | Sell: 6 | Strong Sell: 0\n🧠 Analyst ratings lean positive.\n\n═══ TECHNICAL SETUP ═══\n🟡 Mixed\nSetup: Constructive / Mixed\n🧠 The scanner shows a constructive setup, although some technical conditions are mixed. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 Recent financial results are broadly improving.\n\n═══ VALUATION ═══\n⚪ Unknown\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-03 (+85 days)\n⚪ Unknown\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n• 2026-08-09 05:04 UTC — Molson Coors Beverage Q2 Earnings Call Highlights\n🟡 Recent news requires manual review.\n\n═══ SECTOR & MACRO ═══\nSector: Consumer Defensive | Industry: Beverages - Alcoholic\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n⚠️ LLM unavailable: Anthropic [claude-haiku-4-5] — HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdunRGn4ToewvDY4shhcn\"}\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: auto-failed)"
     },
     {
       "ticker": "TM",
@@ -2070,19 +2070,6 @@
           },
           {
             "date": "2026-08-10 05:00:00",
-            "country": "FI",
-            "event": "Industrial Production YoY (Jun)",
-            "currency": "EUR",
-            "previous": 0.4,
-            "estimate": 1.1,
-            "actual": 4.5,
-            "change": 4.1,
-            "impact": "Low",
-            "changePercentage": 1025,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-10 05:00:00",
             "country": "JP",
             "event": "Eco Watchers Survey Outlook (Jul)",
             "currency": "JPY",
@@ -2093,6 +2080,19 @@
             "impact": "Low",
             "changePercentage": 0.219,
             "unit": null
+          },
+          {
+            "date": "2026-08-10 05:00:00",
+            "country": "FI",
+            "event": "Industrial Production YoY (Jun)",
+            "currency": "EUR",
+            "previous": 0.4,
+            "estimate": 1.1,
+            "actual": 4.5,
+            "change": 4.1,
+            "impact": "Low",
+            "changePercentage": 1025,
+            "unit": "%"
           },
           {
             "date": "2026-08-10 05:00:00",
@@ -2149,14 +2149,14 @@
           {
             "date": "2026-08-10 06:00:00",
             "country": "SE",
-            "event": "Industrial Production MoM (Jun)",
+            "event": "Industrial Production YoY",
             "currency": "SEK",
-            "previous": 0.6,
-            "estimate": -0.6,
-            "actual": -0.4,
-            "change": -1,
+            "previous": 6.9,
+            "estimate": null,
+            "actual": null,
+            "change": null,
             "impact": "Low",
-            "changePercentage": -166.667,
+            "changePercentage": null,
             "unit": "%"
           }
         ]
@@ -2177,11 +2177,11 @@
           "provider_name": "Anthropic",
           "model": "claude-haiku-4-5",
           "status": "error",
-          "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdumxjHkb9c9DzfCxDwLQ\"}"
+          "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdunRQFmot7Wr7knVNyBc\"}"
         }
       ],
       "is_etf": false,
-      "report": "🟢 TM — Toyota Motor Corporation\nEntry: $188.74\neToro TP Value: $36.74\nScanner Potential: +14.7%\n\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 6 | Hold: 10 | Sell: 0 | Strong Sell: 0\n🧠 Analyst ratings lean positive.\n\n═══ TECHNICAL SETUP ═══\n🟡 Mixed\nSetup: Constructive / Mixed\n🧠 The scanner shows a constructive setup, although some technical conditions are mixed. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 Recent financial results are broadly improving.\n\n═══ VALUATION ═══\n⚪ Unknown\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-04 (+86 days)\n⚪ Unknown\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: Consumer Cyclical | Industry: Auto - Manufacturers\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n⚠️ LLM unavailable: Anthropic [claude-haiku-4-5] — HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdumxjHkb9c9DzfCxDwLQ\"}\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: auto-failed)"
+      "report": "🟢 TM — Toyota Motor Corporation\nEntry: $188.74\neToro TP Value: $36.74\nScanner Potential: +14.7%\n\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 6 | Hold: 10 | Sell: 0 | Strong Sell: 0\n🧠 Analyst ratings lean positive.\n\n═══ TECHNICAL SETUP ═══\n🟡 Mixed\nSetup: Constructive / Mixed\n🧠 The scanner shows a constructive setup, although some technical conditions are mixed. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 Recent financial results are broadly improving.\n\n═══ VALUATION ═══\n⚪ Unknown\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-04 (+86 days)\n⚪ Unknown\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: Consumer Cyclical | Industry: Auto - Manufacturers\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n⚠️ LLM unavailable: Anthropic [claude-haiku-4-5] — HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CdunRQFmot7Wr7knVNyBc\"}\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: auto-failed)"
     }
   ]
 }
