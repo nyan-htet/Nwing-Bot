@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-10 21:40 UTC",
-  "provider": "openai",
+  "generated": "2026-08-10 21:45 UTC",
+  "provider": "auto",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
   "purpose": "signal intelligence follow-up",
@@ -498,14 +498,14 @@
           {
             "date": "2026-08-10 05:00:00",
             "country": "JP",
-            "event": "Eco Watchers Survey Outlook (Jul)",
+            "event": "Eco Watchers Survey Current (Jul)",
             "currency": "JPY",
-            "previous": 45.7,
-            "estimate": 46,
-            "actual": 45.8,
-            "change": 0.1,
+            "previous": 44,
+            "estimate": 44.4,
+            "actual": 45.7,
+            "change": 1.7,
             "impact": "Low",
-            "changePercentage": 0.219,
+            "changePercentage": 3.864,
             "unit": null
           },
           {
@@ -524,20 +524,20 @@
           {
             "date": "2026-08-10 05:00:00",
             "country": "JP",
-            "event": "Eco Watchers Survey Current (Jul)",
+            "event": "Eco Watchers Survey Outlook (Jul)",
             "currency": "JPY",
-            "previous": 44,
-            "estimate": 44.4,
-            "actual": 45.7,
-            "change": 1.7,
+            "previous": 45.7,
+            "estimate": 46,
+            "actual": 45.8,
+            "change": 0.1,
             "impact": "Low",
-            "changePercentage": 3.864,
+            "changePercentage": 0.219,
             "unit": null
           },
           {
             "date": "2026-08-10 05:50:00",
             "country": "EG",
-            "event": "CPI YoY (Jul)",
+            "event": "Inflation Rate YoY (Jul)",
             "currency": "EGP",
             "previous": 14.3,
             "estimate": 15.6,
@@ -550,7 +550,7 @@
           {
             "date": "2026-08-10 05:50:00",
             "country": "EG",
-            "event": "Inflation Rate YoY (Jul)",
+            "event": "CPI YoY (Jul)",
             "currency": "EGP",
             "previous": 14.3,
             "estimate": 15.6,
@@ -575,33 +575,55 @@
           },
           {
             "date": "2026-08-10 06:00:00",
-            "country": "NO",
-            "event": "CPI MoM (Jul)",
-            "currency": "NOK",
-            "previous": -0.2,
-            "estimate": null,
-            "actual": 1,
-            "change": 1.2,
+            "country": "DK",
+            "event": "Inflation Rate MoM (Jul)",
+            "currency": "DKK",
+            "previous": 0.2,
+            "estimate": 0.5,
+            "actual": 1.3,
+            "change": 1.1,
             "impact": "Low",
-            "changePercentage": 600,
+            "changePercentage": 550,
             "unit": "%"
           }
         ]
       },
-      "llm": {},
-      "llm_provider": "openai-failed",
-      "llm_ok": false,
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a short-term pullback continuation, with rising RSI, a reclaimed VWAP, and price above the 20- and 50-EMAs. It remains mixed because price is below the 200 EMA and has underperformed SPY over three months.",
+        "financial_assessment": "mixed",
+        "financial_interpretation": "The last three results showed repeated positive EPS surprises, including a 61.8% beat most recently, but the supplied revenue and net income figures are flat across periods. Margins are positive, while negative free cash flow and substantial debt weaken the picture.",
+        "earnings_assessment": "positive",
+        "earnings_interpretation": "Next earnings are scheduled for 2026-11-04, about 86 days away, so they are outside the estimated trade window but remain a future event risk. Forward revenue and EPS estimates increased versus the prior set, which is supportive.",
+        "analyst_assessment": "mixed",
+        "analyst_interpretation": "The consensus is Hold, with 10 Holds and 6 Buys, although forward revenue and EPS estimates have risen.",
+        "valuation_assessment": "attractive",
+        "valuation_interpretation": "The supplied valuation is supportive, with a TTM P/E of 8.5, price-to-sales of 0.68, and price-to-book of 0.98. The low multiples provide some cushion despite flat reported growth and negative free cash flow.",
+        "news_assessment": "no_recent_news",
+        "news_interpretation": "No usable recent company-specific news was returned. There is therefore no identified news catalyst or company-specific headline risk in the supplied data.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "Consumer Cyclical and Auto-Manufacturers snapshots were both positive on the day, providing a supportive backdrop despite TM's weaker three-month performance versus SPY.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "Macro risk and volatility are neutral, but elevated longer-term Treasury yields and a cycle indicator marked headwind may weigh on this cyclical automaker.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is supported by short-term momentum, strong recent EPS surprises, attractive valuation, and a positive auto-industry backdrop. It is tempered by the stock remaining below its 200 EMA, relative underperformance, flat supplied financial trends, negative free cash flow, and a Hold-heavy analyst consensus. The next earnings event is not imminent but remains a later catalyst and risk.",
+        "key_positive": "Repeated EPS beats, upward estimate revisions, low valuation multiples, and supportive industry momentum strengthen the setup.",
+        "key_risk": "The stock remains below its long-term 200 EMA while flat reported growth, negative free cash flow, elevated debt, and cyclical macro headwinds limit conviction.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai:gpt-5.6-luna",
+      "llm_ok": true,
       "llm_diagnostics": [
         {
           "provider": "openai",
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
-          "status": "error",
-          "error": "HTTP 429: {     \"error\": {         \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",         \"type\": \"insufficient_quota\",         \"param\": null,         \"code\": \"credit_balance_exhausted\"     } } "
+          "status": "received",
+          "chars": 2860
         }
       ],
       "is_etf": false,
-      "report": "🟢 TM — Toyota Motor Corporation\nEntry: $188.74\neToro TP Value: $36.74\nScanner Potential: +14.7%\n\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 6 | Hold: 10 | Sell: 0 | Strong Sell: 0\n🧠 Analyst ratings lean positive.\n\n═══ TECHNICAL SETUP ═══\n🟡 Mixed\nSetup: Constructive / Mixed\n🧠 The scanner shows a constructive setup, although some technical conditions are mixed. The setup resembles pullback, with the broader regime in a uptrend phase.\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 Recent financial results are broadly improving.\n\n═══ VALUATION ═══\n⚪ Unknown\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-04 (+86 days)\n⚪ Unknown\n🧠 The next earnings event could not be confidently assessed from the available data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: Consumer Cyclical | Industry: Auto - Manufacturers\nSector: ⚪ Unknown\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00 | CPI MoM (Jul) — 2026-08-10 06:00:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Sector conditions could not be confidently assessed.\n🧠 Macro: Macro conditions are being treated as neutral because the LLM interpretation was unavailable.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The report is using deterministic scanner/FMP summaries because the LLM provider did not return a usable response.\n🟢 Key Positive: The technical scanner remains the primary signal.\n🔴 Key Risk: LLM interpretation was unavailable for this run.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai-failed)"
+      "report": "🟡 TM — Toyota Motor Corporation\nEntry: $188.74\neToro TP Value: $36.74\nScanner Potential: +14.7%\n\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 6 | Hold: 10 | Sell: 0 | Strong Sell: 0\n🧠 The consensus is Hold, with 10 Holds and 6 Buys, although forward revenue and EPS estimates have risen.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a short-term pullback continuation, with rising RSI, a reclaimed VWAP, and price above the 20- and 50-EMAs. It remains mixed because price is below the 200 EMA and has underperformed SPY over three months.\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three results showed repeated positive EPS surprises, including a 61.8% beat most recently, but the supplied revenue and net income figures are flat across periods. Margins are positive, while negative free cash flow and substantial debt weaken the picture.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The supplied valuation is supportive, with a TTM P/E of 8.5, price-to-sales of 0.68, and price-to-book of 0.98. The low multiples provide some cushion despite flat reported growth and negative free cash flow.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-04 (+86 days)\n🟢 Positive\n🧠 Next earnings are scheduled for 2026-11-04, about 86 days away, so they are outside the estimated trade window but remain a future event risk. Forward revenue and EPS estimates increased versus the prior set, which is supportive.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: Consumer Cyclical | Industry: Auto - Manufacturers\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\nUpcoming: Consumer Confidence (Jul) — 2026-08-10 03:00:00 | CPI YoY (Jul) — 2026-08-10 05:50:00\nHourly-Scan Macro Risk: Neutral\nCycle Context: Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)\n🧠 Sector: Consumer Cyclical and Auto-Manufacturers snapshots were both positive on the day, providing a supportive backdrop despite TM's weaker three-month performance versus SPY.\n🧠 Macro: Macro risk and volatility are neutral, but elevated longer-term Treasury yields and a cycle indicator marked headwind may weigh on this cyclical automaker.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is supported by short-term momentum, strong recent EPS surprises, attractive valuation, and a positive auto-industry backdrop. It is tempered by the stock remaining below its 200 EMA, relative underperformance, flat supplied financial trends, negative free cash flow, and a Hold-heavy analyst consensus. The next earnings event is not imminent but remains a later catalyst and risk.\n🟢 Key Positive: Repeated EPS beats, upward estimate revisions, low valuation multiples, and supportive industry momentum strengthen the setup.\n🔴 Key Risk: The stock remains below its long-term 200 EMA while flat reported growth, negative free cash flow, elevated debt, and cyclical macro headwinds limit conviction.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai:gpt-5.6-luna)"
     }
   ]
 }
