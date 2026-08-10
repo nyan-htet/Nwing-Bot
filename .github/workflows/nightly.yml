@@ -17,6 +17,14 @@ jobs:
         env:
           TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
           FMP_KEY: ${{ secrets.FMP_KEY }}
+          DRY_RUN: "0"
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scan.py nightly
       - run: |
           git config user.name swingbot && git config user.email bot@users.noreply.github.com
