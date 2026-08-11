@@ -65,6 +65,10 @@ Your job is to explain whether the technical setup is supported or weakened by
 recent fundamentals, earnings, analyst expectations, news, sector/industry,
 and macro conditions.
 
+Keep the final interpretation concise and practical. Do not dump raw data.
+For sector and macro, synthesize the supplied information into usable trading
+context rather than repeating the source fields.
+
 Ticker: {ticker}
 Company/ETF: {name}
 
@@ -110,9 +114,9 @@ Return ONLY valid JSON with exactly these keys:
   "news_assessment": "positive|mixed|negative|no_major_risk|no_recent_news|error",
   "news_interpretation": "1-2 short sentences summarizing meaningful company-specific news risk; do not overreact to routine analyst notes",
   "sector_assessment": "supportive|neutral|headwind|unknown",
-  "sector_interpretation": "1 short sentence comparing the stock/ETF setup with its sector/industry context",
+  "sector_interpretation": "ONE short readable sentence. State whether the sector/industry supports or weakens the setup. Do not repeat the sector/industry names unless useful.",
   "macro_assessment": "supportive|neutral|headwind|unknown",
-  "macro_interpretation": "1 short sentence about macro relevance to this setup",
+  "macro_interpretation": "ONE short readable sentence. Mention only the most relevant upcoming macro event (for example CPI this week/FOMC) and any meaningful macro headwind such as rates, yields, presidential cycle or volatility. Do not list dates, raw macro numbers, cycle statistics, or unrelated events.",
   "overall_assessment": "supportive|mixed|caution|insufficient_data",
   "overall_summary": "2-3 short sentences synthesizing the technical signal with the fundamental/catalyst context",
   "key_positive": "one sentence",
@@ -1166,11 +1170,20 @@ def format_report(row):
     potential = fnum(sig.get("tp_pct"))
 
     overall = str(llm.get("overall_assessment") or "insufficient_data").lower()
+    shares = fnum(sig.get("shares"))
+    position_value = fnum(sig.get("value"))
+    if position_value is None:
+        position_value = 250.0 if shares is not None else None
+    eta_lo = fnum(sig.get("eta_days_low"))
+    eta_hi = fnum(sig.get("eta_days_high"))
+
     lines = [
         f"{assessment_icon(overall)} {ticker} — {name}",
         f"Entry: ${entry:.2f}" if entry is not None else "Entry: n/a",
         f"eToro TP Value: ${etoro:.2f}" if etoro is not None else "eToro TP Value: n/a",
+        f"Shares: {shares:.2f} (${position_value:.0f})" if shares is not None and position_value is not None else "Shares: n/a",
         f"Scanner Potential: {fmt_pct(potential)}" if potential is not None else "Scanner Potential: n/a",
+        f"Timeframe: {int(eta_lo) if eta_lo is not None and eta_lo.is_integer() else eta_lo}–{int(eta_hi) if eta_hi is not None and eta_hi.is_integer() else eta_hi} days" if eta_lo is not None and eta_hi is not None else "Timeframe: n/a",
         "",
         "═══ ANALYST VIEW ═══",
         f"{assessment_icon(llm.get('analyst_assessment'))} {title_case_assessment(llm.get('analyst_assessment'))}",
@@ -1261,39 +1274,15 @@ def format_report(row):
     lines += [
         "",
         "═══ SECTOR & MACRO ═══",
-        f"Sector: {sector.get('sector') or 'Unknown'} | Industry: {sector.get('industry') or 'Unknown'}",
         f"Sector: {assessment_icon(llm.get('sector_assessment'))} {title_case_assessment(llm.get('sector_assessment'))}",
         f"Macro: {assessment_icon(llm.get('macro_assessment'))} {title_case_assessment(llm.get('macro_assessment'))}",
     ]
-
-    # Only show actionable upcoming events, not a dump of unrelated global events.
-    calendar = macro.get("calendar") or []
-    relevant = []
-    keywords = ("CPI", "PPI", "FOMC", "FED", "JOBS", "PAYROLL", "GDP", "PCE",
-                "UNEMPLOYMENT", "RETAIL SALES", "PMI", "ISM", "CONSUMER CONFIDENCE")
-    for event in calendar:
-        if not isinstance(event, dict):
-            continue
-        ev_name = str(event.get("event") or event.get("name") or event.get("title") or "").strip()
-        if ev_name and any(k in ev_name.upper() for k in keywords):
-            ev_date = event.get("date") or event.get("releaseDate")
-            relevant.append(f"{ev_name}" + (f" — {ev_date}" if ev_date else ""))
-    if relevant:
-        lines.append("Upcoming: " + " | ".join(relevant[:3]))
-
-    if scan_macro.get("risk") is not None:
-        lines.append(f"Hourly-Scan Macro Risk: {str(scan_macro.get('risk')).title()}")
-    if cycles:
-        cycle_line = cycles.get("line")
-        if cycle_line:
-            lines.append(f"Cycle Context: {cycle_line}")
-        elif cycles.get("label") is not None:
-            lines.append(f"Cycle Context: {cycles.get('label')}")
 
     if llm.get("sector_interpretation"):
         lines.append(f"🧠 Sector: {llm['sector_interpretation']}")
     if llm.get("macro_interpretation"):
         lines.append(f"🧠 Macro: {llm['macro_interpretation']}")
+
 
     lines += [
         "",
