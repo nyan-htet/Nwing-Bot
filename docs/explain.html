@@ -93,11 +93,11 @@ fetch("explain.json?t=" + Date.now()).then(r => r.json()).then(d => {
         ${r.sector ? `<span class="pill">${r.sector}</span>` : ""}</div>
       ${r.muted ? `<div class="muted">🔇 muted — alerted ${r.muted.alerted} at $${r.muted.entry},
          target $${r.muted.tp}${r.muted.thesis_warned ? " · thesis already flagged" : ""}</div>` : ""}
+      ${r.final ? `<div class="why"><b>${r.final.pass ? "🟢 " : "🔴 "}${r.final.status}</b> — ${r.final.reason || ""}</div>` : ""}
       ${(r.gates || []).map(gateRow).join("")}
       ${qualityTable(r.quality)}
       ${wa ? `<div class="why">✅ Would alert: entry $${wa.entry} → TP $${wa.tp}
-         (+${wa.tp_pct}%), ${wa.shares} units ≈ $${wa.value}</div>`
-           : `<div class="why">${r.why || ""}</div>`}
+         (+${wa.tp_pct}%), ${wa.shares} units ≈ $${wa.value}</div>` : ""}
     </div>`;
   }).join("");
 }).catch(() => $("meta").textContent = "No explain.json yet — run the explain-ticker workflow.");
