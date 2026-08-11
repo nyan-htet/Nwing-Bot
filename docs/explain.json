@@ -1,171 +1,34 @@
 {
-  "generated": "2026-08-10T10:59:31.111132+00:00",
+  "generated": "2026-08-11T05:10:33.280957+00:00",
   "results": [
     {
-      "ticker": "GLD",
-      "name": "SPDR Gold",
-      "type": "etf",
-      "sector": "ETF:gold",
-      "gates": [
-        {
-          "gate": "daily trend",
-          "pass": false,
-          "detail": "EMA20 $378.87 vs EMA50 $385.52 \u2192 uptrend False; ADX 26.2 (needs \u226525); RS vs SPY -13.0%; score 1/5; downtrend ~19w; below 200 EMA"
-        }
-      ],
-      "stopped_at": "daily trend",
-      "muted": null,
-      "price": 398.51,
-      "trend": {
-        "uptrend": false,
-        "strong": true,
-        "rs": -0.13,
-        "near_52w_high": false,
-        "higher_highs": false,
-        "adx": 26.2,
-        "score": 1,
-        "regime": "downtrend",
-        "regime_weeks": 19,
-        "ema20": 378.87,
-        "ema50": 385.52,
-        "ema200": 399.72,
-        "above_ema200": false,
-        "runner": false
-      },
-      "why": "No established daily uptrend. After a sharp reversal the 20 EMA needs weeks to cross back above the 50 EMA."
-    },
-    {
-      "ticker": "SOXL",
-      "name": "Direxion Semis Bull 3x",
-      "type": "etf",
-      "sector": "ETF:semiconductors bull 3x",
-      "gates": [
-        {
-          "gate": "daily trend",
-          "pass": false,
-          "detail": "EMA20 $142.75 vs EMA50 $161.17 \u2192 uptrend False; ADX 24.4 (needs \u226525); RS vs SPY -25.8%; score 0/5; downtrend ~3w; above 200 EMA"
-        }
-      ],
-      "stopped_at": "daily trend",
-      "muted": null,
-      "price": 140.26,
-      "trend": {
-        "uptrend": false,
-        "strong": false,
-        "rs": -0.258,
-        "near_52w_high": false,
-        "higher_highs": false,
-        "adx": 24.4,
-        "score": 0,
-        "regime": "downtrend",
-        "regime_weeks": 3,
-        "ema20": 142.75,
-        "ema50": 161.17,
-        "ema200": 117.78,
-        "above_ema200": true,
-        "runner": false
-      },
-      "why": "No established daily uptrend. After a sharp reversal the 20 EMA needs weeks to cross back above the 50 EMA."
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla",
+      "ticker": "APM",
+      "name": "Aptorum Group Limited",
       "type": "stock",
-      "sector": "Consumer",
+      "sector": "Other",
       "gates": [
         {
           "gate": "daily trend",
           "pass": false,
-          "detail": "EMA20 $339.97 vs EMA50 $367.08 \u2192 uptrend False; ADX 38.4 (needs \u226525); RS vs SPY -28.1%; score 1/5; downtrend ~5w; below 200 EMA"
+          "detail": "EMA20 $8.46 vs EMA50 $8.58 \u2192 uptrend False; ADX 25.6 (needs \u226525); RS vs SPY -3.6%; score 1/5; downtrend ~4w; below 200 EMA"
         }
       ],
       "stopped_at": "daily trend",
       "muted": null,
-      "price": 328.58,
+      "price": 8.99,
       "trend": {
         "uptrend": false,
         "strong": true,
-        "rs": -0.281,
+        "rs": -0.036,
         "near_52w_high": false,
         "higher_highs": false,
-        "adx": 38.4,
+        "adx": 25.6,
         "score": 1,
         "regime": "downtrend",
-        "regime_weeks": 5,
-        "ema20": 339.97,
-        "ema50": 367.08,
-        "ema200": 401.08,
-        "above_ema200": false,
-        "runner": false
-      },
-      "why": "No established daily uptrend. After a sharp reversal the 20 EMA needs weeks to cross back above the 50 EMA."
-    },
-    {
-      "ticker": "SPYU",
-      "name": "MAX S&P500 4x",
-      "type": "etf",
-      "sector": "ETF:S&P500 bull 4x",
-      "gates": [
-        {
-          "gate": "daily trend",
-          "pass": true,
-          "detail": "EMA20 $33.63 vs EMA50 $32.77 \u2192 uptrend True; ADX 38.3 (needs \u226525); RS vs SPY +6.1%; score 5/5; uptrend ~15w; above 200 EMA"
-        },
-        {
-          "gate": "4h setup",
-          "pass": false,
-          "detail": "neither a pullback to the 20 EMA nor a 20-bar range breakout on 1.5x volume"
-        }
-      ],
-      "stopped_at": "4h setup",
-      "muted": null,
-      "price": 36.76,
-      "trend": {
-        "uptrend": true,
-        "strong": true,
-        "rs": 0.061,
-        "near_52w_high": true,
-        "higher_highs": true,
-        "adx": 38.3,
-        "score": 5,
-        "regime": "uptrend",
-        "regime_weeks": 15,
-        "ema20": 33.63,
-        "ema50": 32.77,
-        "ema200": 29.79,
-        "above_ema200": true,
-        "runner": true
-      },
-      "why": "Price is trending but offers no entry pattern \u2014 it is not pulling back to the 20 EMA and not breaking a range. A vertical move gets caught on its first pullback, not mid-run."
-    },
-    {
-      "ticker": "SPX",
-      "name": "",
-      "type": "stock",
-      "sector": "",
-      "gates": [
-        {
-          "gate": "daily trend",
-          "pass": false,
-          "detail": "EMA20 $0.08 vs EMA50 $0.08 \u2192 uptrend False; ADX 26.5 (needs \u226525); RS vs SPY -10.1%; score 1/5; downtrend ~35w; below 200 EMA"
-        }
-      ],
-      "stopped_at": "daily trend",
-      "muted": null,
-      "price": 0.09,
-      "trend": {
-        "uptrend": false,
-        "strong": true,
-        "rs": -0.101,
-        "near_52w_high": false,
-        "higher_highs": false,
-        "adx": 26.5,
-        "score": 1,
-        "regime": "downtrend",
-        "regime_weeks": 35,
-        "ema20": 0.08,
-        "ema50": 0.08,
-        "ema200": 0.1,
+        "regime_weeks": 4,
+        "ema20": 8.46,
+        "ema50": 8.58,
+        "ema200": 10.29,
         "above_ema200": false,
         "runner": false
       },
