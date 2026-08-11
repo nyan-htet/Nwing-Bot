@@ -283,7 +283,8 @@ def run_hourly(offline=False):
         is_etf = tmeta.get("type", "stock") == "etf"
         screen = tmeta.get("screen", {"pass": True, "notes": []})
         if not screen.get("pass", True):
-            skip_report["screen"].append(t)
+            notes = screen.get("notes") or ["Quality filter failed; see watchlist details"]
+            skip_report["screen"].append(f"{t} — {'; '.join(notes[:2])}")
             continue  # failed nightly FMP quality screen
         if tmeta.get("earnings_soon"):
             skip_report["earnings"].append(t)
@@ -418,6 +419,11 @@ def run_nightly():
     ledger = al.load()
     screen_failed = [t for t, m in meta.items()
                      if not (m.get("screen") or {}).get("pass", True)]
+    screen_failed_details = {
+        t: (m.get("screen") or {}).get("notes") or ["Quality filter failed"]
+        for t, m in meta.items()
+        if not (m.get("screen") or {}).get("pass", True)
+    }
     earnings_soon = [t for t, m in meta.items() if m.get("earnings_soon")]
     macro = fnd.macro_context(spy)
     cyc_line = ""
@@ -436,6 +442,7 @@ def run_nightly():
         "tracked": list(ledger.keys()),
         "thesis_warned": [t for t, e in ledger.items() if e.get("thesis_warned")],
         "earnings": earnings_soon, "screen_failed": screen_failed,
+        "screen_failed_details": screen_failed_details,
         "new_entrants": sorted(set(top) - prev) if prev else [],
         "dropped": sorted(prev - set(top)) if prev else [],
         "top": top_ranked,

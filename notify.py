@@ -90,7 +90,7 @@ def format_no_signal(watch_n: int, skip_report: dict, macro: dict, cyc: dict,
         lines.append("")
     for key, label in (("already_alerted", "Still Active"),
                        ("earnings", "Earnings within 7 days"),
-                       ("screen", "Failed fundamental"),
+                       ("screen", "Fundamental / quality filter failed"),
                        ("target_cleared", "Cleared target, eligible again")):
         v = sorted(skip_report.get(key) or [])
         if v:
@@ -113,7 +113,11 @@ def format_nightly(info: dict) -> str:
         L.append(f"Earnings within 7 days ({len(e)}): {', '.join(e)}")
     if info.get("screen_failed"):
         s = sorted(info["screen_failed"])
-        L.append(f"Failed fundamental ({len(s)}): {', '.join(s)}")
+        L += [f"Fundamental / quality filter failed ({len(s)}):"]
+        details = info.get("screen_failed_details") or {}
+        for t in s:
+            reasons = details.get(t) or ["Quality filter failed"]
+            L.append(f"  🔴 {t} — {'; '.join(reasons[:2])}")
 
     # what changed in the watchlist — the actionable part
     if info.get("new_entrants"):

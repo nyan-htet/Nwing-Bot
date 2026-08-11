@@ -66,18 +66,18 @@ def company_screen(ticker, cfg):
         de = r.get("debtEquityRatioTTM") or r.get("debtToEquityTTM")
         if de is not None and float(de) > cfg.MAX_DEBT_TO_EQUITY:
             out["pass"] = False
-            out["notes"].append(f"high debt/equity {float(de):.1f}")
+            out["notes"].append(f"Debt/equity {float(de):.1f} > {cfg.MAX_DEBT_TO_EQUITY:.1f} limit")
         margin = r.get("netProfitMarginTTM")
         if margin is not None and float(margin) < -0.20:
             out["pass"] = False
-            out["notes"].append(f"deeply unprofitable {float(margin):.0%}")
+            out["notes"].append(f"Net profit margin {float(margin):.0%} < -20% limit")
         time.sleep(0.3)
         prof = _fmp(f"profile?symbol={ticker}", f"profile/{ticker}")
         p = prof[0] if isinstance(prof, list) and prof else {}
         mc = p.get("mktCap") or p.get("marketCap")
         if mc is not None and float(mc) < cfg.SMALLCAP_MIN_MARKETCAP:
             out["pass"] = False
-            out["notes"].append("microcap, below quality floor")
+            out["notes"].append(f"Market cap ${float(mc)/1e6:.0f}M < ${cfg.SMALLCAP_MIN_MARKETCAP/1e6:.0f}M quality floor")
         out["name"] = p.get("companyName") or ""
         out["sector"] = p.get("sector", "Unknown")
         out["industry"] = p.get("industry", "Unknown")

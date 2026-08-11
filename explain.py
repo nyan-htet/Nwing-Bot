@@ -18,15 +18,22 @@ import analysis
 import config as cfg
 import data
 import universe
+import fundamentals as fnd
 
-GATES = ["daily trend", "4h setup", "1h trigger", "quality score",
+GATES = ["fundamental / quality", "daily trend", "4h setup", "1h trigger", "quality score",
          "target 9-20%", "fee check"]
 
 
 def explain_one(sym, spy_daily, meta, ledger):
+    """Explain the live pipeline without hiding downstream technical diagnostics.
+
+    Fundamental quality is a hard signal gate in scan.py, but Explain continues
+    through the technical timeframes so the user can see whether a stock is
+    technically attractive even when fundamentals block the trade.
+    """
     out = {"ticker": sym, "name": meta.get("name", ""),
            "type": meta.get("type", "stock"), "sector": meta.get("sector", ""),
-           "gates": [], "stopped_at": None, "muted": None, "price": None}
+           "gates": [], "stopped_at": None, "blocked_by": [], "muted": None, "price": None}
 
     if sym in ledger:
         e = ledger[sym]
@@ -34,41 +41,63 @@ def explain_one(sym, spy_daily, meta, ledger):
                         "alerted": str(e.get("alerted", ""))[:10],
                         "thesis_warned": bool(e.get("thesis_warned"))}
 
+    # The hourly scanner uses the cached nightly FMP screen. Reuse that exact
+    # cached decision when available, rather than inventing a second filter.
+    screen = meta.get("screen") or {"pass": True, "notes": []}
+    screen_pass = bool(screen.get("pass", True))
+    screen_notes = list(screen.get("notes") or [])
+    # Older watchlists only stored "microcap, below quality floor". Make the
+    # explanation explicit without changing the actual gate.
+    if any("microcap" in str(n).lower() for n in screen_notes):
+        screen_notes = [
+            f"Market cap below ${cfg.SMALLCAP_MIN_MARKETCAP/1e6:.0f}M quality floor"
+            if "market cap" not in str(n).lower() else str(n)
+            for n in screen_notes
+        ]
+    if screen_pass:
+        fund_detail = "Pass — no cached FMP quality rule is currently blocking this ticker."
+    else:
+        fund_detail = "Failed — " + "; ".join(screen_notes[:3])
+    out["fundamental"] = {"pass": screen_pass, "notes": screen_notes}
+    out["gates"].append({"gate": "fundamental / quality", "pass": screen_pass,
+                         "detail": fund_detail})
+    if not screen_pass:
+        out["blocked_by"].append("fundamental / quality")
+
     h1 = data.fetch_intraday([sym]).get(sym)
     if h1 is None or len(h1) < 100:
         out["stopped_at"] = "no data"
         out["gates"].append({"gate": "data", "pass": False,
                              "detail": "no intraday data from Twelve Data"})
+        out["blocked_by"].append("data")
+        out["final"] = {"pass": False, "status": "NO DATA",
+                         "reason": "No intraday data was available."}
         return out
 
+    # Intended multi-timeframe architecture:
+    # Daily = direction, 4H = setup, 1H = entry trigger.
     h4, daily = data.resample(h1, "4h"), data.resample(h1, "1D")
     price = float(h1["close"].iloc[-1])
     out["price"] = round(price, 2)
 
     t = analysis.daily_trend(daily, spy_daily, cfg)
-    ok = bool(t["uptrend"] and t["strong"])
+    daily_ok = bool(t["uptrend"] and t["strong"])
     out["trend"] = t
-    out["gates"].append({"gate": "daily trend", "pass": ok, "detail":
+    out["gates"].append({"gate": "daily trend", "pass": daily_ok, "detail":
         f"EMA20 ${t['ema20']} vs EMA50 ${t['ema50']} → uptrend {t['uptrend']}; "
         f"ADX {t['adx']} (needs ≥{cfg.ADX_MIN}); RS vs SPY {t['rs']:+.1%}; "
         f"score {t['score']}/5; {t['regime']} ~{t['regime_weeks']}w; "
         f"{'above' if t['above_ema200'] else 'below'} 200 EMA"})
-    if not ok:
-        out["stopped_at"] = "daily trend"
-        out["why"] = ("No established daily uptrend. After a sharp reversal the "
-                      "20 EMA needs weeks to cross back above the 50 EMA.")
-        return out
-
+    if not daily_ok:
+        out["blocked_by"].append("daily trend")
+    
     st = analysis.setup_4h(h4, cfg)
-    out["gates"].append({"gate": "4h setup", "pass": bool(st),
-                         "detail": st or "neither a pullback to the 20 EMA nor a "
-                                         "20-bar range breakout on 1.5x volume"})
-    if not st:
-        out["stopped_at"] = "4h setup"
-        out["why"] = ("Price is trending but offers no entry pattern — it is not "
-                      "pulling back to the 20 EMA and not breaking a range. "
-                      "A vertical move gets caught on its first pullback, not mid-run.")
-        return out
+    out["setup_4h"] = st
+    setup_ok = bool(st)
+    out["gates"].append({"gate": "4h setup", "pass": setup_ok,
+                         "detail": st or "No pullback-to-EMA20 or qualifying range breakout"})
+    if not setup_ok:
+        out["blocked_by"].append("4h setup")
 
     trig = analysis.trigger_1h(h1)
     last, prev = h1.iloc[-1], h1.iloc[-2]
@@ -78,52 +107,87 @@ def explain_one(sym, spy_daily, meta, ledger):
         f"last 1h bar closed {pos:.0%} up its range, "
         f"{'above' if float(last.close) > float(prev.high) else 'below'} the prior bar high"})
     if not trig:
-        out["stopped_at"] = "1h trigger"
-        out["why"] = ("Timing gate only — the setup is valid but the current hourly "
-                      "candle is not bullish enough. It may trigger on a later scan.")
-        return out
+        out["blocked_by"].append("1h trigger")
 
-    q = analysis.quality_score(h1, h4, st, cfg, entry_hint=price)
+    # Only calculate downstream entry gates when their prerequisites exist.
+    q = None
     is_etf = meta.get("type") == "etf"
-    floor = cfg.SCORE_MIN_ETF if is_etf else cfg.SCORE_MIN_STOCK
-    out["quality"] = {"total": q["total"], "floor": floor,
-                      "detail": q["detail"], "notes": q["notes"]}
-    out["gates"].append({"gate": "quality score", "pass": q["total"] >= floor,
-                         "detail": f"{q['total']} vs floor {floor} "
-                                   f"({'ETF' if is_etf else 'stock'})"})
-    if q["total"] < floor:
-        out["stopped_at"] = "quality score"
-        weakest = min(q["detail"], key=q["detail"].get)
-        out["why"] = (f"Score below the floor. Weakest factor: {weakest} "
-                      f"({q['detail'][weakest]:+.2f}) — {q['notes'].get(weakest, '')}")
-        return out
+    if setup_ok and trig:
+        q = analysis.quality_score(h1, h4, st, cfg, entry_hint=price)
+        floor = cfg.SCORE_MIN_ETF if is_etf else cfg.SCORE_MIN_STOCK
+        out["quality"] = {"total": q["total"], "floor": floor,
+                          "detail": q["detail"], "notes": q["notes"]}
+        q_ok = q["total"] >= floor
+        out["gates"].append({"gate": "quality score", "pass": q_ok,
+                             "detail": f"{q['total']} vs floor {floor} ({'ETF' if is_etf else 'stock'})"})
+        if not q_ok:
+            out["blocked_by"].append("quality score")
 
-    tp = analysis.calc_tp(daily, h4, price, cfg, trend=t)
-    out["gates"].append({"gate": "target 9-20%", "pass": bool(tp), "detail":
-        (f"${tp:.2f} (+{(tp / price - 1) * 100:.1f}%)" if tp else
-         "no Fibonacci extension or resistance level inside the 9-20% window")})
-    if not tp:
-        out["stopped_at"] = "target 9-20%"
-        out["why"] = ("No realistic target between +9% and +20%: resistance is "
-                      "either too close to be worth the fees or beyond the cap.")
-        return out
+        tp = analysis.calc_tp(daily, h4, price, cfg, trend=t)
+        tp_ok = bool(tp)
+        out["gates"].append({"gate": "target 9-20%", "pass": tp_ok, "detail":
+            (f"${tp:.2f} (+{(tp / price - 1) * 100:.1f}%)" if tp else
+             "no Fibonacci extension or resistance level inside the 9-20% window")})
+        if not tp_ok:
+            out["blocked_by"].append("target 9-20%")
 
-    value = max(cfg.ACCOUNT_SIZE * cfg.POSITION_PCT, cfg.MIN_TRADE_USD)
-    shares = round(value / price, cfg.SHARE_DECIMALS)
-    okf, frac = analysis.fee_check(price, tp, shares, is_etf, cfg)
-    out["gates"].append({"gate": "fee check", "pass": okf,
-                         "detail": f"fees {frac:.1%} of expected profit"})
-    if not okf:
-        out["stopped_at"] = "fee check"
-        out["why"] = "Fees would eat too much of the expected profit."
-        return out
+        if tp_ok and q_ok:
+            value = max(cfg.ACCOUNT_SIZE * cfg.POSITION_PCT, cfg.MIN_TRADE_USD)
+            shares = round(value / price, cfg.SHARE_DECIMALS)
+            okf, frac = analysis.fee_check(price, tp, shares, is_etf, cfg)
+            out["gates"].append({"gate": "fee check", "pass": okf,
+                                 "detail": f"fees {frac:.1%} of expected profit"})
+            if not okf:
+                out["blocked_by"].append("fee check")
+        else:
+            out["gates"].append({"gate": "fee check", "pass": False,
+                                 "detail": "Not evaluated — upstream quality/target gate failed"})
+    else:
+        out["gates"].append({"gate": "quality score", "pass": False,
+                             "detail": "Not evaluated — 4H setup or 1H trigger failed"})
+        out["gates"].append({"gate": "target 9-20%", "pass": False,
+                             "detail": "Not evaluated — no confirmed entry setup"})
+        out["gates"].append({"gate": "fee check", "pass": False,
+                             "detail": "Not evaluated — no confirmed entry setup"})
 
-    out["would_alert"] = {"entry": round(price, 2), "tp": round(tp, 2),
-                          "tp_pct": round((tp / price - 1) * 100, 1),
-                          "shares": shares, "value": round(shares * price, 2)}
-    out["why"] = "All gates passed — this would alert (if not currently muted)."
+    # Final signal requires ALL live gates. Fundamental is a hard blocker even
+    # when the technical side is attractive.
+    all_technical = daily_ok and setup_ok and bool(trig)
+    if q is not None:
+        all_technical = all_technical and q["total"] >= (cfg.SCORE_MIN_ETF if is_etf else cfg.SCORE_MIN_STOCK)
+    final_pass = screen_pass and all_technical and not any(
+        g["gate"] in {"target 9-20%", "fee check"} and not g["pass"] for g in out["gates"]
+    )
+
+    if final_pass:
+        # Reuse the last computed target if available.
+        tp = next((g for g in out["gates"] if g["gate"] == "target 9-20%" and g["pass"]), None)
+        # Extract exact target from gate detail for dashboard only; calculate again
+        # to keep the output numeric and authoritative.
+        target = analysis.calc_tp(daily, h4, price, cfg, trend=t)
+        value = max(cfg.ACCOUNT_SIZE * cfg.POSITION_PCT, cfg.MIN_TRADE_USD)
+        shares = round(value / price, cfg.SHARE_DECIMALS)
+        out["would_alert"] = {"entry": round(price, 2), "tp": round(target, 2),
+                              "tp_pct": round((target / price - 1) * 100, 1),
+                              "shares": shares, "value": round(shares * price, 2)}
+        out["why"] = "All fundamental, daily trend, 4H setup, 1H trigger, quality, target and fee gates passed."
+        out["final"] = {"pass": True, "status": "WOULD ALERT", "reason": out["why"]}
+    else:
+        # Keep the first blockers in pipeline order, with the fundamental reason
+        # first when applicable.
+        priority = ["fundamental / quality", "daily trend", "4h setup", "1h trigger",
+                    "quality score", "target 9-20%", "fee check"]
+        blockers = [x for x in priority if x in out["blocked_by"]]
+        out["stopped_at"] = blockers[0] if blockers else "blocked"
+        if not screen_pass:
+            fund_reason = "; ".join(screen_notes[:2]) or "quality filter failed"
+            tech_state = "Technical analysis is shown for diagnostics but does not override the fundamental block."
+            out["why"] = f"🔴 Fundamental / quality filter failed: {fund_reason}. {tech_state}"
+        else:
+            out["why"] = "🔴 Blocked by: " + ", ".join(blockers) + "."
+        out["final"] = {"pass": False, "status": "BLOCKED", "reason": out["why"],
+                         "blocked_by": blockers}
     return out
-
 
 def resolve_symbols(arg, ledger):
     arg = (arg or "GLD").strip()
@@ -165,6 +229,8 @@ def main():
         for g in r["gates"]:
             print(f"  [{'PASS' if g['pass'] else 'FAIL'}] {g['gate']:<14} {g['detail']}")
         print(f"  -> {r.get('why', '')}")
+        if r.get("blocked_by"):
+            print("  BLOCKED BY: " + ", ".join(r["blocked_by"]))
 
     os.makedirs("docs", exist_ok=True)
     with open("docs/explain.json", "w") as f:
