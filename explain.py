@@ -41,11 +41,32 @@ def explain_one(sym, spy_daily, meta, ledger):
                         "alerted": str(e.get("alerted", ""))[:10],
                         "thesis_warned": bool(e.get("thesis_warned"))}
 
-    # The hourly scanner uses the cached nightly FMP screen. Reuse that exact
-    # cached decision when available, rather than inventing a second filter.
-    screen = meta.get("screen") or {"pass": True, "notes": []}
-    screen_pass = bool(screen.get("pass", True))
-    screen_notes = list(screen.get("notes") or [])
+    # Reuse the exact cached nightly FMP screen when available.
+    # IMPORTANT: a missing cached screen is NOT a pass. Older watchlists can
+    # lack this field, so fall back to a live FMP screen rather than silently
+    # telling the user that fundamentals passed.
+    screen = meta.get("screen")
+    screen_source = "cached nightly FMP"
+    if isinstance(screen, dict) and "pass" in screen:
+        screen_pass = bool(screen.get("pass"))
+        screen_notes = list(screen.get("notes") or [])
+    else:
+        screen_source = "live FMP fallback"
+        try:
+            live_screen = fnd.company_screen(sym, cfg)
+            screen_pass = bool(live_screen.get("pass", False))
+            screen_notes = list(live_screen.get("notes") or [])
+            if not meta.get("sector"):
+                out["sector"] = live_screen.get("sector") or out["sector"]
+        except Exception as exc:
+            # Unknown is safer than a false PASS. Do not let a missing cache
+            # turn into a fake fundamental approval.
+            screen_pass = False
+            screen_notes = [f"Unable to verify FMP quality screen: {type(exc).__name__}"]
+            screen_source = "verification error"
+
+    # Older watchlists only stored "microcap, below quality floor". Make the
+    # explanation explicit without changing the actual gate.
     # Older watchlists only stored "microcap, below quality floor". Make the
     # explanation explicit without changing the actual gate.
     if any("microcap" in str(n).lower() for n in screen_notes):
@@ -55,7 +76,7 @@ def explain_one(sym, spy_daily, meta, ledger):
             for n in screen_notes
         ]
     if screen_pass:
-        fund_detail = "Pass — no cached FMP quality rule is currently blocking this ticker."
+        fund_detail = f"Pass — verified by {screen_source}; no FMP quality rule is currently blocking this ticker."
     else:
         fund_detail = "Failed — " + "; ".join(screen_notes[:3])
     out["fundamental"] = {"pass": screen_pass, "notes": screen_notes}
