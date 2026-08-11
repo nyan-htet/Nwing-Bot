@@ -53,3 +53,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-10 21:40 UTC,TM,openai-failed,False,3,0,NO_NEWS,,
 2026-08-10 21:45 UTC,TM,openai:gpt-5.6-luna,True,3,0,NO_NEWS,mixed,pullback continuation
 2026-08-11 05:39 UTC,TM,openai,True,3,0,NO_NEWS,insufficient_data,no confirmed technical setup
+2026-08-11 13:53 UTC,PCAR,openai,True,3,1,OK,mixed,pullback continuation
+2026-08-11 13:53 UTC,IR,openai,True,3,1,OK,supportive,pullback continuation
+2026-08-11 13:53 UTC,ABBV,openai,True,3,5,OK,mixed,pullback continuation
