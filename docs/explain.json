@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-11T05:10:33.280957+00:00",
+  "generated": "2026-08-11T05:31:37.523783+00:00",
   "results": [
     {
       "ticker": "APM",
@@ -8,14 +8,53 @@
       "sector": "Other",
       "gates": [
         {
+          "gate": "fundamental / quality",
+          "pass": true,
+          "detail": "Pass \u2014 no cached FMP quality rule is currently blocking this ticker."
+        },
+        {
           "gate": "daily trend",
           "pass": false,
           "detail": "EMA20 $8.46 vs EMA50 $8.58 \u2192 uptrend False; ADX 25.6 (needs \u226525); RS vs SPY -3.6%; score 1/5; downtrend ~4w; below 200 EMA"
+        },
+        {
+          "gate": "4h setup",
+          "pass": false,
+          "detail": "No pullback-to-EMA20 or qualifying range breakout"
+        },
+        {
+          "gate": "1h trigger",
+          "pass": false,
+          "detail": "last 1h bar closed 0% up its range, below the prior bar high"
+        },
+        {
+          "gate": "quality score",
+          "pass": false,
+          "detail": "Not evaluated \u2014 4H setup or 1H trigger failed"
+        },
+        {
+          "gate": "target 9-20%",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        },
+        {
+          "gate": "fee check",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
         }
       ],
       "stopped_at": "daily trend",
+      "blocked_by": [
+        "daily trend",
+        "4h setup",
+        "1h trigger"
+      ],
       "muted": null,
       "price": 8.99,
+      "fundamental": {
+        "pass": true,
+        "notes": []
+      },
       "trend": {
         "uptrend": false,
         "strong": true,
@@ -32,7 +71,18 @@
         "above_ema200": false,
         "runner": false
       },
-      "why": "No established daily uptrend. After a sharp reversal the 20 EMA needs weeks to cross back above the 50 EMA."
+      "setup_4h": null,
+      "why": "\ud83d\udd34 Blocked by: daily trend, 4h setup, 1h trigger.",
+      "final": {
+        "pass": false,
+        "status": "BLOCKED",
+        "reason": "\ud83d\udd34 Blocked by: daily trend, 4h setup, 1h trigger.",
+        "blocked_by": [
+          "daily trend",
+          "4h setup",
+          "1h trigger"
+        ]
+      }
     }
   ]
 }
