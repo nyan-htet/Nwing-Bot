@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-11T17:23:37.095128+00:00",
+  "generated": "2026-08-11T21:13:39.418505+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 14.0
@@ -9,60 +9,6 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.3% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "DAL",
-      "name": "Delta Air Lines",
-      "setup": "pullback",
-      "entry": 90.73,
-      "tp": 106.67,
-      "tp_pct": 0.17568610162019183,
-      "shares": 2.76,
-      "value": 250.41479999999999,
-      "pl_amount": 43.99,
-      "eta_days_low": 17,
-      "eta_days_high": 51,
-      "fee_pct": 0.04546033131489463,
-      "trend_score": 4,
-      "adx": 33.1,
-      "rs": 0.238,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 17,
-      "ema20": 88.94,
-      "ema50": 85.58,
-      "ema200": 74.06,
-      "above_ema200": true,
-      "quality": 0.9,
-      "q_detail": {
-        "rsi": 0.6,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 54.1 falling",
-        "bollinger": "band position 53%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.0x average, drying up",
-        "extension": "+0.4 ATR from 20 EMA, slope +1.9%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 54.1,
-      "options_note": "",
-      "sector": "Industrials",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=54.1)"
-      ],
-      "time": "2026-08-11T17:23:33.720917+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
