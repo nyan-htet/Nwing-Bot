@@ -264,7 +264,7 @@ def run_hourly(offline=False):
 
     # --- scan ---
     ledger = al.load()
-    skip_report = {"earnings": [], "screen": [],
+    skip_report = {"earnings": [], "screen": [], "screen_details": {},
                    "already_alerted": [], "target_cleared": []}
     signals = []
     for t, h1 in h1_map.items():
@@ -283,8 +283,12 @@ def run_hourly(offline=False):
         is_etf = tmeta.get("type", "stock") == "etf"
         screen = tmeta.get("screen", {"pass": True, "notes": []})
         if not screen.get("pass", True):
-            notes = screen.get("notes") or ["Quality filter failed; see watchlist details"]
-            skip_report["screen"].append(f"{t} — {'; '.join(notes[:2])}")
+            notes = screen.get("notes") or ["Quality filter failed"]
+            # Keep the ticker and the reason separate. The old code embedded
+            # the reason inside the ticker string, producing an unreadable
+            # one-line Telegram wall of text.
+            skip_report["screen"].append(t)
+            skip_report["screen_details"][t] = notes[:2]
             continue  # failed nightly FMP quality screen
         if tmeta.get("earnings_soon"):
             skip_report["earnings"].append(t)
