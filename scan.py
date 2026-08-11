@@ -323,24 +323,36 @@ def run_hourly(offline=False):
     al.save(ledger)          # persist immediately — nothing after this can lose it
 
     # --- deliver ---
+    # EMAIL: always receives the full hourly-scan output.
+    # TELEGRAM: intentionally does NOT receive new-signal messages because
+    # news-followup.yml runs after this workflow and sends the richer
+    # summarized signal report. Telegram only gets the hourly status when
+    # there are NO new signals.
     for s in signals:
         body = notify.format_alert(s, macro, cyc)
         nm = f" ({s['name']})" if s.get("name") else ""
         sec = f" — {s['sector']}" if s.get("sector") and s["sector"] != "Unknown" else ""
         notify.send_email(f"BUY {s['ticker']}{nm}{sec} — {s['setup']} "
                           f"+{s['tp_pct']:.0%} | eToro TP ${s['pl_amount']:.0f}", body, cfg)
-        notify.send_telegram(body, cfg)
+
     for m in pos_msgs:
         notify.send_email("Position alert", m, cfg)
-        notify.send_telegram(m, cfg)
 
     al.save(ledger)
 
-    if not signals and not pos_msgs:
+    if not signals:
         when = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M")
-        note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when)
-        notify.send_email(f"NO NEW SIGNAL — {when} UTC", note, cfg)
-        notify.send_telegram(note, cfg)
+
+        if pos_msgs:
+            # No NEW signal, so Telegram may still receive the position alerts.
+            # These are not duplicate signal messages and remain useful.
+            for m in pos_msgs:
+                notify.send_telegram(m, cfg)
+
+        else:
+            note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when)
+            notify.send_email(f"NO NEW SIGNAL — {when} UTC", note, cfg)
+            notify.send_telegram(note, cfg)
     log_signals_csv(signals, macro, cyc)
     publish(signals, pos_msgs, macro, cyc)
     labels = {"cooldown": "you entered/skipped recently",
