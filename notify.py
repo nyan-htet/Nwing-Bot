@@ -15,6 +15,14 @@ def _fmt(v):
 
 
 def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
+    """Readable hourly signal notification.
+
+    Keep every technical/trade field produced by the scanner because the
+    underlying signal object is also consumed by news_llm. This function only
+    changes presentation; it deliberately does not remove data from `sig`.
+    Macro/cycle data are retained in the arguments for downstream logging/news
+    but are not displayed here.
+    """
     name = sig.get("name") or ""
     sector = sig.get("sector") or ""
     header = f"🟢 BUY — {sig['ticker']}"
@@ -25,52 +33,64 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
 
     qd = sig.get("q_detail", {})
     qn = sig.get("q_notes", {})
-    shares, entry = sig.get("shares", 0), sig.get("entry", 0)
+    shares = sig.get("shares", 0)
+    entry = sig.get("entry", 0)
 
     lines = [
         header,
         "",
-        "═══ TRADE PLAN ═══",
+        "━━━━━━━━━━━━━━━━━━━━",
+        "📋 TRADE PLAN",
+        "━━━━━━━━━━━━━━━━━━━━",
         f"Entry price   : ${entry:.2f}",
         f"Exit price    : ${sig['tp']:.2f}   (+{sig['tp_pct']:.1%})",
         f"Shares        : {shares:g}  (≈ ${shares * entry:,.0f})",
-        "-------",
-        (f"Time frame    : {sig['eta_days_low']}-{sig['eta_days_high']} trading days "
-         "(informative, from ATR and moving-average pace only)"
-         + ("  [wide range: volatile but slow-advancing]"
-            if sig.get("eta_days_high", 0) >= 3 * sig.get("eta_days_low", 1) else "")
-         if sig.get("eta_days_low") else
-         "Time frame    : not estimable for this setup"),
-        "-------",
+        f"Time frame    : {sig['eta_days_low']}-{sig['eta_days_high']} trading days "
+        "(informative, from ATR and moving-average pace only)"
+        if sig.get("eta_days_low") else
+        "Time frame    : not estimable for this setup",
         f"eToro TP      : ${sig.get('pl_amount', 0):.2f}",
         f"eToro Fees    : {sig['fee_pct']:.1%} of profit",
         f"Strategy type : {sig.get('setup', '')}",
         "",
-        "═══ TECHNICAL ANALYSIS ═══",
-        f"Daily regime          : {str(sig.get('regime','?')).upper()} for ~{sig.get('regime_weeks','?')} weeks"
+        "━━━━━━━━━━━━━━━━━━━━",
+        "📈 TECHNICAL ANALYSIS",
+        "━━━━━━━━━━━━━━━━━━━━",
+        f"Daily regime  : {str(sig.get('regime','?')).upper()} for ~{sig.get('regime_weeks','?')} weeks"
         + (" — price ABOVE 200 EMA (long-term bullish)" if sig.get("above_ema200")
            else " — price BELOW 200 EMA (long-term caution)" if sig.get("above_ema200") is False else ""),
-        f"Trend score           : {sig['trend_score']}/5"
+        f"Trend score   : {sig['trend_score']}/5"
         + ("  ⭐ RUNNER (near 52-week high + outperforming SPY)" if sig.get("runner") else ""),
-        f"Moving averages       : 20 EMA ${sig.get('ema20','?')} | 50 EMA ${sig.get('ema50','?')} | 200 EMA ${sig.get('ema200','?')}",
-        f"ADX (Average Directional Index, trend strength) : {sig['adx']}",
-        f"Relative Strength (RS) vs SPY, 3-month          : {sig['rs']:+.1%}",
-        f"RSI (Relative Strength Index, 4-hour)           : {sig.get('rsi', '?')}"
+        f"Moving avgs   : 20 EMA ${sig.get('ema20','?')} | 50 EMA ${sig.get('ema50','?')} | 200 EMA ${sig.get('ema200','?')}",
+        f"ADX           : {sig['adx']}",
+        f"RS vs SPY     : {sig['rs']:+.1%} (3-month)",
+        f"RSI (4-hour)  : {sig.get('rsi', '?')}"
         + ("  [40-60 = healthy pullback zone]" if isinstance(sig.get('rsi'), (int, float)) and 40 <= sig['rsi'] <= 60 else ""),
-        f"Quality score         : {sig.get('quality', '')}  (max 1.0; stocks need 0.70, ETFs 0.50)",
-        f"  • RSI momentum        {_fmt(qd.get('rsi'))} — {qn.get('rsi', '')}",
-        f"  • Bollinger Bands     {_fmt(qd.get('bollinger'))} — {qn.get('bollinger', '')}",
-        f"  • VWAP                {_fmt(qd.get('vwap'))} — {qn.get('vwap', '')}",
-        f"  • Volume              {_fmt(qd.get('volume'))} — {qn.get('volume', '')}",
-        f"  • Extension from EMA  {_fmt(qd.get('extension'))} — {qn.get('extension', '')}",
         "",
-        "═══ FUNDAMENTAL & MACRO ═══",
-        f"Macro       : {macro.get('risk')} (SPY 20d realized vol {macro.get('vol')}%)",
-        f"Cycles      : {cyc.get('line', 'n/a').replace('Cycles ', '')}",
+        "━━━━━━━━━━━━━━━━━━━━",
+        "🧪 QUALITY BREAKDOWN",
+        "━━━━━━━━━━━━━━━━━━━━",
+        f"Quality score : {sig.get('quality', '')} / 1.0  (stocks ≥0.70; ETFs ≥0.50)",
+        f"• RSI momentum       {_fmt(qd.get('rsi'))} — {qn.get('rsi', '')}",
+        f"• Bollinger Bands    {_fmt(qd.get('bollinger'))} — {qn.get('bollinger', '')}",
+        f"• VWAP                {_fmt(qd.get('vwap'))} — {qn.get('vwap', '')}",
+        f"• Volume              {_fmt(qd.get('volume'))} — {qn.get('volume', '')}",
+        f"• Extension from EMA  {_fmt(qd.get('extension'))} — {qn.get('extension', '')}",
     ]
+
     if sig.get("warnings"):
-        lines += ["", "═══ WARNINGS ═══"] + [f"• {w}" for w in sig["warnings"]]
-    lines += ["", "No stoploss per your rules — thesis-broken alerts will monitor this position."]
+        lines += [
+            "",
+            "━━━━━━━━━━━━━━━━━━━━",
+            "⚠️ WARNINGS",
+            "━━━━━━━━━━━━━━━━━━━━",
+        ] + [f"• {w}" for w in sig["warnings"]]
+
+    lines += [
+        "",
+        "────────────────────",
+        "No stoploss per your rules — thesis-broken alerts will monitor this position.",
+    ]
     return "\n".join(lines)
 
 
