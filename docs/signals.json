@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-12T13:56:37.606646+00:00",
+  "generated": "2026-08-12T17:23:18.118362+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 14.0
@@ -9,6 +9,111 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "BA",
+      "name": "Boeing",
+      "setup": "pullback",
+      "entry": 231.29,
+      "tp": 278.89,
+      "tp_pct": 0.2057761732851986,
+      "shares": 1.08,
+      "value": 249.7986,
+      "pl_amount": 51.4,
+      "eta_days_low": 18,
+      "eta_days_high": 46,
+      "fee_pct": 0.038908537700427605,
+      "trend_score": 4,
+      "adx": 35.9,
+      "rs": -0.08,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 1,
+      "ema20": 225.94,
+      "ema50": 222.73,
+      "ema200": 220.55,
+      "above_ema200": true,
+      "quality": 0.75,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 0.3,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 54.6 falling",
+        "bollinger": "band position 52%, stable",
+        "vwap": "just above VWAP",
+        "volume": "0.0x average, drying up",
+        "extension": "+0.4 ATR from 20 EMA, slope +2.2%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 54.6,
+      "options_note": "",
+      "sector": "Industrials",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.75 (rsi +0.6, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=54.6)"
+      ],
+      "time": "2026-08-12T17:23:09.938357+00:00"
+    },
+    {
+      "ticker": "TEL",
+      "name": "TE Connectivity",
+      "setup": "pullback",
+      "entry": 214.69,
+      "tp": 245.0,
+      "tp_pct": 0.14120688450520524,
+      "shares": 1.16,
+      "value": 249.03459999999998,
+      "pl_amount": 35.17,
+      "eta_days_low": 11,
+      "eta_days_high": 33,
+      "fee_pct": 0.05687408645998624,
+      "trend_score": 4,
+      "adx": 25.2,
+      "rs": -0.007,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 1,
+      "ema20": 210.44,
+      "ema50": 208.44,
+      "ema200": 214.79,
+      "above_ema200": false,
+      "quality": 0.75,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 0.3,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 54.3 falling",
+        "bollinger": "band position 58%, expanding",
+        "vwap": "just above VWAP",
+        "volume": "0.0x average, drying up",
+        "extension": "+0.3 ATR from 20 EMA, slope +2.2%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 54.3,
+      "options_note": "",
+      "sector": "Technology",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.75 (rsi +0.6, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=54.3)"
+      ],
+      "time": "2026-08-12T17:23:12.783545+00:00"
+    }
+  ],
   "position_alerts": []
 }
