@@ -1,4 +1,5 @@
 """config.py — All settings for the eToro swing-signal bot."""
+import os
 
 # ---- Account / trade rules ----
 ACCOUNT_SIZE = 10_000.0        # used for suggested position size only (advisory)
@@ -30,6 +31,14 @@ ETF_TICKERS = ["GLD", "SPY", "QQQ", "IWM"]
 # for local testing, SAMPLE_TICKERS is used.
 SAMPLE_TICKERS = ["AAPL", "MSFT", "NVDA", "MU", "AMD", "JPM", "XOM", "CAT"]
 WATCHLIST_SIZE = 450           # stock spotlight; ETFs are added separately and are never cut by this cap
+
+# ---- Nightly pipeline caps (cost control on the cheapest FMP / Twelve Data plans) ----
+# Stage 1->2: cap on how many fundamental survivors get a Twelve Data DAILY call.
+# Set via GitHub secret/env NIGHTLY_DAILY_STOCK_CAP; falls back to WATCHLIST_SIZE.
+DAILY_STOCK_CAP = int(os.getenv("NIGHTLY_DAILY_STOCK_CAP") or WATCHLIST_SIZE)
+# Stage 2->3: cap on how many daily survivors are carried into the options/earnings
+# context calls (stage 4), after the Twelve Data 4H setup trim (stage 3).
+STAGE3_4H_CAP = int(os.getenv("NIGHTLY_4H_STOCK_CAP") or 150)
 
 # ---- Technical settings ----
 EMA_FAST = 20
@@ -103,7 +112,6 @@ WATCHLIST_FILE = "watchlist.json"
 SIGNALS_FILE = "docs/signals.json"   # docs/ is published by GitHub Pages
 
 # ---- Notifications (set real values via GitHub Secrets / env vars) ----
-import os
 SMTP_HOST = os.getenv("SMTP_HOST", "")
 SMTP_PORT = int(os.getenv("SMTP_PORT") or "587")   # tolerates empty secret
 SMTP_USER = os.getenv("SMTP_USER", "")

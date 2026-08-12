@@ -246,3 +246,80 @@ def screener_context(tickers, meta, stock_cap=500):
         "tier_counts": tier_counts,
         "note": note,
     }
+
+
+def company_screen(ticker: str, cfg, is_etf: bool = False) -> dict:
+    """Live single-symbol screen (one FMP 'profile' call). Used only where
+    a small, on-demand ticker count is expected — the hourly path's
+    legacy/dead nightly branch and explain.py's cache-miss fallback — never
+    for bulk universe scanning (that's screener_context's job).
+
+    Returns the same shape nightly's bulk screener_context() meta['screen']
+    carries: pass / notes / tier / market_cap / sector / industry / name.
+    """
+    if is_etf:
+        return {"pass": True, "notes": [], "tier": "ETF", "market_cap": None,
+                "sector": None, "industry": None, "name": ticker}
+    try:
+        rows = _get("profile", {"symbol": ticker})
+    except Exception as exc:
+        return {"pass": False, "notes": [f"FMP profile unavailable: {type(exc).__name__}"],
+                "tier": "UNKNOWN", "market_cap": None, "sector": None,
+                "industry": None, "name": ticker}
+    if not isinstance(rows, list) or not rows:
+        return {"pass": False, "notes": ["FMP profile: no data"], "tier": "UNKNOWN",
+                "market_cap": None, "sector": None, "industry": None, "name": ticker}
+    row = rows[0]
+    mc = _num(row.get("marketCap"))
+    tier = market_cap_tier(mc)
+    price = _num(row.get("price"))
+    volume = _num(row.get("volume"))
+    dollar_volume = (price * volume) if price is not None and volume is not None else None
+
+    notes = []
+    passed = True
+    if tier == "D":
+        notes.append("market cap below $100M")
+        passed = False
+    elif tier == "C" and (dollar_volume or 0) < 5e6:
+        notes.append("Tier C dollar liquidity below $5M")
+        passed = False
+    elif dollar_volume is not None and dollar_volume < 2e6:
+        notes.append("dollar liquidity below $2M")
+        passed = False
+    if not notes:
+        notes.append("passed market-cap/liquidity funnel")
+
+    return {
+        "pass": passed, "notes": notes, "tier": tier, "market_cap": mc,
+        "sector": row.get("sector"), "industry": row.get("industry"),
+        "name": row.get("companyName") or ticker,
+    }
+
+
+def macro_context(spy_daily) -> dict:
+    """Lightweight macro read off SPY's own daily price action — no paid
+    macro data source required. Purely informational (a line in alerts);
+    it never gates a trade.
+
+    risk : 'risk-on' | 'risk-off' | 'neutral' | 'unknown'
+    vol  : SPY 20-day realized volatility, annualized, in percent
+    """
+    try:
+        closes = spy_daily["close"].astype(float)
+        if len(closes) < 25:
+            return {"risk": "unknown", "vol": None}
+        rets = closes.pct_change().dropna()
+        vol20 = float(rets.tail(20).std() * (252 ** 0.5) * 100)
+        ma20 = float(closes.tail(20).mean())
+        ma50 = float(closes.tail(50).mean()) if len(closes) >= 50 else ma20
+        last = float(closes.iloc[-1])
+        if last > ma20 > ma50 and vol20 < 20:
+            risk = "risk-on"
+        elif last < ma20 < ma50 or vol20 > 30:
+            risk = "risk-off"
+        else:
+            risk = "neutral"
+        return {"risk": risk, "vol": round(vol20, 1)}
+    except Exception:
+        return {"risk": "unknown", "vol": None}

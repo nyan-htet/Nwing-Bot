@@ -6,8 +6,9 @@ JSON artifacts; the final watchlist.json is written only in stage 3.
 
   stage1: FMP bulk fundamentals / market-cap funnel
   stage2: Twelve Data daily technical ranking
-  stage3: options + earnings context and final watchlist
-  stage4: notification only (no API work)
+  stage3: Twelve Data 4H setup trim (cost control before context)
+  stage4: options + earnings context and final watchlist
+  stage5: notification only (no API work)
 """
 
 import datetime as dt
@@ -26,6 +27,7 @@ import alerts_ledger as al
 STAGE1 = "nightly_stage1.json"
 STAGE2 = "nightly_stage2.json"
 STAGE3 = "nightly_stage3.json"
+STAGE4 = "nightly_stage4.json"
 DIAGNOSTICS = "nightly_diagnostics.json"
 
 
@@ -86,7 +88,13 @@ def print_stage_diagnostics(stage, input_n, passed, failed, reasons, status="com
 
 
 def stage1():
-    """Trim the universe using FMP bulk profile/TTM data."""
+    """Trim the universe using the FMP company-screener (market cap + liquidity).
+
+    Uses fnd.screener_context(), which makes a small, bounded number of
+    bulk screener calls (not one call per ticker) and returns a stock
+    universe already capped/tiered to cfg.DAILY_STOCK_CAP — this is the
+    cost-control gate before stage 2 spends any Twelve Data calls.
+    """
     import universe
 
     tickers, tmeta = universe.load()
@@ -95,72 +103,59 @@ def stage1():
         if tmeta.get(t, {}).get("type") == "etf"
         or t in getattr(cfg, "ETF_TICKERS", [])
     }
+    for t in etf_set:
+        tmeta.setdefault(t, {})["type"] = "etf"
     stocks = [t for t in tickers if t not in etf_set]
 
-    profiles, ratios, bulk_note = fnd.bulk_context(stocks)
+    daily_cap = int(getattr(cfg, "DAILY_STOCK_CAP", 500) or 500)
 
-    # Never allow an upstream FMP outage/plan limitation to silently turn
-    # every stock into a "fundamental failure" and publish an ETF-only list.
-    if stocks and (not profiles or not ratios):
-        msg = (
-            "FMP bulk fundamentals unavailable. "
-            f"profiles={len(profiles)}/{len(stocks)}, "
-            f"ratios={len(ratios)}/{len(stocks)}. "
-            "Do not publish an ETF-only watchlist."
-        )
+    try:
+        result = fnd.screener_context(tickers, tmeta, stock_cap=daily_cap)
+    except Exception as exc:
+        msg = f"FMP screener unavailable: {type(exc).__name__}: {str(exc)[:160]}"
         save_diagnostics(
             "stage1",
             input_n=len(stocks),
             failed=len(stocks),
-            reasons={"FMP bulk data unavailable": len(stocks)},
-            api_errors={"FMP bulk": msg},
+            reasons={"FMP screener unavailable": len(stocks)},
+            api_errors={"FMP screener": msg},
             status="failed",
             error=msg,
         )
         raise SystemExit("FATAL: " + msg)
 
-    eligible_stocks = []
-    meta = {}
-    tier_counts = {"A": 0, "B": 0, "C": 0, "D": 0, "UNKNOWN": 0}
-    screen_failed = []
-    screen_failed_details = []
+    eligible_stocks = result["eligible_stocks"]
+    meta = result["meta"]
+    failed = result["failed"]
+    tier_counts = result["tier_counts"]
+    bulk_note = result["note"]
 
-    screen_failed_details = {}
+    # Never allow an upstream FMP outage/plan limitation to silently turn
+    # every stock into a fundamental failure and publish an ETF-only list.
+    if stocks and not eligible_stocks:
+        msg = f"FMP screener produced zero eligible stocks. {bulk_note}"
+        save_diagnostics(
+            "stage1",
+            input_n=len(stocks),
+            failed=len(stocks),
+            reasons={"FMP screener produced nothing": len(stocks)},
+            api_errors={"FMP screener": bulk_note},
+            status="failed",
+            error=msg,
+        )
+        raise SystemExit("FATAL: " + msg)
+
     stage1_reasons = Counter()
     stage1_status = {}
-
-    for t in stocks:
-        scr = fnd.company_screen(
-            t, cfg, profiles.get(t), ratios.get(t), is_etf=False
-        )
-        tier = scr.get("tier", "UNKNOWN")
-        tier_counts[tier] = tier_counts.get(tier, 0) + 1
-
-        m = dict(tmeta.get(t, {}))
-        m["name"] = m.get("name") or scr.get("name") or ""
-        m["screen"] = {
-            "pass": scr.get("pass", True),
-            "notes": scr.get("notes", [])[:3],
-            "sector": scr.get("sector"),
-            "industry": scr.get("industry"),
-            "tier": tier,
-            "market_cap": scr.get("market_cap"),
-            "debt_to_equity": scr.get("debt_to_equity"),
-            "net_margin": scr.get("net_margin"),
-            "avg_dollar_volume": scr.get("avg_dollar_volume"),
-        }
-        meta[t] = m
-
-        if scr.get("pass", True):
-            eligible_stocks.append(t)
-            stage1_status[t] = {"status": "PASS", "tier": tier}
-        else:
-            screen_failed.append(t)
-            notes = scr.get("notes", [])[:3] or ["Quality filter failed"]
-            screen_failed_details[t] = notes
-            stage1_status[t] = {"status": "FAIL", "tier": tier, "reasons": notes}
-            for reason in notes:
-                stage1_reasons[reason] += 1
+    screen_failed = sorted(failed.keys())
+    screen_failed_details = dict(failed)
+    for t, notes in failed.items():
+        stage1_status[t] = {"status": "FAIL", "reasons": notes}
+        for reason in notes:
+            stage1_reasons[reason] += 1
+    for t in eligible_stocks:
+        tier = meta.get(t, {}).get("screen", {}).get("tier", "UNKNOWN")
+        stage1_status[t] = {"status": "PASS", "tier": tier}
 
     eligible = eligible_stocks + sorted(etf_set)
 
@@ -197,11 +192,11 @@ def stage1():
     print_stage_diagnostics("stage1", len(stocks), len(eligible_stocks),
                             len(screen_failed), stage1_reasons)
 
-    print("==== NIGHTLY STAGE 1 — FMP FUNDAMENTAL FUNNEL ====")
+    print("==== NIGHTLY STAGE 1 — FMP SCREENER FUNNEL ====")
     print(f"CSV unique tickers : {len(tickers)}")
     print(f"Stocks             : {len(stocks)}")
     print(f"ETFs (unfiltered)  : {len(etf_set)}")
-    print(f"FMP bulk            : {bulk_note}")
+    print(f"FMP screener       : {bulk_note}")
     print(f"Tier counts         : {tier_counts}")
     print(f"Fundamental fails   : {len(screen_failed)}")
     print(f"Technical survivors : {len(eligible_stocks)} stocks + {len(etf_set)} ETFs")
@@ -321,32 +316,130 @@ def stage2():
 
 
 def stage3():
-    """Add options/earnings context and write the final watchlist."""
+    """Twelve Data 4H setup trim.
+
+    Fetches 4H candles only for stage-2 survivors and keeps stocks that show
+    an active 4H setup (pullback-to-EMA20 or volume breakout), capped at
+    cfg.STAGE3_4H_CAP. This is a *cost* trim only — it never judges signal
+    quality; hourly-scan still owns the real entry decision on 1H. ETFs are
+    a small fixed basket and are carried through unfiltered.
+    """
     s2 = load(STAGE2)
     top = s2["top"]
-    meta = s2["meta"]
-    spots = s2.get("spots", {})
+    top_stocks = s2["top_stocks"]
+    top_etfs = s2["top_etfs"]
 
     if not top:
-        raise SystemExit("FATAL: Stage 2 state contains an empty top list.")
+        raise SystemExit("FATAL: Stage 2 produced no survivors to trim on 4H.")
 
-    import options_context as oc
+    cap = int(getattr(cfg, "STAGE3_4H_CAP", 150) or 0)
 
-    earn_set, earn_note = fnd.earnings_soon_set(days_ahead=7)
+    d4 = data.fetch_td(top, interval="4h", outputsize=200)
+
+    setups = {}
+    no_4h_data = []
     stage3_reasons = Counter()
     stage3_status = {}
 
     for t in top:
-        m = dict(meta.get(t, s2["tmeta"].get(t, {})))
+        h4 = d4.get(t)
+        if h4 is None or len(h4) < 25:
+            no_4h_data.append(t)
+            stage3_status[t] = {"status": "FAIL", "reason": "No/short 4H data"}
+            stage3_reasons["No/short 4H data"] += 1
+            continue
+        try:
+            setup = analysis.setup_4h(h4, cfg)
+        except Exception as exc:
+            reason = f"4H setup error: {type(exc).__name__}"
+            stage3_status[t] = {"status": "FAIL", "reason": reason}
+            stage3_reasons[reason] += 1
+            continue
+        if setup:
+            setups[t] = setup
+            stage3_status[t] = {"status": "PASS", "setup": setup}
+        else:
+            stage3_status[t] = {"status": "FAIL", "reason": "No active 4H setup"}
+            stage3_reasons["No active 4H setup"] += 1
+
+    # Preserve stage-2 rank order, only keep stocks with an active setup, cap.
+    setup_stocks = [t for t in top_stocks if t in setups]
+    dropped_no_setup = [t for t in top_stocks if t not in setups]
+    kept_stocks = setup_stocks[:cap]
+    cut_by_cap = setup_stocks[cap:]
+    for t in cut_by_cap:
+        stage3_status[t]["status"] = "FAIL"
+        stage3_status[t]["reason"] = "Cut by NIGHTLY_4H_STOCK_CAP (cost control)"
+        stage3_reasons["Cut by NIGHTLY_4H_STOCK_CAP (cost control)"] += 1
+
+    trimmed = kept_stocks + top_etfs
+    if not trimmed:
+        raise SystemExit("FATAL: Stage 3 (4H trim) produced an empty watchlist.")
+
+    for t in kept_stocks:
+        stage3_status.setdefault(t, {})["final"] = "4H_SURVIVOR"
+    for t in top_etfs:
+        stage3_status.setdefault(t, {})["final"] = "ETF_SURVIVOR"
+
+    state = {
+        **s2,
+        "top": trimmed,
+        "top_stocks": kept_stocks,
+        "top_etfs": top_etfs,
+        "setups": setups,
+        "no_4h_data": no_4h_data,
+        "dropped_no_setup": dropped_no_setup,
+        "stage3_created": dt.datetime.now(dt.timezone.utc).isoformat(),
+    }
+    save(STAGE3, state)
+    save_diagnostics(
+        "stage3",
+        input_n=len(top),
+        passed=len(trimmed),
+        failed=len(top) - len(trimmed),
+        reasons=stage3_reasons,
+        ticker_status=stage3_status,
+    )
+    print_stage_diagnostics("stage3", len(top), len(trimmed),
+                            len(top) - len(trimmed), stage3_reasons)
+
+    print("==== NIGHTLY STAGE 3 — 4H SETUP TRIM ====")
+    print(f"Daily survivors    : {len(top)}")
+    print(f"No/short 4H data   : {len(no_4h_data)}")
+    print(f"No active 4H setup : {len(dropped_no_setup)}")
+    print(f"Cut by cap ({cap})   : {len(cut_by_cap)}")
+    print(f"Stocks kept        : {len(kept_stocks)}")
+    print(f"ETFs kept          : {len(top_etfs)}")
+    print("==========================================")
+
+
+def stage4():
+    """Add options/earnings context and write the final watchlist."""
+    s3 = load(STAGE3)
+    top = s3["top"]
+    meta = s3["meta"]
+    spots = s3.get("spots", {})
+
+    if not top:
+        raise SystemExit("FATAL: Stage 3 state contains an empty top list.")
+
+    import options_context as oc
+
+    earn_set, earn_note = fnd.earnings_soon_set(days_ahead=7)
+    stage4_reasons = Counter()
+    stage4_status = {}
+
+    for t in top:
+        m = dict(meta.get(t, s3["tmeta"].get(t, {})))
         spot = float(spots.get(t, 0) or 0)
         try:
             m["options"] = oc.fetch_context(t, spot) if spot else {"liquid": False}
-            stage3_status[t] = {"status": "PASS", "options_loaded": bool(spot)}
+            stage4_status[t] = {"status": "PASS", "options_loaded": bool(spot)}
         except Exception as exc:
             reason = f"Options context error: {type(exc).__name__}"
             m["options"] = {"liquid": False, "error": reason}
-            stage3_status[t] = {"status": "WARN", "reason": reason}
-            stage3_reasons[reason] += 1
+            stage4_status[t] = {"status": "WARN", "reason": reason}
+            stage4_reasons[reason] += 1
         if m.get("type", "stock") == "stock":
             m["earnings_soon"] = t.upper() in earn_set
         meta[t] = m
@@ -364,52 +457,52 @@ def stage3():
     info = {
         "when": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M"),
         "watchlist_n": len(final_tickers),
-        "csv_n": s2["csv_n"],
+        "csv_n": s3["csv_n"],
         "tracked": list(ledger.keys()),
         "thesis_warned": [t for t, e in ledger.items() if e.get("thesis_warned")],
         "earnings": earnings_soon,
-        "screen_failed": s2["screen_failed"],
-        "screen_failed_details": s2["screen_failed_details"],
+        "screen_failed": s3["screen_failed"],
+        "screen_failed_details": s3["screen_failed_details"],
         "new_entrants": (
-            sorted(set(top) - set(s2.get("prev", [])))
-            if s2.get("prev") else []
+            sorted(set(top) - set(s3.get("prev", [])))
+            if s3.get("prev") else []
         ),
         "dropped": (
-            sorted(set(s2.get("prev", [])) - set(top))
-            if s2.get("prev") else []
+            sorted(set(s3.get("prev", [])) - set(top))
+            if s3.get("prev") else []
         ),
-        "top": s2["top_ranked"],
-        "no_data": s2["no_data"],
-        "short_history": s2["short_history"],
-        "tier_counts": s2["tier_counts"],
-        "bulk_note": s2["bulk_note"],
+        "top": s3["top_ranked"],
+        "no_data": s3["no_data"],
+        "short_history": s3["short_history"],
+        "tier_counts": s3["tier_counts"],
+        "bulk_note": s3["bulk_note"],
         "earnings_note": earn_note,
     }
-    save(STAGE3, {"info": info, "watchlist": {"tickers": final_tickers, "meta": meta}})
+    save(STAGE4, {"info": info, "watchlist": {"tickers": final_tickers, "meta": meta}})
     save_diagnostics(
-        "stage3",
+        "stage4",
         input_n=len(top),
         passed=len(final_tickers),
         failed=0,
-        reasons=stage3_reasons,
-        ticker_status=stage3_status,
+        reasons=stage4_reasons,
+        ticker_status=stage4_status,
     )
-    print_stage_diagnostics("stage3", len(top), len(final_tickers), 0,
-                            stage3_reasons)
+    print_stage_diagnostics("stage4", len(top), len(final_tickers), 0,
+                            stage4_reasons)
 
-    print("==== NIGHTLY STAGE 3 — CONTEXT + FINALIZE ====")
+    print("==== NIGHTLY STAGE 4 — CONTEXT + FINALIZE ====")
     print(earn_note)
     print(f"Final watchlist    : {len(final_tickers)}")
     print("===============================================")
 
 
-def stage4():
+def stage5():
     """Send the final nightly notification. No expensive API calls."""
-    s3 = load(STAGE3)
-    info = s3["info"]
+    s4 = load(STAGE4)
+    info = s4["info"]
     note = notify.format_nightly(info)
     save_diagnostics(
-        "stage4",
+        "stage5",
         input_n=info.get("watchlist_n", 0),
         passed=info.get("watchlist_n", 0),
         failed=0,
@@ -434,10 +527,14 @@ def main():
         stage3()
     elif stage == "stage4":
         stage4()
+    elif stage == "stage5":
+        stage5()
     elif stage == "all":
-        stage1(); stage2(); stage3(); stage4()
+        stage1(); stage2(); stage3(); stage4(); stage5()
     else:
-        raise SystemExit("Usage: python nightly.py stage1|stage2|stage3|stage4|all")
+        raise SystemExit(
+            "Usage: python nightly.py stage1|stage2|stage3|stage4|stage5|all"
+        )
 
 
 if __name__ == "__main__":
