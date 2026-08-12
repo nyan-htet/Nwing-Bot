@@ -60,3 +60,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-11 15:42 UTC,IR,openai,True,3,1,OK,mixed,pullback continuation
 2026-08-11 15:42 UTC,ABBV,openai,True,3,5,OK,mixed,pullback continuation
 2026-08-11 17:24 UTC,DAL,openai,True,3,0,NO_NEWS,supportive,pullback continuation
+2026-08-12 17:23 UTC,TEL,openai,True,3,0,NO_NEWS,mixed,pullback continuation
+2026-08-12 17:23 UTC,BA,openai,True,3,8,OK,mixed,pullback continuation
