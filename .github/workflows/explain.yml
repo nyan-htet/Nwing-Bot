@@ -8,6 +8,9 @@ on:
         default: "GLD"
 permissions:
   contents: write
+concurrency:
+  group: twelvedata-api
+  cancel-in-progress: false
 jobs:
   explain:
     runs-on: ubuntu-latest

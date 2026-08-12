@@ -5,6 +5,9 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
+concurrency:
+  group: twelvedata-api
+  cancel-in-progress: false
 jobs:
   scan:
     runs-on: ubuntu-latest

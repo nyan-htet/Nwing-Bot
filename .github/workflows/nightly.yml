@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nightly-scan
+  group: twelvedata-api
   cancel-in-progress: false
 
 jobs:
