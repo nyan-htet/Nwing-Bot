@@ -77,13 +77,24 @@ def _num(v):
 
 
 def screener_context(tickers, meta, stock_cap=500):
-    """Return a first-pass universe using FMP screener only.
+    """Two-step first-pass universe using FMP screener only. Deliberately
+    does NOT request financial statements (see README §8 — that's what
+    caused the old bulk_context HTTP 402s).
 
-    The screener supplies market cap, price and volume. We rank within each
-    tier by estimated dollar liquidity and keep a bounded stock universe.
-    This deliberately does NOT request financial statements.
+    Step 1 — Hard eligibility: reject only what genuinely shouldn't enter
+    the analysis universe at all (sub-$100M market cap, no FMP match,
+    invalid price data, or an implausible volume/market-cap combination).
+    This is intentionally loose — it should pass through most of the
+    universe, not do the real filtering.
 
-    Tier quotas preserve exposure across the cap tiers:
+    Step 2 — Tier-aware ranking + processing budget: within each tier, rank
+    survivors by the signals we can actually trust from one bulk call
+    (market cap, and reported volume when it's present and nonzero) and
+    take the top N per tier. N is a processing budget, not a target: if
+    fewer stocks are hard-eligible than the budget, all of them pass
+    through unchanged; the budget only trims when there's genuine excess.
+
+    Tier quotas (the processing budget):
       A: up to 200
       B: up to 200
       C: up to 100
@@ -103,12 +114,16 @@ def screener_context(tickers, meta, stock_cap=500):
             "note": "No stocks in universe",
         }
 
-    # Use the screener's own market-cap floor so < $100M symbols are excluded
-    # before any Twelve Data time-series calls.
+    # Deliberately no "country": "US" filter — FMP's country field reflects
+    # legal domicile, not exchange listing. Real S&P500/Nasdaq constituents
+    # like Accenture (Ireland), Linde (UK/Germany), Chubb (Switzerland), or
+    # any US-exchange-listed ADR (HSBC, UBS, Toyota...) would otherwise be
+    # silently excluded even though they trade on NYSE/Nasdaq every day.
+    # tickers.csv (via the `wanted` filter below) already scopes the universe
+    # correctly, so we don't need FMP to pre-filter by domicile.
     rows = _get(
         "company-screener",
         {
-            "country": "US",
             "isEtf": "false",
             "isFund": "false",
             "isActivelyTrading": "true",
@@ -134,7 +149,6 @@ def screener_context(tickers, meta, stock_cap=500):
         more = _get(
             "company-screener",
             {
-                "country": "US",
                 "isEtf": "false",
                 "isFund": "false",
                 "isActivelyTrading": "true",
@@ -153,9 +167,12 @@ def screener_context(tickers, meta, stock_cap=500):
             break
         page += 1
 
+    # ---- Step 1 — Hard eligibility ----
+    # Only reject things that genuinely shouldn't enter the universe at all.
     tier_buckets = {"A": [], "B": [], "C": []}
     failed = {}
     tier_counts = {"A": 0, "B": 0, "C": 0, "D": 0, "UNKNOWN": 0}
+    hard_eligible_n = 0
 
     for t in stocks:
         row = by_symbol.get(t)
@@ -178,7 +195,7 @@ def screener_context(tickers, meta, stock_cap=500):
         m["sector"] = row.get("sector") or m.get("sector") or "Other"
         m["industry"] = row.get("industry") or m.get("industry") or "Other"
         m["screen"] = {
-            "pass": tier in ("A", "B", "C"),
+            "pass": False,
             "tier": tier,
             "market_cap": mc,
             "price": price,
@@ -193,31 +210,52 @@ def screener_context(tickers, meta, stock_cap=500):
             meta[t] = m
             continue
 
-        if dollar_volume is None:
-            m["screen"]["notes"].append("current dollar volume unavailable")
+        if price is None or price <= 0:
+            m["screen"]["notes"].append("invalid/missing price data")
             failed[t] = m["screen"]["notes"]
             meta[t] = m
             continue
 
-        # Minimum liquidity gate for stocks; C gets a stronger floor.
-        if tier == "C" and dollar_volume < 5e6:
-            m["screen"]["notes"].append("Tier C dollar liquidity below $5M")
+        # "Obviously unusable liquidity" — NOT the same as volume==0/None.
+        # The company-screener "volume" field is unreliable on FMP plans
+        # without real-time entitlement (it silently reads 0 for real
+        # mega-caps like AAPL/NVDA — see Step 2 below), so 0/missing volume
+        # is NOT treated as unusable here. This only catches a genuine
+        # red-flag combination: a nonzero but implausibly tiny reported
+        # volume for a mega-cap, which is a data-quality signal distinct
+        # from "the field just wasn't populated".
+        if tier == "A" and volume is not None and 0 < volume < 100:
+            m["screen"]["notes"].append(
+                f"implausible volume ({volume:.0f}) for a Tier A market cap"
+            )
             failed[t] = m["screen"]["notes"]
             meta[t] = m
             continue
 
-        if dollar_volume < 2e6:
-            m["screen"]["notes"].append("dollar liquidity below $2M")
-            failed[t] = m["screen"]["notes"]
-            meta[t] = m
-            continue
-
-        m["screen"]["notes"].append("passed market-cap/liquidity funnel")
+        m["screen"]["pass"] = True
+        m["screen"]["notes"].append("hard-eligible; ranked in Step 2")
         meta[t] = m
-        tier_buckets[tier].append((dollar_volume, t))
+        hard_eligible_n += 1
+        tier_buckets[tier].append(t)
 
-    # Preserve the large-cap universe but put a hard ceiling on TD work.
-    # C gets a meaningful allocation so smaller companies are not crowded out.
+    # ---- Step 2 — Tier-aware ranking + processing budget ----
+    # Rank within each tier using the signals we can trust from one bulk
+    # call: market cap (primary — reliably populated) and reported dollar
+    # volume when it's actually present and nonzero (soft secondary signal;
+    # treated as neutral, not penalized, when missing/zero, since that's a
+    # known data gap on this FMP plan rather than a real quality signal).
+    #
+    # NOT included: profitability/debt ratios for Tier C. That data isn't
+    # in this bulk endpoint's response — fetching it would mean a call per
+    # symbol, which is exactly the cost problem Stage 1 exists to avoid
+    # (README §8). Add it deliberately later if you want to spend the calls.
+    def _rank_key(t):
+        scr = meta[t]["screen"]
+        return (scr["market_cap"] or 0, scr["dollar_volume"] or 0)
+
+    # The quota is a processing BUDGET, not a target: sorted()[:quota] takes
+    # at most `quota` — if fewer than `quota` are hard-eligible in a tier,
+    # all of them pass through unchanged. It only trims genuine excess.
     quotas = {"A": 200, "B": 200, "C": 100}
     if stock_cap != 500:
         # Scale quotas proportionally while preserving C.
@@ -229,14 +267,15 @@ def screener_context(tickers, meta, stock_cap=500):
 
     eligible = []
     for tier in ("A", "B", "C"):
-        bucket = sorted(tier_buckets[tier], reverse=True)
-        eligible.extend(t for _, t in bucket[:quotas[tier]])
-        for _, t in bucket[quotas[tier]:]:
-            failed[t] = [f"Tier {tier} liquidity rank below nightly cutoff"]
+        ranked = sorted(tier_buckets[tier], key=_rank_key, reverse=True)
+        eligible.extend(ranked[:quotas[tier]])
+        for t in ranked[quotas[tier]:]:
+            failed[t] = [f"Tier {tier} rank below nightly processing budget ({quotas[tier]})"]
 
     note = (
         f"FMP screener matched {len(by_symbol)}/{len(stocks)} stocks; "
-        f"stock TD cap={len(eligible)}; ETFs untouched={len(etfs)}"
+        f"hard-eligible={hard_eligible_n}; stock TD budget={len(eligible)}; "
+        f"ETFs untouched={len(etfs)}"
     )
     return {
         "eligible_stocks": eligible,
