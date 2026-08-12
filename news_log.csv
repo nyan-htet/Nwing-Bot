@@ -62,3 +62,10 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-11 17:24 UTC,DAL,openai,True,3,0,NO_NEWS,supportive,pullback continuation
 2026-08-12 17:23 UTC,TEL,openai,True,3,0,NO_NEWS,mixed,pullback continuation
 2026-08-12 17:23 UTC,BA,openai,True,3,8,OK,mixed,pullback continuation
+2026-08-12 22:29 UTC,UFPI,openai,True,3,0,NO_NEWS,mixed,pullback continuation
+2026-08-12 22:29 UTC,EPAM,openai,True,3,0,NO_NEWS,mixed,pullback continuation
+2026-08-12 22:29 UTC,DUOL,openai,True,3,1,OK,mixed,pullback continuation
+2026-08-12 22:29 UTC,DSGX,openai,True,3,0,NO_NEWS,supportive,pullback continuation
+2026-08-12 22:29 UTC,BRKR,openai,True,3,1,OK,mixed,pullback continuation
+2026-08-12 22:29 UTC,ADSE,openai,True,3,0,NO_NEWS,caution,pullback continuation
+2026-08-12 22:29 UTC,ADP,openai,True,3,3,OK,mixed,pullback continuation
