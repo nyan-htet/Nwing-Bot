@@ -11,6 +11,7 @@ JSON artifacts; the final watchlist.json is written only in stage 3.
 """
 
 import datetime as dt
+from collections import Counter
 import json
 import os
 import sys
@@ -25,6 +26,7 @@ import alerts_ledger as al
 STAGE1 = "nightly_stage1.json"
 STAGE2 = "nightly_stage2.json"
 STAGE3 = "nightly_stage3.json"
+DIAGNOSTICS = "nightly_diagnostics.json"
 
 
 def save(path, obj):
@@ -40,6 +42,47 @@ def load(path):
     if not isinstance(obj, dict) or not obj:
         raise SystemExit(f"FATAL: required state file is empty/invalid: {path}")
     return obj
+
+
+def save_diagnostics(stage, input_n=0, passed=0, failed=0,
+                     reasons=None, ticker_status=None,
+                     api_errors=None, status="completed", error=None):
+    """Persist stage-by-stage funnel diagnostics; never breaks the scanner."""
+    try:
+        existing = {}
+        if os.path.exists(DIAGNOSTICS):
+            with open(DIAGNOSTICS, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+        existing.setdefault("run_started", dt.datetime.now(dt.timezone.utc).isoformat())
+        existing["last_updated"] = dt.datetime.now(dt.timezone.utc).isoformat()
+        existing.setdefault("stages", {})
+        existing["stages"][stage] = {
+            "status": status,
+            "input": int(input_n or 0),
+            "passed": int(passed or 0),
+            "failed": int(failed or 0),
+            "reasons": dict(reasons or {}),
+            "api_errors": dict(api_errors or {}),
+            "ticker_status": ticker_status or {},
+            "error": error,
+        }
+        with open(DIAGNOSTICS, "w", encoding="utf-8") as f:
+            json.dump(existing, f, indent=2, default=str)
+    except Exception as exc:
+        print(f"WARNING: diagnostics write failed: {exc}")
+
+
+def print_stage_diagnostics(stage, input_n, passed, failed, reasons, status="completed"):
+    print(f"\n==== DIAGNOSTICS — {stage.upper()} ====")
+    print(f"Status : {status}")
+    print(f"Input  : {input_n}")
+    print(f"Passed : {passed}")
+    print(f"Failed : {failed}")
+    if reasons:
+        print("Reasons:")
+        for reason, count in sorted(reasons.items(), key=lambda x: (-x[1], x[0])):
+            print(f"  - {reason}: {count}")
+    print("======================================")
 
 
 def stage1():
@@ -59,12 +102,22 @@ def stage1():
     # Never allow an upstream FMP outage/plan limitation to silently turn
     # every stock into a "fundamental failure" and publish an ETF-only list.
     if stocks and (not profiles or not ratios):
-        raise SystemExit(
-            "FATAL: FMP bulk fundamentals unavailable. "
+        msg = (
+            "FMP bulk fundamentals unavailable. "
             f"profiles={len(profiles)}/{len(stocks)}, "
             f"ratios={len(ratios)}/{len(stocks)}. "
             "Do not publish an ETF-only watchlist."
         )
+        save_diagnostics(
+            "stage1",
+            input_n=len(stocks),
+            failed=len(stocks),
+            reasons={"FMP bulk data unavailable": len(stocks)},
+            api_errors={"FMP bulk": msg},
+            status="failed",
+            error=msg,
+        )
+        raise SystemExit("FATAL: " + msg)
 
     eligible_stocks = []
     meta = {}
@@ -73,6 +126,8 @@ def stage1():
     screen_failed_details = []
 
     screen_failed_details = {}
+    stage1_reasons = Counter()
+    stage1_status = {}
 
     for t in stocks:
         scr = fnd.company_screen(
@@ -98,11 +153,14 @@ def stage1():
 
         if scr.get("pass", True):
             eligible_stocks.append(t)
+            stage1_status[t] = {"status": "PASS", "tier": tier}
         else:
             screen_failed.append(t)
-            screen_failed_details[t] = (
-                scr.get("notes", [])[:3] or ["Quality filter failed"]
-            )
+            notes = scr.get("notes", [])[:3] or ["Quality filter failed"]
+            screen_failed_details[t] = notes
+            stage1_status[t] = {"status": "FAIL", "tier": tier, "reasons": notes}
+            for reason in notes:
+                stage1_reasons[reason] += 1
 
     eligible = eligible_stocks + sorted(etf_set)
 
@@ -128,6 +186,16 @@ def stage1():
         "created": dt.datetime.now(dt.timezone.utc).isoformat(),
     }
     save(STAGE1, state)
+    save_diagnostics(
+        "stage1",
+        input_n=len(stocks),
+        passed=len(eligible_stocks),
+        failed=len(screen_failed),
+        reasons=stage1_reasons,
+        ticker_status=stage1_status,
+    )
+    print_stage_diagnostics("stage1", len(stocks), len(eligible_stocks),
+                            len(screen_failed), stage1_reasons)
 
     print("==== NIGHTLY STAGE 1 — FMP FUNDAMENTAL FUNNEL ====")
     print(f"CSV unique tickers : {len(tickers)}")
@@ -159,16 +227,35 @@ def stage2():
         )
 
     scored, short_history, no_data = [], [], []
+    stage2_reasons = Counter()
+    stage2_status = {}
+
     for t in eligible_stocks:
         df = d.get(t)
         if df is None:
             no_data.append(t)
+            stage2_status[t] = {"status": "FAIL", "reason": "No Twelve Data daily data"}
+            stage2_reasons["No Twelve Data daily data"] += 1
             continue
         if len(df) < 120:
             short_history.append(t)
+            stage2_status[t] = {"status": "FAIL", "reason": "Insufficient daily history"}
+            stage2_reasons["Insufficient daily history"] += 1
             continue
-        tr = analysis.daily_trend(df, spy, cfg)
-        scored.append((tr["score"] + tr["rs"], t))
+        try:
+            tr = analysis.daily_trend(df, spy, cfg)
+            score = tr["score"] + tr["rs"]
+            scored.append((score, t))
+            stage2_status[t] = {
+                "status": "RANKED",
+                "score": tr.get("score"),
+                "relative_strength": tr.get("rs"),
+                "combined_score": score,
+            }
+        except Exception as exc:
+            reason = f"Technical calculation error: {type(exc).__name__}"
+            stage2_status[t] = {"status": "FAIL", "reason": reason}
+            stage2_reasons[reason] += 1
 
     scored.sort(reverse=True)
     top_stocks = [t for _, t in scored[:cfg.WATCHLIST_SIZE]]
@@ -194,6 +281,11 @@ def stage2():
         for t in top if t in d and len(d[t])
     }
 
+    for t in top_stocks:
+        stage2_status.setdefault(t, {})["final"] = "SURVIVOR"
+    for t in top_etfs:
+        stage2_status.setdefault(t, {})["final"] = "ETF_SURVIVOR"
+
     state = {
         **s1,
         "top_stocks": top_stocks,
@@ -206,6 +298,17 @@ def stage2():
         "technical_created": dt.datetime.now(dt.timezone.utc).isoformat(),
     }
     save(STAGE2, state)
+    stage2_failed = len(eligible_stocks) - len(scored)
+    save_diagnostics(
+        "stage2",
+        input_n=len(eligible_stocks),
+        passed=len(top_stocks),
+        failed=stage2_failed,
+        reasons=stage2_reasons,
+        ticker_status=stage2_status,
+    )
+    print_stage_diagnostics("stage2", len(eligible_stocks), len(top_stocks),
+                            stage2_failed, stage2_reasons)
 
     print("==== NIGHTLY STAGE 2 — TECHNICAL FUNNEL ====")
     print(f"Technical universe : {len(eligible_stocks)} stocks + {len(etf_set)} ETFs")
@@ -230,10 +333,20 @@ def stage3():
     import options_context as oc
 
     earn_set, earn_note = fnd.earnings_soon_set(days_ahead=7)
+    stage3_reasons = Counter()
+    stage3_status = {}
+
     for t in top:
         m = dict(meta.get(t, s2["tmeta"].get(t, {})))
         spot = float(spots.get(t, 0) or 0)
-        m["options"] = oc.fetch_context(t, spot) if spot else {"liquid": False}
+        try:
+            m["options"] = oc.fetch_context(t, spot) if spot else {"liquid": False}
+            stage3_status[t] = {"status": "PASS", "options_loaded": bool(spot)}
+        except Exception as exc:
+            reason = f"Options context error: {type(exc).__name__}"
+            m["options"] = {"liquid": False, "error": reason}
+            stage3_status[t] = {"status": "WARN", "reason": reason}
+            stage3_reasons[reason] += 1
         if m.get("type", "stock") == "stock":
             m["earnings_soon"] = t.upper() in earn_set
         meta[t] = m
@@ -273,6 +386,16 @@ def stage3():
         "earnings_note": earn_note,
     }
     save(STAGE3, {"info": info, "watchlist": {"tickers": final_tickers, "meta": meta}})
+    save_diagnostics(
+        "stage3",
+        input_n=len(top),
+        passed=len(final_tickers),
+        failed=0,
+        reasons=stage3_reasons,
+        ticker_status=stage3_status,
+    )
+    print_stage_diagnostics("stage3", len(top), len(final_tickers), 0,
+                            stage3_reasons)
 
     print("==== NIGHTLY STAGE 3 — CONTEXT + FINALIZE ====")
     print(earn_note)
@@ -285,6 +408,13 @@ def stage4():
     s3 = load(STAGE3)
     info = s3["info"]
     note = notify.format_nightly(info)
+    save_diagnostics(
+        "stage4",
+        input_n=info.get("watchlist_n", 0),
+        passed=info.get("watchlist_n", 0),
+        failed=0,
+        status="completed",
+    )
     print("\n" + note)
     notify.send_email(
         f"Nightly complete — watchlist {info['watchlist_n']} ({info['when']} UTC)",
