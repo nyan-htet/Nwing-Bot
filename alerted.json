@@ -47,7 +47,7 @@
   "BOAT": {
     "alerted": "2026-08-07T08:09:04.119076+00:00",
     "entry": 43.87,
-    "scans_muted": 22,
+    "scans_muted": 23,
     "thesis_warned": false,
     "tp": 51.88
   },
@@ -67,7 +67,7 @@
   "CNC": {
     "alerted": "2026-08-10T13:55:05.622943+00:00",
     "entry": 66.99,
-    "scans_muted": 13,
+    "scans_muted": 14,
     "thesis_warned": false,
     "tp": 79.62
   },
@@ -81,7 +81,7 @@
   "CRAK": {
     "alerted": "2026-08-10T13:55:05.717317+00:00",
     "entry": 55.43,
-    "scans_muted": 13,
+    "scans_muted": 14,
     "thesis_warned": false,
     "tp": 64.95
   },
@@ -123,7 +123,7 @@
   "FAS": {
     "alerted": "2026-08-10T21:11:19.059972+00:00",
     "entry": 181.31,
-    "scans_muted": 11,
+    "scans_muted": 12,
     "thesis_warned": false,
     "tp": 209.1
   },
@@ -157,7 +157,7 @@
   "HUM": {
     "alerted": "2026-08-07T21:08:17.103042+00:00",
     "entry": 384.84,
-    "scans_muted": 17,
+    "scans_muted": 18,
     "thesis_warned": false,
     "tp": 481.05
   },
@@ -296,7 +296,7 @@
   "UGA": {
     "alerted": "2026-08-10T17:19:44.382070+00:00",
     "entry": 117.44,
-    "scans_muted": 12,
+    "scans_muted": 13,
     "thesis_warned": false,
     "tp": 142.34
   },
@@ -336,7 +336,7 @@
   "YINN": {
     "alerted": "2026-08-07T08:09:07.330701+00:00",
     "entry": 30.97,
-    "scans_muted": 22,
+    "scans_muted": 23,
     "thesis_warned": false,
     "tp": 36.86
   },
