@@ -40,8 +40,15 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
         return None
     q = analysis.quality_score(h1, h4, setup, cfg, octx=octx,
                                entry_hint=float(h1["close"].iloc[-1]))
-    floor = (getattr(cfg, "SCORE_MIN_ETF", cfg.SCORE_MIN) if is_etf
-             else getattr(cfg, "SCORE_MIN_STOCK", cfg.SCORE_MIN))
+    if is_etf:
+        floor = getattr(cfg, "SCORE_MIN_ETF", cfg.SCORE_MIN)
+    else:
+        tier = str((screen or {}).get("tier") or "A").upper()
+        floor = {
+            "A": getattr(cfg, "SCORE_MIN_STOCK", cfg.SCORE_MIN),
+            "B": getattr(cfg, "TIER_B_SCORE_MIN", 0.76),
+            "C": getattr(cfg, "TIER_C_SCORE_MIN", 0.82),
+        }.get(tier, getattr(cfg, "SCORE_MIN_STOCK", cfg.SCORE_MIN))
     if q["total"] < floor:
         return None
     entry = float(h1["close"].iloc[-1])
@@ -65,8 +72,11 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
     ok, fee_frac = analysis.fee_check(entry, tp, shares, is_etf, cfg)
     if not ok:
         return None
+    tier = str((screen or {}).get("tier") or ("ETF" if is_etf else "A")).upper()
     reasons = [f"daily uptrend (score {trend['score']}/5)", f"4h {setup}",
                "1h momentum trigger"]
+    if not is_etf:
+        reasons.append(f"market-cap Tier {tier} (technical floor {floor:.2f})")
     if trend["runner"]:
         reasons.append("RUNNER: near 52w high + outperforming SPY")
     reasons.append(f"quality {q['total']:+.2f} (rsi {q['detail']['rsi']:+.1f}, "
@@ -108,7 +118,8 @@ def build_signal(ticker, h1, spy_daily, is_etf, screen, octx=None, tmeta=None):
             "regime": trend.get("regime"), "regime_weeks": trend.get("regime_weeks"),
             "ema20": trend.get("ema20"), "ema50": trend.get("ema50"),
             "ema200": trend.get("ema200"), "above_ema200": trend.get("above_ema200"),
-            "quality": q["total"], "q_detail": q["detail"],
+            "quality": q["total"], "quality_floor": floor, "market_cap_tier": tier,
+            "q_detail": q["detail"],
             "q_notes": q.get("notes", {}),
             "context_notes": q.get("context_notes", []),
             "ext_atr": q.get("ext_atr"),
@@ -264,7 +275,7 @@ def run_hourly(offline=False):
 
     # --- scan ---
     ledger = al.load()
-    skip_report = {"earnings": [], "screen": [], "screen_details": {},
+    skip_report = {"earnings": [], "screen": [],
                    "already_alerted": [], "target_cleared": []}
     signals = []
     for t, h1 in h1_map.items():
@@ -283,12 +294,7 @@ def run_hourly(offline=False):
         is_etf = tmeta.get("type", "stock") == "etf"
         screen = tmeta.get("screen", {"pass": True, "notes": []})
         if not screen.get("pass", True):
-            notes = screen.get("notes") or ["Quality filter failed"]
-            # Keep the ticker and the reason separate. The old code embedded
-            # the reason inside the ticker string, producing an unreadable
-            # one-line Telegram wall of text.
             skip_report["screen"].append(t)
-            skip_report["screen_details"][t] = notes[:2]
             continue  # failed nightly FMP quality screen
         if tmeta.get("earnings_soon"):
             skip_report["earnings"].append(t)
@@ -327,36 +333,26 @@ def run_hourly(offline=False):
     al.save(ledger)          # persist immediately — nothing after this can lose it
 
     # --- deliver ---
-    # EMAIL: always receives the full hourly-scan output.
-    # TELEGRAM: intentionally does NOT receive new-signal messages because
-    # news-followup.yml runs after this workflow and sends the richer
-    # summarized signal report. Telegram only gets the hourly status when
-    # there are NO new signals.
+    # Email keeps every technical signal. Telegram intentionally does NOT get
+    # new-signal messages because news_llm.py sends the richer one-per-ticker
+    # follow-up after interpretation. Position/thesis alerts remain Telegram.
     for s in signals:
         body = notify.format_alert(s, macro, cyc)
         nm = f" ({s['name']})" if s.get("name") else ""
         sec = f" — {s['sector']}" if s.get("sector") and s["sector"] != "Unknown" else ""
         notify.send_email(f"BUY {s['ticker']}{nm}{sec} — {s['setup']} "
                           f"+{s['tp_pct']:.0%} | eToro TP ${s['pl_amount']:.0f}", body, cfg)
-
     for m in pos_msgs:
         notify.send_email("Position alert", m, cfg)
+        notify.send_telegram(m, cfg)
 
     al.save(ledger)
 
-    if not signals:
+    if not signals and not pos_msgs:
         when = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M")
-
-        if pos_msgs:
-            # No NEW signal, so Telegram may still receive the position alerts.
-            # These are not duplicate signal messages and remain useful.
-            for m in pos_msgs:
-                notify.send_telegram(m, cfg)
-
-        else:
-            note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when)
-            notify.send_email(f"NO NEW SIGNAL — {when} UTC", note, cfg)
-            notify.send_telegram(note, cfg)
+        note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when)
+        notify.send_email(f"NO NEW SIGNAL — {when} UTC", note, cfg)
+        notify.send_telegram(note, cfg)
     log_signals_csv(signals, macro, cyc)
     publish(signals, pos_msgs, macro, cyc)
     labels = {"cooldown": "you entered/skipped recently",
@@ -373,74 +369,104 @@ def run_hourly(offline=False):
 
 
 def run_nightly():
-    """Build watchlist from tickers.csv: keep names with valid data and an
-    intact daily uptrend ranking; cache options context (best effort)."""
+    """Build the next-day watchlist with a staged funnel.
+
+    1) Deduplicate the CSV universe.
+    2) Keep ETFs untouched by stock market-cap/fundamental filters.
+    3) Use FMP bulk profiles/TTM ratios to remove microcaps and apply tier rules.
+    4) Fetch daily technical data only for eligible stocks + all ETFs.
+    5) Rank stocks by daily trend and keep the strongest WATCHLIST_SIZE; ETFs are
+       added separately and are never removed by the stock cap.
+    """
     import universe
     tickers, tmeta = universe.load()
-    d = data.fetch_daily(tickers)
+    etf_set = {t for t in tickers if tmeta.get(t, {}).get("type") == "etf" or t in getattr(cfg, "ETF_TICKERS", [])}
+    stocks = [t for t in tickers if t not in etf_set]
+
+    # ---- Stage 1: FMP bulk profile/ratios ----
+    profiles, ratios, bulk_note = fnd.bulk_context(stocks)
+    eligible_stocks = []
+    meta = {}
+    tier_counts = {"A": 0, "B": 0, "C": 0, "D": 0, "UNKNOWN": 0}
+    screen_failed = []
+    for t in stocks:
+        scr = fnd.company_screen(t, cfg, profiles.get(t), ratios.get(t), is_etf=False)
+        tier = scr.get("tier", "UNKNOWN")
+        tier_counts[tier] = tier_counts.get(tier, 0) + 1
+        m = dict(tmeta.get(t, {}))
+        m["name"] = m.get("name") or scr.get("name") or ""
+        m["screen"] = {"pass": scr.get("pass", True), "notes": scr.get("notes", [])[:3],
+                       "sector": scr.get("sector"), "industry": scr.get("industry"),
+                       "tier": tier, "market_cap": scr.get("market_cap"),
+                       "debt_to_equity": scr.get("debt_to_equity"),
+                       "net_margin": scr.get("net_margin"),
+                       "avg_dollar_volume": scr.get("avg_dollar_volume")}
+        meta[t] = m
+        if scr.get("pass", True):
+            eligible_stocks.append(t)
+        else:
+            screen_failed.append(t)
+
+    # ETFs bypass stock filters entirely.
+    eligible = eligible_stocks + sorted(etf_set)
+    print("---- nightly universe funnel ----")
+    print(f"CSV unique tickers : {len(tickers)}")
+    print(f"Stocks             : {len(stocks)}")
+    print(f"ETFs (unfiltered)  : {len(etf_set)}")
+    print(f"FMP bulk           : {bulk_note}")
+    print(f"Tier counts        : {tier_counts}")
+    print(f"Stock fundamental fails: {len(screen_failed)}")
+    print(f"Technical universe : {len(eligible_stocks)} stocks + {len(etf_set)} ETFs")
+    print("---------------------------------")
+
+    # ---- Stage 2: Twelve Data daily only for survivors + ETFs ----
+    d = data.fetch_daily(eligible)
     spy = d.get("SPY")
     if spy is None:
-        raise SystemExit("FATAL: no SPY data from Twelve Data — check "
-                         "TWELVEDATA_KEY secret and quota, then re-run.")
-    # previous watchlist, to report what changed
+        raise SystemExit("FATAL: no SPY data from Twelve Data — check TWELVEDATA_KEY and quota.")
+
     try:
         prev = set(json.load(open(cfg.WATCHLIST_FILE)).get("tickers", []))
     except Exception:
         prev = set()
 
-    scored, meta = [], {}
-    no_data = [t for t in tickers if t not in d]
-    short_history = []
-    for t, df in d.items():
-        if t == "SPY":
-            continue
+    scored, short_history, no_data = [], [], []
+    for t in eligible_stocks:
+        df = d.get(t)
+        if df is None:
+            no_data.append(t); continue
         if len(df) < 120:
-            short_history.append(t)
-            continue
+            short_history.append(t); continue
         tr = analysis.daily_trend(df, spy, cfg)
-        # keep everything with data; rank by trend so hourly scans strongest first
         scored.append((tr["score"] + tr["rs"], t))
+
     scored.sort(reverse=True)
-    top = [t for _, t in scored[:cfg.WATCHLIST_SIZE]]
-    cut = [t for _, t in scored[cfg.WATCHLIST_SIZE:]]
-    print("---- nightly coverage report ----")
-    print(f"csv tickers      : {len(tickers)}")
-    print(f"benchmark (excl) : SPY")
-    print(f"no data from TD  : {len(no_data)}" + (f" -> {', '.join(no_data)}" if no_data else ""))
-    print(f"history < 120d   : {len(short_history)}" + (f" -> {', '.join(short_history)}" if short_history else ""))
-    if cut:
-        print(f"over watchlist cap: {len(cut)} -> {', '.join(cut)}")
-    print(f"in watchlist     : {len(top)}")
-    print("---------------------------------")
+    top_stocks = [t for _, t in scored[:cfg.WATCHLIST_SIZE]]
+    # ETFs are always included (provided TD returned data); they do not consume
+    # the stock spotlight cap.
+    top_etfs = [t for t in sorted(etf_set) if t in d and len(d[t]) >= 60]
+    top = top_stocks + top_etfs
+    print(f"Stock spotlight     : {len(top_stocks)} / {len(eligible_stocks)}")
+    print(f"ETFs retained       : {len(top_etfs)} / {len(etf_set)}")
+
     import options_context as oc
     earn_set, earn_note = fnd.earnings_soon_set(days_ahead=7)
     print(earn_note)
     for t in top:
         spot = float(d[t]["close"].iloc[-1]) if t in d else 0.0
-        m = dict(tmeta.get(t, {}))
+        m = meta.get(t, dict(tmeta.get(t, {})))
         m["options"] = oc.fetch_context(t, spot) if spot else {"liquid": False}
         if m.get("type", "stock") == "stock":
             m["earnings_soon"] = t.upper() in earn_set
-            scr = fnd.company_screen(t, cfg)
-            m["name"] = m.get("name") or scr.get("name") or ""
-            m["screen"] = {"pass": scr["pass"], "notes": scr["notes"][:2],
-                           "sector": scr.get("sector"), "industry": scr.get("industry")}
         meta[t] = m
+
     with open(cfg.WATCHLIST_FILE, "w") as f:
         json.dump({"tickers": sorted(set(top)), "meta": meta,
                    "built": dt.datetime.now(dt.timezone.utc).isoformat()}, f, indent=2)
-    print(f"Watchlist built from tickers.csv: {len(set(top))} of {len(tickers)} tickers")
 
-    # ---- nightly summary notification ----
+    # ---- Nightly notification ----
     ledger = al.load()
-    screen_failed = [t for t, m in meta.items()
-                     if not (m.get("screen") or {}).get("pass", True)]
-    screen_failed_details = {
-        t: (m.get("screen") or {}).get("notes") or ["Quality filter failed"]
-        for t, m in meta.items()
-        if not (m.get("screen") or {}).get("pass", True)
-    }
-    earnings_soon = [t for t, m in meta.items() if m.get("earnings_soon")]
+    earnings_soon = [t for t in top if meta.get(t, {}).get("earnings_soon")]
     macro = fnd.macro_context(spy)
     cyc_line = ""
     try:
@@ -455,36 +481,21 @@ def run_nightly():
     info = {
         "when": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M"),
         "watchlist_n": len(set(top)), "csv_n": len(tickers),
-        "tracked": list(ledger.keys()),
-        "thesis_warned": [t for t, e in ledger.items() if e.get("thesis_warned")],
+        "tracked": list(ledger.keys()), "thesis_warned": [t for t,e in ledger.items() if e.get("thesis_warned")],
         "earnings": earnings_soon, "screen_failed": screen_failed,
-        "screen_failed_details": screen_failed_details,
         "new_entrants": sorted(set(top) - prev) if prev else [],
-        "dropped": sorted(prev - set(top)) if prev else [],
-        "top": top_ranked,
-        "macro_risk": macro.get("risk"), "macro_vol": macro.get("vol"),
-        "cycles": cyc_line, "no_data": no_data, "short_history": short_history,
+        "dropped": sorted(prev - set(top)) if prev else [], "top": top_ranked,
+        "macro_risk": macro.get("risk"), "macro_vol": macro.get("vol"), "cycles": cyc_line,
+        "no_data": no_data, "short_history": short_history,
+        "tier_counts": tier_counts, "bulk_note": bulk_note,
     }
     note = notify.format_nightly(info)
     print("\n" + note)
-    notify.send_email(f"Nightly complete — watchlist {info['watchlist_n']} "
-                      f"({info['when']} UTC)", note, cfg)
+    notify.send_email(f"Nightly complete — watchlist {info['watchlist_n']} ({info['when']} UTC)", note, cfg)
     notify.send_telegram(note, cfg)
-    # ---- accounting: name every ticker that is NOT in the watchlist and why ----
-    in_watch = set(top)
-    no_data = [t for t in tickers if t not in d and t != "SPY"]
-    too_short = [t for t in d if t != "SPY" and len(d[t]) < 120 and t not in in_watch]
-    capped = [t for t in d if t != "SPY" and t not in in_watch
-              and t not in no_data and t not in too_short]
-    print(f"Excluded — benchmark (by design): SPY")
-    if no_data:
-        print(f"Excluded — NO DATA from Twelve Data: {', '.join(sorted(no_data))}")
-    if too_short:
-        print(f"Excluded — insufficient history (<120 daily bars): {', '.join(sorted(too_short))}")
-    if capped:
-        print(f"Excluded — below watchlist size cap ({cfg.WATCHLIST_SIZE}): {', '.join(sorted(capped))}")
-    if not (no_data or too_short or capped):
-        print("All non-benchmark tickers made the watchlist ✓")
+
+    print(f"Watchlist built: {len(set(top))} tickers ({len(top_stocks)} stocks + {len(top_etfs)} ETFs)")
+
 
 
 if __name__ == "__main__":

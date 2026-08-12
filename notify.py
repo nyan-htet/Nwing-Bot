@@ -56,7 +56,7 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
         f"Relative Strength (RS) vs SPY, 3-month          : {sig['rs']:+.1%}",
         f"RSI (Relative Strength Index, 4-hour)           : {sig.get('rsi', '?')}"
         + ("  [40-60 = healthy pullback zone]" if isinstance(sig.get('rsi'), (int, float)) and 40 <= sig['rsi'] <= 60 else ""),
-        f"Quality score         : {sig.get('quality', '')}  (max 1.0; stocks need 0.70, ETFs 0.50)",
+        f"Quality score         : {sig.get('quality', '')}  (floor {sig.get('quality_floor', 0.50):.2f}; Tier {sig.get('market_cap_tier', 'ETF')})",
         f"  • RSI momentum        {_fmt(qd.get('rsi'))} — {qn.get('rsi', '')}",
         f"  • Bollinger Bands     {_fmt(qd.get('bollinger'))} — {qn.get('bollinger', '')}",
         f"  • VWAP                {_fmt(qd.get('vwap'))} — {qn.get('vwap', '')}",
@@ -73,79 +73,28 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
     return "\n".join(lines)
 
 
-def _format_ticker_lines(items, per_line=10):
-    """Wrap ticker lists so Telegram stays readable on phones."""
-    items = sorted(str(x) for x in (items or []))
-    return "\n".join(
-        " · ".join(items[i:i + per_line])
-        for i in range(0, len(items), per_line)
-    )
-
-
-def _clean_reason(reason):
-    """Make stored FMP notes readable without changing their meaning."""
-    s = str(reason or "Quality filter failed").strip()
-    s = s.replace("microcap, below quality floor", "Microcap — below $300M quality floor")
-    s = s.replace("deeply unprofitable", "Deeply unprofitable")
-    s = s.replace("debt/equity", "Debt/Equity")
-    return s[:180]
-
-
 def format_no_signal(watch_n: int, skip_report: dict, macro: dict, cyc: dict,
                      when: str, updates: list | None = None) -> str:
-    """Readable Telegram/email status for scans with no NEW signal."""
-    lines = [
-        "🚦 NO NEW SIGNAL",
-        f"🕒 {when} UTC",
-        f"🔎 {watch_n} tickers scanned from the nightly watchlist",
-        "",
-        "═══ WATCHLIST STATUS ═══",
-    ]
+    """Compact status note for scans that produced no NEW signals.
 
-    active = skip_report.get("already_alerted") or []
-    if active:
-        lines += [
-            f"🟢 Still Active ({len(active)})",
-            _format_ticker_lines(active),
-            "",
-        ]
-
-    earnings = skip_report.get("earnings") or []
-    if earnings:
-        lines += [
-            f"🟡 Earnings within 7 days ({len(earnings)})",
-            _format_ticker_lines(earnings),
-            "",
-        ]
-
-    target = skip_report.get("target_cleared") or []
-    if target:
-        lines += [
-            f"🔵 Target Cleared / Eligible Again ({len(target)})",
-            _format_ticker_lines(target),
-            "",
-        ]
-
-    failed = skip_report.get("screen") or []
-    if failed:
-        details = skip_report.get("screen_details") or {}
-        lines += [f"🔴 Fundamental / Quality Filter Failed ({len(failed)})"]
-        for ticker in sorted(failed):
-            reasons = details.get(ticker) or ["Quality filter failed"]
-            reason_text = "; ".join(_clean_reason(r) for r in reasons[:2])
-            lines.append(f"• {ticker} — {reason_text}")
-        lines.append("")
-
+    Position updates (target reached / thesis broken) are appended here so a
+    quiet scan still delivers them in one message instead of separate ones.
+    """
+    lines = ["Result: NO NEW SIGNAL 🚦",
+             f"Run completed {when} UTC",
+             f"{watch_n} tickers scanned from the nightly watchlist",
+             ""]
     if updates:
-        lines += ["═══ TRACKED SIGNAL UPDATES ═══"]
+        lines.append("═══ UPDATES ON TRACKED SIGNALS ═══")
         lines += [f"• {u}" for u in updates]
         lines.append("")
-
-    # Keep the no-signal Telegram message useful but short.
-    risk = macro.get("risk")
-    if risk:
-        lines.append(f"Macro risk: {str(risk).title()}")
-
+    for key, label in (("already_alerted", "Still Active"),
+                       ("earnings", "Earnings within 7 days"),
+                       ("screen", "Failed fundamental"),
+                       ("target_cleared", "Cleared target, eligible again")):
+        v = sorted(skip_report.get(key) or [])
+        if v:
+            lines.append(f"{label} ({len(v)}): {', '.join(v)}")
     return "\n".join(lines).rstrip()
 
 
@@ -164,11 +113,7 @@ def format_nightly(info: dict) -> str:
         L.append(f"Earnings within 7 days ({len(e)}): {', '.join(e)}")
     if info.get("screen_failed"):
         s = sorted(info["screen_failed"])
-        L += [f"Fundamental / quality filter failed ({len(s)}):"]
-        details = info.get("screen_failed_details") or {}
-        for t in s:
-            reasons = details.get(t) or ["Quality filter failed"]
-            L.append(f"  🔴 {t} — {'; '.join(reasons[:2])}")
+        L.append(f"Failed fundamental ({len(s)}): {', '.join(s)}")
 
     # what changed in the watchlist — the actionable part
     if info.get("new_entrants"):

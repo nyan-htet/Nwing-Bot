@@ -1,17 +1,11 @@
-"""fundamentals.py — FMP-based fundamentals (free key, datacenter-friendly).
+"""FMP bulk fundamentals / quality screen.
 
-Design for the 250 req/day free tier:
-- ONE earnings-calendar call (date range) covers ALL tickers -> nightly
-- company screen: 2 calls per stock, run nightly, cached into watchlist.json
-- 4-hourly scans consume the cache: zero FMP requests intraday
-
-Everything degrades gracefully: no key / call fails -> neutral pass with a
-note, never a crash, never a silent block of all trades.
+Nightly only. Uses FMP bulk endpoints instead of 2 requests per ticker.
+Stocks are assigned to market-cap tiers; ETFs bypass stock fundamental filters.
 """
 import datetime as dt
 import json
 import os
-import time
 import urllib.request
 
 FMP_KEY = os.getenv("FMP_KEY", "")
@@ -21,11 +15,12 @@ _BASE_V3 = "https://financialmodelingprep.com/api/v3"
 
 def _get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    return json.loads(urllib.request.urlopen(req, timeout=20).read())
+    return json.loads(urllib.request.urlopen(req, timeout=45).read())
 
 
-def _fmp(path_stable, path_v3):
-    """Try the new 'stable' API first, fall back to legacy v3."""
+def _fmp(path_stable, path_v3=None):
+    if not FMP_KEY:
+        return None
     for base, path in ((_BASE_STABLE, path_stable), (_BASE_V3, path_v3)):
         if not path:
             continue
@@ -35,105 +30,131 @@ def _fmp(path_stable, path_v3):
             if isinstance(out, dict) and out.get("Error Message"):
                 continue
             return out
-        except Exception:
-            continue
+        except Exception as exc:
+            print(f"FMP error {path[:60]}: {str(exc)[:120]}")
     return None
 
 
 def earnings_soon_set(days_ahead=7):
-    """One call: all symbols with earnings in the next `days_ahead` days."""
     if not FMP_KEY:
         return set(), "FMP_KEY not set — earnings blocker inactive"
-    today = dt.date.today()
-    to = today + dt.timedelta(days=days_ahead)
-    q = f"earnings-calendar?from={today}&to={to}"
-    data = _fmp(q, f"earning_calendar?from={today}&to={to}")
+    today = dt.date.today(); to = today + dt.timedelta(days=days_ahead)
+    data = _fmp(f"earnings-calendar?from={today}&to={to}",
+                f"earning_calendar?from={today}&to={to}")
     if not isinstance(data, list):
         return set(), "earnings calendar unavailable on this FMP plan"
     syms = {str(row.get("symbol", "")).upper() for row in data}
     return syms, f"earnings calendar loaded ({len(syms)} symbols reporting)"
 
 
-def company_screen(ticker, cfg):
-    """Quality gate from FMP ratios + profile. 2 requests per ticker."""
-    out = {"pass": True, "notes": []}
+def bulk_context(tickers):
+    """Load profiles + TTM ratios once each and index only requested tickers."""
+    wanted = {str(x).upper() for x in tickers}
     if not FMP_KEY:
-        out["notes"].append("no FMP key — screen neutral")
+        return {}, {}, "FMP_KEY not set"
+    profiles_raw = _fmp("profile-bulk?part=0")
+    ratios_raw = _fmp("ratios-ttm-bulk")
+    profiles = {}
+    ratios = {}
+    for row in profiles_raw if isinstance(profiles_raw, list) else []:
+        s = str(row.get("symbol") or "").upper()
+        if s in wanted:
+            profiles[s] = row
+    for row in ratios_raw if isinstance(ratios_raw, list) else []:
+        s = str(row.get("symbol") or "").upper()
+        if s in wanted:
+            ratios[s] = row
+    note = f"FMP bulk loaded: profiles {len(profiles)}/{len(wanted)}, ratios {len(ratios)}/{len(wanted)}"
+    print(note)
+    return profiles, ratios, note
+
+
+def market_cap_tier(market_cap, is_etf=False):
+    if is_etf:
+        return "ETF"
+    if market_cap is None:
+        return "UNKNOWN"
+    mc = float(market_cap)
+    if mc < 100e6:
+        return "D"
+    if mc >= 10e9:
+        return "A"
+    if mc >= 1e9:
+        return "B"
+    # $100M-$1B. $100M-$500M is the requested Tier C; $500M-$1B uses
+    # Tier B's technical floor so the 500M-1B gap is not unclassified.
+    return "C" if mc < 500e6 else "B"
+
+
+def company_screen(ticker, cfg, profile=None, ratios=None, is_etf=False):
+    """Return tier + quality gate using already-loaded bulk FMP rows."""
+    out = {"pass": True, "notes": [], "tier": "ETF" if is_etf else "UNKNOWN"}
+    if is_etf:
+        out["notes"].append("ETF — market-cap/fundamental stock filter bypassed")
         return out
+    p = profile or {}
+    r = ratios or {}
+    if not p:
+        out["pass"] = False
+        out["notes"].append("FMP bulk profile unavailable — stock skipped")
+        return out
+    mc = p.get("mktCap") or p.get("marketCap")
+    try: mc = float(mc) if mc is not None else None
+    except (TypeError, ValueError): mc = None
+    tier = market_cap_tier(mc, False)
+    out["tier"] = tier
+    out["market_cap"] = mc
+    out["name"] = p.get("companyName") or ""
+    out["sector"] = p.get("sector", "Unknown")
+    out["industry"] = p.get("industry", "Unknown")
+    if tier == "UNKNOWN":
+        out["pass"] = False
+        out["notes"].append("market cap unavailable — stock skipped")
+        return out
+    if tier == "D":
+        out["pass"] = False
+        out["notes"].append(f"microcap: market cap ${mc/1e6:.0f}M < $100M")
+        return out
+    de = r.get("debtEquityRatioTTM") or r.get("debtToEquityTTM")
+    margin = r.get("netProfitMarginTTM")
+    de_f = float(de) if de is not None else None
+    margin_f = float(margin) if margin is not None else None
+    out["debt_to_equity"] = de_f
+    out["net_margin"] = margin_f
+    avg_vol = p.get("volAvg") or p.get("avgVolume") or p.get("averageVolume") or p.get("volumeAvg")
+    price = p.get("price") or p.get("previousClose")
     try:
-        ratios = _fmp(f"ratios-ttm?symbol={ticker}", f"ratios-ttm/{ticker}")
-        r = ratios[0] if isinstance(ratios, list) and ratios else {}
-        de = r.get("debtEquityRatioTTM") or r.get("debtToEquityTTM")
-        if de is not None and float(de) > cfg.MAX_DEBT_TO_EQUITY:
+        dollar_vol = float(avg_vol) * float(price) if avg_vol is not None and price is not None else None
+    except (TypeError, ValueError):
+        dollar_vol = None
+    out["avg_dollar_volume"] = dollar_vol
+
+    # Tier C: strongest fundamental quality + liquidity + technical score.
+    if tier == "C":
+        if de_f is None or de_f > cfg.TIER_C_MAX_DEBT_TO_EQUITY:
             out["pass"] = False
-            out["notes"].append(f"Debt/equity {float(de):.1f} > {cfg.MAX_DEBT_TO_EQUITY:.1f} limit")
-        margin = r.get("netProfitMarginTTM")
-        if margin is not None and float(margin) < -0.20:
+            out["notes"].append("Tier C: debt/equity unavailable or above 1.50")
+        if margin_f is None or margin_f < cfg.TIER_C_MIN_NET_MARGIN:
             out["pass"] = False
-            out["notes"].append(f"Net profit margin {float(margin):.0%} < -20% limit")
-        time.sleep(0.3)
-        prof = _fmp(f"profile?symbol={ticker}", f"profile/{ticker}")
-        p = prof[0] if isinstance(prof, list) and prof else {}
-        mc = p.get("mktCap") or p.get("marketCap")
-        market_cap = float(mc) if mc is not None else None
-
-        # Market cap is a risk tier, not a blanket quality verdict.
-        # < $100M: microcap -> keep out of the main swing system.
-        # $100M-$300M: small-cap -> allow if liquidity and the existing
-        # debt/profitability checks are healthy.
-        # >= $300M: normal universe.
-        microcap_floor = float(getattr(cfg, "MICROCAP_MIN_MARKETCAP", 100e6))
-        smallcap_floor = float(getattr(cfg, "SMALLCAP_MIN_MARKETCAP", 300e6))
-        smallcap_dollar_volume = float(getattr(cfg, "SMALLCAP_MIN_DOLLAR_VOLUME", 2e6))
-
-        if market_cap is not None and market_cap < microcap_floor:
+            out["notes"].append("Tier C: not profitable / net margin unavailable")
+        if dollar_vol is None or dollar_vol < cfg.TIER_C_MIN_DOLLAR_VOLUME:
             out["pass"] = False
-            out["notes"].append(
-                f"Microcap — market cap ${market_cap/1e6:.0f}M < ${microcap_floor/1e6:.0f}M floor"
-            )
-        elif market_cap is not None and market_cap < smallcap_floor:
-            # Do NOT reject solely because the company is small.
-            # Prefer practical tradability: average daily dollar volume.
-            avg_volume = (
-                p.get("volAvg")
-                or p.get("avgVolume")
-                or p.get("averageVolume")
-                or p.get("volumeAvg")
-            )
-            price = p.get("price") or p.get("previousClose")
-            dollar_volume = None
-            try:
-                if avg_volume is not None and price is not None:
-                    dollar_volume = float(avg_volume) * float(price)
-            except (TypeError, ValueError):
-                dollar_volume = None
-
-            if dollar_volume is not None and dollar_volume < smallcap_dollar_volume:
-                out["pass"] = False
-                out["notes"].append(
-                    f"Small-cap but low liquidity — avg dollar volume "
-                    f"${dollar_volume/1e6:.1f}M < ${smallcap_dollar_volume/1e6:.0f}M"
-                )
-            elif dollar_volume is not None:
-                out["notes"].append(
-                    f"Small-cap accepted — market cap ${market_cap/1e6:.0f}M; "
-                    f"avg dollar volume ${dollar_volume/1e6:.1f}M"
-                )
-            else:
-                # Do not silently reject a small cap because the profile lacks
-                # volume. Existing debt/margin checks remain the quality gate.
-                out["notes"].append(
-                    f"Small-cap accepted for quality review — market cap "
-                    f"${market_cap/1e6:.0f}M; liquidity data unavailable"
-                )
-
-        out["name"] = p.get("companyName") or ""
-        out["sector"] = p.get("sector", "Unknown")
-        out["industry"] = p.get("industry", "Unknown")
-    except Exception:
-        out["notes"].append("FMP screen unavailable — neutral")
+            out["notes"].append("Tier C: average dollar volume unavailable or below $5M")
+        else:
+            out["notes"].append(f"Tier C liquidity OK: avg dollar volume ${dollar_vol/1e6:.1f}M")
+        out["notes"].append("Tier C: stronger technical score required")
+    else:
+        if de_f is not None and de_f > cfg.MAX_DEBT_TO_EQUITY:
+            out["pass"] = False
+            out["notes"].append(f"high debt/equity {de_f:.1f}")
+        if margin_f is not None and margin_f < -0.20:
+            out["pass"] = False
+            out["notes"].append(f"deeply unprofitable {margin_f:.0%}")
+        if tier == "A":
+            out["notes"].append("Tier A: normal processing")
+        else:
+            out["notes"].append("Tier B: stronger technical score required")
     return out
-
 
 def macro_context(spy_daily=None):
     """Risk regime from SPY's own realized volatility (annualized 20d).

@@ -29,7 +29,7 @@ ETF_TICKERS = ["GLD", "SPY", "QQQ", "IWM"]
 # Stock universe is built nightly (S&P 500 + Russell 2000 via universe source);
 # for local testing, SAMPLE_TICKERS is used.
 SAMPLE_TICKERS = ["AAPL", "MSFT", "NVDA", "MU", "AMD", "JPM", "XOM", "CAT"]
-WATCHLIST_SIZE = 450           # Grow plan (no daily limits): wide intraday spotlight
+WATCHLIST_SIZE = 450           # stock spotlight; ETFs are added separately and are never cut by this cap
 
 # ---- Technical settings ----
 EMA_FAST = 20
@@ -76,7 +76,22 @@ THESIS_EMA = 50                # daily close below EMA50 with structure break
 EARNINGS_BLOCK_DAYS = 5        # no entry within N trading days before earnings
 MAX_DEBT_TO_EQUITY = 2.0
 MIN_REV_GROWTH = 0.0           # revenue growth must be non-negative
-SMALLCAP_MIN_MARKETCAP = 300e6 # quality floor for Russell 2000 names
+# ---- Market-cap / technical tiers ----
+# Stocks are filtered in four tiers. ETFs bypass stock market-cap filters.
+TIER_A_MIN_MARKETCAP = 10e9       # >= $10B: normal processing
+TIER_B_MIN_MARKETCAP = 1e9        # $1B-$10B: stronger technical quality
+TIER_C_MIN_MARKETCAP = 100e6      # $100M-$1B: stronger fundamentals + liquidity + technicals
+# The user's requested Tier C range was $100M-$500M; the $500M-$1B gap is
+# intentionally treated as Tier B so no company falls through unclassified.
+MICROCAP_MIN_MARKETCAP = 100e6    # < $100M: skip
+SMALLCAP_MIN_MARKETCAP = 300e6    # backwards-compatible alias; not a hard reject anymore
+TIER_B_SCORE_MIN = 0.76
+TIER_C_SCORE_MIN = 0.82
+TIER_C_MAX_DEBT_TO_EQUITY = 1.50
+TIER_C_MIN_NET_MARGIN = 0.00
+TIER_C_MIN_DOLLAR_VOLUME = 5e6
+SMALLCAP_MIN_DOLLAR_VOLUME = 2e6
+
 
 # ---- Cycles layer (informative only) ----
 CYCLES_HISTORY_YEARS = 45

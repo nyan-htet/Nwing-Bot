@@ -1131,56 +1131,6 @@ def icon_assessment(value):
     }.get(str(value).lower(), "⚪")
 
 
-def buy_confidence_score(llm):
-    """Presentation-only confidence score based on all major assessments.
-
-    This is not a probability and does not alter scanner eligibility, entry,
-    target, or position sizing. It summarizes the LLM's existing judgements.
-    """
-    weights = {
-        "analyst_assessment": 0.14,
-        "technical_assessment": 0.20,
-        "financial_assessment": 0.14,
-        "valuation_assessment": 0.12,
-        "earnings_assessment": 0.08,
-        "news_assessment": 0.08,
-        "sector_assessment": 0.08,
-        "macro_assessment": 0.06,
-        "overall_assessment": 0.10,
-    }
-    scale = {
-        "strong buy": 1.00, "buy": 0.85, "positive": 0.85,
-        "supportive": 0.90, "attractive": 0.90, "strong": 0.90,
-        "bullish": 0.90, "good": 0.80,
-        "reasonable": 0.65, "mixed": 0.50, "neutral": 0.50,
-        "unknown": 0.50, "insufficient_data": 0.50,
-        "no_recent_news": 0.50, "no_major_risk": 0.70,
-        "caution": 0.35, "expensive": 0.30, "negative": 0.20,
-        "headwind": 0.20, "weak": 0.20, "bearish": 0.10,
-        "sell": 0.15, "strong sell": 0.00, "very_expensive": 0.15,
-        "bad": 0.15, "error": 0.50,
-    }
-    total = 0.0
-    used = 0.0
-    for key, weight in weights.items():
-        value = str(llm.get(key) or "unknown").strip().lower().replace("_", " ")
-        score = scale.get(value, 0.50)
-        total += weight * score
-        used += weight
-    return max(1, min(100, round((total / used) * 100)))
-
-
-def confidence_bar(pct, width=10):
-    filled = max(0, min(width, round(pct / 100 * width)))
-    if pct >= 70:
-        icon = "🟩"
-    elif pct >= 45:
-        icon = "🟨"
-    else:
-        icon = "🟥"
-    return icon * filled + "⬜" * (width - filled)
-
-
 def format_financial_lines(results):
     lines = []
     for r in results[:3]:
@@ -1188,6 +1138,51 @@ def format_financial_lines(results):
         icon = "🟢" if label == "Strong" else "🔴" if label == "Weak" else "🟡"
         lines.append(f"{quarter_label(r)} — {icon} {label}")
     return lines
+
+
+CONFIDENCE_WEIGHTS = {
+    "technical_assessment": 25,
+    "analyst_assessment": 10,
+    "financial_assessment": 12,
+    "valuation_assessment": 10,
+    "earnings_assessment": 8,
+    "news_assessment": 8,
+    "sector_assessment": 5,
+    "macro_assessment": 5,
+    "overall_assessment": 17,
+}
+
+
+def assessment_points(value):
+    v = str(value or "").strip().lower()
+    if v in {"positive", "supportive", "attractive", "no_major_risk", "strong", "bullish", "good"}:
+        return 1.0
+    if v in {"mixed", "neutral", "reasonable", "moderate"}:
+        return 0.50
+    if v in {"unknown", "no_recent_news", "not_applicable", "insufficient_data", "error"}:
+        return 0.50
+    if v in {"caution", "expensive", "elevated"}:
+        return 0.25
+    if v in {"negative", "headwind", "very_expensive", "weak", "bad", "severe"}:
+        return 0.0
+    return 0.50
+
+
+def buy_confidence(llm):
+    """0-100 confidence indicator from the full interpretation stack.
+    It is not a statistical probability and never creates a new signal.
+    """
+    if not llm:
+        return 0
+    total = sum(CONFIDENCE_WEIGHTS.values())
+    score = sum(CONFIDENCE_WEIGHTS[k] * assessment_points(llm.get(k))
+                for k in CONFIDENCE_WEIGHTS)
+    return int(round(100 * score / total))
+
+
+def confidence_bar(score, width=10):
+    filled = max(0, min(width, round(score / 100 * width)))
+    return "🟩" * filled + "⬜" * (width - filled)
 
 
 def format_report(row):
@@ -1220,6 +1215,7 @@ def format_report(row):
     potential = fnum(sig.get("tp_pct"))
 
     overall = str(llm.get("overall_assessment") or "insufficient_data").lower()
+    confidence = buy_confidence(llm)
     shares = fnum(sig.get("shares"))
     position_value = fnum(sig.get("value"))
     if position_value is None:
@@ -1235,11 +1231,10 @@ def format_report(row):
         f"Scanner Potential: {fmt_pct(potential)}" if potential is not None else "Scanner Potential: n/a",
         f"Timeframe: {int(eta_lo) if eta_lo is not None and eta_lo.is_integer() else eta_lo}–{int(eta_hi) if eta_hi is not None and eta_hi.is_integer() else eta_hi} days" if eta_lo is not None and eta_hi is not None else "Timeframe: n/a",
         "",
-        f"═══ BUY CONFIDENCE: {buy_confidence_score(llm)}% ═══",
-        f"{confidence_bar(buy_confidence_score(llm))}",
-        "Based on the full assessment; not a probability or new trading signal.",
+        f"═══ BUY CONFIDENCE: {confidence}% ═══",
+        confidence_bar(confidence),
+        "Based on the full assessment stack; not a probability or new trading signal.",
         "────────────────────────",
-        "",
         "═══ ANALYST VIEW ═══",
         f"{assessment_icon(llm.get('analyst_assessment'))} {title_case_assessment(llm.get('analyst_assessment'))}",
     ]
@@ -1269,11 +1264,13 @@ def format_report(row):
     ]
     if llm.get("technical_interpretation"):
         lines.append(f"🧠 {llm['technical_interpretation']}")
-    technical_time = sig.get("time") or alert.get("alerted") or "unavailable"
-    lines.append(f"🕒 Technical timestamp: {technical_time} UTC" if technical_time != "unavailable" else "🕒 Technical timestamp: unavailable")
+    tech_ts = sig.get("time") or alert.get("alerted") or row.get("technical_timestamp")
+    if tech_ts:
+        parsed_ts = parse_dt(tech_ts)
+        lines.append(f"🕒 Technical timestamp: {(parsed_ts.strftime('%Y-%m-%d %H:%M:%S UTC') if parsed_ts else str(tech_ts))}")
     lines.append("────────────────────────")
 
-    lines += ["═══ FINANCIAL RESULTS ═══"]
+    lines += ["", "═══ FINANCIAL RESULTS ═══"]
     if results:
         lines.extend(format_financial_lines(results))
         if llm.get("financial_interpretation"):
@@ -1499,19 +1496,25 @@ def main():
             "llm_diagnostics": list(LLM_DIAGNOSTICS),
             "is_etf": is_etf,
         }
+        row["buy_confidence"] = buy_confidence(row.get("llm") or {})
         row["report"] = format_report(row)
         rows.append(row)
 
     when = utc_now().strftime("%Y-%m-%d %H:%M UTC")
 
-    # Send exactly ONE notification per ticker, matching hourly-scan behavior.
-    # Do not combine multiple tickers into one Telegram message.
+    # Email always receives every ticker. Telegram receives only >60% confidence.
+    # One ticker = one Telegram message; lower-confidence reports remain in email/docs.
     for row in rows:
         ticker = row["ticker"]
         report = row["report"]
+        confidence = int(row.get("buy_confidence") or 0)
         subject = f"Signal intelligence — {ticker} — {when}"
         notify.send_email(subject, report, cfg)
-        notify.send_telegram(report, cfg)
+        if confidence > 60:
+            notify.send_telegram(report, cfg)
+            print(f"  Telegram: {ticker} sent (confidence {confidence}%)")
+        else:
+            print(f"  Telegram: {ticker} skipped (confidence {confidence}% <= 60%)")
 
     with open("news_log.csv", "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
