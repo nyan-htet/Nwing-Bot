@@ -1,5 +1,4 @@
 """FMP bulk fundamentals / quality screen.
-
 Nightly only. Uses FMP bulk endpoints instead of 2 requests per ticker.
 Stocks are assigned to market-cap tiers; ETFs bypass stock fundamental filters.
 """
@@ -75,15 +74,19 @@ def market_cap_tier(market_cap, is_etf=False):
     if market_cap is None:
         return "UNKNOWN"
     mc = float(market_cap)
-    if mc < 100e6:
-        return "D"
+
+    # Boundaries:
+    # A: >= $10B
+    # B: >= $1B and < $10B
+    # C: >= $100M and < $1B
+    # D: < $100M
     if mc >= 10e9:
         return "A"
     if mc >= 1e9:
         return "B"
-    # $100M-$1B. $100M-$500M is the requested Tier C; $500M-$1B uses
-    # Tier B's technical floor so the 500M-1B gap is not unclassified.
-    return "C" if mc < 500e6 else "B"
+    if mc >= 100e6:
+        return "C"
+    return "D"
 
 
 def company_screen(ticker, cfg, profile=None, ratios=None, is_etf=False):
@@ -155,6 +158,7 @@ def company_screen(ticker, cfg, profile=None, ratios=None, is_etf=False):
         else:
             out["notes"].append("Tier B: stronger technical score required")
     return out
+
 
 def macro_context(spy_daily=None):
     """Risk regime from SPY's own realized volatility (annualized 20d).

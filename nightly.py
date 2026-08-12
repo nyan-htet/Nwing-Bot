@@ -33,8 +33,13 @@ def save(path, obj):
 
 
 def load(path):
+    if not os.path.exists(path):
+        raise SystemExit(f"FATAL: required state file missing: {path}")
     with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        obj = json.load(f)
+    if not isinstance(obj, dict) or not obj:
+        raise SystemExit(f"FATAL: required state file is empty/invalid: {path}")
+    return obj
 
 
 def stage1():
@@ -50,10 +55,23 @@ def stage1():
     stocks = [t for t in tickers if t not in etf_set]
 
     profiles, ratios, bulk_note = fnd.bulk_context(stocks)
+
+    # Never allow an upstream FMP outage/plan limitation to silently turn
+    # every stock into a "fundamental failure" and publish an ETF-only list.
+    if stocks and (not profiles or not ratios):
+        raise SystemExit(
+            "FATAL: FMP bulk fundamentals unavailable. "
+            f"profiles={len(profiles)}/{len(stocks)}, "
+            f"ratios={len(ratios)}/{len(stocks)}. "
+            "Do not publish an ETF-only watchlist."
+        )
+
     eligible_stocks = []
     meta = {}
     tier_counts = {"A": 0, "B": 0, "C": 0, "D": 0, "UNKNOWN": 0}
     screen_failed = []
+    screen_failed_details = []
+
     screen_failed_details = {}
 
     for t in stocks:
@@ -82,7 +100,9 @@ def stage1():
             eligible_stocks.append(t)
         else:
             screen_failed.append(t)
-            screen_failed_details[t] = scr.get("notes", [])[:3] or ["Quality filter failed"]
+            screen_failed_details[t] = (
+                scr.get("notes", [])[:3] or ["Quality filter failed"]
+            )
 
     eligible = eligible_stocks + sorted(etf_set)
 
@@ -128,10 +148,15 @@ def stage2():
     etf_set = set(s1["etf_set"])
     meta = s1["meta"]
 
+    if not eligible:
+        raise SystemExit("FATAL: Stage 1 produced no eligible tickers.")
+
     d = data.fetch_daily(eligible)
     spy = d.get("SPY")
     if spy is None:
-        raise SystemExit("FATAL: no SPY data from Twelve Data — check TWELVEDATA_KEY and quota.")
+        raise SystemExit(
+            "FATAL: no SPY data from Twelve Data — check TWELVEDATA_KEY and quota."
+        )
 
     scored, short_history, no_data = [], [], []
     for t in eligible_stocks:
@@ -149,6 +174,12 @@ def stage2():
     top_stocks = [t for _, t in scored[:cfg.WATCHLIST_SIZE]]
     top_etfs = [t for t in sorted(etf_set) if t in d and len(d[t]) >= 60]
     top = top_stocks + top_etfs
+
+    if not top:
+        raise SystemExit(
+            "FATAL: Stage 2 produced an empty watchlist. "
+            "No final watchlist will be published."
+        )
 
     top_ranked = []
     for t, sc, rs in [
@@ -193,6 +224,9 @@ def stage3():
     meta = s2["meta"]
     spots = s2.get("spots", {})
 
+    if not top:
+        raise SystemExit("FATAL: Stage 2 state contains an empty top list.")
+
     import options_context as oc
 
     earn_set, earn_note = fnd.earnings_soon_set(days_ahead=7)
@@ -204,9 +238,10 @@ def stage3():
             m["earnings_soon"] = t.upper() in earn_set
         meta[t] = m
 
+    final_tickers = sorted(set(top))
     with open(cfg.WATCHLIST_FILE, "w", encoding="utf-8") as f:
         json.dump({
-            "tickers": sorted(set(top)),
+            "tickers": final_tickers,
             "meta": meta,
             "built": dt.datetime.now(dt.timezone.utc).isoformat(),
         }, f, indent=2, default=str)
@@ -215,15 +250,21 @@ def stage3():
     earnings_soon = [t for t in top if meta.get(t, {}).get("earnings_soon")]
     info = {
         "when": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M"),
-        "watchlist_n": len(set(top)),
+        "watchlist_n": len(final_tickers),
         "csv_n": s2["csv_n"],
         "tracked": list(ledger.keys()),
         "thesis_warned": [t for t, e in ledger.items() if e.get("thesis_warned")],
         "earnings": earnings_soon,
         "screen_failed": s2["screen_failed"],
         "screen_failed_details": s2["screen_failed_details"],
-        "new_entrants": sorted(set(top) - set(s2.get("prev", []))) if s2.get("prev") else [],
-        "dropped": sorted(set(s2.get("prev", [])) - set(top)) if s2.get("prev") else [],
+        "new_entrants": (
+            sorted(set(top) - set(s2.get("prev", [])))
+            if s2.get("prev") else []
+        ),
+        "dropped": (
+            sorted(set(s2.get("prev", [])) - set(top))
+            if s2.get("prev") else []
+        ),
         "top": s2["top_ranked"],
         "no_data": s2["no_data"],
         "short_history": s2["short_history"],
@@ -231,11 +272,11 @@ def stage3():
         "bulk_note": s2["bulk_note"],
         "earnings_note": earn_note,
     }
-    save(STAGE3, {"info": info, "watchlist": {"tickers": sorted(set(top)), "meta": meta}})
+    save(STAGE3, {"info": info, "watchlist": {"tickers": final_tickers, "meta": meta}})
 
     print("==== NIGHTLY STAGE 3 — CONTEXT + FINALIZE ====")
     print(earn_note)
-    print(f"Final watchlist    : {len(set(top))}")
+    print(f"Final watchlist    : {len(final_tickers)}")
     print("===============================================")
 
 

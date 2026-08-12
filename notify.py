@@ -14,6 +14,15 @@ def _fmt(v):
     return f"{mark} {v:+.1f}"
 
 
+def _format_ticker_lines(tickers, per_line=8):
+    """Format ticker lists compactly without losing any symbols."""
+    vals = [str(t).strip() for t in (tickers or []) if str(t).strip()]
+    if not vals:
+        return ""
+    chunks = [vals[i:i + per_line] for i in range(0, len(vals), per_line)]
+    return "\n".join(", ".join(chunk) for chunk in chunks)
+
+
 def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
     """Readable hourly signal notification.
 
