@@ -30,6 +30,12 @@ STAGE3 = "nightly_stage3.json"
 STAGE4 = "nightly_stage4.json"
 DIAGNOSTICS = "nightly_diagnostics.json"
 
+# Benchmark for relative-strength/trend comparisons. Hardcoded on purpose —
+# fetched directly regardless of what's in tickers.csv/eligible, so a
+# missing/misconfigured row in the universe CSV can never silently drop the
+# benchmark fetch.
+BENCHMARK = "SPY"
+
 
 def save(path, obj):
     with open(path, "w", encoding="utf-8") as f:
@@ -214,12 +220,34 @@ def stage2():
     if not eligible:
         raise SystemExit("FATAL: Stage 1 produced no eligible tickers.")
 
-    d = data.fetch_daily(eligible)
-    spy = d.get("SPY")
-    if spy is None:
-        raise SystemExit(
-            "FATAL: no SPY data from Twelve Data — check TWELVEDATA_KEY and quota."
+    # SPY preflight: fetched directly here, independent of tickers.csv/eligible
+    # — do NOT rely on SPY happening to be in the universe list. Checked FIRST,
+    # before spending the daily-data budget on the other ~500 tickers, so a
+    # dead API key/quota fails cheap and immediate instead of only surfacing
+    # after the full 500-ticker fetch has already run.
+    spy_preflight = data.fetch_daily([BENCHMARK])
+    spy = spy_preflight.get(BENCHMARK)
+    if spy is None or len(spy) < 60:
+        save_diagnostics(
+            "stage2",
+            input_n=1,
+            failed=1,
+            reasons={"SPY benchmark unavailable (preflight)": 1},
+            api_errors={"Twelve Data SPY preflight": "no/short SPY daily data"},
+            status="failed",
+            error="SPY benchmark unavailable on preflight check",
         )
+        raise SystemExit(
+            "FATAL: SPY benchmark unavailable from Twelve Data (preflight check, "
+            "before spending the daily-data budget) — check TWELVEDATA_KEY and quota."
+        )
+
+    # Preflight passed — fetch the rest of the eligible list (SPY already have it,
+    # and is excluded here purely to avoid a duplicate fetch, not because the
+    # preflight depended on it being present).
+    rest = [t for t in eligible if t != BENCHMARK]
+    d = data.fetch_daily(rest) if rest else {}
+    d[BENCHMARK] = spy
 
     scored, short_history, no_data = [], [], []
     stage2_reasons = Counter()

@@ -100,6 +100,16 @@ TIER_C_MIN_NET_MARGIN = 0.00
 TIER_C_MIN_DOLLAR_VOLUME = 5e6
 SMALLCAP_MIN_DOLLAR_VOLUME = 2e6
 
+# ---- Stage 2 tier-specific daily trend floor ----
+# analysis.daily_trend()'s "score" is an integer 0-5 (uptrend, ADX strength,
+# RS>0, near 52w high, higher-highs). Smaller companies must clear a higher
+# bar before they're allowed onto the nightly watchlist at all — a Tier C
+# stock isn't rejected for being small, but it has to prove itself more
+# strongly on the daily chart. ETFs are not tier-gated.
+TIER_A_DAILY_SCORE_MIN = 2.0
+TIER_B_DAILY_SCORE_MIN = 2.5
+TIER_C_DAILY_SCORE_MIN = 3.0
+
 
 # ---- Cycles layer (informative only) ----
 CYCLES_HISTORY_YEARS = 45
