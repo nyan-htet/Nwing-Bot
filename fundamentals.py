@@ -75,9 +75,58 @@ def company_screen(ticker, cfg):
         prof = _fmp(f"profile?symbol={ticker}", f"profile/{ticker}")
         p = prof[0] if isinstance(prof, list) and prof else {}
         mc = p.get("mktCap") or p.get("marketCap")
-        if mc is not None and float(mc) < cfg.SMALLCAP_MIN_MARKETCAP:
+        market_cap = float(mc) if mc is not None else None
+
+        # Market cap is a risk tier, not a blanket quality verdict.
+        # < $100M: microcap -> keep out of the main swing system.
+        # $100M-$300M: small-cap -> allow if liquidity and the existing
+        # debt/profitability checks are healthy.
+        # >= $300M: normal universe.
+        microcap_floor = float(getattr(cfg, "MICROCAP_MIN_MARKETCAP", 100e6))
+        smallcap_floor = float(getattr(cfg, "SMALLCAP_MIN_MARKETCAP", 300e6))
+        smallcap_dollar_volume = float(getattr(cfg, "SMALLCAP_MIN_DOLLAR_VOLUME", 2e6))
+
+        if market_cap is not None and market_cap < microcap_floor:
             out["pass"] = False
-            out["notes"].append(f"Market cap ${float(mc)/1e6:.0f}M < ${cfg.SMALLCAP_MIN_MARKETCAP/1e6:.0f}M quality floor")
+            out["notes"].append(
+                f"Microcap — market cap ${market_cap/1e6:.0f}M < ${microcap_floor/1e6:.0f}M floor"
+            )
+        elif market_cap is not None and market_cap < smallcap_floor:
+            # Do NOT reject solely because the company is small.
+            # Prefer practical tradability: average daily dollar volume.
+            avg_volume = (
+                p.get("volAvg")
+                or p.get("avgVolume")
+                or p.get("averageVolume")
+                or p.get("volumeAvg")
+            )
+            price = p.get("price") or p.get("previousClose")
+            dollar_volume = None
+            try:
+                if avg_volume is not None and price is not None:
+                    dollar_volume = float(avg_volume) * float(price)
+            except (TypeError, ValueError):
+                dollar_volume = None
+
+            if dollar_volume is not None and dollar_volume < smallcap_dollar_volume:
+                out["pass"] = False
+                out["notes"].append(
+                    f"Small-cap but low liquidity — avg dollar volume "
+                    f"${dollar_volume/1e6:.1f}M < ${smallcap_dollar_volume/1e6:.0f}M"
+                )
+            elif dollar_volume is not None:
+                out["notes"].append(
+                    f"Small-cap accepted — market cap ${market_cap/1e6:.0f}M; "
+                    f"avg dollar volume ${dollar_volume/1e6:.1f}M"
+                )
+            else:
+                # Do not silently reject a small cap because the profile lacks
+                # volume. Existing debt/margin checks remain the quality gate.
+                out["notes"].append(
+                    f"Small-cap accepted for quality review — market cap "
+                    f"${market_cap/1e6:.0f}M; liquidity data unavailable"
+                )
+
         out["name"] = p.get("companyName") or ""
         out["sector"] = p.get("sector", "Unknown")
         out["industry"] = p.get("industry", "Unknown")
