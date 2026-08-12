@@ -289,6 +289,12 @@ def stage2():
     d = data.fetch_daily(rest) if rest else {}
     d[BENCHMARK] = spy
 
+    # Macro reading, computed here (not deferred to a later stage) because
+    # this is the one place SPY data is *guaranteed* good — the preflight
+    # above already verified it. Small, JSON-safe dict; carried through
+    # stage3's state spread into stage4's notification.
+    macro = fnd.macro_context(spy)
+
     scored, short_history, no_data, tier_floor_failed = [], [], [], []
     stage2_reasons = Counter()
     stage2_status = {}
@@ -380,6 +386,7 @@ def stage2():
         "tier_floor_failed": tier_floor_failed,
         "top_ranked": top_ranked,
         "spots": spots,
+        "macro": macro,
         "technical_created": dt.datetime.now(dt.timezone.utc).isoformat(),
     }
     save(STAGE2, state)
@@ -568,6 +575,8 @@ def stage4():
         "tier_counts": s3["tier_counts"],
         "bulk_note": s3["bulk_note"],
         "earnings_note": earn_note,
+        "macro_risk": (s3.get("macro") or {}).get("risk", "?"),
+        "macro_vol": (s3.get("macro") or {}).get("vol", "?"),
     }
     save(STAGE4, {"info": info, "watchlist": {"tickers": final_tickers, "meta": meta}})
     save_diagnostics(
