@@ -1,19 +1,28 @@
 name: check-symbols
+
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "empty = all csv | sp500 = only new category | or AAPL,MSFT list"
+        description: "reference = all CSV | sp500/nasdaq = category | AAPL,MSFT = explicit symbols"
         required: false
-        default: "sp500"
+        default: "reference"
+      probe_n:
+        description: "Optional real 1h probes; 0 recommended. Each probe costs 1 API credit."
+        required: false
+        default: "0"
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - name: Probe Twelve Data symbols
+        with:
+          python-version: "3.12"
+      - name: Validate Twelve Data universe
         env:
           TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+          TWELVEDATA_PROBE_N: ${{ github.event.inputs.probe_n }}
         run: python check_symbols.py "${{ github.event.inputs.mode }}"
