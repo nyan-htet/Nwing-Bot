@@ -46,25 +46,113 @@ def earnings_soon_set(days_ahead=7):
     return syms, f"earnings calendar loaded ({len(syms)} symbols reporting)"
 
 
+def _fmp_get(path, params=None):
+    """GET one FMP endpoint and return JSON; preserve HTTP errors."""
+    if not FMP_KEY:
+        return None, "FMP_KEY not set"
+    params = dict(params or {})
+    params["apikey"] = FMP_KEY
+    from urllib.parse import urlencode
+    url = f"{_BASE_STABLE}/{path}?{urlencode(params)}"
+    try:
+        return _get(url), None
+    except Exception as exc:
+        return None, str(exc)
+
+
 def bulk_context(tickers):
-    """Load profiles + TTM ratios once each and index only requested tickers."""
-    wanted = {str(x).upper() for x in tickers}
+    """Load fundamentals through bulk/screener sources.
+
+    Uses company-screener for market cap/profile/liquidity and
+    key-metrics-ttm-bulk for TTM leverage/profitability inputs.
+    This replaces profile-bulk + ratios-ttm-bulk, which returned HTTP 402.
+    """
+    wanted = {str(x).upper().strip() for x in tickers if str(x).strip()}
+    if not wanted:
+        return {}, {}, "No stock tickers requested"
     if not FMP_KEY:
         return {}, {}, "FMP_KEY not set"
-    profiles_raw = _fmp("profile-bulk?part=0")
-    ratios_raw = _fmp("ratios-ttm-bulk")
+
+    # Bulk-ish screener pages: 1,000 symbols per request, no per-ticker loop.
+    screen_rows = []
+    page = 0
+    page_size = 1000
+    while page < 10:
+        raw, err = _fmp_get("company-screener", {
+            "country": "US",
+            "isEtf": "false",
+            "isFund": "false",
+            "isActivelyTrading": "true",
+            "limit": page_size,
+            "page": page,
+        })
+        if err:
+            print(f"FMP screener error page={page}: {err[:160]}")
+            break
+        if not isinstance(raw, list):
+            break
+        screen_rows.extend(raw)
+        if len(raw) < page_size:
+            break
+        page += 1
+
     profiles = {}
+    for row in screen_rows:
+        s = str(row.get("symbol") or "").upper().strip()
+        if s in wanted:
+            profiles[s] = {
+                "symbol": s,
+                "companyName": row.get("companyName"),
+                "sector": row.get("sector"),
+                "industry": row.get("industry"),
+                "marketCap": row.get("marketCap"),
+                "price": row.get("price"),
+                "volume": row.get("volume"),
+                "volAvg": row.get("volume") or row.get("volAvg"),
+            }
+
+    # One bulk TTM payload for leverage + profitability.
+    metrics_raw, metrics_err = _fmp_get("key-metrics-ttm-bulk")
     ratios = {}
-    for row in profiles_raw if isinstance(profiles_raw, list) else []:
-        s = str(row.get("symbol") or "").upper()
-        if s in wanted:
-            profiles[s] = row
-    for row in ratios_raw if isinstance(ratios_raw, list) else []:
-        s = str(row.get("symbol") or "").upper()
-        if s in wanted:
-            ratios[s] = row
-    note = f"FMP bulk loaded: profiles {len(profiles)}/{len(wanted)}, ratios {len(ratios)}/{len(wanted)}"
+    if isinstance(metrics_raw, list):
+        for row in metrics_raw:
+            s = str(row.get("symbol") or "").upper().strip()
+            if s not in wanted:
+                continue
+            mc = row.get("marketCap")
+            if mc is None:
+                mc = row.get("marketCapTTM")
+            de = row.get("debtToEquityTTM")
+            if de is None:
+                de = row.get("debtToEquityRatioTTM")
+            margin = row.get("netProfitMarginTTM")
+            if margin is None:
+                rev_ps = row.get("revenuePerShareTTM")
+                ni_ps = row.get("netIncomePerShareTTM")
+                try:
+                    if rev_ps not in (None, 0) and ni_ps is not None:
+                        margin = float(ni_ps) / float(rev_ps)
+                except (TypeError, ValueError, ZeroDivisionError):
+                    margin = None
+            ratios[s] = {**row, "marketCap": mc,
+                         "debtToEquityTTM": de,
+                         "netProfitMarginTTM": margin}
+
+    note = (f"FMP bulk source: company-screener {len(profiles)}/{len(wanted)}, "
+            f"key-metrics-ttm-bulk {len(ratios)}/{len(wanted)}")
     print(note)
+
+    if len(profiles) == 0:
+        raise RuntimeError(
+            "FMP company-screener returned no requested stocks. "
+            "Check FMP API access/plan and API key."
+        )
+    if len(ratios) == 0:
+        detail = metrics_err or "no rows returned"
+        raise RuntimeError(
+            "FMP key-metrics-ttm-bulk unavailable: " + detail[:200]
+        )
+
     return profiles, ratios, note
 
 
@@ -101,7 +189,7 @@ def company_screen(ticker, cfg, profile=None, ratios=None, is_etf=False):
         out["pass"] = False
         out["notes"].append("FMP bulk profile unavailable — stock skipped")
         return out
-    mc = p.get("mktCap") or p.get("marketCap")
+    mc = p.get("mktCap") or p.get("marketCap") or r.get("marketCap") or r.get("marketCapTTM")
     try: mc = float(mc) if mc is not None else None
     except (TypeError, ValueError): mc = None
     tier = market_cap_tier(mc, False)
@@ -118,13 +206,13 @@ def company_screen(ticker, cfg, profile=None, ratios=None, is_etf=False):
         out["pass"] = False
         out["notes"].append(f"microcap: market cap ${mc/1e6:.0f}M < $100M")
         return out
-    de = r.get("debtEquityRatioTTM") or r.get("debtToEquityTTM")
+    de = r.get("debtEquityRatioTTM") or r.get("debtToEquityTTM") or r.get("debtToEquityRatioTTM")
     margin = r.get("netProfitMarginTTM")
     de_f = float(de) if de is not None else None
     margin_f = float(margin) if margin is not None else None
     out["debt_to_equity"] = de_f
     out["net_margin"] = margin_f
-    avg_vol = p.get("volAvg") or p.get("avgVolume") or p.get("averageVolume") or p.get("volumeAvg")
+    avg_vol = p.get("volAvg") or p.get("avgVolume") or p.get("averageVolume") or p.get("volumeAvg") or p.get("volume")
     price = p.get("price") or p.get("previousClose")
     try:
         dollar_vol = float(avg_vol) * float(price) if avg_vol is not None and price is not None else None
