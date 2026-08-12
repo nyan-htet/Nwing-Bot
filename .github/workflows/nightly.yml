@@ -2,7 +2,6 @@ name: nightly-scan
 
 on:
   schedule:
-    # 22:30 UTC, Monday-Friday.
     - cron: "30 22 * * 1-5"
   workflow_dispatch:
 
@@ -14,16 +13,18 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Stage 1: cheap bulk FMP funnel before any large Twelve Data work.
-  stage1-fundamentals:
-    name: "1 — FMP fundamental funnel"
+
+  # Stage 1: FMP screener only.
+  # No financial statements. No Twelve Data time-series.
+  stage1-universe:
+    name: "1 — FMP universe funnel"
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
     steps:
-      - name: Checkout latest main
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
 
       - name: Set up Python
@@ -34,30 +35,36 @@ jobs:
       - name: Install dependencies
         run: pip install --disable-pip-version-check pandas numpy pyyaml
 
-      - name: Stage 1
+      - name: Stage 1 — FMP screener
         env:
           FMP_KEY: ${{ secrets.FMP_KEY }}
-        run: python nightly.py stage1
+          NIGHTLY_DAILY_STOCK_CAP: "500"
+        run: |
+          set -e
+          python -u nightly.py stage1
 
       - name: Save stage 1 state
         uses: actions/upload-artifact@v4
         with:
           name: nightly-stage1
-          path: nightly_stage1.json
+          path: |
+            nightly_stage1.json
+            nightly_diagnostics.json
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 7
 
-  # Stage 2: only survivors from stage 1 hit Twelve Data daily endpoints.
-  stage2-technical:
-    name: "2 — Twelve Data technical trim"
-    needs: stage1-fundamentals
+
+  # Stage 2: daily regime only for the <=500 stock survivors.
+  stage2-daily:
+    name: "2 — Twelve Data daily trim"
+    needs: stage1-universe
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
+
     steps:
-      - name: Checkout latest main
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
 
       - name: Download stage 1 state
@@ -73,31 +80,38 @@ jobs:
       - name: Install dependencies
         run: pip install --disable-pip-version-check pandas numpy pyyaml
 
-      - name: Stage 2
+      - name: Stage 2 — daily technical
         env:
           TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
           FMP_KEY: ${{ secrets.FMP_KEY }}
-        run: python nightly.py stage2
+          NIGHTLY_DAILY_STOCK_CAP: "500"
+        run: |
+          set -e
+          python -u nightly.py stage2
 
       - name: Save stage 2 state
         uses: actions/upload-artifact@v4
         with:
           name: nightly-stage2
-          path: nightly_stage2.json
+          path: |
+            nightly_stage2.json
+            nightly_diagnostics.json
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 7
 
-  # Stage 3: expensive per-ticker context is applied only to the final list.
-  stage3-context:
-    name: "3 — Options + earnings context"
-    needs: stage2-technical
+
+  # Stage 3: deeper 4H setup only for daily survivors.
+  # 1H entry is deliberately NOT used here; hourly-scan owns entry timing.
+  stage3-4h:
+    name: "3 — Twelve Data 4H setup trim"
+    needs: stage2-daily
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
+
     steps:
-      - name: Checkout latest main
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
 
       - name: Download stage 2 state
@@ -113,10 +127,14 @@ jobs:
       - name: Install dependencies
         run: pip install --disable-pip-version-check pandas numpy pyyaml
 
-      - name: Stage 3
+      - name: Stage 3 — 4H setup
         env:
+          TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
           FMP_KEY: ${{ secrets.FMP_KEY }}
-        run: python nightly.py stage3
+          NIGHTLY_4H_STOCK_CAP: "150"
+        run: |
+          set -e
+          python -u nightly.py stage3
 
       - name: Save stage 3 state
         uses: actions/upload-artifact@v4
@@ -124,27 +142,74 @@ jobs:
           name: nightly-stage3
           path: |
             nightly_stage3.json
-            watchlist.json
+            nightly_diagnostics.json
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 7
 
-  # Stage 4: notification + publication only. No API-heavy processing.
-  stage4-publish:
-    name: "4 — Notify + publish"
-    needs: stage3-context
+
+  # Stage 4: only the final technical candidates get options/earnings context.
+  stage4-context:
+    name: "4 — Context + finalize"
+    needs: stage3-4h
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
+
     steps:
-      - name: Checkout latest main
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main
+          fetch-depth: 0
+
+      - name: Download stage 3 state
+        uses: actions/download-artifact@v4
+        with:
+          name: nightly-stage3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --disable-pip-version-check pandas numpy pyyaml
+
+      - name: Stage 4 — context
+        env:
+          FMP_KEY: ${{ secrets.FMP_KEY }}
+          TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+        run: |
+          set -e
+          python -u nightly.py stage4
+
+      - name: Save final state
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-stage4
+          path: |
+            nightly_stage4.json
+            watchlist.json
+            nightly_diagnostics.json
+          if-no-files-found: error
+          retention-days: 7
+
+
+  # Stage 5: notification/publication only.
+  stage5-notify:
+    name: "5 — Notify + publish"
+    needs: stage4-context
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
           fetch-depth: 0
 
       - name: Download final state
         uses: actions/download-artifact@v4
         with:
-          name: nightly-stage3
+          name: nightly-stage4
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -164,18 +229,23 @@ jobs:
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python nightly.py stage4
+        run: |
+          set -e
+          python -u nightly.py stage5
 
-      - name: Publish watchlist
+      - name: Publish watchlist and diagnostics
         run: |
           set -e
           git config user.name "swingbot"
           git config user.email "bot@users.noreply.github.com"
-          git add watchlist.json
+
+          git add watchlist.json nightly_diagnostics.json
+
           if git diff --cached --quiet; then
-            echo "No watchlist changes to commit."
+            echo "No nightly output changes to commit."
             exit 0
           fi
-          git commit -m "nightly: update watchlist"
+
+          git commit -m "nightly: update watchlist and diagnostics"
           git pull --rebase --autostash origin main
           git push
