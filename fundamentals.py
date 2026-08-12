@@ -1,12 +1,15 @@
-"""FMP bulk fundamentals / quality screen.
-Nightly only.
+"""Lightweight FMP universe funnel.
 
-Uses:
-- company-screener for market cap/profile/liquidity
-- income-statement-bulk for profitability
-- balance-sheet-statement-bulk for debt/equity
+Nightly uses only the FMP Company Screener here.
+No paid bulk financial-statement endpoints are required.
 
-ETFs bypass stock fundamental filters.
+Market-cap tiers:
+A >= $10B
+B >= $1B and < $10B
+C >= $100M and < $1B
+D < $100M
+
+ETFs bypass stock filtering.
 """
 
 import datetime as dt
@@ -16,30 +19,20 @@ import urllib.request
 from urllib.parse import urlencode
 
 FMP_KEY = os.getenv("FMP_KEY", "")
-_BASE_STABLE = "https://financialmodelingprep.com/stable"
-_BASE_V3 = "https://financialmodelingprep.com/api/v3"
+BASE = "https://financialmodelingprep.com/stable"
 
 
-def _get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    return json.loads(urllib.request.urlopen(req, timeout=45).read())
-
-
-def _fmp(path_stable, path_v3=None):
+def _get(path, params=None):
     if not FMP_KEY:
-        return None
-    for base, path in ((_BASE_STABLE, path_stable), (_BASE_V3, path_v3)):
-        if not path:
-            continue
-        try:
-            sep = "&" if "?" in path else "?"
-            out = _get(f"{base}/{path}{sep}apikey={FMP_KEY}")
-            if isinstance(out, dict) and out.get("Error Message"):
-                continue
-            return out
-        except Exception as exc:
-            print(f"FMP error {path[:60]}: {str(exc)[:120]}")
-    return None
+        raise RuntimeError("FMP_KEY not set")
+    q = dict(params or {})
+    q["apikey"] = FMP_KEY
+    url = f"{BASE}/{path}?{urlencode(q)}"
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": "Nwing-Bot/nightly"},
+    )
+    return json.loads(urllib.request.urlopen(req, timeout=45).read())
 
 
 def earnings_soon_set(days_ahead=7):
@@ -47,261 +40,26 @@ def earnings_soon_set(days_ahead=7):
         return set(), "FMP_KEY not set — earnings blocker inactive"
     today = dt.date.today()
     to = today + dt.timedelta(days=days_ahead)
-    data = _fmp(
-        f"earnings-calendar?from={today}&to={to}",
-        f"earning_calendar?from={today}&to={to}",
-    )
+    try:
+        data = _get(
+            "earnings-calendar",
+            {"from": str(today), "to": str(to)},
+        )
+    except Exception as exc:
+        return set(), f"earnings calendar unavailable: {str(exc)[:120]}"
     if not isinstance(data, list):
         return set(), "earnings calendar unavailable on this FMP plan"
     syms = {str(row.get("symbol", "")).upper() for row in data}
     return syms, f"earnings calendar loaded ({len(syms)} symbols reporting)"
 
 
-def _fmp_get(path, params=None):
-    if not FMP_KEY:
-        return None, "FMP_KEY not set"
-    params = dict(params or {})
-    params["apikey"] = FMP_KEY
-    url = f"{_BASE_STABLE}/{path}?{urlencode(params)}"
-    try:
-        return _get(url), None
-    except Exception as exc:
-        return None, str(exc)
-
-
-def _bulk_rows(path, years_periods):
-    """Try bulk statement snapshots, newest first."""
-    last_err = None
-    for year, period in years_periods:
-        raw, err = _fmp_get(path, {"year": year, "period": period})
-        if err:
-            last_err = err
-            continue
-        if isinstance(raw, list) and raw:
-            return raw, None, (year, period)
-        if raw is not None:
-            last_err = f"unexpected response for {path} {year} {period}"
-    return [], last_err or f"no data returned by {path}", None
-
-
-def _row_symbol(row):
-    return str(row.get("symbol") or "").upper().strip()
-
-
-def _first_number(row, *keys):
-    for key in keys:
-        value = row.get(key)
-        if value is not None:
-            try:
-                return float(value)
-            except (TypeError, ValueError):
-                pass
-    return None
-
-
-def bulk_context(tickers):
-    """Load fundamentals without key-metrics-ttm-bulk.
-
-    Market cap/liquidity:
-      company-screener
-
-    Profitability:
-      income-statement-bulk. We use the latest available annual/quarterly
-      snapshot returned by FMP and calculate net margin from revenue/net income.
-
-    Debt/equity:
-      balance-sheet-statement-bulk. We calculate debt/equity from the latest
-      available balance-sheet snapshot.
-
-    No per-ticker FMP loop is used.
-    """
-    wanted = {str(x).upper().strip() for x in tickers if str(x).strip()}
-    if not wanted:
-        return {}, {}, "No stock tickers requested"
-    if not FMP_KEY:
-        return {}, {}, "FMP_KEY not set"
-
-    # ------------------------------------------------------------
-    # 1) Company screener: market cap + liquidity/profile
-    # ------------------------------------------------------------
-    screen_rows = []
-    page = 0
-    page_size = 1000
-
-    while page < 10:
-        raw, err = _fmp_get(
-            "company-screener",
-            {
-                "country": "US",
-                "isEtf": "false",
-                "isFund": "false",
-                "isActivelyTrading": "true",
-                "limit": page_size,
-                "page": page,
-            },
-        )
-        if err:
-            print(f"FMP screener error page={page}: {err[:160]}")
-            break
-        if not isinstance(raw, list):
-            break
-
-        screen_rows.extend(raw)
-        if len(raw) < page_size:
-            break
-        page += 1
-
-    profiles = {}
-    for row in screen_rows:
-        s = _row_symbol(row)
-        if s in wanted:
-            profiles[s] = {
-                "symbol": s,
-                "companyName": row.get("companyName"),
-                "sector": row.get("sector"),
-                "industry": row.get("industry"),
-                "marketCap": row.get("marketCap"),
-                "price": row.get("price"),
-                "volume": row.get("volume"),
-                "volAvg": row.get("volume") or row.get("volAvg"),
-            }
-
-    # ------------------------------------------------------------
-    # 2) Bulk income statement: profitability
-    # ------------------------------------------------------------
-    # Prefer the most recent annual statement, then current/recent quarters.
-    # This is deliberately bulk: no 3,000+ individual API calls.
-    today = dt.date.today()
-    current_year = today.year
-    periods = [
-        (current_year, "Q2"),
-        (current_year, "Q1"),
-        (current_year - 1, "Q4"),
-        (current_year - 1, "Q3"),
-        (current_year - 1, "Q2"),
-        (current_year - 1, "FY"),
-    ]
-
-    income_rows, income_err, income_period = _bulk_rows(
-        "income-statement-bulk", periods
-    )
-
-    # Keep the newest statement available for each symbol.
-    income_by_symbol = {}
-    for row in income_rows:
-        s = _row_symbol(row)
-        if s in wanted and s not in income_by_symbol:
-            income_by_symbol[s] = row
-
-    # ------------------------------------------------------------
-    # 3) Bulk balance sheet: debt/equity
-    # ------------------------------------------------------------
-    balance_rows, balance_err, balance_period = _bulk_rows(
-        "balance-sheet-statement-bulk", periods
-    )
-
-    balance_by_symbol = {}
-    for row in balance_rows:
-        s = _row_symbol(row)
-        if s in wanted and s not in balance_by_symbol:
-            balance_by_symbol[s] = row
-
-    # ------------------------------------------------------------
-    # 4) Normalize into the old "ratios" shape expected by nightly.py
-    # ------------------------------------------------------------
-    ratios = {}
-
-    for s in wanted:
-        inc = income_by_symbol.get(s, {})
-        bal = balance_by_symbol.get(s, {})
-
-        revenue = _first_number(
-            inc,
-            "revenue",
-            "revenueTTM",
-            "totalRevenue",
-        )
-        net_income = _first_number(
-            inc,
-            "netIncome",
-            "netIncomeTTM",
-            "netIncomeCommonStockholders",
-        )
-
-        margin = None
-        if revenue not in (None, 0) and net_income is not None:
-            margin = net_income / revenue
-
-        total_debt = _first_number(
-            bal,
-            "totalDebt",
-            "totalDebtAndCapital",
-            "totalDebtTTM",
-        )
-        total_equity = _first_number(
-            bal,
-            "totalStockholdersEquity",
-            "stockholdersEquity",
-            "totalEquity",
-            "totalEquityGrossMinorityInterest",
-        )
-
-        de = None
-        if total_equity not in (None, 0) and total_debt is not None:
-            de = total_debt / total_equity
-
-        # Preserve useful raw fields for downstream code/debugging.
-        ratios[s] = {
-            **inc,
-            "marketCap": (
-                _first_number(inc, "marketCap", "marketCapTTM")
-                or profiles.get(s, {}).get("marketCap")
-            ),
-            "debtToEquityTTM": de,
-            "debtEquityRatioTTM": de,
-            "netProfitMarginTTM": margin,
-            "revenueBulk": revenue,
-            "netIncomeBulk": net_income,
-            "totalDebtBulk": total_debt,
-            "totalEquityBulk": total_equity,
-            "incomePeriod": income_period,
-            "balancePeriod": balance_period,
-        }
-
-    note = (
-        f"FMP bulk source: company-screener {len(profiles)}/{len(wanted)}, "
-        f"income-statement-bulk {len(income_by_symbol)}/{len(wanted)}, "
-        f"balance-sheet-statement-bulk {len(balance_by_symbol)}/{len(wanted)}"
-    )
-    print(note)
-
-    if len(profiles) == 0:
-        raise RuntimeError(
-            "FMP company-screener returned no requested stocks. "
-            "Check FMP API access/plan and API key."
-        )
-
-    if len(income_by_symbol) == 0 or len(balance_by_symbol) == 0:
-        detail = income_err or balance_err or "bulk financial statements unavailable"
-        raise RuntimeError(
-            "FMP bulk financial statements unavailable: " + detail[:300]
-        )
-
-    return profiles, ratios, note
-
-
 def market_cap_tier(market_cap, is_etf=False):
     if is_etf:
         return "ETF"
-    if market_cap is None:
+    try:
+        mc = float(market_cap)
+    except (TypeError, ValueError):
         return "UNKNOWN"
-
-    mc = float(market_cap)
-
-    # A: >= $10B
-    # B: >= $1B and < $10B
-    # C: >= $100M and < $1B
-    # D: < $100M
     if mc >= 10e9:
         return "A"
     if mc >= 1e9:
@@ -311,153 +69,180 @@ def market_cap_tier(market_cap, is_etf=False):
     return "D"
 
 
-def company_screen(ticker, cfg, profile=None, ratios=None, is_etf=False):
-    """Return tier + quality gate using already-loaded bulk FMP rows."""
-    out = {
-        "pass": True,
-        "notes": [],
-        "tier": "ETF" if is_etf else "UNKNOWN",
-    }
-
-    if is_etf:
-        out["notes"].append("ETF — market-cap/fundamental stock filter bypassed")
-        return out
-
-    p = profile or {}
-    r = ratios or {}
-
-    if not p:
-        out["pass"] = False
-        out["notes"].append("FMP bulk profile unavailable — stock skipped")
-        return out
-
-    mc = (
-        p.get("mktCap")
-        or p.get("marketCap")
-        or r.get("marketCap")
-        or r.get("marketCapTTM")
-    )
+def _num(v):
     try:
-        mc = float(mc) if mc is not None else None
+        return float(v) if v is not None and v != "" else None
     except (TypeError, ValueError):
-        mc = None
+        return None
 
-    tier = market_cap_tier(mc, False)
-    out["tier"] = tier
-    out["market_cap"] = mc
-    out["name"] = p.get("companyName") or ""
-    out["sector"] = p.get("sector", "Unknown")
-    out["industry"] = p.get("industry", "Unknown")
 
-    if tier == "UNKNOWN":
-        out["pass"] = False
-        out["notes"].append("market cap unavailable — stock skipped")
-        return out
+def screener_context(tickers, meta, stock_cap=500):
+    """Return a first-pass universe using FMP screener only.
 
-    # D is intentionally silent in nightly notification formatting.
-    if tier == "D":
-        out["pass"] = False
-        out["notes"].append("microcap: market cap < $100M")
-        return out
+    The screener supplies market cap, price and volume. We rank within each
+    tier by estimated dollar liquidity and keep a bounded stock universe.
+    This deliberately does NOT request financial statements.
 
-    de = (
-        r.get("debtEquityRatioTTM")
-        or r.get("debtToEquityTTM")
-        or r.get("debtToEquityRatioTTM")
+    Tier quotas preserve exposure across the cap tiers:
+      A: up to 200
+      B: up to 200
+      C: up to 100
+    ETFs are untouched and returned separately.
+    """
+    wanted = {str(t).upper() for t in tickers}
+    stocks = [t for t in tickers if meta.get(t, {}).get("type") != "etf"]
+    etfs = [t for t in tickers if meta.get(t, {}).get("type") == "etf"]
+
+    if not stocks:
+        return {
+            "eligible_stocks": [],
+            "etfs": etfs,
+            "meta": meta,
+            "failed": {},
+            "tier_counts": {},
+            "note": "No stocks in universe",
+        }
+
+    # Use the screener's own market-cap floor so < $100M symbols are excluded
+    # before any Twelve Data time-series calls.
+    rows = _get(
+        "company-screener",
+        {
+            "country": "US",
+            "isEtf": "false",
+            "isFund": "false",
+            "isActivelyTrading": "true",
+            "marketCapMoreThan": 100000000,
+            "limit": 1000,
+        },
     )
-    margin = r.get("netProfitMarginTTM")
 
-    try:
-        de_f = float(de) if de is not None else None
-    except (TypeError, ValueError):
-        de_f = None
+    if not isinstance(rows, list):
+        raise RuntimeError("FMP company-screener returned an unexpected response")
 
-    try:
-        margin_f = float(margin) if margin is not None else None
-    except (TypeError, ValueError):
-        margin_f = None
+    by_symbol = {}
+    for row in rows:
+        s = str(row.get("symbol") or "").upper().strip()
+        if s in wanted:
+            by_symbol[s] = row
 
-    out["debt_to_equity"] = de_f
-    out["net_margin"] = margin_f
-
-    avg_vol = (
-        p.get("volAvg")
-        or p.get("avgVolume")
-        or p.get("averageVolume")
-        or p.get("volumeAvg")
-        or p.get("volume")
-    )
-    price = p.get("price") or p.get("previousClose")
-
-    try:
-        dollar_vol = (
-            float(avg_vol) * float(price)
-            if avg_vol is not None and price is not None
-            else None
+    # If the first page is capped, request additional pages using the same
+    # endpoint. This remains a small number of bulk/screener calls, not one
+    # call per ticker.
+    page = 1
+    while len(by_symbol) < len(stocks) and page < 10:
+        more = _get(
+            "company-screener",
+            {
+                "country": "US",
+                "isEtf": "false",
+                "isFund": "false",
+                "isActivelyTrading": "true",
+                "marketCapMoreThan": 100000000,
+                "limit": 1000,
+                "page": page,
+            },
         )
-    except (TypeError, ValueError):
-        dollar_vol = None
+        if not isinstance(more, list) or not more:
+            break
+        for row in more:
+            s = str(row.get("symbol") or "").upper().strip()
+            if s in wanted:
+                by_symbol[s] = row
+        if len(more) < 1000:
+            break
+        page += 1
 
-    out["avg_dollar_volume"] = dollar_vol
+    tier_buckets = {"A": [], "B": [], "C": []}
+    failed = {}
+    tier_counts = {"A": 0, "B": 0, "C": 0, "D": 0, "UNKNOWN": 0}
 
-    # Tier C: liquidity + profitable/debt quality.
-    if tier == "C":
-        if de_f is None or de_f > cfg.TIER_C_MAX_DEBT_TO_EQUITY:
-            out["pass"] = False
-            out["notes"].append(
-                "Tier C: debt/equity unavailable or above 1.50"
-            )
+    for t in stocks:
+        row = by_symbol.get(t)
+        if not row:
+            tier_counts["UNKNOWN"] += 1
+            failed[t] = ["FMP screener data unavailable"]
+            continue
 
-        if margin_f is None or margin_f < cfg.TIER_C_MIN_NET_MARGIN:
-            out["pass"] = False
-            out["notes"].append(
-                "Tier C: not profitable / net margin unavailable"
-            )
+        mc = _num(row.get("marketCap"))
+        tier = market_cap_tier(mc)
+        tier_counts[tier] = tier_counts.get(tier, 0) + 1
 
-        if dollar_vol is None or dollar_vol < cfg.TIER_C_MIN_DOLLAR_VOLUME:
-            out["pass"] = False
-            out["notes"].append(
-                "Tier C: average dollar volume unavailable or below $5M"
-            )
-        else:
-            out["notes"].append(
-                f"Tier C liquidity OK: avg dollar volume ${dollar_vol/1e6:.1f}M"
-            )
+        name = row.get("companyName") or meta.get(t, {}).get("name") or t
+        price = _num(row.get("price"))
+        volume = _num(row.get("volume"))
+        dollar_volume = (price * volume) if price is not None and volume is not None else None
 
-        out["notes"].append("Tier C: stronger technical score required")
+        m = dict(meta.get(t, {}))
+        m["name"] = name
+        m["sector"] = row.get("sector") or m.get("sector") or "Other"
+        m["industry"] = row.get("industry") or m.get("industry") or "Other"
+        m["screen"] = {
+            "pass": tier in ("A", "B", "C"),
+            "tier": tier,
+            "market_cap": mc,
+            "price": price,
+            "volume": volume,
+            "dollar_volume": dollar_volume,
+            "notes": [],
+        }
 
-    else:
-        if de_f is not None and de_f > cfg.MAX_DEBT_TO_EQUITY:
-            out["pass"] = False
-            out["notes"].append(f"high debt/equity {de_f:.1f}")
+        if tier == "D":
+            m["screen"]["notes"].append("market cap below $100M")
+            failed[t] = m["screen"]["notes"]
+            meta[t] = m
+            continue
 
-        if margin_f is not None and margin_f < -0.20:
-            out["pass"] = False
-            out["notes"].append(f"deeply unprofitable {margin_f:.0%}")
+        if dollar_volume is None:
+            m["screen"]["notes"].append("current dollar volume unavailable")
+            failed[t] = m["screen"]["notes"]
+            meta[t] = m
+            continue
 
-        if tier == "A":
-            out["notes"].append("Tier A: normal processing")
-        else:
-            out["notes"].append("Tier B: stronger technical score required")
+        # Minimum liquidity gate for stocks; C gets a stronger floor.
+        if tier == "C" and dollar_volume < 5e6:
+            m["screen"]["notes"].append("Tier C dollar liquidity below $5M")
+            failed[t] = m["screen"]["notes"]
+            meta[t] = m
+            continue
 
-    return out
+        if dollar_volume < 2e6:
+            m["screen"]["notes"].append("dollar liquidity below $2M")
+            failed[t] = m["screen"]["notes"]
+            meta[t] = m
+            continue
 
+        m["screen"]["notes"].append("passed market-cap/liquidity funnel")
+        meta[t] = m
+        tier_buckets[tier].append((dollar_volume, t))
 
-def macro_context(spy_daily=None):
-    """Risk regime from SPY's own realized volatility."""
-    ctx = {"risk": "neutral", "vol": None}
-    try:
-        if spy_daily is not None and len(spy_daily) > 25:
-            r = spy_daily["close"].pct_change().dropna()
-            vol = float(r.iloc[-20:].std() * (252 ** 0.5))
-            ctx["vol"] = round(vol * 100, 1)
-            ctx["risk"] = (
-                "risk-off"
-                if vol > 0.22
-                else "risk-on"
-                if vol < 0.13
-                else "neutral"
-            )
-    except Exception:
-        pass
-    return ctx
+    # Preserve the large-cap universe but put a hard ceiling on TD work.
+    # C gets a meaningful allocation so smaller companies are not crowded out.
+    quotas = {"A": 200, "B": 200, "C": 100}
+    if stock_cap != 500:
+        # Scale quotas proportionally while preserving C.
+        total = sum(quotas.values())
+        quotas = {
+            k: max(1, round(stock_cap * v / total))
+            for k, v in quotas.items()
+        }
+
+    eligible = []
+    for tier in ("A", "B", "C"):
+        bucket = sorted(tier_buckets[tier], reverse=True)
+        eligible.extend(t for _, t in bucket[:quotas[tier]])
+        for _, t in bucket[quotas[tier]:]:
+            failed[t] = [f"Tier {tier} liquidity rank below nightly cutoff"]
+
+    note = (
+        f"FMP screener matched {len(by_symbol)}/{len(stocks)} stocks; "
+        f"stock TD cap={len(eligible)}; ETFs untouched={len(etfs)}"
+    )
+    return {
+        "eligible_stocks": eligible,
+        "etfs": etfs,
+        "meta": meta,
+        "failed": failed,
+        "tier_counts": tier_counts,
+        "note": note,
+    }

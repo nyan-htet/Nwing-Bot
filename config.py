@@ -81,8 +81,7 @@ MIN_REV_GROWTH = 0.0           # revenue growth must be non-negative
 TIER_A_MIN_MARKETCAP = 10e9       # >= $10B: normal processing
 TIER_B_MIN_MARKETCAP = 1e9        # $1B-$10B: stronger technical quality
 TIER_C_MIN_MARKETCAP = 100e6      # $100M-$1B: stronger fundamentals + liquidity + technicals
-# The user's requested Tier C range was $100M-$500M; the $500M-$1B gap is
-# intentionally treated as Tier B so no company falls through unclassified.
+# Tier C is the full $100M-$1B range. No gap between C and B.
 MICROCAP_MIN_MARKETCAP = 100e6    # < $100M: skip
 SMALLCAP_MIN_MARKETCAP = 300e6    # backwards-compatible alias; not a hard reject anymore
 TIER_B_SCORE_MIN = 0.76
