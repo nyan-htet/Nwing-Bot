@@ -137,9 +137,14 @@ TD_KEY = _os.getenv("TWELVEDATA_KEY", "")
 _TD_LAST = [0.0]
 
 
-def _td_throttle(min_interval=1.6):
-    """Grow plan: 55 req/min. ~1.2s spacing stays safely under the rate cap."""
+def _td_throttle(min_interval=None):
+    """Spacing between Twelve Data requests. Defaults to the Grow-plan-safe
+    1.6s, but the cheapest TD plans (e.g. Basic/free, 8 req/min) need much
+    more spacing — override with the TWELVEDATA_MIN_INTERVAL env var
+    (seconds per request) to match your actual plan's rate limit."""
     import time
+    if min_interval is None:
+        min_interval = float(_os.getenv("TWELVEDATA_MIN_INTERVAL", "1.6") or 1.6)
     wait = _TD_LAST[0] + min_interval - time.time()
     if wait > 0:
         time.sleep(wait)

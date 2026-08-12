@@ -206,6 +206,14 @@ def stage1():
     print(f"Tier counts         : {tier_counts}")
     print(f"Fundamental fails   : {len(screen_failed)}")
     print(f"Technical survivors : {len(eligible_stocks)} stocks + {len(etf_set)} ETFs")
+
+    unknown_tickers = sorted(
+        t for t, notes in screen_failed_details.items()
+        if any("FMP screener data unavailable" in n for n in notes)
+    )
+    if unknown_tickers:
+        print(f"Unavailable stocks ({len(unknown_tickers)}): "
+              f"{', '.join(unknown_tickers)}")
     print("=================================================")
 
 
@@ -249,9 +257,18 @@ def stage2():
     d = data.fetch_daily(rest) if rest else {}
     d[BENCHMARK] = spy
 
-    scored, short_history, no_data = [], [], []
+    scored, short_history, no_data, tier_floor_failed = [], [], [], []
     stage2_reasons = Counter()
     stage2_status = {}
+
+    # Tier-specific daily trend floor (README §12): smaller companies must
+    # clear a higher daily-score bar before staying on the watchlist at all.
+    # ETFs are not tier-gated (they have no "screen"/tier — dict.get is None).
+    tier_score_floor = {
+        "A": getattr(cfg, "TIER_A_DAILY_SCORE_MIN", None),
+        "B": getattr(cfg, "TIER_B_DAILY_SCORE_MIN", None),
+        "C": getattr(cfg, "TIER_C_DAILY_SCORE_MIN", None),
+    }
 
     for t in eligible_stocks:
         df = d.get(t)
@@ -267,10 +284,22 @@ def stage2():
             continue
         try:
             tr = analysis.daily_trend(df, spy, cfg)
+            tier = meta.get(t, {}).get("screen", {}).get("tier", "UNKNOWN")
+            floor = tier_score_floor.get(tier)
+            if floor is not None and tr["score"] < floor:
+                tier_floor_failed.append(t)
+                reason = f"Daily trend score {tr['score']} below Tier {tier} floor {floor}"
+                stage2_status[t] = {
+                    "status": "FAIL", "reason": reason, "tier": tier,
+                    "score": tr.get("score"), "relative_strength": tr.get("rs"),
+                }
+                stage2_reasons[f"Below Tier {tier} daily score floor ({floor})"] += 1
+                continue
             score = tr["score"] + tr["rs"]
             scored.append((score, t))
             stage2_status[t] = {
                 "status": "RANKED",
+                "tier": tier,
                 "score": tr.get("score"),
                 "relative_strength": tr.get("rs"),
                 "combined_score": score,
@@ -316,6 +345,7 @@ def stage2():
         "top": top,
         "no_data": no_data,
         "short_history": short_history,
+        "tier_floor_failed": tier_floor_failed,
         "top_ranked": top_ranked,
         "spots": spots,
         "technical_created": dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -337,6 +367,7 @@ def stage2():
     print(f"Technical universe : {len(eligible_stocks)} stocks + {len(etf_set)} ETFs")
     print(f"No daily data      : {len(no_data)}")
     print(f"Short history      : {len(short_history)}")
+    print(f"Below tier score floor : {len(tier_floor_failed)}")
     print(f"Stock spotlight    : {len(top_stocks)} / {len(eligible_stocks)}")
     print(f"ETFs retained      : {len(top_etfs)} / {len(etf_set)}")
     print(f"Stage-2 survivors  : {len(top)}")
