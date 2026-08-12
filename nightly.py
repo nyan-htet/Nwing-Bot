@@ -214,6 +214,38 @@ def stage1():
     if unknown_tickers:
         print(f"Unavailable stocks ({len(unknown_tickers)}): "
               f"{', '.join(unknown_tickers)}")
+
+    # Liquidity sanity check: if the numbers driving these rejections are
+    # implausible for large caps (e.g. lots of $0 dollar volume), that's a
+    # signal the FMP screener's price/volume fields are stale, not that the
+    # universe is genuinely illiquid. Spot-checked, not aggregated by note
+    # text, so it doesn't blow up the reasons summary above.
+    liq_failed = [
+        t for t, notes in screen_failed_details.items()
+        if any("dollar liquidity" in n for n in notes)
+    ]
+    if liq_failed:
+        dvs = [meta.get(t, {}).get("screen", {}).get("dollar_volume") for t in liq_failed]
+        dvs = [d for d in dvs if d is not None]
+        if dvs:
+            dvs_sorted = sorted(dvs)
+            zero_n = sum(1 for d in dvs if d == 0)
+            print(f"Liquidity-failed dollar volume — n={len(dvs)}, "
+                  f"min=${dvs_sorted[0]:,.0f}, median=${dvs_sorted[len(dvs)//2]:,.0f}, "
+                  f"max=${dvs_sorted[-1]:,.0f}, exactly $0: {zero_n}")
+        sample = sorted(
+            liq_failed,
+            key=lambda t: meta.get(t, {}).get("screen", {}).get("market_cap") or 0,
+            reverse=True,
+        )[:10]
+        print("Largest-market-cap liquidity rejects (ticker: tier, price, "
+              "volume, dollar_volume):")
+        for t in sample:
+            scr = meta.get(t, {}).get("screen", {})
+            print(f"  {t}: tier={scr.get('tier')}, price={scr.get('price')}, "
+                  f"volume={scr.get('volume')}, "
+                  f"dollar_volume={scr.get('dollar_volume')}")
+
     print("=================================================")
 
 
@@ -556,10 +588,16 @@ def stage4():
 
 
 def stage5():
-    """Send the final nightly notification. No expensive API calls."""
+    """Send the final nightly notification. No expensive API calls.
+
+    Notify failures (email/telegram) are logged but never raise — this
+    stage must exit 0 so the workflow's git-publish step still runs even
+    if a delivery channel is down or misbehaving.
+    """
     s4 = load(STAGE4)
     info = s4["info"]
-    note = notify.format_nightly(info)
+    note_email = notify.format_nightly(info)
+    note_telegram = notify.format_nightly(info, for_telegram=True)
     save_diagnostics(
         "stage5",
         input_n=info.get("watchlist_n", 0),
@@ -567,13 +605,13 @@ def stage5():
         failed=0,
         status="completed",
     )
-    print("\n" + note)
+    print("\n" + note_email)
     notify.send_email(
         f"Nightly complete — watchlist {info['watchlist_n']} ({info['when']} UTC)",
-        note,
+        note_email,
         cfg,
     )
-    notify.send_telegram(note, cfg)
+    notify.send_telegram(note_telegram, cfg)
 
 
 def main():

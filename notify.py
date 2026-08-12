@@ -98,8 +98,14 @@ def format_no_signal(watch_n: int, skip_report: dict, macro: dict, cyc: dict,
     return "\n".join(lines).rstrip()
 
 
-def format_nightly(info: dict) -> str:
-    """Nightly completion summary."""
+def format_nightly(info: dict, for_telegram: bool = False) -> str:
+    """Nightly completion summary.
+
+    for_telegram=True drops the long per-ticker rejected-stock breakdown
+    (can be thousands of lines — Telegram's hard limit is 4096 characters
+    per message and a full breakdown blows past that). Email always gets
+    the full detail.
+    """
     L = [f"Nightly process run completed {info['when']} UTC",
          f"{info['watchlist_n']} tickers on the new watchlist "
          f"(ranked from {info['csv_n']} in tickers.csv).",
@@ -113,11 +119,15 @@ def format_nightly(info: dict) -> str:
         L.append(f"Earnings within 7 days ({len(e)}): {', '.join(e)}")
     if info.get("screen_failed"):
         s = sorted(info["screen_failed"])
-        L += [f"Fundamental / quality filter failed ({len(s)}):"]
-        details = info.get("screen_failed_details") or {}
-        for t in s:
-            reasons = details.get(t) or ["Quality filter failed"]
-            L.append(f"  🔴 {t} — {'; '.join(reasons[:2])}")
+        if for_telegram:
+            L.append(f"Fundamental / quality filter failed: {len(s)} tickers "
+                     "(full list in the email)")
+        else:
+            L += [f"Fundamental / quality filter failed ({len(s)}):"]
+            details = info.get("screen_failed_details") or {}
+            for t in s:
+                reasons = details.get(t) or ["Quality filter failed"]
+                L.append(f"  🔴 {t} — {'; '.join(reasons[:2])}")
 
     # what changed in the watchlist — the actionable part
     if info.get("new_entrants"):
@@ -157,23 +167,40 @@ def format_nightly(info: dict) -> str:
 
 
 def send_email(subject: str, body: str, cfg):
+    """Never raises — a delivery failure must not block whatever runs after
+    this (e.g. publishing watchlist.json to git). Logs and returns instead."""
     if cfg.DRY_RUN or not cfg.SMTP_HOST:
         print(f"[DRY-RUN email] {subject}\n{body}\n")
         return
-    msg = MIMEText(body)
-    msg["Subject"], msg["From"], msg["To"] = subject, cfg.SMTP_USER, cfg.EMAIL_TO
-    with smtplib.SMTP(cfg.SMTP_HOST, cfg.SMTP_PORT) as s:
-        s.starttls()
-        s.login(cfg.SMTP_USER, cfg.SMTP_PASS)
-        s.send_message(msg)
+    try:
+        msg = MIMEText(body)
+        msg["Subject"], msg["From"], msg["To"] = subject, cfg.SMTP_USER, cfg.EMAIL_TO
+        with smtplib.SMTP(cfg.SMTP_HOST, cfg.SMTP_PORT) as s:
+            s.starttls()
+            s.login(cfg.SMTP_USER, cfg.SMTP_PASS)
+            s.send_message(msg)
+    except Exception as exc:
+        print(f"WARNING: email delivery failed ({type(exc).__name__}: "
+              f"{str(exc)[:200]}) — continuing.")
 
 
 def send_telegram(body: str, cfg):
+    """Never raises — see send_email. Also hard-truncates to Telegram's
+    4096-char message limit as a safety net, in case some future section
+    grows unbounded again."""
     if cfg.DRY_RUN or not cfg.TELEGRAM_TOKEN:
         print(f"[DRY-RUN telegram]\n{body}\n")
         return
-    url = f"https://api.telegram.org/bot{cfg.TELEGRAM_TOKEN}/sendMessage"
-    data = json.dumps({"chat_id": cfg.TELEGRAM_CHAT_ID, "text": body}).encode()
-    req = urllib.request.Request(url, data=data,
-                                 headers={"Content-Type": "application/json"})
-    urllib.request.urlopen(req, timeout=15)
+    LIMIT = 4096
+    if len(body) > LIMIT:
+        cut = LIMIT - 40
+        body = body[:cut].rstrip() + "\n\n… (truncated, see email for full report)"
+    try:
+        url = f"https://api.telegram.org/bot{cfg.TELEGRAM_TOKEN}/sendMessage"
+        data = json.dumps({"chat_id": cfg.TELEGRAM_CHAT_ID, "text": body}).encode()
+        req = urllib.request.Request(url, data=data,
+                                     headers={"Content-Type": "application/json"})
+        urllib.request.urlopen(req, timeout=15)
+    except Exception as exc:
+        print(f"WARNING: telegram delivery failed ({type(exc).__name__}: "
+              f"{str(exc)[:200]}) — continuing.")
