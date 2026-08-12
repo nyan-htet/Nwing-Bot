@@ -1,109 +1,56 @@
 name: news-followup
-
-# Rich signal-intelligence follow-up.
-# Runs after a successful hourly-scan and can also be run manually.
-#
-# The workflow combines:
-#   1) alerted.json      -> which tickers just triggered + trade values
-#   2) docs/signals.json  -> full technical analysis from hourly-scan
-#   3) FMP Starter        -> earnings, statements, estimates, ratings, news,
-#                            sector/industry and macro data
-#   4) Anthropic/OpenAI   -> interpretation only; no new trading signal
-
+# Optional LLM news check on tickers that just alerted.
+# Runs AFTER hourly-scan finishes — no change to hourly.yml needed.
+# To pause: disable this workflow in the Actions tab, or set NEWS_ENABLED=0.
 on:
   workflow_run:
     workflows: ["hourly-scan"]
     types: [completed]
-
   workflow_dispatch:
     inputs:
       symbols:
-        description: "Blank = alerts from last 90 min; e.g. AAPL,NVDA for a manual test"
+        description: "Blank = tickers alerted in the last 90 min. Or NVDA,UPS to test"
         required: false
         default: ""
       provider:
-        description: "auto | anthropic | openai | both"
+        description: "anthropic | openai | both | auto"
         required: false
-        default: openai
-
+        default: "openai"
 permissions:
   contents: write
-
 jobs:
-  intelligence:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+  news:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-
+    timeout-minutes: 20
     steps:
-      - name: Checkout latest main
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          ref: main
-          fetch-depth: 0
-
-      - name: Refresh from main
-        run: |
-          git fetch origin main
-          git reset --hard origin/main
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install dependencies
-        run: pip install --disable-pip-version-check pandas numpy pyyaml
-
-      - name: Build signal intelligence report
+          ref: main            # get the alerted.json the scan just pushed
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pandas numpy pyyaml
+      - name: News check
         env:
           NEWS_ENABLED: "1"
-          NEWS_LOOKBACK_MIN: "90"
-          NEWS_MAX_TICKERS: "12"
-          NEWS_HEADLINES_PER_TICKER: "8"
-          NEWS_MAX_AGE_HOURS: "48"
-
           LLM_PROVIDER: ${{ github.event.inputs.provider || 'openai' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
-          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
-          LLM_MODEL: ${{ secrets.LLM_MODEL }}
-
           FMP_KEY: ${{ secrets.FMP_KEY }}
-
           DRY_RUN: "0"
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-
-        run: |
-          set -e
-          echo "Selected LLM provider/model: openai / ${OPENAI_MODEL:-gpt-5.6-luna}"
-           python news_llm.py "${{ github.event.inputs.symbols }}"
-
-      - name: Publish intelligence data
+        run: python news_llm.py "${{ github.event.inputs.symbols }}"
+      - name: Publish news log
         if: always()
         run: |
-          git config user.name swingbot
-          git config user.email bot@users.noreply.github.com
-
-          git add docs/news.json news_log.csv || true
-
-          if git diff --cached --quiet; then
-            echo "No intelligence output changes to commit."
-            exit 0
-          fi
-
-          git commit -m "news: publish signal intelligence"
+          git config user.name swingbot && git config user.email bot@users.noreply.github.com
+          git add news_log.csv docs/news.json || true
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "news: update checks"
           git pull --rebase --autostash origin main || true
-          git push || (
-            sleep 5
-            git pull --rebase --autostash origin main
-            git push
-          )
+          git push || (sleep 5 && git pull --rebase --autostash origin main && git push)
