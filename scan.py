@@ -338,7 +338,11 @@ def run_hourly(offline=False):
 
     if not signals and not pos_msgs:
         when = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M")
-        note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when)
+        meta_map = watch.get("meta", {})
+        etf_n = sum(1 for t in h1_map if meta_map.get(t, {}).get("type") == "etf")
+        stock_n = len(h1_map) - etf_n
+        note = notify.format_no_signal(len(h1_map), skip_report, macro, cyc, when,
+                                       stock_n=stock_n, etf_n=etf_n)
         notify.send_email(f"NO NEW SIGNAL — {when} UTC", note, cfg)
         notify.send_telegram(note, cfg)
     log_signals_csv(signals, macro, cyc)

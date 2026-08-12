@@ -74,15 +74,19 @@ def format_alert(sig: dict, macro: dict, cyc: dict) -> str:
 
 
 def format_no_signal(watch_n: int, skip_report: dict, macro: dict, cyc: dict,
-                     when: str, updates: list | None = None) -> str:
+                     when: str, updates: list | None = None,
+                     stock_n: int | None = None, etf_n: int | None = None) -> str:
     """Compact status note for scans that produced no NEW signals.
 
     Position updates (target reached / thesis broken) are appended here so a
     quiet scan still delivers them in one message instead of separate ones.
     """
+    watch_line = f"{watch_n} tickers scanned from the nightly watchlist"
+    if stock_n is not None and etf_n is not None:
+        watch_line += f" ({stock_n} stocks, {etf_n} ETFs)"
     lines = ["Result: NO NEW SIGNAL 🚦",
              f"Run completed {when} UTC",
-             f"{watch_n} tickers scanned from the nightly watchlist",
+             watch_line,
              ""]
     if updates:
         lines.append("═══ UPDATES ON TRACKED SIGNALS ═══")
