@@ -1,275 +1,1394 @@
-# Nwing-Bot — eToro Long-Only Swing Signal System
+# Nwing-Bot --- Scanner Business Logic & Architecture
 
-Scans a personal universe of US stocks and ETFs on 1h / 4h / daily charts and
-sends BUY alerts — entry, take-profit, position size, **eToro P/L amount**, and
-the full reasoning behind the score — by **email + Telegram**, with a read-only
-**web dashboard** and a **backtest page**.
+## 1. Purpose
 
-**You execute manually on eToro.** The bot never places orders.
+Nwing-Bot is designed as a **progressive stock-selection and
+trade-signal pipeline**.
 
-- Signals:  `https://<user>.github.io/<repo>/`
-- Backtest: `https://<user>.github.io/<repo>/backtest.html`
+The system starts with a large universe of stocks and ETFs and
+progressively reduces it to a manageable set of technically interesting
+candidates.
 
----
+The core principle is:
 
-## 1. Current rules (`config.py`)
+> **Do not spend expensive API calls or detailed analysis on every
+> symbol at the beginning. Filter progressively, then spend more
+> computation and intelligence only on survivors.**
 
-| Rule | Value |
-|---|---|
-| Direction | Long only (shorts skipped) |
-| Stop loss | None — "thesis broken" alerts instead |
-| Take profit | **+9% minimum, +20% cap** |
-| Position size | 5% of a $10,000 reference account, min $250, **fractional units** (advisory) |
-| Quality floor | **Stocks 0.70 · ETFs 0.50** (score max = 1.00) |
-| Watchlist | Top 120 of the universe, ranked nightly |
-| Repeat alerts | **Muted until price clears that signal's target** |
-| Earnings | Blocked within 7 days (US stocks) |
-| Fees modelled | $1 buy + $1 sell (stocks), $0 (ETFs) |
+The intended flow is:
 
-### Fractional units
-eToro supports fractional shares, so sizing is fractional to 2 decimals
-(`FRACTIONAL_SHARES` / `SHARE_DECIMALS` in config). This matters: with whole
-shares only, anything priced above the ~$500 budget produced **zero shares and
-was silently skipped** — BKNG, CMG, ORLY, ASML, MTD and similar names never
-alerted at all. Now a $5,400 stock sizes to 0.09 units (~$486), and every
-trade deploys roughly the full budget regardless of share price.
-
-### Why the 20% cap is not a limit
-A ticker alerts once, then goes silent until price **exceeds** its target.
-MU at 100 → target 120 → muted → clears 120 → re-alerts at ~121 with a new
-target (~145). Long runs are captured in stages, each with a realistic target.
-
----
-
-## 2. Pipeline
-
-```
-NIGHTLY (weekdays 21:30 UTC)
-  tickers.csv (574 symbols)
-    -> daily data for all
-    -> rank by trend strength -> top 120 watchlist
-    -> FMP: earnings calendar (1 call) + quality screens (2 calls/stock)
-    -> watchlist.json
-
-EVERY 4 HOURS (weekdays, :15 UTC)
-  watchlist -> exclusions -> skip tickers already alerted (alerted.json)
-    -> DAILY  : trend gate (EMA20/50/200, ADX>=25, RS vs SPY, 52w high, higher highs)
-    -> 4-HOUR : setup = pullback to EMA20 | range breakout on volume
-    -> 1-HOUR : momentum trigger
-    -> QUALITY SCORE (stocks >= 0.70, ETFs >= 0.50)
-    -> target 9-20% (Fibonacci extension preferred) -> fee check -> size
-    -> email + Telegram + dashboard + signals_log.csv
-```
-
-### Quality score — context, not snapshots (max 1.00)
-
-| Factor | Weight | Rewards / punishes |
-|---|---|---|
-| RSI momentum | 0.26 | Rising *into* the zone, oversold reset. Punishes falling from overbought, bearish divergence |
-| VWAP | 0.21 | Reclaim after a dip. Punishes below-VWAP, >2 ATR stretch |
-| Extension from EMA | 0.20 | Near the 20 EMA. Punishes parabolic (>3 ATR), flat slope; rewards 20>50>200 |
-| Bollinger Bands | 0.18 | Squeeze→expansion, band walk. Punishes upper band while bands contract |
-| Volume | 0.15 | **Dry-up on pullbacks**, **surge on breakouts** |
-
-Options factor was removed (free chain data became unusable) and the remaining
-five were renormalized, so a perfect setup now scores 1.00.
-
-### Time-frame estimate (informative)
-Each alert carries an estimated window, e.g. `Time frame: 24-35 trading days`,
-from two independent calculations: distance ÷ (daily ATR × 0.4) and distance ÷
-the 20 EMA's current daily drift. Ranges are capped at 3× and tagged
-`[wide range: volatile but slow-advancing]` when the methods disagree badly.
-It is an estimate, **not a deadline** — the live system has no time-based exit.
-
-### Target selection
-1. **Fibonacci extension** (1.272 / 1.618 / 2.0 of the last up-leg) inside 9–20%
-2. Swing-high resistance inside the window
-3. Blue-sky ATR measured move
-If nothing sensible sits in the window, **the trade is skipped**.
-
-### Trend score (0–5) and ⭐RUNNER
-Uptrend · ADX ≥ 25 · RS vs SPY > 0 · within 15% of 52-week high · higher highs.
-**RUNNER** = uptrend + strong ADX + positive RS + near 52w high.
-
----
-
-## 3. `tickers.csv` — your universe (574 rows: 59 ETFs, 515 stocks)
-
-```
-symbol,name,type,leverage,inverse,category,sector,note
-```
-- `name` — shown in alerts and on the dashboard
-- `type` — `etf` (no commission, 0.50 floor) or `stock` ($2 round trip, 0.70 floor)
-- `leverage` ≥ 2 → decay warning in the alert
-- `sector` — used by the stratified backtest sampler
-- **Keep SPY** — benchmark, downloaded but never traded
-
-No inverse ETFs (removed — bearish products in a long-only system).
-No structurally capped funds (covered-call, bond, muni, merger-arb) — they
-cannot reach +9% swings.
-
----
-
-## 4. Workflows
-
-| Workflow | Trigger | Purpose |
-|---|---|---|
-| `nightly.yml` | weekdays 21:30 UTC | Watchlist + fundamentals cache |
-| `hourly.yml` | every 4h, weekdays :15 UTC | Scan, alert, publish |
-| `resend.yml` | manual | Re-send current signals (0 API cost) |
-| `check-symbols.yml` | manual | Verify symbols (`sp500` / blank / `AAPL,MSFT`) |
-| `probe-formats.yml` | manual | Find TD format for foreign listings (.L/.DE) |
-| `backtest.yml` | manual | Standard simulation → `backtest.html` |
-| `backtest-v2.yml` | manual | Stop-loss + time-boxed simulation → `backtest_v2.html` |
-| `sweep.yml` | manual | 9 strategy variants vs buy & hold SPY |
-
-All need `permissions: contents: write` plus repo Settings → Actions →
-General → Workflow permissions → **Read and write**.
-
----
-
-## 5. Secrets
-
-| Secret | Source |
-|---|---|
-| `TWELVEDATA_KEY` | twelvedata.com — **Grow plan** (no daily cap, 55/min) |
-| `FMP_KEY` | financialmodelingprep.com (free: 250/day) |
-| `SMTP_HOST` / `SMTP_PORT` | `smtp.gmail.com` / `587` |
-| `SMTP_USER` / `SMTP_PASS` | Gmail + **App Password** |
-| `EMAIL_TO` | recipient |
-| `TELEGRAM_TOKEN` | @BotFather → `/newbot` |
-| `TELEGRAM_CHAT_ID` | your ID (@userinfobot) **or** a channel ID (`-100…`, bot must be admin with Post Messages) |
-
-Daily usage: Twelve Data ≈ 574 (nightly) + ~122 per scan — no daily cap on Grow,
-but there IS a **55 requests/minute** limit. Requests are paced at ~37/min, and
-429 responses are retried with backoff — still, **do not run two heavy jobs at
-once** (nightly / backtest / sweep). Scans fire at :15 past every 4th hour, so
-start long jobs just after one finishes.
-**FMP ≈ 240 of 250 → run nightly only once per day.**
-
----
-
-## 6. Backtesting
-
-`backtest.yml` inputs:
-- **`mode: strat`** — sector-balanced sample: `n_stocks` spread across all 11
-  sectors, `n_etfs` across exposures, `n_baseline` (GLD/QQQ/VOO + random).
-  Seeded, so repeated runs test the *same* sample — settings changes are
-  measured fairly. (`include_etfs` is ignored in this mode.)
-- `mode: <number>` — that many stocks; `mode:` blank — the whole universe
-
-`sweep.yml` compares 9 variants (score thresholds, trailing exits, RS filter,
-200-EMA filter, longer holds, more slots) against the benchmark.
-
-### Two backtest flows, fully separate
-| | `backtest.yml` → `backtest.html` | `backtest-v2.yml` → `backtest_v2.html` |
-|---|---|---|
-| Exit rules | target, or 2000-day backstop | **hard stop-loss**, target, or **time-boxed exit** |
-| Thesis exit | off | off |
-| Extra inputs | – | `stop_loss_pct` (default 15), `eta_bound` (low/high) |
-| Outputs | `backtest.json`, `backtest_trades.csv` | `backtest_v2.json`, `backtest_v2_trades.csv` |
-
-v2 answers the question the standard run hides: if the target is not reached
-inside the estimated window, the position is closed **at market** — profit,
-break-even or loss — so unresolved trades appear in the statistics instead of
-sitting open forever.
-
-Both pages show: equity curve, monthly/yearly returns, **trade outcome
-distribution** (loss >20% … win >20%), **capital utilisation** (daily averages
-rolled up by year: deployed $, avg/max positions, % of equity, % of days in
-cash), best/worst trades, and **buy & hold SPY**.
-
-Two limitations, stated plainly:
-1. Backtests use **daily bars** — no 1h trigger, no VWAP factor.
-2. The universe is **survivor-biased** (today's winners tested backwards).
-Real results will be worse than any backtest here.
-
----
-
-## 7. Files
-
-```
-scan.py              nightly + hourly orchestration
-analysis.py          trend, setups, quality score, TP ladder, thesis-broken
-indicators.py        EMA/ATR/ADX/RSI/Bollinger/VWAP, fib extensions, context helpers
-data.py              Twelve Data client (throttled ~50/min, retries)
-fundamentals.py      FMP earnings calendar + screens + macro regime (SPY realized vol)
-alerts_ledger.py     alerted.json — mutes a ticker until it clears its target
-cycles.py            seasonality / presidential cycle (informative only)
-universe.py          reads tickers.csv (symbol, name, type, sector…)
-portfolio_files.py   positions.yaml / overrides.yaml helpers
-notify.py            email + Telegram formatting
-resend.py            re-send current signals, no rescan
-backtest_hist.py     portfolio simulation + stratified sampler
-backtest_v2.py       v2: stop-loss + time-boxed exits (separate outputs)
-sweep.py             variant comparison
-check_symbols.py     Twelve Data availability probe
-probe_formats.py     symbol-format probe for non-US listings
-tickers.csv          YOUR UNIVERSE — edit this
-alerted.json         which tickers are currently muted
-signals_log.csv      every signal ever generated
-docs/index.html      read-only signals dashboard
-docs/backtest.html   standard backtest results
-docs/backtest_v2.html v2 (stop-loss + time-boxed) results
+``` text
+3,000+ stocks / ETFs
+        │
+        ▼
+Stage 1 — Universe / Quality Funnel
+        │
+        ▼
+~500 stocks + ETFs
+        │
+        ▼
+Stage 2 — Daily Trend / Regime
+        │
+        ▼
+Daily-qualified candidates
+        │
+        ▼
+Stage 3 — 4H Setup
+        │
+        ▼
+~150 technical candidates
+        │
+        ▼
+Stage 4 — Context
+        │
+        ├── Earnings
+        └── Options / additional context
+        │
+        ▼
+Nightly Watchlist
+        │
+        ▼
+Hourly Scanner
+        │
+        ├── 4H setup
+        └── 1H entry timing
+        │
+        ▼
+Technical Signal
+        │
+        ▼
+News / Fundamental / Macro interpretation
+        │
+        ▼
+LLM confidence score
+        │
+        ├── Email: all signals
+        └── Telegram: qualified alerts
 ```
 
----
+------------------------------------------------------------------------
 
-## 8. Alert formats
+# 2. Core Trading Philosophy
 
-**Signal** — header is `BUY — TICKER — Company — Sector`, then:
+The system deliberately separates **selection**, **setup**, and
+**entry**.
+
+### Daily timeframe
+
+The daily timeframe answers:
+
+> **Is this stock in a market environment that is worth watching?**
+
+It is used for higher-timeframe direction and regime.
+
+### 4-hour timeframe
+
+The 4H timeframe answers:
+
+> **Is a tradable technical setup developing?**
+
+It is used for setup identification.
+
+### 1-hour timeframe
+
+The 1H timeframe answers:
+
+> **Is there an entry opportunity now?**
+
+The 1H entry is intentionally handled by the hourly scanner rather than
+the nightly scanner.
+
+This separation prevents the nightly process from trying to predict an
+exact entry many hours in advance.
+
+------------------------------------------------------------------------
+
+# 3. Universe
+
+The ticker universe is loaded from `tickers.csv`.
+
+The universe contains:
+
+-   S&P 500 companies
+-   Nasdaq companies
+-   ETFs
+
+Duplicates should be removed so that a company appearing in both the S&P
+500 and Nasdaq portions is processed only once.
+
+The scanner therefore works with a unified symbol universe.
+
+## ETFs
+
+ETFs are treated differently from operating companies.
+
+The stock fundamental/tier funnel is **not applied to ETFs**.
+
+This is intentional because company-level concepts such as:
+
+-   company market capitalization
+-   company profitability
+-   company debt/equity
+-   company financial quality
+
+do not apply to an ETF in the same way.
+
+ETFs therefore bypass the stock market-cap quality funnel.
+
+------------------------------------------------------------------------
+
+# 4. Stage 1 --- FMP Universe / Quality Funnel
+
+## Objective
+
+Stage 1 is the cheapest broad filter.
+
+Its purpose is to reduce the 3,000+ stock universe to approximately
+**500 stocks** before expensive historical Twelve Data analysis is
+performed.
+
+The current architecture uses the **FMP Company Screener** rather than
+the old FMP financial-statement bulk workflow.
+
+This distinction is important.
+
+The old approach attempted to obtain bulk fundamental datasets that
+returned HTTP 402 under the available FMP access.
+
+The current approach uses the FMP screener information that is actually
+available.
+
+------------------------------------------------------------------------
+
+## 4.1 Stock / ETF separation
+
+The universe is divided into:
+
+``` text
+Stocks
+ETFs
 ```
-═══ TRADE PLAN ═══
-Entry price   : $43.34
-Exit price    : $49.54   (+14.3%)
-Shares        : 11  (≈ $477)
--------
-Time frame    : 24-35 trading days (informative, from ATR and moving-average pace only)
--------
-eToro TP      : $68.20
-eToro Fees    : 2.9% of profit
-Strategy type : pullback
+
+Stocks go through Stage 1 screening.
+
+ETFs bypass the stock screening rules.
+
+------------------------------------------------------------------------
+
+# 5. Market-Cap Tiers
+
+The stock universe uses four tiers.
+
+  Tier     Market Capitalization Treatment
+  ------ ----------------------- ---------------------------------
+  A                      ≥ \$10B Normal processing
+  B                \$1B--\<\$10B Allowed, stronger requirements
+  C               \$100M--\<\$1B Allowed, strongest requirements
+  D                    \< \$100M Skip
+
+## Tier A --- Large Companies
+
+Companies with market capitalization of at least \$10B.
+
+These are given the normal screening requirements.
+
+The assumption is not that large companies are automatically good.
+
+The purpose is simply that their size generally reduces some of the
+liquidity and survivability concerns associated with very small
+companies.
+
+------------------------------------------------------------------------
+
+## Tier B --- Mid/Large Companies
+
+Market cap:
+
+``` text
+$1B to <$10B
 ```
-followed by TECHNICAL ANALYSIS (regime, trend score, EMAs, ADX, RS, RSI,
-factor-by-factor quality breakdown) and FUNDAMENTAL & MACRO.
 
-**Quiet scan** — when nothing fires:
+These remain eligible, but require stronger evidence than Tier A.
+
+The scanner therefore expects stronger technical quality and liquidity
+characteristics.
+
+------------------------------------------------------------------------
+
+## Tier C --- Smaller Companies
+
+Market cap:
+
+``` text
+$100M to <$1B
 ```
-Result: NO NEW SIGNAL 🚦
-Run completed 2026-08-05 12:15 UTC
-120 tickers scanned from the nightly watchlist
 
-Still Active (8): BF.B, BSET, INCY, KO, UNP, UPS, VLO, VRNS
-Failed fundamental (1): APM
+These are allowed.
+
+They are **not automatically considered bad companies**.
+
+However, because smaller companies can have:
+
+-   weaker liquidity
+-   greater volatility
+-   greater financing risk
+-   higher execution risk
+
+they must satisfy stronger conditions.
+
+The intended Tier C requirements include:
+
+-   sufficient trading liquidity
+-   profitability / acceptable financial quality when data is available
+-   acceptable debt characteristics
+-   stronger technical score
+
+This is a risk-control mechanism, not a statement that small companies
+cannot appreciate.
+
+------------------------------------------------------------------------
+
+## Tier D --- Microcaps
+
+Market cap:
+
+``` text
+<$100M
 ```
 
-Telegram delivery can target your private chat or a channel (bot must be an
-admin with Post Messages; channel IDs look like `-1001234567890`).
+These are skipped.
 
----
+They are intentionally excluded from the main trading universe because
+the scanner is designed around a manageable, liquid, repeatable trading
+universe.
 
-## 9. Daily routine
+------------------------------------------------------------------------
 
-1. Alert arrives (Telegram / email)
-2. Read the plan and the factor breakdown
-3. If taking it: buy on eToro, set Take Profit = **the P/L amount** in the alert
-4. That ticker stays silent until price clears the target, then may re-alert
-   with a new, higher target
+# 6. Liquidity Filtering
 
----
+Liquidity is an important part of Stage 1.
 
-## 10. Honest notes
+The system should avoid spending detailed technical-analysis resources
+on securities that are difficult to trade reliably.
 
-- **Decision support, not financial advice.** You own every trade.
-- Backtests to date show the strategy **underperforming buy & hold SPY** in a
-  strong bull market, with smaller drawdowns. Per-trade expectancy is positive
-  (~40% win rate, +13% average win vs −7% average loss); the shortfall comes
-  from partial capital deployment, exiting into pullbacks, and fees.
-- Leveraged (2x/3x) ETFs decay over time; alerts warn you, and the no-stoploss
-  rule is most dangerous there.
-- No stoploss means a broken position can sit at a large loss indefinitely.
-  Thesis-broken alerts exist so you are never blindsided — acting is your call.
-- Backtests produced before the fractional-shares fix understated results:
-  they silently excluded every stock above the position budget.
-- Don't tune after every quiet week. Change one setting, re-run the *same*
-  stratified backtest, and judge on evidence.
+Liquidity filtering can use information such as:
+
+-   trading volume
+-   price
+-   average dollar volume
+-   liquidity ranking
+
+The exact threshold is configurable.
+
+Tier C is deliberately more restrictive.
+
+The principle is:
+
+> **A technically attractive setup is not useful if the underlying
+> security is too illiquid to trade reliably.**
+
+------------------------------------------------------------------------
+
+# 7. Stage 1 Funnel Cap
+
+After applying the FMP screener and tier/liquidity logic, the system
+keeps at most approximately:
+
+``` text
+500 stocks
+```
+
+This is a **processing cap**, not necessarily a statement that exactly
+500 stocks are good buys.
+
+The goal is to control downstream API consumption.
+
+Example:
+
+``` text
+3,085 stocks
+     │
+     ├── unsuitable / unavailable
+     │
+     └── ranked survivors
+              │
+              ▼
+         maximum 500
+```
+
+The latest successful Stage 1 run demonstrated this behavior:
+
+``` text
+Input stocks:       3,085
+FMP matched:        1,920
+Stage 1 survivors:    500
+```
+
+This confirms that the broad funnel is functioning.
+
+------------------------------------------------------------------------
+
+# 8. Why Stage 1 Does Not Do Full Fundamentals
+
+The system previously attempted to use FMP bulk fundamental datasets for
+the entire stock universe.
+
+That was inefficient and, more importantly, some required FMP bulk
+endpoints returned:
+
+``` text
+HTTP 402 — Payment Required
+```
+
+Therefore the architecture was changed.
+
+Stage 1 should answer:
+
+> **Is this symbol worth spending more API resources on?**
+
+It does not need to completely understand the company's financial
+statements.
+
+Detailed fundamental/news interpretation happens later, after technical
+qualification.
+
+This is an intentional separation of concerns.
+
+------------------------------------------------------------------------
+
+# 9. Stage 2 --- Daily Technical / Higher-Timeframe Filter
+
+## Objective
+
+Stage 2 uses Twelve Data daily historical data.
+
+The question is:
+
+> **Is the stock's higher-timeframe trend/regime strong enough to remain
+> on the watchlist?**
+
+This stage is more expensive than Stage 1 because historical time-series
+data must be retrieved.
+
+That is why only the Stage 1 survivors are sent to Twelve Data.
+
+------------------------------------------------------------------------
+
+# 10. SPY Benchmark
+
+SPY is used as a benchmark for relative-strength analysis.
+
+SPY represents the S&P 500 ETF and is treated as a **reference series**,
+not as part of the screened stock universe.
+
+The Stage 2 process should request SPY explicitly.
+
+It must not depend on SPY accidentally appearing in the Stage 1
+candidate list.
+
+## SPY preflight
+
+Before spending the main daily-data request budget, Stage 2 performs an
+SPY check.
+
+The purpose is to discover a benchmark/API problem early.
+
+If SPY is available:
+
+``` text
+Daily trend
++
+relative strength vs SPY
+```
+
+is used.
+
+If SPY is unavailable:
+
+``` text
+Daily trend
++
+neutral relative strength
+```
+
+can be used as a fallback.
+
+A missing SPY benchmark should be treated as a warning/fallback
+condition rather than automatically destroying the entire nightly scan.
+
+------------------------------------------------------------------------
+
+# 11. Daily Technical Logic
+
+The daily analysis is used to assess the higher-timeframe trend.
+
+The existing technical analysis engine can evaluate factors such as:
+
+-   price relative to moving averages
+-   EMA structure
+-   trend strength
+-   momentum
+-   relative strength
+-   broader daily regime
+
+The daily score is then used to rank candidates.
+
+The exact technical formula remains in the technical analysis module
+rather than being duplicated inside the workflow.
+
+This is important because:
+
+> **The workflow decides when to apply the analysis; the analysis module
+> decides how the score is calculated.**
+
+------------------------------------------------------------------------
+
+# 12. Tier-Specific Daily Requirements
+
+Smaller companies should have stronger technical requirements.
+
+The current intended thresholds are approximately:
+
+``` text
+Tier A → minimum daily trend score: 2.0
+Tier B → minimum daily trend score: 2.5
+Tier C → minimum daily trend score: 3.0
+```
+
+Conceptually:
+
+``` text
+Tier A
+Normal technical requirement
+
+Tier B
+Stronger technical requirement
+
+Tier C
+Strongest technical requirement
+```
+
+This means a Tier C company does not get rejected simply because it is
+small.
+
+Instead:
+
+> **It must prove itself more strongly through technical evidence.**
+
+------------------------------------------------------------------------
+
+# 13. Stage 2 Diagnostics
+
+Stage 2 must distinguish between a genuine technical rejection and a
+data/API failure.
+
+These are not the same.
+
+### Genuine rejection
+
+Example:
+
+``` text
+Daily trend score below required threshold
+```
+
+### Data problem
+
+Example:
+
+``` text
+No Twelve Data daily data
+```
+
+### History problem
+
+Example:
+
+``` text
+Insufficient daily history
+```
+
+### Technical-code problem
+
+Example:
+
+``` text
+Daily technical calculation error
+```
+
+### API problem
+
+Example:
+
+``` text
+Twelve Data HTTP 429
+```
+
+These should be tracked separately.
+
+This is critical for debugging.
+
+------------------------------------------------------------------------
+
+# 14. Stage 3 --- 4H Setup
+
+After daily filtering, the remaining candidates are evaluated on the
+4-hour timeframe.
+
+The question becomes:
+
+> **Does the stock have a useful short-to-medium-term technical setup?**
+
+Examples of setup categories can include:
+
+-   pullback
+-   breakout
+-   continuation
+-   other setups supported by the technical analysis engine
+
+The 4H timeframe bridges the gap between:
+
+``` text
+Daily trend
+```
+
+and:
+
+``` text
+1H entry
+```
+
+------------------------------------------------------------------------
+
+# 15. 4H Processing Cap
+
+The nightly scanner should reduce the candidates to a manageable number
+before the more expensive context/enrichment stage.
+
+The intended cap is approximately:
+
+``` text
+150 stocks
+```
+
+Therefore the overall funnel becomes approximately:
+
+``` text
+3,000+
+   ↓
+Stage 1
+   ↓
+500
+   ↓
+Stage 2 Daily
+   ↓
+daily-qualified candidates
+   ↓
+Stage 3 4H
+   ↓
+~150
+```
+
+The exact number may vary depending on how many candidates pass the
+filters.
+
+------------------------------------------------------------------------
+
+# 16. Why 1H Is NOT in the Nightly Scanner
+
+The 1H timeframe is deliberately owned by the hourly scanner.
+
+This is an important architectural boundary.
+
+Nightly:
+
+``` text
+Daily → 4H
+```
+
+Hourly:
+
+``` text
+4H → 1H
+```
+
+The nightly scanner asks:
+
+> "What should I watch?"
+
+The hourly scanner asks:
+
+> "Is this the time to enter?"
+
+This prevents unnecessary repeated 1H analysis of thousands of
+securities.
+
+------------------------------------------------------------------------
+
+# 17. Stage 4 --- Context / Enrichment
+
+After technical filtering, the remaining candidates receive additional
+context.
+
+This stage can include:
+
+-   upcoming earnings
+-   options context
+-   other event information
+-   supporting metadata
+
+The important principle is:
+
+> **Context enriches a technically qualified candidate. It does not
+> replace the technical funnel.**
+
+The system should not spend expensive context/API resources on thousands
+of securities that already failed the technical requirements.
+
+------------------------------------------------------------------------
+
+# 18. Earnings Risk
+
+Upcoming earnings are particularly important.
+
+A technically attractive setup immediately before an earnings
+announcement carries a different risk profile than the same setup
+without an imminent earnings event.
+
+The nightly process therefore identifies stocks with earnings within the
+configured near-term window.
+
+This information is passed to the watchlist and later signal/news
+analysis.
+
+------------------------------------------------------------------------
+
+# 19. Nightly Watchlist
+
+The output of the nightly workflow is the next day's candidate universe.
+
+The watchlist is therefore not:
+
+> "Stocks to buy."
+
+It is:
+
+> **"Stocks worth monitoring for a valid entry."**
+
+This distinction is fundamental.
+
+A stock can survive the nightly process and still never produce a buy
+signal.
+
+------------------------------------------------------------------------
+
+# 20. Hourly Scanner
+
+The hourly scanner operates on the smaller nightly universe.
+
+Its purpose is real-time/near-real-time entry detection.
+
+The intended logic is:
+
+``` text
+Nightly watchlist
+       ↓
+4H setup
+       ↓
+1H entry
+       ↓
+Technical signal
+```
+
+The hourly scanner can therefore examine the exact conditions required
+for an entry without processing the entire 3,000+ stock universe.
+
+------------------------------------------------------------------------
+
+# 21. Technical Signal
+
+When the hourly scanner finds a qualifying setup, it creates the
+technical signal.
+
+The signal can contain:
+
+-   ticker
+-   current/entry price
+-   take-profit target
+-   shares
+-   timeframe
+-   technical score
+-   setup type
+-   trend information
+-   EMA structure
+-   RSI
+-   VWAP
+-   other technical fields
+
+The technical signal is the trigger for the next stage.
+
+------------------------------------------------------------------------
+
+# 22. News / Fundamental / Macro Interpretation
+
+Once a technical signal exists, the news workflow enriches it.
+
+The LLM is **not** being asked to scan 3,000 companies.
+
+Instead:
+
+``` text
+Technical scanner
+       ↓
+Qualified signal
+       ↓
+News / fundamentals / sector / macro
+       ↓
+LLM interpretation
+```
+
+This makes much better use of API credits.
+
+The LLM's role is:
+
+> **Evaluate whether the surrounding information supports or weakens an
+> already-existing technical thesis.**
+
+It is not the primary stock-selection engine.
+
+------------------------------------------------------------------------
+
+# 23. LLM Assessment
+
+The interpretation can consider:
+
+### Analyst view
+
+-   analyst ratings
+-   consensus
+-   estimate revisions
+
+### Financial results
+
+-   earnings surprises
+-   revenue
+-   net income
+-   margins
+-   cash flow
+-   debt
+
+### Valuation
+
+Where available:
+
+-   P/E
+-   P/S
+-   P/B
+-   other relevant valuation metrics
+
+### Earnings
+
+-   next expected earnings date
+-   proximity to trade window
+
+### News
+
+-   recent company-specific news
+-   meaningful catalysts or risks
+
+### Sector
+
+-   sector condition
+-   industry condition
+
+### Macro
+
+-   market risk
+-   volatility
+-   relevant macro conditions
+
+The purpose is not to mechanically average these fields.
+
+The LLM interprets the combined evidence.
+
+------------------------------------------------------------------------
+
+# 24. Confidence Score
+
+The final interpretation produces a confidence score.
+
+Conceptually:
+
+``` text
+Technical setup
+       +
+Analyst information
+       +
+Financial information
+       +
+Valuation
+       +
+Earnings
+       +
+News
+       +
+Sector
+       +
+Macro
+       ↓
+Overall confidence
+```
+
+For example:
+
+``` text
+Confidence: 72%
+```
+
+The score is intended to represent:
+
+> **How strongly the available evidence supports the technical trading
+> thesis.**
+
+It is not a guaranteed probability of profit.
+
+------------------------------------------------------------------------
+
+# 25. Notification Logic
+
+Notifications are intentionally separated.
+
+## Email
+
+Email receives the full set of signals according to the configured
+workflow.
+
+Purpose:
+
+> Complete record / review.
+
+## Telegram
+
+Telegram is intended to be selective.
+
+The intended rule is:
+
+``` text
+New qualifying signal
+AND
+confidence > 60%
+```
+
+Then send the Telegram alert.
+
+This prevents Telegram from becoming a duplicate feed of every technical
+signal.
+
+------------------------------------------------------------------------
+
+# 26. Why the LLM Comes Late
+
+The architecture deliberately places LLM interpretation near the end.
+
+This saves:
+
+-   OpenAI API usage
+-   Anthropic API usage
+-   FMP context calls
+-   processing time
+
+Instead of:
+
+``` text
+3,000 stocks
+→ LLM
+```
+
+the architecture aims for:
+
+``` text
+3,000
+→ 500
+→ 150
+→ technical signals
+→ small number of LLM calls
+```
+
+This is one of the most important cost-control principles in the
+project.
+
+------------------------------------------------------------------------
+
+# 27. Diagnostics Architecture
+
+Each nightly stage should produce diagnostics.
+
+The diagnostic system records:
+
+``` text
+Input
+Passed
+Failed
+Failure reasons
+API errors
+Ticker-level status
+```
+
+The purpose is to distinguish:
+
+### Stock rejection
+
+``` text
+Daily trend too weak
+```
+
+from:
+
+### Data failure
+
+``` text
+No Twelve Data data
+```
+
+from:
+
+### API failure
+
+``` text
+HTTP 429
+HTTP 402
+```
+
+from:
+
+### Software failure
+
+``` text
+Technical calculation error
+```
+
+This allows future debugging without guessing.
+
+------------------------------------------------------------------------
+
+# 28. Example Diagnostic Funnel
+
+A healthy run might look like:
+
+``` text
+STAGE 1
+Input:       3,085
+FMP matched: 1,920
+Passed:        500
+
+Reasons:
+- FMP data unavailable
+- insufficient liquidity
+- tier-specific requirements
+- market-cap requirements
+
+
+STAGE 2
+Input:         500
+Passed:        300
+
+Reasons:
+- no daily data
+- insufficient history
+- weak daily trend
+- weak relative strength
+
+
+STAGE 3
+Input:         300
+Passed:        120
+
+Reasons:
+- no 4H setup
+- insufficient 4H history
+- setup score too low
+
+
+STAGE 4
+Input:         120
+Watchlist:     120
+```
+
+The actual numbers are expected to change from day to day.
+
+------------------------------------------------------------------------
+
+# 29. API-Cost Strategy
+
+The system intentionally uses different data sources for different jobs.
+
+### FMP
+
+Best used early for broad company/universe information that is
+accessible under the current plan.
+
+### Twelve Data
+
+Used for historical market data and technical analysis after the
+universe has been reduced.
+
+### LLM
+
+Used only after a technical signal exists.
+
+This creates a cost hierarchy:
+
+``` text
+Cheap / broad
+     ↓
+FMP screener
+
+Moderate / narrower
+     ↓
+Twelve Data Daily
+
+More expensive / narrower
+     ↓
+Twelve Data 4H
+
+Context / enrichment
+     ↓
+FMP + other context
+
+Most selective
+     ↓
+LLM
+```
+
+------------------------------------------------------------------------
+
+# 30. Important Design Principle: Do Not Filter Everything at Once
+
+The system should **not** attempt to obtain every piece of data for
+every ticker at the beginning.
+
+Bad architecture:
+
+``` text
+3,000 stocks
+ ↓
+fundamentals
+ ↓
+news
+ ↓
+valuation
+ ↓
+sector
+ ↓
+macro
+ ↓
+daily
+ ↓
+4H
+ ↓
+1H
+ ↓
+LLM
+```
+
+This wastes API calls.
+
+Better architecture:
+
+``` text
+3,000
+ ↓
+cheap broad filter
+ ↓
+500
+ ↓
+daily
+ ↓
+smaller universe
+ ↓
+4H
+ ↓
+~150
+ ↓
+context
+ ↓
+technical signal
+ ↓
+LLM
+```
+
+The expensive analysis is reserved for the candidates that have already
+demonstrated enough potential.
+
+------------------------------------------------------------------------
+
+# 31. What the System Is NOT Trying to Do
+
+The scanner is not designed to:
+
+-   predict every winning stock
+-   identify the best company in the market
+-   guarantee profitable trades
+-   buy every nightly survivor
+-   treat a high market cap as a buy signal
+-   treat a high LLM confidence score as certainty
+-   use fundamentals alone to determine entry timing
+
+Instead, it is designed to identify **high-quality opportunities where
+multiple layers of evidence align**.
+
+------------------------------------------------------------------------
+
+# 32. Future Performance Validation
+
+The current thresholds are design choices.
+
+They should eventually be validated against actual outcomes.
+
+Important metrics to track include:
+
+### By tier
+
+-   A win rate
+-   B win rate
+-   C win rate
+
+### By setup
+
+-   pullback
+-   breakout
+-   continuation
+
+### By confidence
+
+For example:
+
+``` text
+Confidence 60–69%
+Confidence 70–79%
+Confidence 80–89%
+Confidence 90%+
+```
+
+Then compare those groups with actual trade outcomes.
+
+### By stage
+
+Measure whether each stage actually improves the quality of the
+candidates.
+
+For example:
+
+``` text
+Stage 1 survivors
+vs
+Stage 2 survivors
+vs
+Stage 3 survivors
+vs
+Final signals
+```
+
+This allows thresholds to be tuned based on evidence rather than
+intuition.
+
+------------------------------------------------------------------------
+
+# 33. Target Architecture
+
+The intended final architecture is:
+
+``` text
+                    ┌───────────────────┐
+                    │    tickers.csv    │
+                    │ S&P + Nasdaq + ETF│
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │     STAGE 1       │
+                    │   FMP Screener    │
+                    │                   │
+                    │ Market cap        │
+                    │ Liquidity          │
+                    │ Tier A/B/C/D       │
+                    └─────────┬─────────┘
+                              │
+                         ≤500 stocks
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │     STAGE 2       │
+                    │  Twelve Data      │
+                    │      Daily        │
+                    │                   │
+                    │ Daily regime      │
+                    │ Trend              │
+                    │ Relative strength │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │     STAGE 3       │
+                    │  Twelve Data 4H   │
+                    │                   │
+                    │ Pullback           │
+                    │ Breakout           │
+                    │ Continuation       │
+                    └─────────┬─────────┘
+                              │
+                         ~150 max
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │     STAGE 4       │
+                    │     Context       │
+                    │                   │
+                    │ Earnings           │
+                    │ Options            │
+                    │ Event information  │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │  NIGHTLY WATCHLIST│
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │   HOURLY SCANNER  │
+                    │                   │
+                    │ 4H setup           │
+                    │ 1H entry           │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ TECHNICAL SIGNAL  │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ NEWS / LLM        │
+                    │                   │
+                    │ Analyst            │
+                    │ Financials         │
+                    │ Valuation          │
+                    │ Earnings           │
+                    │ News               │
+                    │ Sector             │
+                    │ Macro              │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ CONFIDENCE SCORE  │
+                    └─────────┬─────────┘
+                              │
+                 ┌────────────┴────────────┐
+                 │                         │
+                 ▼                         ▼
+          Email — all signals      Telegram — qualified
+                                   new signals >60%
+```
+
+------------------------------------------------------------------------
+
+# 34. Operational Rule
+
+When modifying the codebase, **the current repository is the source of
+truth**.
+
+Do not reintroduce an older architecture or an obsolete function simply
+because it existed in a previous version.
+
+Before modifying a workflow:
+
+1.  Inspect the current files.
+2.  Identify the current function interfaces.
+3.  Preserve the current stage architecture.
+4.  Change only the requested behavior.
+5.  Verify imports and function calls.
+6.  Syntax-check the changed Python files.
+7.  Validate YAML syntax.
+8.  Run the smallest relevant stage first.
+9.  Check diagnostics before proceeding to the next stage.
+
+This is especially important because the project has evolved from the
+original FMP bulk-fundamentals design to the current staged
+FMP-screener + Twelve Data architecture.
+
+------------------------------------------------------------------------
+
+# 35. Current Architecture Summary
+
+### Nightly
+
+``` text
+FMP Screener
+    ↓
+A/B/C/D + liquidity
+    ↓
+≤500 stocks
+    ↓
+Daily technical regime
+    ↓
+4H technical setup
+    ↓
+Context / earnings / options
+    ↓
+Nightly watchlist
+```
+
+### Hourly
+
+``` text
+Nightly watchlist
+    ↓
+4H setup
+    ↓
+1H entry
+    ↓
+Technical signal
+    ↓
+News / LLM interpretation
+    ↓
+Confidence score
+```
+
+### Notifications
+
+``` text
+Email
+→ all relevant signals
+
+Telegram
+→ new qualifying signals
+→ confidence >60%
+```
+
+### Fundamental philosophy
+
+``` text
+Fundamentals/context support the thesis.
+
+Technical analysis determines the trading setup.
+
+The LLM interprets the combination.
+
+No individual layer guarantees a trade.
+```
+
+------------------------------------------------------------------------
+
+# 36. Final Principle
+
+The entire system can be summarized as:
+
+> **Find a liquid, sufficiently qualified security → confirm its
+> higher-timeframe trend → wait for a 4H setup → wait for a 1H entry →
+> evaluate the surrounding fundamental/news context → assign confidence
+> → alert selectively.**
+
+The scanner is therefore designed as a **progressive evidence funnel**,
+not as a single giant stock-ranking calculation.
