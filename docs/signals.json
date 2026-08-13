@@ -1,13 +1,13 @@
 {
-  "generated": "2026-08-13T09:27:17.164282+00:00",
+  "generated": "2026-08-13T13:47:23.335144+00:00",
   "macro": {
     "risk": "risk-on",
-    "vol": 14.0
+    "vol": 13.9
   },
   "cycles": {
-    "score": -0.48,
+    "score": -0.47,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)"
+    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.4%, decade-pos 6 avg +11.7% (informative only)"
   },
   "signals": [
     {
@@ -25,7 +25,7 @@
       "fee_pct": 0.03488118596032265,
       "trend_score": 5,
       "adx": 34.6,
-      "rs": 0.032,
+      "rs": 0.035,
       "runner": true,
       "regime": "uptrend",
       "regime_weeks": 6,
@@ -63,49 +63,49 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T09:27:12.122847+00:00"
+      "time": "2026-08-13T13:47:19.277474+00:00"
     },
     {
       "ticker": "DUOL",
       "name": "Duolingo, Inc.",
       "setup": "pullback",
-      "entry": 134.69,
+      "entry": 139.01,
       "tp": 158.99,
-      "tp_pct": 0.18041428465364917,
-      "shares": 1.86,
-      "value": 250.5234,
-      "pl_amount": 45.2,
-      "eta_days_low": 7,
-      "eta_days_high": 21,
-      "fee_pct": 0.04424974556396299,
+      "tp_pct": 0.14373066685849945,
+      "shares": 1.8,
+      "value": 250.218,
+      "pl_amount": 35.96,
+      "eta_days_low": 6,
+      "eta_days_high": 18,
+      "fee_pct": 0.05561116672227778,
       "trend_score": 4,
-      "adx": 28.2,
-      "rs": 0.243,
+      "adx": 27.8,
+      "rs": 0.237,
       "runner": false,
       "regime": "uptrend",
       "regime_weeks": 10,
-      "ema20": 131.94,
-      "ema50": 126.7,
-      "ema200": 152.48,
+      "ema20": 132.61,
+      "ema50": 127.18,
+      "ema200": 153.44,
       "above_ema200": false,
-      "quality": 0.96,
+      "quality": 0.74,
       "q_detail": {
         "rsi": 1.0,
-        "bollinger": 1.0,
+        "bollinger": 0.0,
         "vwap": 1.0,
         "volume": 1.0,
-        "extension": 0.8
+        "extension": 0.6
       },
       "q_notes": {
-        "rsi": "RSI 53.0 rising",
-        "bollinger": "band position 61%, contracting",
+        "rsi": "RSI 57.2 rising",
+        "bollinger": "band position 80%, contracting",
         "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.7x average, drying up",
-        "extension": "+0.4 ATR from 20 EMA, slope -0.9%, bullish stack (20>50>200)"
+        "volume": "0.0x average, drying up",
+        "extension": "+1.0 ATR from 20 EMA, slope +0.5%, bullish stack (20>50>200)"
       },
       "context_notes": [],
       "ext_atr": null,
-      "rsi": 53.0,
+      "rsi": 57.2,
       "options_note": "",
       "sector": "",
       "warnings": [],
@@ -113,11 +113,66 @@
         "daily uptrend (score 4/5)",
         "4h pullback",
         "1h momentum trigger",
-        "quality +0.96 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.0)",
+        "quality +0.74 (rsi +1.0, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=57.2)",
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T09:27:12.283533+00:00"
+      "time": "2026-08-13T13:47:19.557475+00:00"
+    },
+    {
+      "ticker": "RELY",
+      "name": "Remitly Global, Inc.",
+      "setup": "pullback",
+      "entry": 24.7,
+      "tp": 30.46,
+      "tp_pct": 0.23319838056680164,
+      "shares": 10.12,
+      "value": 249.96399999999997,
+      "pl_amount": 58.29,
+      "eta_days_low": 12,
+      "eta_days_high": 36,
+      "fee_pct": 0.034310496267018,
+      "trend_score": 5,
+      "adx": 25.4,
+      "rs": 0.022,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 24,
+      "ema20": 23.81,
+      "ema50": 22.82,
+      "ema200": 19.3,
+      "above_ema200": true,
+      "quality": 1.0,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 55.9 rising",
+        "bollinger": "band position 65%, expanding",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.0x average, drying up",
+        "extension": "+0.9 ATR from 20 EMA, slope +0.4%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 55.9,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=55.9)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-08-13T13:47:20.098033+00:00"
     }
   ],
   "position_alerts": []
