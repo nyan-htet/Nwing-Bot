@@ -2,7 +2,7 @@ name: nightly-scan
 
 on:
   schedule:
-    - cron: "30 22 * * 1-5"
+    - cron: "30 22 * * 0-4"
   workflow_dispatch:
 
 permissions:
