@@ -232,25 +232,49 @@ def run(years=8, max_stocks=None, include_etfs=True, stratified=False,
 CONFIDENCE_MAX_YEARS = 6
 CONFIDENCE_POSITION_PCT_MIN = 0.005
 CONFIDENCE_POSITION_PCT_MAX = 0.05
-CONFIDENCE_MAX_UNIVERSE = 50
+CONFIDENCE_MAX_UNIVERSE = 200
 
 
-def load_confidence_tickers(min_confidence=60, path="docs/news.json"):
-    """Tickers from the latest news_llm.py run that cleared min_confidence.
-    docs/news.json is overwritten every run — this is always a snapshot of
-    the most recent news-followup, not an accumulated history."""
+def load_confidence_tickers(min_confidence=60, path="docs/news.json",
+                            csv_path="news_log.csv"):
+    """Every ticker that has EVER cleared min_confidence, accumulated over
+    time from news_log.csv (append-only — grows every news-followup run),
+    unioned with docs/news.json (the latest run, in case the CSV is fresh/
+    empty). docs/news.json alone is a single-run snapshot and will usually
+    only hold a handful of tickers — not enough for a meaningful backtest
+    universe on its own.
+    """
+    out = set()
+
+    try:
+        import csv as _csv
+        with open(csv_path, "r", encoding="utf-8", newline="") as f:
+            for row in _csv.DictReader(f):
+                conf = row.get("buy_confidence")
+                ticker = str(row.get("ticker", "")).upper().strip()
+                if not ticker or conf in (None, ""):
+                    continue
+                try:
+                    if float(conf) >= min_confidence:
+                        out.add(ticker)
+                except ValueError:
+                    continue
+    except FileNotFoundError:
+        print(f"{csv_path} not found yet — relying on {path} only")
+    except Exception as exc:
+        print(f"Could not read {csv_path}: {exc}")
+
     try:
         with open(path, "r", encoding="utf-8") as f:
             doc = json.load(f)
+        for row in doc.get("results", []):
+            conf = row.get("buy_confidence")
+            if conf is not None and conf >= min_confidence:
+                out.add(str(row.get("ticker", "")).upper())
     except Exception as exc:
         print(f"Could not read {path}: {exc}")
-        return []
-    out = []
-    for row in doc.get("results", []):
-        conf = row.get("buy_confidence")
-        if conf is not None and conf >= min_confidence:
-            out.append(str(row.get("ticker", "")).upper())
-    return sorted(set(t for t in out if t))
+
+    return sorted(t for t in out if t)
 
 
 def run_confidence_filtered(starting_equity=10_000.0, position_pct=0.02,
@@ -281,14 +305,20 @@ def run_confidence_filtered(starting_equity=10_000.0, position_pct=0.02,
         confidence_tickers = load_confidence_tickers(min_confidence)
     if not confidence_tickers:
         raise SystemExit(
-            "No confidence-qualifying tickers found in docs/news.json — "
-            "run news_llm.py first, or lower min_confidence."
+            "No confidence-qualifying tickers found in news_log.csv or "
+            "docs/news.json — run news_llm.py first, or lower min_confidence."
         )
 
     all_tickers, meta = universe.load()
     qualifying = [t for t in confidence_tickers if t in all_tickers]
     stocks_pool = [t for t in qualifying if meta.get(t, {}).get("type") != "etf"]
     etfs_pool = [t for t in qualifying if meta.get(t, {}).get("type") == "etf"]
+
+    if len(qualifying) < 5:
+        print(f"WARNING: only {len(qualifying)} confidence-qualifying ticker(s) "
+              f"available ({qualifying}) — results from this small a pool won't "
+              f"be statistically meaningful. Lower min_confidence or wait for "
+              f"news_log.csv to accumulate more history.")
 
     stocks = stocks_pool[:n_stocks]
     etfs = etfs_pool[:n_etfs]
