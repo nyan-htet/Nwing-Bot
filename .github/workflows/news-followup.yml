@@ -49,7 +49,7 @@ jobs:
         if: always()
         run: |
           git config user.name swingbot && git config user.email bot@users.noreply.github.com
-          git add news_log.csv docs/news.json || true
+          git add news_log.csv docs/news.json alerted.json || true
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -m "news: update checks"
           git pull --rebase --autostash origin main || true
