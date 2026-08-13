@@ -108,3 +108,4 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-13 17:15 UTC,LYFT,openai,True,3,3,OK,supportive,pullback continuation,64
 2026-08-13 17:15 UTC,DBX,openai,True,3,0,NO_NEWS,supportive,pullback continuation,61
 2026-08-13 17:15 UTC,ADSE,openai,True,3,0,NO_NEWS,caution,pullback continuation,30
+2026-08-13 21:05 UTC,LYFT,openai,True,3,3,OK,mixed,pullback continuation,58
