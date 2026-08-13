@@ -6,12 +6,6 @@
     "thesis_warned": false,
     "tp": 305.72
   },
-  "ADSE": {
-    "alerted": "2026-08-13T17:13:50.933521+00:00",
-    "entry": 11.99,
-    "thesis_warned": false,
-    "tp": 14.74
-  },
   "BRKR": {
     "alerted": "2026-08-13T07:39:31.447312+00:00",
     "entry": 59.27,
@@ -51,12 +45,6 @@
     "entry": 16.77,
     "thesis_warned": false,
     "tp": 19.2
-  },
-  "MORN": {
-    "alerted": "2026-08-13T17:13:51.590287+00:00",
-    "entry": 198.15,
-    "thesis_warned": false,
-    "tp": 244.2
   },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
