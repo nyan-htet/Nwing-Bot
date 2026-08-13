@@ -99,3 +99,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-13 07:41 UTC,ADP,openai,True,3,3,OK,supportive,pullback continuation
 2026-08-13 09:27 UTC,DUOL,openai,True,3,2,OK,mixed,pullback continuation
 2026-08-13 09:27 UTC,ADSE,openai,True,3,0,NO_NEWS,caution,pullback continuation
+2026-08-13 13:48 UTC,RELY,openai,True,3,2,OK,supportive,pullback continuation
+2026-08-13 13:48 UTC,DUOL,openai,True,3,1,OK,mixed,pullback continuation
+2026-08-13 13:48 UTC,ADSE,openai,True,3,0,NO_NEWS,caution,pullback continuation
