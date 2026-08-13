@@ -24,7 +24,8 @@
 <body>
 <h1>📊 Nwing-Bot — Historical Backtest</h1>
 <div class="mut" id="meta">Loading…</div>
-<div class="mut" style="margin-top:6px">⚠️ Daily-bar approximation of the live strategy (no 1h trigger / VWAP factor). Past performance does not predict future results.</div>
+<div class="mut" id="mode-line" style="margin-top:4px"></div>
+<div class="mut" id="note" style="margin-top:6px">⚠️ Loading…</div>
 
 <h2>Headline</h2>
 <div class="kpis" id="kpis"></div>
@@ -55,7 +56,18 @@ const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","
 
 fetch("backtest.json?t=" + Date.now()).then(r => r.json()).then(d => {
   const s = d.stats;
+  const u = d.universe || {};
   $("meta").textContent = `Period ${s.period} • generated ${d.generated?.slice(0,10)}`;
+  $("note").textContent = "⚠️ " + (d.note || "") + " Past performance does not predict future results.";
+  if (u.mode === "confidence_filtered") {
+    $("mode-line").innerHTML = `<b>Mode: confidence-filtered</b> — ${u.stocks} stocks + ${u.etfs} ETFs `
+      + `(of ${u.qualifying_stocks_available ?? "?"} / ${u.qualifying_etfs_available ?? "?"} qualifying, `
+      + `capped at ${u.n_stocks_cap ?? "?"}+${u.n_etfs_cap ?? "?"}) • `
+      + `min confidence ${u.min_confidence ?? "?"}% • position ${((u.position_pct ?? 0) * 100).toFixed(1)}% `
+      + `• starting equity $${(u.starting_equity ?? 0).toLocaleString()}`;
+  } else {
+    $("mode-line").textContent = `Mode: standard — ${u.stocks ?? "?"} stocks + ${u.etfs ?? "?"} ETFs, ${u.years ?? "?"}y`;
+  }
   const kpis = [
     ["Final equity", "$" + s.final_equity.toLocaleString(), s.total_return_pct],
     ["Total return", s.total_return_pct + "%", s.total_return_pct],
