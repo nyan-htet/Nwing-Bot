@@ -203,17 +203,30 @@ def _spread_by_sector(tickers, meta, n, seed=42):
 
 
 def run(years=8, max_stocks=None, include_etfs=True, stratified=False,
-        n_stocks=30, n_etfs=10, n_baseline=10):
+        n_stocks=30, n_etfs=10, n_baseline=10,
+        starting_equity=None, position_pct=None):
     """max_stocks: how many STOCKS to test (0 = none, blank/None = all).
     include_etfs: test the ETF rows from tickers.csv too.
-    SPY is always downloaded as the benchmark (never traded)."""
+    SPY is always downloaded as the benchmark (never traded).
+    starting_equity/position_pct: None = use the existing defaults
+    (START_EQUITY=10,000, PARAMS['position_pct']=cfg.POSITION_PCT). Pass a
+    value to override for this run — applies to strat/number/blank modes,
+    not just 'conf' mode.
+    """
+    global START_EQUITY
+    if starting_equity is not None:
+        START_EQUITY = float(starting_equity)
+    if position_pct is not None:
+        PARAMS["position_pct"] = float(position_pct)
+
     all_tickers, meta = universe.load()
     if stratified:
         s_, e_, b_ = stratified_sample(all_tickers, meta, n_stocks, n_etfs, n_baseline)
         stocks, etfs = s_ + [t for t in b_ if meta.get(t, {}).get("type") != "etf"], \
                        e_ + [t for t in b_ if meta.get(t, {}).get("type") == "etf"]
         tickers = ["SPY"] + sorted(set(stocks + etfs))
-        print(f"Universe: {len(stocks)} stocks + {len(etfs)} ETFs (+SPY benchmark) | stratified")
+        print(f"Universe: {len(stocks)} stocks + {len(etfs)} ETFs (+SPY benchmark) | stratified "
+              f"| equity=${START_EQUITY:,.0f} | position_pct={PARAMS['position_pct']:.1%}")
         return _run_core(tickers, meta, stocks, etfs, years, True)
     stocks = [t for t in all_tickers
               if meta.get(t, {}).get("type") != "etf" and t != "SPY"]
@@ -231,7 +244,8 @@ def run(years=8, max_stocks=None, include_etfs=True, stratified=False,
 
     tickers = ["SPY"] + sorted(set(stocks + etfs))   # benchmark mandatory
     print(f"Universe: {len(stocks)} stocks + {len(etfs)} ETFs "
-          f"(+SPY benchmark) | ETFs {'included' if include_etfs else 'excluded'}")
+          f"(+SPY benchmark) | ETFs {'included' if include_etfs else 'excluded'} "
+          f"| equity=${START_EQUITY:,.0f} | position_pct={PARAMS['position_pct']:.1%}")
     return _run_core(tickers, meta, stocks, etfs, years, include_etfs)
 
 
@@ -404,13 +418,27 @@ def _run_core(tickers, meta, stocks, etfs, years, include_etfs, extra_run_info=N
         prepped = _CACHE["prepped"]
     else:
         prepped = {}
+        short_history = []
         for t, df in raw.items():
-            if t == "SPY" or len(df) < 300:
-                continue      # SPY = benchmark only, never traded
+            if t == "SPY":
+                continue      # benchmark only, never traded
+            if len(df) < 300:
+                short_history.append((t, len(df)))
+                continue
             d_ = df.drop_duplicates(subset="time").sort_values("time")
             prepped[t] = prep(d_).set_index("time")
-        _CACHE.update({"prep_key": prep_key, "prepped": prepped})
+        _CACHE.update({"prep_key": prep_key, "prepped": prepped, "short_history": short_history})
+    short_history = _CACHE.get("short_history", [])
     print(f"Usable tickers: {len(prepped)}")
+    if short_history:
+        detail = ", ".join(f"{t} ({n}d)" for t, n in short_history)
+        print(f"Dropped for insufficient history (<300d, ~1.2y): "
+              f"{len(short_history)} — {detail}")
+        if len(prepped) == 0:
+            print("WARNING: every ticker in this universe was dropped for "
+                  "insufficient history — 0 trades is guaranteed, not a "
+                  "strategy result. Recently-listed stocks won't have "
+                  "enough daily bars for a multi-year backtest.")
     globals()["RUN_INFO"] = {"stocks": len(stocks), "etfs": len(etfs),
                              "tested": len(prepped), "years": years,
                              "include_etfs": include_etfs,
@@ -712,10 +740,15 @@ if __name__ == "__main__":
     inc = True
     if len(sys.argv) > 3 and str(sys.argv[3]).strip() != "":
         inc = str(sys.argv[3]).strip().lower() in ("yes", "y", "true", "1")
+    # optional trailing overrides, same position for both strat and
+    # number/blank modes: [n_stocks] [n_etfs] [n_baseline] [starting_equity] [position_pct]
+    eq = float(sys.argv[7]) if len(sys.argv) > 7 and sys.argv[7].strip() else None
+    pct = float(sys.argv[8]) if len(sys.argv) > 8 and sys.argv[8].strip() else None
     if len(sys.argv) > 2 and str(sys.argv[2]).strip().lower().startswith("strat"):
         ns = int(sys.argv[4]) if len(sys.argv) > 4 and sys.argv[4].strip() else 30
         ne = int(sys.argv[5]) if len(sys.argv) > 5 and sys.argv[5].strip() else 10
         nb = int(sys.argv[6]) if len(sys.argv) > 6 and sys.argv[6].strip() else 10
-        run(yrs, stratified=True, n_stocks=ns, n_etfs=ne, n_baseline=nb)
+        run(yrs, stratified=True, n_stocks=ns, n_etfs=ne, n_baseline=nb,
+            starting_equity=eq, position_pct=pct)
     else:
-        run(yrs, mx, inc)
+        run(yrs, mx, inc, starting_equity=eq, position_pct=pct)
