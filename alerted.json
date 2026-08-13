@@ -1,14 +1,21 @@
 {
+  "LYFT": {
+    "alerted": "2026-08-13T21:04:37.500589+00:00",
+    "entry": 17.13,
+    "thesis_warned": false,
+    "tp": 21.03
+  },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
+    "scans_muted": 1,
     "thesis_warned": false,
     "tp": 173.37
   },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 30.46
   }
