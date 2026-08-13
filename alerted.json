@@ -1,1 +1,44 @@
-{}
+{
+  "ADP": {
+    "alerted": "2026-08-13T06:48:23.090752+00:00",
+    "entry": 269.33,
+    "thesis_warned": false,
+    "tp": 305.72
+  },
+  "ADSE": {
+    "alerted": "2026-08-13T06:48:23.112494+00:00",
+    "entry": 11.99,
+    "thesis_warned": false,
+    "tp": 14.74
+  },
+  "BRKR": {
+    "alerted": "2026-08-13T06:48:23.232510+00:00",
+    "entry": 59.27,
+    "thesis_warned": false,
+    "tp": 74.09
+  },
+  "DSGX": {
+    "alerted": "2026-08-13T06:48:23.404670+00:00",
+    "entry": 77.57,
+    "thesis_warned": false,
+    "tp": 92.49
+  },
+  "DUOL": {
+    "alerted": "2026-08-13T06:48:23.425232+00:00",
+    "entry": 134.69,
+    "thesis_warned": false,
+    "tp": 158.99
+  },
+  "EPAM": {
+    "alerted": "2026-08-13T06:48:23.493667+00:00",
+    "entry": 100.31,
+    "thesis_warned": false,
+    "tp": 113.0
+  },
+  "UFPI": {
+    "alerted": "2026-08-13T06:48:24.257808+00:00",
+    "entry": 91.73,
+    "thesis_warned": false,
+    "tp": 108.83
+  }
+}

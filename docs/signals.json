@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-13T06:35:14.751195+00:00",
+  "generated": "2026-08-13T06:48:33.192553+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 14.0
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T06:35:04.300714+00:00"
+      "time": "2026-08-13T06:48:23.090713+00:00"
     },
     {
       "ticker": "ADSE",
@@ -118,7 +118,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T06:35:04.317958+00:00"
+      "time": "2026-08-13T06:48:23.112465+00:00"
     },
     {
       "ticker": "BRKR",
@@ -173,7 +173,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T06:35:04.415399+00:00"
+      "time": "2026-08-13T06:48:23.232471+00:00"
     },
     {
       "ticker": "DSGX",
@@ -227,7 +227,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T06:35:04.551748+00:00"
+      "time": "2026-08-13T06:48:23.404640+00:00"
     },
     {
       "ticker": "DUOL",
@@ -281,7 +281,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T06:35:04.568161+00:00"
+      "time": "2026-08-13T06:48:23.425204+00:00"
     },
     {
       "ticker": "EPAM",
@@ -334,7 +334,7 @@
         "quality +0.84 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.4)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T06:35:04.623406+00:00"
+      "time": "2026-08-13T06:48:23.493636+00:00"
     },
     {
       "ticker": "UFPI",
@@ -388,7 +388,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-13T06:35:05.233322+00:00"
+      "time": "2026-08-13T06:48:24.257773+00:00"
     }
   ],
   "position_alerts": []
