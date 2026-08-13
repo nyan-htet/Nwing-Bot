@@ -3,15 +3,15 @@ on:
   workflow_dispatch:
     inputs:
       years:
-        description: "Years of history (e.g. 8)"
+        description: "Years of history (e.g. 8; capped at 6 for conf mode)"
         required: false
         default: "8"
       mode:
-        description: "'strat' for sector-balanced sample, or a number = max stocks, or blank = all"
+        description: "'strat' = sector-balanced sample, 'conf' = confidence-filtered (see conf_* inputs), a number = max stocks, or blank = all"
         required: false
         default: "strat"
       include_etfs:
-        description: "Include ETFs? yes / no (ignored in strat mode)"
+        description: "Include ETFs? yes / no (ignored in strat/conf mode)"
         required: false
         default: "yes"
       n_stocks:
@@ -26,6 +26,26 @@ on:
         description: "strat mode: baseline block (GLD/QQQ/VOO + random)"
         required: false
         default: "10"
+      conf_n_stocks:
+        description: "conf mode: max stocks (n_stocks + n_etfs must be <=50)"
+        required: false
+        default: "35"
+      conf_n_etfs:
+        description: "conf mode: max ETFs"
+        required: false
+        default: "15"
+      conf_position_pct:
+        description: "conf mode: equity % per trade, 0.005-0.05 (0.02 = 2%)"
+        required: false
+        default: "0.02"
+      conf_starting_equity:
+        description: "conf mode: starting equity"
+        required: false
+        default: "10000"
+      conf_min_confidence:
+        description: "conf mode: min news_llm confidence to include a ticker"
+        required: false
+        default: "60"
 permissions:
   contents: write
 jobs:
@@ -41,12 +61,21 @@ jobs:
         env:
           TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
         run: |
-          python backtest_hist.py "${{ github.event.inputs.years }}" \
-                                  "${{ github.event.inputs.mode }}" \
-                                  "${{ github.event.inputs.include_etfs }}" \
-                                  "${{ github.event.inputs.n_stocks }}" \
-                                  "${{ github.event.inputs.n_etfs }}" \
-                                  "${{ github.event.inputs.n_baseline }}"
+          if [ "${{ github.event.inputs.mode }}" = "conf" ]; then
+            python backtest_hist.py "${{ github.event.inputs.years }}" conf \
+                                    "${{ github.event.inputs.conf_n_stocks }}" \
+                                    "${{ github.event.inputs.conf_n_etfs }}" \
+                                    "${{ github.event.inputs.conf_position_pct }}" \
+                                    "${{ github.event.inputs.conf_starting_equity }}" \
+                                    "${{ github.event.inputs.conf_min_confidence }}"
+          else
+            python backtest_hist.py "${{ github.event.inputs.years }}" \
+                                    "${{ github.event.inputs.mode }}" \
+                                    "${{ github.event.inputs.include_etfs }}" \
+                                    "${{ github.event.inputs.n_stocks }}" \
+                                    "${{ github.event.inputs.n_etfs }}" \
+                                    "${{ github.event.inputs.n_baseline }}"
+          fi
       - name: Publish results
         run: |
           git config user.name swingbot && git config user.email bot@users.noreply.github.com
