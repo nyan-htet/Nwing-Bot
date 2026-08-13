@@ -146,9 +146,7 @@ def stratified_sample(all_tickers, meta, n_stocks=30, n_etfs=10, n_baseline=10,
     """Balanced sample: n_stocks spread evenly across sectors, n_etfs spread
     across ETF exposures, plus a baseline block (SPY, GLD + random others).
     Deterministic for a given seed so runs are comparable."""
-    import random
     from collections import defaultdict
-    rng = random.Random(seed)
 
     stocks_by_sector = defaultdict(list)
     etfs_by_sector = defaultdict(list)
@@ -159,25 +157,14 @@ def stratified_sample(all_tickers, meta, n_stocks=30, n_etfs=10, n_baseline=10,
         (etfs_by_sector if m.get("type") == "etf" else stocks_by_sector)[
             m.get("sector", "Other")].append(t)
 
-    def spread(groups, n):
-        keys = sorted(groups)
-        for k in keys:
-            rng.shuffle(groups[k])
-        picked, i = [], 0
-        while len(picked) < n and any(groups[k] for k in keys):
-            k = keys[i % len(keys)]
-            if groups[k]:
-                picked.append(groups[k].pop())
-            i += 1
-        return picked
-
-    stocks = spread(stocks_by_sector, n_stocks)
-    etfs = spread(etfs_by_sector, n_etfs)
+    stocks = _spread_by_sector_groups(stocks_by_sector, n_stocks, seed=seed)
+    etfs = _spread_by_sector_groups(etfs_by_sector, n_etfs, seed=seed)
 
     chosen = set(stocks + etfs)
     baseline = [t for t in ("GLD", "QQQ", "VOO") if t in all_tickers and t not in chosen]
     pool = [t for t in all_tickers if t not in chosen and t not in baseline and t != "SPY"]
-    rng.shuffle(pool)
+    import random
+    random.Random(seed).shuffle(pool)
     baseline += pool[:max(0, n_baseline - len(baseline))]
 
     print(f"Stratified sample: {len(stocks)} stocks across "
@@ -186,6 +173,33 @@ def stratified_sample(all_tickers, meta, n_stocks=30, n_etfs=10, n_baseline=10,
           f"{len({meta.get(t, {}).get('sector') for t in etfs})} exposures, "
           f"{len(baseline)} baseline/random")
     return stocks, etfs, baseline
+
+
+def _spread_by_sector_groups(groups, n, seed=42):
+    """Round-robin n tickers out of {sector: [tickers]} groups, evenly
+    spread across sectors (shuffled within each sector first)."""
+    import random
+    rng = random.Random(seed)
+    groups = {k: list(v) for k, v in groups.items()}   # don't mutate caller's dict
+    keys = sorted(groups)
+    for k in keys:
+        rng.shuffle(groups[k])
+    picked, i = [], 0
+    while len(picked) < n and any(groups[k] for k in keys):
+        k = keys[i % len(keys)]
+        if groups[k]:
+            picked.append(groups[k].pop())
+        i += 1
+    return picked
+
+
+def _spread_by_sector(tickers, meta, n, seed=42):
+    """Same as _spread_by_sector_groups but takes a flat ticker list."""
+    from collections import defaultdict
+    groups = defaultdict(list)
+    for t in tickers:
+        groups[meta.get(t, {}).get("sector", "Other")].append(t)
+    return _spread_by_sector_groups(groups, n, seed=seed)
 
 
 def run(years=8, max_stocks=None, include_etfs=True, stratified=False,
@@ -279,9 +293,15 @@ def load_confidence_tickers(min_confidence=60, path="docs/news.json",
 
 def run_confidence_filtered(starting_equity=10_000.0, position_pct=0.02,
                             n_stocks=35, n_etfs=15, years=6,
-                            min_confidence=60, confidence_tickers=None):
+                            min_confidence=60, confidence_tickers=None,
+                            balance_sectors=True):
     """Backtest restricted to tickers that cleared news_llm's confidence
-    bar (see the scope note above this function)."""
+    bar (see the scope note above this function).
+
+    balance_sectors=True (default): within the qualifying pool, spread the
+    n_stocks/n_etfs picks evenly across sectors (same method as 'strat'
+    mode) instead of taking them in whatever order they happen to appear.
+    """
     global START_EQUITY
 
     years = min(float(years), CONFIDENCE_MAX_YEARS)
@@ -320,8 +340,17 @@ def run_confidence_filtered(starting_equity=10_000.0, position_pct=0.02,
               f"be statistically meaningful. Lower min_confidence or wait for "
               f"news_log.csv to accumulate more history.")
 
-    stocks = stocks_pool[:n_stocks]
-    etfs = etfs_pool[:n_etfs]
+    if balance_sectors:
+        stocks = _spread_by_sector(stocks_pool, meta, n_stocks)
+        etfs = _spread_by_sector(etfs_pool, meta, n_etfs)
+        print(f"Sector-balanced pick: {len(stocks)}/{len(stocks_pool)} qualifying stocks "
+              f"across {len({meta.get(t, {}).get('sector') for t in stocks})} sectors, "
+              f"{len(etfs)}/{len(etfs_pool)} qualifying ETFs across "
+              f"{len({meta.get(t, {}).get('sector') for t in etfs})} exposures")
+    else:
+        stocks = stocks_pool[:n_stocks]
+        etfs = etfs_pool[:n_etfs]
+
     if not stocks and not etfs:
         raise SystemExit(
             "None of the confidence-qualifying tickers are in tickers.csv "
@@ -343,6 +372,7 @@ def run_confidence_filtered(starting_equity=10_000.0, position_pct=0.02,
         "n_etfs_cap": n_etfs,
         "qualifying_stocks_available": len(stocks_pool),
         "qualifying_etfs_available": len(etfs_pool),
+        "balance_sectors": balance_sectors,
     })
 
 
@@ -658,7 +688,7 @@ def summarize(curve, closed, days, buy_hold_pct=None):
 
 if __name__ == "__main__":
     # args: [years] [max_stocks|"strat"|"conf"] [include_etfs yes/no] [n_stocks] [n_etfs] [n_baseline]
-    # "conf" mode: python backtest_hist.py [years] conf [n_stocks] [n_etfs] [position_pct] [starting_equity] [min_confidence]
+    # "conf" mode: python backtest_hist.py [years] conf [n_stocks] [n_etfs] [position_pct] [starting_equity] [min_confidence] [balance_sectors yes/no]
     if len(sys.argv) > 2 and str(sys.argv[2]).strip().lower().startswith("conf"):
         yrs = float(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].strip() else CONFIDENCE_MAX_YEARS
         ns = int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[3].strip() else 35
@@ -666,9 +696,12 @@ if __name__ == "__main__":
         pct = float(sys.argv[5]) if len(sys.argv) > 5 and sys.argv[5].strip() else 0.02
         eq = float(sys.argv[6]) if len(sys.argv) > 6 and sys.argv[6].strip() else 10_000.0
         minc = int(sys.argv[7]) if len(sys.argv) > 7 and sys.argv[7].strip() else 60
+        bal = True
+        if len(sys.argv) > 8 and sys.argv[8].strip():
+            bal = sys.argv[8].strip().lower() in ("yes", "y", "true", "1")
         run_confidence_filtered(starting_equity=eq, position_pct=pct,
                                 n_stocks=ns, n_etfs=ne, years=yrs,
-                                min_confidence=minc)
+                                min_confidence=minc, balance_sectors=bal)
         raise SystemExit(0)
 
     yrs = float(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].strip() else 8
