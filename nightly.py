@@ -93,6 +93,86 @@ def print_stage_diagnostics(stage, input_n, passed, failed, reasons, status="com
     print("======================================")
 
 
+def _tier_of(t, meta):
+    return meta.get(t, {}).get("screen", {}).get("tier")
+
+
+def build_universe_report(s3, final_tickers, meta):
+    """Full stock/ETF disposition across stage1-3, tier by tier, for the
+    nightly universe report email. Purely a summary — makes no API calls
+    and doesn't affect the watchlist itself.
+    """
+    etf_set = set(s3.get("etf_set", []))
+    top_etfs = set(s3.get("top_etfs", []))
+    final_set = set(final_tickers)
+
+    # ---- Watchlist (final survivors) ----
+    watch_stocks_by_tier = {"A": [], "B": [], "C": []}
+    watch_etfs = sorted(t for t in final_set if t in etf_set)
+    for t in sorted(final_set - etf_set):
+        tier = _tier_of(t, meta) or "UNKNOWN"
+        watch_stocks_by_tier.setdefault(tier, []).append(t)
+
+    # ---- Every rejection reason across all 3 stages, merged by ticker ----
+    all_failures = {}
+    for t, notes in (s3.get("screen_failed_details") or {}).items():
+        all_failures.setdefault(t, []).extend(notes)
+    for t in s3.get("no_data", []):
+        all_failures.setdefault(t, []).append("No Twelve Data daily data")
+    for t in s3.get("short_history", []):
+        all_failures.setdefault(t, []).append("Insufficient daily history")
+    for t in s3.get("tier_floor_failed", []):
+        all_failures.setdefault(t, []).append("Below tier daily score floor")
+    for t in s3.get("no_4h_data", []):
+        all_failures.setdefault(t, []).append("No/short 4H data")
+    for t in s3.get("dropped_no_setup", []):
+        all_failures.setdefault(t, []).append("No active 4H setup")
+    for t in s3.get("cut_by_cap", []):
+        all_failures.setdefault(t, []).append("Cut by 4H processing cap")
+
+    # ---- Unknown/no-data: never classified at all (no FMP match ever) ----
+    unknown_stocks = sorted(
+        t for t, notes in all_failures.items()
+        if t not in etf_set and any("FMP screener data unavailable" in n for n in notes)
+    )
+    unknown_etfs = sorted(
+        t for t, notes in all_failures.items()
+        if t in etf_set and any("FMP screener data unavailable" in n for n in notes)
+    )
+
+    # ---- Rejected stocks, tier-classified (everything else that failed) ----
+    rejected_stocks_by_tier = {"A": [], "B": [], "C": [], "D": []}
+    extra_unknown = []
+    for t, notes in all_failures.items():
+        if t in etf_set or t in final_set:
+            continue
+        if any("FMP screener data unavailable" in n for n in notes):
+            continue  # already in unknown_stocks
+        tier = _tier_of(t, meta)
+        reason = notes[0] if notes else "Rejected"
+        if tier in rejected_stocks_by_tier:
+            rejected_stocks_by_tier[tier].append((t, reason))
+        else:
+            extra_unknown.append(t)  # no tier on record for some other reason
+    unknown_stocks = sorted(set(unknown_stocks) | set(extra_unknown))
+
+    for tier in rejected_stocks_by_tier:
+        rejected_stocks_by_tier[tier].sort()
+
+    # ---- Rejected ETFs (flat — ETFs bypass the tier system entirely) ----
+    rejected_etf_tickers = sorted(etf_set - top_etfs - set(unknown_etfs))
+    rejected_etfs = [(t, "No/insufficient daily data") for t in rejected_etf_tickers]
+
+    return {
+        "watch_stocks_by_tier": watch_stocks_by_tier,
+        "watch_etfs": watch_etfs,
+        "rejected_stocks_by_tier": rejected_stocks_by_tier,
+        "rejected_etfs": rejected_etfs,
+        "unknown_stocks": unknown_stocks,
+        "unknown_etfs": unknown_etfs,
+    }
+
+
 def stage1():
     """Trim the universe using the FMP company-screener (market cap + liquidity).
 
@@ -103,6 +183,7 @@ def stage1():
     """
     import universe
 
+    run_started = dt.datetime.now(dt.timezone.utc).isoformat()
     tickers, tmeta = universe.load()
     etf_set = {
         t for t in tickers
@@ -185,6 +266,7 @@ def stage1():
         "bulk_note": bulk_note,
         "prev": sorted(prev),
         "created": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "run_started": run_started,
     }
     save(STAGE1, state)
     save_diagnostics(
@@ -487,6 +569,7 @@ def stage3():
         "setups": setups,
         "no_4h_data": no_4h_data,
         "dropped_no_setup": dropped_no_setup,
+        "cut_by_cap": cut_by_cap,
         "stage3_created": dt.datetime.now(dt.timezone.utc).isoformat(),
     }
     save(STAGE3, state)
@@ -578,7 +661,32 @@ def stage4():
         "macro_risk": (s3.get("macro") or {}).get("risk", "?"),
         "macro_vol": (s3.get("macro") or {}).get("vol", "?"),
     }
-    save(STAGE4, {"info": info, "watchlist": {"tickers": final_tickers, "meta": meta}})
+
+    # Runtime: from stage1's very first line (before any API calls) through
+    # now — spans the whole GH Actions workflow, including inter-job setup,
+    # which is what "how long did nightly take tonight" actually means.
+    run_started = s3.get("run_started")
+    runtime_str = "unknown"
+    if run_started:
+        try:
+            started = dt.datetime.fromisoformat(str(run_started).replace("Z", "+00:00"))
+            elapsed_s = int((dt.datetime.now(dt.timezone.utc) - started).total_seconds())
+            h, rem = divmod(elapsed_s, 3600)
+            m, s_ = divmod(rem, 60)
+            runtime_str = (f"{h}h {m}m {s_}s" if h else
+                          f"{m}m {s_}s")
+        except Exception:
+            pass
+
+    universe_report = build_universe_report(s3, final_tickers, meta)
+    universe_report["runtime"] = runtime_str
+    universe_report["run_started"] = run_started
+
+    save(STAGE4, {
+        "info": info,
+        "watchlist": {"tickers": final_tickers, "meta": meta},
+        "universe_report": universe_report,
+    })
     save_diagnostics(
         "stage4",
         input_n=len(top),
@@ -621,6 +729,16 @@ def stage5():
         cfg,
     )
     notify.send_telegram(note_telegram, cfg)
+
+    # Separate universe report — full stock/ETF disposition tier by tier.
+    # Email only, deliberately: it's a diagnostic dump, not a Telegram-sized
+    # message. Never fatal if missing (older STAGE4 files won't have it).
+    universe_report = s4.get("universe_report")
+    if universe_report:
+        ur_body = notify.format_universe_report(universe_report, info["when"])
+        notify.send_email(
+            f"Nightly universe report — {info['when']} UTC", ur_body, cfg
+        )
 
 
 def main():

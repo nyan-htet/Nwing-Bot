@@ -42,6 +42,7 @@ import urllib.request
 
 import config as cfg
 import notify
+import alerts_ledger as al
 
 
 BASE = "https://financialmodelingprep.com/stable"
@@ -1422,6 +1423,7 @@ def main():
         return
 
     explicit = [x.strip().upper() for x in sys.argv[1].split(",") if x.strip()] if sys.argv[1:] and sys.argv[1] else []
+    auto_mode = not explicit
     if explicit:
         targets = [(t, {}) for t in explicit]
     else:
@@ -1529,6 +1531,7 @@ def main():
     # Email always receives every ticker. Telegram receives only >=50% confidence.
     # One ticker = one Telegram message; lower-confidence reports remain in email/docs.
     telegram_sent = 0
+    low_confidence = []
     for row in rows:
         ticker = row["ticker"]
         report = row["report"]
@@ -1540,6 +1543,7 @@ def main():
             telegram_sent += 1
             print(f"  Telegram: {ticker} sent (confidence {confidence}%)")
         else:
+            low_confidence.append(ticker)
             print(f"  Telegram: {ticker} skipped (confidence {confidence}% < 50%)")
 
     # If every ticker this run was filtered out, say so on Telegram — a
@@ -1559,6 +1563,22 @@ def main():
         notify.send_telegram(note, cfg)
         print(f"  Telegram: summary sent — all {len(rows)} ticker(s) below 50% "
               f"({tickers_list})")
+
+    # A ticker whose follow-up scored below the Telegram bar was never
+    # actually surfaced as a real signal — hourly's mute (alerted.json) only
+    # exists to stop a technical setup from re-alerting every 4h forever,
+    # but it shouldn't also permanently block a setup the LLM review just
+    # rejected. Remove it so a future hourly scan can re-alert fresh, with
+    # a new entry/tp. Only in auto mode — an explicit/manual test run
+    # (`python news_llm.py NVDA,UPS`) must never mutate real ledger state.
+    if auto_mode and low_confidence:
+        ledger = al.load()
+        removed = [t for t in low_confidence if ledger.pop(t, None) is not None]
+        if removed:
+            al.save(ledger)
+            print(f"Alerted ledger: removed {len(removed)} low-confidence "
+                  f"entr{'y' if len(removed) == 1 else 'ies'} so they can "
+                  f"re-alert: {', '.join(removed)}")
 
     with open("news_log.csv", "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)

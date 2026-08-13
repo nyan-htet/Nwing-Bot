@@ -102,6 +102,52 @@ def format_no_signal(watch_n: int, skip_report: dict, macro: dict, cyc: dict,
     return "\n".join(lines).rstrip()
 
 
+def format_universe_report(report: dict, when: str) -> str:
+    """Full stock/ETF disposition for the night — every ticker's fate,
+    tier by tier. Email only; this is a diagnostic dump, not something
+    that belongs on Telegram.
+    """
+    L = [f"NIGHTLY UNIVERSE REPORT — {when} UTC",
+         f"Runtime: {report.get('runtime', 'unknown')}",
+         ""]
+
+    L.append("==== WATCHLIST ====")
+    ws = report.get("watch_stocks_by_tier", {})
+    for tier in ("A", "B", "C"):
+        names = ws.get(tier, [])
+        L.append(f"Tier {tier} stocks ({len(names)}): {', '.join(names) if names else '—'}")
+    etfs = report.get("watch_etfs", [])
+    L.append(f"ETFs ({len(etfs)}): {', '.join(etfs) if etfs else '—'}")
+    L.append("")
+
+    L.append("==== REJECTED ====")
+    rs = report.get("rejected_stocks_by_tier", {})
+    for tier in ("A", "B", "C", "D"):
+        items = rs.get(tier, [])
+        L.append(f"Tier {tier} rejected ({len(items)}):")
+        if items:
+            for t, reason in items:
+                L.append(f"  {t} — {reason}")
+        else:
+            L.append("  —")
+    rejected_etfs = report.get("rejected_etfs", [])
+    L.append(f"ETFs rejected ({len(rejected_etfs)}):")
+    if rejected_etfs:
+        for t, reason in rejected_etfs:
+            L.append(f"  {t} — {reason}")
+    else:
+        L.append("  —")
+    L.append("")
+
+    L.append("==== UNKNOWN / NO DATA (no tier ever established) ====")
+    u_stocks = report.get("unknown_stocks", [])
+    u_etfs = report.get("unknown_etfs", [])
+    L.append(f"Stocks ({len(u_stocks)}): {', '.join(u_stocks) if u_stocks else '—'}")
+    L.append(f"ETFs ({len(u_etfs)}): {', '.join(u_etfs) if u_etfs else '—'}")
+
+    return "\n".join(L)
+
+
 def format_nightly(info: dict, for_telegram: bool = False) -> str:
     """Nightly completion summary.
 
