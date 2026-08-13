@@ -1502,7 +1502,7 @@ def main():
 
     when = utc_now().strftime("%Y-%m-%d %H:%M UTC")
 
-    # Email always receives every ticker. Telegram receives only >60% confidence.
+    # Email always receives every ticker. Telegram receives only >=60% confidence.
     # One ticker = one Telegram message; lower-confidence reports remain in email/docs.
     for row in rows:
         ticker = row["ticker"]
@@ -1510,11 +1510,11 @@ def main():
         confidence = int(row.get("buy_confidence") or 0)
         subject = f"Signal intelligence — {ticker} — {when}"
         notify.send_email(subject, report, cfg)
-        if confidence > 60:
+        if confidence >= 60:
             notify.send_telegram(report, cfg)
             print(f"  Telegram: {ticker} sent (confidence {confidence}%)")
         else:
-            print(f"  Telegram: {ticker} skipped (confidence {confidence}% <= 60%)")
+            print(f"  Telegram: {ticker} skipped (confidence {confidence}% < 60%)")
 
     with open("news_log.csv", "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)

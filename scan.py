@@ -323,13 +323,18 @@ def run_hourly(offline=False):
     al.save(ledger)          # persist immediately — nothing after this can lose it
 
     # --- deliver ---
+    # New technical BUY signals go to email only now — Telegram is reserved
+    # for news_llm.py's confidence-scored follow-up (>=60%), so a signal
+    # doesn't show up on Telegram twice (once raw, once scored).
     for s in signals:
         body = notify.format_alert(s, macro, cyc)
         nm = f" ({s['name']})" if s.get("name") else ""
         sec = f" — {s['sector']}" if s.get("sector") and s["sector"] != "Unknown" else ""
         notify.send_email(f"BUY {s['ticker']}{nm}{sec} — {s['setup']} "
                           f"+{s['tp_pct']:.0%} | eToro TP ${s['pl_amount']:.0f}", body, cfg)
-        notify.send_telegram(body, cfg)
+    # Position updates (target reached / thesis broken) are a different kind
+    # of alert — not a new signal waiting on LLM review — so these still go
+    # to both email and Telegram immediately.
     for m in pos_msgs:
         notify.send_email("Position alert", m, cfg)
         notify.send_telegram(m, cfg)
