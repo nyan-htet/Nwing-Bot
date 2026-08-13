@@ -1180,9 +1180,32 @@ def buy_confidence(llm):
     return int(round(100 * score / total))
 
 
+# Shared red/amber/green bands for anything keyed off the numeric confidence
+# score (the bar and the top-line ticker icon) — keeps them from disagreeing.
+def confidence_band(score):
+    if score < 40:
+        return "red"
+    if score < 65:
+        return "amber"
+    return "green"
+
+
+def confidence_icon(score, data_ok=True):
+    """Top-line ticker icon, driven by the same score/bands as the bar.
+    White is reserved for when the LLM data itself failed — a low-but-real
+    score still gets colored, only missing/untrustworthy data goes white.
+    """
+    if not data_ok:
+        return "⚪"
+    band = confidence_band(score)
+    return {"red": "🔴", "amber": "🟡", "green": "🟢"}[band]
+
+
 def confidence_bar(score, width=10):
+    band = confidence_band(score)
+    fill_char = {"red": "🟥", "amber": "🟨", "green": "🟩"}[band]
     filled = max(0, min(width, round(score / 100 * width)))
-    return "🟩" * filled + "⬜" * (width - filled)
+    return fill_char * filled + "⬜" * (width - filled)
 
 
 def format_report(row):
@@ -1216,6 +1239,7 @@ def format_report(row):
 
     overall = str(llm.get("overall_assessment") or "insufficient_data").lower()
     confidence = buy_confidence(llm)
+    data_ok = bool(row.get("llm_ok", True))
     shares = fnum(sig.get("shares"))
     position_value = fnum(sig.get("value"))
     if position_value is None:
@@ -1224,7 +1248,7 @@ def format_report(row):
     eta_hi = fnum(sig.get("eta_days_high"))
 
     lines = [
-        f"{assessment_icon(overall)} {ticker} — {name}",
+        f"{confidence_icon(confidence, data_ok)} {ticker} — {name}",
         f"Entry: ${entry:.2f}" if entry is not None else "Entry: n/a",
         f"eToro TP Value: ${etoro:.2f}" if etoro is not None else "eToro TP Value: n/a",
         f"Shares: {shares:.2f} (${position_value:.0f})" if shares is not None and position_value is not None else "Shares: n/a",
