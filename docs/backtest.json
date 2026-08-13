@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-13T17:02:53.711726+00:00",
+  "generated": "2026-08-13T17:46:08.792050+00:00",
   "universe": {
     "stocks": 37,
     "etfs": 13,
@@ -113,7 +113,7 @@
       "avg_positions": 4.0,
       "max_positions": 5,
       "peak_deployed": 1040.0,
-      "avg_equity": 10243.0,
+      "avg_equity": 10245.0,
       "avg_utilisation_pct": 7.2
     },
     {
@@ -139,11 +139,11 @@
   "note": "Daily-bar approximation of the live strategy (no 1h trigger / VWAP).",
   "stats": {
     "start_equity": 10000.0,
-    "final_equity": 10862.14,
-    "total_return_pct": 8.62,
+    "final_equity": 10860.82,
+    "total_return_pct": 8.61,
     "cagr_pct": 1.39,
     "max_drawdown_pct": -4.26,
-    "sharpe": 0.41,
+    "sharpe": 0.35,
     "n_trades": 23,
     "win_rate_pct": 100.0,
     "avg_win_pct": 17.8,
@@ -153,8 +153,8 @@
       "tp": 23
     },
     "period": "2020-08-13 to 2026-08-13",
-    "buy_hold_spy_pct": 130.59,
-    "vs_buy_hold_pct": -121.97,
+    "buy_hold_spy_pct": 130.6,
+    "vs_buy_hold_pct": -121.99,
     "params": {
       "position_pct": 0.025,
       "max_concurrent": 10,
@@ -182,7 +182,7 @@
     "2023": 0.06,
     "2024": 0.59,
     "2025": 2.69,
-    "2026": 3.1
+    "2026": 3.09
   },
   "monthly_pct": {
     "2020": {
@@ -269,7 +269,7 @@
       "5": 0.39,
       "6": -0.09,
       "7": -0.35,
-      "8": 0.68
+      "8": 0.66
     }
   },
   "equity_curve": [
@@ -1055,11 +1055,11 @@
     ],
     [
       "2024-05-12",
-      10241.93
+      10541.48
     ],
     [
       "2024-05-19",
-      10252.78
+      10541.48
     ],
     [
       "2024-05-26",
@@ -1527,7 +1527,7 @@
     ],
     [
       "2026-08-16",
-      10862.14
+      10860.82
     ]
   ],
   "deployed_curve": [
@@ -2313,11 +2313,11 @@
     ],
     [
       "2024-05-12",
-      489.72
+      539.12
     ],
     [
       "2024-05-19",
-      492.3
+      541.27
     ],
     [
       "2024-05-26",
@@ -2785,7 +2785,7 @@
     ],
     [
       "2026-08-16",
-      889.63
+      889.3
     ]
   ],
   "top_trades": [
