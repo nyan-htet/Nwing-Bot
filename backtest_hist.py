@@ -221,6 +221,92 @@ def run(years=8, max_stocks=None, include_etfs=True, stratified=False,
     return _run_core(tickers, meta, stocks, etfs, years, include_etfs)
 
 
+# ---- confidence-filtered backtest ----
+# NOTE ON SCOPE: news_llm.py's buy_confidence score depends on live news and
+# analyst data, which isn't available point-in-time for past years. This
+# does NOT simulate "what if the >=60% filter had been running for 6
+# years" — it takes TODAY's confidence-qualifying tickers as a snapshot and
+# backtests the pure technical/price strategy on their real historical
+# price data. It answers "how has the strategy performed on the kind of
+# stocks the LLM currently likes", not a true historical confidence replay.
+CONFIDENCE_MAX_YEARS = 6
+CONFIDENCE_POSITION_PCT_MIN = 0.005
+CONFIDENCE_POSITION_PCT_MAX = 0.05
+CONFIDENCE_MAX_UNIVERSE = 50
+
+
+def load_confidence_tickers(min_confidence=60, path="docs/news.json"):
+    """Tickers from the latest news_llm.py run that cleared min_confidence.
+    docs/news.json is overwritten every run — this is always a snapshot of
+    the most recent news-followup, not an accumulated history."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            doc = json.load(f)
+    except Exception as exc:
+        print(f"Could not read {path}: {exc}")
+        return []
+    out = []
+    for row in doc.get("results", []):
+        conf = row.get("buy_confidence")
+        if conf is not None and conf >= min_confidence:
+            out.append(str(row.get("ticker", "")).upper())
+    return sorted(set(t for t in out if t))
+
+
+def run_confidence_filtered(starting_equity=10_000.0, position_pct=0.02,
+                            n_stocks=35, n_etfs=15, years=6,
+                            min_confidence=60, confidence_tickers=None):
+    """Backtest restricted to tickers that cleared news_llm's confidence
+    bar (see the scope note above this function)."""
+    global START_EQUITY
+
+    years = min(float(years), CONFIDENCE_MAX_YEARS)
+    if not (CONFIDENCE_POSITION_PCT_MIN <= position_pct <= CONFIDENCE_POSITION_PCT_MAX):
+        raise SystemExit(
+            f"position_pct must be between {CONFIDENCE_POSITION_PCT_MIN:.1%} "
+            f"and {CONFIDENCE_POSITION_PCT_MAX:.1%} (got {position_pct:.1%})"
+        )
+    n_stocks = max(0, int(n_stocks))
+    n_etfs = max(0, int(n_etfs))
+    if n_stocks + n_etfs > CONFIDENCE_MAX_UNIVERSE:
+        raise SystemExit(
+            f"n_stocks + n_etfs must be <= {CONFIDENCE_MAX_UNIVERSE} "
+            f"(got {n_stocks + n_etfs})"
+        )
+
+    START_EQUITY = float(starting_equity)
+    PARAMS["position_pct"] = float(position_pct)
+
+    if confidence_tickers is None:
+        confidence_tickers = load_confidence_tickers(min_confidence)
+    if not confidence_tickers:
+        raise SystemExit(
+            "No confidence-qualifying tickers found in docs/news.json — "
+            "run news_llm.py first, or lower min_confidence."
+        )
+
+    all_tickers, meta = universe.load()
+    qualifying = [t for t in confidence_tickers if t in all_tickers]
+    stocks_pool = [t for t in qualifying if meta.get(t, {}).get("type") != "etf"]
+    etfs_pool = [t for t in qualifying if meta.get(t, {}).get("type") == "etf"]
+
+    stocks = stocks_pool[:n_stocks]
+    etfs = etfs_pool[:n_etfs]
+    if not stocks and not etfs:
+        raise SystemExit(
+            "None of the confidence-qualifying tickers are in tickers.csv "
+            "— nothing to backtest."
+        )
+
+    tickers = ["SPY"] + sorted(set(stocks + etfs))
+    print(f"Confidence-filtered universe (>={min_confidence}%): "
+          f"{len(stocks)} stocks + {len(etfs)} ETFs "
+          f"(of {len(stocks_pool)} qualifying stocks / {len(etfs_pool)} qualifying ETFs, "
+          f"capped at {n_stocks}+{n_etfs}) | "
+          f"equity=${START_EQUITY:,.0f} | position_pct={position_pct:.1%} | years={years}")
+    return _run_core(tickers, meta, stocks, etfs, years, bool(etfs))
+
+
 def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
     n_bars = int(years * 252) + 300
 
@@ -526,7 +612,20 @@ def summarize(curve, closed, days, buy_hold_pct=None):
 
 
 if __name__ == "__main__":
-    # args: [years] [max_stocks|"strat"] [include_etfs yes/no] [n_stocks] [n_etfs] [n_baseline]
+    # args: [years] [max_stocks|"strat"|"conf"] [include_etfs yes/no] [n_stocks] [n_etfs] [n_baseline]
+    # "conf" mode: python backtest_hist.py [years] conf [n_stocks] [n_etfs] [position_pct] [starting_equity] [min_confidence]
+    if len(sys.argv) > 2 and str(sys.argv[2]).strip().lower().startswith("conf"):
+        yrs = float(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].strip() else CONFIDENCE_MAX_YEARS
+        ns = int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[3].strip() else 35
+        ne = int(sys.argv[4]) if len(sys.argv) > 4 and sys.argv[4].strip() else 15
+        pct = float(sys.argv[5]) if len(sys.argv) > 5 and sys.argv[5].strip() else 0.02
+        eq = float(sys.argv[6]) if len(sys.argv) > 6 and sys.argv[6].strip() else 10_000.0
+        minc = int(sys.argv[7]) if len(sys.argv) > 7 and sys.argv[7].strip() else 60
+        run_confidence_filtered(starting_equity=eq, position_pct=pct,
+                                n_stocks=ns, n_etfs=ne, years=yrs,
+                                min_confidence=minc)
+        raise SystemExit(0)
+
     yrs = float(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].strip() else 8
     mx = None
     if (len(sys.argv) > 2 and str(sys.argv[2]).strip() != ""

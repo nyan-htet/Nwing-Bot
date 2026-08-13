@@ -1528,8 +1528,14 @@ def main():
 
     when = utc_now().strftime("%Y-%m-%d %H:%M UTC")
 
-    # Email always receives every ticker. Telegram receives only >=50% confidence.
-    # One ticker = one Telegram message; lower-confidence reports remain in email/docs.
+    # Telegram confidence bar. Ledger cleanup (below) uses this same value —
+    # a ticker that doesn't clear this bar was never actually surfaced to
+    # you, so it shouldn't stay muted either.
+    TELEGRAM_CONFIDENCE_MIN = 60
+
+    # Email always receives every ticker. Telegram receives only tickers at
+    # or above TELEGRAM_CONFIDENCE_MIN. One ticker = one Telegram message;
+    # lower-confidence reports remain in email/docs only.
     telegram_sent = 0
     low_confidence = []
     for row in rows:
@@ -1538,13 +1544,14 @@ def main():
         confidence = int(row.get("buy_confidence") or 0)
         subject = f"Signal intelligence — {ticker} — {when}"
         notify.send_email(subject, report, cfg)
-        if confidence >= 50:
+        if confidence >= TELEGRAM_CONFIDENCE_MIN:
             notify.send_telegram(report, cfg)
             telegram_sent += 1
             print(f"  Telegram: {ticker} sent (confidence {confidence}%)")
         else:
             low_confidence.append(ticker)
-            print(f"  Telegram: {ticker} skipped (confidence {confidence}% < 50%)")
+            print(f"  Telegram: {ticker} skipped "
+                  f"(confidence {confidence}% < {TELEGRAM_CONFIDENCE_MIN}%)")
 
     # If every ticker this run was filtered out, say so on Telegram — a
     # silent run reads the same as "nothing happened", but the difference
@@ -1556,13 +1563,14 @@ def main():
         )
         note = (
             f"News follow-up — {when}\n"
-            f"{len(rows)} signal(s) reviewed, all filtered below 50% confidence.\n"
+            f"{len(rows)} signal(s) reviewed, all filtered below "
+            f"{TELEGRAM_CONFIDENCE_MIN}% confidence.\n"
             f"{scores_list}\n"
             f"Full reports in email."
         )
         notify.send_telegram(note, cfg)
-        print(f"  Telegram: summary sent — all {len(rows)} ticker(s) below 50% "
-              f"({tickers_list})")
+        print(f"  Telegram: summary sent — all {len(rows)} ticker(s) below "
+              f"{TELEGRAM_CONFIDENCE_MIN}% ({tickers_list})")
 
     # A ticker whose follow-up scored below the Telegram bar was never
     # actually surfaced as a real signal — hourly's mute (alerted.json) only
@@ -1583,7 +1591,7 @@ def main():
     with open("news_log.csv", "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         if f.tell() == 0:
-            w.writerow(["time_utc", "ticker", "llm_provider", "llm_ok", "financial_count", "news_count", "news_status", "overall_assessment", "technical_lookalike"])
+            w.writerow(["time_utc", "ticker", "llm_provider", "llm_ok", "financial_count", "news_count", "news_status", "overall_assessment", "technical_lookalike", "buy_confidence"])
         for row in rows:
             llm = row.get("llm") or {}
             w.writerow([
@@ -1591,6 +1599,7 @@ def main():
                 len(row.get("financials") or []), len(row.get("news") or []),
                 (row.get("news_diag") or {}).get("status"),
                 llm.get("overall_assessment"), llm.get("technical_lookalike"),
+                row.get("buy_confidence"),
             ])
 
     os.makedirs("docs", exist_ok=True)
