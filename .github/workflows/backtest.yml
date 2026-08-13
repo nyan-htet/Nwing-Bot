@@ -46,6 +46,10 @@ on:
         description: "conf mode: min news_llm confidence to include a ticker"
         required: false
         default: "60"
+      conf_balance_sectors:
+        description: "conf mode: spread picks evenly across sectors? yes / no"
+        required: false
+        default: "yes"
 permissions:
   contents: write
 jobs:
@@ -67,7 +71,8 @@ jobs:
                                     "${{ github.event.inputs.conf_n_etfs }}" \
                                     "${{ github.event.inputs.conf_position_pct }}" \
                                     "${{ github.event.inputs.conf_starting_equity }}" \
-                                    "${{ github.event.inputs.conf_min_confidence }}"
+                                    "${{ github.event.inputs.conf_min_confidence }}" \
+                                    "${{ github.event.inputs.conf_balance_sectors }}"
           else
             python backtest_hist.py "${{ github.event.inputs.years }}" \
                                     "${{ github.event.inputs.mode }}" \
