@@ -2,47 +2,85 @@
   "ADP": {
     "alerted": "2026-08-13T07:39:31.323900+00:00",
     "entry": 269.33,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 305.72
+  },
+  "ADSE": {
+    "alerted": "2026-08-13T17:13:50.933521+00:00",
+    "entry": 11.99,
+    "thesis_warned": false,
+    "tp": 14.74
   },
   "BRKR": {
     "alerted": "2026-08-13T07:39:31.447312+00:00",
     "entry": 59.27,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 74.09
+  },
+  "DBX": {
+    "alerted": "2026-08-13T17:13:51.161882+00:00",
+    "entry": 34.12,
+    "thesis_warned": false,
+    "tp": 39.53
   },
   "DSGX": {
     "alerted": "2026-08-13T07:39:31.594272+00:00",
     "entry": 77.57,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 92.49
   },
   "DUOL": {
     "alerted": "2026-08-13T13:47:19.557505+00:00",
     "entry": 139.01,
+    "scans_muted": 1,
     "thesis_warned": false,
     "tp": 158.99
   },
   "EPAM": {
     "alerted": "2026-08-13T07:39:31.671531+00:00",
     "entry": 100.31,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 113.0
+  },
+  "LYFT": {
+    "alerted": "2026-08-13T17:13:51.561035+00:00",
+    "entry": 16.77,
+    "thesis_warned": false,
+    "tp": 19.2
+  },
+  "MORN": {
+    "alerted": "2026-08-13T17:13:51.590287+00:00",
+    "entry": 198.15,
+    "thesis_warned": false,
+    "tp": 244.2
+  },
+  "PCTY": {
+    "alerted": "2026-08-13T17:13:51.683869+00:00",
+    "entry": 145.38,
+    "thesis_warned": false,
+    "tp": 173.37
   },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
+    "scans_muted": 1,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "RUSHA": {
+    "alerted": "2026-08-13T17:13:51.781857+00:00",
+    "entry": 81.75,
+    "thesis_warned": false,
+    "tp": 97.98
   },
   "UFPI": {
     "alerted": "2026-08-13T07:39:32.332355+00:00",
     "entry": 91.73,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 108.83
   }
