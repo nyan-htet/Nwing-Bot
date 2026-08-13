@@ -1502,19 +1502,39 @@ def main():
 
     when = utc_now().strftime("%Y-%m-%d %H:%M UTC")
 
-    # Email always receives every ticker. Telegram receives only >=60% confidence.
+    # Email always receives every ticker. Telegram receives only >=50% confidence.
     # One ticker = one Telegram message; lower-confidence reports remain in email/docs.
+    telegram_sent = 0
     for row in rows:
         ticker = row["ticker"]
         report = row["report"]
         confidence = int(row.get("buy_confidence") or 0)
         subject = f"Signal intelligence — {ticker} — {when}"
         notify.send_email(subject, report, cfg)
-        if confidence >= 60:
+        if confidence >= 50:
             notify.send_telegram(report, cfg)
+            telegram_sent += 1
             print(f"  Telegram: {ticker} sent (confidence {confidence}%)")
         else:
-            print(f"  Telegram: {ticker} skipped (confidence {confidence}% < 60%)")
+            print(f"  Telegram: {ticker} skipped (confidence {confidence}% < 50%)")
+
+    # If every ticker this run was filtered out, say so on Telegram — a
+    # silent run reads the same as "nothing happened", but the difference
+    # (signals found, all just low-confidence) is worth knowing.
+    if rows and telegram_sent == 0:
+        tickers_list = ", ".join(row["ticker"] for row in rows)
+        scores_list = ", ".join(
+            f"{row['ticker']} {int(row.get('buy_confidence') or 0)}%" for row in rows
+        )
+        note = (
+            f"News follow-up — {when}\n"
+            f"{len(rows)} signal(s) reviewed, all filtered below 50% confidence.\n"
+            f"{scores_list}\n"
+            f"Full reports in email."
+        )
+        notify.send_telegram(note, cfg)
+        print(f"  Telegram: summary sent — all {len(rows)} ticker(s) below 50% "
+              f"({tickers_list})")
 
     with open("news_log.csv", "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
