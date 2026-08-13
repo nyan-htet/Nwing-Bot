@@ -1531,7 +1531,7 @@ def main():
     # Telegram confidence bar. Ledger cleanup (below) uses this same value —
     # a ticker that doesn't clear this bar was never actually surfaced to
     # you, so it shouldn't stay muted either.
-    TELEGRAM_CONFIDENCE_MIN = 60
+    TELEGRAM_CONFIDENCE_MIN = 70
 
     # Email always receives every ticker. Telegram receives only tickers at
     # or above TELEGRAM_CONFIDENCE_MIN. One ticker = one Telegram message;
