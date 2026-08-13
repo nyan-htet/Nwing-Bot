@@ -5,12 +5,6 @@
     "thesis_warned": false,
     "tp": 305.72
   },
-  "ADSE": {
-    "alerted": "2026-08-13T07:39:31.342571+00:00",
-    "entry": 11.99,
-    "thesis_warned": false,
-    "tp": 14.74
-  },
   "BRKR": {
     "alerted": "2026-08-13T07:39:31.447312+00:00",
     "entry": 59.27,
@@ -22,12 +16,6 @@
     "entry": 77.57,
     "thesis_warned": false,
     "tp": 92.49
-  },
-  "DUOL": {
-    "alerted": "2026-08-13T07:39:31.612351+00:00",
-    "entry": 134.69,
-    "thesis_warned": false,
-    "tp": 158.99
   },
   "EPAM": {
     "alerted": "2026-08-13T07:39:31.671531+00:00",
