@@ -23,14 +23,14 @@
   "ADP": {
     "alerted": "2026-08-12T22:26:58.904831+00:00",
     "entry": 269.33,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 305.72
   },
   "ADSE": {
     "alerted": "2026-08-12T22:26:58.923016+00:00",
     "entry": 11.99,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 14.74
   },
@@ -61,14 +61,14 @@
   "BOAT": {
     "alerted": "2026-08-07T08:09:04.119076+00:00",
     "entry": 43.87,
-    "scans_muted": 25,
+    "scans_muted": 26,
     "thesis_warned": false,
     "tp": 51.88
   },
   "BRKR": {
     "alerted": "2026-08-12T22:26:59.016049+00:00",
     "entry": 59.27,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 74.09
   },
@@ -102,7 +102,7 @@
   "CRAK": {
     "alerted": "2026-08-10T13:55:05.717317+00:00",
     "entry": 55.43,
-    "scans_muted": 16,
+    "scans_muted": 17,
     "thesis_warned": false,
     "tp": 64.95
   },
@@ -116,14 +116,14 @@
   "DSGX": {
     "alerted": "2026-08-12T22:26:59.150590+00:00",
     "entry": 77.57,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 92.49
   },
   "DUOL": {
     "alerted": "2026-08-12T22:26:59.168095+00:00",
     "entry": 134.69,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 158.99
   },
@@ -137,14 +137,14 @@
   "ENVA": {
     "alerted": "2026-08-10T13:55:06.100435+00:00",
     "entry": 254.48,
-    "scans_muted": 15,
+    "scans_muted": 16,
     "thesis_warned": false,
     "tp": 302.61
   },
   "EPAM": {
     "alerted": "2026-08-12T22:26:59.216896+00:00",
     "entry": 100.31,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 113.0
   },
@@ -165,7 +165,7 @@
   "FAS": {
     "alerted": "2026-08-10T21:11:19.059972+00:00",
     "entry": 181.31,
-    "scans_muted": 14,
+    "scans_muted": 15,
     "thesis_warned": false,
     "tp": 209.1
   },
@@ -338,14 +338,14 @@
   "UFPI": {
     "alerted": "2026-08-12T22:26:59.851627+00:00",
     "entry": 91.73,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 108.83
   },
   "UGA": {
     "alerted": "2026-08-10T17:19:44.382070+00:00",
     "entry": 117.44,
-    "scans_muted": 15,
+    "scans_muted": 16,
     "thesis_warned": false,
     "tp": 142.34
   },
@@ -366,7 +366,7 @@
   "VLO": {
     "alerted": "2026-08-05T12:29:03.706302+00:00",
     "entry": 308.69,
-    "scans_muted": 28,
+    "scans_muted": 29,
     "tp": 354.42
   },
   "VRNS": {
@@ -385,7 +385,7 @@
   "YINN": {
     "alerted": "2026-08-07T08:09:07.330701+00:00",
     "entry": 30.97,
-    "scans_muted": 25,
+    "scans_muted": 26,
     "thesis_warned": false,
     "tp": 36.86
   },
