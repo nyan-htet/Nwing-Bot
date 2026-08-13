@@ -304,10 +304,19 @@ def run_confidence_filtered(starting_equity=10_000.0, position_pct=0.02,
           f"(of {len(stocks_pool)} qualifying stocks / {len(etfs_pool)} qualifying ETFs, "
           f"capped at {n_stocks}+{n_etfs}) | "
           f"equity=${START_EQUITY:,.0f} | position_pct={position_pct:.1%} | years={years}")
-    return _run_core(tickers, meta, stocks, etfs, years, bool(etfs))
+    return _run_core(tickers, meta, stocks, etfs, years, bool(etfs), extra_run_info={
+        "mode": "confidence_filtered",
+        "min_confidence": min_confidence,
+        "position_pct": position_pct,
+        "starting_equity": START_EQUITY,
+        "n_stocks_cap": n_stocks,
+        "n_etfs_cap": n_etfs,
+        "qualifying_stocks_available": len(stocks_pool),
+        "qualifying_etfs_available": len(etfs_pool),
+    })
 
 
-def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
+def _run_core(tickers, meta, stocks, etfs, years, include_etfs, extra_run_info=None):
     n_bars = int(years * 252) + 300
 
     cache_key = (tuple(tickers), n_bars)
@@ -344,7 +353,8 @@ def _run_core(tickers, meta, stocks, etfs, years, include_etfs):
     print(f"Usable tickers: {len(prepped)}")
     globals()["RUN_INFO"] = {"stocks": len(stocks), "etfs": len(etfs),
                              "tested": len(prepped), "years": years,
-                             "include_etfs": include_etfs}
+                             "include_etfs": include_etfs,
+                             "mode": "standard", **(extra_run_info or {})}
 
     # unified calendar
     all_days = sorted(set().union(*[set(d.index) for d in prepped.values()]))
@@ -564,7 +574,12 @@ def summarize(curve, closed, days, buy_hold_pct=None):
                "distribution": dist,
                "utilisation_yearly": util_yearly,
                "utilisation_monthly": util_monthly,
-               "note": "Daily-bar approximation of the live strategy (no 1h trigger / VWAP).",
+               "note": ("Confidence-filtered run: today's snapshot of tickers that "
+                        "cleared news_llm's confidence bar, backtested on their real "
+                        "historical prices. Not a simulation of the LLM filter running "
+                        "over multiple years — see backtest_hist.py's scope note."
+                        if RUN_INFO.get("mode") == "confidence_filtered" else
+                        "Daily-bar approximation of the live strategy (no 1h trigger / VWAP)."),
                "stats": stats, "yearly_pct": yearly, "monthly_pct": monthly,
                "equity_curve": [[str(t.date()), round(float(v), 2)] for t, v in
                                 ec["equity"].resample("W").last().dropna().items()],
