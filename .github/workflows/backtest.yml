@@ -26,6 +26,14 @@ on:
         description: "strat mode: baseline block (GLD/QQQ/VOO + random)"
         required: false
         default: "10"
+      starting_equity:
+        description: "Starting equity (applies to standard/strat modes; conf mode uses conf_starting_equity)"
+        required: false
+        default: ""
+      position_pct:
+        description: "Equity %/trade as a decimal, e.g. 0.02 = 2% (applies to standard/strat modes; conf mode uses conf_position_pct)"
+        required: false
+        default: ""
       conf_n_stocks:
         description: "conf mode: max stocks (n_stocks + n_etfs must be <=50)"
         required: false
@@ -79,7 +87,9 @@ jobs:
                                     "${{ github.event.inputs.include_etfs }}" \
                                     "${{ github.event.inputs.n_stocks }}" \
                                     "${{ github.event.inputs.n_etfs }}" \
-                                    "${{ github.event.inputs.n_baseline }}"
+                                    "${{ github.event.inputs.n_baseline }}" \
+                                    "${{ github.event.inputs.starting_equity }}" \
+                                    "${{ github.event.inputs.position_pct }}"
           fi
       - name: Publish results
         run: |
