@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-13T17:50:15.102185+00:00",
+  "generated": "2026-08-13T17:57:38.394976+00:00",
   "universe": {
     "stocks": 4,
     "etfs": 0,
@@ -159,8 +159,8 @@
     "avg_hold_days": 0,
     "exits": {},
     "period": "2020-08-13 to 2026-08-13",
-    "buy_hold_spy_pct": 130.64,
-    "vs_buy_hold_pct": -130.64,
+    "buy_hold_spy_pct": 130.59,
+    "vs_buy_hold_pct": -130.59,
     "params": {
       "position_pct": 0.05,
       "max_concurrent": 10,
