@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-14 05:48 UTC",
+  "generated": "2026-08-14 09:23 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "LYFT",
       "alert": {
-        "alerted": "2026-08-14T05:48:05.655891+00:00",
+        "alerted": "2026-08-14T09:22:22.673761+00:00",
         "entry": 17.13,
         "thesis_warned": false,
         "tp": 21.03
@@ -69,7 +69,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-14T05:48:05.655855+00:00"
+        "time": "2026-08-14T09:22:22.673722+00:00"
       },
       "profile": {
         "symbol": "LYFT",
@@ -170,7 +170,7 @@
           "epsEstimated": 0.2078,
           "revenueActual": null,
           "revenueEstimated": 1925684000,
-          "lastUpdated": "2026-08-13"
+          "lastUpdated": "2026-08-14"
         },
         "estimates": [
           {
@@ -388,13 +388,13 @@
           "date": "2026-08-14",
           "sector": "Technology",
           "exchange": "NASDAQ",
-          "averageChange": 1.5955032076912623
+          "averageChange": 1.5955032076914843
         },
         "industry_snapshot": {
           "date": "2026-08-14",
           "industry": "Software - Application",
           "exchange": "NASDAQ",
-          "averageChange": 3.442239318293061
+          "averageChange": 3.4422393182929722
         }
       },
       "macro": {
@@ -472,19 +472,6 @@
           {
             "date": "2026-08-14 01:30:00",
             "country": "AU",
-            "event": "Home Loans MoM (Q2)",
-            "currency": "AUD",
-            "previous": -3.5,
-            "estimate": null,
-            "actual": -1.9,
-            "change": 1.6,
-            "impact": "Medium",
-            "changePercentage": 45.714,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-14 01:30:00",
-            "country": "AU",
             "event": "Investment Lending for Homes (Q2)",
             "currency": "AUD",
             "previous": -3.2,
@@ -493,6 +480,19 @@
             "change": -7,
             "impact": "Medium",
             "changePercentage": -218.75,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-14 01:30:00",
+            "country": "AU",
+            "event": "Home Loans MoM (Q2)",
+            "currency": "AUD",
+            "previous": -3.5,
+            "estimate": null,
+            "actual": -1.9,
+            "change": 1.6,
+            "impact": "Medium",
+            "changePercentage": 45.714,
             "unit": "%"
           },
           {
@@ -510,15 +510,15 @@
           },
           {
             "date": "2026-08-14 02:00:00",
-            "country": "IN",
+            "country": "JP",
             "event": "Thomson Reuters IPSOS PCSI (Aug)",
-            "currency": "INR",
-            "previous": 67.08,
+            "currency": "JPY",
+            "previous": 39.75,
             "estimate": null,
-            "actual": 65.26,
-            "change": -1.82,
+            "actual": 39.94,
+            "change": 0.19,
             "impact": "Low",
-            "changePercentage": -2.713,
+            "changePercentage": 0.478,
             "unit": null
           },
           {
@@ -536,15 +536,15 @@
           },
           {
             "date": "2026-08-14 02:00:00",
-            "country": "JP",
+            "country": "AU",
             "event": "Thomson Reuters IPSOS PCSI (Aug)",
-            "currency": "JPY",
-            "previous": 39.75,
+            "currency": "AUD",
+            "previous": 48.18,
             "estimate": null,
-            "actual": 39.94,
-            "change": 0.19,
+            "actual": 48.79,
+            "change": 0.61,
             "impact": "Low",
-            "changePercentage": 0.478,
+            "changePercentage": 1.266,
             "unit": null
           },
           {
@@ -562,15 +562,15 @@
           },
           {
             "date": "2026-08-14 02:00:00",
-            "country": "AU",
+            "country": "IN",
             "event": "Thomson Reuters IPSOS PCSI (Aug)",
-            "currency": "AUD",
-            "previous": 48.18,
+            "currency": "INR",
+            "previous": 67.08,
             "estimate": null,
-            "actual": 48.79,
-            "change": 0.61,
+            "actual": 65.26,
+            "change": -1.82,
             "impact": "Low",
-            "changePercentage": 1.266,
+            "changePercentage": -2.713,
             "unit": null
           },
           {
@@ -616,25 +616,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price is above the long-term trend average, has reclaimed VWAP, and shows strong trend strength with moderate RSI rather than overbought momentum.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price remains above the 200 EMA with strong trend strength, reclaimed VWAP, steady volume, and RSI still in constructive territory.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "Recent results show two consecutive EPS misses after a strong February beat, indicating some earnings execution inconsistency. Displayed revenue, net income, and margins were unchanged, but positive operating cash flow and free cash flow provide support.",
-        "earnings_assessment": "positive",
-        "earnings_interpretation": "Next earnings are scheduled in 82 days, beyond the scanner's estimated holding window, reducing immediate event risk. Forward revenue and EPS estimates increased versus the prior forecast, though the eventual report remains a potential catalyst.",
+        "financial_interpretation": "Results are mixed, with EPS missing estimates in the latest two quarters after a strong beat in February, while revenue and net income are shown as flat across the displayed periods. Positive margins and solid operating and free cash flow provide support, but the recent earnings misses limit fundamental confirmation.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings report is scheduled for November 4, outside the estimated trading window, with forecasts calling for EPS of 0.2078 and revenue of $1.93B. Forward revenue and EPS estimates have risen, but the recent miss pattern leaves some future earnings-event risk.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "The consensus is Hold with more Hold ratings than Buys, but forward revenue and EPS estimates have risen.",
+        "analyst_interpretation": "The consensus is Hold with more holds than buys, although forward revenue and EPS estimates have been revised higher.",
         "valuation_assessment": "attractive",
-        "valuation_interpretation": "The low trailing P/E and sub-1 price-to-sales ratio are supportive of the setup on an absolute basis. No industry or historical valuation comparison was supplied, so the discount cannot be fully contextualized.",
+        "valuation_interpretation": "The reported 2.45x trailing P/E and 0.96x price-to-sales ratio appear supportive rather than demanding. Positive free cash flow further helps the valuation case, though recent earnings misses temper confidence.",
         "news_assessment": "mixed",
-        "news_interpretation": "Institutional accumulation is mildly supportive, while a director share sale is a limited sentiment negative. Potential California driver unionization could pressure costs or operating flexibility and is the more meaningful company-specific risk.",
+        "news_interpretation": "A director share sale and potential California driver-unionization activity add sentiment and cost-risk concerns. Increased institutional ownership provides a modest counterpoint, but the labor-related headline is the more meaningful risk.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Strong recent performance in the broader sector and especially the industry supports the bullish setup.",
+        "sector_interpretation": "Strong recent performance in the broader technology group and especially its application-software segment supports the setup.",
         "macro_assessment": "neutral",
-        "macro_interpretation": "Risk-on conditions and low volatility help, but elevated longer-term yields and a cycle headwind could limit upside in a growth-sensitive stock.",
+        "macro_interpretation": "Risk-on conditions and subdued volatility are supportive, but elevated longer-term yields and a reported cycle headwind could limit follow-through.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported by a strong uptrend, relative strength, sector momentum, and attractive-looking valuation. Fundamental results are mixed due to recent EPS misses, while labor-related news and elevated yields warrant caution despite favorable forward estimate revisions.",
-        "key_positive": "Strong trend structure, sector support, positive cash generation, and upward forward estimate revisions reinforce the setup.",
-        "key_risk": "Recent earnings misses and potential California driver-unionization costs could undermine the technical continuation.",
+        "overall_summary": "The technical signal is well supported as a bullish pullback continuation, with strong trend structure, relative strength, and buyer defense. Valuation, cash flow, rising forward estimates, and a supportive sector help, but repeated EPS misses, a Hold-heavy analyst view, and labor-related news argue for caution around an otherwise constructive setup.",
+        "key_positive": "Strong price trend, positive cash flow, low reported valuation multiples, and upward forward estimate revisions support the setup.",
+        "key_risk": "Recent EPS misses and potential California driver-unionization costs could undermine the rally if expectations deteriorate.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -645,12 +645,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2708
+          "chars": 2880
         }
       ],
       "is_etf": false,
-      "buy_confidence": 62,
-      "report": "🟡 LYFT — Lyft, Inc.\nEntry: $17.13\neToro TP Value: $56.90\nShares: 14.59 ($250)\nScanner Potential: +22.8%\nTimeframe: 13–35 days\n\n═══ BUY CONFIDENCE: 62% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 22 | Hold: 34 | Sell: 3 | Strong Sell: 0\n🧠 The consensus is Hold with more Hold ratings than Buys, but forward revenue and EPS estimates have risen.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price is above the long-term trend average, has reclaimed VWAP, and shows strong trend strength with moderate RSI rather than overbought momentum.\n🕒 Technical timestamp: 2026-08-14 05:48:05 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🟢 Strong\n🧠 Recent results show two consecutive EPS misses after a strong February beat, indicating some earnings execution inconsistency. Displayed revenue, net income, and margins were unchanged, but positive operating cash flow and free cash flow provide support.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The low trailing P/E and sub-1 price-to-sales ratio are supportive of the setup on an absolute basis. No industry or historical valuation comparison was supplied, so the discount cannot be fully contextualized.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-04 (+82 days)\n🟢 Positive\n🧠 Next earnings are scheduled in 82 days, beyond the scanner's estimated holding window, reducing immediate event risk. Forward revenue and EPS estimates increased versus the prior forecast, though the eventual report remains a potential catalyst.\n\n═══ RECENT NEWS ═══\n• 2026-08-13 07:00 UTC — Lyft Director Janey Whiteside Sells 14,220 Shares at $17.00\n• 2026-08-13 03:35 UTC — Assenagon Asset Management S.A. Has $3.51 Million Stock Holdings in Lyft, Inc. $LYFT\n• 2026-08-12 11:52 UTC — Hundreds of thousands of Uber and Lyft drivers set to unionize across California after subtle law change\n🟡 Institutional accumulation is mildly supportive, while a director share sale is a limited sentiment negative. Potential California driver unionization could pressure costs or operating flexibility and is the more meaningful company-specific risk.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: Strong recent performance in the broader sector and especially the industry supports the bullish setup.\n🧠 Macro: Risk-on conditions and low volatility help, but elevated longer-term yields and a cycle headwind could limit upside in a growth-sensitive stock.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong uptrend, relative strength, sector momentum, and attractive-looking valuation. Fundamental results are mixed due to recent EPS misses, while labor-related news and elevated yields warrant caution despite favorable forward estimate revisions.\n🟢 Key Positive: Strong trend structure, sector support, positive cash generation, and upward forward estimate revisions reinforce the setup.\n🔴 Key Risk: Recent earnings misses and potential California driver-unionization costs could undermine the technical continuation.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 58,
+      "report": "🟡 LYFT — Lyft, Inc.\nEntry: $17.13\neToro TP Value: $56.90\nShares: 14.59 ($250)\nScanner Potential: +22.8%\nTimeframe: 13–35 days\n\n═══ BUY CONFIDENCE: 58% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 22 | Hold: 34 | Sell: 3 | Strong Sell: 0\n🧠 The consensus is Hold with more holds than buys, although forward revenue and EPS estimates have been revised higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price remains above the 200 EMA with strong trend strength, reclaimed VWAP, steady volume, and RSI still in constructive territory.\n🕒 Technical timestamp: 2026-08-14 09:22:22 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🟢 Strong\n🧠 Results are mixed, with EPS missing estimates in the latest two quarters after a strong beat in February, while revenue and net income are shown as flat across the displayed periods. Positive margins and solid operating and free cash flow provide support, but the recent earnings misses limit fundamental confirmation.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The reported 2.45x trailing P/E and 0.96x price-to-sales ratio appear supportive rather than demanding. Positive free cash flow further helps the valuation case, though recent earnings misses temper confidence.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-04 (+82 days)\n🟡 Mixed\n🧠 The next earnings report is scheduled for November 4, outside the estimated trading window, with forecasts calling for EPS of 0.2078 and revenue of $1.93B. Forward revenue and EPS estimates have risen, but the recent miss pattern leaves some future earnings-event risk.\n\n═══ RECENT NEWS ═══\n• 2026-08-13 07:00 UTC — Lyft Director Janey Whiteside Sells 14,220 Shares at $17.00\n• 2026-08-13 03:35 UTC — Assenagon Asset Management S.A. Has $3.51 Million Stock Holdings in Lyft, Inc. $LYFT\n• 2026-08-12 11:52 UTC — Hundreds of thousands of Uber and Lyft drivers set to unionize across California after subtle law change\n🟡 A director share sale and potential California driver-unionization activity add sentiment and cost-risk concerns. Increased institutional ownership provides a modest counterpoint, but the labor-related headline is the more meaningful risk.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: Strong recent performance in the broader technology group and especially its application-software segment supports the setup.\n🧠 Macro: Risk-on conditions and subdued volatility are supportive, but elevated longer-term yields and a reported cycle headwind could limit follow-through.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a bullish pullback continuation, with strong trend structure, relative strength, and buyer defense. Valuation, cash flow, rising forward estimates, and a supportive sector help, but repeated EPS misses, a Hold-heavy analyst view, and labor-related news argue for caution around an otherwise constructive setup.\n🟢 Key Positive: Strong price trend, positive cash flow, low reported valuation multiples, and upward forward estimate revisions support the setup.\n🔴 Key Risk: Recent EPS misses and potential California driver-unionization costs could undermine the rally if expectations deteriorate.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
