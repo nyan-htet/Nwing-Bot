@@ -112,3 +112,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-14 02:47 UTC,LYFT,openai,True,3,3,OK,supportive,pullback continuation,64
 2026-08-14 05:48 UTC,LYFT,openai,True,3,3,OK,mixed,pullback continuation,62
 2026-08-14 09:23 UTC,LYFT,openai,True,3,3,OK,mixed,pullback continuation,58
+2026-08-14 13:42 UTC,RJET,openai,True,3,0,NO_NEWS,caution,pullback continuation,36
+2026-08-14 13:42 UTC,COPX,openai,True,0,0,NO_NEWS,mixed,pullback continuation,50
+2026-08-14 13:42 UTC,BA,openai,True,3,8,OK,caution,pullback continuation,37

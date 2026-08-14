@@ -1,16 +1,4 @@
 {
-  "BA": {
-    "alerted": "2026-08-14T13:41:43.938087+00:00",
-    "entry": 231.78,
-    "thesis_warned": false,
-    "tp": 278.89
-  },
-  "COPX": {
-    "alerted": "2026-08-14T13:41:44.030236+00:00",
-    "entry": 85.92,
-    "thesis_warned": false,
-    "tp": 99.28
-  },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
@@ -24,11 +12,5 @@
     "scans_muted": 6,
     "thesis_warned": false,
     "tp": 30.46
-  },
-  "RJET": {
-    "alerted": "2026-08-14T13:41:44.637634+00:00",
-    "entry": 20.86,
-    "thesis_warned": false,
-    "tp": 23.88
   }
 }
