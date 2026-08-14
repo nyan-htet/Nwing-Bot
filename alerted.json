@@ -1,15 +1,45 @@
 {
+  "BA": {
+    "alerted": "2026-08-14T20:46:45.111861+00:00",
+    "entry": 231.68,
+    "thesis_warned": false,
+    "tp": 278.89
+  },
+  "DFEN": {
+    "alerted": "2026-08-14T20:46:45.267880+00:00",
+    "entry": 88.27,
+    "thesis_warned": false,
+    "tp": 106.99
+  },
+  "DSP": {
+    "alerted": "2026-08-14T20:46:45.318802+00:00",
+    "entry": 13.03,
+    "thesis_warned": false,
+    "tp": 16.26
+  },
+  "HSTM": {
+    "alerted": "2026-08-14T20:46:45.531603+00:00",
+    "entry": 28.97,
+    "thesis_warned": false,
+    "tp": 34.21
+  },
+  "LABU": {
+    "alerted": "2026-08-14T20:46:45.642489+00:00",
+    "entry": 276.25,
+    "thesis_warned": false,
+    "tp": 333.0
+  },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
-    "scans_muted": 6,
+    "scans_muted": 7,
     "thesis_warned": false,
     "tp": 173.37
   },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
-    "scans_muted": 7,
+    "scans_muted": 8,
     "thesis_warned": false,
     "tp": 30.46
   }
