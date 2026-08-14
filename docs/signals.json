@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-14T05:48:07.061786+00:00",
+  "generated": "2026-08-14T09:22:24.828829+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.9
@@ -62,7 +62,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-14T05:48:05.655855+00:00"
+      "time": "2026-08-14T09:22:22.673722+00:00"
     }
   ],
   "position_alerts": []
