@@ -1,10 +1,4 @@
 {
-  "BVS": {
-    "alerted": "2026-08-14T17:12:22.504805+00:00",
-    "entry": 14.04,
-    "thesis_warned": false,
-    "tp": 15.89
-  },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
@@ -18,11 +12,5 @@
     "scans_muted": 7,
     "thesis_warned": false,
     "tp": 30.46
-  },
-  "SPGI": {
-    "alerted": "2026-08-14T17:12:23.406249+00:00",
-    "entry": 418.14,
-    "thesis_warned": false,
-    "tp": 486.55
   }
 }
