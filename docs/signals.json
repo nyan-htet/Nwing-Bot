@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-17T01:56:23.192108+00:00",
+  "generated": "2026-08-17T04:58:41.288845+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.3
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-17T01:56:15.102037+00:00"
+      "time": "2026-08-17T04:58:32.673907+00:00"
     },
     {
       "ticker": "DFEN",
@@ -120,7 +120,7 @@
         "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(defense bull 3x)"
       ],
-      "time": "2026-08-17T01:56:15.262316+00:00"
+      "time": "2026-08-17T04:58:32.910499+00:00"
     },
     {
       "ticker": "HSTM",
@@ -175,7 +175,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-17T01:56:15.390617+00:00"
+      "time": "2026-08-17T04:58:33.103883+00:00"
     },
     {
       "ticker": "JCI",
@@ -229,7 +229,7 @@
         "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=59.6)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-17T01:56:15.448179+00:00"
+      "time": "2026-08-17T04:58:33.189664+00:00"
     },
     {
       "ticker": "SHW",
@@ -283,7 +283,7 @@
         "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=54.3)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-17T01:56:15.679804+00:00"
+      "time": "2026-08-17T04:58:33.525985+00:00"
     }
   ],
   "position_alerts": []
