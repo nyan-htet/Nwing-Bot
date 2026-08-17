@@ -12,5 +12,11 @@
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "URBN": {
+    "alerted": "2026-08-17T16:46:51.495841+00:00",
+    "entry": 77.16,
+    "thesis_warned": false,
+    "tp": 93.19
   }
 }
