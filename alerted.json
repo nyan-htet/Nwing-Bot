@@ -1,4 +1,28 @@
 {
+  "AMRX": {
+    "alerted": "2026-08-17T13:07:20.950279+00:00",
+    "entry": 18.16,
+    "thesis_warned": false,
+    "tp": 21.32
+  },
+  "DFEN": {
+    "alerted": "2026-08-17T13:07:21.152602+00:00",
+    "entry": 88.23,
+    "thesis_warned": false,
+    "tp": 106.99
+  },
+  "HSTM": {
+    "alerted": "2026-08-17T13:07:21.319031+00:00",
+    "entry": 28.93,
+    "thesis_warned": false,
+    "tp": 34.21
+  },
+  "JCI": {
+    "alerted": "2026-08-17T13:07:21.393606+00:00",
+    "entry": 153.63,
+    "thesis_warned": false,
+    "tp": 176.31
+  },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
@@ -12,5 +36,11 @@
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "SHW": {
+    "alerted": "2026-08-17T13:07:21.693181+00:00",
+    "entry": 359.1,
+    "thesis_warned": false,
+    "tp": 423.02
   }
 }
