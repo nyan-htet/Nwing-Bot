@@ -1,21 +1,21 @@
 {
-  "generated": "2026-08-11T05:31:37.523783+00:00",
+  "generated": "2026-08-17T20:01:20.053551+00:00",
   "results": [
     {
-      "ticker": "APM",
-      "name": "Aptorum Group Limited",
-      "type": "stock",
-      "sector": "Other",
+      "ticker": "GLD",
+      "name": "SPDR Gold",
+      "type": "etf",
+      "sector": "ETF:gold",
       "gates": [
         {
           "gate": "fundamental / quality",
-          "pass": true,
-          "detail": "Pass \u2014 no cached FMP quality rule is currently blocking this ticker."
+          "pass": false,
+          "detail": "Failed \u2014 FMP profile unavailable: RuntimeError"
         },
         {
           "gate": "daily trend",
-          "pass": false,
-          "detail": "EMA20 $8.46 vs EMA50 $8.58 \u2192 uptrend False; ADX 25.6 (needs \u226525); RS vs SPY -3.6%; score 1/5; downtrend ~4w; below 200 EMA"
+          "pass": true,
+          "detail": "EMA20 $389.53 vs EMA50 $389.13 \u2192 uptrend True; ADX 40.2 (needs \u226525); RS vs SPY -7.7%; score 3/5; uptrend ~1w; above 200 EMA"
         },
         {
           "gate": "4h setup",
@@ -24,8 +24,8 @@
         },
         {
           "gate": "1h trigger",
-          "pass": false,
-          "detail": "last 1h bar closed 0% up its range, below the prior bar high"
+          "pass": true,
+          "detail": "last 1h bar closed 90% up its range, above the prior bar high"
         },
         {
           "gate": "quality score",
@@ -43,42 +43,384 @@
           "detail": "Not evaluated \u2014 no confirmed entry setup"
         }
       ],
-      "stopped_at": "daily trend",
+      "stopped_at": "fundamental / quality",
       "blocked_by": [
+        "fundamental / quality",
+        "4h setup"
+      ],
+      "muted": null,
+      "price": 405.46,
+      "fundamental": {
+        "pass": false,
+        "notes": [
+          "FMP profile unavailable: RuntimeError"
+        ]
+      },
+      "trend": {
+        "uptrend": true,
+        "strong": true,
+        "rs": -0.077,
+        "near_52w_high": false,
+        "higher_highs": true,
+        "adx": 40.2,
+        "score": 3,
+        "regime": "uptrend",
+        "regime_weeks": 1,
+        "ema20": 389.53,
+        "ema50": 389.13,
+        "ema200": 401.44,
+        "above_ema200": true,
+        "runner": false
+      },
+      "setup_4h": null,
+      "why": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
+      "final": {
+        "pass": false,
+        "status": "BLOCKED",
+        "reason": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
+        "blocked_by": [
+          "fundamental / quality",
+          "4h setup"
+        ]
+      }
+    },
+    {
+      "ticker": "SOXL",
+      "name": "Direxion Semis Bull 3x",
+      "type": "etf",
+      "sector": "ETF:semiconductors bull 3x",
+      "gates": [
+        {
+          "gate": "fundamental / quality",
+          "pass": false,
+          "detail": "Failed \u2014 FMP profile unavailable: RuntimeError"
+        },
+        {
+          "gate": "daily trend",
+          "pass": false,
+          "detail": "EMA20 $142.61 vs EMA50 $157.02 \u2192 uptrend False; ADX 19.5 (needs \u226525); RS vs SPY -4.7%; score 0/5; downtrend ~4w; above 200 EMA"
+        },
+        {
+          "gate": "4h setup",
+          "pass": false,
+          "detail": "No pullback-to-EMA20 or qualifying range breakout"
+        },
+        {
+          "gate": "1h trigger",
+          "pass": false,
+          "detail": "last 1h bar closed 39% up its range, below the prior bar high"
+        },
+        {
+          "gate": "quality score",
+          "pass": false,
+          "detail": "Not evaluated \u2014 4H setup or 1H trigger failed"
+        },
+        {
+          "gate": "target 9-20%",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        },
+        {
+          "gate": "fee check",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        }
+      ],
+      "stopped_at": "fundamental / quality",
+      "blocked_by": [
+        "fundamental / quality",
         "daily trend",
         "4h setup",
         "1h trigger"
       ],
       "muted": null,
-      "price": 8.99,
+      "price": 151.56,
       "fundamental": {
-        "pass": true,
-        "notes": []
+        "pass": false,
+        "notes": [
+          "FMP profile unavailable: RuntimeError"
+        ]
       },
       "trend": {
         "uptrend": false,
-        "strong": true,
-        "rs": -0.036,
+        "strong": false,
+        "rs": -0.047,
         "near_52w_high": false,
         "higher_highs": false,
-        "adx": 25.6,
-        "score": 1,
+        "adx": 19.5,
+        "score": 0,
         "regime": "downtrend",
         "regime_weeks": 4,
-        "ema20": 8.46,
-        "ema50": 8.58,
-        "ema200": 10.29,
-        "above_ema200": false,
+        "ema20": 142.61,
+        "ema50": 157.02,
+        "ema200": 119.69,
+        "above_ema200": true,
         "runner": false
       },
       "setup_4h": null,
-      "why": "\ud83d\udd34 Blocked by: daily trend, 4h setup, 1h trigger.",
+      "why": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
       "final": {
         "pass": false,
         "status": "BLOCKED",
-        "reason": "\ud83d\udd34 Blocked by: daily trend, 4h setup, 1h trigger.",
+        "reason": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
         "blocked_by": [
+          "fundamental / quality",
           "daily trend",
+          "4h setup",
+          "1h trigger"
+        ]
+      }
+    },
+    {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "type": "etf",
+      "sector": "ETF:benchmark - do not remove",
+      "gates": [
+        {
+          "gate": "fundamental / quality",
+          "pass": false,
+          "detail": "Failed \u2014 FMP profile unavailable: RuntimeError"
+        },
+        {
+          "gate": "daily trend",
+          "pass": true,
+          "detail": "EMA20 $762.53 vs EMA50 $750.63 \u2192 uptrend True; ADX 40.2 (needs \u226525); RS vs SPY +0.0%; score 4/5; uptrend ~17w; above 200 EMA"
+        },
+        {
+          "gate": "4h setup",
+          "pass": false,
+          "detail": "No pullback-to-EMA20 or qualifying range breakout"
+        },
+        {
+          "gate": "1h trigger",
+          "pass": false,
+          "detail": "last 1h bar closed 13% up its range, below the prior bar high"
+        },
+        {
+          "gate": "quality score",
+          "pass": false,
+          "detail": "Not evaluated \u2014 4H setup or 1H trigger failed"
+        },
+        {
+          "gate": "target 9-20%",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        },
+        {
+          "gate": "fee check",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        }
+      ],
+      "stopped_at": "fundamental / quality",
+      "blocked_by": [
+        "fundamental / quality",
+        "4h setup",
+        "1h trigger"
+      ],
+      "muted": null,
+      "price": 772.62,
+      "fundamental": {
+        "pass": false,
+        "notes": [
+          "FMP profile unavailable: RuntimeError"
+        ]
+      },
+      "trend": {
+        "uptrend": true,
+        "strong": true,
+        "rs": 0.0,
+        "near_52w_high": true,
+        "higher_highs": true,
+        "adx": 40.2,
+        "score": 4,
+        "regime": "uptrend",
+        "regime_weeks": 17,
+        "ema20": 762.53,
+        "ema50": 750.63,
+        "ema200": 715.29,
+        "above_ema200": true,
+        "runner": false
+      },
+      "setup_4h": null,
+      "why": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
+      "final": {
+        "pass": false,
+        "status": "BLOCKED",
+        "reason": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
+        "blocked_by": [
+          "fundamental / quality",
+          "4h setup",
+          "1h trigger"
+        ]
+      }
+    },
+    {
+      "ticker": "SPYU",
+      "name": "MAX S&P500 4x",
+      "type": "etf",
+      "sector": "ETF:S&P500 bull 4x",
+      "gates": [
+        {
+          "gate": "fundamental / quality",
+          "pass": false,
+          "detail": "Failed \u2014 FMP profile unavailable: RuntimeError"
+        },
+        {
+          "gate": "daily trend",
+          "pass": true,
+          "detail": "EMA20 $35.05 vs EMA50 $33.63 \u2192 uptrend True; ADX 38.1 (needs \u226525); RS vs SPY +5.5%; score 5/5; uptrend ~17w; above 200 EMA"
+        },
+        {
+          "gate": "4h setup",
+          "pass": false,
+          "detail": "No pullback-to-EMA20 or qualifying range breakout"
+        },
+        {
+          "gate": "1h trigger",
+          "pass": false,
+          "detail": "last 1h bar closed 8% up its range, below the prior bar high"
+        },
+        {
+          "gate": "quality score",
+          "pass": false,
+          "detail": "Not evaluated \u2014 4H setup or 1H trigger failed"
+        },
+        {
+          "gate": "target 9-20%",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        },
+        {
+          "gate": "fee check",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        }
+      ],
+      "stopped_at": "fundamental / quality",
+      "blocked_by": [
+        "fundamental / quality",
+        "4h setup",
+        "1h trigger"
+      ],
+      "muted": null,
+      "price": 36.42,
+      "fundamental": {
+        "pass": false,
+        "notes": [
+          "FMP profile unavailable: RuntimeError"
+        ]
+      },
+      "trend": {
+        "uptrend": true,
+        "strong": true,
+        "rs": 0.055,
+        "near_52w_high": true,
+        "higher_highs": true,
+        "adx": 38.1,
+        "score": 5,
+        "regime": "uptrend",
+        "regime_weeks": 17,
+        "ema20": 35.05,
+        "ema50": 33.63,
+        "ema200": 30.28,
+        "above_ema200": true,
+        "runner": true
+      },
+      "setup_4h": null,
+      "why": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
+      "final": {
+        "pass": false,
+        "status": "BLOCKED",
+        "reason": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
+        "blocked_by": [
+          "fundamental / quality",
+          "4h setup",
+          "1h trigger"
+        ]
+      }
+    },
+    {
+      "ticker": "SPXL",
+      "name": "",
+      "type": "stock",
+      "sector": "",
+      "gates": [
+        {
+          "gate": "fundamental / quality",
+          "pass": false,
+          "detail": "Failed \u2014 FMP profile unavailable: RuntimeError"
+        },
+        {
+          "gate": "daily trend",
+          "pass": true,
+          "detail": "EMA20 $285.31 vs EMA50 $274.52 \u2192 uptrend True; ADX 39.5 (needs \u226525); RS vs SPY +6.4%; score 5/5; uptrend ~17w; above 200 EMA"
+        },
+        {
+          "gate": "4h setup",
+          "pass": false,
+          "detail": "No pullback-to-EMA20 or qualifying range breakout"
+        },
+        {
+          "gate": "1h trigger",
+          "pass": false,
+          "detail": "last 1h bar closed 27% up its range, below the prior bar high"
+        },
+        {
+          "gate": "quality score",
+          "pass": false,
+          "detail": "Not evaluated \u2014 4H setup or 1H trigger failed"
+        },
+        {
+          "gate": "target 9-20%",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        },
+        {
+          "gate": "fee check",
+          "pass": false,
+          "detail": "Not evaluated \u2014 no confirmed entry setup"
+        }
+      ],
+      "stopped_at": "fundamental / quality",
+      "blocked_by": [
+        "fundamental / quality",
+        "4h setup",
+        "1h trigger"
+      ],
+      "muted": null,
+      "price": 295.15,
+      "fundamental": {
+        "pass": false,
+        "notes": [
+          "FMP profile unavailable: RuntimeError"
+        ]
+      },
+      "trend": {
+        "uptrend": true,
+        "strong": true,
+        "rs": 0.064,
+        "near_52w_high": true,
+        "higher_highs": true,
+        "adx": 39.5,
+        "score": 5,
+        "regime": "uptrend",
+        "regime_weeks": 17,
+        "ema20": 285.31,
+        "ema50": 274.52,
+        "ema200": 246.1,
+        "above_ema200": true,
+        "runner": true
+      },
+      "setup_4h": null,
+      "why": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
+      "final": {
+        "pass": false,
+        "status": "BLOCKED",
+        "reason": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
+        "blocked_by": [
+          "fundamental / quality",
           "4h setup",
           "1h trigger"
         ]
