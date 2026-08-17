@@ -122,3 +122,8 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-14 20:47 UTC,DSP,openai,True,3,1,OK,mixed,pullback continuation,49
 2026-08-14 20:47 UTC,DFEN,openai,True,0,0,NO_NEWS,caution,pullback continuation,46
 2026-08-14 20:47 UTC,BA,openai,True,3,7,OK,mixed,pullback continuation,52
+2026-08-17 01:57 UTC,SHW,openai,True,3,1,OK,mixed,pullback continuation,56
+2026-08-17 01:57 UTC,JCI,openai,True,3,0,NO_NEWS,mixed,pullback continuation,60
+2026-08-17 01:57 UTC,HSTM,openai,True,3,0,NO_NEWS,mixed,pullback continuation,48
+2026-08-17 01:57 UTC,DFEN,openai,True,0,0,NO_NEWS,caution,pullback continuation,46
+2026-08-17 01:57 UTC,AMRX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,50
