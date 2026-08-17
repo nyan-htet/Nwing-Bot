@@ -143,3 +143,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-17 13:08 UTC,DFEN,openai,True,0,0,NO_NEWS,caution,pullback continuation,48
 2026-08-17 13:08 UTC,AMRX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,52
 2026-08-17 16:47 UTC,URBN,openai,True,3,1,OK,mixed,pullback continuation,48
+2026-08-17 20:43 UTC,JCI,openai,True,3,0,NO_NEWS,supportive,pullback continuation,71
+2026-08-17 20:43 UTC,AMRX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,55
