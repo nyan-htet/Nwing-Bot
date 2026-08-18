@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18T08:54:12.882983+00:00",
+  "generated": "2026-08-18T13:08:50.671316+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.5
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-18T08:54:04.484409+00:00"
+      "time": "2026-08-18T13:08:42.039045+00:00"
     },
     {
       "ticker": "AMRX",
@@ -118,61 +118,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-18T08:54:04.535685+00:00"
-    },
-    {
-      "ticker": "BMY",
-      "name": "Bristol-Myers Squibb Company",
-      "setup": "pullback",
-      "entry": 64.64,
-      "tp": 77.16,
-      "tp_pct": 0.19359579240467162,
-      "shares": 3.87,
-      "value": 250.17614999999998,
-      "pl_amount": 48.43,
-      "eta_days_low": 20,
-      "eta_days_high": 60,
-      "fee_pct": 0.04129411631107271,
-      "trend_score": 5,
-      "adx": 47.2,
-      "rs": 0.082,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 5,
-      "ema20": 63.29,
-      "ema50": 61.05,
-      "ema200": 56.53,
-      "above_ema200": true,
-      "quality": 1.0,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 56.2 rising",
-        "bollinger": "band position 64%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.6x average, drying up",
-        "extension": "+0.6 ATR from 20 EMA, slope +0.2%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 56.2,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=56.2)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-18T08:54:04.601202+00:00"
+      "time": "2026-08-18T13:08:42.086742+00:00"
     },
     {
       "ticker": "DFTX",
@@ -227,7 +173,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-18T08:54:04.766968+00:00"
+      "time": "2026-08-18T13:08:42.278253+00:00"
     }
   ],
   "position_alerts": []
