@@ -1,0 +1,179 @@
+{
+  "generated": "2026-08-18T06:21:23.998069+00:00",
+  "tickers_checked": [
+    "GLD",
+    "SOXL"
+  ],
+  "results": [
+    {
+      "ticker": "GLD",
+      "in_universe": true,
+      "type": "etf",
+      "steps": [
+        {
+          "step": "FMP_KEY present",
+          "status": "PASS",
+          "detail": "Key is set"
+        },
+        {
+          "step": "In tickers.csv?",
+          "status": "PASS",
+          "detail": "Yes \u2014 classified as 'etf'"
+        },
+        {
+          "step": "profile endpoint (/stable/profile)",
+          "status": "PASS",
+          "detail": "marketCap=143055038780, price=405.49, sector=Financial Services"
+        },
+        {
+          "step": "quote endpoint (/stable/quote)",
+          "status": "PASS",
+          "detail": "price=405.49, volume=9351756"
+        }
+      ],
+      "diagnosis": "profile endpoint works fine for this ticker right now.",
+      "profile_raw": {
+        "symbol": "GLD",
+        "price": 405.49,
+        "marketCap": 143055038780,
+        "beta": 0.41,
+        "lastDividend": 0,
+        "range": "305.19-509.7",
+        "change": 4.01,
+        "changePercentage": 0.9988,
+        "volume": 9351756,
+        "averageVolume": 7235234,
+        "companyName": "SPDR Gold Shares",
+        "currency": "USD",
+        "cik": "0001222333",
+        "isin": "US78463V1070",
+        "cusip": "78463V107",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management",
+        "website": "https://www.ssga.com/us/en/institutional/etfs/spdr-gold-shares-gld",
+        "description": "The SPDR Gold Trust aims to mirror the market price movements of physical gold bullion, after deducting its operational expenses. This pioneering fund was the first gold exchange-traded fund (ETF) to be introduced in the U.S., and also the initial U.S.-listed ETF to be backed by a tangible asset. For a significant number of investors, the combined expenses of purchasing GLD shares on the secondary market and covering the Trust's continuous fees could be lower than the expenditures associated with directly acquiring, safeguarding, and insuring physical gold within a conventional allocated bullion account.",
+        "ceo": "",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": null,
+        "phone": "1-866-787-2257",
+        "address": "1 Iron Street",
+        "city": "Boston",
+        "state": "MA",
+        "zip": "2210",
+        "image": "https://images.financialmodelingprep.com/symbol/GLD.png",
+        "ipoDate": "2004-11-18",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "quote_raw": {
+        "symbol": "GLD",
+        "name": "SPDR Gold Shares",
+        "price": 405.49,
+        "changePercentage": 0.9988,
+        "change": 4.01,
+        "volume": 9351756,
+        "dayLow": 402.17,
+        "dayHigh": 406.23,
+        "yearHigh": 509.7,
+        "yearLow": 305.19,
+        "marketCap": 143055038780,
+        "priceAvg50": 381.3002,
+        "priceAvg200": 412.3523,
+        "exchange": "AMEX",
+        "open": 402.335,
+        "previousClose": 401.48,
+        "timestamp": 1786996800
+      }
+    },
+    {
+      "ticker": "SOXL",
+      "in_universe": true,
+      "type": "etf",
+      "steps": [
+        {
+          "step": "FMP_KEY present",
+          "status": "PASS",
+          "detail": "Key is set"
+        },
+        {
+          "step": "In tickers.csv?",
+          "status": "PASS",
+          "detail": "Yes \u2014 classified as 'etf'"
+        },
+        {
+          "step": "profile endpoint (/stable/profile)",
+          "status": "PASS",
+          "detail": "marketCap=41933687129, price=151.53, sector=Financial Services"
+        },
+        {
+          "step": "quote endpoint (/stable/quote)",
+          "status": "PASS",
+          "detail": "price=151.53, volume=42554931"
+        }
+      ],
+      "diagnosis": "profile endpoint works fine for this ticker right now.",
+      "profile_raw": {
+        "symbol": "SOXL",
+        "price": 151.53,
+        "marketCap": 41933687129,
+        "beta": 7.64,
+        "lastDividend": 0.21967,
+        "range": "23.66-302",
+        "change": 6.57999,
+        "changePercentage": 4.53949,
+        "volume": 42554931,
+        "averageVolume": 65361941,
+        "companyName": "Direxion Daily Semiconductor Bull 3X ETF",
+        "currency": "USD",
+        "cik": "0001424958",
+        "isin": "US25459W4583",
+        "cusip": "25459W458",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management - Leveraged",
+        "website": "https://www.direxion.com/product/daily-semiconductor-bull-bear-3x-etfs",
+        "description": "The Direxion Daily Semiconductor Bull and Bear 3X Exchange-Traded Funds (ETFs) are engineered to deliver daily investment outcomes that are triple (300%) the movement of the NYSE Semiconductor Index, or triple the inverse (opposite) of its performance, prior to the deduction of fees and expenses. It is important to note that these funds offer no guarantee of successfully reaching their stated investment targets.",
+        "ceo": "",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": null,
+        "phone": "1-866-476-7523",
+        "address": "1301 Avenue of the Americas, 28th Floor",
+        "city": "New York City",
+        "state": "NY",
+        "zip": "10019",
+        "image": "https://images.financialmodelingprep.com/symbol/SOXL.png",
+        "ipoDate": "2010-03-11",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "quote_raw": {
+        "symbol": "SOXL",
+        "name": "Direxion Daily Semiconductor Bull 3X ETF",
+        "price": 151.53,
+        "changePercentage": 4.53949,
+        "change": 6.57999,
+        "volume": 42554931,
+        "dayLow": 148.9,
+        "dayHigh": 156.9242,
+        "yearHigh": 302,
+        "yearLow": 23.66,
+        "marketCap": 41933687129,
+        "priceAvg50": 180.2646,
+        "priceAvg200": 103.2635,
+        "exchange": "AMEX",
+        "open": 150.605,
+        "previousClose": 144.95001,
+        "timestamp": 1786996800
+      }
+    }
+  ]
+}
