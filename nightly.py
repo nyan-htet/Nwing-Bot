@@ -404,6 +404,10 @@ def stage2():
             continue
         try:
             tr = analysis.daily_trend(df, spy, cfg)
+            ma200_setup = analysis.setup_daily_200ma(df, spy, cfg)
+            m = dict(meta.get(t, {}))
+            m["ma200_setup"] = ma200_setup
+            meta[t] = m
             tier = meta.get(t, {}).get("screen", {}).get("tier", "UNKNOWN")
             floor = tier_score_floor.get(tier)
             if floor is not None and tr["score"] < floor:
@@ -508,6 +512,7 @@ def stage3():
     top = s2["top"]
     top_stocks = s2["top_stocks"]
     top_etfs = s2["top_etfs"]
+    meta = s2["meta"]
 
     if not top:
         raise SystemExit("FATAL: Stage 2 produced no survivors to trim on 4H.")
@@ -523,21 +528,41 @@ def stage3():
 
     for t in top:
         h4 = d4.get(t)
+        ma200_setup = meta.get(t, {}).get("ma200_setup")   # from Stage 2, daily-level
         if h4 is None or len(h4) < 25:
             no_4h_data.append(t)
-            stage3_status[t] = {"status": "FAIL", "reason": "No/short 4H data"}
-            stage3_reasons["No/short 4H data"] += 1
+            if ma200_setup:
+                # No 4H data, but the daily 200MA pullback still qualifies —
+                # don't lose a real setup just because the 4H fetch failed.
+                setups[t] = ma200_setup
+                stage3_status[t] = {"status": "PASS", "setup": ma200_setup,
+                                    "source": "daily_200ma (no 4H data)"}
+            else:
+                stage3_status[t] = {"status": "FAIL", "reason": "No/short 4H data"}
+                stage3_reasons["No/short 4H data"] += 1
             continue
         try:
             setup = analysis.setup_4h(h4, cfg)
         except Exception as exc:
             reason = f"4H setup error: {type(exc).__name__}"
-            stage3_status[t] = {"status": "FAIL", "reason": reason}
-            stage3_reasons[reason] += 1
+            if ma200_setup:
+                setups[t] = ma200_setup
+                stage3_status[t] = {"status": "PASS", "setup": ma200_setup,
+                                    "source": f"daily_200ma (4H error: {type(exc).__name__})"}
+            else:
+                stage3_status[t] = {"status": "FAIL", "reason": reason}
+                stage3_reasons[reason] += 1
             continue
-        if setup:
-            setups[t] = setup
-            stage3_status[t] = {"status": "PASS", "setup": setup}
+        # A ticker qualifies on EITHER an active 4H setup OR the daily
+        # 200MA pullback flagged in Stage 2 — this is an additional
+        # qualifying path into the same technical funnel, not a separate
+        # alert type. Hourly still owns the real entry decision on 1H
+        # either way.
+        active_setup = setup or ma200_setup
+        if active_setup:
+            setups[t] = active_setup
+            source = "4H" if setup else "daily_200ma"
+            stage3_status[t] = {"status": "PASS", "setup": active_setup, "source": source}
         else:
             stage3_status[t] = {"status": "FAIL", "reason": "No active 4H setup"}
             stage3_reasons["No active 4H setup"] += 1

@@ -72,6 +72,54 @@ def setup_4h(h4, cfg) -> str | None:
     return None
 
 
+def setup_daily_200ma(daily, spy_daily, cfg) -> str | None:
+    """Pullback to a rising 200-day EMA within an established uptrend.
+
+    A daily-timeframe setup, distinct from setup_4h — computed once in
+    nightly Stage 2 from daily bars already being fetched there (no extra
+    API cost), not re-derived hourly. A raw "price near the 200MA" touch
+    alone can't tell a healthy pullback from a breaking trend, so this
+    checks five things together:
+      1. The 200MA itself is rising (slope, not just "price above it").
+      2. Price was meaningfully extended above it recently (>=8% at some
+         point in the last 40 days) — confirms a real advance, not chop.
+      3. Current close is within 3% of the 200MA (the "touch").
+      4. Last close is back ABOVE the 200MA, not below — a close below is
+         thesis-broken territory, not an entry.
+      5. Trend still has strength (ADX >= 20) and isn't badly lagging the
+         market (RS vs SPY not below -10%).
+    """
+    d = daily.copy()
+    d["ema_200"] = ind.ema(d["close"], 200)
+    d["adx"] = ind.adx(d, cfg.ADX_PERIOD)
+    if len(d) < 220 or d["ema_200"].iloc[-21:].isna().any():
+        return None
+    last = d.iloc[-1]
+    ema200 = d["ema_200"]
+
+    rising = bool(ema200.iloc[-1] > ema200.iloc[-21])
+    if not rising:
+        return None
+
+    lookback = d.iloc[-40:]
+    extension = (lookback["close"] - lookback["ema_200"]) / lookback["ema_200"]
+    if extension.max(skipna=True) < 0.08:
+        return None
+
+    proximity = abs(last.close - last.ema_200) / last.ema_200
+    if proximity > 0.03:
+        return None
+
+    if last.close <= last.ema_200:
+        return None
+
+    rs = ind.relative_strength(d["close"], spy_daily["close"], cfg.RS_LOOKBACK)
+    if last.adx < 20 or rs < -0.10:
+        return None
+
+    return "200ma_pullback"
+
+
 def trigger_1h(h1) -> bool:
     """Confirmation on 1h: last bar bullish and closes in upper half of range,
     above the prior bar's high (simple momentum ignition)."""
@@ -145,10 +193,14 @@ def quality_score(h1, h4, setup, cfg, octx=None, entry_hint=None) -> dict:
     """Weighted confirmation. Each factor votes in [-1, +1] and is adjusted by
     CONTEXT (how it got here), not just its level. Nothing is a hard trigger."""
     scores, notes = {}, {}
+    # "200ma_pullback" (daily-level) shares the same mean-reversion character
+    # as "pullback" (4H-level) for scoring purposes — both are entries into
+    # a dip within an uptrend, not a breakout/continuation move.
+    pullback_like = setup in ("pullback", "200ma_pullback")
 
     # ---------- RSI: level + direction of approach + divergence ----------
     r, r_dir, r_lo, r_hi, r_reset = ind.rsi_context(h4["close"], cfg.RSI_PERIOD)
-    if setup == "pullback":
+    if pullback_like:
         base = 1.0 if 40 <= r <= 60 else (0.4 if (30 <= r < 40 or 60 < r <= 68) else (-1.0 if r > 75 else -0.3))
     else:
         base = 1.0 if 55 <= r <= 70 else (0.3 if 50 <= r < 55 else (-1.0 if r > 80 else -0.3))
@@ -176,7 +228,7 @@ def quality_score(h1, h4, setup, cfg, octx=None, entry_hint=None) -> dict:
     w_avg = float(width.iloc[-60:].mean()) if len(width.dropna()) >= 60 else w_now
     expanding = w_avg > 0 and w_now > 1.1 * w_avg
     contracting = w_avg > 0 and w_now < 0.9 * w_avg
-    if setup == "pullback":
+    if pullback_like:
         b = 1.0 if 0.3 <= p <= 0.7 else (0.3 if p < 0.3 else (-0.6 if p > 0.95 else 0.0))
         if p > 0.9 and contracting:
             b -= 0.3                    # tagging upper band as bands shrink = exhaustion
@@ -214,7 +266,7 @@ def quality_score(h1, h4, setup, cfg, octx=None, entry_hint=None) -> dict:
 
     # ---------- Volume: setup-aware (dry-up on pullbacks, surge on breakouts) ----------
     ratio, vtrend = ind.volume_context(h4)
-    if setup == "pullback":
+    if pullback_like:
         if vtrend == "drying up":
             vol = 1.0                   # sellers exhausted = ideal pullback
         elif ratio >= cfg.VOL_SPIKE:
