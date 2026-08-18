@@ -1,27 +1,9 @@
 {
-  "ADSE": {
-    "alerted": "2026-08-18T08:54:04.484455+00:00",
-    "entry": 11.96,
-    "thesis_warned": false,
-    "tp": 14.74
-  },
-  "AMRX": {
-    "alerted": "2026-08-18T08:54:04.535753+00:00",
-    "entry": 18.43,
-    "thesis_warned": false,
-    "tp": 21.32
-  },
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
     "thesis_warned": false,
     "tp": 77.16
-  },
-  "DFTX": {
-    "alerted": "2026-08-18T08:54:04.767016+00:00",
-    "entry": 45.31,
-    "thesis_warned": false,
-    "tp": 56.64
   },
   "JCI": {
     "alerted": "2026-08-17T20:43:10.378919+00:00",
