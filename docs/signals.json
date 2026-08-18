@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18T01:51:07.482136+00:00",
+  "generated": "2026-08-18T04:51:39.683148+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.5
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-18T01:50:58.707184+00:00"
+      "time": "2026-08-18T04:51:31.555097+00:00"
     },
     {
       "ticker": "AMRX",
@@ -118,7 +118,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-18T01:50:58.756377+00:00"
+      "time": "2026-08-18T04:51:31.596886+00:00"
     },
     {
       "ticker": "BMY",
@@ -172,7 +172,7 @@
         "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=56.2)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-18T01:50:58.817736+00:00"
+      "time": "2026-08-18T04:51:31.649727+00:00"
     },
     {
       "ticker": "DFTX",
@@ -227,7 +227,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-18T01:50:58.971781+00:00"
+      "time": "2026-08-18T04:51:31.780758+00:00"
     }
   ],
   "position_alerts": []
