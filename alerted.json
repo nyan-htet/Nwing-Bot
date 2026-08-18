@@ -1,10 +1,4 @@
 {
-  "ARKG": {
-    "alerted": "2026-08-18T20:40:01.412636+00:00",
-    "entry": 43.21,
-    "thesis_warned": false,
-    "tp": 50.71
-  },
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
@@ -12,35 +6,11 @@
     "thesis_warned": false,
     "tp": 77.16
   },
-  "CGON": {
-    "alerted": "2026-08-18T20:40:01.466756+00:00",
-    "entry": 76.3,
-    "thesis_warned": false,
-    "tp": 86.51
-  },
-  "DFTX": {
-    "alerted": "2026-08-18T20:40:01.534654+00:00",
-    "entry": 46.17,
-    "thesis_warned": false,
-    "tp": 57.72
-  },
   "JCI": {
     "alerted": "2026-08-17T20:43:10.378919+00:00",
     "entry": 153.93,
     "thesis_warned": false,
     "tp": 176.31
-  },
-  "LABU": {
-    "alerted": "2026-08-18T20:40:01.758467+00:00",
-    "entry": 290.26,
-    "thesis_warned": false,
-    "tp": 333.0
-  },
-  "NTSK": {
-    "alerted": "2026-08-18T20:40:01.804481+00:00",
-    "entry": 15.36,
-    "thesis_warned": false,
-    "tp": 19.0
   },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
@@ -55,11 +25,5 @@
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 30.46
-  },
-  "XBI": {
-    "alerted": "2026-08-18T20:40:02.039114+00:00",
-    "entry": 160.13,
-    "thesis_warned": false,
-    "tp": 195.08
   }
 }
