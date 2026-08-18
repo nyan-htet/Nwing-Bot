@@ -2,9 +2,21 @@
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 77.16
+  },
+  "CRSP": {
+    "alerted": "2026-08-18T16:49:26.413515+00:00",
+    "entry": 53.18,
+    "thesis_warned": false,
+    "tp": 60.73
+  },
+  "DFTX": {
+    "alerted": "2026-08-18T16:49:26.437349+00:00",
+    "entry": 44.96,
+    "thesis_warned": false,
+    "tp": 56.2
   },
   "JCI": {
     "alerted": "2026-08-17T20:43:10.378919+00:00",
@@ -15,7 +27,7 @@
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
-    "scans_muted": 11,
+    "scans_muted": 12,
     "thesis_warned": false,
     "tp": 173.37
   },
