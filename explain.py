@@ -34,6 +34,7 @@ def explain_one(sym, spy_daily, meta, ledger):
     out = {"ticker": sym, "name": meta.get("name", ""),
            "type": meta.get("type", "stock"), "sector": meta.get("sector", ""),
            "gates": [], "stopped_at": None, "blocked_by": [], "muted": None, "price": None}
+    is_etf = out["type"] == "etf"
 
     if sym in ledger:
         e = ledger[sym]
@@ -53,7 +54,7 @@ def explain_one(sym, spy_daily, meta, ledger):
     else:
         screen_source = "live FMP fallback"
         try:
-            live_screen = fnd.company_screen(sym, cfg)
+            live_screen = fnd.company_screen(sym, cfg, is_etf=is_etf)
             screen_pass = bool(live_screen.get("pass", False))
             screen_notes = list(live_screen.get("notes") or [])
             if not meta.get("sector"):
@@ -132,7 +133,6 @@ def explain_one(sym, spy_daily, meta, ledger):
 
     # Only calculate downstream entry gates when their prerequisites exist.
     q = None
-    is_etf = meta.get("type") == "etf"
     if setup_ok and trig:
         q = analysis.quality_score(h1, h4, st, cfg, entry_hint=price)
         floor = cfg.SCORE_MIN_ETF if is_etf else cfg.SCORE_MIN_STOCK
