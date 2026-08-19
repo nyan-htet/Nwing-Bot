@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19T01:54:21.145218+00:00",
+  "generated": "2026-08-19T04:52:32.500306+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.6
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-19T01:54:05.145490+00:00"
+      "time": "2026-08-19T04:52:18.598351+00:00"
     },
     {
       "ticker": "BAC",
@@ -117,7 +117,7 @@
         "quality +0.78 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.2, opt +0.0; RSI=58.1)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-19T01:54:05.223475+00:00"
+      "time": "2026-08-19T04:52:18.675299+00:00"
     },
     {
       "ticker": "CGON",
@@ -172,7 +172,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-19T01:54:05.283062+00:00"
+      "time": "2026-08-19T04:52:18.734035+00:00"
     },
     {
       "ticker": "DFEN",
@@ -229,7 +229,7 @@
         "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(defense bull 3x)"
       ],
-      "time": "2026-08-19T01:54:05.381695+00:00"
+      "time": "2026-08-19T04:52:18.830897+00:00"
     },
     {
       "ticker": "EBC",
@@ -284,7 +284,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-19T01:54:05.468516+00:00"
+      "time": "2026-08-19T04:52:18.916636+00:00"
     },
     {
       "ticker": "LABU",
@@ -341,7 +341,7 @@
         "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(biotech bull 3x)"
       ],
-      "time": "2026-08-19T01:54:05.823867+00:00"
+      "time": "2026-08-19T04:52:19.265121+00:00"
     },
     {
       "ticker": "NTSK",
@@ -395,7 +395,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-19T01:54:05.911832+00:00"
+      "time": "2026-08-19T04:52:19.350791+00:00"
     },
     {
       "ticker": "TGTX",
@@ -449,7 +449,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-19T01:54:06.173663+00:00"
+      "time": "2026-08-19T04:52:19.609015+00:00"
     },
     {
       "ticker": "XBI",
@@ -503,7 +503,7 @@
         "quality +0.59 (rsi +0.7, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=65.3)",
         "(biotech)"
       ],
-      "time": "2026-08-19T01:54:06.382627+00:00"
+      "time": "2026-08-19T04:52:19.815549+00:00"
     }
   ],
   "position_alerts": []
