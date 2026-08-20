@@ -6,6 +6,12 @@
     "thesis_warned": false,
     "tp": 77.16
   },
+  "CEG": {
+    "alerted": "2026-08-20T08:57:06.863304+00:00",
+    "entry": 274.19,
+    "thesis_warned": false,
+    "tp": 337.93
+  },
   "JCI": {
     "alerted": "2026-08-17T20:43:10.378919+00:00",
     "entry": 153.93,
@@ -25,5 +31,11 @@
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "TFX": {
+    "alerted": "2026-08-20T08:57:07.464322+00:00",
+    "entry": 135.99,
+    "thesis_warned": false,
+    "tp": 156.4
   }
 }
