@@ -25,11 +25,5 @@
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 30.46
-  },
-  "SWIM": {
-    "alerted": "2026-08-20T20:47:56.491276+00:00",
-    "entry": 7.11,
-    "thesis_warned": false,
-    "tp": 8.11
   }
 }
