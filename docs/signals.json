@@ -1,127 +1,14 @@
 {
-  "generated": "2026-08-20T13:12:45.497551+00:00",
+  "generated": "2026-08-20T16:52:34.273266+00:00",
   "macro": {
     "risk": "risk-on",
-    "vol": 13.6
+    "vol": 12.7
   },
   "cycles": {
-    "score": -0.49,
+    "score": -0.51,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.2% (informative only)"
+    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +11.0% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "CEG",
-      "name": "Constellation Energy Corporation",
-      "setup": "pullback",
-      "entry": 274.19,
-      "tp": 337.93,
-      "tp_pct": 0.2324665378022539,
-      "shares": 0.91,
-      "value": 249.5129,
-      "pl_amount": 58.0,
-      "eta_days_low": 16,
-      "eta_days_high": 48,
-      "fee_pct": 0.03448073733608719,
-      "trend_score": 3,
-      "adx": 31.0,
-      "rs": -0.063,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 1,
-      "ema20": 270.32,
-      "ema50": 268.7,
-      "ema200": 298.34,
-      "above_ema200": false,
-      "quality": 0.82,
-      "q_detail": {
-        "rsi": 0.6,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 51.5 falling",
-        "bollinger": "band position 49%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.8x average, surging",
-        "extension": "+0.0 ATR from 20 EMA, slope +1.2%, mixed / tangled"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 51.5,
-      "options_note": "",
-      "sector": "",
-      "warnings": [
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk"
-      ],
-      "reasons": [
-        "daily uptrend (score 3/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=51.5)",
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-20T13:12:32.372775+00:00"
-    },
-    {
-      "ticker": "TFX",
-      "name": "Teleflex Incorporated",
-      "setup": "pullback",
-      "entry": 135.99,
-      "tp": 156.4,
-      "tp_pct": 0.1500844804702932,
-      "shares": 1.84,
-      "value": 250.22161840000004,
-      "pl_amount": 37.55,
-      "eta_days_low": 11,
-      "eta_days_high": 33,
-      "fee_pct": 0.05325610261147265,
-      "trend_score": 4,
-      "adx": 26.3,
-      "rs": -0.033,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 19,
-      "ema20": 134.87,
-      "ema50": 132.9,
-      "ema200": 125.9,
-      "above_ema200": true,
-      "quality": 0.89,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 0.8
-      },
-      "q_notes": {
-        "rsi": "RSI 52.3 flat",
-        "bollinger": "band position 60%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "1.3x average, surging",
-        "extension": "+0.3 ATR from 20 EMA, slope -0.2%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 52.3,
-      "options_note": "",
-      "sector": "",
-      "warnings": [
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk"
-      ],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.3)",
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-20T13:12:33.101086+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
