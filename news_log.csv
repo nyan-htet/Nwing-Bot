@@ -210,3 +210,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-20 04:54 UTC,CEG,openai,True,3,1,OK,mixed,pullback continuation,58
 2026-08-20 08:58 UTC,TFX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,62
 2026-08-20 08:58 UTC,CEG,openai,True,3,2,OK,mixed,pullback continuation,56
+2026-08-20 13:13 UTC,TFX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,58
+2026-08-20 13:13 UTC,CEG,openai,True,3,2,OK,mixed,pullback continuation,56
