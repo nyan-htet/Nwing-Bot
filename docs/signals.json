@@ -1,14 +1,72 @@
 {
-  "generated": "2026-08-20T16:52:34.273266+00:00",
+  "generated": "2026-08-20T20:48:03.243594+00:00",
   "macro": {
     "risk": "risk-on",
-    "vol": 12.7
+    "vol": 13.1
   },
   "cycles": {
-    "score": -0.51,
+    "score": -0.52,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +11.0% (informative only)"
+    "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "SWIM",
+      "name": "Latham Group, Inc.",
+      "setup": "pullback",
+      "entry": 7.11,
+      "tp": 8.11,
+      "tp_pct": 0.14064697609001398,
+      "shares": 35.16,
+      "value": 249.9876,
+      "pl_amount": 35.16,
+      "eta_days_low": 7,
+      "eta_days_high": 12,
+      "fee_pct": 0.056882821387940895,
+      "trend_score": 4,
+      "adx": 33.5,
+      "rs": 0.351,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 2,
+      "ema20": 6.82,
+      "ema50": 6.36,
+      "ema200": 6.27,
+      "above_ema200": true,
+      "quality": 0.87,
+      "q_detail": {
+        "rsi": 0.5,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 53.3 flat, BEARISH DIVERGENCE",
+        "bollinger": "band position 30%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.1x average, drying up",
+        "extension": "+0.1 ATR from 20 EMA, slope +0.6%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 53.3,
+      "options_note": "",
+      "sector": "",
+      "warnings": [
+        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk"
+      ],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.87 (rsi +0.5, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.3)",
+        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-08-20T20:47:56.491240+00:00"
+    }
+  ],
   "position_alerts": []
 }
