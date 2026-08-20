@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-20T08:57:15.836983+00:00",
+  "generated": "2026-08-20T13:12:45.497551+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.6
@@ -64,7 +64,7 @@
         "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-20T08:57:06.863276+00:00"
+      "time": "2026-08-20T13:12:32.372775+00:00"
     },
     {
       "ticker": "TFX",
@@ -120,7 +120,7 @@
         "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-20T08:57:07.464297+00:00"
+      "time": "2026-08-20T13:12:33.101086+00:00"
     }
   ],
   "position_alerts": []
