@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-20 04:54 UTC",
+  "generated": "2026-08-20 08:58 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "TFX",
       "alert": {
-        "alerted": "2026-08-20T04:53:36.465536+00:00",
+        "alerted": "2026-08-20T08:57:07.464322+00:00",
         "entry": 135.99,
         "thesis_warned": false,
         "tp": 156.4
@@ -71,7 +71,7 @@
           "⚠ monthly opex 2026-08-21 — pinning/chop risk",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-20T04:53:36.465494+00:00"
+        "time": "2026-08-20T08:57:07.464297+00:00"
       },
       "profile": {
         "symbol": "TFX",
@@ -172,56 +172,56 @@
           "epsEstimated": 1.89,
           "revenueActual": null,
           "revenueEstimated": 565374000,
-          "lastUpdated": "2026-08-19"
+          "lastUpdated": "2026-08-20"
         },
         "estimates": [
           {
             "date": "2030-12-31",
             "period": null,
-            "revenue_avg": 2772500000.0,
-            "eps_avg": 13.69,
-            "revenue_low": 2746463595.0,
-            "revenue_high": 2786772465.0,
-            "eps_low": 13.52287,
-            "eps_high": 13.78162,
+            "revenue_avg": 2728333333.0,
+            "eps_avg": 14.23667,
+            "revenue_low": 2706653057.0,
+            "revenue_high": 2747647219.0,
+            "eps_low": 14.0896,
+            "eps_high": 14.36769,
             "num_analysts_revenue": 4,
             "num_analysts_eps": 1
           },
           {
             "date": "2029-12-31",
             "period": null,
-            "revenue_avg": 2643000000.0,
-            "eps_avg": 12.785,
-            "revenue_low": 2618179723.0,
-            "revenue_high": 2656605816.0,
-            "eps_low": 12.62892,
-            "eps_high": 12.87056,
+            "revenue_avg": 2607666667.0,
+            "eps_avg": 13.25,
+            "revenue_low": 2586945250.0,
+            "revenue_high": 2626126353.0,
+            "eps_low": 13.11312,
+            "eps_high": 13.37194,
             "num_analysts_revenue": 4,
             "num_analysts_eps": 1
           },
           {
             "date": "2028-12-31",
             "period": null,
-            "revenue_avg": 2510908846.0,
-            "eps_avg": 11.54596,
-            "revenue_low": 2452189022.0,
-            "revenue_high": 2537806748.0,
-            "eps_low": 10.38369,
-            "eps_high": 13.67275,
+            "revenue_avg": 2476656368.0,
+            "eps_avg": 12.10874,
+            "revenue_low": 2444369180.0,
+            "revenue_high": 2505262977.0,
+            "eps_low": 10.01837,
+            "eps_high": 15.08433,
             "num_analysts_revenue": 9,
             "num_analysts_eps": 4
           },
           {
             "date": "2027-12-31",
             "period": null,
-            "revenue_avg": 2396470726.0,
-            "eps_avg": 10.58124,
-            "revenue_low": 2386485431.0,
-            "revenue_high": 2406456020.0,
-            "eps_low": 9.01662,
-            "eps_high": 11.56414,
-            "num_analysts_revenue": 12,
-            "num_analysts_eps": 10
+            "revenue_avg": 2367016437.0,
+            "eps_avg": 10.95193,
+            "revenue_low": 2337304933.0,
+            "revenue_high": 2386824105.0,
+            "eps_low": 9.13338,
+            "eps_high": 11.71389,
+            "num_analysts_revenue": 11,
+            "num_analysts_eps": 9
           }
         ]
       },
@@ -237,14 +237,14 @@
         },
         "estimate_direction": {
           "revenueAvg": {
-            "latest": 2772500000,
-            "prior": 2643000000,
-            "change": 0.0489973514945139
+            "latest": 2728333333,
+            "prior": 2607666667,
+            "change": 0.04627380774047385
           },
           "epsAvg": {
-            "latest": 13.69,
-            "prior": 12.785,
-            "change": 0.0707860774344935
+            "latest": 14.23667,
+            "prior": 13.25,
+            "change": 0.07446566037735858
           }
         }
       },
@@ -270,7 +270,7 @@
           "cashRatioTTM": 0.4166681705046927,
           "priceToEarningsRatioTTM": -5.835910652920963,
           "priceToEarningsGrowthRatioTTM": -0.3026005898919562,
-          "forwardPriceToEarningsGrowthRatioTTM": -0.09943708148646344,
+          "forwardPriceToEarningsGrowthRatioTTM": -0.11219413179906608,
           "priceToEarningsDilutedRatioTTM": -5.833404894804637,
           "priceToEarningsDilutedGrowthRatioTTM": -0.29252002098704766,
           "priceToBookRatioTTM": 2.0376188813764964,
@@ -371,13 +371,13 @@
           "date": "2026-08-20",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": 2.4070002379024125
+          "averageChange": 2.406999500692386
         },
         "industry_snapshot": {
           "date": "2026-08-20",
           "industry": "Medical - Instruments & Supplies",
           "exchange": "NASDAQ",
-          "averageChange": 0.8937033652492987
+          "averageChange": 0.8937033652493209
         }
       },
       "macro": {
@@ -507,19 +507,6 @@
           {
             "date": "2026-08-20 01:30:00",
             "country": "AU",
-            "event": "Full Time Employment Chg (Jul)",
-            "currency": "AUD",
-            "previous": 48.9,
-            "estimate": null,
-            "actual": 16.3,
-            "change": -32.6,
-            "impact": "Medium",
-            "changePercentage": -66.667,
-            "unit": "K"
-          },
-          {
-            "date": "2026-08-20 01:30:00",
-            "country": "AU",
             "event": "Participation Rate (Jul)",
             "currency": "AUD",
             "previous": 67,
@@ -528,6 +515,19 @@
             "change": -0.1,
             "impact": "Low",
             "changePercentage": -0.149,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-20 01:30:00",
+            "country": "AU",
+            "event": "Unemployment Rate (Jul)",
+            "currency": "AUD",
+            "previous": 4.4,
+            "estimate": 4.4,
+            "actual": 4.5,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 2.273,
             "unit": "%"
           },
           {
@@ -559,15 +559,15 @@
           {
             "date": "2026-08-20 01:30:00",
             "country": "AU",
-            "event": "Unemployment Rate (Jul)",
+            "event": "Full Time Employment Chg (Jul)",
             "currency": "AUD",
-            "previous": 4.4,
-            "estimate": 4.4,
-            "actual": 4.5,
-            "change": 0.1,
+            "previous": 48.9,
+            "estimate": null,
+            "actual": 16.3,
+            "change": -32.6,
             "impact": "Medium",
-            "changePercentage": 2.273,
-            "unit": "%"
+            "changePercentage": -66.667,
+            "unit": "K"
           },
           {
             "date": "2026-08-20 02:10:00",
@@ -599,25 +599,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback continuation within a well-established daily uptrend. Price is above rising key EMAs, has reclaimed VWAP, and shows contracting bands with moderate volume, though momentum is not yet strong and monthly expiration may create chop.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established daily uptrend. Price is above its key EMAs, has reclaimed VWAP, and shows moderate trend strength, although relative weakness versus SPY and near-term options pinning could limit follow-through.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "The latest two quarters beat EPS estimates, including a sizable recent surprise, but the earlier quarter missed sharply and reported revenue and margins are shown as flat. Positive operating and free cash flow are supportive, while substantial debt and limited demonstrated revenue growth temper the picture.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings report is scheduled in 77 days, leaving no immediate event catalyst, but it remains a future risk. The next EPS estimate is supportive, while the revenue estimate is slightly below the latest reported level.",
+        "financial_interpretation": "The latest two quarters beat EPS estimates, including a strong 37.5% surprise, but the earlier quarter missed substantially and reported revenue data show no growth. Margins and cash flow are positive, though the large debt balance remains a balance-sheet risk.",
+        "earnings_assessment": "positive",
+        "earnings_interpretation": "Next earnings are scheduled for November 5, outside the scanner's expected holding window. Forward revenue and EPS estimates have risen, but the eventual report remains a later event risk.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Ratings lean Buy, and longer-term consensus revenue and EPS estimates have been revised higher.",
+        "analyst_interpretation": "The consensus is Buy, with a clear majority of Buy ratings and forward revenue and EPS estimates raised versus prior estimates.",
         "valuation_assessment": "unknown",
-        "valuation_interpretation": "The negative trailing P/E makes conventional earnings valuation difficult to assess, while the supplied price-to-sales and price-to-book ratios lack industry or historical context. Valuation therefore provides neither a clear tailwind nor a confirmed headwind.",
+        "valuation_interpretation": "The trailing P/E is not meaningful because it is negative, while the supplied price-to-sales and price-to-book ratios lack company history or peer benchmarks. Valuation therefore cannot be confirmed as a support or a major headwind.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was returned, so there is no identified news catalyst or new headline risk.",
+        "news_interpretation": "No usable recent company-specific news was returned, so there is no identified news catalyst or fresh headline risk in the supplied data.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Healthcare and the medical-instrument group are performing positively, providing a supportive backdrop.",
+        "sector_interpretation": "Recent healthcare and medical-instrument performance supports the setup, with the broader sector stronger than the industry but both positive.",
         "macro_assessment": "neutral",
-        "macro_interpretation": "Risk appetite and low volatility help, but elevated longer-term yields and a mildly unfavorable market-cycle backdrop limit macro support.",
+        "macro_interpretation": "Risk-on conditions and low volatility are helpful, but elevated yields and a scanner-identified cycle headwind temper the macro support.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical setup is constructive: a high-quality pullback within a long-term uptrend, supported by VWAP recovery and favorable sector performance. Fundamentals and forward expectations are mixed rather than strongly accelerating, while elevated debt, upcoming monthly expiration, and future earnings remain the main sources of caution.",
-        "key_positive": "Strong recent EPS beats, Buy-leaning analyst coverage, and a supportive healthcare backdrop reinforce the bullish technical structure.",
-        "key_risk": "Flat reported revenue, substantial debt, uncertain trailing valuation, and potential expiration-related chop could weaken follow-through.",
+        "overall_summary": "The technical signal is credible as a pullback continuation, supported by the long-term trend, VWAP reclaim, volume, and a favorable sector backdrop. Fundamental evidence is mixed: recent EPS execution and analyst revisions are constructive, but flat revenue, prior earnings volatility, high debt, relative underperformance, and opex-related chop warrant caution.",
+        "key_positive": "Established uptrend, two recent EPS beats, improving forward estimates, and supportive sector breadth strengthen the setup.",
+        "key_risk": "Flat reported revenue, substantial leverage, SPY underperformance, and near-term pinning risk could weaken continuation.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -628,17 +628,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2778
+          "chars": 2745
         }
       ],
       "is_etf": false,
-      "buy_confidence": 58,
-      "report": "🟡 TFX — Teleflex Incorporated\nEntry: $135.99\neToro TP Value: $37.55\nShares: 1.84 ($250)\nScanner Potential: +15.0%\nTimeframe: 11–33 days\n\n═══ BUY CONFIDENCE: 58% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 15 | Hold: 13 | Sell: 1 | Strong Sell: 0\n🧠 Ratings lean Buy, and longer-term consensus revenue and EPS estimates have been revised higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback continuation within a well-established daily uptrend. Price is above rising key EMAs, has reclaimed VWAP, and shows contracting bands with moderate volume, though momentum is not yet strong and monthly expiration may create chop.\n🕒 Technical timestamp: 2026-08-20 04:53:36 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 The latest two quarters beat EPS estimates, including a sizable recent surprise, but the earlier quarter missed sharply and reported revenue and margins are shown as flat. Positive operating and free cash flow are supportive, while substantial debt and limited demonstrated revenue growth temper the picture.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 The negative trailing P/E makes conventional earnings valuation difficult to assess, while the supplied price-to-sales and price-to-book ratios lack industry or historical context. Valuation therefore provides neither a clear tailwind nor a confirmed headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+77 days)\n🟡 Mixed\n🧠 The next earnings report is scheduled in 77 days, leaving no immediate event catalyst, but it remains a future risk. The next EPS estimate is supportive, while the revenue estimate is slightly below the latest reported level.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: Healthcare and the medical-instrument group are performing positively, providing a supportive backdrop.\n🧠 Macro: Risk appetite and low volatility help, but elevated longer-term yields and a mildly unfavorable market-cycle backdrop limit macro support.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical setup is constructive: a high-quality pullback within a long-term uptrend, supported by VWAP recovery and favorable sector performance. Fundamentals and forward expectations are mixed rather than strongly accelerating, while elevated debt, upcoming monthly expiration, and future earnings remain the main sources of caution.\n🟢 Key Positive: Strong recent EPS beats, Buy-leaning analyst coverage, and a supportive healthcare backdrop reinforce the bullish technical structure.\n🔴 Key Risk: Flat reported revenue, substantial debt, uncertain trailing valuation, and potential expiration-related chop could weaken follow-through.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 62,
+      "report": "🟡 TFX — Teleflex Incorporated\nEntry: $135.99\neToro TP Value: $37.55\nShares: 1.84 ($250)\nScanner Potential: +15.0%\nTimeframe: 11–33 days\n\n═══ BUY CONFIDENCE: 62% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 15 | Hold: 13 | Sell: 1 | Strong Sell: 0\n🧠 The consensus is Buy, with a clear majority of Buy ratings and forward revenue and EPS estimates raised versus prior estimates.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established daily uptrend. Price is above its key EMAs, has reclaimed VWAP, and shows moderate trend strength, although relative weakness versus SPY and near-term options pinning could limit follow-through.\n🕒 Technical timestamp: 2026-08-20 08:57:07 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 The latest two quarters beat EPS estimates, including a strong 37.5% surprise, but the earlier quarter missed substantially and reported revenue data show no growth. Margins and cash flow are positive, though the large debt balance remains a balance-sheet risk.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 The trailing P/E is not meaningful because it is negative, while the supplied price-to-sales and price-to-book ratios lack company history or peer benchmarks. Valuation therefore cannot be confirmed as a support or a major headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+77 days)\n🟢 Positive\n🧠 Next earnings are scheduled for November 5, outside the scanner's expected holding window. Forward revenue and EPS estimates have risen, but the eventual report remains a later event risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: Recent healthcare and medical-instrument performance supports the setup, with the broader sector stronger than the industry but both positive.\n🧠 Macro: Risk-on conditions and low volatility are helpful, but elevated yields and a scanner-identified cycle headwind temper the macro support.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is credible as a pullback continuation, supported by the long-term trend, VWAP reclaim, volume, and a favorable sector backdrop. Fundamental evidence is mixed: recent EPS execution and analyst revisions are constructive, but flat revenue, prior earnings volatility, high debt, relative underperformance, and opex-related chop warrant caution.\n🟢 Key Positive: Established uptrend, two recent EPS beats, improving forward estimates, and supportive sector breadth strengthen the setup.\n🔴 Key Risk: Flat reported revenue, substantial leverage, SPY underperformance, and near-term pinning risk could weaken continuation.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "CEG",
       "alert": {
-        "alerted": "2026-08-20T04:53:35.526742+00:00",
+        "alerted": "2026-08-20T08:57:06.863304+00:00",
         "entry": 274.19,
         "thesis_warned": false,
         "tp": 337.93
@@ -697,7 +697,7 @@
           "⚠ monthly opex 2026-08-21 — pinning/chop risk",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-20T04:53:35.526700+00:00"
+        "time": "2026-08-20T08:57:06.863276+00:00"
       },
       "profile": {
         "symbol": "CEG",
@@ -798,54 +798,54 @@
           "epsEstimated": 3.68,
           "revenueActual": null,
           "revenueEstimated": 9159321000,
-          "lastUpdated": "2026-08-19"
+          "lastUpdated": "2026-08-20"
         },
         "estimates": [
           {
             "date": "2030-12-31",
             "period": null,
-            "revenue_avg": 40901415181.0,
-            "eps_avg": 21.32655,
-            "revenue_low": 29007737209.0,
-            "revenue_high": 49148187375.0,
-            "eps_low": 13.26457,
-            "eps_high": 26.91652,
-            "num_analysts_revenue": 6,
+            "revenue_avg": 41024165181.0,
+            "eps_avg": 21.41655,
+            "revenue_low": 29886540168.0,
+            "revenue_high": 48353579415.0,
+            "eps_low": 13.85787,
+            "eps_high": 26.39074,
+            "num_analysts_revenue": 5,
             "num_analysts_eps": 4
           },
           {
             "date": "2029-12-31",
             "period": null,
-            "revenue_avg": 39904149690.0,
-            "eps_avg": 19.98708,
-            "revenue_low": 28300465464.0,
-            "revenue_high": 47949847636.0,
-            "eps_low": 12.43145,
-            "eps_high": 25.22596,
-            "num_analysts_revenue": 10,
+            "revenue_avg": 39758899690.0,
+            "eps_avg": 19.74738,
+            "revenue_low": 28964780816.0,
+            "revenue_high": 46862260454.0,
+            "eps_low": 12.77781,
+            "eps_high": 24.33389,
+            "num_analysts_revenue": 5,
             "num_analysts_eps": 4
           },
           {
             "date": "2028-12-31",
             "period": null,
-            "revenue_avg": 36263055065.0,
-            "eps_avg": 17.05369,
-            "revenue_low": 23990133684.0,
-            "revenue_high": 42914532397.0,
-            "eps_low": 14.54522,
-            "eps_high": 23.14012,
-            "num_analysts_revenue": 12,
-            "num_analysts_eps": 11
+            "revenue_avg": 36257409395.0,
+            "eps_avg": 16.70664,
+            "revenue_low": 23891213943.0,
+            "revenue_high": 42722927499.0,
+            "eps_low": 14.27809,
+            "eps_high": 22.71514,
+            "num_analysts_revenue": 11,
+            "num_analysts_eps": 10
           },
           {
             "date": "2027-12-31",
             "period": null,
-            "revenue_avg": 34473459009.0,
-            "eps_avg": 13.2564,
-            "revenue_low": 21680418151.0,
-            "revenue_high": 42992189486.0,
-            "eps_low": 12.37809,
-            "eps_high": 14.57387,
+            "revenue_avg": 34329067202.0,
+            "eps_avg": 13.22734,
+            "revenue_low": 21589609893.0,
+            "revenue_high": 42812117045.0,
+            "eps_low": 12.35095,
+            "eps_high": 14.54192,
             "num_analysts_revenue": 9,
             "num_analysts_eps": 12
           }
@@ -863,14 +863,14 @@
         },
         "estimate_direction": {
           "revenueAvg": {
-            "latest": 40901415181,
-            "prior": 39904149690,
-            "change": 0.024991523406647564
+            "latest": 41024165181,
+            "prior": 39758899690,
+            "change": 0.031823453386921496
           },
           "epsAvg": {
-            "latest": 21.32655,
-            "prior": 19.98708,
-            "change": 0.06701679284817996
+            "latest": 21.41655,
+            "prior": 19.74738,
+            "change": 0.0845261497980998
           }
         }
       },
@@ -896,7 +896,7 @@
           "cashRatioTTM": 0.0826427255985267,
           "priceToEarningsRatioTTM": 26.644314868804663,
           "priceToEarningsGrowthRatioTTM": 3.6502711370262433,
-          "forwardPriceToEarningsGrowthRatioTTM": 2.029856947705192,
+          "forwardPriceToEarningsGrowthRatioTTM": 2.4470252177396974,
           "priceToEarningsDilutedRatioTTM": 26.644314868804663,
           "priceToEarningsDilutedGrowthRatioTTM": 3.595106147086608,
           "priceToBookRatioTTM": 3.035187165775401,
@@ -987,6 +987,12 @@
       },
       "news": [
         {
+          "date": "2026-08-20 02:05 UTC",
+          "title": "Nvidia Chip-Filled Data Centers Need More Power Than Any Utility Can Promise. Here's Who Actually Wins.",
+          "site": "fool.com",
+          "text": "Modern data centers powered by advanced Nvidia chips require significantly more power compared to traditional setups. Technology companies have signed some major long-term power purchase agreements with independent power producers."
+        },
+        {
           "date": "2026-08-18 23:12 UTC",
           "title": "Nuclear Stocks Plunge Tuesday: Oklo Down 5%, Constellation Energy Down 4%, NuScale Down 5%",
           "site": "247wallst.com",
@@ -995,7 +1001,7 @@
       ],
       "news_diag": {
         "status": "OK",
-        "message": "1 usable article(s)"
+        "message": "2 usable article(s)"
       },
       "sector": {
         "sector": "Utilities",
@@ -1140,19 +1146,6 @@
           {
             "date": "2026-08-20 01:30:00",
             "country": "AU",
-            "event": "Full Time Employment Chg (Jul)",
-            "currency": "AUD",
-            "previous": 48.9,
-            "estimate": null,
-            "actual": 16.3,
-            "change": -32.6,
-            "impact": "Medium",
-            "changePercentage": -66.667,
-            "unit": "K"
-          },
-          {
-            "date": "2026-08-20 01:30:00",
-            "country": "AU",
             "event": "Participation Rate (Jul)",
             "currency": "AUD",
             "previous": 67,
@@ -1161,6 +1154,19 @@
             "change": -0.1,
             "impact": "Low",
             "changePercentage": -0.149,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-20 01:30:00",
+            "country": "AU",
+            "event": "Unemployment Rate (Jul)",
+            "currency": "AUD",
+            "previous": 4.4,
+            "estimate": 4.4,
+            "actual": 4.5,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 2.273,
             "unit": "%"
           },
           {
@@ -1192,15 +1198,15 @@
           {
             "date": "2026-08-20 01:30:00",
             "country": "AU",
-            "event": "Unemployment Rate (Jul)",
+            "event": "Full Time Employment Chg (Jul)",
             "currency": "AUD",
-            "previous": 4.4,
-            "estimate": 4.4,
-            "actual": 4.5,
-            "change": 0.1,
+            "previous": 48.9,
+            "estimate": null,
+            "actual": 16.3,
+            "change": -32.6,
             "impact": "Medium",
-            "changePercentage": 2.273,
-            "unit": "%"
+            "changePercentage": -66.667,
+            "unit": "K"
           },
           {
             "date": "2026-08-20 02:10:00",
@@ -1232,25 +1238,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a tentative pullback continuation after buyers reclaimed VWAP and price held near the short-term EMAs. It is not a clean trend signal because momentum is neutral, relative strength is weak, and price remains below the 200 EMA.",
-        "financial_assessment": "positive",
-        "financial_interpretation": "CEG has exceeded EPS expectations in each of the last three reports, with the latest surprise accelerating to 11.4%. However, reported revenue and net income were flat across the displayed periods, while free cash flow was negative and debt remained substantial.",
+        "technical_interpretation": "The setup resembles a defended pullback within a short-term uptrend, with price near the 20/50 EMAs and having reclaimed VWAP. It remains mixed because price is below the 200 EMA, relative strength trails SPY, RSI is falling near neutral, and monthly expiration may create choppy trading.",
+        "financial_assessment": "mixed",
+        "financial_interpretation": "CEG has exceeded EPS estimates in each of the last three reports, with the latest surprise accelerating to 11.4%, but reported revenue and net income were flat across the displayed periods. High debt, modest cash, and negative free cash flow weaken the fundamental backdrop despite the earnings beats.",
         "earnings_assessment": "positive",
-        "earnings_interpretation": "The next earnings report is 81 days away, limiting immediate event risk, while forward EPS and revenue estimates have been revised higher. The eventual report remains a catalyst risk for a trade held into earnings.",
+        "earnings_interpretation": "The next earnings report is scheduled for November 9, leaving no immediate earnings catalyst within the estimated trade window. Forward expectations have improved, with the next-quarter estimates calling for higher EPS and revenue, though the eventual report remains an event risk.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Analysts are firmly constructive, with 15 buys, 6 holds, no sell ratings, and higher forward revenue and EPS estimates.",
+        "analyst_interpretation": "Analysts are firmly constructive, with a Buy consensus and rising forward revenue and EPS estimates.",
         "valuation_assessment": "expensive",
-        "valuation_interpretation": "The trailing P/E near 26.6 and price-to-sales ratio above 3 imply a premium valuation that leaves less room for execution disappointments. Forecast growth is supportive, but the supplied data does not establish that the premium is justified versus peers or history.",
-        "news_assessment": "negative",
-        "news_interpretation": "CEG recently fell about 4% in a broad nuclear-stock selloff, indicating current sentiment and sector-theme risk. No company-specific fundamental deterioration was supplied, but the price reaction weakens near-term conviction.",
+        "valuation_interpretation": "A trailing P/E near 27 and P/S above 3 leave limited valuation cushion for a stock still showing flat reported revenue and negative free cash flow. The premium can be supported only if the projected growth materializes.",
+        "news_assessment": "mixed",
+        "news_interpretation": "Data-center power demand and long-term power agreements provide a constructive secular narrative for CEG. However, the recent sharp selloff across nuclear stocks shows that the theme remains volatile and can weigh on near-term price action.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Recent sector and industry performance has been positive, with independent power producers providing stronger support than the broader market context.",
+        "sector_interpretation": "Recent sector and industry performance supports the setup, with independent power producers outperforming the broader utilities group.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Risk-on conditions help, but elevated long-term yields and a flagged unfavorable market-cycle backdrop can pressure a premium-valued utility-related name.",
+        "macro_interpretation": "Risk appetite is favorable, but elevated long-term yields and a negative seasonal/cycle backdrop can pressure rate-sensitive utility valuations.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is supported by repeated earnings beats, upward estimate revisions, constructive analyst ratings, and positive industry performance. However, weak relative strength, price below the 200 EMA, the recent nuclear-stock selloff, premium valuation, elevated yields, and imminent monthly-options pinning risk argue for caution rather than strong confirmation.",
-        "key_positive": "Repeated EPS beats and improving forward estimates provide credible fundamental support for the pullback setup.",
-        "key_risk": "The combination of long-term bearish positioning, recent theme-driven selling, premium valuation, and higher yields could limit follow-through.",
+        "overall_summary": "The technical signal is a reasonably supported pullback, reinforced by recent EPS beats, improving estimates, positive analyst sentiment, and supportive industry performance. That support is offset by the price remaining below its 200 EMA, relative underperformance, premium valuation, leveraged balance sheet, negative free cash flow, and near-term expiration-related chop.",
+        "key_positive": "Repeated EPS beats, improving forward estimates, and strong data-center power demand provide meaningful fundamental support.",
+        "key_risk": "The setup remains vulnerable to a failed recovery because valuation and leverage are high while price still trades below its long-term trend.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1261,12 +1267,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2924
+          "chars": 3001
         }
       ],
       "is_etf": false,
-      "buy_confidence": 58,
-      "report": "🟡 CEG — Constellation Energy Corporation\nEntry: $274.19\neToro TP Value: $58.00\nShares: 0.91 ($250)\nScanner Potential: +23.2%\nTimeframe: 16–48 days\n\n═══ BUY CONFIDENCE: 58% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 15 | Hold: 6 | Sell: 0 | Strong Sell: 0\n🧠 Analysts are firmly constructive, with 15 buys, 6 holds, no sell ratings, and higher forward revenue and EPS estimates.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a tentative pullback continuation after buyers reclaimed VWAP and price held near the short-term EMAs. It is not a clean trend signal because momentum is neutral, relative strength is weak, and price remains below the 200 EMA.\n🕒 Technical timestamp: 2026-08-20 04:53:35 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 CEG has exceeded EPS expectations in each of the last three reports, with the latest surprise accelerating to 11.4%. However, reported revenue and net income were flat across the displayed periods, while free cash flow was negative and debt remained substantial.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 The trailing P/E near 26.6 and price-to-sales ratio above 3 imply a premium valuation that leaves less room for execution disappointments. Forecast growth is supportive, but the supplied data does not establish that the premium is justified versus peers or history.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-09 (+81 days)\n🟢 Positive\n🧠 The next earnings report is 81 days away, limiting immediate event risk, while forward EPS and revenue estimates have been revised higher. The eventual report remains a catalyst risk for a trade held into earnings.\n\n═══ RECENT NEWS ═══\n• 2026-08-18 23:12 UTC — Nuclear Stocks Plunge Tuesday: Oklo Down 5%, Constellation Energy Down 4%, NuScale Down 5%\n🔴 CEG recently fell about 4% in a broad nuclear-stock selloff, indicating current sentiment and sector-theme risk. No company-specific fundamental deterioration was supplied, but the price reaction weakens near-term conviction.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector and industry performance has been positive, with independent power producers providing stronger support than the broader market context.\n🧠 Macro: Risk-on conditions help, but elevated long-term yields and a flagged unfavorable market-cycle backdrop can pressure a premium-valued utility-related name.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is supported by repeated earnings beats, upward estimate revisions, constructive analyst ratings, and positive industry performance. However, weak relative strength, price below the 200 EMA, the recent nuclear-stock selloff, premium valuation, elevated yields, and imminent monthly-options pinning risk argue for caution rather than strong confirmation.\n🟢 Key Positive: Repeated EPS beats and improving forward estimates provide credible fundamental support for the pullback setup.\n🔴 Key Risk: The combination of long-term bearish positioning, recent theme-driven selling, premium valuation, and higher yields could limit follow-through.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 56,
+      "report": "🟡 CEG — Constellation Energy Corporation\nEntry: $274.19\neToro TP Value: $58.00\nShares: 0.91 ($250)\nScanner Potential: +23.2%\nTimeframe: 16–48 days\n\n═══ BUY CONFIDENCE: 56% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 15 | Hold: 6 | Sell: 0 | Strong Sell: 0\n🧠 Analysts are firmly constructive, with a Buy consensus and rising forward revenue and EPS estimates.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a defended pullback within a short-term uptrend, with price near the 20/50 EMAs and having reclaimed VWAP. It remains mixed because price is below the 200 EMA, relative strength trails SPY, RSI is falling near neutral, and monthly expiration may create choppy trading.\n🕒 Technical timestamp: 2026-08-20 08:57:06 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 CEG has exceeded EPS estimates in each of the last three reports, with the latest surprise accelerating to 11.4%, but reported revenue and net income were flat across the displayed periods. High debt, modest cash, and negative free cash flow weaken the fundamental backdrop despite the earnings beats.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 A trailing P/E near 27 and P/S above 3 leave limited valuation cushion for a stock still showing flat reported revenue and negative free cash flow. The premium can be supported only if the projected growth materializes.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-09 (+81 days)\n🟢 Positive\n🧠 The next earnings report is scheduled for November 9, leaving no immediate earnings catalyst within the estimated trade window. Forward expectations have improved, with the next-quarter estimates calling for higher EPS and revenue, though the eventual report remains an event risk.\n\n═══ RECENT NEWS ═══\n• 2026-08-20 02:05 UTC — Nvidia Chip-Filled Data Centers Need More Power Than Any Utility Can Promise. Here's Who Actually Wins.\n• 2026-08-18 23:12 UTC — Nuclear Stocks Plunge Tuesday: Oklo Down 5%, Constellation Energy Down 4%, NuScale Down 5%\n🟡 Data-center power demand and long-term power agreements provide a constructive secular narrative for CEG. However, the recent sharp selloff across nuclear stocks shows that the theme remains volatile and can weigh on near-term price action.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector and industry performance supports the setup, with independent power producers outperforming the broader utilities group.\n🧠 Macro: Risk appetite is favorable, but elevated long-term yields and a negative seasonal/cycle backdrop can pressure rate-sensitive utility valuations.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is a reasonably supported pullback, reinforced by recent EPS beats, improving estimates, positive analyst sentiment, and supportive industry performance. That support is offset by the price remaining below its 200 EMA, relative underperformance, premium valuation, leveraged balance sheet, negative free cash flow, and near-term expiration-related chop.\n🟢 Key Positive: Repeated EPS beats, improving forward estimates, and strong data-center power demand provide meaningful fundamental support.\n🔴 Key Risk: The setup remains vulnerable to a failed recovery because valuation and leverage are high while price still trades below its long-term trend.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
