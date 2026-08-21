@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21T01:58:20.632001+00:00",
+  "generated": "2026-08-21T04:53:49.705785+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.1
@@ -66,65 +66,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-21T01:58:11.039132+00:00"
-    },
-    {
-      "ticker": "KRT",
-      "name": "Karat Packaging Inc.",
-      "setup": "pullback",
-      "entry": 47.57,
-      "tp": 58.66,
-      "tp_pct": 0.23313012402774858,
-      "shares": 5.26,
-      "value": 250.2182,
-      "pl_amount": 58.33,
-      "eta_days_low": 15,
-      "eta_days_high": 20,
-      "fee_pct": 0.03428567510208561,
-      "trend_score": 5,
-      "adx": 49.1,
-      "rs": 0.752,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 11,
-      "ema20": 44.72,
-      "ema50": 39.48,
-      "ema200": 30.82,
-      "above_ema200": true,
-      "quality": 0.78,
-      "q_detail": {
-        "rsi": 0.6,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.2,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 59.6 falling",
-        "bollinger": "band position 36%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "1.6x average, surging",
-        "extension": "+0.6 ATR from 20 EMA, slope +2.8%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 59.6,
-      "options_note": "",
-      "sector": "",
-      "warnings": [
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk"
-      ],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.78 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.2, opt +0.0; RSI=59.6)",
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-21T01:58:11.337339+00:00"
+      "time": "2026-08-21T04:53:42.049338+00:00"
     },
     {
       "ticker": "LYFT",
@@ -181,7 +123,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-21T01:58:11.385593+00:00"
+      "time": "2026-08-21T04:53:42.332550+00:00"
     }
   ],
   "position_alerts": []
