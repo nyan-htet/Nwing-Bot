@@ -15,7 +15,7 @@
   "KRT": {
     "alerted": "2026-08-21T01:58:11.337366+00:00",
     "entry": 47.57,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "thesis_warned": false,
     "tp": 58.66
   },
@@ -32,5 +32,11 @@
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "SHOP": {
+    "alerted": "2026-08-21T20:40:01.092250+00:00",
+    "entry": 149.25,
+    "thesis_warned": false,
+    "tp": 176.51
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21T16:52:18.464074+00:00",
+  "generated": "2026-08-21T20:40:09.602884+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.1
@@ -9,6 +9,64 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +11.0% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "SHOP",
+      "name": "Shopify Inc.",
+      "setup": "pullback",
+      "entry": 149.25,
+      "tp": 176.51,
+      "tp_pct": 0.1826465661641541,
+      "shares": 1.68,
+      "value": 250.73999999999998,
+      "pl_amount": 45.8,
+      "eta_days_low": 11,
+      "eta_days_high": 19,
+      "fee_pct": 0.04367117353177516,
+      "trend_score": 4,
+      "adx": 31.6,
+      "rs": 0.422,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 7,
+      "ema20": 142.02,
+      "ema50": 131.43,
+      "ema200": 130.96,
+      "above_ema200": true,
+      "quality": 0.87,
+      "q_detail": {
+        "rsi": 0.5,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 58.4 flat, BEARISH DIVERGENCE",
+        "bollinger": "band position 40%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.0x average, drying up",
+        "extension": "+0.7 ATR from 20 EMA, slope +0.7%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 58.4,
+      "options_note": "",
+      "sector": "",
+      "warnings": [
+        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk"
+      ],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.87 (rsi +0.5, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=58.4)",
+        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-08-21T20:40:01.092214+00:00"
+    }
+  ],
   "position_alerts": []
 }
