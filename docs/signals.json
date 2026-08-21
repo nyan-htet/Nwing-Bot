@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21T08:57:43.888865+00:00",
+  "generated": "2026-08-21T13:11:01.997787+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.1
@@ -66,7 +66,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-21T08:57:35.001862+00:00"
+      "time": "2026-08-21T13:10:52.022016+00:00"
     },
     {
       "ticker": "LYFT",
@@ -123,7 +123,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-21T08:57:35.344393+00:00"
+      "time": "2026-08-21T13:10:52.290355+00:00"
     }
   ],
   "position_alerts": []

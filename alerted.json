@@ -6,6 +6,12 @@
     "thesis_warned": false,
     "tp": 77.16
   },
+  "DFTX": {
+    "alerted": "2026-08-21T13:10:52.022070+00:00",
+    "entry": 45.41,
+    "thesis_warned": false,
+    "tp": 56.76
+  },
   "JCI": {
     "alerted": "2026-08-17T20:43:10.378919+00:00",
     "entry": 153.93,
@@ -15,9 +21,15 @@
   "KRT": {
     "alerted": "2026-08-21T01:58:11.337366+00:00",
     "entry": 47.57,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 58.66
+  },
+  "LYFT": {
+    "alerted": "2026-08-21T13:10:52.290385+00:00",
+    "entry": 17.38,
+    "thesis_warned": false,
+    "tp": 21.1
   },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
