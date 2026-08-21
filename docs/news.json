@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21 04:54 UTC",
+  "generated": "2026-08-21 08:58 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "LYFT",
       "alert": {
-        "alerted": "2026-08-21T04:53:42.332582+00:00",
+        "alerted": "2026-08-21T08:57:35.344432+00:00",
         "entry": 17.38,
         "thesis_warned": false,
         "tp": 21.1
@@ -72,7 +72,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-21T04:53:42.332550+00:00"
+        "time": "2026-08-21T08:57:35.344393+00:00"
       },
       "profile": {
         "symbol": "LYFT",
@@ -166,25 +166,17 @@
         "free_cash_flow": 319630000.0
       },
       "forward": {
-        "next_earnings": {
-          "symbol": "LYFT",
-          "date": "2026-11-04",
-          "epsActual": null,
-          "epsEstimated": 0.44,
-          "revenueActual": null,
-          "revenueEstimated": 1926460000,
-          "lastUpdated": "2026-08-20"
-        },
+        "next_earnings": {},
         "estimates": [
           {
             "date": "2030-12-31",
             "period": null,
             "revenue_avg": 10266171429.0,
             "eps_avg": 1.42,
-            "revenue_low": 9278412141.0,
-            "revenue_high": 10631796416.0,
-            "eps_low": 1.24239,
-            "eps_high": 1.48574,
+            "revenue_low": 9198013138.0,
+            "revenue_high": 10634272054.0,
+            "eps_low": 1.22793,
+            "eps_high": 1.48619,
             "num_analysts_revenue": 14,
             "num_analysts_eps": 13
           },
@@ -193,10 +185,10 @@
             "period": null,
             "revenue_avg": 9720179303.0,
             "eps_avg": 1.33238,
-            "revenue_low": 8784952626.0,
-            "revenue_high": 10066359031.0,
-            "eps_low": 1.16573,
-            "eps_high": 1.39407,
+            "revenue_low": 8708829533.0,
+            "revenue_high": 10068703005.0,
+            "eps_low": 1.15216,
+            "eps_high": 1.39449,
             "num_analysts_revenue": 22,
             "num_analysts_eps": 21
           },
@@ -205,10 +197,10 @@
             "period": null,
             "revenue_avg": 9045955005.0,
             "eps_avg": 1.15078,
-            "revenue_low": 7573096294.0,
-            "revenue_high": 9567519961.0,
-            "eps_low": 0.54195,
-            "eps_high": 1.60579,
+            "revenue_low": 7475624587.0,
+            "revenue_high": 9571970703.0,
+            "eps_low": 0.54235,
+            "eps_high": 1.60695,
             "num_analysts_revenue": 24,
             "num_analysts_eps": 24
           },
@@ -222,7 +214,7 @@
             "eps_low": 0.84547,
             "eps_high": 1.17454,
             "num_analysts_revenue": 30,
-            "num_analysts_eps": 26
+            "num_analysts_eps": 27
           }
         ]
       },
@@ -391,13 +383,13 @@
           "date": "2026-08-21",
           "sector": "Technology",
           "exchange": "NASDAQ",
-          "averageChange": 0.23627143044129273
+          "averageChange": 0.23627143044131493
         },
         "industry_snapshot": {
           "date": "2026-08-21",
           "industry": "Software - Application",
           "exchange": "NASDAQ",
-          "averageChange": -0.07087116587857212
+          "averageChange": -0.07087116587852771
         }
       },
       "macro": {
@@ -565,42 +557,16 @@
           },
           {
             "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "HSBC India Services PMI (Aug)",
-            "currency": "INR",
-            "previous": 53.3,
-            "estimate": 53.8,
-            "actual": null,
-            "change": null,
+            "country": "EE",
+            "event": "Producer Price Index YoY (Jul)",
+            "currency": "EUR",
+            "previous": 3.8,
+            "estimate": 4.6,
+            "actual": 3.5,
+            "change": -0.3,
             "impact": "Low",
-            "changePercentage": null,
-            "unit": null
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "S&P Global Services PMI (Aug)",
-            "currency": "INR",
-            "previous": 54.3,
-            "estimate": 54.4,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": null,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "S&P Global Manufacturing PMI (Aug)",
-            "currency": "INR",
-            "previous": 53.5,
-            "estimate": 54,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": null,
-            "unit": "Points"
+            "changePercentage": -7.895,
+            "unit": "%"
           },
           {
             "date": "2026-08-21 05:00:00",
@@ -609,35 +575,61 @@
             "currency": "INR",
             "previous": 54.3,
             "estimate": 54.4,
-            "actual": null,
-            "change": null,
+            "actual": 54.6,
+            "change": 0.3,
             "impact": "Medium",
-            "changePercentage": 0,
+            "changePercentage": 0.552,
             "unit": "Points"
+          },
+          {
+            "date": "2026-08-21 05:00:00",
+            "country": "EE",
+            "event": "Producer Price Index MoM (Jul)",
+            "currency": "EUR",
+            "previous": -0.3,
+            "estimate": 0.5,
+            "actual": -0.6,
+            "change": -0.3,
+            "impact": "Low",
+            "changePercentage": -100,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-21 05:00:00",
+            "country": "IN",
+            "event": "HSBC Services PMI (Aug)",
+            "currency": "INR",
+            "previous": 53.3,
+            "estimate": 53.8,
+            "actual": 54.5,
+            "change": 1.2,
+            "impact": "Medium",
+            "changePercentage": 2.251,
+            "unit": null
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term averages. Moderate ADX, RSI near 58, contracting bands, and relative strength support continuation, though monthly options expiration may increase chop.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term EMAs. Moderate ADX, RSI near 58, contracting bands, and positive relative strength support continuation, though monthly options expiry may increase short-term chop.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "Results have been inconsistent: the February EPS beat was followed by misses in May and August, while reported revenue remained flat at $1.84B. Margins were positive but modest, and operating cash flow and free cash flow provide support despite limited recent growth.",
-        "earnings_assessment": "positive",
-        "earnings_interpretation": "The next earnings report is not due until November 4, beyond the scanner timeframe, reducing immediate event risk. The next EPS estimate is $0.44, while longer-term revenue and EPS consensus estimates have been revised higher.",
+        "financial_interpretation": "Recent results show deceleration, with two consecutive EPS misses and essentially flat reported revenue and net income. Positive operating cash flow and free cash flow are constructive, but the modest operating margin limits fundamental strength.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating timing uncertainty, while longer-term revenue and EPS estimates have risen modestly. Any earnings event during the holding window could still create material volatility.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "Ratings remain Hold-heavy, but consensus revenue and EPS estimates have moved higher.",
+        "analyst_interpretation": "The consensus is Hold with substantially more holds than buys, despite upward revisions to forward revenue and EPS estimates.",
         "valuation_assessment": "attractive",
-        "valuation_interpretation": "The low reported earnings and sales multiples are supportive of the setup and leave room for rerating. However, the discount appears partly justified by inconsistent earnings and limited recent revenue growth.",
+        "valuation_interpretation": "The low trailing P/E and sub-1 price-to-sales ratio provide valuation support. However, the discount may reflect execution concerns, recent earnings misses, and autonomous-vehicle disruption risk.",
         "news_assessment": "negative",
-        "news_interpretation": "Recent coverage highlights increasing autonomous-vehicle risk and suggests Uber has stronger diversification and AV positioning. This creates a meaningful longer-term competitive and margin-risk overhang for Lyft.",
-        "sector_assessment": "headwind",
-        "sector_interpretation": "The broader technology backdrop is supportive, but the application-software group has recently lagged and weakens confirmation.",
+        "news_interpretation": "Recent coverage highlights growing autonomous-vehicle risk and suggests Uber is better positioned after its latest results. These are meaningful competitive and margin concerns, even though the valuation remains cheaper.",
+        "sector_assessment": "neutral",
+        "sector_interpretation": "Broad technology strength is offset by weakness in the application-software group, leaving the industry backdrop mixed rather than clearly supportive.",
         "macro_assessment": "neutral",
-        "macro_interpretation": "Risk-on conditions help the trade, but elevated longer-term yields and a mildly unfavorable cycle backdrop could limit multiple expansion.",
+        "macro_interpretation": "Risk appetite is supportive, but elevated Treasury yields and a broader cycle headwind could limit upside and increase sensitivity to market pullbacks.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported as a bullish pullback continuation, with strong trend structure and relative strength. Fundamentals and valuation offer support, but recent EPS misses, sector lag, and autonomous-vehicle concerns make the catalyst backdrop mixed rather than strongly confirming.",
-        "key_positive": "Strong uptrend, relative strength, positive cash flow, and inexpensive reported valuation support the setup.",
-        "key_risk": "Autonomous-mobility competition and inconsistent earnings could undermine the trend despite favorable technical momentum.",
+        "overall_summary": "The technical signal is credible as a pullback continuation setup, supported by trend strength, relative strength, and a risk-on backdrop. Fundamental and news factors are mixed: cash generation and low valuation help, but repeated EPS misses, modest margins, analyst caution, and autonomous-mobility risks warrant measured conviction.",
+        "key_positive": "Established uptrend, strong relative performance, positive cash flow, and inexpensive trailing valuation support the setup.",
+        "key_risk": "Autonomous-vehicle competition and recent earnings misses could undermine the trend if investors reassess Lyft's long-term margins or growth.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -648,17 +640,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2714
+          "chars": 2832
         }
       ],
       "is_etf": false,
-      "buy_confidence": 52,
-      "report": "🟡 LYFT — Lyft, Inc.\nEntry: $17.38\neToro TP Value: $53.49\nShares: 14.38 ($250)\nScanner Potential: +21.4%\nTimeframe: 13–36 days\n\n═══ BUY CONFIDENCE: 52% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 23 | Hold: 34 | Sell: 3 | Strong Sell: 0\n🧠 Ratings remain Hold-heavy, but consensus revenue and EPS estimates have moved higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term averages. Moderate ADX, RSI near 58, contracting bands, and relative strength support continuation, though monthly options expiration may increase chop.\n🕒 Technical timestamp: 2026-08-21 04:53:42 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🟢 Strong\n🧠 Results have been inconsistent: the February EPS beat was followed by misses in May and August, while reported revenue remained flat at $1.84B. Margins were positive but modest, and operating cash flow and free cash flow provide support despite limited recent growth.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The low reported earnings and sales multiples are supportive of the setup and leave room for rerating. However, the discount appears partly justified by inconsistent earnings and limited recent revenue growth.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-04 (+75 days)\n🟢 Positive\n🧠 The next earnings report is not due until November 4, beyond the scanner timeframe, reducing immediate event risk. The next EPS estimate is $0.44, while longer-term revenue and EPS consensus estimates have been revised higher.\n\n═══ RECENT NEWS ═══\n• 2026-08-19 23:11 UTC — Lyft Stock Analysis: Value Stock or Value Trap?\n• 2026-08-19 13:21 UTC — UBER or LYFT: Which Player Is Better-Placed Post-Q2 Earnings Results?\n• 2026-08-19 09:50 UTC — Tesla's Cybercab Launch Could Reshape Margins for Uber and Lyft\n🔴 Recent coverage highlights increasing autonomous-vehicle risk and suggests Uber has stronger diversification and AV positioning. This creates a meaningful longer-term competitive and margin-risk overhang for Lyft.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🟡 Neutral\n🧠 Sector: The broader technology backdrop is supportive, but the application-software group has recently lagged and weakens confirmation.\n🧠 Macro: Risk-on conditions help the trade, but elevated longer-term yields and a mildly unfavorable cycle backdrop could limit multiple expansion.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a bullish pullback continuation, with strong trend structure and relative strength. Fundamentals and valuation offer support, but recent EPS misses, sector lag, and autonomous-vehicle concerns make the catalyst backdrop mixed rather than strongly confirming.\n🟢 Key Positive: Strong uptrend, relative strength, positive cash flow, and inexpensive reported valuation support the setup.\n🔴 Key Risk: Autonomous-mobility competition and inconsistent earnings could undermine the trend despite favorable technical momentum.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 51,
+      "report": "🟡 LYFT — Lyft, Inc.\nEntry: $17.38\neToro TP Value: $53.49\nShares: 14.38 ($250)\nScanner Potential: +21.4%\nTimeframe: 13–36 days\n\n═══ BUY CONFIDENCE: 51% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 23 | Hold: 34 | Sell: 3 | Strong Sell: 0\n🧠 The consensus is Hold with substantially more holds than buys, despite upward revisions to forward revenue and EPS estimates.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term EMAs. Moderate ADX, RSI near 58, contracting bands, and positive relative strength support continuation, though monthly options expiry may increase short-term chop.\n🕒 Technical timestamp: 2026-08-21 08:57:35 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🟢 Strong\n🧠 Recent results show deceleration, with two consecutive EPS misses and essentially flat reported revenue and net income. Positive operating cash flow and free cash flow are constructive, but the modest operating margin limits fundamental strength.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The low trailing P/E and sub-1 price-to-sales ratio provide valuation support. However, the discount may reflect execution concerns, recent earnings misses, and autonomous-vehicle disruption risk.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing uncertainty, while longer-term revenue and EPS estimates have risen modestly. Any earnings event during the holding window could still create material volatility.\n\n═══ RECENT NEWS ═══\n• 2026-08-19 23:11 UTC — Lyft Stock Analysis: Value Stock or Value Trap?\n• 2026-08-19 13:21 UTC — UBER or LYFT: Which Player Is Better-Placed Post-Q2 Earnings Results?\n• 2026-08-19 09:50 UTC — Tesla's Cybercab Launch Could Reshape Margins for Uber and Lyft\n🔴 Recent coverage highlights growing autonomous-vehicle risk and suggests Uber is better positioned after its latest results. These are meaningful competitive and margin concerns, even though the valuation remains cheaper.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: Broad technology strength is offset by weakness in the application-software group, leaving the industry backdrop mixed rather than clearly supportive.\n🧠 Macro: Risk appetite is supportive, but elevated Treasury yields and a broader cycle headwind could limit upside and increase sensitivity to market pullbacks.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is credible as a pullback continuation setup, supported by trend strength, relative strength, and a risk-on backdrop. Fundamental and news factors are mixed: cash generation and low valuation help, but repeated EPS misses, modest margins, analyst caution, and autonomous-mobility risks warrant measured conviction.\n🟢 Key Positive: Established uptrend, strong relative performance, positive cash flow, and inexpensive trailing valuation support the setup.\n🔴 Key Risk: Autonomous-vehicle competition and recent earnings misses could undermine the trend if investors reassess Lyft's long-term margins or growth.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "DFTX",
       "alert": {
-        "alerted": "2026-08-21T04:53:42.049376+00:00",
+        "alerted": "2026-08-21T08:57:35.001906+00:00",
         "entry": 45.41,
         "thesis_warned": false,
         "tp": 56.76
@@ -719,7 +711,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-21T04:53:42.049338+00:00"
+        "time": "2026-08-21T08:57:35.001862+00:00"
       },
       "profile": {
         "symbol": "DFTX",
@@ -1019,13 +1011,13 @@
           "date": "2026-08-21",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": -1.0146129942762983
+          "averageChange": -1.0146129558206374
         },
         "industry_snapshot": {
           "date": "2026-08-21",
           "industry": "Biotechnology",
           "exchange": "NASDAQ",
-          "averageChange": -0.7234558925482415
+          "averageChange": -0.7234558279138326
         }
       },
       "macro": {
@@ -1193,42 +1185,16 @@
           },
           {
             "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "HSBC India Services PMI (Aug)",
-            "currency": "INR",
-            "previous": 53.3,
-            "estimate": 53.8,
-            "actual": null,
-            "change": null,
+            "country": "EE",
+            "event": "Producer Price Index YoY (Jul)",
+            "currency": "EUR",
+            "previous": 3.8,
+            "estimate": 4.6,
+            "actual": 3.5,
+            "change": -0.3,
             "impact": "Low",
-            "changePercentage": null,
-            "unit": null
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "S&P Global Services PMI (Aug)",
-            "currency": "INR",
-            "previous": 54.3,
-            "estimate": 54.4,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": null,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "S&P Global Manufacturing PMI (Aug)",
-            "currency": "INR",
-            "previous": 53.5,
-            "estimate": 54,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": null,
-            "unit": "Points"
+            "changePercentage": -7.895,
+            "unit": "%"
           },
           {
             "date": "2026-08-21 05:00:00",
@@ -1237,35 +1203,61 @@
             "currency": "INR",
             "previous": 54.3,
             "estimate": 54.4,
-            "actual": null,
-            "change": null,
+            "actual": 54.6,
+            "change": 0.3,
             "impact": "Medium",
-            "changePercentage": 0,
+            "changePercentage": 0.552,
             "unit": "Points"
+          },
+          {
+            "date": "2026-08-21 05:00:00",
+            "country": "EE",
+            "event": "Producer Price Index MoM (Jul)",
+            "currency": "EUR",
+            "previous": -0.3,
+            "estimate": 0.5,
+            "actual": -0.6,
+            "change": -0.3,
+            "impact": "Low",
+            "changePercentage": -100,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-21 05:00:00",
+            "country": "IN",
+            "event": "HSBC Services PMI (Aug)",
+            "currency": "INR",
+            "previous": 53.3,
+            "estimate": 53.8,
+            "actual": 54.5,
+            "change": 1.2,
+            "impact": "Medium",
+            "changePercentage": 2.251,
+            "unit": null
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend, with price above rising short- and long-term EMAs. Reclaimed VWAP, expanding Bollinger Bands, strong relative strength, and moderate RSI support continuation, though monthly options expiry may cause near-term chop.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend. Price remains above rising short- and long-term EMAs, has reclaimed VWAP, and shows strong relative strength without being overbought.",
         "financial_assessment": "negative",
-        "financial_interpretation": "The last three reports show accelerating EPS losses and repeated misses, worsening from -0.51 to -1.44, with no reported revenue. Cash is substantial relative to debt, but operating and free cash flow remain negative and margins are unavailable.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "Next earnings are scheduled for November 5, with a projected EPS loss of -0.54, so the event is not immediate but remains a future catalyst risk. Longer-range estimates point toward substantial revenue and EPS improvement, although the estimates are widely dispersed and near-term forecasts remain unprofitable.",
+        "financial_interpretation": "The last three reports show persistent losses, no reported revenue, and increasingly negative EPS surprises, with the latest miss materially worse than the prior periods. Negative operating cash flow and free cash flow add financing risk despite the reported cash balance.",
+        "earnings_assessment": "negative",
+        "earnings_interpretation": "Earnings are scheduled in 76 days, with the next EPS estimate still negative at -0.54. Recent estimate misses and the absence of revenue make the event a meaningful downside-risk catalyst.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "All 12 analysts are rated Buy, while average long-range revenue and EPS estimates have risen materially from the prior forecast set.",
-        "valuation_assessment": "expensive",
-        "valuation_interpretation": "Valuation is not supported by current earnings or sales because the company is loss-making and reports no revenue, while price-to-book is elevated at 5.47. The valuation therefore depends heavily on successful future commercialization and the optimistic long-range forecasts.",
+        "analyst_interpretation": "All 12 recorded analyst ratings are Buys, and longer-term revenue and EPS estimates have risen sharply, although those projections are distant and highly uncertain.",
+        "valuation_assessment": "very_expensive",
+        "valuation_interpretation": "Traditional earnings and sales valuation support is absent because the company is loss-making and reports no revenue, while a price-to-book ratio of 5.47 implies a demanding valuation. The valuation therefore depends heavily on successful future development and commercialization.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was provided. This limits identifiable catalyst support and leaves clinical, regulatory, or financing developments as unpriced risks.",
+        "news_interpretation": "No usable recent company-specific news was returned. This leaves no immediate disclosed catalyst or news-based risk adjustment.",
         "sector_assessment": "headwind",
-        "sector_interpretation": "Recent weakness across the broader group weakens the setup despite the stock's strong individual relative strength.",
-        "macro_assessment": "neutral",
-        "macro_interpretation": "Risk-on conditions and contained volatility are supportive, but elevated Treasury yields and a mildly unfavorable cycle backdrop can pressure speculative biotechnology valuations.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is strong: DFTX is pulling back within a powerful uptrend and has materially outperformed SPY. However, worsening earnings misses, no reported revenue, negative cash flow, elevated valuation, and sector weakness materially reduce fundamental support. The setup is tradable on technical strength but carries high execution and event risk.",
-        "key_positive": "Strong trend structure, relative strength, analyst consensus, and improving long-range estimates support the bullish technical case.",
-        "key_risk": "Persistent losses, absent revenue, negative cash flow, and dependence on future commercialization make the move vulnerable to sector weakness or disappointing developments.",
+        "sector_interpretation": "Recent sector and industry performance weakened the setup modestly rather than confirming the stock's relative strength.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Risk appetite is favorable, but elevated longer-term yields and a currently unfavorable cycle backdrop can pressure speculative biotech valuations.",
+        "overall_assessment": "caution",
+        "overall_summary": "The technical signal is strong and resembles a high-quality pullback continuation, supported by a durable uptrend and exceptional relative strength. However, persistent losses, absent revenue, weak cash flow, demanding valuation, and recent sector weakness make the fundamental backdrop cautionary; the next earnings report remains a material event risk.",
+        "key_positive": "Strong trend structure, VWAP recovery, and substantial outperformance provide clear technical support.",
+        "key_risk": "The company is loss-making with no reported revenue, negative cash flow, repeated EPS misses, and a valuation reliant on uncertain future execution.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1276,12 +1268,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 3040
+          "chars": 2782
         }
       ],
       "is_etf": false,
-      "buy_confidence": 44,
-      "report": "🟡 DFTX — Definium Therapeutics, Inc.\nEntry: $45.41\neToro TP Value: $62.54\nShares: 5.51 ($250)\nScanner Potential: +25.0%\nTimeframe: 10–30 days\n\n═══ BUY CONFIDENCE: 44% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 12 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All 12 analysts are rated Buy, while average long-range revenue and EPS estimates have risen materially from the prior forecast set.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend, with price above rising short- and long-term EMAs. Reclaimed VWAP, expanding Bollinger Bands, strong relative strength, and moderate RSI support continuation, though monthly options expiry may cause near-term chop.\n🕒 Technical timestamp: 2026-08-21 04:53:42 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🔴 Weak\n🧠 The last three reports show accelerating EPS losses and repeated misses, worsening from -0.51 to -1.44, with no reported revenue. Cash is substantial relative to debt, but operating and free cash flow remain negative and margins are unavailable.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 Valuation is not supported by current earnings or sales because the company is loss-making and reports no revenue, while price-to-book is elevated at 5.47. The valuation therefore depends heavily on successful future commercialization and the optimistic long-range forecasts.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+76 days)\n🟡 Mixed\n🧠 Next earnings are scheduled for November 5, with a projected EPS loss of -0.54, so the event is not immediate but remains a future catalyst risk. Longer-range estimates point toward substantial revenue and EPS improvement, although the estimates are widely dispersed and near-term forecasts remain unprofitable.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🟡 Neutral\n🧠 Sector: Recent weakness across the broader group weakens the setup despite the stock's strong individual relative strength.\n🧠 Macro: Risk-on conditions and contained volatility are supportive, but elevated Treasury yields and a mildly unfavorable cycle backdrop can pressure speculative biotechnology valuations.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strong: DFTX is pulling back within a powerful uptrend and has materially outperformed SPY. However, worsening earnings misses, no reported revenue, negative cash flow, elevated valuation, and sector weakness materially reduce fundamental support. The setup is tradable on technical strength but carries high execution and event risk.\n🟢 Key Positive: Strong trend structure, relative strength, analyst consensus, and improving long-range estimates support the bullish technical case.\n🔴 Key Risk: Persistent losses, absent revenue, negative cash flow, and dependence on future commercialization make the move vulnerable to sector weakness or disappointing developments.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 31,
+      "report": "🔴 DFTX — Definium Therapeutics, Inc.\nEntry: $45.41\neToro TP Value: $62.54\nShares: 5.51 ($250)\nScanner Potential: +25.0%\nTimeframe: 10–30 days\n\n═══ BUY CONFIDENCE: 31% ═══\n🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 12 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All 12 recorded analyst ratings are Buys, and longer-term revenue and EPS estimates have risen sharply, although those projections are distant and highly uncertain.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend. Price remains above rising short- and long-term EMAs, has reclaimed VWAP, and shows strong relative strength without being overbought.\n🕒 Technical timestamp: 2026-08-21 08:57:35 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🔴 Weak\n🧠 The last three reports show persistent losses, no reported revenue, and increasingly negative EPS surprises, with the latest miss materially worse than the prior periods. Negative operating cash flow and free cash flow add financing risk despite the reported cash balance.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Traditional earnings and sales valuation support is absent because the company is loss-making and reports no revenue, while a price-to-book ratio of 5.47 implies a demanding valuation. The valuation therefore depends heavily on successful future development and commercialization.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+76 days)\n🔴 Negative\n🧠 Earnings are scheduled in 76 days, with the next EPS estimate still negative at -0.54. Recent estimate misses and the absence of revenue make the event a meaningful downside-risk catalyst.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector and industry performance weakened the setup modestly rather than confirming the stock's relative strength.\n🧠 Macro: Risk appetite is favorable, but elevated longer-term yields and a currently unfavorable cycle backdrop can pressure speculative biotech valuations.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Caution\n🧠 The technical signal is strong and resembles a high-quality pullback continuation, supported by a durable uptrend and exceptional relative strength. However, persistent losses, absent revenue, weak cash flow, demanding valuation, and recent sector weakness make the fundamental backdrop cautionary; the next earnings report remains a material event risk.\n🟢 Key Positive: Strong trend structure, VWAP recovery, and substantial outperformance provide clear technical support.\n🔴 Key Risk: The company is loss-making with no reported revenue, negative cash flow, repeated EPS misses, and a valuation reliant on uncertain future execution.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
