@@ -1,130 +1,14 @@
 {
-  "generated": "2026-08-21T13:11:01.997787+00:00",
+  "generated": "2026-08-21T16:52:18.464074+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.1
   },
   "cycles": {
-    "score": -0.52,
+    "score": -0.51,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+    "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +11.0% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "DFTX",
-      "name": "Definium Therapeutics, Inc.",
-      "setup": "pullback",
-      "entry": 45.41,
-      "tp": 56.76,
-      "tp_pct": 0.24994494604712614,
-      "shares": 5.51,
-      "value": 250.20909999999998,
-      "pl_amount": 62.54,
-      "eta_days_low": 10,
-      "eta_days_high": 30,
-      "fee_pct": 0.03198030013511677,
-      "trend_score": 5,
-      "adx": 30.0,
-      "rs": 0.978,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 30,
-      "ema20": 44.02,
-      "ema50": 40.2,
-      "ema200": 27.69,
-      "above_ema200": true,
-      "quality": 0.93,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 54.2 flat",
-        "bollinger": "band position 70%, expanding",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.7x average, steady",
-        "extension": "+0.5 ATR from 20 EMA, slope +2.0%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 54.2,
-      "options_note": "",
-      "sector": "",
-      "warnings": [
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk"
-      ],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=54.2)",
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-21T13:10:52.022016+00:00"
-    },
-    {
-      "ticker": "LYFT",
-      "name": "Lyft, Inc.",
-      "setup": "pullback",
-      "entry": 17.38,
-      "tp": 21.1,
-      "tp_pct": 0.21403912543153059,
-      "shares": 14.38,
-      "value": 249.9244,
-      "pl_amount": 53.49,
-      "eta_days_low": 13,
-      "eta_days_high": 36,
-      "fee_pct": 0.03738765011141517,
-      "trend_score": 4,
-      "adx": 29.4,
-      "rs": 0.263,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 8,
-      "ema20": 16.64,
-      "ema50": 15.78,
-      "ema200": 16.01,
-      "above_ema200": true,
-      "quality": 0.78,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 0.3,
-        "volume": 0.5,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 58.0 flat",
-        "bollinger": "band position 64%, contracting",
-        "vwap": "just above VWAP",
-        "volume": "0.9x average, surging",
-        "extension": "+0.7 ATR from 20 EMA, slope +2.6%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 58.0,
-      "options_note": "",
-      "sector": "",
-      "warnings": [
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk"
-      ],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.78 (rsi +1.0, bb +1.0, vwap +0.3, vol +0.5, opt +0.0; RSI=58.0)",
-        "\u26a0 monthly opex 2026-08-21 \u2014 pinning/chop risk",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-21T13:10:52.290355+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
