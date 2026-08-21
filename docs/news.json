@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21 01:59 UTC",
+  "generated": "2026-08-21 04:54 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "LYFT",
       "alert": {
-        "alerted": "2026-08-21T01:58:11.385620+00:00",
+        "alerted": "2026-08-21T04:53:42.332582+00:00",
         "entry": 17.38,
         "thesis_warned": false,
         "tp": 21.1
@@ -72,7 +72,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-21T01:58:11.385593+00:00"
+        "time": "2026-08-21T04:53:42.332550+00:00"
       },
       "profile": {
         "symbol": "LYFT",
@@ -166,7 +166,15 @@
         "free_cash_flow": 319630000.0
       },
       "forward": {
-        "next_earnings": {},
+        "next_earnings": {
+          "symbol": "LYFT",
+          "date": "2026-11-04",
+          "epsActual": null,
+          "epsEstimated": 0.44,
+          "revenueActual": null,
+          "revenueEstimated": 1926460000,
+          "lastUpdated": "2026-08-20"
+        },
         "estimates": [
           {
             "date": "2030-12-31",
@@ -380,16 +388,16 @@
         "sector": "Technology",
         "industry": "Software - Application",
         "sector_snapshot": {
-          "date": "2026-08-20",
+          "date": "2026-08-21",
           "sector": "Technology",
           "exchange": "NASDAQ",
-          "averageChange": 0.23627143044131493
+          "averageChange": 0.23627143044129273
         },
         "industry_snapshot": {
-          "date": "2026-08-20",
+          "date": "2026-08-21",
           "industry": "Software - Application",
           "exchange": "NASDAQ",
-          "averageChange": -0.07087116587854991
+          "averageChange": -0.07087116587857212
         }
       },
       "macro": {
@@ -403,654 +411,19 @@
           "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
         },
         "treasury": {
-          "date": "2026-08-18",
-          "month1": 3.78,
-          "month2": 3.82,
-          "month3": 3.86,
-          "month6": 3.94,
-          "year1": 3.99,
-          "year2": 4.19,
-          "year3": 4.26,
-          "year5": 4.37,
-          "year7": 4.53,
-          "year10": 4.71,
-          "year20": 5.28,
-          "year30": 5.28
-        },
-        "indicators": {
-          "GDP": [
-            {
-              "name": "GDP",
-              "date": "2025-10-01",
-              "value": 31422.526
-            }
-          ],
-          "CPI": [
-            {
-              "name": "CPI",
-              "date": "2025-11-01",
-              "value": 325.063
-            },
-            {
-              "name": "CPI",
-              "date": "2025-09-01",
-              "value": 324.245
-            }
-          ],
-          "unemploymentRate": [
-            {
-              "name": "unemploymentRate",
-              "date": "2025-11-01",
-              "value": 4.5
-            },
-            {
-              "name": "unemploymentRate",
-              "date": "2025-09-01",
-              "value": 4.4
-            }
-          ]
-        },
-        "calendar": [
-          {
-            "date": "2026-08-21 00:30:00",
-            "country": "JP",
-            "event": "S&P Global Manufacturing PMI (Aug)",
-            "currency": "JPY",
-            "previous": 54.5,
-            "estimate": 55.1,
-            "actual": 55.1,
-            "change": 0.6,
-            "impact": "Medium",
-            "changePercentage": 1.101,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 00:30:00",
-            "country": "JP",
-            "event": "S&P Global Services PMI (Aug)",
-            "currency": "JPY",
-            "previous": 51.2,
-            "estimate": 51.5,
-            "actual": 52.3,
-            "change": 1.1,
-            "impact": "Medium",
-            "changePercentage": 2.148,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 00:30:00",
-            "country": "JP",
-            "event": "S&P Global Composite PMI (Aug)",
-            "currency": "JPY",
-            "previous": 52.7,
-            "estimate": 52.8,
-            "actual": 53.4,
-            "change": 0.7,
-            "impact": "Low",
-            "changePercentage": 1.328,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 03:00:00",
-            "country": "NZ",
-            "event": "Credit Card Spending YoY (Jul)",
-            "currency": "NZD",
-            "previous": 3.1,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": null,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-21 03:00:00",
-            "country": "ID",
-            "event": "Current Account (Q2)",
-            "currency": "IDR",
-            "previous": -4,
-            "estimate": -1.8,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "B"
-          },
-          {
-            "date": "2026-08-21 03:00:00",
-            "country": "ID",
-            "event": "M2 Money Supply YoY (Jul)",
-            "currency": "IDR",
-            "previous": 8.7,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-21 03:35:00",
-            "country": "JP",
-            "event": "3-Month Bill Auction",
-            "currency": "JPY",
-            "previous": 1.0919,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-21 04:30:00",
-            "country": "NL",
-            "event": "Consumer Confidence (Aug)",
-            "currency": "EUR",
-            "previous": -35,
-            "estimate": -36,
-            "actual": null,
-            "change": null,
-            "impact": "Medium",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "HSBC Services PMI (Aug)",
-            "currency": "INR",
-            "previous": 53.3,
-            "estimate": 53.8,
-            "actual": null,
-            "change": null,
-            "impact": "Medium",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "S&P Global Composite PMI (Aug)",
-            "currency": "INR",
-            "previous": 54.3,
-            "estimate": 54.4,
-            "actual": null,
-            "change": null,
-            "impact": "Medium",
-            "changePercentage": 0,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "EE",
-            "event": "Producer Price Index YoY (Jul)",
-            "currency": "EUR",
-            "previous": 3.8,
-            "estimate": 4.6,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "S&P Global Services PMI (Aug)",
-            "currency": "INR",
-            "previous": 54.3,
-            "estimate": 54.4,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": null,
-            "unit": "Points"
-          }
-        ]
-      },
-      "llm": {
-        "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price remains above key moving averages, relative strength is strong, and momentum is positive without being overbought, though monthly options expiration may cause near-term chop.",
-        "financial_assessment": "mixed",
-        "financial_interpretation": "The latest two quarters missed EPS estimates, while the earlier quarter beat strongly, suggesting recent earnings execution has decelerated rather than accelerated. Positive margins and solid operating and free cash flow provide support, but the supplied revenue trend is flat.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "Forward revenue and EPS estimates have moved higher, but the next earnings date is unavailable, leaving event timing and gap risk unresolved.",
-        "analyst_assessment": "mixed",
-        "analyst_interpretation": "The consensus is Hold with more holds than buys, although forward revenue and EPS estimates have been revised upward.",
-        "valuation_assessment": "attractive",
-        "valuation_interpretation": "The low trailing earnings and sales multiples are supportive of the setup and provide valuation cushion. However, the discount may reflect concerns about competitive pressure and autonomous-vehicle disruption.",
-        "news_assessment": "negative",
-        "news_interpretation": "Recent coverage emphasizes the risk that autonomous vehicles could pressure Lyft's long-term margins and strategic position. Comparisons with Uber also portray Lyft as cheaper but less diversified and less well positioned for that transition.",
-        "sector_assessment": "neutral",
-        "sector_interpretation": "The broader technology backdrop is supportive, but weaker application-software performance provides little additional confirmation.",
-        "macro_assessment": "neutral",
-        "macro_interpretation": "Risk-on conditions help the trade, but elevated long-term yields and a mildly unfavorable cycle backdrop temper the macro support.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is credible: a high-quality pullback within a strong, outperforming uptrend. Low valuation, cash generation, and rising forward estimates help, but recent EPS misses, neutral analyst conviction, autonomous-vehicle news risk, and uncertain earnings timing argue for caution around the multiweek setup.",
-        "key_positive": "Strong trend structure combines with relative strength, cash generation, low valuation, and improving forward estimates.",
-        "key_risk": "Autonomous-mobility disruption and recent earnings misses could undermine the rally despite favorable technical momentum.",
-        "technical_assessment": ""
-      },
-      "llm_provider": "openai",
-      "llm_ok": true,
-      "llm_diagnostics": [
-        {
-          "provider": "openai",
-          "provider_name": "OpenAI",
-          "model": "gpt-5.6-luna",
-          "status": "received",
-          "chars": 2708
-        }
-      ],
-      "is_etf": false,
-      "buy_confidence": 51,
-      "report": "🟡 LYFT — Lyft, Inc.\nEntry: $17.38\neToro TP Value: $53.49\nShares: 14.38 ($250)\nScanner Potential: +21.4%\nTimeframe: 13–36 days\n\n═══ BUY CONFIDENCE: 51% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 23 | Hold: 34 | Sell: 3 | Strong Sell: 0\n🧠 The consensus is Hold with more holds than buys, although forward revenue and EPS estimates have been revised upward.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price remains above key moving averages, relative strength is strong, and momentum is positive without being overbought, though monthly options expiration may cause near-term chop.\n🕒 Technical timestamp: 2026-08-21 01:58:11 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🟢 Strong\n🧠 The latest two quarters missed EPS estimates, while the earlier quarter beat strongly, suggesting recent earnings execution has decelerated rather than accelerated. Positive margins and solid operating and free cash flow provide support, but the supplied revenue trend is flat.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The low trailing earnings and sales multiples are supportive of the setup and provide valuation cushion. However, the discount may reflect concerns about competitive pressure and autonomous-vehicle disruption.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 Forward revenue and EPS estimates have moved higher, but the next earnings date is unavailable, leaving event timing and gap risk unresolved.\n\n═══ RECENT NEWS ═══\n• 2026-08-19 23:11 UTC — Lyft Stock Analysis: Value Stock or Value Trap?\n• 2026-08-19 13:21 UTC — UBER or LYFT: Which Player Is Better-Placed Post-Q2 Earnings Results?\n• 2026-08-19 09:50 UTC — Tesla's Cybercab Launch Could Reshape Margins for Uber and Lyft\n🔴 Recent coverage emphasizes the risk that autonomous vehicles could pressure Lyft's long-term margins and strategic position. Comparisons with Uber also portray Lyft as cheaper but less diversified and less well positioned for that transition.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: The broader technology backdrop is supportive, but weaker application-software performance provides little additional confirmation.\n🧠 Macro: Risk-on conditions help the trade, but elevated long-term yields and a mildly unfavorable cycle backdrop temper the macro support.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is credible: a high-quality pullback within a strong, outperforming uptrend. Low valuation, cash generation, and rising forward estimates help, but recent EPS misses, neutral analyst conviction, autonomous-vehicle news risk, and uncertain earnings timing argue for caution around the multiweek setup.\n🟢 Key Positive: Strong trend structure combines with relative strength, cash generation, low valuation, and improving forward estimates.\n🔴 Key Risk: Autonomous-mobility disruption and recent earnings misses could undermine the rally despite favorable technical momentum.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
-    },
-    {
-      "ticker": "KRT",
-      "alert": {
-        "alerted": "2026-08-21T01:58:11.337366+00:00",
-        "entry": 47.57,
-        "thesis_warned": false,
-        "tp": 58.66
-      },
-      "signal": {
-        "ticker": "KRT",
-        "name": "Karat Packaging Inc.",
-        "setup": "pullback",
-        "entry": 47.57,
-        "tp": 58.66,
-        "tp_pct": 0.23313012402774858,
-        "shares": 5.26,
-        "value": 250.2182,
-        "pl_amount": 58.33,
-        "eta_days_low": 15,
-        "eta_days_high": 20,
-        "fee_pct": 0.03428567510208561,
-        "trend_score": 5,
-        "adx": 49.1,
-        "rs": 0.752,
-        "runner": true,
-        "regime": "uptrend",
-        "regime_weeks": 11,
-        "ema20": 44.72,
-        "ema50": 39.48,
-        "ema200": 30.82,
-        "above_ema200": true,
-        "quality": 0.78,
-        "q_detail": {
-          "rsi": 0.6,
-          "bollinger": 1.0,
-          "vwap": 1.0,
-          "volume": 0.2,
-          "extension": 1.0
-        },
-        "q_notes": {
-          "rsi": "RSI 59.6 falling",
-          "bollinger": "band position 36%, contracting",
-          "vwap": "reclaimed VWAP after dip (buyers defended)",
-          "volume": "1.6x average, surging",
-          "extension": "+0.6 ATR from 20 EMA, slope +2.8%, bullish stack (20>50>200)"
-        },
-        "context_notes": [],
-        "ext_atr": null,
-        "rsi": 59.6,
-        "options_note": "",
-        "sector": "",
-        "warnings": [
-          "⚠ monthly opex 2026-08-21 — pinning/chop risk"
-        ],
-        "reasons": [
-          "daily uptrend (score 5/5)",
-          "4h pullback",
-          "1h momentum trigger",
-          "RUNNER: near 52w high + outperforming SPY",
-          "quality +0.78 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.2, opt +0.0; RSI=59.6)",
-          "⚠ monthly opex 2026-08-21 — pinning/chop risk",
-          "(nasdaq; tier assigned nightly by FMP)",
-          "hard-eligible; ranked in Step 2"
-        ],
-        "time": "2026-08-21T01:58:11.337339+00:00"
-      },
-      "profile": {
-        "symbol": "KRT",
-        "price": 47.57,
-        "marketCap": 949674684,
-        "beta": 0.791,
-        "lastDividend": 1.8,
-        "range": "20.61-50.81",
-        "change": -0.6,
-        "changePercentage": -1.24559,
-        "volume": 215048,
-        "averageVolume": 122618,
-        "companyName": "Karat Packaging Inc.",
-        "currency": "USD",
-        "cik": "0001758021",
-        "isin": "US48563L1017",
-        "cusip": "48563L101",
-        "exchangeFullName": "NASDAQ Global Select",
-        "exchange": "NASDAQ",
-        "industry": "Packaging & Containers",
-        "website": "https://www.karatpackaging.com",
-        "description": "Karat Packaging Inc. is a company dedicated to the manufacturing and distribution of various single-use consumables. These items, crafted from materials such as traditional plastics, paper, and environmentally friendly biopolymer-based or other compostable forms, are primarily intended for use across the restaurant and broader foodservice sectors. Its product range is extensive, encompassing items like containers for food and carry-out orders, packaging bags, general tableware, drinking cups, matching lids, disposable cutlery, straws, specialized beverage components, necessary equipment, and protective gloves, many of which are sold under its \"Karat Earth\" label. The company supplies its merchandise to a diverse clientele, including national and regional wholesale distributors, large restaurant groups, retail outlets, and direct online purchasers. Furthermore, Karat Packaging offers supplementary services such as innovation in new product lines, graphic design, custom printing, and comprehensive logistics solutions. The firm was established in 2000 and operates from its main office situated in Chino, California.",
-        "ceo": "Alan Yu",
-        "sector": "Consumer Cyclical",
-        "country": "US",
-        "fullTimeEmployees": "666",
-        "phone": "626 965 8882",
-        "address": "6185 Kimball Avenue",
-        "city": "Chino",
-        "state": "CA",
-        "zip": "91708",
-        "image": "https://images.financialmodelingprep.com/symbol/KRT.png",
-        "ipoDate": "2021-04-15",
-        "defaultImage": false,
-        "isEtf": false,
-        "isActivelyTrading": true,
-        "isAdr": false,
-        "isFund": false
-      },
-      "financials": [
-        {
-          "date": "2026-08-06",
-          "fiscal_period": "",
-          "eps_actual": 1.48,
-          "eps_estimate": 0.47,
-          "eps_surprise": 1.01,
-          "eps_surprise_pct": 2.148936170212766,
-          "revenue": 136302000.0,
-          "net_income": 29331000.0,
-          "operating_margin": 0.275872694457895,
-          "gross_margin": 0.5660958753356518,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-05-07",
-          "fiscal_period": "",
-          "eps_actual": 0.34,
-          "eps_estimate": 0.32,
-          "eps_surprise": 0.020000000000000018,
-          "eps_surprise_pct": 0.06250000000000006,
-          "revenue": 136302000.0,
-          "net_income": 29331000.0,
-          "operating_margin": 0.275872694457895,
-          "gross_margin": 0.5660958753356518,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-03-12",
-          "fiscal_period": "",
-          "eps_actual": 0.34,
-          "eps_estimate": 0.2758,
-          "eps_surprise": 0.06420000000000003,
-          "eps_surprise_pct": 0.23277737490935474,
-          "revenue": 136302000.0,
-          "net_income": 29331000.0,
-          "operating_margin": 0.275872694457895,
-          "gross_margin": 0.5660958753356518,
-          "revenue_yoy": null,
-          "net_income_yoy": null
-        }
-      ],
-      "financial_health": {
-        "cash": 38399000.0,
-        "total_debt": 72715000.0,
-        "total_liabilities": 142538000.0,
-        "equity": 166471000.0,
-        "operating_cash_flow": 33154000.0,
-        "capital_expenditure": -1376000.0,
-        "free_cash_flow": 31778000.0
-      },
-      "forward": {
-        "next_earnings": {
-          "symbol": "KRT",
-          "date": "2026-11-05",
-          "epsActual": null,
-          "epsEstimated": 0.46,
-          "revenueActual": null,
-          "revenueEstimated": 139711200,
-          "lastUpdated": "2026-08-20"
-        },
-        "estimates": [
-          {
-            "date": "2028-12-31",
-            "period": null,
-            "revenue_avg": 611000000.0,
-            "eps_avg": 2.73,
-            "revenue_low": 605595712.0,
-            "revenue_high": 615519048.0,
-            "eps_low": 2.69861,
-            "eps_high": 2.75625,
-            "num_analysts_revenue": 1,
-            "num_analysts_eps": 1
-          },
-          {
-            "date": "2027-12-31",
-            "period": null,
-            "revenue_avg": 568281534.0,
-            "eps_avg": 2.25333,
-            "revenue_low": 563255090.0,
-            "revenue_high": 572484630.0,
-            "eps_low": 2.22742,
-            "eps_high": 2.275,
-            "num_analysts_revenue": 2,
-            "num_analysts_eps": 1
-          },
-          {
-            "date": "2026-12-31",
-            "period": null,
-            "revenue_avg": 523900208.0,
-            "eps_avg": 2.67667,
-            "revenue_low": 519266316.0,
-            "revenue_high": 527775053.0,
-            "eps_low": 2.64589,
-            "eps_high": 2.70241,
-            "num_analysts_revenue": 2,
-            "num_analysts_eps": 1
-          },
-          {
-            "date": "2025-12-31",
-            "period": null,
-            "revenue_avg": 466024293.0,
-            "eps_avg": 1.51213,
-            "revenue_low": 461902313.0,
-            "revenue_high": 469471079.0,
-            "eps_low": 1.49474,
-            "eps_high": 1.52667,
-            "num_analysts_revenue": 2,
-            "num_analysts_eps": 1
-          }
-        ]
-      },
-      "analysts": {
-        "grades_consensus": {
-          "symbol": "KRT",
-          "strongBuy": 0,
-          "buy": 4,
-          "hold": 1,
-          "sell": 1,
-          "strongSell": 0,
-          "consensus": "Buy"
-        },
-        "estimate_direction": {
-          "revenueAvg": {
-            "latest": 611000000,
-            "prior": 568281534,
-            "change": 0.0751713076075422
-          },
-          "epsAvg": {
-            "latest": 2.73,
-            "prior": 2.25333,
-            "change": 0.21154025375777175
-          }
-        }
-      },
-      "valuation": {
-        "ratios": {
-          "symbol": "KRT",
-          "grossProfitMarginTTM": 0.4049316756590228,
-          "ebitMarginTTM": 0.1457329209415828,
-          "ebitdaMarginTTM": 0.16469186147852982,
-          "operatingProfitMarginTTM": 0.12833869091292346,
-          "pretaxProfitMarginTTM": 0.13778978560223112,
-          "continuousOperationsProfitMarginTTM": 0.10455792874486707,
-          "netProfitMarginTTM": 0.10176090736994864,
-          "bottomLineProfitMarginTTM": 0.10176090736994864,
-          "receivablesTurnoverTTM": 10.026459112339458,
-          "payablesTurnoverTTM": 8.63593846515869,
-          "inventoryTurnoverTTM": 3.2956838974013585,
-          "fixedAssetTurnoverTTM": 4.396638685415887,
-          "assetTurnoverTTM": 1.5573287712309785,
-          "currentRatioTTM": 2.2511547018102562,
-          "quickRatioTTM": 1.2451242786642727,
-          "solvencyRatioTTM": 0.4178605003577993,
-          "cashRatioTTM": 0.43363711307608044,
-          "priceToEarningsRatioTTM": 18.95219123505976,
-          "priceToEarningsGrowthRatioTTM": 0.33322534039665525,
-          "forwardPriceToEarningsGrowthRatioTTM": -1.1982983349824585,
-          "priceToEarningsDilutedRatioTTM": 19.028000000000002,
-          "priceToEarningsDilutedGrowthRatioTTM": 0.332467252747253,
-          "priceToBookRatioTTM": 5.700447425077041,
-          "priceToSalesRatioTTM": 1.9248263698310841,
-          "priceToFreeCashFlowRatioTTM": 18.689600771456124,
-          "priceToOperatingCashFlowRatioTTM": 16.74121768576671,
-          "debtToAssetsRatioTTM": 0.22952025327243517,
-          "debtToEquityRatioTTM": 0.43680280649482495,
-          "debtToCapitalRatioTTM": 0.30401026815950766,
-          "longTermDebtToCapitalRatioTTM": 0.11914979178682357,
-          "financialLeverageRatioTTM": 1.9031122537859446,
-          "workingCapitalTurnoverRatioTTM": 4.897675157338839,
-          "operatingCashFlowRatioTTM": 0.6401282876534427,
-          "operatingCashFlowSalesRatioTTM": 0.11488866638831574,
-          "freeCashFlowOperatingCashFlowRatioTTM": 0.8964257991673136,
-          "debtServiceCoverageRatioTTM": 4.052990064362932,
-          "interestCoverageRatioTTM": 16.157182954835417,
-          "shortTermOperatingCashFlowCoverageRatioTTM": 4.690830850711685,
-          "operatingCashFlowCoverageRatioTTM": 0.7795365467922712,
-          "capitalExpenditureCoverageRatioTTM": 9.654913983989099,
-          "dividendPaidAndCapexCoverageRatioTTM": 1.3536154360492885,
-          "dividendPayoutRatioTTM": 0.7171310773398132,
-          "dividendYieldTTM": 0.03783897,
-          "enterpriseValueTTM": 983990684,
-          "revenuePerShareTTM": 24.7325513605154,
-          "netIncomePerShareTTM": 2.516806868019905,
-          "interestDebtPerShareTTM": 3.8415555106626047,
-          "cashPerShareTTM": 2.7141130570478564,
-          "bookValuePerShareTTM": 8.73616262521499,
-          "tangibleBookValuePerShareTTM": 8.547177784606408,
-          "shareholdersEquityPerShareTTM": 8.344958992294732,
-          "operatingCashFlowPerShareTTM": 2.8414898421901387,
-          "capexPerShareTTM": 0.29430503957904003,
-          "freeCashFlowPerShareTTM": 2.5471848026110986,
-          "netIncomePerEBTTTM": 0.7385228660106203,
-          "ebtPerEbitTTM": 1.0736418193303854,
-          "priceToFairValueTTM": 5.700447425077041,
-          "debtToMarketCapTTM": 0.036435634836823765,
-          "effectiveTaxRateTTM": 0.24117794154420957,
-          "enterpriseValueMultipleTTM": 12.109760313084573,
-          "dividendPerShareTTM": 1.8
-        },
-        "metrics": {
-          "symbol": "KRT",
-          "marketCap": 949674684,
-          "enterpriseValueTTM": 983990684,
-          "evToSalesTTM": 1.994378968020722,
-          "evToOperatingCashFlowTTM": 17.35923159974596,
-          "evToFreeCashFlowTTM": 19.36493975951036,
-          "evToEBITDATTM": 12.109760313084573,
-          "netDebtToEBITDATTM": 0.4223195825539037,
-          "currentRatioTTM": 2.2511547018102562,
-          "incomeQualityTTM": 0.8239312760730846,
-          "grahamNumberTTM": 21.73843663573617,
-          "grahamNetNetTTM": -0.34821835418766844,
-          "taxBurdenTTM": 0.7385228660106203,
-          "interestBurdenTTM": 0.9454952574337292,
-          "workingCapitalTTM": 110791000,
-          "investedCapitalTTM": 226779000,
-          "returnOnAssetsTTM": 0.15847518883379155,
-          "operatingReturnOnAssetsTTM": 0.2112444640906096,
-          "returnOnTangibleAssetsTTM": 0.16038371725290135,
-          "returnOnEquityTTM": 0.3250611832649203,
-          "returnOnInvestedCapitalTTM": 0.19020415469099602,
-          "returnOnCapitalEmployedTTM": 0.277400530968799,
-          "earningsYieldTTM": 0.052907438890475195,
-          "freeCashFlowYieldTTM": 0.053505690797165655,
-          "capexToOperatingCashFlowTTM": 0.10357420083268647,
-          "capexToDepreciationTTM": 0.18564426877470355,
-          "capexToRevenueTTM": 0.011899501805902931,
-          "salesGeneralAndAdministrativeToRevenueTTM": 0.27734088393982753,
-          "researchAndDevelopementToRevenueTTM": 0,
-          "stockBasedCompensationToRevenueTTM": 0.004515770741534956,
-          "intangiblesToTotalAssetsTTM": 0.011899764214221007,
-          "averageReceivablesTTM": 45739000,
-          "averagePayablesTTM": 31870500,
-          "averageInventoryTTM": 84547000,
-          "daysOfSalesOutstandingTTM": 36.40367909652156,
-          "daysOfPayablesOutstandingTTM": 42.26523862722925,
-          "daysOfInventoryOutstandingTTM": 110.75091281897573,
-          "operatingCycleTTM": 147.1545919154973,
-          "cashConversionCycleTTM": 104.88935328826804,
-          "freeCashFlowToEquityTTM": 36376000,
-          "freeCashFlowToFirmTTM": 53786823.647088245,
-          "tangibleAssetValueTTM": 170505000,
-          "netCurrentAssetValueTTM": 56804000
-        }
-      },
-      "news": [
-        {
-          "date": "2026-08-19 08:00 UTC",
-          "title": "Karat Packaging to Present at Lake Street's 10th Annual Best Ideas Growth Conference, September 10",
-          "site": "globenewswire.com",
-          "text": "CHINO, Calif., Aug. 19, 2026 (GLOBE NEWSWIRE) -- Karat Packaging Inc. (Nasdaq: KRT), a specialty distributor and manufacturer of disposable foodservice products and related items, today announced that Alan Yu, its chief executive officer, and Jian Guo, its chief financial officer, will participate at Lake Street Capital Market's 10th Annual Best Ideas Growth (BIG10) Conference in New York, on September 10, 2026. Management will conduct one-on-one meetings with investors during the conference."
-        }
-      ],
-      "news_diag": {
-        "status": "OK",
-        "message": "1 usable article(s)"
-      },
-      "sector": {
-        "sector": "Consumer Cyclical",
-        "industry": "Packaging & Containers",
-        "sector_snapshot": {
           "date": "2026-08-19",
-          "sector": "Consumer Cyclical",
-          "exchange": "NASDAQ",
-          "averageChange": 2.754017386254004
-        },
-        "industry_snapshot": {
-          "date": "2026-08-18",
-          "industry": "Packaging & Containers",
-          "exchange": "NASDAQ",
-          "averageChange": -0.5707013279567019
-        }
-      },
-      "macro": {
-        "hourly_scan_macro": {
-          "risk": "risk-on",
-          "vol": 13.1
-        },
-        "hourly_scan_cycles": {
-          "score": -0.52,
-          "label": "headwind",
-          "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
-        },
-        "treasury": {
-          "date": "2026-08-18",
-          "month1": 3.78,
-          "month2": 3.82,
+          "month1": 3.77,
+          "month2": 3.81,
           "month3": 3.86,
           "month6": 3.94,
-          "year1": 3.99,
+          "year1": 4,
           "year2": 4.19,
-          "year3": 4.26,
-          "year5": 4.37,
-          "year7": 4.53,
-          "year10": 4.71,
-          "year20": 5.28,
-          "year30": 5.28
+          "year3": 4.25,
+          "year5": 4.35,
+          "year7": 4.48,
+          "year10": 4.65,
+          "year20": 5.17,
+          "year30": 5.19
         },
         "indicators": {
           "GDP": [
@@ -1089,14 +462,14 @@
           {
             "date": "2026-08-21 00:30:00",
             "country": "JP",
-            "event": "S&P Global Manufacturing PMI (Aug)",
+            "event": "S&P Global Composite PMI (Aug)",
             "currency": "JPY",
-            "previous": 54.5,
-            "estimate": 55.1,
-            "actual": 55.1,
-            "change": 0.6,
-            "impact": "Medium",
-            "changePercentage": 1.101,
+            "previous": 52.7,
+            "estimate": 52.8,
+            "actual": 53.4,
+            "change": 0.7,
+            "impact": "Low",
+            "changePercentage": 1.328,
             "unit": "Points"
           },
           {
@@ -1115,41 +488,15 @@
           {
             "date": "2026-08-21 00:30:00",
             "country": "JP",
-            "event": "S&P Global Composite PMI (Aug)",
+            "event": "S&P Global Manufacturing PMI (Aug)",
             "currency": "JPY",
-            "previous": 52.7,
-            "estimate": 52.8,
-            "actual": 53.4,
-            "change": 0.7,
-            "impact": "Low",
-            "changePercentage": 1.328,
+            "previous": 54.5,
+            "estimate": 55.1,
+            "actual": 55.1,
+            "change": 0.6,
+            "impact": "Medium",
+            "changePercentage": 1.101,
             "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 03:00:00",
-            "country": "NZ",
-            "event": "Credit Card Spending YoY (Jul)",
-            "currency": "NZD",
-            "previous": 3.1,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": null,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-21 03:00:00",
-            "country": "ID",
-            "event": "Current Account (Q2)",
-            "currency": "IDR",
-            "previous": -4,
-            "estimate": -1.8,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "B"
           },
           {
             "date": "2026-08-21 03:00:00",
@@ -1165,17 +512,43 @@
             "unit": "%"
           },
           {
+            "date": "2026-08-21 03:00:00",
+            "country": "NZ",
+            "event": "Credit Card Spending YoY (Jul)",
+            "currency": "NZD",
+            "previous": 3.2,
+            "estimate": null,
+            "actual": 5.3,
+            "change": 2.1,
+            "impact": "Low",
+            "changePercentage": 65.625,
+            "unit": "%"
+          },
+          {
             "date": "2026-08-21 03:35:00",
             "country": "JP",
             "event": "3-Month Bill Auction",
             "currency": "JPY",
             "previous": 1.0919,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.0816,
+            "change": -0.0103,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -0.943,
             "unit": "%"
+          },
+          {
+            "date": "2026-08-21 03:40:00",
+            "country": "ID",
+            "event": "Current Account (Q2)",
+            "currency": "IDR",
+            "previous": -3.6,
+            "estimate": -1.8,
+            "actual": -12.5,
+            "change": -8.9,
+            "impact": "Low",
+            "changePercentage": -247.222,
+            "unit": "B"
           },
           {
             "date": "2026-08-21 04:30:00",
@@ -1184,50 +557,24 @@
             "currency": "EUR",
             "previous": -35,
             "estimate": -36,
-            "actual": null,
-            "change": null,
+            "actual": -34,
+            "change": 1,
             "impact": "Medium",
-            "changePercentage": 0,
+            "changePercentage": 2.857,
             "unit": "%"
           },
           {
             "date": "2026-08-21 05:00:00",
             "country": "IN",
-            "event": "HSBC Services PMI (Aug)",
+            "event": "HSBC India Services PMI (Aug)",
             "currency": "INR",
             "previous": 53.3,
             "estimate": 53.8,
             "actual": null,
             "change": null,
-            "impact": "Medium",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "S&P Global Composite PMI (Aug)",
-            "currency": "INR",
-            "previous": 54.3,
-            "estimate": 54.4,
-            "actual": null,
-            "change": null,
-            "impact": "Medium",
-            "changePercentage": 0,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "EE",
-            "event": "Producer Price Index YoY (Jul)",
-            "currency": "EUR",
-            "previous": 3.8,
-            "estimate": 4.6,
-            "actual": null,
-            "change": null,
             "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
+            "changePercentage": null,
+            "unit": null
           },
           {
             "date": "2026-08-21 05:00:00",
@@ -1241,30 +588,56 @@
             "impact": "Low",
             "changePercentage": null,
             "unit": "Points"
+          },
+          {
+            "date": "2026-08-21 05:00:00",
+            "country": "IN",
+            "event": "S&P Global Manufacturing PMI (Aug)",
+            "currency": "INR",
+            "previous": 53.5,
+            "estimate": 54,
+            "actual": null,
+            "change": null,
+            "impact": "Low",
+            "changePercentage": null,
+            "unit": "Points"
+          },
+          {
+            "date": "2026-08-21 05:00:00",
+            "country": "IN",
+            "event": "S&P Global Composite PMI (Aug)",
+            "currency": "INR",
+            "previous": 54.3,
+            "estimate": 54.4,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": 0,
+            "unit": "Points"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a strong established uptrend. Price is above rising key EMAs, has reclaimed VWAP, shows elevated volume, and continues to outperform SPY, although monthly expiration may create short-term chop.",
-        "financial_assessment": "positive",
-        "financial_interpretation": "The latest results showed a major EPS beat, while reported gross and operating margins were strong. Revenue and displayed earnings figures were flat across the supplied periods, but positive operating cash flow and free cash flow support the financial backdrop.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term averages. Moderate ADX, RSI near 58, contracting bands, and relative strength support continuation, though monthly options expiration may increase chop.",
+        "financial_assessment": "mixed",
+        "financial_interpretation": "Results have been inconsistent: the February EPS beat was followed by misses in May and August, while reported revenue remained flat at $1.84B. Margins were positive but modest, and operating cash flow and free cash flow provide support despite limited recent growth.",
         "earnings_assessment": "positive",
-        "earnings_interpretation": "Next earnings are scheduled for November 5, outside the scanner's 15-20 trading-day window. Analyst estimates have been revised higher over the longer term, though the next report remains a future event risk.",
-        "analyst_assessment": "positive",
-        "analyst_interpretation": "The consensus is Buy, with estimates rising substantially for both revenue and EPS despite limited analyst coverage.",
-        "valuation_assessment": "reasonable",
-        "valuation_interpretation": "A trailing P/E near 19 and price-to-sales near 1.9 do not appear excessive in isolation. The elevated price-to-book ratio leaves less valuation cushion if growth or margins weaken.",
-        "news_assessment": "no_major_risk",
-        "news_interpretation": "The only recent company-specific news is management's scheduled investor conference presentation. It is potentially constructive for visibility but is not a material near-term catalyst or risk.",
-        "sector_assessment": "neutral",
-        "sector_interpretation": "Broad consumer-cyclical strength is supportive, but weaker recent packaging-industry performance makes the sector backdrop mixed rather than a clear tailwind.",
+        "earnings_interpretation": "The next earnings report is not due until November 4, beyond the scanner timeframe, reducing immediate event risk. The next EPS estimate is $0.44, while longer-term revenue and EPS consensus estimates have been revised higher.",
+        "analyst_assessment": "mixed",
+        "analyst_interpretation": "Ratings remain Hold-heavy, but consensus revenue and EPS estimates have moved higher.",
+        "valuation_assessment": "attractive",
+        "valuation_interpretation": "The low reported earnings and sales multiples are supportive of the setup and leave room for rerating. However, the discount appears partly justified by inconsistent earnings and limited recent revenue growth.",
+        "news_assessment": "negative",
+        "news_interpretation": "Recent coverage highlights increasing autonomous-vehicle risk and suggests Uber has stronger diversification and AV positioning. This creates a meaningful longer-term competitive and margin-risk overhang for Lyft.",
+        "sector_assessment": "headwind",
+        "sector_interpretation": "The broader technology backdrop is supportive, but the application-software group has recently lagged and weakens confirmation.",
         "macro_assessment": "neutral",
-        "macro_interpretation": "Risk-on conditions and subdued volatility help the setup, but elevated longer-term yields and a mildly unfavorable seasonal cycle remain modest headwinds.",
-        "overall_assessment": "supportive",
-        "overall_summary": "The strong technical trend is supported by a major recent EPS beat, healthy margins and cash generation, positive analyst revisions, and a Buy consensus. Sector and macro conditions are mixed, while monthly expiration may cause near-term pinning or chop; the setup remains fundamentally supported but not risk-free.",
-        "key_positive": "A powerful uptrend is reinforced by recent earnings outperformance, strong margins, cash flow, and upward estimate revisions.",
-        "key_risk": "Monthly expiration-driven volatility and weaker packaging-industry performance could interrupt continuation despite the favorable company backdrop.",
+        "macro_interpretation": "Risk-on conditions help the trade, but elevated longer-term yields and a mildly unfavorable cycle backdrop could limit multiple expansion.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is well supported as a bullish pullback continuation, with strong trend structure and relative strength. Fundamentals and valuation offer support, but recent EPS misses, sector lag, and autonomous-vehicle concerns make the catalyst backdrop mixed rather than strongly confirming.",
+        "key_positive": "Strong uptrend, relative strength, positive cash flow, and inexpensive reported valuation support the setup.",
+        "key_risk": "Autonomous-mobility competition and inconsistent earnings could undermine the trend despite favorable technical momentum.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1275,17 +648,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2764
+          "chars": 2714
         }
       ],
       "is_etf": false,
-      "buy_confidence": 78,
-      "report": "🟢 KRT — Karat Packaging Inc.\nEntry: $47.57\neToro TP Value: $58.33\nShares: 5.26 ($250)\nScanner Potential: +23.3%\nTimeframe: 15–20 days\n\n═══ BUY CONFIDENCE: 78% ═══\n🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 4 | Hold: 1 | Sell: 1 | Strong Sell: 0\n🧠 The consensus is Buy, with estimates rising substantially for both revenue and EPS despite limited analyst coverage.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong established uptrend. Price is above rising key EMAs, has reclaimed VWAP, shows elevated volume, and continues to outperform SPY, although monthly expiration may create short-term chop.\n🕒 Technical timestamp: 2026-08-21 01:58:11 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The latest results showed a major EPS beat, while reported gross and operating margins were strong. Revenue and displayed earnings figures were flat across the supplied periods, but positive operating cash flow and free cash flow support the financial backdrop.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 19 and price-to-sales near 1.9 do not appear excessive in isolation. The elevated price-to-book ratio leaves less valuation cushion if growth or margins weaken.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+76 days)\n🟢 Positive\n🧠 Next earnings are scheduled for November 5, outside the scanner's 15-20 trading-day window. Analyst estimates have been revised higher over the longer term, though the next report remains a future event risk.\n\n═══ RECENT NEWS ═══\n• 2026-08-19 08:00 UTC — Karat Packaging to Present at Lake Street's 10th Annual Best Ideas Growth Conference, September 10\n⚪ The only recent company-specific news is management's scheduled investor conference presentation. It is potentially constructive for visibility but is not a material near-term catalyst or risk.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: Broad consumer-cyclical strength is supportive, but weaker recent packaging-industry performance makes the sector backdrop mixed rather than a clear tailwind.\n🧠 Macro: Risk-on conditions and subdued volatility help the setup, but elevated longer-term yields and a mildly unfavorable seasonal cycle remain modest headwinds.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The strong technical trend is supported by a major recent EPS beat, healthy margins and cash generation, positive analyst revisions, and a Buy consensus. Sector and macro conditions are mixed, while monthly expiration may cause near-term pinning or chop; the setup remains fundamentally supported but not risk-free.\n🟢 Key Positive: A powerful uptrend is reinforced by recent earnings outperformance, strong margins, cash flow, and upward estimate revisions.\n🔴 Key Risk: Monthly expiration-driven volatility and weaker packaging-industry performance could interrupt continuation despite the favorable company backdrop.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 52,
+      "report": "🟡 LYFT — Lyft, Inc.\nEntry: $17.38\neToro TP Value: $53.49\nShares: 14.38 ($250)\nScanner Potential: +21.4%\nTimeframe: 13–36 days\n\n═══ BUY CONFIDENCE: 52% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 23 | Hold: 34 | Sell: 3 | Strong Sell: 0\n🧠 Ratings remain Hold-heavy, but consensus revenue and EPS estimates have moved higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term averages. Moderate ADX, RSI near 58, contracting bands, and relative strength support continuation, though monthly options expiration may increase chop.\n🕒 Technical timestamp: 2026-08-21 04:53:42 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🟢 Strong\n🧠 Results have been inconsistent: the February EPS beat was followed by misses in May and August, while reported revenue remained flat at $1.84B. Margins were positive but modest, and operating cash flow and free cash flow provide support despite limited recent growth.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The low reported earnings and sales multiples are supportive of the setup and leave room for rerating. However, the discount appears partly justified by inconsistent earnings and limited recent revenue growth.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-04 (+75 days)\n🟢 Positive\n🧠 The next earnings report is not due until November 4, beyond the scanner timeframe, reducing immediate event risk. The next EPS estimate is $0.44, while longer-term revenue and EPS consensus estimates have been revised higher.\n\n═══ RECENT NEWS ═══\n• 2026-08-19 23:11 UTC — Lyft Stock Analysis: Value Stock or Value Trap?\n• 2026-08-19 13:21 UTC — UBER or LYFT: Which Player Is Better-Placed Post-Q2 Earnings Results?\n• 2026-08-19 09:50 UTC — Tesla's Cybercab Launch Could Reshape Margins for Uber and Lyft\n🔴 Recent coverage highlights increasing autonomous-vehicle risk and suggests Uber has stronger diversification and AV positioning. This creates a meaningful longer-term competitive and margin-risk overhang for Lyft.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🟡 Neutral\n🧠 Sector: The broader technology backdrop is supportive, but the application-software group has recently lagged and weakens confirmation.\n🧠 Macro: Risk-on conditions help the trade, but elevated longer-term yields and a mildly unfavorable cycle backdrop could limit multiple expansion.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a bullish pullback continuation, with strong trend structure and relative strength. Fundamentals and valuation offer support, but recent EPS misses, sector lag, and autonomous-vehicle concerns make the catalyst backdrop mixed rather than strongly confirming.\n🟢 Key Positive: Strong uptrend, relative strength, positive cash flow, and inexpensive reported valuation support the setup.\n🔴 Key Risk: Autonomous-mobility competition and inconsistent earnings could undermine the trend despite favorable technical momentum.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "DFTX",
       "alert": {
-        "alerted": "2026-08-21T01:58:11.039163+00:00",
+        "alerted": "2026-08-21T04:53:42.049376+00:00",
         "entry": 45.41,
         "thesis_warned": false,
         "tp": 56.76
@@ -1346,7 +719,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-21T01:58:11.039132+00:00"
+        "time": "2026-08-21T04:53:42.049338+00:00"
       },
       "profile": {
         "symbol": "DFTX",
@@ -1447,7 +820,7 @@
           "epsEstimated": -0.54,
           "revenueActual": null,
           "revenueEstimated": null,
-          "lastUpdated": "2026-08-20"
+          "lastUpdated": "2026-08-21"
         },
         "estimates": [
           {
@@ -1643,16 +1016,16 @@
         "sector": "Healthcare",
         "industry": "Biotechnology",
         "sector_snapshot": {
-          "date": "2026-08-20",
+          "date": "2026-08-21",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": -1.0146129903967571
+          "averageChange": -1.0146129942762983
         },
         "industry_snapshot": {
-          "date": "2026-08-20",
+          "date": "2026-08-21",
           "industry": "Biotechnology",
           "exchange": "NASDAQ",
-          "averageChange": -0.7234558922653567
+          "averageChange": -0.7234558925482415
         }
       },
       "macro": {
@@ -1666,19 +1039,19 @@
           "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
         },
         "treasury": {
-          "date": "2026-08-18",
-          "month1": 3.78,
-          "month2": 3.82,
+          "date": "2026-08-19",
+          "month1": 3.77,
+          "month2": 3.81,
           "month3": 3.86,
           "month6": 3.94,
-          "year1": 3.99,
+          "year1": 4,
           "year2": 4.19,
-          "year3": 4.26,
-          "year5": 4.37,
-          "year7": 4.53,
-          "year10": 4.71,
-          "year20": 5.28,
-          "year30": 5.28
+          "year3": 4.25,
+          "year5": 4.35,
+          "year7": 4.48,
+          "year10": 4.65,
+          "year20": 5.17,
+          "year30": 5.19
         },
         "indicators": {
           "GDP": [
@@ -1717,14 +1090,14 @@
           {
             "date": "2026-08-21 00:30:00",
             "country": "JP",
-            "event": "S&P Global Manufacturing PMI (Aug)",
+            "event": "S&P Global Composite PMI (Aug)",
             "currency": "JPY",
-            "previous": 54.5,
-            "estimate": 55.1,
-            "actual": 55.1,
-            "change": 0.6,
-            "impact": "Medium",
-            "changePercentage": 1.101,
+            "previous": 52.7,
+            "estimate": 52.8,
+            "actual": 53.4,
+            "change": 0.7,
+            "impact": "Low",
+            "changePercentage": 1.328,
             "unit": "Points"
           },
           {
@@ -1743,41 +1116,15 @@
           {
             "date": "2026-08-21 00:30:00",
             "country": "JP",
-            "event": "S&P Global Composite PMI (Aug)",
+            "event": "S&P Global Manufacturing PMI (Aug)",
             "currency": "JPY",
-            "previous": 52.7,
-            "estimate": 52.8,
-            "actual": 53.4,
-            "change": 0.7,
-            "impact": "Low",
-            "changePercentage": 1.328,
+            "previous": 54.5,
+            "estimate": 55.1,
+            "actual": 55.1,
+            "change": 0.6,
+            "impact": "Medium",
+            "changePercentage": 1.101,
             "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 03:00:00",
-            "country": "NZ",
-            "event": "Credit Card Spending YoY (Jul)",
-            "currency": "NZD",
-            "previous": 3.1,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": null,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-21 03:00:00",
-            "country": "ID",
-            "event": "Current Account (Q2)",
-            "currency": "IDR",
-            "previous": -4,
-            "estimate": -1.8,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "B"
           },
           {
             "date": "2026-08-21 03:00:00",
@@ -1793,17 +1140,43 @@
             "unit": "%"
           },
           {
+            "date": "2026-08-21 03:00:00",
+            "country": "NZ",
+            "event": "Credit Card Spending YoY (Jul)",
+            "currency": "NZD",
+            "previous": 3.2,
+            "estimate": null,
+            "actual": 5.3,
+            "change": 2.1,
+            "impact": "Low",
+            "changePercentage": 65.625,
+            "unit": "%"
+          },
+          {
             "date": "2026-08-21 03:35:00",
             "country": "JP",
             "event": "3-Month Bill Auction",
             "currency": "JPY",
             "previous": 1.0919,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.0816,
+            "change": -0.0103,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -0.943,
             "unit": "%"
+          },
+          {
+            "date": "2026-08-21 03:40:00",
+            "country": "ID",
+            "event": "Current Account (Q2)",
+            "currency": "IDR",
+            "previous": -3.6,
+            "estimate": -1.8,
+            "actual": -12.5,
+            "change": -8.9,
+            "impact": "Low",
+            "changePercentage": -247.222,
+            "unit": "B"
           },
           {
             "date": "2026-08-21 04:30:00",
@@ -1812,50 +1185,24 @@
             "currency": "EUR",
             "previous": -35,
             "estimate": -36,
-            "actual": null,
-            "change": null,
+            "actual": -34,
+            "change": 1,
             "impact": "Medium",
-            "changePercentage": 0,
+            "changePercentage": 2.857,
             "unit": "%"
           },
           {
             "date": "2026-08-21 05:00:00",
             "country": "IN",
-            "event": "HSBC Services PMI (Aug)",
+            "event": "HSBC India Services PMI (Aug)",
             "currency": "INR",
             "previous": 53.3,
             "estimate": 53.8,
             "actual": null,
             "change": null,
-            "impact": "Medium",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "IN",
-            "event": "S&P Global Composite PMI (Aug)",
-            "currency": "INR",
-            "previous": 54.3,
-            "estimate": 54.4,
-            "actual": null,
-            "change": null,
-            "impact": "Medium",
-            "changePercentage": 0,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-21 05:00:00",
-            "country": "EE",
-            "event": "Producer Price Index YoY (Jul)",
-            "currency": "EUR",
-            "previous": 3.8,
-            "estimate": 4.6,
-            "actual": null,
-            "change": null,
             "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
+            "changePercentage": null,
+            "unit": null
           },
           {
             "date": "2026-08-21 05:00:00",
@@ -1869,30 +1216,56 @@
             "impact": "Low",
             "changePercentage": null,
             "unit": "Points"
+          },
+          {
+            "date": "2026-08-21 05:00:00",
+            "country": "IN",
+            "event": "S&P Global Manufacturing PMI (Aug)",
+            "currency": "INR",
+            "previous": 53.5,
+            "estimate": 54,
+            "actual": null,
+            "change": null,
+            "impact": "Low",
+            "changePercentage": null,
+            "unit": "Points"
+          },
+          {
+            "date": "2026-08-21 05:00:00",
+            "country": "IN",
+            "event": "S&P Global Composite PMI (Aug)",
+            "currency": "INR",
+            "previous": 54.3,
+            "estimate": 54.4,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": 0,
+            "unit": "Points"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend, with price above rising 20-, 50-, and 200-period EMAs. Reclaimed VWAP, expanding bands, positive relative strength, and a moderate RSI support continuation, although monthly options expiry may increase short-term chop.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend, with price above rising short- and long-term EMAs. Reclaimed VWAP, expanding Bollinger Bands, strong relative strength, and moderate RSI support continuation, though monthly options expiry may cause near-term chop.",
         "financial_assessment": "negative",
-        "financial_interpretation": "The last three reports show repeated EPS misses, with the latest miss accelerating sharply, while revenue remains absent. Cash and relatively low debt provide some runway, but negative operating and free cash flow remain fundamental weaknesses.",
-        "earnings_assessment": "negative",
-        "earnings_interpretation": "Next earnings are expected on November 5, with consensus EPS still negative at -0.54. The recent pattern of sizable misses makes the event a meaningful downside-volatility risk despite the date being outside the scanner window.",
+        "financial_interpretation": "The last three reports show accelerating EPS losses and repeated misses, worsening from -0.51 to -1.44, with no reported revenue. Cash is substantial relative to debt, but operating and free cash flow remain negative and margins are unavailable.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "Next earnings are scheduled for November 5, with a projected EPS loss of -0.54, so the event is not immediate but remains a future catalyst risk. Longer-range estimates point toward substantial revenue and EPS improvement, although the estimates are widely dispersed and near-term forecasts remain unprofitable.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "All 12 recorded analysts rate the shares Buy, and long-range revenue and EPS estimates have risen substantially, though those projections are distant and highly uncertain.",
+        "analyst_interpretation": "All 12 analysts are rated Buy, while average long-range revenue and EPS estimates have risen materially from the prior forecast set.",
         "valuation_assessment": "expensive",
-        "valuation_interpretation": "Traditional earnings and sales valuation support is unavailable because the company is loss-making and reports no revenue, while a price-to-book ratio of 5.47 leaves limited balance-sheet valuation support. The distant growth projections may justify optimism, but they do not offset the current speculative profile.",
+        "valuation_interpretation": "Valuation is not supported by current earnings or sales because the company is loss-making and reports no revenue, while price-to-book is elevated at 5.47. The valuation therefore depends heavily on successful future commercialization and the optimistic long-range forecasts.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was supplied. This leaves clinical, regulatory, financing, or partnership catalysts unconfirmed and creates information risk for a biotechnology trade.",
+        "news_interpretation": "No usable recent company-specific news was provided. This limits identifiable catalyst support and leaves clinical, regulatory, or financing developments as unpriced risks.",
         "sector_assessment": "headwind",
-        "sector_interpretation": "Recent healthcare and biotechnology performance was weak, modestly reducing support for the otherwise strong stock-specific trend.",
+        "sector_interpretation": "Recent weakness across the broader group weakens the setup despite the stock's strong individual relative strength.",
         "macro_assessment": "neutral",
-        "macro_interpretation": "Risk-on conditions and low volatility help speculative biotechnology, but elevated longer-term yields and a cycle-based headwind can pressure long-duration growth stocks.",
+        "macro_interpretation": "Risk-on conditions and contained volatility are supportive, but elevated Treasury yields and a mildly unfavorable cycle backdrop can pressure speculative biotechnology valuations.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is strongly supported by a persistent uptrend, pullback structure, and exceptional relative strength. However, repeated earnings misses, no reported revenue, ongoing cash burn, weak industry tone, and uncertain catalysts materially weaken the fundamental backdrop.",
-        "key_positive": "Strong trend structure, VWAP defense, and broad analyst optimism support the continuation setup.",
-        "key_risk": "The company remains loss-making with no reported revenue and negative cash flow, making the trade highly sensitive to disappointing results or biotech sentiment.",
+        "overall_summary": "The technical signal is strong: DFTX is pulling back within a powerful uptrend and has materially outperformed SPY. However, worsening earnings misses, no reported revenue, negative cash flow, elevated valuation, and sector weakness materially reduce fundamental support. The setup is tradable on technical strength but carries high execution and event risk.",
+        "key_positive": "Strong trend structure, relative strength, analyst consensus, and improving long-range estimates support the bullish technical case.",
+        "key_risk": "Persistent losses, absent revenue, negative cash flow, and dependence on future commercialization make the move vulnerable to sector weakness or disappointing developments.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1903,12 +1276,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2945
+          "chars": 3040
         }
       ],
       "is_etf": false,
-      "buy_confidence": 40,
-      "report": "🟡 DFTX — Definium Therapeutics, Inc.\nEntry: $45.41\neToro TP Value: $62.54\nShares: 5.51 ($250)\nScanner Potential: +25.0%\nTimeframe: 10–30 days\n\n═══ BUY CONFIDENCE: 40% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 12 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All 12 recorded analysts rate the shares Buy, and long-range revenue and EPS estimates have risen substantially, though those projections are distant and highly uncertain.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend, with price above rising 20-, 50-, and 200-period EMAs. Reclaimed VWAP, expanding bands, positive relative strength, and a moderate RSI support continuation, although monthly options expiry may increase short-term chop.\n🕒 Technical timestamp: 2026-08-21 01:58:11 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🔴 Weak\n🧠 The last three reports show repeated EPS misses, with the latest miss accelerating sharply, while revenue remains absent. Cash and relatively low debt provide some runway, but negative operating and free cash flow remain fundamental weaknesses.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 Traditional earnings and sales valuation support is unavailable because the company is loss-making and reports no revenue, while a price-to-book ratio of 5.47 leaves limited balance-sheet valuation support. The distant growth projections may justify optimism, but they do not offset the current speculative profile.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+76 days)\n🔴 Negative\n🧠 Next earnings are expected on November 5, with consensus EPS still negative at -0.54. The recent pattern of sizable misses makes the event a meaningful downside-volatility risk despite the date being outside the scanner window.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🟡 Neutral\n🧠 Sector: Recent healthcare and biotechnology performance was weak, modestly reducing support for the otherwise strong stock-specific trend.\n🧠 Macro: Risk-on conditions and low volatility help speculative biotechnology, but elevated longer-term yields and a cycle-based headwind can pressure long-duration growth stocks.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strongly supported by a persistent uptrend, pullback structure, and exceptional relative strength. However, repeated earnings misses, no reported revenue, ongoing cash burn, weak industry tone, and uncertain catalysts materially weaken the fundamental backdrop.\n🟢 Key Positive: Strong trend structure, VWAP defense, and broad analyst optimism support the continuation setup.\n🔴 Key Risk: The company remains loss-making with no reported revenue and negative cash flow, making the trade highly sensitive to disappointing results or biotech sentiment.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 44,
+      "report": "🟡 DFTX — Definium Therapeutics, Inc.\nEntry: $45.41\neToro TP Value: $62.54\nShares: 5.51 ($250)\nScanner Potential: +25.0%\nTimeframe: 10–30 days\n\n═══ BUY CONFIDENCE: 44% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 12 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All 12 analysts are rated Buy, while average long-range revenue and EPS estimates have risen materially from the prior forecast set.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend, with price above rising short- and long-term EMAs. Reclaimed VWAP, expanding Bollinger Bands, strong relative strength, and moderate RSI support continuation, though monthly options expiry may cause near-term chop.\n🕒 Technical timestamp: 2026-08-21 04:53:42 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🔴 Weak\n🧠 The last three reports show accelerating EPS losses and repeated misses, worsening from -0.51 to -1.44, with no reported revenue. Cash is substantial relative to debt, but operating and free cash flow remain negative and margins are unavailable.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 Valuation is not supported by current earnings or sales because the company is loss-making and reports no revenue, while price-to-book is elevated at 5.47. The valuation therefore depends heavily on successful future commercialization and the optimistic long-range forecasts.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+76 days)\n🟡 Mixed\n🧠 Next earnings are scheduled for November 5, with a projected EPS loss of -0.54, so the event is not immediate but remains a future catalyst risk. Longer-range estimates point toward substantial revenue and EPS improvement, although the estimates are widely dispersed and near-term forecasts remain unprofitable.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🟡 Neutral\n🧠 Sector: Recent weakness across the broader group weakens the setup despite the stock's strong individual relative strength.\n🧠 Macro: Risk-on conditions and contained volatility are supportive, but elevated Treasury yields and a mildly unfavorable cycle backdrop can pressure speculative biotechnology valuations.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strong: DFTX is pulling back within a powerful uptrend and has materially outperformed SPY. However, worsening earnings misses, no reported revenue, negative cash flow, elevated valuation, and sector weakness materially reduce fundamental support. The setup is tradable on technical strength but carries high execution and event risk.\n🟢 Key Positive: Strong trend structure, relative strength, analyst consensus, and improving long-range estimates support the bullish technical case.\n🔴 Key Risk: Persistent losses, absent revenue, negative cash flow, and dependence on future commercialization make the move vulnerable to sector weakness or disappointing developments.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
