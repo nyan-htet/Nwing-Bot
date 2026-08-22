@@ -1,303 +1,209 @@
 # Nwing-Bot — eToro Long-Only Swing Signal System
 
-Scans a personal universe of US stocks and ETFs, builds a nightly watchlist,
-scans it every 4 hours for technical setups, runs a news/LLM confidence
-check on anything that fires, and delivers alerts by **email + Telegram**,
-with a read-only **web dashboard** and a **backtest page**.
+Scans a personal universe of US stocks/ETFs, builds a nightly watchlist,
+checks it every 4 hours for technical setups, runs an LLM news/confidence
+check on anything that fires, and alerts by **email + Telegram**.
 
 **You execute manually on eToro. The bot never places orders.**
 
-- Signals:  `https://<user>.github.io/<repo>/`
-- Backtest: `https://<user>.github.io/<repo>/backtest.html`
+- Signals: `https://<user>.github.io/<repo>/`
+- Backtest: `.../backtest.html` · Explain a ticker: `.../explain.html` · FMP diagnostic: `.../fmp-check.html`
 
 ---
 
-## 1. Pipeline overview
+## Pipeline
 
 ```
-NIGHTLY (Sun-Thu 22:30 UTC -> watchlist ready for Mon-Fri)
-  tickers.csv (~3,100 symbols)
-    Stage 1 — FMP screener funnel (hard eligibility + tier-ranked budget)
-    Stage 2 — Twelve Data daily trend, SPY preflight, tier score floor
-    Stage 3 — Twelve Data 4H setup trim (pullback / breakout)
-    Stage 4 — options + earnings context, finalize watchlist.json
-    Stage 5 — notify (nightly summary + universe report) + git publish
+NIGHTLY (Sun–Thu 22:30 UTC → watchlist ready for Mon–Fri)
+  Stage 1  FMP screener funnel     hard eligibility + tier-ranked budget
+  Stage 2  Daily trend (TD)        SPY preflight, tier score floor
+  Stage 3  Setup check             4H pullback/breakout OR daily 200MA pullback
+  Stage 4  Context + finalize      options/earnings, writes watchlist.json
+  Stage 5  Notify + publish        nightly summary + universe report email
 
-HOURLY (Mon-Fri, every 4h at :15 UTC, 00:15 through 20:15)
-  watchlist -> 1h/4h technical scan -> new BUY signals -> email only
-  position updates (target reached / thesis broken) -> email + Telegram
-  quiet run -> "NO NEW SIGNAL" summary -> email + Telegram
+HOURLY (Mon–Fri, every 4h at :15 UTC)
+  new BUY signal        → email only
+  target hit / thesis broken → email + Telegram
+  quiet run              → "NO NEW SIGNAL" → email + Telegram
 
-NEWS FOLLOW-UP (auto-triggered after hourly-scan finishes)
-  recently-alerted tickers -> LLM news/analyst read -> confidence score
-  email: every ticker, always, full report
-  telegram: only tickers scoring >=60% confidence
-  cleans alerted.json: removes tickers that scored <60% so they can re-fire
+NEWS FOLLOW-UP (auto, right after hourly-scan)
+  LLM reads news/analysts on recently-alerted tickers → confidence score
+  email: every ticker, always      telegram: only score >= 70%
+  score < 70% → removed from alerted.json (free to re-fire later)
 ```
 
-Nothing in the nightly/hourly/news-followup pipeline is affected by
-backtesting — `backtest_hist.py` only ever writes `docs/backtest.json` and
-`backtest_trades.csv`, and never touches `watchlist.json`, `alerted.json`,
-or any nightly/hourly state file.
+Backtesting is fully isolated — only ever writes `docs/backtest.json` /
+`backtest_trades.csv`, never touches `watchlist.json`, `alerted.json`, or
+any nightly/hourly state.
 
 ---
 
-## 2. Nightly — 5 stages, why each exists
+## Nightly, stage by stage
 
-### Stage 1 — FMP screener funnel
-Two-step design, deliberately loose in step 1:
+**Stage 1 — FMP screener funnel.** Loose on purpose: only rejects sub-$100M
+market cap, no FMP match, invalid price, or an implausible volume/cap
+combo. Survivors are then ranked by market cap within tier (A/B/C) and
+capped as a *budget* (200/200/100, scales with `NIGHTLY_DAILY_STOCK_CAP`) —
+if fewer qualify than the budget, all of them pass through.
+> Liquidity is **not** gated — FMP's `volume` field reads `0` for most
+> symbols (even AAPL/NVDA) on non-realtime plans. No `country: "US"`
+> filter either — it excludes real US-listed names domiciled abroad
+> (Accenture, Linde, foreign-bank ADRs, etc).
 
-- **Hard eligibility** — rejects only: market cap < $100M (Tier D), no FMP
-  match at all, invalid/missing price data, or an implausible
-  volume/market-cap combination. Everything else passes through.
-- **Tier-ranked processing budget** — within each tier, ranks survivors by
-  market cap (reliable) and takes the top N as a *budget*, not a quota: if
-  fewer than N genuinely qualify, all of them pass; the cap only trims
-  genuine excess.
-  - Tier A (>=$10B): up to 200
-  - Tier B ($1B-10B): up to 200
-  - Tier C ($100M-1B): up to 100
-  - Scales proportionally if `NIGHTLY_DAILY_STOCK_CAP` isn't 500.
+**Stage 2 — daily trend.** SPY is fetched first, on its own, hardcoded
+independent of `tickers.csv` — fails fast if the benchmark is down, before
+spending the budget on everything else. Computes a 0–5 trend score + RS vs
+SPY, with a tier floor (A ≥2.0, B ≥2.5, C ≥3.0). Also computes the macro
+reading here (the one point SPY data is guaranteed good).
 
-**Known data-quality caveat:** the FMP `company-screener` endpoint's
-`volume` field reads `0` for most symbols — including real mega-caps like
-AAPL/NVDA/MSFT — on plans without real-time entitlement (confirmed on the
-Starter plan). Because of this, Stage 1 does **not** gate on liquidity —
-only on market cap. `dollar_volume` is still stored per-ticker for
-visibility, just not used to reject anyone. Also: the FMP query
-deliberately has **no `country: "US"` filter** — that filter reflects legal
-domicile, not exchange listing, and was silently excluding real US-listed
-names (Accenture, Linde, Johnson Controls, Eaton, Chubb, TE Connectivity,
-Garmin, and all the foreign-bank ADRs).
+**Stage 3 — setup.** A ticker qualifies on **either**:
+- an active 4H setup (pullback-to-EMA20 or volume breakout), or
+- a **daily 200MA pullback** — 200MA rising, price was ≥8% above it within
+  the last 40 days, now back within 3% and closed *above* it (not below —
+  that's thesis-broken territory, not an entry), ADX ≥20, RS not < -10%.
 
-### Stage 2 — Twelve Data daily technical trend
-- **SPY preflight**: fetched first, on its own, hardcoded independent of
-  `tickers.csv` — never relies on SPY happening to be in the universe list.
-  Fails fast if the benchmark is unavailable, before spending the budget on
-  the other ~500 tickers.
-- Computes a 0-5 daily trend score + relative strength vs SPY for each
-  Stage-1 survivor.
-- **Tier-specific daily score floor** — smaller companies must clear a
-  higher bar: Tier A >= 2.0, Tier B >= 2.5, Tier C >= 3.0
-  (`TIER_A/B/C_DAILY_SCORE_MIN` in `config.py`).
-- Ranks and caps to `cfg.WATCHLIST_SIZE`.
-- Also computes the macro reading (`fnd.macro_context`) here, since this is
-  the one point SPY data is guaranteed good — carried through to the
-  nightly notification's `Macro: risk-on (SPY 20d realized vol X%)` line.
+Capped at `NIGHTLY_4H_STOCK_CAP` (default 150).
 
-### Stage 3 — Twelve Data 4H setup trim
-Fetches 4H bars for Stage-2 survivors, keeps only tickers with an active
-setup (pullback-to-EMA20 or volume breakout), capped at
-`NIGHTLY_4H_STOCK_CAP` (default 150). 1H entry timing is deliberately not
-touched here — hourly owns that.
+**Stage 4 — context + finalize.** Options/earnings context, writes
+`watchlist.json`.
 
-### Stage 4 — context + finalize
-Adds options/earnings context, writes the final `watchlist.json`, and
-compiles the full stock/ETF disposition (`build_universe_report`) for the
-Stage 5 email.
-
-### Stage 5 — notify + publish
-- Nightly summary: full detail to email, condensed to Telegram (the
-  rejected-ticker list alone can run into the thousands of lines — Telegram
-  has a hard 4096-character limit).
-- **Universe report** (separate email): every ticker's fate, tier by tier —
-  watchlist stocks/ETFs by tier, rejected stocks/ETFs by tier with reasons,
-  and unknown/no-data stocks/ETFs (no tier ever established). ETFs don't
-  have a tier concept (they bypass the fundamental funnel entirely), so
-  rejected ETFs is a flat list, not tier-bucketed.
-- Notify failures (email or Telegram down) are logged as warnings, never
-  raised — a delivery hiccup must not block the git-publish step after it.
+**Stage 5 — notify.** Nightly summary: full detail to email, condensed to
+Telegram (rejected-ticker lists can run thousands of lines — Telegram caps
+at 4096 chars). Separate **universe report** email: every ticker's fate,
+tier by tier. Notify failures are logged, never raised — a delivery hiccup
+can't block the git-publish step.
 
 ---
 
-## 3. Hourly
+## Hourly
 
-Runs Mon-Fri, every 4 hours at :15 UTC (00:15 through 20:15) — aligned to
-span Tokyo's Monday open through NY's Friday close.
+Every 4h, :15 UTC, Mon–Fri 00:15–20:15 (spans Tokyo's Monday open to NY's
+Friday close).
 
-- New technical BUY signals -> **email only**. Telegram is reserved for the
-  news-followup's confidence-scored message, so nothing shows up twice
-  (once raw, once scored) or gets stuck unscored forever.
-- Position updates — target reached or thesis broken — go to **both**
-  email and Telegram immediately; these aren't new signals waiting on LLM
-  review.
-  - **Target reached**: the mute clears unconditionally. If the ticker's
-    still in an uptrend on a later scan, it naturally re-fires with a new
-    leg. If the trend's broken, nothing re-fires — no explicit check
-    needed, this falls out of the normal signal-detection logic.
-  - **Thesis broken**: warns once, stays muted (does not clear) — separate
-    path from target-reached.
-- Quiet run ("NO NEW SIGNAL") -> both email and Telegram, and the ticker
-  count is broken out by stock/ETF split.
-
-`alerted.json` is the mute ledger — checked out fresh, updated, and
-committed back each run.
+- New signals → **email only** (Telegram is reserved for the scored
+  follow-up, so nothing shows up raw *and* scored).
+- Target hit / thesis broken → both, immediately. Target hit clears the
+  mute unconditionally — re-fires naturally if still trending, stays quiet
+  if not. Thesis-broken warns once, stays muted.
+- `alerted.json` is the mute ledger.
 
 ---
 
-## 4. News follow-up (`news_llm.py`)
+## News follow-up (`news_llm.py`)
 
-Auto-triggered by `news-followup.yml` right after `hourly-scan` completes,
-on tickers alerted in the last `NEWS_LOOKBACK_MIN` (default 90) minutes.
+Runs on tickers alerted in the last 90 min (`NEWS_LOOKBACK_MIN`).
 
-- Pulls news/analyst/fundamental context, has an LLM assess it, computes a
-  weighted 0-100 confidence score (`buy_confidence`).
-- **Email**: every ticker, always, full report.
-- **Telegram**: only tickers scoring **>=60%** (`TELEGRAM_CONFIDENCE_MIN` in
-  `news_llm.py`). If every ticker in a run is filtered out, Telegram still
-  gets one summary line instead of going silent.
-- **Ledger cleanup**: a ticker that scores below 60% is removed from
-  `alerted.json` — it was never actually surfaced to you, so it shouldn't
-  stay permanently muted. This lets it re-fire on a future hourly scan
-  (only in automatic mode — a manual test run like
-  `python news_llm.py NVDA,UPS` never touches real ledger state).
-- `news_log.csv` (append-only) logs every run including the numeric
-  `buy_confidence` — this is what backtesting's confidence-filtered mode
-  reads from.
-
-### Confidence colors — two separate thresholds, not the same number
-- **Telegram send gate**: `>= 60` (`TELEGRAM_CONFIDENCE_MIN`). Sharp
-  cutoff — a score either clears it or doesn't.
-- **Icon/bar color bands** (visual only, doesn't affect delivery):
-  `< 40` red, `40-65` amber, `65-100` green. A score of 62% *is* sent to
-  Telegram (clears 60) but still renders amber (below the 65 green
-  threshold) — this is intentional, not a bug, but easy to misremember as
-  "the same 60."
+- Email: every ticker, always.
+- Telegram: only **≥70%** confidence (`TELEGRAM_CONFIDENCE_MIN`). All
+  filtered → one summary line instead of silence.
+- Below 70% → removed from `alerted.json`, free to re-fire later.
+- `news_log.csv` (append-only) logs the numeric score — this is what
+  backtest's `conf` mode reads from.
+- Icon/bar color bands (`<40` red, `40–65` amber, `65–100` green) are
+  **visual only** — a 67% score sends nowhere but still shows green.
 
 ---
 
-## 5. Backtesting (`backtest_hist.py` / `backtest.yml`)
+## Backtesting (`backtest_hist.py` / `backtest.yml`)
 
-Fully isolated from production — only ever writes `docs/backtest.json` and
-`backtest_trades.csv`.
+| Mode | What |
+|---|---|
+| `strat` | sector-balanced sample, ignores confidence |
+| number / blank | that many stocks / the whole universe |
+| `conf` | only tickers that ever cleared confidence in `news_log.csv` history, sector-balanced |
 
-**Modes** (`mode` input in `backtest.yml`):
-- `strat` — sector-balanced sample from the whole universe, ignores
-  confidence entirely.
-- a number — that many stocks, blank — the whole universe.
-- `conf` — confidence-filtered: only tickers that have **ever** cleared
-  the confidence bar in `news_log.csv`'s accumulated history (unioned with
-  the latest `docs/news.json` snapshot), picked with the same
-  sector-balancing method as `strat` mode.
+`conf` mode config: `starting_equity`, `position_pct` (0.5–5%), `n_stocks`
++ `n_etfs` (≤200), `years` (≤6), `min_confidence`, `balance_sectors`.
+Standard/`strat` mode now also respects `starting_equity`/`position_pct` —
+they used to be silently ignored outside `conf` mode.
 
-**`conf` mode configuration** (all in `run_confidence_filtered()` /
-`conf_*` workflow inputs):
+`conf` mode is a **snapshot filter, not a historical simulation** — it
+tests today's qualifying tickers against their own real price history, not
+"what if the filter ran for 6 years" (impossible without point-in-time
+historical news data). If the qualifying pool is under 5 tickers, a
+`WARNING` prints — that's a likelier cause of "0 trades" than any cap.
+Dropped-for-short-history tickers are also logged by name.
 
-| Config | Bound | Default |
-|---|---|---|
-| `starting_equity` | none | $10,000 |
-| `position_pct` | 0.5%-5.0% | 2% |
-| `n_stocks` + `n_etfs` | <= 200 total | 35 + 15 |
-| `years` | <= 6 | 6 |
-| `min_confidence` | none | 60 |
-| `balance_sectors` | yes/no | yes |
-
-`docs/backtest.html` shows which mode produced the current results (a
-`Mode: confidence-filtered - ...` or `Mode: standard - ...` line), since
-both modes write to the same `backtest.json` and would otherwise silently
-overwrite each other with no visual distinction.
-
-**Scope limit, stated plainly**: `conf` mode is a *snapshot* filter, not a
-historical simulation. It answers "how has the strategy performed on the
-kind of stocks the LLM currently likes," using each qualifying ticker's
-real historical price data. It does **not** (and can't, without
-point-in-time historical news/analyst data) simulate the confidence filter
-having been running for the past N years.
-
-If the qualifying pool is small (under 5 tickers), a `WARNING` prints —
-results from a tiny pool aren't statistically meaningful, and this is a
-much likelier cause of "0 trades" than any of the caps above.
-
-`sweep.yml` (separate tool) compares strategy variants against buy & hold
-SPY on the same data — a research tool, not part of the live pipeline.
+`sweep.yml` compares strategy variants against buy & hold — research tool,
+not part of the live pipeline.
 
 ---
 
-## 6. Workflows
+## FMP diagnostic (`fmp_check.py` / `fmp-check.yml`)
+
+Standalone, isolated tool — type comma-separated tickers, get a step-by-
+step check of FMP's `profile`/`quote` endpoints for each. Only ever writes
+`docs/fmp_check.json`. Useful for telling apart "FMP is actually down for
+this symbol" from "this is an ETF and doesn't have a company-profile record
+on FMP" (which explain.py's live fallback now correctly skips entirely for
+ETFs, via `is_etf=True`).
+
+---
+
+## Workflows
 
 | Workflow | Trigger | Shares `twelvedata-api` lock? |
 |---|---|---|
-| `nightly.yml` | Sun-Thu 22:30 UTC | yes |
-| `hourly.yml` | Mon-Fri every 4h, :15 UTC | yes |
-| `news-followup.yml` | auto, after `hourly-scan` completes | yes |
+| `nightly.yml` | Sun–Thu 22:30 UTC | yes |
+| `hourly.yml` | Mon–Fri every 4h, :15 UTC | yes |
+| `news-followup.yml` | auto, after `hourly-scan` | yes |
 | `explain.yml` | manual | yes |
 | `check-symbols.yml` | manual | yes |
-| `backtest.yml` | manual | **no** — 180min timeout |
-| `backtest-v2.yml` | manual | **no** |
-| `sweep.yml` | manual | **no** |
+| `fmp-check.yml` | manual | no (FMP only, no TD calls) |
+| `backtest.yml` / `backtest-v2.yml` / `sweep.yml` | manual | **no** — hours-long, would block live runs |
 
-All workflows that touch Twelve Data share one concurrency group
-(`twelvedata-api`) so GitHub Actions queues them instead of letting them
-collide and blow through the per-minute rate limit — e.g. nightly running
-long enough to overlap the next scheduled hourly run.
+All Twelve-Data workflows share one concurrency lock so they queue instead
+of colliding and blowing the per-minute rate limit. Don't manually run
+backtest/sweep while nightly or hourly might be active — they're
+deliberately excluded from the lock.
 
-`backtest*`/`sweep` are deliberately **not** in that lock — they can run
-for hours, and locking them in would block live nightly/hourly for that
-long if triggered at the wrong time. Avoid manually running a
-backtest/sweep while nightly or hourly might be active.
-
-All workflows need `permissions: contents: write` plus repo Settings ->
-Actions -> General -> Workflow permissions -> **Read and write**.
+All workflows need `permissions: contents: write` + repo Settings →
+Actions → General → **Read and write** workflow permissions.
 
 ---
 
-## 7. Secrets
+## Secrets
 
 | Secret | Source |
 |---|---|
 | `TWELVEDATA_KEY` | twelvedata.com |
 | `FMP_KEY` | financialmodelingprep.com |
-| `SMTP_HOST` / `SMTP_PORT` | e.g. `smtp.gmail.com` / `587` |
-| `SMTP_USER` / `SMTP_PASS` | Gmail + App Password |
-| `EMAIL_TO` | recipient |
-| `TELEGRAM_TOKEN` | @BotFather -> `/newbot` |
-| `TELEGRAM_CHAT_ID` | your ID or a channel ID (bot must be admin) |
-| `NEWS_ENABLED` / `LLM_PROVIDER` / provider API key | news-followup config |
+| `SMTP_HOST/PORT/USER/PASS`, `EMAIL_TO` | your email provider |
+| `TELEGRAM_TOKEN`, `TELEGRAM_CHAT_ID` | @BotFather |
+| `NEWS_ENABLED`, `LLM_PROVIDER` + key | news-followup |
 
-`TWELVEDATA_MIN_INTERVAL` (env var, seconds/request) tunes request spacing
-to your actual plan's per-minute limit if the default (1.6s, safe for a
-55/min plan) doesn't match. `NIGHTLY_DAILY_STOCK_CAP` and
-`NIGHTLY_4H_STOCK_CAP` tune the Stage 1 / Stage 3 processing budgets.
+`TWELVEDATA_MIN_INTERVAL` (env, seconds/request) tunes spacing to your
+plan. `NIGHTLY_DAILY_STOCK_CAP` / `NIGHTLY_4H_STOCK_CAP` tune Stage 1/3
+budgets.
 
 ---
 
-## 8. Files
+## Files
 
 ```
-nightly.py             5-stage nightly orchestration (universe -> watchlist)
-scan.py                hourly technical scan + notification delivery
-news_llm.py             news-followup: LLM confidence scoring
-analysis.py            trend, setups, quality score
-indicators.py           EMA/ATR/ADX/RSI/Bollinger/VWAP, fib extensions
-data.py                Twelve Data client (throttled, retries, progress log)
-fundamentals.py         FMP screener funnel + earnings calendar + macro
-alerts_ledger.py        alerted.json — mutes a ticker until cleared
-notify.py               email + Telegram formatting, delivery
-universe.py             reads tickers.csv
-backtest_hist.py        standard + confidence-filtered + stratified backtest
-backtest_v2.py          stop-loss + time-boxed variant
-sweep.py                strategy variant comparison
-check_symbols.py        Twelve Data availability probe
-tickers.csv             YOUR UNIVERSE — edit this
-alerted.json            which tickers are currently muted
-news_log.csv            append-only log of every news-followup run
-watchlist.json          current nightly watchlist
-docs/index.html         read-only signals dashboard
-docs/backtest.html      backtest results (mode-labeled)
+nightly.py         5-stage nightly orchestration
+scan.py            hourly scan + delivery
+news_llm.py        LLM confidence follow-up
+analysis.py        trend, setups (4H + daily 200MA), quality score
+fundamentals.py    FMP screener funnel, earnings, macro
+alerts_ledger.py   alerted.json — mute-until-cleared
+notify.py          email + Telegram formatting/delivery
+backtest_hist.py   standard + confidence-filtered + stratified backtest
+fmp_check.py       standalone FMP data-availability diagnostic
+explain.py         single-ticker gate-by-gate walkthrough
+tickers.csv        YOUR UNIVERSE — edit this
+alerted.json       current mutes
+watchlist.json     current nightly watchlist
 ```
 
 ---
 
-## 9. Honest notes
+## Honest notes
 
-- **Decision support, not financial advice.** You own every trade.
-- Confidence scores (`buy_confidence`) are a weighted composite from an
-  LLM's read of news/analyst/fundamental context — not a probability,
-  never a new trading signal on their own.
-- Backtests use daily bars — no 1h trigger, no VWAP factor — and the
-  universe is inherently survivor-biased. Real results will differ from
-  any backtest here, and `conf` mode specifically is a snapshot filter, not
-  a historical replay (see section 5).
-- No stop-loss — "thesis broken" alerts exist so you're never blindsided,
-  but a broken position can otherwise sit at a loss indefinitely. Acting on
-  a thesis-broken alert is your call.
+- Decision support, not financial advice — you own every trade.
+- Confidence scores are a weighted LLM composite, not a probability, never
+  a signal on their own.
+- Backtests use daily bars (no 1h trigger/VWAP) and are survivor-biased —
+  real results will differ.
+- No stop-loss. "Thesis broken" alerts exist so you're never blindsided,
+  but acting on one is your call.
