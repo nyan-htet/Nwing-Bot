@@ -239,3 +239,11 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-24 05:04 UTC,ECL,openai,True,3,0,NO_NEWS,mixed,pullback continuation,55
 2026-08-24 05:04 UTC,DBX,openai,True,3,6,OK,mixed,pullback continuation,52
 2026-08-24 05:04 UTC,ALOY,openai,True,3,0,NO_NEWS,caution,pullback continuation,36
+2026-08-24 09:07 UTC,SHOP,openai,True,3,0,NO_NEWS,mixed,pullback continuation,58
+2026-08-24 09:07 UTC,SAN,openai,True,3,0,NO_NEWS,supportive,pullback continuation,66
+2026-08-24 09:07 UTC,PTGX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,52
+2026-08-24 09:07 UTC,NAVN,openai,True,3,0,NO_NEWS,mixed,pullback continuation,55
+2026-08-24 09:07 UTC,HSTM,openai,True,3,0,NO_NEWS,mixed,pullback continuation,50
+2026-08-24 09:07 UTC,ECL,openai,True,3,0,NO_NEWS,mixed,pullback continuation,55
+2026-08-24 09:07 UTC,DBX,openai,True,3,6,OK,mixed,pullback continuation,50
+2026-08-24 09:07 UTC,ALOY,openai,True,3,0,NO_NEWS,caution,pullback continuation,42
