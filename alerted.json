@@ -15,7 +15,7 @@
   "KRT": {
     "alerted": "2026-08-21T01:58:11.337366+00:00",
     "entry": 47.57,
-    "scans_muted": 10,
+    "scans_muted": 11,
     "thesis_warned": false,
     "tp": 58.66
   },
@@ -26,11 +26,23 @@
     "thesis_warned": false,
     "tp": 173.37
   },
+  "PTGX": {
+    "alerted": "2026-08-24T20:49:58.238336+00:00",
+    "entry": 154.68,
+    "thesis_warned": false,
+    "tp": 180.66
+  },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
-    "scans_muted": 13,
+    "scans_muted": 14,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "VTV": {
+    "alerted": "2026-08-24T20:49:58.555039+00:00",
+    "entry": 226.69,
+    "thesis_warned": false,
+    "tp": 264.73
   }
 }
