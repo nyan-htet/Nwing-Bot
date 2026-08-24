@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T05:02:13.500887+00:00",
+  "generated": "2026-08-24T09:05:01.713046+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.1
@@ -62,7 +62,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-24T05:02:04.145190+00:00"
+      "time": "2026-08-24T09:04:46.952072+00:00"
     },
     {
       "ticker": "DBX",
@@ -117,7 +117,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-24T05:02:04.336583+00:00"
+      "time": "2026-08-24T09:04:47.102436+00:00"
     },
     {
       "ticker": "ECL",
@@ -171,7 +171,7 @@
         "quality +0.73 (rsi +1.0, bb +1.0, vwap +0.3, vol +0.2, opt +0.0; RSI=53.1)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-24T05:02:04.403466+00:00"
+      "time": "2026-08-24T09:04:47.154911+00:00"
     },
     {
       "ticker": "HSTM",
@@ -226,7 +226,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-24T05:02:04.606120+00:00"
+      "time": "2026-08-24T09:04:47.315050+00:00"
     },
     {
       "ticker": "NAVN",
@@ -281,7 +281,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-24T05:02:04.796301+00:00"
+      "time": "2026-08-24T09:04:47.465596+00:00"
     },
     {
       "ticker": "PTGX",
@@ -336,7 +336,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-24T05:02:04.837795+00:00"
+      "time": "2026-08-24T09:04:47.498513+00:00"
     },
     {
       "ticker": "SAN",
@@ -390,7 +390,7 @@
         "quality +0.81 (rsi +1.0, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=58.1)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-24T05:02:04.903020+00:00"
+      "time": "2026-08-24T09:04:47.550569+00:00"
     },
     {
       "ticker": "SHOP",
@@ -444,7 +444,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-24T05:02:04.944235+00:00"
+      "time": "2026-08-24T09:04:47.583287+00:00"
     }
   ],
   "position_alerts": []
