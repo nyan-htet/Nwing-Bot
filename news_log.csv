@@ -255,3 +255,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-24 13:16 UTC,ECL,openai,True,3,0,NO_NEWS,mixed,pullback continuation,55
 2026-08-24 13:16 UTC,DBX,openai,True,3,6,OK,mixed,pullback continuation,50
 2026-08-24 13:16 UTC,ALOY,openai,True,3,0,NO_NEWS,caution,pullback continuation,42
+2026-08-24 20:50 UTC,VTV,openai,True,0,0,NO_NEWS,mixed,pullback continuation,50
+2026-08-24 20:50 UTC,PTGX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,52
