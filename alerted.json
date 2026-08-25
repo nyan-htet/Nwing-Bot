@@ -2,7 +2,7 @@
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 7,
+    "scans_muted": 8,
     "thesis_warned": false,
     "tp": 77.16
   },
@@ -29,8 +29,14 @@
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
-    "scans_muted": 18,
+    "scans_muted": 19,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "ROST": {
+    "alerted": "2026-08-25T17:00:43.807252+00:00",
+    "entry": 240.99,
+    "thesis_warned": false,
+    "tp": 289.6
   }
 }
