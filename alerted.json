@@ -32,11 +32,5 @@
     "scans_muted": 19,
     "thesis_warned": false,
     "tp": 30.46
-  },
-  "ROST": {
-    "alerted": "2026-08-25T17:00:43.807252+00:00",
-    "entry": 240.99,
-    "thesis_warned": false,
-    "tp": 289.6
   }
 }
