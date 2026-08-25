@@ -2,7 +2,7 @@
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "thesis_warned": false,
     "tp": 77.16
   },
@@ -19,6 +19,12 @@
     "thesis_warned": false,
     "tp": 58.66
   },
+  "KYMR": {
+    "alerted": "2026-08-25T09:02:29.441158+00:00",
+    "entry": 121.08,
+    "thesis_warned": false,
+    "tp": 146.48
+  },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
@@ -26,11 +32,35 @@
     "thesis_warned": false,
     "tp": 173.37
   },
+  "PTGX": {
+    "alerted": "2026-08-25T09:02:29.609939+00:00",
+    "entry": 154.71,
+    "thesis_warned": false,
+    "tp": 180.66
+  },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
-    "scans_muted": 16,
+    "scans_muted": 17,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "ROST": {
+    "alerted": "2026-08-25T09:02:29.657858+00:00",
+    "entry": 241.5,
+    "thesis_warned": false,
+    "tp": 289.6
+  },
+  "VTV": {
+    "alerted": "2026-08-25T09:02:29.983694+00:00",
+    "entry": 226.69,
+    "thesis_warned": false,
+    "tp": 264.73
+  },
+  "XOM": {
+    "alerted": "2026-08-25T09:02:30.062150+00:00",
+    "entry": 164.07,
+    "thesis_warned": false,
+    "tp": 194.18
   }
 }
