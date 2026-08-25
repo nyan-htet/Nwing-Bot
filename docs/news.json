@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-25 04:55 UTC",
+  "generated": "2026-08-25 09:03 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "XOM",
       "alert": {
-        "alerted": "2026-08-25T04:54:19.617477+00:00",
+        "alerted": "2026-08-25T09:02:30.062150+00:00",
         "entry": 164.07,
         "thesis_warned": false,
         "tp": 194.18
@@ -69,7 +69,7 @@
           "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=57.8)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-25T04:54:19.617445+00:00"
+        "time": "2026-08-25T09:02:30.062117+00:00"
       },
       "profile": {
         "symbol": "XOM",
@@ -507,19 +507,6 @@
           {
             "date": "2026-08-25 02:35:00",
             "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.8425,
-            "estimate": null,
-            "actual": 2.8499,
-            "change": 0.0074,
-            "impact": "Low",
-            "changePercentage": 0.26,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 02:35:00",
-            "country": "NZ",
             "event": "1-Year Bill Auction",
             "currency": "NZD",
             "previous": 3.4,
@@ -528,6 +515,19 @@
             "change": null,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 02:35:00",
+            "country": "NZ",
+            "event": "3-Month Bill Auction",
+            "currency": "NZD",
+            "previous": 2.8425,
+            "estimate": null,
+            "actual": 2.8499,
+            "change": 0.0074,
+            "impact": "Low",
+            "changePercentage": 0.26,
             "unit": "%"
           },
           {
@@ -558,19 +558,6 @@
           },
           {
             "date": "2026-08-25 04:00:00",
-            "country": "TH",
-            "event": "New Car Sales YoY (Jul)",
-            "currency": "THB",
-            "previous": 17.26,
-            "estimate": null,
-            "actual": 20.07,
-            "change": 2.81,
-            "impact": "Low",
-            "changePercentage": 16.28,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 04:00:00",
             "country": "KG",
             "event": "Interest Rate Decision",
             "currency": "KGS",
@@ -580,6 +567,19 @@
             "change": 0,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 04:00:00",
+            "country": "TH",
+            "event": "New Car Sales YoY (Jul)",
+            "currency": "THB",
+            "previous": 17.26,
+            "estimate": null,
+            "actual": 20.07,
+            "change": 2.81,
+            "impact": "Low",
+            "changePercentage": 16.28,
             "unit": "%"
           },
           {
@@ -597,28 +597,15 @@
           },
           {
             "date": "2026-08-25 05:00:00",
-            "country": "FI",
-            "event": "Unemployment Rate (Jul)",
-            "currency": "EUR",
-            "previous": 10,
-            "estimate": 9.8,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 05:00:00",
             "country": "SG",
             "event": "MAS 12-Week Bill Auction",
             "currency": "SGD",
             "previous": 1.47,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.49,
+            "change": 0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 1.361,
             "unit": "%"
           },
           {
@@ -628,35 +615,48 @@
             "currency": "SGD",
             "previous": 1.42,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.4,
+            "change": -0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -1.408,
             "unit": "%"
+          },
+          {
+            "date": "2026-08-25 05:00:00",
+            "country": "JP",
+            "event": "Coincident Index (Jun)",
+            "currency": "JPY",
+            "previous": 117.9,
+            "estimate": 118.2,
+            "actual": 118.5,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 0.509,
+            "unit": null
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, not a fresh breakout. Strong trend strength, bullish EMA alignment, VWAP recovery, and moderate RSI leave room for continuation, although momentum is easing.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, not a fresh breakout. Price remains above rising key EMAs, has reclaimed VWAP, and shows strong trend strength with only moderate RSI.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "Results were mixed: the latest EPS missed estimates by 4.3% after a strong prior beat, while the supplied revenue and net income figures were flat across periods. Margins remain solid, and operating cash flow and free cash flow provide fundamental support.",
-        "earnings_assessment": "unknown",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around event timing. Forward revenue and EPS estimates have risen, but any unannounced earnings event remains a near-term volatility risk.",
+        "financial_interpretation": "Results are mixed: the latest EPS missed estimates by 4.3% after two prior beats, while reported revenue and net income were flat across the displayed periods. Margins remain solid, and operating cash flow and free cash flow provide fundamental support.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around event timing and risk. Forward revenue and EPS estimates have risen, but the latest earnings miss tempers confidence.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "Ratings are Hold by consensus with substantially more Holds than Buys, despite upward revisions to forward revenue and EPS estimates.",
+        "analyst_interpretation": "Ratings lean Hold, although forward revenue and EPS estimates have increased modestly.",
         "valuation_assessment": "reasonable",
-        "valuation_interpretation": "The valuation is not an obvious catalyst, with a trailing P/E above 21 and price-to-sales near 1.9. Without industry or historical comparables, it is better viewed as reasonable but unlikely to provide much margin for disappointment.",
+        "valuation_interpretation": "The valuation is not obviously excessive, but a trailing P/E above 21 offers limited margin for an oil-sensitive business without clear near-term growth acceleration.",
         "news_assessment": "mixed",
-        "news_interpretation": "Growth initiatives in Guyana, automation, and specialty chemicals are constructive, but a potential multibillion-dollar chemicals acquisition could add execution and capital-allocation risk. Recent oil-price weakness is the more immediate pressure on sentiment and earnings sensitivity.",
+        "news_interpretation": "Guyana growth, automated drilling, and specialty-material expansion are constructive, but a potential multibillion-dollar chemicals acquisition could add execution and capital-allocation risk. Recent oil weakness also remains a direct pressure on XOM shares.",
         "sector_assessment": "neutral",
-        "sector_interpretation": "Industry performance is supportive, but broader energy-sector weakness makes the sector backdrop mixed rather than a clear tailwind.",
+        "sector_interpretation": "The integrated-oil industry has been supportive recently, but broader energy weakness makes the sector backdrop mixed rather than clearly confirming.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated longer-term yields and a mildly unfavorable cycle backdrop can limit valuation expansion, even though overall volatility and risk conditions are currently manageable.",
+        "macro_interpretation": "No major U.S. macro catalyst is listed; elevated long-term yields and a mildly adverse cycle backdrop are modest headwinds for the setup.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is strong and resembles a well-supported pullback continuation, with trend and relative strength favoring the setup. Fundamentals and estimates provide support but are not accelerating cleanly, while oil sensitivity, uncertain earnings timing, valuation, and yields argue for caution rather than conviction.",
-        "key_positive": "Strong trend structure, cash generation, upward estimate revisions, and constructive production-growth news support continuation.",
-        "key_risk": "Oil-price weakness combined with the latest EPS miss and uncertain earnings timing could quickly undermine the technical pullback setup.",
+        "overall_summary": "The technical signal is strong and resembles a defended pullback continuation, supported by trend strength and relative outperformance. Fundamental and catalyst support is mixed because of the latest earnings miss, oil-price sensitivity, uncertain earnings timing, and potential acquisition risk.",
+        "key_positive": "Strong trend structure, cash generation, raised forward estimates, and constructive production-growth news support continuation.",
+        "key_risk": "A renewed oil decline or disappointing earnings could undermine the technically bullish setup, especially with valuation no longer clearly cheap.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -667,17 +667,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2882
+          "chars": 2653
         }
       ],
       "is_etf": false,
       "buy_confidence": 48,
-      "report": "🟡 XOM — Exxon Mobil Corporation\nEntry: $164.07\neToro TP Value: $45.77\nShares: 1.52 ($249)\nScanner Potential: +18.4%\nTimeframe: 21–44 days\n\n═══ BUY CONFIDENCE: 48% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 1 | Buy: 22 | Hold: 28 | Sell: 4 | Strong Sell: 0\n🧠 Ratings are Hold by consensus with substantially more Holds than Buys, despite upward revisions to forward revenue and EPS estimates.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, not a fresh breakout. Strong trend strength, bullish EMA alignment, VWAP recovery, and moderate RSI leave room for continuation, although momentum is easing.\n🕒 Technical timestamp: 2026-08-25 04:54:19 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 Results were mixed: the latest EPS missed estimates by 4.3% after a strong prior beat, while the supplied revenue and net income figures were flat across periods. Margins remain solid, and operating cash flow and free cash flow provide fundamental support.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The valuation is not an obvious catalyst, with a trailing P/E above 21 and price-to-sales near 1.9. Without industry or historical comparables, it is better viewed as reasonable but unlikely to provide much margin for disappointment.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around event timing. Forward revenue and EPS estimates have risen, but any unannounced earnings event remains a near-term volatility risk.\n\n═══ RECENT NEWS ═══\n• 2026-08-24 17:15 UTC — ExxonMobil Is Eyeing a Potential $8 Billion Bet on Shell's U.S. Chemical Plants. Here's What It Means for XOM Stock.\n• 2026-08-24 14:19 UTC — Exxon Drops as Oil Retreats From $94\n• 2026-08-24 14:10 UTC — 3 Dividend Stocks to Buy and Hold for the Next Decade, Starting With Chevron\n• 2026-08-24 13:30 UTC — ExxonMobil vs. Chevron: We Compared 10 Years of Dividend Growth And Here's the Winner\n• 2026-08-24 12:26 UTC — This Smaller Energy Stock Can Outshine ExxonMobil: Is it a Buy?\n🟡 Growth initiatives in Guyana, automation, and specialty chemicals are constructive, but a potential multibillion-dollar chemicals acquisition could add execution and capital-allocation risk. Recent oil-price weakness is the more immediate pressure on sentiment and earnings sensitivity.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: Industry performance is supportive, but broader energy-sector weakness makes the sector backdrop mixed rather than a clear tailwind.\n🧠 Macro: Elevated longer-term yields and a mildly unfavorable cycle backdrop can limit valuation expansion, even though overall volatility and risk conditions are currently manageable.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strong and resembles a well-supported pullback continuation, with trend and relative strength favoring the setup. Fundamentals and estimates provide support but are not accelerating cleanly, while oil sensitivity, uncertain earnings timing, valuation, and yields argue for caution rather than conviction.\n🟢 Key Positive: Strong trend structure, cash generation, upward estimate revisions, and constructive production-growth news support continuation.\n🔴 Key Risk: Oil-price weakness combined with the latest EPS miss and uncertain earnings timing could quickly undermine the technical pullback setup.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 XOM — Exxon Mobil Corporation\nEntry: $164.07\neToro TP Value: $45.77\nShares: 1.52 ($249)\nScanner Potential: +18.4%\nTimeframe: 21–44 days\n\n═══ BUY CONFIDENCE: 48% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 1 | Buy: 22 | Hold: 28 | Sell: 4 | Strong Sell: 0\n🧠 Ratings lean Hold, although forward revenue and EPS estimates have increased modestly.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, not a fresh breakout. Price remains above rising key EMAs, has reclaimed VWAP, and shows strong trend strength with only moderate RSI.\n🕒 Technical timestamp: 2026-08-25 09:02:30 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 Results are mixed: the latest EPS missed estimates by 4.3% after two prior beats, while reported revenue and net income were flat across the displayed periods. Margins remain solid, and operating cash flow and free cash flow provide fundamental support.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The valuation is not obviously excessive, but a trailing P/E above 21 offers limited margin for an oil-sensitive business without clear near-term growth acceleration.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around event timing and risk. Forward revenue and EPS estimates have risen, but the latest earnings miss tempers confidence.\n\n═══ RECENT NEWS ═══\n• 2026-08-24 17:15 UTC — ExxonMobil Is Eyeing a Potential $8 Billion Bet on Shell's U.S. Chemical Plants. Here's What It Means for XOM Stock.\n• 2026-08-24 14:19 UTC — Exxon Drops as Oil Retreats From $94\n• 2026-08-24 14:10 UTC — 3 Dividend Stocks to Buy and Hold for the Next Decade, Starting With Chevron\n• 2026-08-24 13:30 UTC — ExxonMobil vs. Chevron: We Compared 10 Years of Dividend Growth And Here's the Winner\n• 2026-08-24 12:26 UTC — This Smaller Energy Stock Can Outshine ExxonMobil: Is it a Buy?\n🟡 Guyana growth, automated drilling, and specialty-material expansion are constructive, but a potential multibillion-dollar chemicals acquisition could add execution and capital-allocation risk. Recent oil weakness also remains a direct pressure on XOM shares.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: The integrated-oil industry has been supportive recently, but broader energy weakness makes the sector backdrop mixed rather than clearly confirming.\n🧠 Macro: No major U.S. macro catalyst is listed; elevated long-term yields and a mildly adverse cycle backdrop are modest headwinds for the setup.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strong and resembles a defended pullback continuation, supported by trend strength and relative outperformance. Fundamental and catalyst support is mixed because of the latest earnings miss, oil-price sensitivity, uncertain earnings timing, and potential acquisition risk.\n🟢 Key Positive: Strong trend structure, cash generation, raised forward estimates, and constructive production-growth news support continuation.\n🔴 Key Risk: A renewed oil decline or disappointing earnings could undermine the technically bullish setup, especially with valuation no longer clearly cheap.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "VTV",
       "alert": {
-        "alerted": "2026-08-25T04:54:19.549861+00:00",
+        "alerted": "2026-08-25T09:02:29.983694+00:00",
         "entry": 226.69,
         "thesis_warned": false,
         "tp": 264.73
@@ -734,7 +734,7 @@
           "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=58.6)",
           "(us-value)"
         ],
-        "time": "2026-08-25T04:54:19.549826+00:00"
+        "time": "2026-08-25T09:02:29.983665+00:00"
       },
       "profile": {
         "symbol": "VTV",
@@ -805,7 +805,7 @@
           "date": "2026-08-25",
           "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": -0.06178684979556426
+          "averageChange": -0.06187592425969113
         },
         "industry_snapshot": {}
       },
@@ -897,19 +897,6 @@
           {
             "date": "2026-08-25 02:35:00",
             "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.8425,
-            "estimate": null,
-            "actual": 2.8499,
-            "change": 0.0074,
-            "impact": "Low",
-            "changePercentage": 0.26,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 02:35:00",
-            "country": "NZ",
             "event": "1-Year Bill Auction",
             "currency": "NZD",
             "previous": 3.4,
@@ -918,6 +905,19 @@
             "change": null,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 02:35:00",
+            "country": "NZ",
+            "event": "3-Month Bill Auction",
+            "currency": "NZD",
+            "previous": 2.8425,
+            "estimate": null,
+            "actual": 2.8499,
+            "change": 0.0074,
+            "impact": "Low",
+            "changePercentage": 0.26,
             "unit": "%"
           },
           {
@@ -948,19 +948,6 @@
           },
           {
             "date": "2026-08-25 04:00:00",
-            "country": "TH",
-            "event": "New Car Sales YoY (Jul)",
-            "currency": "THB",
-            "previous": 17.26,
-            "estimate": null,
-            "actual": 20.07,
-            "change": 2.81,
-            "impact": "Low",
-            "changePercentage": 16.28,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 04:00:00",
             "country": "KG",
             "event": "Interest Rate Decision",
             "currency": "KGS",
@@ -970,6 +957,19 @@
             "change": 0,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 04:00:00",
+            "country": "TH",
+            "event": "New Car Sales YoY (Jul)",
+            "currency": "THB",
+            "previous": 17.26,
+            "estimate": null,
+            "actual": 20.07,
+            "change": 2.81,
+            "impact": "Low",
+            "changePercentage": 16.28,
             "unit": "%"
           },
           {
@@ -987,28 +987,15 @@
           },
           {
             "date": "2026-08-25 05:00:00",
-            "country": "FI",
-            "event": "Unemployment Rate (Jul)",
-            "currency": "EUR",
-            "previous": 10,
-            "estimate": 9.8,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 05:00:00",
             "country": "SG",
             "event": "MAS 12-Week Bill Auction",
             "currency": "SGD",
             "previous": 1.47,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.49,
+            "change": 0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 1.361,
             "unit": "%"
           },
           {
@@ -1018,35 +1005,48 @@
             "currency": "SGD",
             "previous": 1.42,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.4,
+            "change": -0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -1.408,
             "unit": "%"
+          },
+          {
+            "date": "2026-08-25 05:00:00",
+            "country": "JP",
+            "event": "Coincident Index (Jun)",
+            "currency": "JPY",
+            "previous": 117.9,
+            "estimate": 118.2,
+            "actual": 118.5,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 0.509,
+            "unit": null
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price is above rising short- and long-term EMAs, has reclaimed VWAP, is outperforming SPY, and shows constructive but not overbought RSI.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price remains above rising short- and long-term EMAs, has reclaimed VWAP, and is outperforming SPY without appearing materially overbought.",
         "financial_assessment": "not_applicable",
-        "financial_interpretation": "Quarterly company financial results are unavailable and are not directly applicable to this diversified ETF. There is therefore no supplied evidence of earnings acceleration, margin change, cash-flow improvement, or deterioration.",
+        "financial_interpretation": "VTV is an ETF, and no quarterly financial results were supplied. Company-level acceleration, margins, cash flow, or earnings surprises therefore cannot be assessed directly.",
         "earnings_assessment": "unknown",
-        "earnings_interpretation": "No next earnings date or forward estimates are available, and the ETF has no single-company earnings event. Event-specific earnings risk cannot be assessed from the supplied data.",
+        "earnings_interpretation": "No earnings date or forward expectations are available. ETF-level event risk from scheduled earnings is therefore unclear, although underlying holdings can still create indirect volatility.",
         "analyst_assessment": "unknown",
-        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable, so there is no external consensus signal.",
+        "analyst_interpretation": "Analyst ratings and estimate direction were unavailable, so there is no external consensus confirmation.",
         "valuation_assessment": "unknown",
-        "valuation_interpretation": "ETF valuation data is unavailable. Valuation cannot therefore be confirmed as a support or headwind.",
+        "valuation_interpretation": "No valuation data was supplied for the ETF or its holdings. Valuation cannot be confirmed as a support or headwind.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable company-specific news was returned. There is no identified news catalyst or material headline risk in the supplied data.",
-        "sector_assessment": "headwind",
-        "sector_interpretation": "Recent weakness in the broader financial-services backdrop modestly weakens the setup, although it does not override VTV's relative strength.",
+        "news_interpretation": "No usable recent company-specific news was returned. There is no identified headline catalyst or event risk from the supplied data.",
+        "sector_assessment": "neutral",
+        "sector_interpretation": "Recent sector performance was essentially flat, offering limited confirmation but not a meaningful challenge to the setup.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "No major U.S. macro event is supplied, but elevated Treasury yields and a cyclical headwind keep the macro backdrop from being fully supportive.",
+        "macro_interpretation": "Neutral volatility helps, but elevated long-term yields and a flagged unfavorable cycle backdrop can pressure value-oriented assets and limit upside follow-through.",
         "overall_assessment": "supportive",
-        "overall_summary": "The strong daily trend, positive relative strength, VWAP reclaim, and controlled pullback support the scanner's bullish continuation signal. Fundamental, valuation, analyst, and earnings confirmation is unavailable, while softer sector conditions and elevated yields are the main external risks.",
-        "key_positive": "VTV combines a persistent uptrend with outperformance versus SPY and a non-overextended pullback.",
-        "key_risk": "Weak financial-sector breadth, elevated yields, and the absence of fundamental or valuation confirmation could limit follow-through.",
+        "overall_summary": "The technical signal is well supported as a pullback continuation in a strong, outperforming uptrend. Fundamental and catalyst confirmation is limited because ETF earnings, valuation, ratings, and news data are unavailable, while rates provide a moderate macro headwind.",
+        "key_positive": "Strong trend structure, VWAP reclaim, contracting volatility, and relative outperformance support continuation.",
+        "key_risk": "Limited fundamental confirmation and elevated bond yields could weaken follow-through despite the constructive technical trend.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1057,17 +1057,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2424
+          "chars": 2386
         }
       ],
       "is_etf": true,
-      "buy_confidence": 54,
-      "report": "🟡 VTV — Vanguard Morningstar Value ETF\nEntry: $226.69\neToro TP Value: $41.84\nShares: 1.10 ($249)\nScanner Potential: +16.8%\nTimeframe: 60–119 days\n\n═══ BUY CONFIDENCE: 54% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable, so there is no external consensus signal.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price is above rising short- and long-term EMAs, has reclaimed VWAP, is outperforming SPY, and shows constructive but not overbought RSI.\n🕒 Technical timestamp: 2026-08-25 04:54:19 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 ETF valuation data is unavailable. Valuation cannot therefore be confirmed as a support or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimates are available, and the ETF has no single-company earnings event. Event-specific earnings risk cannot be assessed from the supplied data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent weakness in the broader financial-services backdrop modestly weakens the setup, although it does not override VTV's relative strength.\n🧠 Macro: No major U.S. macro event is supplied, but elevated Treasury yields and a cyclical headwind keep the macro backdrop from being fully supportive.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The strong daily trend, positive relative strength, VWAP reclaim, and controlled pullback support the scanner's bullish continuation signal. Fundamental, valuation, analyst, and earnings confirmation is unavailable, while softer sector conditions and elevated yields are the main external risks.\n🟢 Key Positive: VTV combines a persistent uptrend with outperformance versus SPY and a non-overextended pullback.\n🔴 Key Risk: Weak financial-sector breadth, elevated yields, and the absence of fundamental or valuation confirmation could limit follow-through.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 56,
+      "report": "🟡 VTV — Vanguard Morningstar Value ETF\nEntry: $226.69\neToro TP Value: $41.84\nShares: 1.10 ($249)\nScanner Potential: +16.8%\nTimeframe: 60–119 days\n\n═══ BUY CONFIDENCE: 56% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction were unavailable, so there is no external consensus confirmation.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price remains above rising short- and long-term EMAs, has reclaimed VWAP, and is outperforming SPY without appearing materially overbought.\n🕒 Technical timestamp: 2026-08-25 09:02:29 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation data was supplied for the ETF or its holdings. Valuation cannot be confirmed as a support or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No earnings date or forward expectations are available. ETF-level event risk from scheduled earnings is therefore unclear, although underlying holdings can still create indirect volatility.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector performance was essentially flat, offering limited confirmation but not a meaningful challenge to the setup.\n🧠 Macro: Neutral volatility helps, but elevated long-term yields and a flagged unfavorable cycle backdrop can pressure value-oriented assets and limit upside follow-through.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The technical signal is well supported as a pullback continuation in a strong, outperforming uptrend. Fundamental and catalyst confirmation is limited because ETF earnings, valuation, ratings, and news data are unavailable, while rates provide a moderate macro headwind.\n🟢 Key Positive: Strong trend structure, VWAP reclaim, contracting volatility, and relative outperformance support continuation.\n🔴 Key Risk: Limited fundamental confirmation and elevated bond yields could weaken follow-through despite the constructive technical trend.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "ROST",
       "alert": {
-        "alerted": "2026-08-25T04:54:19.255562+00:00",
+        "alerted": "2026-08-25T09:02:29.657858+00:00",
         "entry": 241.5,
         "thesis_warned": false,
         "tp": 289.6
@@ -1125,7 +1125,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-25T04:54:19.255531+00:00"
+        "time": "2026-08-25T09:02:29.657829+00:00"
       },
       "profile": {
         "symbol": "ROST",
@@ -1137,7 +1137,7 @@
         "change": 2.48,
         "changePercentage": 1.03748,
         "volume": 2594943,
-        "averageVolume": 2894415,
+        "averageVolume": 2904341,
         "companyName": "Ross Stores, Inc.",
         "currency": "USD",
         "cik": "0000745732",
@@ -1432,7 +1432,7 @@
           "date": "2026-08-25",
           "sector": "Consumer Cyclical",
           "exchange": "NASDAQ",
-          "averageChange": -0.35045719092845484
+          "averageChange": -0.3504571551813829
         },
         "industry_snapshot": {
           "date": "2026-08-25",
@@ -1529,19 +1529,6 @@
           {
             "date": "2026-08-25 02:35:00",
             "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.8425,
-            "estimate": null,
-            "actual": 2.8499,
-            "change": 0.0074,
-            "impact": "Low",
-            "changePercentage": 0.26,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 02:35:00",
-            "country": "NZ",
             "event": "1-Year Bill Auction",
             "currency": "NZD",
             "previous": 3.4,
@@ -1550,6 +1537,19 @@
             "change": null,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 02:35:00",
+            "country": "NZ",
+            "event": "3-Month Bill Auction",
+            "currency": "NZD",
+            "previous": 2.8425,
+            "estimate": null,
+            "actual": 2.8499,
+            "change": 0.0074,
+            "impact": "Low",
+            "changePercentage": 0.26,
             "unit": "%"
           },
           {
@@ -1580,19 +1580,6 @@
           },
           {
             "date": "2026-08-25 04:00:00",
-            "country": "TH",
-            "event": "New Car Sales YoY (Jul)",
-            "currency": "THB",
-            "previous": 17.26,
-            "estimate": null,
-            "actual": 20.07,
-            "change": 2.81,
-            "impact": "Low",
-            "changePercentage": 16.28,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 04:00:00",
             "country": "KG",
             "event": "Interest Rate Decision",
             "currency": "KGS",
@@ -1602,6 +1589,19 @@
             "change": 0,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 04:00:00",
+            "country": "TH",
+            "event": "New Car Sales YoY (Jul)",
+            "currency": "THB",
+            "previous": 17.26,
+            "estimate": null,
+            "actual": 20.07,
+            "change": 2.81,
+            "impact": "Low",
+            "changePercentage": 16.28,
             "unit": "%"
           },
           {
@@ -1619,28 +1619,15 @@
           },
           {
             "date": "2026-08-25 05:00:00",
-            "country": "FI",
-            "event": "Unemployment Rate (Jul)",
-            "currency": "EUR",
-            "previous": 10,
-            "estimate": 9.8,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 05:00:00",
             "country": "SG",
             "event": "MAS 12-Week Bill Auction",
             "currency": "SGD",
             "previous": 1.47,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.49,
+            "change": 0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 1.361,
             "unit": "%"
           },
           {
@@ -1650,35 +1637,48 @@
             "currency": "SGD",
             "previous": 1.42,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.4,
+            "change": -0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -1.408,
             "unit": "%"
+          },
+          {
+            "date": "2026-08-25 05:00:00",
+            "country": "JP",
+            "event": "Coincident Index (Jun)",
+            "currency": "JPY",
+            "previous": 117.9,
+            "estimate": 118.2,
+            "actual": 118.5,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 0.509,
+            "unit": null
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend rather than a fresh breakout. Price remains above the major EMAs, while rising RSI, VWAP reclamation, expanding bands, and strong trend strength support renewed upside.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend rather than a fresh breakout. Rising RSI, reclaimed VWAP, expanding bands, and strong trend strength support continuation, while drying volume suggests limited urgency.",
         "financial_assessment": "positive",
-        "financial_interpretation": "The last three reports all beat EPS estimates, with surprises accelerating from 5.3% to 16.8% and then 36.4%. Reported margins remain solid at 33.8% gross and 17.6% operating, while positive operating and free cash flow provide additional support.",
+        "financial_interpretation": "Ross Stores exceeded EPS expectations in all three reported periods, with the latest surprise accelerating to 36.4% from 16.8% and 5.3%. Revenue and net income were shown as flat, but margins and positive operating and free cash flow provide fundamental support.",
         "earnings_assessment": "mixed",
-        "earnings_interpretation": "Next earnings are not due until November 19, limiting immediate event risk, but the next EPS and revenue estimates are below the latest reported figures. Longer-term analyst estimate averages have also been revised lower, creating some expectation risk.",
+        "earnings_interpretation": "The next earnings report is scheduled for November 19, well beyond the scanner's estimated holding period, limiting immediate event risk. However, forward revenue and EPS consensus estimates have declined from prior estimates, creating a modest expectations headwind.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "The consensus is Buy with substantially more buys than holds or sells, but forward revenue and EPS estimates have declined versus prior estimates.",
+        "analyst_interpretation": "Ratings remain strongly favorable with a Buy consensus, but the downward revision in forward revenue and EPS estimates tempers that support.",
         "valuation_assessment": "expensive",
-        "valuation_interpretation": "A trailing P/E near 29, along with elevated price-to-sales and price-to-book ratios, leaves limited valuation cushion. With forward estimates being revised lower, valuation is a headwind despite the earnings beats.",
+        "valuation_interpretation": "A trailing P/E near 29 and price-to-book above 10 leave limited valuation cushion. With forward estimates declining and no supplied evidence of strong revenue growth, valuation is more of a headwind than a catalyst.",
         "news_assessment": "no_major_risk",
-        "news_interpretation": "Recent coverage frames the correction as potentially complete and support as intact, but it is a routine technical market note rather than a material fundamental catalyst. No meaningful company-specific negative news risk is supplied.",
+        "news_interpretation": "Recent coverage is a routine technical price-forecast note suggesting the correction may be complete. No material company-specific negative news or new fundamental catalyst was supplied.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "The industry is outperforming even though the broader cyclical sector is slightly weaker, providing a modestly supportive backdrop.",
+        "sector_interpretation": "The industry is outperforming recently, which supports the setup despite softer performance across the broader consumer-cyclical sector.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated longer-term yields and a currently unfavorable cycle backdrop may pressure valuation-sensitive consumer stocks, although overall volatility remains contained.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported by a strong uptrend, improving momentum, and repeated earnings beats, with the retail industry adding modest confirmation. However, rich valuation, lower forward estimates, and elevated yields temper the setup and increase pullback or profit-taking risk.",
-        "key_positive": "Repeated EPS beats, solid margins and cash flow, and a technically defended uptrend provide strong underlying support.",
-        "key_risk": "The main risk is that premium valuation and declining forward estimates leave the stock vulnerable if momentum fades or macro yields remain elevated.",
+        "macro_interpretation": "Neutral risk and low volatility are helpful, but elevated yields and a mildly unfavorable cycle backdrop can pressure an expensive consumer stock.",
+        "overall_assessment": "supportive",
+        "overall_summary": "The technical signal is well supported by a strong uptrend, a constructive pullback, repeated EPS beats, and favorable industry momentum. Valuation, declining forward estimates, and elevated yields temper the setup, but the next earnings event is outside the expected holding window.",
+        "key_positive": "Strong trend structure combined with three consecutive EPS beats and supportive apparel-retail momentum favors continuation.",
+        "key_risk": "The main risk is that a relatively expensive valuation and reduced forward estimates leave the stock vulnerable to disappointment or rate-driven pressure.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1689,17 +1689,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2849
+          "chars": 2819
         }
       ],
       "is_etf": false,
-      "buy_confidence": 58,
-      "report": "🟡 ROST — Ross Stores, Inc.\nEntry: $241.50\neToro TP Value: $50.02\nShares: 1.04 ($251)\nScanner Potential: +19.9%\nTimeframe: 11–23 days\n\n═══ BUY CONFIDENCE: 58% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 30 | Hold: 13 | Sell: 4 | Strong Sell: 0\n🧠 The consensus is Buy with substantially more buys than holds or sells, but forward revenue and EPS estimates have declined versus prior estimates.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend rather than a fresh breakout. Price remains above the major EMAs, while rising RSI, VWAP reclamation, expanding bands, and strong trend strength support renewed upside.\n🕒 Technical timestamp: 2026-08-25 04:54:19 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all beat EPS estimates, with surprises accelerating from 5.3% to 16.8% and then 36.4%. Reported margins remain solid at 33.8% gross and 17.6% operating, while positive operating and free cash flow provide additional support.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 A trailing P/E near 29, along with elevated price-to-sales and price-to-book ratios, leaves limited valuation cushion. With forward estimates being revised lower, valuation is a headwind despite the earnings beats.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-19 (+86 days)\n🟡 Mixed\n🧠 Next earnings are not due until November 19, limiting immediate event risk, but the next EPS and revenue estimates are below the latest reported figures. Longer-term analyst estimate averages have also been revised lower, creating some expectation risk.\n\n═══ RECENT NEWS ═══\n• 2026-08-24 17:34 UTC — Ross Stores (ROST) Price Forecast: Can ROST Break Above $245?\n⚪ Recent coverage frames the correction as potentially complete and support as intact, but it is a routine technical market note rather than a material fundamental catalyst. No meaningful company-specific negative news risk is supplied.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: The industry is outperforming even though the broader cyclical sector is slightly weaker, providing a modestly supportive backdrop.\n🧠 Macro: Elevated longer-term yields and a currently unfavorable cycle backdrop may pressure valuation-sensitive consumer stocks, although overall volatility remains contained.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong uptrend, improving momentum, and repeated earnings beats, with the retail industry adding modest confirmation. However, rich valuation, lower forward estimates, and elevated yields temper the setup and increase pullback or profit-taking risk.\n🟢 Key Positive: Repeated EPS beats, solid margins and cash flow, and a technically defended uptrend provide strong underlying support.\n🔴 Key Risk: The main risk is that premium valuation and declining forward estimates leave the stock vulnerable if momentum fades or macro yields remain elevated.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 66,
+      "report": "🟢 ROST — Ross Stores, Inc.\nEntry: $241.50\neToro TP Value: $50.02\nShares: 1.04 ($251)\nScanner Potential: +19.9%\nTimeframe: 11–23 days\n\n═══ BUY CONFIDENCE: 66% ═══\n🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 30 | Hold: 13 | Sell: 4 | Strong Sell: 0\n🧠 Ratings remain strongly favorable with a Buy consensus, but the downward revision in forward revenue and EPS estimates tempers that support.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend rather than a fresh breakout. Rising RSI, reclaimed VWAP, expanding bands, and strong trend strength support continuation, while drying volume suggests limited urgency.\n🕒 Technical timestamp: 2026-08-25 09:02:29 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 Ross Stores exceeded EPS expectations in all three reported periods, with the latest surprise accelerating to 36.4% from 16.8% and 5.3%. Revenue and net income were shown as flat, but margins and positive operating and free cash flow provide fundamental support.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 A trailing P/E near 29 and price-to-book above 10 leave limited valuation cushion. With forward estimates declining and no supplied evidence of strong revenue growth, valuation is more of a headwind than a catalyst.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-19 (+86 days)\n🟡 Mixed\n🧠 The next earnings report is scheduled for November 19, well beyond the scanner's estimated holding period, limiting immediate event risk. However, forward revenue and EPS consensus estimates have declined from prior estimates, creating a modest expectations headwind.\n\n═══ RECENT NEWS ═══\n• 2026-08-24 17:34 UTC — Ross Stores (ROST) Price Forecast: Can ROST Break Above $245?\n⚪ Recent coverage is a routine technical price-forecast note suggesting the correction may be complete. No material company-specific negative news or new fundamental catalyst was supplied.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: The industry is outperforming recently, which supports the setup despite softer performance across the broader consumer-cyclical sector.\n🧠 Macro: Neutral risk and low volatility are helpful, but elevated yields and a mildly unfavorable cycle backdrop can pressure an expensive consumer stock.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The technical signal is well supported by a strong uptrend, a constructive pullback, repeated EPS beats, and favorable industry momentum. Valuation, declining forward estimates, and elevated yields temper the setup, but the next earnings event is outside the expected holding window.\n🟢 Key Positive: Strong trend structure combined with three consecutive EPS beats and supportive apparel-retail momentum favors continuation.\n🔴 Key Risk: The main risk is that a relatively expensive valuation and reduced forward estimates leave the stock vulnerable to disappointment or rate-driven pressure.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "PTGX",
       "alert": {
-        "alerted": "2026-08-25T04:54:19.214088+00:00",
+        "alerted": "2026-08-25T09:02:29.609939+00:00",
         "entry": 154.71,
         "thesis_warned": false,
         "tp": 180.66
@@ -1757,7 +1757,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-25T04:54:19.214052+00:00"
+        "time": "2026-08-25T09:02:29.609908+00:00"
       },
       "profile": {
         "symbol": "PTGX",
@@ -1858,7 +1858,7 @@
           "epsEstimated": 2.19,
           "revenueActual": null,
           "revenueEstimated": 219854900,
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-25"
         },
         "estimates": [
           {
@@ -2057,13 +2057,13 @@
           "date": "2026-08-25",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": -0.21843330523142468
+          "averageChange": -0.21843865711372867
         },
         "industry_snapshot": {
           "date": "2026-08-25",
           "industry": "Biotechnology",
           "exchange": "NASDAQ",
-          "averageChange": -0.5188967250029153
+          "averageChange": -0.5188967076172002
         }
       },
       "macro": {
@@ -2154,19 +2154,6 @@
           {
             "date": "2026-08-25 02:35:00",
             "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.8425,
-            "estimate": null,
-            "actual": 2.8499,
-            "change": 0.0074,
-            "impact": "Low",
-            "changePercentage": 0.26,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 02:35:00",
-            "country": "NZ",
             "event": "1-Year Bill Auction",
             "currency": "NZD",
             "previous": 3.4,
@@ -2175,6 +2162,19 @@
             "change": null,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 02:35:00",
+            "country": "NZ",
+            "event": "3-Month Bill Auction",
+            "currency": "NZD",
+            "previous": 2.8425,
+            "estimate": null,
+            "actual": 2.8499,
+            "change": 0.0074,
+            "impact": "Low",
+            "changePercentage": 0.26,
             "unit": "%"
           },
           {
@@ -2205,19 +2205,6 @@
           },
           {
             "date": "2026-08-25 04:00:00",
-            "country": "TH",
-            "event": "New Car Sales YoY (Jul)",
-            "currency": "THB",
-            "previous": 17.26,
-            "estimate": null,
-            "actual": 20.07,
-            "change": 2.81,
-            "impact": "Low",
-            "changePercentage": 16.28,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 04:00:00",
             "country": "KG",
             "event": "Interest Rate Decision",
             "currency": "KGS",
@@ -2227,6 +2214,19 @@
             "change": 0,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 04:00:00",
+            "country": "TH",
+            "event": "New Car Sales YoY (Jul)",
+            "currency": "THB",
+            "previous": 17.26,
+            "estimate": null,
+            "actual": 20.07,
+            "change": 2.81,
+            "impact": "Low",
+            "changePercentage": 16.28,
             "unit": "%"
           },
           {
@@ -2244,28 +2244,15 @@
           },
           {
             "date": "2026-08-25 05:00:00",
-            "country": "FI",
-            "event": "Unemployment Rate (Jul)",
-            "currency": "EUR",
-            "previous": 10,
-            "estimate": 9.8,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 05:00:00",
             "country": "SG",
             "event": "MAS 12-Week Bill Auction",
             "currency": "SGD",
             "previous": 1.47,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.49,
+            "change": 0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 1.361,
             "unit": "%"
           },
           {
@@ -2275,35 +2262,48 @@
             "currency": "SGD",
             "previous": 1.42,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.4,
+            "change": -0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -1.408,
             "unit": "%"
+          },
+          {
+            "date": "2026-08-25 05:00:00",
+            "country": "JP",
+            "event": "Coincident Index (Jun)",
+            "currency": "JPY",
+            "previous": 117.9,
+            "estimate": 118.2,
+            "actual": 118.5,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 0.509,
+            "unit": null
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend rather than a fresh breakout. Strong trend structure, VWAP reclamation, positive relative strength, and moderate RSI support continuation, while contracting volume suggests limited immediate conviction.",
-        "financial_assessment": "positive",
-        "financial_interpretation": "Recent results were mixed on surprises, with a February EPS miss followed by substantial May and slight August beats; reported revenue and net income were flat across the displayed periods. Very strong margins, positive operating and free cash flow, and a substantial cash position with little debt support financial quality.",
-        "earnings_assessment": "positive",
-        "earnings_interpretation": "The next earnings report is scheduled in 72 days, beyond the scanner's estimated holding window, with estimates calling for modest revenue growth but slightly lower EPS than the latest reported figure. The event is not an immediate catalyst, though it remains a future gap-risk source.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend. Price remains above rising 20-, 50-, and 200-period EMAs, has reclaimed VWAP, and shows strong relative strength, while RSI is constructive rather than overbought.",
+        "financial_assessment": "mixed",
+        "financial_interpretation": "Recent EPS results were strong overall, with beats in the latest two reported quarters, but the prior quarter missed estimates and displayed revenue was flat. High reported margins, substantial cash, low debt, and positive operating and free cash flow support the setup, though the revenue data offers limited evidence of acceleration.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "Next earnings are scheduled for November 5, outside the scanner's estimated holding window, reducing immediate event risk. The near-term EPS estimate is below the latest result, although longer-term revenue and EPS consensus has been revised higher.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "All 26 reported analyst ratings are Buy, and longer-term consensus revenue and EPS estimates have risen materially.",
+        "analyst_interpretation": "All 26 reported analysts are rated Buy, and longer-term consensus revenue and EPS estimates have increased materially.",
         "valuation_assessment": "very_expensive",
-        "valuation_interpretation": "The high trailing P/E, price-to-sales, and price-to-book ratios make valuation a meaningful headwind. The elevated multiples require continued execution and growth, so the strong technical trend is vulnerable to disappointing results or sentiment shifts.",
+        "valuation_interpretation": "The supplied valuation multiples are very high, creating a meaningful headwind and leaving the stock sensitive to any growth or execution disappointment. Long-term estimates imply substantial growth, but that growth is already reflected in the valuation to a significant extent.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was provided. This reduces identifiable catalyst support and leaves clinical or corporate developments as unpriced event risks.",
+        "news_interpretation": "No usable recent company-specific news was supplied. This removes a known catalyst or headline risk but leaves the setup dependent mainly on technical momentum and existing expectations.",
         "sector_assessment": "headwind",
-        "sector_interpretation": "Recent sector and industry performance was slightly negative, creating a modest backdrop that weakens the otherwise strong setup.",
+        "sector_interpretation": "Recent sector and industry performance is mildly negative, so the broader backdrop is weakening rather than confirming the setup.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Neutral volatility is helpful, but elevated longer-term yields and a mildly unfavorable market-cycle backdrop can pressure richly valued biotechnology shares.",
+        "macro_interpretation": "Elevated and upward-sloping yields, combined with a mildly unfavorable cycle signal, can pressure richly valued biotechnology stocks despite otherwise neutral volatility conditions.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is strongly supported as a pullback continuation within a persistent, market-leading uptrend. Fundamentals and analyst expectations are constructive, but very high valuation, softer biotech performance, and the absence of a near-term company catalyst argue for caution rather than unqualified confirmation.",
-        "key_positive": "Strong trend quality is reinforced by cash generation, low debt, recent earnings beats, and uniformly bullish analyst ratings.",
-        "key_risk": "Premium valuation and a weak biotechnology backdrop leave the setup exposed to a sharp repricing if growth or clinical expectations disappoint.",
+        "overall_summary": "The technical signal is well supported as a high-quality pullback continuation within a strong uptrend and with exceptional relative strength. Fundamentals and analyst expectations are broadly constructive, but very rich valuation, a soft biotech backdrop, and a modest macro headwind reduce confirmation and increase sensitivity to disappointment.",
+        "key_positive": "Strong trend structure, recent EPS beats, ample liquidity, and positive long-term estimate revisions support continuation.",
+        "key_risk": "Very expensive valuation combined with weak sector performance could amplify a reversal if growth expectations or momentum fade.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -2314,17 +2314,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2969
+          "chars": 2975
         }
       ],
       "is_etf": false,
-      "buy_confidence": 55,
-      "report": "🟡 PTGX — Protagonist Therapeutics, Inc.\nEntry: $154.71\neToro TP Value: $42.04\nShares: 1.62 ($251)\nScanner Potential: +16.8%\nTimeframe: 11–25 days\n\n═══ BUY CONFIDENCE: 55% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 26 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All 26 reported analyst ratings are Buy, and longer-term consensus revenue and EPS estimates have risen materially.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend rather than a fresh breakout. Strong trend structure, VWAP reclamation, positive relative strength, and moderate RSI support continuation, while contracting volume suggests limited immediate conviction.\n🕒 Technical timestamp: 2026-08-25 04:54:19 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 Recent results were mixed on surprises, with a February EPS miss followed by substantial May and slight August beats; reported revenue and net income were flat across the displayed periods. Very strong margins, positive operating and free cash flow, and a substantial cash position with little debt support financial quality.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The high trailing P/E, price-to-sales, and price-to-book ratios make valuation a meaningful headwind. The elevated multiples require continued execution and growth, so the strong technical trend is vulnerable to disappointing results or sentiment shifts.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+72 days)\n🟢 Positive\n🧠 The next earnings report is scheduled in 72 days, beyond the scanner's estimated holding window, with estimates calling for modest revenue growth but slightly lower EPS than the latest reported figure. The event is not an immediate catalyst, though it remains a future gap-risk source.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector and industry performance was slightly negative, creating a modest backdrop that weakens the otherwise strong setup.\n🧠 Macro: Neutral volatility is helpful, but elevated longer-term yields and a mildly unfavorable market-cycle backdrop can pressure richly valued biotechnology shares.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strongly supported as a pullback continuation within a persistent, market-leading uptrend. Fundamentals and analyst expectations are constructive, but very high valuation, softer biotech performance, and the absence of a near-term company catalyst argue for caution rather than unqualified confirmation.\n🟢 Key Positive: Strong trend quality is reinforced by cash generation, low debt, recent earnings beats, and uniformly bullish analyst ratings.\n🔴 Key Risk: Premium valuation and a weak biotechnology backdrop leave the setup exposed to a sharp repricing if growth or clinical expectations disappoint.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 45,
+      "report": "🟡 PTGX — Protagonist Therapeutics, Inc.\nEntry: $154.71\neToro TP Value: $42.04\nShares: 1.62 ($251)\nScanner Potential: +16.8%\nTimeframe: 11–25 days\n\n═══ BUY CONFIDENCE: 45% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 26 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All 26 reported analysts are rated Buy, and longer-term consensus revenue and EPS estimates have increased materially.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend. Price remains above rising 20-, 50-, and 200-period EMAs, has reclaimed VWAP, and shows strong relative strength, while RSI is constructive rather than overbought.\n🕒 Technical timestamp: 2026-08-25 09:02:29 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 Recent EPS results were strong overall, with beats in the latest two reported quarters, but the prior quarter missed estimates and displayed revenue was flat. High reported margins, substantial cash, low debt, and positive operating and free cash flow support the setup, though the revenue data offers limited evidence of acceleration.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The supplied valuation multiples are very high, creating a meaningful headwind and leaving the stock sensitive to any growth or execution disappointment. Long-term estimates imply substantial growth, but that growth is already reflected in the valuation to a significant extent.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+72 days)\n🟡 Mixed\n🧠 Next earnings are scheduled for November 5, outside the scanner's estimated holding window, reducing immediate event risk. The near-term EPS estimate is below the latest result, although longer-term revenue and EPS consensus has been revised higher.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector and industry performance is mildly negative, so the broader backdrop is weakening rather than confirming the setup.\n🧠 Macro: Elevated and upward-sloping yields, combined with a mildly unfavorable cycle signal, can pressure richly valued biotechnology stocks despite otherwise neutral volatility conditions.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a high-quality pullback continuation within a strong uptrend and with exceptional relative strength. Fundamentals and analyst expectations are broadly constructive, but very rich valuation, a soft biotech backdrop, and a modest macro headwind reduce confirmation and increase sensitivity to disappointment.\n🟢 Key Positive: Strong trend structure, recent EPS beats, ample liquidity, and positive long-term estimate revisions support continuation.\n🔴 Key Risk: Very expensive valuation combined with weak sector performance could amplify a reversal if growth expectations or momentum fade.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "KYMR",
       "alert": {
-        "alerted": "2026-08-25T04:54:19.062267+00:00",
+        "alerted": "2026-08-25T09:02:29.441158+00:00",
         "entry": 121.08,
         "thesis_warned": false,
         "tp": 146.48
@@ -2382,7 +2382,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-08-25T04:54:19.062224+00:00"
+        "time": "2026-08-25T09:02:29.441126+00:00"
       },
       "profile": {
         "symbol": "KYMR",
@@ -2394,7 +2394,7 @@
         "change": 1.25,
         "changePercentage": 1.04341,
         "volume": 466852,
-        "averageVolume": 742325,
+        "averageVolume": 743178,
         "companyName": "Kymera Therapeutics, Inc.",
         "currency": "USD",
         "cik": "0001815442",
@@ -2674,13 +2674,13 @@
           "date": "2026-08-25",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": -0.21843330523142468
+          "averageChange": -0.21843865711372867
         },
         "industry_snapshot": {
           "date": "2026-08-25",
           "industry": "Biotechnology",
           "exchange": "NASDAQ",
-          "averageChange": -0.5188967250029153
+          "averageChange": -0.5188967076172002
         }
       },
       "macro": {
@@ -2771,19 +2771,6 @@
           {
             "date": "2026-08-25 02:35:00",
             "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.8425,
-            "estimate": null,
-            "actual": 2.8499,
-            "change": 0.0074,
-            "impact": "Low",
-            "changePercentage": 0.26,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 02:35:00",
-            "country": "NZ",
             "event": "1-Year Bill Auction",
             "currency": "NZD",
             "previous": 3.4,
@@ -2792,6 +2779,19 @@
             "change": null,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 02:35:00",
+            "country": "NZ",
+            "event": "3-Month Bill Auction",
+            "currency": "NZD",
+            "previous": 2.8425,
+            "estimate": null,
+            "actual": 2.8499,
+            "change": 0.0074,
+            "impact": "Low",
+            "changePercentage": 0.26,
             "unit": "%"
           },
           {
@@ -2822,19 +2822,6 @@
           },
           {
             "date": "2026-08-25 04:00:00",
-            "country": "TH",
-            "event": "New Car Sales YoY (Jul)",
-            "currency": "THB",
-            "previous": 17.26,
-            "estimate": null,
-            "actual": 20.07,
-            "change": 2.81,
-            "impact": "Low",
-            "changePercentage": 16.28,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 04:00:00",
             "country": "KG",
             "event": "Interest Rate Decision",
             "currency": "KGS",
@@ -2844,6 +2831,19 @@
             "change": 0,
             "impact": "Low",
             "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-25 04:00:00",
+            "country": "TH",
+            "event": "New Car Sales YoY (Jul)",
+            "currency": "THB",
+            "previous": 17.26,
+            "estimate": null,
+            "actual": 20.07,
+            "change": 2.81,
+            "impact": "Low",
+            "changePercentage": 16.28,
             "unit": "%"
           },
           {
@@ -2861,28 +2861,15 @@
           },
           {
             "date": "2026-08-25 05:00:00",
-            "country": "FI",
-            "event": "Unemployment Rate (Jul)",
-            "currency": "EUR",
-            "previous": 10,
-            "estimate": 9.8,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-08-25 05:00:00",
             "country": "SG",
             "event": "MAS 12-Week Bill Auction",
             "currency": "SGD",
             "previous": 1.47,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.49,
+            "change": 0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 1.361,
             "unit": "%"
           },
           {
@@ -2892,35 +2879,48 @@
             "currency": "SGD",
             "previous": 1.42,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 1.4,
+            "change": -0.02,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -1.408,
             "unit": "%"
+          },
+          {
+            "date": "2026-08-25 05:00:00",
+            "country": "JP",
+            "event": "Coincident Index (Jun)",
+            "currency": "JPY",
+            "previous": 117.9,
+            "estimate": 118.2,
+            "actual": 118.5,
+            "change": 0.6,
+            "impact": "Low",
+            "changePercentage": 0.509,
+            "unit": null
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a strong established uptrend. Price remains above rising EMA20, EMA50, and EMA200, has reclaimed VWAP, and continues to outperform SPY, though fading RSI and modest volume suggest momentum is not accelerating.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a strong uptrend rather than a fresh breakout. Price is above rising short- and long-term EMAs, has reclaimed VWAP, and shows strong trend strength and relative performance.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "The last two reports beat EPS estimates, indicating improving execution versus expectations, but revenue was flat and the company remains deeply loss-making with negative operating margins. Negative operating cash flow and free cash flow show continued cash burn, limiting fundamental support.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around the next catalyst and event risk. Longer-range estimates imply substantial revenue growth and less-negative EPS, but the company is still expected to remain unprofitable.",
+        "financial_interpretation": "The last three reports included two upside EPS surprises, but revenue was flat in the supplied periods and the company remained deeply loss-making with negative operating and free cash flow. The latest results therefore support execution modestly but do not yet confirm fundamental acceleration.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around event timing. Longer-range estimates imply substantial revenue growth and less-negative EPS, but the company is still expected to remain unprofitable, so earnings-event risk remains meaningful.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Analyst sentiment is favorable with 23 buys versus 4 holds and no sell ratings, while revenue and EPS estimates have improved from the prior forecast period.",
+        "analyst_interpretation": "Analyst sentiment is strongly favorable at 23 buys versus 4 holds, while forward revenue expectations rise sharply and projected losses narrow.",
         "valuation_assessment": "very_expensive",
-        "valuation_interpretation": "Valuation is a significant headwind, with a very high price-to-sales ratio, elevated price-to-book ratio, and negative earnings. This pricing leaves the stock sensitive to any disappointment in growth or clinical execution.",
+        "valuation_interpretation": "Valuation is a clear headwind: the company has negative earnings and a very high price-to-sales ratio while remaining cash-flow negative. The setup therefore depends heavily on future growth and biotechnology execution.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was provided. The absence of a disclosed catalyst leaves the setup primarily dependent on technical momentum and future pipeline or earnings developments.",
+        "news_interpretation": "No usable recent company-specific news was provided. There is no identified catalyst or discrete news risk in the supplied data.",
         "sector_assessment": "headwind",
-        "sector_interpretation": "Recent weakness across the group modestly undermines the setup despite KYMR's strong relative performance.",
+        "sector_interpretation": "Recent healthcare and biotechnology performance modestly weakens the setup through an unsupportive industry backdrop.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated longer-term yields and a reported cycle headwind can pressure high-duration, loss-making biotech valuations, while overall volatility remains contained.",
+        "macro_interpretation": "Neutral risk conditions and low volatility help, but elevated longer-term yields and a currently unfavorable cycle backdrop are modest headwinds for a high-valuation, cash-burning biotech.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is strong and resembles a supported pullback continuation, reinforced by exceptional relative strength and a bullish trend structure. Fundamental support is weaker: losses, cash burn, very rich valuation, and sector weakness offset favorable analyst sentiment and recent EPS beats. The setup is therefore technically attractive but vulnerable to valuation compression or an unanticipated catalyst risk.",
-        "key_positive": "Strong trend persistence, VWAP recovery, and substantial outperformance versus SPY support continuation.",
-        "key_risk": "Very expensive valuation combined with ongoing losses, cash burn, and biotech-sector weakness creates meaningful downside sensitivity.",
+        "overall_summary": "Technically, KYMR has a high-quality bullish pullback with strong trend and relative-strength support. Fundamental results are mixed, analyst sentiment is positive, and forward expectations improve, but extreme valuation, ongoing losses, negative cash flow, sector weakness, and unknown earnings timing temper conviction.",
+        "key_positive": "Strong uptrend, reclaimed VWAP, substantial relative strength, repeated recent EPS beats, and favorable analyst sentiment support continuation.",
+        "key_risk": "The stock remains highly dependent on future biotech growth while carrying extreme valuation, persistent losses, negative cash flow, and uncertain earnings-event timing.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -2931,12 +2931,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2950
+          "chars": 2868
         }
       ],
       "is_etf": false,
       "buy_confidence": 45,
-      "report": "🟡 KYMR — Kymera Therapeutics, Inc.\nEntry: $121.08\neToro TP Value: $52.32\nShares: 2.06 ($249)\nScanner Potential: +21.0%\nTimeframe: 12–32 days\n\n═══ BUY CONFIDENCE: 45% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 23 | Hold: 4 | Sell: 0 | Strong Sell: 0\n🧠 Analyst sentiment is favorable with 23 buys versus 4 holds and no sell ratings, while revenue and EPS estimates have improved from the prior forecast period.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong established uptrend. Price remains above rising EMA20, EMA50, and EMA200, has reclaimed VWAP, and continues to outperform SPY, though fading RSI and modest volume suggest momentum is not accelerating.\n🕒 Technical timestamp: 2026-08-25 04:54:19 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🔴 Weak\n🧠 The last two reports beat EPS estimates, indicating improving execution versus expectations, but revenue was flat and the company remains deeply loss-making with negative operating margins. Negative operating cash flow and free cash flow show continued cash burn, limiting fundamental support.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Valuation is a significant headwind, with a very high price-to-sales ratio, elevated price-to-book ratio, and negative earnings. This pricing leaves the stock sensitive to any disappointment in growth or clinical execution.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around the next catalyst and event risk. Longer-range estimates imply substantial revenue growth and less-negative EPS, but the company is still expected to remain unprofitable.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent weakness across the group modestly undermines the setup despite KYMR's strong relative performance.\n🧠 Macro: Elevated longer-term yields and a reported cycle headwind can pressure high-duration, loss-making biotech valuations, while overall volatility remains contained.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strong and resembles a supported pullback continuation, reinforced by exceptional relative strength and a bullish trend structure. Fundamental support is weaker: losses, cash burn, very rich valuation, and sector weakness offset favorable analyst sentiment and recent EPS beats. The setup is therefore technically attractive but vulnerable to valuation compression or an unanticipated catalyst risk.\n🟢 Key Positive: Strong trend persistence, VWAP recovery, and substantial outperformance versus SPY support continuation.\n🔴 Key Risk: Very expensive valuation combined with ongoing losses, cash burn, and biotech-sector weakness creates meaningful downside sensitivity.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 KYMR — Kymera Therapeutics, Inc.\nEntry: $121.08\neToro TP Value: $52.32\nShares: 2.06 ($249)\nScanner Potential: +21.0%\nTimeframe: 12–32 days\n\n═══ BUY CONFIDENCE: 45% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 23 | Hold: 4 | Sell: 0 | Strong Sell: 0\n🧠 Analyst sentiment is strongly favorable at 23 buys versus 4 holds, while forward revenue expectations rise sharply and projected losses narrow.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong uptrend rather than a fresh breakout. Price is above rising short- and long-term EMAs, has reclaimed VWAP, and shows strong trend strength and relative performance.\n🕒 Technical timestamp: 2026-08-25 09:02:29 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🔴 Weak\n🧠 The last three reports included two upside EPS surprises, but revenue was flat in the supplied periods and the company remained deeply loss-making with negative operating and free cash flow. The latest results therefore support execution modestly but do not yet confirm fundamental acceleration.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Valuation is a clear headwind: the company has negative earnings and a very high price-to-sales ratio while remaining cash-flow negative. The setup therefore depends heavily on future growth and biotechnology execution.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around event timing. Longer-range estimates imply substantial revenue growth and less-negative EPS, but the company is still expected to remain unprofitable, so earnings-event risk remains meaningful.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent healthcare and biotechnology performance modestly weakens the setup through an unsupportive industry backdrop.\n🧠 Macro: Neutral risk conditions and low volatility help, but elevated longer-term yields and a currently unfavorable cycle backdrop are modest headwinds for a high-valuation, cash-burning biotech.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technically, KYMR has a high-quality bullish pullback with strong trend and relative-strength support. Fundamental results are mixed, analyst sentiment is positive, and forward expectations improve, but extreme valuation, ongoing losses, negative cash flow, sector weakness, and unknown earnings timing temper conviction.\n🟢 Key Positive: Strong uptrend, reclaimed VWAP, substantial relative strength, repeated recent EPS beats, and favorable analyst sentiment support continuation.\n🔴 Key Risk: The stock remains highly dependent on future biotech growth while carrying extreme valuation, persistent losses, negative cash flow, and uncertain earnings-event timing.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
