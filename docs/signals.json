@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T09:05:41.941130+00:00",
+  "generated": "2026-08-26T13:18:50.182943+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.2
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T09:05:29.519125+00:00"
+      "time": "2026-08-26T13:18:36.912688+00:00"
     },
     {
       "ticker": "DBX",
@@ -118,7 +118,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T09:05:29.711038+00:00"
+      "time": "2026-08-26T13:18:37.105951+00:00"
     },
     {
       "ticker": "LABU",
@@ -175,7 +175,7 @@
         "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(biotech bull 3x)"
       ],
-      "time": "2026-08-26T09:05:30.065153+00:00"
+      "time": "2026-08-26T13:18:37.472100+00:00"
     },
     {
       "ticker": "QMCO",
@@ -228,7 +228,7 @@
         "quality +0.92 (rsi +0.7, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=61.6)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T09:05:30.267813+00:00"
+      "time": "2026-08-26T13:18:37.675844+00:00"
     },
     {
       "ticker": "RYTM",
@@ -283,7 +283,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T09:05:30.343994+00:00"
+      "time": "2026-08-26T13:18:37.751588+00:00"
     }
   ],
   "position_alerts": []

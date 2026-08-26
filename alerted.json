@@ -1,8 +1,14 @@
 {
+  "ALKS": {
+    "alerted": "2026-08-26T13:18:36.912718+00:00",
+    "entry": 49.23,
+    "thesis_warned": false,
+    "tp": 55.67
+  },
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 34.93
   },
@@ -13,17 +19,23 @@
     "thesis_warned": false,
     "tp": 77.16
   },
+  "DBX": {
+    "alerted": "2026-08-26T13:18:37.105979+00:00",
+    "entry": 34.77,
+    "thesis_warned": false,
+    "tp": 40.21
+  },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",
     "entry": 83.54,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 99.56
   },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
     "entry": 345.5,
-    "scans_muted": 1,
+    "scans_muted": 2,
     "thesis_warned": false,
     "tp": 412.35
   },
@@ -36,14 +48,20 @@
   "KRT": {
     "alerted": "2026-08-21T01:58:11.337366+00:00",
     "entry": 47.57,
-    "scans_muted": 14,
+    "scans_muted": 15,
     "thesis_warned": false,
     "tp": 58.66
+  },
+  "LABU": {
+    "alerted": "2026-08-26T13:18:37.472128+00:00",
+    "entry": 335.85,
+    "thesis_warned": false,
+    "tp": 398.5
   },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 558.48
   },
@@ -54,6 +72,12 @@
     "thesis_warned": false,
     "tp": 173.37
   },
+  "QMCO": {
+    "alerted": "2026-08-26T13:18:37.675871+00:00",
+    "entry": 22.39,
+    "thesis_warned": false,
+    "tp": 27.8
+  },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
@@ -61,10 +85,16 @@
     "thesis_warned": false,
     "tp": 30.46
   },
+  "RYTM": {
+    "alerted": "2026-08-26T13:18:37.751615+00:00",
+    "entry": 113.46,
+    "thesis_warned": false,
+    "tp": 132.06
+  },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 429.71
   }
