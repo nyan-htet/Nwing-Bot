@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T01:59:49.641798+00:00",
+  "generated": "2026-08-26T04:57:06.250178+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.2
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T01:59:36.581720+00:00"
+      "time": "2026-08-26T04:56:49.355099+00:00"
     },
     {
       "ticker": "BBVA",
@@ -117,7 +117,7 @@
         "quality +0.72 (rsi +0.4, bb +1.0, vwap +1.0, vol +0.2, opt +0.0; RSI=60.8)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T01:59:36.633974+00:00"
+      "time": "2026-08-26T04:56:49.414321+00:00"
     },
     {
       "ticker": "DBX",
@@ -172,7 +172,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T01:59:36.773296+00:00"
+      "time": "2026-08-26T04:56:49.571695+00:00"
     },
     {
       "ticker": "FTDR",
@@ -227,7 +227,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T01:59:36.934485+00:00"
+      "time": "2026-08-26T04:56:49.753085+00:00"
     },
     {
       "ticker": "IDCC",
@@ -280,7 +280,7 @@
         "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=59.8)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T01:59:37.045816+00:00"
+      "time": "2026-08-26T04:56:49.877700+00:00"
     },
     {
       "ticker": "LABU",
@@ -337,61 +337,7 @@
         "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(biotech bull 3x)"
       ],
-      "time": "2026-08-26T01:59:37.142375+00:00"
-    },
-    {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "setup": "pullback",
-      "entry": 491.55,
-      "tp": 558.48,
-      "tp_pct": 0.13616114609218077,
-      "shares": 0.51,
-      "value": 250.6904949,
-      "pl_amount": 34.13,
-      "eta_days_low": 16,
-      "eta_days_high": 29,
-      "fee_pct": 0.05859208189944956,
-      "trend_score": 5,
-      "adx": 34.2,
-      "rs": 0.171,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 4,
-      "ema20": 473.62,
-      "ema50": 444.34,
-      "ema200": 438.04,
-      "above_ema200": true,
-      "quality": 0.93,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 59.7 rising",
-        "bollinger": "band position 66%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "1.4x average, steady",
-        "extension": "+1.0 ATR from 20 EMA, slope +0.3%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 59.7,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=59.7)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-26T01:59:37.232760+00:00"
+      "time": "2026-08-26T04:56:49.983160+00:00"
     },
     {
       "ticker": "QMCO",
@@ -444,7 +390,7 @@
         "quality +0.92 (rsi +0.7, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=61.6)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T01:59:37.344512+00:00"
+      "time": "2026-08-26T04:56:50.188055+00:00"
     },
     {
       "ticker": "RYTM",
@@ -499,61 +445,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T01:59:37.413085+00:00"
-    },
-    {
-      "ticker": "TRV",
-      "name": "The Travelers Companies, Inc.",
-      "setup": "pullback",
-      "entry": 369.7,
-      "tp": 429.71,
-      "tp_pct": 0.16232076920960847,
-      "shares": 0.68,
-      "value": 251.39600680000004,
-      "pl_amount": 40.81,
-      "eta_days_low": 14,
-      "eta_days_high": 28,
-      "fee_pct": 0.049011447437139005,
-      "trend_score": 4,
-      "adx": 31.6,
-      "rs": 0.212,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 10,
-      "ema20": 368.8,
-      "ema50": 355.22,
-      "ema200": 316.58,
-      "above_ema200": true,
-      "quality": 0.74,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 0.3,
-        "volume": 0.5,
-        "extension": 0.8
-      },
-      "q_notes": {
-        "rsi": "RSI 50.0 rising, reset from 39",
-        "bollinger": "band position 64%, contracting",
-        "vwap": "just above VWAP",
-        "volume": "0.8x average, steady",
-        "extension": "+0.1 ATR from 20 EMA, slope -0.9%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 50.0,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.74 (rsi +1.0, bb +1.0, vwap +0.3, vol +0.5, opt +0.0; RSI=50.0)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-26T01:59:37.554977+00:00"
+      "time": "2026-08-26T04:56:50.264389+00:00"
     }
   ],
   "position_alerts": []

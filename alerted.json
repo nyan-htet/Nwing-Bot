@@ -1,10 +1,40 @@
 {
+  "ALKS": {
+    "alerted": "2026-08-26T04:56:49.355129+00:00",
+    "entry": 49.23,
+    "thesis_warned": false,
+    "tp": 55.67
+  },
+  "BBVA": {
+    "alerted": "2026-08-26T04:56:49.414348+00:00",
+    "entry": 28.95,
+    "thesis_warned": false,
+    "tp": 34.93
+  },
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
     "scans_muted": 9,
     "thesis_warned": false,
     "tp": 77.16
+  },
+  "DBX": {
+    "alerted": "2026-08-26T04:56:49.571723+00:00",
+    "entry": 34.77,
+    "thesis_warned": false,
+    "tp": 40.21
+  },
+  "FTDR": {
+    "alerted": "2026-08-26T04:56:49.753112+00:00",
+    "entry": 83.54,
+    "thesis_warned": false,
+    "tp": 99.56
+  },
+  "IDCC": {
+    "alerted": "2026-08-26T04:56:49.877731+00:00",
+    "entry": 345.5,
+    "thesis_warned": false,
+    "tp": 412.35
   },
   "JCI": {
     "alerted": "2026-08-17T20:43:10.378919+00:00",
@@ -15,13 +45,20 @@
   "KRT": {
     "alerted": "2026-08-21T01:58:11.337366+00:00",
     "entry": 47.57,
-    "scans_muted": 12,
+    "scans_muted": 13,
     "thesis_warned": false,
     "tp": 58.66
+  },
+  "LABU": {
+    "alerted": "2026-08-26T04:56:49.983187+00:00",
+    "entry": 335.85,
+    "thesis_warned": false,
+    "tp": 398.5
   },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
+    "scans_muted": 1,
     "thesis_warned": false,
     "tp": 558.48
   },
@@ -32,6 +69,12 @@
     "thesis_warned": false,
     "tp": 173.37
   },
+  "QMCO": {
+    "alerted": "2026-08-26T04:56:50.188083+00:00",
+    "entry": 22.39,
+    "thesis_warned": false,
+    "tp": 27.8
+  },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
@@ -39,9 +82,16 @@
     "thesis_warned": false,
     "tp": 30.46
   },
+  "RYTM": {
+    "alerted": "2026-08-26T04:56:50.264416+00:00",
+    "entry": 113.46,
+    "thesis_warned": false,
+    "tp": 132.06
+  },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
+    "scans_muted": 1,
     "thesis_warned": false,
     "tp": 429.71
   }
