@@ -311,3 +311,4 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-26 13:20 UTC,ALKS,openai,True,3,1,OK,supportive,pullback continuation,65
 2026-08-26 17:23 UTC,RYTM,openai,True,3,1,OK,mixed,pullback continuation,54
 2026-08-26 17:23 UTC,BLMN,openai,True,3,1,OK,mixed,pullback continuation,55
+2026-08-26 23:33 UTC,MRX,openai,True,3,1,OK,mixed,pullback continuation,54
