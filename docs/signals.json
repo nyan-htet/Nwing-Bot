@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T17:06:01.129931+00:00",
+  "generated": "2026-08-26T23:32:40.813550+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 11.7
@@ -7,105 +7,50 @@
   "cycles": {
     "score": -0.51,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.9% (informative only)"
+    "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +11.0% (informative only)"
   },
   "signals": [
     {
-      "ticker": "BLMN",
-      "name": "Bloomin' Brands, Inc.",
+      "ticker": "MRX",
+      "name": "Marex Group Limited",
       "setup": "pullback",
-      "entry": 11.27,
-      "tp": 12.63,
-      "tp_pct": 0.12117177097203724,
-      "shares": 22.19,
-      "value": 249.97035000000002,
-      "pl_amount": 30.29,
-      "eta_days_low": 5,
-      "eta_days_high": 15,
-      "fee_pct": 0.06602980915734406,
-      "trend_score": 5,
-      "adx": 34.3,
-      "rs": 0.34,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 16,
-      "ema20": 10.53,
-      "ema50": 9.52,
-      "ema200": 7.94,
-      "above_ema200": true,
-      "quality": 0.82,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 0.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 58.6 flat",
-        "bollinger": "band position 75%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.0x average, drying up",
-        "extension": "+0.8 ATR from 20 EMA, slope +3.3%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 58.6,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.82 (rsi +1.0, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=58.6)",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-26T17:05:48.742337+00:00"
-    },
-    {
-      "ticker": "RYTM",
-      "name": "Rhythm Pharmaceuticals, Inc.",
-      "setup": "pullback",
-      "entry": 112.66,
-      "tp": 132.06,
-      "tp_pct": 0.17219953843422697,
-      "shares": 2.22,
-      "value": 250.10520000000002,
-      "pl_amount": 43.07,
+      "entry": 72.15,
+      "tp": 86.63,
+      "tp_pct": 0.20069300069300056,
+      "shares": 3.47,
+      "value": 250.36050000000003,
+      "pl_amount": 50.25,
       "eta_days_low": 11,
-      "eta_days_high": 33,
-      "fee_pct": 0.04643819076808765,
+      "eta_days_high": 31,
+      "fee_pct": 0.039804480392312984,
       "trend_score": 5,
-      "adx": 25.7,
-      "rs": 0.198,
+      "adx": 26.0,
+      "rs": 0.379,
       "runner": true,
       "regime": "uptrend",
-      "regime_weeks": 10,
-      "ema20": 111.64,
-      "ema50": 107.37,
-      "ema200": 101.86,
+      "regime_weeks": 21,
+      "ema20": 68.57,
+      "ema50": 65.04,
+      "ema200": 51.99,
       "above_ema200": true,
-      "quality": 0.81,
+      "quality": 0.93,
       "q_detail": {
         "rsi": 1.0,
         "bollinger": 1.0,
-        "vwap": 0.3,
-        "volume": 1.0,
-        "extension": 0.8
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 1.0
       },
       "q_notes": {
-        "rsi": "RSI 50.8 rising",
-        "bollinger": "band position 40%, contracting",
-        "vwap": "just above VWAP",
-        "volume": "0.0x average, drying up",
-        "extension": "+0.0 ATR from 20 EMA, slope -1.5%, bullish stack (20>50>200)"
+        "rsi": "RSI 58.2 flat",
+        "bollinger": "band position 62%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.2x average, steady",
+        "extension": "+0.9 ATR from 20 EMA, slope +2.4%, bullish stack (20>50>200)"
       },
       "context_notes": [],
       "ext_atr": null,
-      "rsi": 50.8,
+      "rsi": 58.2,
       "options_note": "",
       "sector": "",
       "warnings": [],
@@ -114,11 +59,11 @@
         "4h pullback",
         "1h momentum trigger",
         "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.81 (rsi +1.0, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=50.8)",
+        "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=58.2)",
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T17:05:49.467463+00:00"
+      "time": "2026-08-26T23:32:34.179478+00:00"
     }
   ],
   "position_alerts": []
