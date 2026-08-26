@@ -291,3 +291,11 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-26 02:01 UTC,DBX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,52
 2026-08-26 02:01 UTC,BBVA,openai,True,3,0,NO_NEWS,supportive,pullback continuation,66
 2026-08-26 02:01 UTC,ALKS,openai,True,3,1,OK,mixed,pullback continuation,54
+2026-08-26 04:59 UTC,RYTM,openai,True,3,1,OK,mixed,pullback continuation,56
+2026-08-26 04:59 UTC,QMCO,openai,True,3,8,OK,mixed,pullback continuation,48
+2026-08-26 04:59 UTC,LABU,openai,True,0,0,NO_NEWS,caution,pullback continuation,48
+2026-08-26 04:59 UTC,IDCC,openai,True,3,0,NO_NEWS,supportive,pullback continuation,70
+2026-08-26 04:59 UTC,FTDR,openai,True,3,1,OK,supportive,pullback continuation,71
+2026-08-26 04:59 UTC,DBX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,52
+2026-08-26 04:59 UTC,BBVA,openai,True,3,0,NO_NEWS,supportive,pullback continuation,70
+2026-08-26 04:59 UTC,ALKS,openai,True,3,1,OK,mixed,pullback continuation,56
