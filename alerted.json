@@ -6,12 +6,6 @@
     "thesis_warned": false,
     "tp": 34.93
   },
-  "BLMN": {
-    "alerted": "2026-08-26T17:05:48.742368+00:00",
-    "entry": 11.27,
-    "thesis_warned": false,
-    "tp": 12.63
-  },
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
@@ -66,12 +60,6 @@
     "scans_muted": 20,
     "thesis_warned": false,
     "tp": 30.46
-  },
-  "RYTM": {
-    "alerted": "2026-08-26T17:05:49.467494+00:00",
-    "entry": 112.66,
-    "thesis_warned": false,
-    "tp": 132.06
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
