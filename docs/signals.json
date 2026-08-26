@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T04:57:06.250178+00:00",
+  "generated": "2026-08-26T09:05:41.941130+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 13.2
@@ -63,61 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T04:56:49.355099+00:00"
-    },
-    {
-      "ticker": "BBVA",
-      "name": "Banco Bilbao Vizcaya Argentaria, S.A.",
-      "setup": "pullback",
-      "entry": 28.95,
-      "tp": 34.93,
-      "tp_pct": 0.20677146311970973,
-      "shares": 8.64,
-      "value": 250.08480000000003,
-      "pl_amount": 51.71,
-      "eta_days_low": 36,
-      "eta_days_high": 56,
-      "fee_pct": 0.038676939261734586,
-      "trend_score": 5,
-      "adx": 44.3,
-      "rs": 0.223,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 13,
-      "ema20": 28.2,
-      "ema50": 26.7,
-      "ema200": 23.64,
-      "above_ema200": true,
-      "quality": 0.72,
-      "q_detail": {
-        "rsi": 0.4,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.2,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 60.8 flat",
-        "bollinger": "band position 70%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "2.0x average, steady",
-        "extension": "+0.9 ATR from 20 EMA, slope +1.1%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 60.8,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.72 (rsi +0.4, bb +1.0, vwap +1.0, vol +0.2, opt +0.0; RSI=60.8)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-26T04:56:49.414321+00:00"
+      "time": "2026-08-26T09:05:29.519125+00:00"
     },
     {
       "ticker": "DBX",
@@ -172,115 +118,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T04:56:49.571695+00:00"
-    },
-    {
-      "ticker": "FTDR",
-      "name": "Frontdoor, Inc.",
-      "setup": "pullback",
-      "entry": 83.54,
-      "tp": 99.56,
-      "tp_pct": 0.19176442422791462,
-      "shares": 2.99,
-      "value": 249.78460000000004,
-      "pl_amount": 47.9,
-      "eta_days_low": 15,
-      "eta_days_high": 45,
-      "fee_pct": 0.04175382778216194,
-      "trend_score": 5,
-      "adx": 25.7,
-      "rs": 0.328,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 18,
-      "ema20": 81.53,
-      "ema50": 77.08,
-      "ema200": 67.92,
-      "above_ema200": true,
-      "quality": 0.96,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 0.8
-      },
-      "q_notes": {
-        "rsi": "RSI 53.4 rising",
-        "bollinger": "band position 46%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.8x average, drying up",
-        "extension": "+0.3 ATR from 20 EMA, slope -0.5%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 53.4,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.96 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.4)",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-26T04:56:49.753085+00:00"
-    },
-    {
-      "ticker": "IDCC",
-      "name": "InterDigital, Inc.",
-      "setup": "pullback",
-      "entry": 345.5,
-      "tp": 412.35,
-      "tp_pct": 0.19348769898697538,
-      "shares": 0.72,
-      "value": 248.76,
-      "pl_amount": 48.13,
-      "eta_days_low": 15,
-      "eta_days_high": 26,
-      "fee_pct": 0.04155239757333997,
-      "trend_score": 4,
-      "adx": 43.0,
-      "rs": 0.349,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 3,
-      "ema20": 328.64,
-      "ema50": 308.03,
-      "ema200": 317.28,
-      "above_ema200": true,
-      "quality": 0.93,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 59.8 flat",
-        "bollinger": "band position 62%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.9x average, steady",
-        "extension": "+0.8 ATR from 20 EMA, slope +1.4%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 59.8,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=59.8)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-08-26T04:56:49.877700+00:00"
+      "time": "2026-08-26T09:05:29.711038+00:00"
     },
     {
       "ticker": "LABU",
@@ -337,7 +175,7 @@
         "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(biotech bull 3x)"
       ],
-      "time": "2026-08-26T04:56:49.983160+00:00"
+      "time": "2026-08-26T09:05:30.065153+00:00"
     },
     {
       "ticker": "QMCO",
@@ -390,7 +228,7 @@
         "quality +0.92 (rsi +0.7, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=61.6)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T04:56:50.188055+00:00"
+      "time": "2026-08-26T09:05:30.267813+00:00"
     },
     {
       "ticker": "RYTM",
@@ -445,7 +283,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-08-26T04:56:50.264389+00:00"
+      "time": "2026-08-26T09:05:30.343994+00:00"
     }
   ],
   "position_alerts": []
