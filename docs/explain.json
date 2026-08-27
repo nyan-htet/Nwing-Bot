@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-27T19:39:46.988180+00:00",
+  "generated": "2026-08-27T21:12:07.409191+00:00",
   "results": [
     {
-      "ticker": "SMCI",
-      "name": "Super Micro Computer",
+      "ticker": "CAKE",
+      "name": "The Cheesecake Factory Incorporated - Common Stock",
       "type": "stock",
-      "sector": "Technology",
+      "sector": "Other",
       "gates": [
         {
           "gate": "fundamental / quality",
@@ -15,7 +15,7 @@
         {
           "gate": "daily trend",
           "pass": true,
-          "detail": "EMA20 $35.14 vs EMA50 $32.95 \u2192 uptrend True; ADX 33.5 (needs \u226525); RS vs SPY -18.8%; score 3/5; uptrend ~2w; above 200 EMA"
+          "detail": "EMA20 $107.46 vs EMA50 $95.79 \u2192 uptrend True; ADX 42.5 (needs \u226525); RS vs SPY +64.7%; score 5/5; uptrend ~19w; above 200 EMA"
         },
         {
           "gate": "4h setup",
@@ -25,7 +25,7 @@
         {
           "gate": "1h trigger",
           "pass": false,
-          "detail": "last 1h bar closed 38% up its range, below the prior bar high"
+          "detail": "last 1h bar closed 3% up its range, below the prior bar high"
         },
         {
           "gate": "quality score",
@@ -50,7 +50,7 @@
         "1h trigger"
       ],
       "muted": null,
-      "price": 38.27,
+      "price": 110.08,
       "fundamental": {
         "pass": false,
         "notes": [
@@ -60,18 +60,18 @@
       "trend": {
         "uptrend": true,
         "strong": true,
-        "rs": -0.188,
-        "near_52w_high": false,
+        "rs": 0.647,
+        "near_52w_high": true,
         "higher_highs": true,
-        "adx": 33.5,
-        "score": 3,
+        "adx": 42.5,
+        "score": 5,
         "regime": "uptrend",
-        "regime_weeks": 2,
-        "ema20": 35.14,
-        "ema50": 32.95,
-        "ema200": 34.32,
+        "regime_weeks": 19,
+        "ema20": 107.46,
+        "ema50": 95.79,
+        "ema200": 73.03,
         "above_ema200": true,
-        "runner": false
+        "runner": true
       },
       "setup_4h": null,
       "why": "\ud83d\udd34 Fundamental / quality filter failed: FMP profile unavailable: RuntimeError. Technical analysis is shown for diagnostics but does not override the fundamental block.",
