@@ -1,4 +1,10 @@
 {
+  "ALRS": {
+    "alerted": "2026-08-27T09:40:50.512235+00:00",
+    "entry": 33.23,
+    "thesis_warned": false,
+    "tp": 41.46
+  },
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
@@ -13,10 +19,22 @@
     "thesis_warned": false,
     "tp": 77.16
   },
+  "CRM": {
+    "alerted": "2026-08-27T09:40:50.575372+00:00",
+    "entry": 206.11,
+    "thesis_warned": false,
+    "tp": 254.48
+  },
+  "EMR": {
+    "alerted": "2026-08-27T09:40:50.617933+00:00",
+    "entry": 158.29,
+    "thesis_warned": false,
+    "tp": 178.24
+  },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",
     "entry": 83.54,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "thesis_warned": false,
     "tp": 99.56
   },
@@ -40,19 +58,31 @@
     "thesis_warned": false,
     "tp": 58.66
   },
+  "MRX": {
+    "alerted": "2026-08-27T09:40:50.831702+00:00",
+    "entry": 72.15,
+    "thesis_warned": false,
+    "tp": 86.63
+  },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "thesis_warned": false,
     "tp": 558.48
   },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
-    "scans_muted": 13,
+    "scans_muted": 14,
     "thesis_warned": false,
     "tp": 173.37
+  },
+  "PCVX": {
+    "alerted": "2026-08-27T09:40:50.892462+00:00",
+    "entry": 61.09,
+    "thesis_warned": false,
+    "tp": 75.52
   },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
