@@ -317,3 +317,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-08-27 09:42 UTC,EMR,openai,True,3,1,OK,mixed,pullback continuation,54
 2026-08-27 09:42 UTC,CRM,openai,True,3,7,OK,supportive,pullback continuation,80
 2026-08-27 09:42 UTC,ALRS,openai,True,3,0,NO_NEWS,mixed,pullback continuation,50
+2026-08-27 22:21 UTC,VUG,openai,True,0,1,OK,mixed,pullback continuation,54
+2026-08-27 22:21 UTC,VGT,openai,True,0,1,OK,supportive,pullback continuation,65
+2026-08-27 22:21 UTC,TECL,openai,True,0,0,NO_NEWS,caution,pullback continuation,48
