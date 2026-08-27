@@ -1,10 +1,32 @@
 {
-  "generated": "2026-08-05T14:57:13.555943+00:00",
-  "years": 8.0,
+  "generated": "2026-08-27T19:50:13.286982+00:00",
+  "years": 6.0,
   "max_stocks": 50,
   "include_etfs": true,
-  "buy_hold_spy_pct": 172.08,
+  "buy_hold_spy_pct": 121.23,
   "results": [
+    {
+      "variant": "H. Hold to target, 10% positions",
+      "params": {
+        "position_pct": 0.1,
+        "exit_mode": "tp",
+        "use_thesis_exit": false
+      },
+      "final_equity": 19436.23,
+      "total_return_pct": 94.36,
+      "cagr_pct": 11.72,
+      "max_drawdown_pct": -35.31,
+      "sharpe": 0.51,
+      "n_trades": 46,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 18.32,
+      "avg_loss_pct": 0,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -26.87,
+      "exits": {
+        "tp": 46
+      }
+    },
     {
       "variant": "G. Hold to target, 20 slots",
       "params": {
@@ -13,161 +35,18 @@
         "use_thesis_exit": false,
         "max_concurrent": 20
       },
-      "final_equity": 17613.39,
-      "total_return_pct": 76.13,
-      "cagr_pct": 7.33,
-      "max_drawdown_pct": -42.19,
-      "sharpe": 0.43,
-      "n_trades": 114,
-      "win_rate_pct": 97.4,
-      "avg_win_pct": 13.86,
-      "avg_loss_pct": -32.4,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -95.95,
+      "final_equity": 18560.08,
+      "total_return_pct": 85.6,
+      "cagr_pct": 10.86,
+      "max_drawdown_pct": -34.76,
+      "sharpe": 0.48,
+      "n_trades": 87,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 17.42,
+      "avg_loss_pct": 0,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -35.63,
       "exits": {
-        "tp": 111,
-        "timeout": 3
-      }
-    },
-    {
-      "variant": "H. Hold to target, 10% positions",
-      "params": {
-        "position_pct": 0.1,
-        "exit_mode": "tp",
-        "use_thesis_exit": false
-      },
-      "final_equity": 16955.52,
-      "total_return_pct": 69.56,
-      "cagr_pct": 6.83,
-      "max_drawdown_pct": -43.46,
-      "sharpe": 0.52,
-      "n_trades": 58,
-      "win_rate_pct": 98.3,
-      "avg_win_pct": 13.68,
-      "avg_loss_pct": -46.84,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -102.52,
-      "exits": {
-        "tp": 57,
-        "timeout": 1
-      }
-    },
-    {
-      "variant": "E. Hold to target + require RS>0",
-      "params": {
-        "position_pct": 0.05,
-        "exit_mode": "tp",
-        "use_thesis_exit": false,
-        "require_rs": true
-      },
-      "final_equity": 14395.88,
-      "total_return_pct": 43.96,
-      "cagr_pct": 4.66,
-      "max_drawdown_pct": -21.26,
-      "sharpe": 0.31,
-      "n_trades": 67,
-      "win_rate_pct": 98.5,
-      "avg_win_pct": 13.94,
-      "avg_loss_pct": -24.41,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -128.12,
-      "exits": {
-        "tp": 66,
-        "timeout": 1
-      }
-    },
-    {
-      "variant": "F. Hold to target + above 200EMA",
-      "params": {
-        "position_pct": 0.05,
-        "exit_mode": "tp",
-        "use_thesis_exit": false,
-        "require_ema200": true
-      },
-      "final_equity": 14060.7,
-      "total_return_pct": 40.61,
-      "cagr_pct": 4.35,
-      "max_drawdown_pct": -20.71,
-      "sharpe": 0.29,
-      "n_trades": 62,
-      "win_rate_pct": 96.8,
-      "avg_win_pct": 14.02,
-      "avg_loss_pct": -33.78,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -131.47,
-      "exits": {
-        "tp": 60,
-        "timeout": 2
-      }
-    },
-    {
-      "variant": "C. Hold to target, stock floor 0.60",
-      "params": {
-        "position_pct": 0.05,
-        "exit_mode": "tp",
-        "use_thesis_exit": false,
-        "min_score_stock": 0.6
-      },
-      "final_equity": 13401.31,
-      "total_return_pct": 34.01,
-      "cagr_pct": 3.73,
-      "max_drawdown_pct": -19.41,
-      "sharpe": 0.27,
-      "n_trades": 63,
-      "win_rate_pct": 96.8,
-      "avg_win_pct": 13.71,
-      "avg_loss_pct": -49.81,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -138.07,
-      "exits": {
-        "tp": 61,
-        "timeout": 2
-      }
-    },
-    {
-      "variant": "D. Hold to target, stock floor 0.50",
-      "params": {
-        "position_pct": 0.05,
-        "exit_mode": "tp",
-        "use_thesis_exit": false,
-        "min_score_stock": 0.5
-      },
-      "final_equity": 13401.31,
-      "total_return_pct": 34.01,
-      "cagr_pct": 3.73,
-      "max_drawdown_pct": -19.41,
-      "sharpe": 0.27,
-      "n_trades": 63,
-      "win_rate_pct": 96.8,
-      "avg_win_pct": 13.71,
-      "avg_loss_pct": -49.81,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -138.07,
-      "exits": {
-        "tp": 61,
-        "timeout": 2
-      }
-    },
-    {
-      "variant": "B. Same + thesis exit ON",
-      "params": {
-        "position_pct": 0.05,
-        "exit_mode": "tp",
-        "use_thesis_exit": true
-      },
-      "final_equity": 13066.75,
-      "total_return_pct": 30.67,
-      "cagr_pct": 3.4,
-      "max_drawdown_pct": -5.38,
-      "sharpe": 0.79,
-      "n_trades": 231,
-      "win_rate_pct": 49.4,
-      "avg_win_pct": 11.21,
-      "avg_loss_pct": -6.23,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -141.41,
-      "exits": {
-        "thesis": 144,
         "tp": 87
       }
     },
@@ -178,20 +57,42 @@
         "exit_mode": "tp",
         "use_thesis_exit": false
       },
-      "final_equity": 13045.18,
-      "total_return_pct": 30.45,
-      "cagr_pct": 3.38,
-      "max_drawdown_pct": -22.34,
-      "sharpe": 0.29,
-      "n_trades": 58,
-      "win_rate_pct": 98.3,
-      "avg_win_pct": 13.68,
-      "avg_loss_pct": -46.84,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -141.63,
+      "final_equity": 14056.95,
+      "total_return_pct": 40.57,
+      "cagr_pct": 5.84,
+      "max_drawdown_pct": -18.63,
+      "sharpe": 0.33,
+      "n_trades": 46,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 18.32,
+      "avg_loss_pct": 0,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -80.66,
       "exits": {
-        "tp": 57,
-        "timeout": 1
+        "tp": 46
+      }
+    },
+    {
+      "variant": "F. Hold to target + above 200EMA",
+      "params": {
+        "position_pct": 0.05,
+        "exit_mode": "tp",
+        "use_thesis_exit": false,
+        "require_ema200": true
+      },
+      "final_equity": 14056.95,
+      "total_return_pct": 40.57,
+      "cagr_pct": 5.84,
+      "max_drawdown_pct": -18.63,
+      "sharpe": 0.33,
+      "n_trades": 46,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 18.32,
+      "avg_loss_pct": 0,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -80.66,
+      "exits": {
+        "tp": 46
       }
     },
     {
@@ -201,20 +102,114 @@
         "exit_mode": "tp_then_trail",
         "use_thesis_exit": true
       },
-      "final_equity": 12807.22,
-      "total_return_pct": 28.07,
-      "cagr_pct": 3.14,
-      "max_drawdown_pct": -8.22,
-      "sharpe": 0.48,
-      "n_trades": 218,
-      "win_rate_pct": 45.4,
-      "avg_win_pct": 12.53,
-      "avg_loss_pct": -6.12,
-      "buy_hold_spy_pct": 172.08,
-      "vs_buy_hold_pct": -144.01,
+      "final_equity": 13822.13,
+      "total_return_pct": 38.22,
+      "cagr_pct": 5.54,
+      "max_drawdown_pct": -9.44,
+      "sharpe": 0.57,
+      "n_trades": 169,
+      "win_rate_pct": 45.6,
+      "avg_win_pct": 15.78,
+      "avg_loss_pct": -6.56,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -83.01,
       "exits": {
-        "thesis": 139,
-        "trail": 79
+        "thesis": 115,
+        "trail": 54
+      }
+    },
+    {
+      "variant": "E. Hold to target + require RS>0",
+      "params": {
+        "position_pct": 0.05,
+        "exit_mode": "tp",
+        "use_thesis_exit": false,
+        "require_rs": true
+      },
+      "final_equity": 13686.15,
+      "total_return_pct": 36.86,
+      "cagr_pct": 5.37,
+      "max_drawdown_pct": -23.56,
+      "sharpe": 0.36,
+      "n_trades": 46,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 18.24,
+      "avg_loss_pct": 0,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -84.37,
+      "exits": {
+        "tp": 46
+      }
+    },
+    {
+      "variant": "C. Hold to target, stock floor 0.60",
+      "params": {
+        "position_pct": 0.05,
+        "exit_mode": "tp",
+        "use_thesis_exit": false,
+        "min_score_stock": 0.6
+      },
+      "final_equity": 13613.59,
+      "total_return_pct": 36.14,
+      "cagr_pct": 5.28,
+      "max_drawdown_pct": -20.59,
+      "sharpe": 0.34,
+      "n_trades": 45,
+      "win_rate_pct": 97.8,
+      "avg_win_pct": 18.28,
+      "avg_loss_pct": -17.06,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -85.09,
+      "exits": {
+        "tp": 44,
+        "timeout": 1
+      }
+    },
+    {
+      "variant": "D. Hold to target, stock floor 0.50",
+      "params": {
+        "position_pct": 0.05,
+        "exit_mode": "tp",
+        "use_thesis_exit": false,
+        "min_score_stock": 0.5
+      },
+      "final_equity": 13613.59,
+      "total_return_pct": 36.14,
+      "cagr_pct": 5.28,
+      "max_drawdown_pct": -20.59,
+      "sharpe": 0.34,
+      "n_trades": 45,
+      "win_rate_pct": 97.8,
+      "avg_win_pct": 18.28,
+      "avg_loss_pct": -17.06,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -85.09,
+      "exits": {
+        "tp": 44,
+        "timeout": 1
+      }
+    },
+    {
+      "variant": "B. Same + thesis exit ON",
+      "params": {
+        "position_pct": 0.05,
+        "exit_mode": "tp",
+        "use_thesis_exit": true
+      },
+      "final_equity": 13445.89,
+      "total_return_pct": 34.46,
+      "cagr_pct": 5.06,
+      "max_drawdown_pct": -8.78,
+      "sharpe": 0.81,
+      "n_trades": 182,
+      "win_rate_pct": 47.8,
+      "avg_win_pct": 13.64,
+      "avg_loss_pct": -6.54,
+      "buy_hold_spy_pct": 121.23,
+      "vs_buy_hold_pct": -86.77,
+      "exits": {
+        "thesis": 121,
+        "tp": 61
       }
     }
   ]
