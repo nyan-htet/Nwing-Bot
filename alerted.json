@@ -1,10 +1,4 @@
 {
-  "APD": {
-    "alerted": "2026-08-28T22:18:18.563845+00:00",
-    "entry": 308.05,
-    "thesis_warned": false,
-    "tp": 359.63
-  },
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
@@ -18,18 +12,6 @@
     "scans_muted": 9,
     "thesis_warned": false,
     "tp": 77.16
-  },
-  "CRAK": {
-    "alerted": "2026-08-28T22:18:18.671703+00:00",
-    "entry": 60.19,
-    "thesis_warned": false,
-    "tp": 71.27
-  },
-  "ERX": {
-    "alerted": "2026-08-28T22:18:18.827348+00:00",
-    "entry": 104.11,
-    "thesis_warned": false,
-    "tp": 120.97
   },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",
@@ -64,12 +46,6 @@
     "scans_muted": 7,
     "thesis_warned": false,
     "tp": 558.48
-  },
-  "NANR": {
-    "alerted": "2026-08-28T22:18:19.111651+00:00",
-    "entry": 89.39,
-    "thesis_warned": false,
-    "tp": 108.35
   },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
