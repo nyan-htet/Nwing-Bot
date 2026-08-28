@@ -1,10 +1,4 @@
 {
-  "APD": {
-    "alerted": "2026-08-28T11:21:47.844535+00:00",
-    "entry": 305.46,
-    "thesis_warned": false,
-    "tp": 342.53
-  },
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
@@ -53,12 +47,6 @@
     "thesis_warned": false,
     "tp": 58.66
   },
-  "MAAS": {
-    "alerted": "2026-08-28T11:21:48.247289+00:00",
-    "entry": 16.53,
-    "thesis_warned": false,
-    "tp": 19.64
-  },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
@@ -80,29 +68,11 @@
     "thesis_warned": false,
     "tp": 30.46
   },
-  "TECL": {
-    "alerted": "2026-08-28T11:21:48.525807+00:00",
-    "entry": 210.93,
-    "thesis_warned": false,
-    "tp": 248.07
-  },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
     "scans_muted": 5,
     "thesis_warned": false,
     "tp": 429.71
-  },
-  "VGT": {
-    "alerted": "2026-08-28T11:21:48.623946+00:00",
-    "entry": 121.91,
-    "thesis_warned": false,
-    "tp": 137.67
-  },
-  "VUG": {
-    "alerted": "2026-08-28T11:21:48.672526+00:00",
-    "entry": 88.89,
-    "thesis_warned": false,
-    "tp": 103.56
   }
 }
