@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T22:20:40.443548+00:00",
+  "generated": "2026-08-28T11:22:16.488275+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 10.5
@@ -10,6 +10,114 @@
     "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.4% (informative only)"
   },
   "signals": [
+    {
+      "ticker": "APD",
+      "name": "Air Products and Chemicals, Inc.",
+      "setup": "pullback",
+      "entry": 305.46,
+      "tp": 342.53,
+      "tp_pct": 0.12135798865180325,
+      "shares": 0.82,
+      "value": 250.47719179999999,
+      "pl_amount": 30.4,
+      "eta_days_low": 15,
+      "eta_days_high": 45,
+      "fee_pct": 0.06579508314791134,
+      "trend_score": 4,
+      "adx": 28.3,
+      "rs": 0.077,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 8,
+      "ema20": 302.76,
+      "ema50": 298.45,
+      "ema200": 284.1,
+      "above_ema200": true,
+      "quality": 0.93,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 52.5 flat",
+        "bollinger": "band position 59%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.9x average, steady",
+        "extension": "+0.2 ATR from 20 EMA, slope +0.5%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 52.5,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.5)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-08-28T11:21:47.844501+00:00"
+    },
+    {
+      "ticker": "MAAS",
+      "name": "Maase Inc.",
+      "setup": "pullback",
+      "entry": 16.53,
+      "tp": 19.64,
+      "tp_pct": 0.18814277071990326,
+      "shares": 15.12,
+      "value": 249.9336,
+      "pl_amount": 47.02,
+      "eta_days_low": 3,
+      "eta_days_high": 6,
+      "fee_pct": 0.0425321968730329,
+      "trend_score": 3,
+      "adx": 25.5,
+      "rs": 0.352,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 40,
+      "ema20": 16.55,
+      "ema50": 16.0,
+      "ema200": 10.85,
+      "above_ema200": true,
+      "quality": 0.74,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 0.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 0.6
+      },
+      "q_notes": {
+        "rsi": "RSI 52.2 rising, reset from 34",
+        "bollinger": "band position 80%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.6x average, drying up",
+        "extension": "+0.5 ATR from 20 EMA, slope -4.7%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 52.2,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 3/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.74 (rsi +1.0, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=52.2)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-08-28T11:21:48.247256+00:00"
+    },
     {
       "ticker": "TECL",
       "name": "Direxion Tech Bull 3x",
@@ -64,7 +172,7 @@
         "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(tech bull 3x)"
       ],
-      "time": "2026-08-27T22:20:26.975530+00:00"
+      "time": "2026-08-28T11:21:48.525774+00:00"
     },
     {
       "ticker": "VGT",
@@ -117,7 +225,7 @@
         "quality +0.58 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=64.1)",
         "(us-tech)"
       ],
-      "time": "2026-08-27T22:20:27.098331+00:00"
+      "time": "2026-08-28T11:21:48.623914+00:00"
     },
     {
       "ticker": "VUG",
@@ -170,7 +278,7 @@
         "quality +0.58 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=60.4)",
         "(us-growth)"
       ],
-      "time": "2026-08-27T22:20:27.163541+00:00"
+      "time": "2026-08-28T11:21:48.672495+00:00"
     }
   ],
   "position_alerts": []
