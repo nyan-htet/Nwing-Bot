@@ -3143,3 +3143,23 @@ ZURA,Zura Bio Limited - Class A Ordinary shares,stock,1,no,nasdaq,,nasdaq; tier 
 ZVRA,"Zevra Therapeutics, Inc. - Common Stock",stock,1,no,nasdaq,,nasdaq; tier assigned nightly by FMP
 ZYBT,Zhengye Biotechnology Holding Limited - Class A Ordinary Shares,stock,1,no,nasdaq,,nasdaq; tier assigned nightly by FMP
 ZYME,Zymeworks Inc. - Common Stock,stock,1,no,nasdaq,,nasdaq; tier assigned nightly by FMP
+IONQ,"IonQ, Inc. - Common Stock",stock,1,no,quantum,Technology,quantum computing
+QSI,Quantum-Si Incorporated - Class A Common Stock,stock,1,no,quantum,Technology,quantum computing (genomics)
+IRBT,iRobot Corporation - Common Stock,stock,1,no,robotics,Industrials,robotics
+NNDM,Nano Dimension Ltd. - Ordinary Shares,stock,1,no,robotics,Industrials,robotics/additive manufacturing
+MOG.A,Moog Inc. - Class A Common Stock,stock,1,no,robotics,Industrials,actuators/motion control
+MOG.B,Moog Inc. - Class B Common Stock,stock,1,no,robotics,Industrials,actuators/motion control
+ROK,"Rockwell Automation, Inc. - Common Stock",stock,1,no,robotics,Industrials,industrial automation
+AME,"AMETEK, Inc. - Common Stock",stock,1,no,robotics,Industrials,automation/precision instruments
+OII,"Oceaneering International, Inc. - Common Stock",stock,1,no,robotics,Industrials,subsea robotics (ROVs)
+FARO,"FARO Technologies, Inc. - Common Stock",stock,1,no,robotics,Industrials,3D measurement/robotics
+FOLD,"Amicus Therapeutics, Inc. - Common Stock",stock,1,no,biotech,Healthcare,biotech - rare disease
+CPRX,"Catalyst Pharmaceuticals, Inc. - Common Stock",stock,1,no,biotech,Healthcare,biotech - specialty pharma
+BPMC,Blueprint Medicines Corporation - Common Stock,stock,1,no,biotech,Healthcare,biotech - oncology
+APLS,"Apellis Pharmaceuticals, Inc. - Common Stock",stock,1,no,biotech,Healthcare,biotech - immunology
+VRNA,Verona Pharma plc - American Depositary Shares,stock,1,no,biotech,Healthcare,biotech - respiratory
+QTUM,Defiance Quantum ETF,etf,1,no,etf-thematic,ETF:quantum computing,quantum computing thematic ETF
+BOTZ,Global X Robotics & Artificial Intelligence ETF,etf,1,no,etf-thematic,ETF:robotics/AI,robotics & AI thematic ETF
+ROBO,ROBO Global Robotics and Automation Index ETF,etf,1,no,etf-thematic,ETF:robotics/automation,robotics & automation thematic ETF
+ROBT,First Trust Nasdaq Artificial Intelligence and Robotics ETF,etf,1,no,etf-thematic,ETF:robotics/AI,AI & robotics thematic ETF
+ARKQ,ARK Autonomous Technology & Robotics ETF,etf,1,no,etf-thematic,ETF:robotics/autonomy,autonomous tech & robotics thematic ETF
