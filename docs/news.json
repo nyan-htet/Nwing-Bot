@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31 16:22 UTC",
+  "generated": "2026-08-31 21:33 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -10,54 +10,54 @@
   ],
   "results": [
     {
-      "ticker": "CMCSA",
+      "ticker": "XES",
       "alert": {
-        "alerted": "2026-08-31T16:21:55.089475+00:00",
-        "entry": 26.86,
+        "alerted": "2026-08-31T21:32:00.827413+00:00",
+        "entry": 122.0,
         "thesis_warned": false,
-        "tp": 33.33
+        "tp": 142.62
       },
       "signal": {
-        "ticker": "CMCSA",
-        "name": "Comcast Corporation",
+        "ticker": "XES",
+        "name": "SPDR Oil & Gas Equipment",
         "setup": "pullback",
-        "entry": 26.86,
-        "tp": 33.33,
-        "tp_pct": 0.24087862993298592,
-        "shares": 9.31,
-        "value": 250.0666,
-        "pl_amount": 60.24,
-        "eta_days_low": 26,
-        "eta_days_high": 53,
-        "fee_pct": 0.03320290126951293,
+        "entry": 122.0,
+        "tp": 142.62,
+        "tp_pct": 0.16906430591417676,
+        "shares": 2.05,
+        "value": 250.08974999999998,
+        "pl_amount": 42.28,
+        "eta_days_low": 17,
+        "eta_days_high": 51,
+        "fee_pct": 0.0,
         "trend_score": 4,
-        "adx": 37.4,
-        "rs": 0.073,
+        "adx": 25.6,
+        "rs": -0.026,
         "runner": false,
         "regime": "uptrend",
-        "regime_weeks": 3,
-        "ema20": 26.1,
-        "ema50": 25.32,
-        "ema200": 26.36,
+        "regime_weeks": 2,
+        "ema20": 118.73,
+        "ema50": 117.16,
+        "ema200": 108.42,
         "above_ema200": true,
-        "quality": 0.9,
+        "quality": 0.58,
         "q_detail": {
-          "rsi": 0.6,
-          "bollinger": 1.0,
+          "rsi": 1.0,
+          "bollinger": 0.0,
           "vwap": 1.0,
-          "volume": 1.0,
-          "extension": 1.0
+          "volume": 0.5,
+          "extension": 0.2
         },
         "q_notes": {
-          "rsi": "RSI 56.4 falling",
-          "bollinger": "band position 59%, contracting",
+          "rsi": "RSI 60.7 rising, reset from 40",
+          "bollinger": "band position 71%, contracting",
           "vwap": "reclaimed VWAP after dip (buyers defended)",
-          "volume": "0.0x average, drying up",
-          "extension": "+0.6 ATR from 20 EMA, slope +1.9%, bullish stack (20>50>200)"
+          "volume": "1.1x average, steady",
+          "extension": "+1.2 ATR from 20 EMA, slope -0.5%, bullish stack (20>50>200)"
         },
         "context_notes": [],
         "ext_atr": null,
-        "rsi": 56.4,
+        "rsi": 60.7,
         "options_note": "",
         "sector": "",
         "warnings": [],
@@ -65,319 +65,100 @@
           "daily uptrend (score 4/5)",
           "4h pullback",
           "1h momentum trigger",
-          "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=56.4)",
-          "hard-eligible; ranked in Step 2"
+          "quality +0.58 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=60.7)",
+          "(energy-services)"
         ],
-        "time": "2026-08-31T16:21:55.089438+00:00"
+        "time": "2026-08-31T21:32:00.827394+00:00"
       },
       "profile": {
-        "symbol": "CMCSA",
-        "price": 26.765,
-        "marketCap": 94979258947,
-        "beta": 0.647,
-        "lastDividend": 1.32,
-        "range": "21.28-32.86",
-        "change": -0.29,
-        "changePercentage": -1.07189,
-        "volume": 4953341.97216,
-        "averageVolume": 33300319,
-        "companyName": "Comcast Corporation",
+        "symbol": "XES",
+        "price": 122.15,
+        "marketCap": 392710051,
+        "beta": 0.75,
+        "lastDividend": 1.30075,
+        "range": "68.06-135.35",
+        "change": 2.46,
+        "changePercentage": 2.05531,
+        "volume": 54995,
+        "averageVolume": 97942,
+        "companyName": "State Street SPDR S&P Oil & Gas Equipment & Services ETF",
         "currency": "USD",
-        "cik": "0001166691",
-        "isin": "US20030N1019",
-        "cusip": "20030N101",
-        "exchangeFullName": "NASDAQ Global Select",
-        "exchange": "NASDAQ",
-        "industry": "Telecommunications Services",
-        "website": "https://corporate.comcast.com",
-        "description": "Comcast Corporation functions as a global media and technology conglomerate. Its diverse operations are segmented across Cable Communications, Media, Studios, Theme Parks, and Sky. The Cable Communications division delivers internet, television, phone, and mobile services to residential and business clients under its Xfinity brand, alongside offering advertising solutions. Its Media segment encompasses NBCUniversal's television and streaming platforms, including its national, regional, and international cable channels, the NBC and Telemundo broadcast networks, and the Peacock streaming service. The Studios segment is responsible for NBCUniversal's film and television production and distribution activities. Through its Theme Parks division, Comcast manages Universal Studios resorts located in Orlando, Florida; Hollywood, California; Osaka, Japan; and Beijing, China. The Sky segment provides direct-to-consumer services such as video, internet, voice, and mobile phone offerings, while its content arm includes entertainment networks, the Sky News channel, and Sky Sports networks. Additionally, Comcast owns the Philadelphia Flyers hockey team and the Wells Fargo Center arena in Philadelphia, Pennsylvania. Founded in 1963, Comcast Corporation is headquartered in Philadelphia, Pennsylvania.",
-        "ceo": "Brian L. Roberts",
-        "sector": "Communication Services",
+        "cik": "0001064642",
+        "isin": "US78468R5494",
+        "cusip": "78468R549",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management - Global",
+        "website": "https://www.ssga.com/us/en/institutional/etfs/state-street-spdr-sp-oil-gas-equipment-services-etf-xes",
+        "description": "The State Street SPDR S&P Oil & Gas Equipment & Services ETF (XES) endeavors to achieve investment performance that closely tracks the total return of the S&P Oil & Gas Equipment & Services Select Industry Index, prior to accounting for fees and expenses. This fund provides concentrated access to the oil and gas equipment and services portion of the S&P Total Market Index, encompassing businesses engaged in both oil and gas drilling and the broader equipment and service provision sub-industries. By adhering to a modified equal-weighted index, the ETF aims to ensure balanced industry representation, offering diversified exposure across large, mid, and small-capitalization companies within the sector. This targeted investment vehicle enables investors to make more precise strategic or tactical allocations than traditional, broader sector funds.",
+        "ceo": "",
+        "sector": "Financial Services",
         "country": "US",
-        "fullTimeEmployees": "179000",
-        "phone": "215 286 1700",
-        "address": "One Comcast Center",
-        "city": "Philadelphia",
-        "state": "PA",
-        "zip": "19103-2838",
-        "image": "https://images.financialmodelingprep.com/symbol/CMCSA.png",
-        "ipoDate": "1980-03-17",
+        "fullTimeEmployees": null,
+        "phone": "1-866-787-2257",
+        "address": "1 Iron Street",
+        "city": "Boston",
+        "state": "MA",
+        "zip": "2210",
+        "image": "https://images.financialmodelingprep.com/symbol/XES.png",
+        "ipoDate": "2006-06-22",
         "defaultImage": false,
-        "isEtf": false,
+        "isEtf": true,
         "isActivelyTrading": true,
         "isAdr": false,
         "isFund": false
       },
-      "financials": [
-        {
-          "date": "2026-07-23",
-          "fiscal_period": "",
-          "eps_actual": 1.04,
-          "eps_estimate": 0.97,
-          "eps_surprise": 0.07000000000000006,
-          "eps_surprise_pct": 0.07216494845360831,
-          "revenue": 29940000000.0,
-          "net_income": 3526000000.0,
-          "operating_margin": 0.17234468937875752,
-          "gross_margin": 0.7198062792251169,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-04-23",
-          "fiscal_period": "",
-          "eps_actual": 0.79,
-          "eps_estimate": 0.725,
-          "eps_surprise": 0.06500000000000006,
-          "eps_surprise_pct": 0.08965517241379319,
-          "revenue": 29940000000.0,
-          "net_income": 3526000000.0,
-          "operating_margin": 0.17234468937875752,
-          "gross_margin": 0.7198062792251169,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-01-29",
-          "fiscal_period": "",
-          "eps_actual": 0.84,
-          "eps_estimate": 0.729,
-          "eps_surprise": 0.11099999999999999,
-          "eps_surprise_pct": 0.15226337448559668,
-          "revenue": 29940000000.0,
-          "net_income": 3526000000.0,
-          "operating_margin": 0.17234468937875752,
-          "gross_margin": 0.7198062792251169,
-          "revenue_yoy": null,
-          "net_income_yoy": null
-        }
-      ],
+      "financials": [],
       "financial_health": {
-        "cash": 7661000000.0,
-        "total_debt": 90381000000.0,
-        "total_liabilities": 167788000000.0,
-        "equity": 89770000000.0,
-        "operating_cash_flow": 8092000000.0,
-        "capital_expenditure": -2902000000.0,
-        "free_cash_flow": 5190000000.0
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
       },
       "forward": {
         "next_earnings": {},
-        "estimates": [
-          {
-            "date": "2030-12-31",
-            "period": null,
-            "revenue_avg": 125266654562.0,
-            "eps_avg": 4.93857,
-            "revenue_low": 123380062753.0,
-            "revenue_high": 127494030972.0,
-            "eps_low": 4.84188,
-            "eps_high": 5.05273,
-            "num_analysts_revenue": 7,
-            "num_analysts_eps": 4
-          },
-          {
-            "date": "2029-12-31",
-            "period": null,
-            "revenue_avg": 121340756927.0,
-            "eps_avg": 4.3375,
-            "revenue_low": 119513291518.0,
-            "revenue_high": 123498326637.0,
-            "eps_low": 4.25258,
-            "eps_high": 4.43776,
-            "num_analysts_revenue": 10,
-            "num_analysts_eps": 4
-          },
-          {
-            "date": "2028-12-31",
-            "period": null,
-            "revenue_avg": 121622525666.0,
-            "eps_avg": 3.90295,
-            "revenue_low": 120738373754.0,
-            "revenue_high": 122506677578.0,
-            "eps_low": 3.47689,
-            "eps_high": 4.34588,
-            "num_analysts_revenue": 15,
-            "num_analysts_eps": 10
-          },
-          {
-            "date": "2027-12-31",
-            "period": null,
-            "revenue_avg": 118653405208.0,
-            "eps_avg": 3.61824,
-            "revenue_low": 116685339128.0,
-            "revenue_high": 121390715389.0,
-            "eps_low": 3.3731,
-            "eps_high": 4.14774,
-            "num_analysts_revenue": 17,
-            "num_analysts_eps": 14
-          }
-        ]
+        "estimates": []
       },
       "analysts": {
-        "grades_consensus": {
-          "symbol": "CMCSA",
-          "strongBuy": 0,
-          "buy": 34,
-          "hold": 25,
-          "sell": 2,
-          "strongSell": 0,
-          "consensus": "Buy"
-        },
-        "estimate_direction": {
-          "revenueAvg": {
-            "latest": 125266654562,
-            "prior": 121340756927,
-            "change": 0.0323543196402003
-          },
-          "epsAvg": {
-            "latest": 4.93857,
-            "prior": 4.3375,
-            "change": 0.13857521613832846
-          }
-        }
+        "grades_consensus": {},
+        "estimate_direction": {}
       },
-      "valuation": {
-        "ratios": {
-          "symbol": "CMCSA",
-          "grossProfitMarginTTM": 0.6939033665585845,
-          "ebitMarginTTM": 0.14708778671790562,
-          "ebitdaMarginTTM": 0.27327969256635043,
-          "operatingProfitMarginTTM": 0.14662343380969536,
-          "pretaxProfitMarginTTM": 0.1118610143709219,
-          "continuousOperationsProfitMarginTTM": 0.08618550098074537,
-          "netProfitMarginTTM": 0.08966814779232217,
-          "bottomLineProfitMarginTTM": 0.08966814779232217,
-          "receivablesTurnoverTTM": 8.950555356503045,
-          "payablesTurnoverTTM": 3.2226062036412677,
-          "inventoryTurnoverTTM": 0,
-          "fixedAssetTurnoverTTM": 1.8888653651307332,
-          "assetTurnoverTTM": 0.4850340558718226,
-          "currentRatioTTM": 0.7957876288036745,
-          "quickRatioTTM": 0.7957876288036745,
-          "solvencyRatioTTM": 0.1606908718144325,
-          "cashRatioTTM": 0.23149910857280995,
-          "priceToEarningsRatioTTM": 8.688311688311689,
-          "priceToEarningsGrowthRatioTTM": -0.17638144464231426,
-          "forwardPriceToEarningsGrowthRatioTTM": 2.7386064465823603,
-          "priceToEarningsDilutedRatioTTM": 8.660194174757283,
-          "priceToEarningsDilutedGrowthRatioTTM": -0.17731380615435255,
-          "priceToBookRatioTTM": 1.0641996212543166,
-          "priceToSalesRatioTTM": 0.7602699312597575,
-          "priceToFreeCashFlowRatioTTM": 4.644957726667971,
-          "priceToOperatingCashFlowRatioTTM": 2.9379463050096875,
-          "debtToAssetsRatioTTM": 0.35096964095713695,
-          "debtToEquityRatioTTM": 1.006806282722513,
-          "debtToCapitalRatioTTM": 0.5016957996347509,
-          "longTermDebtToCapitalRatioTTM": 0.48418125193927625,
-          "financialLeverageRatioTTM": 2.8686420853291748,
-          "workingCapitalTurnoverRatioTTM": -22.217182497331912,
-          "operatingCashFlowRatioTTM": 0.9825945063910797,
-          "operatingCashFlowSalesRatioTTM": 0.2603338537288339,
-          "freeCashFlowOperatingCashFlowRatioTTM": 0.6287172863425285,
-          "debtServiceCoverageRatioTTM": 2.9406674907292953,
-          "interestCoverageRatioTTM": 4.162272727272727,
-          "shortTermOperatingCashFlowCoverageRatioTTM": 5.315841098577734,
-          "operatingCashFlowCoverageRatioTTM": 0.35977694426926016,
-          "capitalExpenditureCoverageRatioTTM": 2.693365360722273,
-          "dividendPaidAndCapexCoverageRatioTTM": 1.9198795536399598,
-          "dividendPayoutRatioTTM": 0.4342857142857143,
-          "dividendYieldTTM": 0.04932735,
-          "enterpriseValueTTM": 177681515764,
-          "revenuePerShareTTM": 34.98739495798319,
-          "netIncomePerShareTTM": 3.1372549019607843,
-          "interestDebtPerShareTTM": 26.549299719887955,
-          "cashPerShareTTM": 2.14593837535014,
-          "bookValuePerShareTTM": 25.134453781512605,
-          "tangibleBookValuePerShareTTM": -11.874509803921569,
-          "shareholdersEquityPerShareTTM": 25.14565826330532,
-          "operatingCashFlowPerShareTTM": 9.108403361344537,
-          "capexPerShareTTM": 3.3817927170868347,
-          "freeCashFlowPerShareTTM": 5.726610644257703,
-          "netIncomePerEBTTTM": 0.8016032064128257,
-          "ebtPerEbitTTM": 0.7629136179971606,
-          "priceToFairValueTTM": 1.0641996212543166,
-          "debtToMarketCapTTM": 0.9517645045243004,
-          "effectiveTaxRateTTM": 0.22953048955052963,
-          "enterpriseValueMultipleTTM": 5.205411488955294,
-          "dividendPerShareTTM": 1.32
-        },
-        "metrics": {
-          "symbol": "CMCSA",
-          "marketCap": 94961515764,
-          "enterpriseValueTTM": 177681515764,
-          "evToSalesTTM": 1.4225332513830513,
-          "evToOperatingCashFlowTTM": 5.464265330873081,
-          "evToFreeCashFlowTTM": 8.69113264351399,
-          "evToEBITDATTM": 5.205411488955294,
-          "netDebtToEBITDATTM": 2.423390168160778,
-          "currentRatioTTM": 0.7957876288036745,
-          "incomeQualityTTM": 2.971217105263158,
-          "grahamNumberTTM": 42.13060220452195,
-          "grahamNetNetTTM": -41.92177871148459,
-          "taxBurdenTTM": 0.8016032064128257,
-          "interestBurdenTTM": 0.7605051164816025,
-          "workingCapitalTTM": -6758000000,
-          "investedCapitalTTM": 191491000000,
-          "returnOnAssetsTTM": 0.04349210540622403,
-          "operatingReturnOnAssetsTTM": 0.07077600865667028,
-          "returnOnTangibleAssetsTTM": 0.08931704360585664,
-          "returnOnEquityTTM": 0.12042071989011609,
-          "returnOnInvestedCapitalTTM": 0.06119727726858248,
-          "returnOnCapitalEmployedTTM": 0.081604099365044,
-          "earningsYieldTTM": 0.11723673026759283,
-          "freeCashFlowYieldTTM": 0.2152872122514112,
-          "capexToOperatingCashFlowTTM": 0.37128271365747145,
-          "capexToDepreciationTTM": 0.7661019100196713,
-          "capexToRevenueTTM": 0.0966574596693487,
-          "salesGeneralAndAdministrativeToRevenueTTM": 0.1560385893278892,
-          "researchAndDevelopementToRevenueTTM": 0,
-          "stockBasedCompensationToRevenueTTM": 0.008782674832872983,
-          "intangiblesToTotalAssetsTTM": 0.5130592812929582,
-          "averageReceivablesTTM": 14016500000,
-          "averagePayablesTTM": 11920500000,
-          "averageInventoryTTM": 0,
-          "daysOfSalesOutstandingTTM": 40.77959249029262,
-          "daysOfPayablesOutstandingTTM": 113.26236497266758,
-          "daysOfInventoryOutstandingTTM": 0,
-          "operatingCycleTTM": 40.77959249029262,
-          "cashConversionCycleTTM": -72.48277248237497,
-          "freeCashFlowToEquityTTM": 10794000000,
-          "freeCashFlowToFirmTTM": 22422065845.97767,
-          "tangibleAssetValueTTM": -42392000000,
-          "netCurrentAssetValueTTM": -141453000000
+      "valuation": {},
+      "news": [
+        {
+          "date": "2026-08-31 07:21 UTC",
+          "title": "Should You Invest in the State Street SPDR S&P Oil & Gas Equipment & Services ETF (XES)?",
+          "site": "zacks.com",
+          "text": "If you're interested in broad exposure to the Energy - Equipment and services segment of the equity market, look no further than the State Street SPDR S&P Oil & Gas Equipment & Services ETF (XES), a passively managed exchange traded fund launched on June 19, 2006."
         }
-      },
-      "news": [],
+      ],
       "news_diag": {
-        "status": "NO_NEWS",
-        "message": "0 usable article(s)"
+        "status": "OK",
+        "message": "1 usable article(s)"
       },
       "sector": {
-        "sector": "Communication Services",
-        "industry": "Telecommunications Services",
+        "sector": "Financial Services",
+        "industry": "Asset Management - Global",
         "sector_snapshot": {
           "date": "2026-08-31",
-          "sector": "Communication Services",
+          "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": -1.294426949906069
+          "averageChange": -0.04700587313813953
         },
-        "industry_snapshot": {
-          "date": "2026-08-31",
-          "industry": "Telecommunications Services",
-          "exchange": "NASDAQ",
-          "averageChange": 0.7273242957521298
-        }
+        "industry_snapshot": {}
       },
       "macro": {
         "hourly_scan_macro": {
           "risk": "neutral",
-          "vol": 9.5
+          "vol": 9.4
         },
         "hourly_scan_cycles": {
-          "score": -0.51,
+          "score": -0.5,
           "label": "headwind",
-          "line": "Cycles [headwind]: month 8 avg +0.3%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +11.0% (informative only)"
+          "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
         },
         "treasury": {
           "date": "2026-08-28",
@@ -430,9 +211,9 @@
         "calendar": [
           {
             "date": "2026-08-31 00:00:00",
-            "country": "PH",
-            "event": "National Heroes Day",
-            "currency": "PHP",
+            "country": "MD",
+            "event": "National Language Day",
+            "currency": "MDL",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -443,9 +224,9 @@
           },
           {
             "date": "2026-08-31 00:00:00",
-            "country": "MY",
-            "event": "National Day",
-            "currency": "MYR",
+            "country": "PH",
+            "event": "National Heroes Day",
+            "currency": "PHP",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -469,9 +250,9 @@
           },
           {
             "date": "2026-08-31 00:00:00",
-            "country": "MD",
-            "event": "National Language Day",
-            "currency": "MDL",
+            "country": "MY",
+            "event": "National Day",
+            "currency": "MYR",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -492,6 +273,32 @@
             "impact": "Medium",
             "changePercentage": -4.278,
             "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Company Gross Profits QoQ (Q2)",
+            "currency": "AUD",
+            "previous": -1.5,
+            "estimate": 2,
+            "actual": 1.8,
+            "change": 3.3,
+            "impact": "Medium",
+            "changePercentage": 220,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Private Sector Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.8,
+            "estimate": 0.7,
+            "actual": 0.6,
+            "change": -0.2,
+            "impact": "Low",
+            "changePercentage": -25,
+            "unit": "%"
           },
           {
             "date": "2026-08-31 01:30:00",
@@ -518,19 +325,6 @@
             "impact": "Low",
             "changePercentage": -16.667,
             "unit": "%"
-          },
-          {
-            "date": "2026-08-31 01:30:00",
-            "country": "CN",
-            "event": "NBS General PMI (Aug)",
-            "currency": "CNY",
-            "previous": 49.3,
-            "estimate": 50.2,
-            "actual": 49.5,
-            "change": 0.2,
-            "impact": "Low",
-            "changePercentage": 0.406,
-            "unit": null
           },
           {
             "date": "2026-08-31 01:30:00",
@@ -561,52 +355,39 @@
           {
             "date": "2026-08-31 01:30:00",
             "country": "CN",
-            "event": "S&P Global Composite PMI (Aug)",
+            "event": "NBS General PMI (Aug)",
             "currency": "CNY",
             "previous": 49.3,
-            "estimate": null,
+            "estimate": 50.2,
             "actual": 49.5,
             "change": 0.2,
-            "impact": "Medium",
-            "changePercentage": 0.406,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-08-31 01:30:00",
-            "country": "AU",
-            "event": "Private Sector Credit YoY (Jul)",
-            "currency": "AUD",
-            "previous": 8.5,
-            "estimate": 8.5,
-            "actual": 8.4,
-            "change": -0.1,
             "impact": "Low",
-            "changePercentage": -1.176,
-            "unit": "%"
+            "changePercentage": 0.406,
+            "unit": null
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above the 200 EMA and a bullish EMA stack. Reclaiming VWAP, moderate RSI, contracting bands, and strong trend strength support continuation, although drying volume limits conviction.",
-        "financial_assessment": "mixed",
-        "financial_interpretation": "The last three reports all beat EPS expectations by a widening margin, but the supplied revenue and net-income figures show no displayed growth. Margins remain solid and cash flow is positive, though substantial debt is a balance-sheet consideration.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around event timing and gap risk. Longer-range analyst estimates point to higher revenue and EPS, but they do not remove near-term earnings-event risk.",
-        "analyst_assessment": "positive",
-        "analyst_interpretation": "The consensus is Buy, and forward revenue and EPS estimates have increased from the prior projections.",
-        "valuation_assessment": "attractive",
-        "valuation_interpretation": "The low trailing P/E, modest price-to-sales ratio, and near-book price-to-book valuation are supportive rather than demanding. The discount may partly reflect slow displayed growth and elevated debt.",
-        "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was returned, so there is no identified news catalyst or immediate headline risk.",
+        "technical_interpretation": "The setup resembles a bullish pullback continuation within a developing uptrend. Price is above the 200 EMA with a bullish EMA stack, rising RSI, VWAP recovery, and moderate trend strength, though relative strength versus SPY remains slightly weak.",
+        "financial_assessment": "not_applicable",
+        "financial_interpretation": "No quarterly results were returned, and XES is an ETF rather than an operating company with directly attributable earnings. Therefore, acceleration, margins, cash flow, and earnings surprises cannot be assessed.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "The next earnings date and forward estimates are unavailable. Event risk cannot be evaluated from the supplied data.",
+        "analyst_assessment": "unknown",
+        "analyst_interpretation": "Analyst ratings and estimate-direction data are unavailable.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "No valuation metrics were supplied, so valuation cannot be confirmed as either support or a headwind.",
+        "news_assessment": "no_major_risk",
+        "news_interpretation": "The only recent item is a routine informational article describing XES and its segment exposure. It provides no material catalyst, downgrade, or adverse fund-specific news.",
         "sector_assessment": "neutral",
-        "sector_interpretation": "The broader group is weak while the more relevant industry reading is modestly positive, leaving sector support mixed but not clearly adverse.",
-        "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and a mildly adverse cycle backdrop can pressure valuation-sensitive, debt-heavy telecom businesses despite currently low volatility.",
+        "sector_interpretation": "The supplied sector snapshot is slightly weak and industry data are absent, so it offers no clear fundamental tailwind for the setup.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "Neutral risk conditions are helpful, but elevated long-term yields and a mildly unfavorable market-cycle backdrop remain modest headwinds.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported as a bullish pullback continuation, with strong trend structure and relative strength. Earnings beats, positive estimate revisions, and attractive valuation help, but flat displayed growth, debt, uncertain earnings timing, and macro rate pressure temper conviction.",
-        "key_positive": "A sustained uptrend is supported by repeated EPS beats, positive estimate revisions, and undemanding valuation.",
-        "key_risk": "The main risks are unclear earnings timing, limited displayed business growth, high debt, and elevated interest-rate pressure.",
+        "overall_summary": "Technicals support the scanner signal: XES is in an uptrend and showing constructive pullback-recovery behavior. Fundamental, earnings, analyst, and valuation confirmation is unavailable, while slightly weak relative performance and macro rate pressure argue for measured conviction.",
+        "key_positive": "Bullish trend structure, rising RSI, and successful VWAP recovery support continuation.",
+        "key_risk": "Lack of fundamental confirmation combined with weak relative strength and elevated yields could limit follow-through.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -617,12 +398,2828 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2646
+          "chars": 2330
+        }
+      ],
+      "is_etf": true,
+      "buy_confidence": 54,
+      "report": "🟡 XES — State Street SPDR S&P Oil & Gas Equipment & Services ETF\nEntry: $122.00\neToro TP Value: $42.28\nShares: 2.05 ($250)\nScanner Potential: +16.9%\nTimeframe: 17–51 days\n\n═══ BUY CONFIDENCE: 54% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate-direction data are unavailable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback continuation within a developing uptrend. Price is above the 200 EMA with a bullish EMA stack, rising RSI, VWAP recovery, and moderate trend strength, though relative strength versus SPY remains slightly weak.\n🕒 Technical timestamp: 2026-08-31 21:32:00 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation metrics were supplied, so valuation cannot be confirmed as either support or a headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date and forward estimates are unavailable. Event risk cannot be evaluated from the supplied data.\n\n═══ RECENT NEWS ═══\n• 2026-08-31 07:21 UTC — Should You Invest in the State Street SPDR S&P Oil & Gas Equipment & Services ETF (XES)?\n⚪ The only recent item is a routine informational article describing XES and its segment exposure. It provides no material catalyst, downgrade, or adverse fund-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: The supplied sector snapshot is slightly weak and industry data are absent, so it offers no clear fundamental tailwind for the setup.\n🧠 Macro: Neutral risk conditions are helpful, but elevated long-term yields and a mildly unfavorable market-cycle backdrop remain modest headwinds.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technicals support the scanner signal: XES is in an uptrend and showing constructive pullback-recovery behavior. Fundamental, earnings, analyst, and valuation confirmation is unavailable, while slightly weak relative performance and macro rate pressure argue for measured conviction.\n🟢 Key Positive: Bullish trend structure, rising RSI, and successful VWAP recovery support continuation.\n🔴 Key Risk: Lack of fundamental confirmation combined with weak relative strength and elevated yields could limit follow-through.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "VUG",
+      "alert": {
+        "alerted": "2026-08-31T21:32:00.799017+00:00",
+        "entry": 88.24,
+        "thesis_warned": false,
+        "tp": 103.56
+      },
+      "signal": {
+        "ticker": "VUG",
+        "name": "Vanguard Growth",
+        "setup": "pullback",
+        "entry": 88.24,
+        "tp": 103.56,
+        "tp_pct": 0.173617407071623,
+        "shares": 2.83,
+        "value": 249.7192,
+        "pl_amount": 43.36,
+        "eta_days_low": 39,
+        "eta_days_high": 117,
+        "fee_pct": 0.0,
+        "trend_score": 4,
+        "adx": 25.8,
+        "rs": -0.03,
+        "runner": false,
+        "regime": "uptrend",
+        "regime_weeks": 4,
+        "ema20": 87.78,
+        "ema50": 86.86,
+        "ema200": 83.59,
+        "above_ema200": true,
+        "quality": 1.0,
+        "q_detail": {
+          "rsi": 1.0,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 52.8 rising",
+          "bollinger": "band position 68%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.7x average, drying up",
+          "extension": "+0.3 ATR from 20 EMA, slope +0.2%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 52.8,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 4/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=52.8)",
+          "(us-growth)"
+        ],
+        "time": "2026-08-31T21:32:00.798995+00:00"
+      },
+      "profile": {
+        "symbol": "VUG",
+        "price": 88.24,
+        "marketCap": 392783721113,
+        "beta": 1.227,
+        "lastDividend": 0.33962,
+        "range": "69.63333-90.6",
+        "change": -0.3,
+        "changePercentage": -0.33883,
+        "volume": 4401380,
+        "averageVolume": 7067835,
+        "companyName": "Vanguard Morningstar Growth ETF",
+        "currency": "USD",
+        "cik": "0000036405",
+        "isin": "US9229087369",
+        "cusip": "922908736",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management",
+        "website": "https://investor.vanguard.com/investment-products/etfs/profile/vug",
+        "description": "This exchange-traded fund (ETF) is designed to mirror the investment performance of the CRSP US Large Cap Growth Index. It provides investors with a straightforward avenue to gain exposure to a broad spectrum of America's leading growth-oriented enterprises. The fund operates on a passively managed basis, utilizing a full-replication methodology to meticulously track its benchmark index. For approximately 75% of its total holdings, the fund adheres to strict concentration guidelines: it is generally prohibited from purchasing more than 10% of the voting shares of any single issuer or allowing its investment in any one issuer to exceed 5% of its overall assets. However, these limits may be adjusted if necessary to closely match the composition of its target index, and they do not apply to securities issued by the U.S. government or its associated agencies.",
+        "ceo": "",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": null,
+        "phone": "1-800-662-7447",
+        "address": "100 Vanguard Boulevard",
+        "city": "Malvern",
+        "state": "PA",
+        "zip": "19355",
+        "image": "https://images.financialmodelingprep.com/symbol/VUG.png",
+        "ipoDate": "2004-01-30",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [],
+      "financial_health": {
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": []
+      },
+      "analysts": {
+        "grades_consensus": {},
+        "estimate_direction": {}
+      },
+      "valuation": {},
+      "news": [],
+      "news_diag": {
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
+      },
+      "sector": {
+        "sector": "Financial Services",
+        "industry": "Asset Management",
+        "sector_snapshot": {
+          "date": "2026-08-31",
+          "sector": "Financial Services",
+          "exchange": "NASDAQ",
+          "averageChange": -0.04700587313813953
+        },
+        "industry_snapshot": {}
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 9.4
+        },
+        "hourly_scan_cycles": {
+          "score": -0.5,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-28",
+          "month1": 3.84,
+          "month2": 3.86,
+          "month3": 3.9,
+          "month6": 4.02,
+          "year1": 4.15,
+          "year2": 4.34,
+          "year3": 4.41,
+          "year5": 4.48,
+          "year7": 4.59,
+          "year10": 4.73,
+          "year20": 5.21,
+          "year30": 5.22
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MD",
+            "event": "National Language Day",
+            "currency": "MDL",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "PH",
+            "event": "National Heroes Day",
+            "currency": "PHP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "KG",
+            "event": "Kyrgyz Republic Independence Day",
+            "currency": "KGS",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MY",
+            "event": "National Day",
+            "currency": "MYR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:00:00",
+            "country": "NZ",
+            "event": "ANZ Business Confidence (Aug)",
+            "currency": "NZD",
+            "previous": 56.1,
+            "estimate": 55.7,
+            "actual": 53.7,
+            "change": -2.4,
+            "impact": "Medium",
+            "changePercentage": -4.278,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Company Gross Profits QoQ (Q2)",
+            "currency": "AUD",
+            "previous": -1.5,
+            "estimate": 2,
+            "actual": 1.8,
+            "change": 3.3,
+            "impact": "Medium",
+            "changePercentage": 220,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Private Sector Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.8,
+            "estimate": 0.7,
+            "actual": 0.6,
+            "change": -0.2,
+            "impact": "Low",
+            "changePercentage": -25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Non Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49,
+            "estimate": 49.5,
+            "actual": 49,
+            "change": 0,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Housing Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.6,
+            "estimate": 0.5,
+            "actual": 0.5,
+            "change": -0.1,
+            "impact": "Low",
+            "changePercentage": -16.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Business Inventories QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.7,
+            "estimate": 0.7,
+            "actual": -0.2,
+            "change": -0.9,
+            "impact": "Low",
+            "changePercentage": -128.571,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.2,
+            "estimate": 49.7,
+            "actual": 49.8,
+            "change": 0.6,
+            "impact": "High",
+            "changePercentage": 1.22,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS General PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.3,
+            "estimate": 50.2,
+            "actual": 49.5,
+            "change": 0.2,
+            "impact": "Low",
+            "changePercentage": 0.406,
+            "unit": null
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback continuation within a four-week daily uptrend. Price remains above rising 20-, 50-, and 200-period EMAs, while improving RSI, VWAP reclamation, contracting bands, and drying volume suggest buyers defended the dip.",
+        "financial_assessment": "not_applicable",
+        "financial_interpretation": "Quarterly financial results were unavailable, likely because this is an ETF rather than an operating company. Therefore, no earnings acceleration, margin, cash-flow, or surprise trend can be confirmed.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "No next earnings date or forward estimates are available, and an ETF has no single-company earnings event. Event-specific earnings risk is therefore unassessable rather than clearly elevated.",
+        "analyst_assessment": "unknown",
+        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable, so no external confirmation is provided.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "Valuation data is unavailable, preventing assessment of whether the growth exposure is attractively or richly priced. This leaves valuation as an unconfirmed risk rather than a known catalyst.",
+        "news_assessment": "no_recent_news",
+        "news_interpretation": "No usable company-specific news was returned. There is no identified headline catalyst or discrete news risk affecting the setup.",
+        "sector_assessment": "neutral",
+        "sector_interpretation": "The broader sector was essentially flat recently, offering neither meaningful confirmation nor a clear drag on the setup.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Elevated long-term yields can pressure growth-ETF valuations, while neutral volatility limits immediate stress; the cycle backdrop is also mildly unfavorable.",
+        "overall_assessment": "mixed",
+        "overall_summary": "Technicals support a constructive pullback continuation, with a strong quality score and intact uptrend structure. However, VUG has recently lagged SPY, elevated yields create a headwind for growth exposure, and the unavailable fundamental, valuation, and analyst data limits confirmation.",
+        "key_positive": "The trend remains bullish, with price above the major EMAs and evidence that buyers defended the pullback.",
+        "key_risk": "Higher yields and recent relative underperformance could weaken growth leadership despite the favorable technical structure.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2525
+        }
+      ],
+      "is_etf": true,
+      "buy_confidence": 48,
+      "report": "🟡 VUG — Vanguard Morningstar Growth ETF\nEntry: $88.24\neToro TP Value: $43.36\nShares: 2.83 ($250)\nScanner Potential: +17.4%\nTimeframe: 39–117 days\n\n═══ BUY CONFIDENCE: 48% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable, so no external confirmation is provided.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback continuation within a four-week daily uptrend. Price remains above rising 20-, 50-, and 200-period EMAs, while improving RSI, VWAP reclamation, contracting bands, and drying volume suggest buyers defended the dip.\n🕒 Technical timestamp: 2026-08-31 21:32:00 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 Valuation data is unavailable, preventing assessment of whether the growth exposure is attractively or richly priced. This leaves valuation as an unconfirmed risk rather than a known catalyst.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimates are available, and an ETF has no single-company earnings event. Event-specific earnings risk is therefore unassessable rather than clearly elevated.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: The broader sector was essentially flat recently, offering neither meaningful confirmation nor a clear drag on the setup.\n🧠 Macro: Elevated long-term yields can pressure growth-ETF valuations, while neutral volatility limits immediate stress; the cycle backdrop is also mildly unfavorable.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technicals support a constructive pullback continuation, with a strong quality score and intact uptrend structure. However, VUG has recently lagged SPY, elevated yields create a headwind for growth exposure, and the unavailable fundamental, valuation, and analyst data limits confirmation.\n🟢 Key Positive: The trend remains bullish, with price above the major EMAs and evidence that buyers defended the pullback.\n🔴 Key Risk: Higher yields and recent relative underperformance could weaken growth leadership despite the favorable technical structure.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "NANR",
+      "alert": {
+        "alerted": "2026-08-31T21:32:00.593075+00:00",
+        "entry": 89.75,
+        "thesis_warned": false,
+        "tp": 108.35
+      },
+      "signal": {
+        "ticker": "NANR",
+        "name": "SPDR Natural Resources",
+        "setup": "pullback",
+        "entry": 89.75,
+        "tp": 108.35,
+        "tp_pct": 0.2072423398328691,
+        "shares": 2.79,
+        "value": 250.4025,
+        "pl_amount": 51.89,
+        "eta_days_low": 36,
+        "eta_days_high": 41,
+        "fee_pct": 0.0,
+        "trend_score": 5,
+        "adx": 52.9,
+        "rs": 0.06,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 4,
+        "ema20": 87.25,
+        "ema50": 83.92,
+        "ema200": 78.55,
+        "above_ema200": true,
+        "quality": 0.78,
+        "q_detail": {
+          "rsi": 0.6,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 0.2,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 59.7 falling",
+          "bollinger": "band position 51%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "2.4x average, surging",
+          "extension": "+0.8 ATR from 20 EMA, slope +1.4%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 59.7,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.78 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.2, opt +0.0; RSI=59.7)",
+          "(natres)"
+        ],
+        "time": "2026-08-31T21:32:00.593056+00:00"
+      },
+      "profile": {
+        "symbol": "NANR",
+        "price": 89.75,
+        "marketCap": 823344152,
+        "beta": 0.49,
+        "lastDividend": 1.41246,
+        "range": "61.4-91.57",
+        "change": 0.3635,
+        "changePercentage": 0.40666,
+        "volume": 62535,
+        "averageVolume": 29356,
+        "companyName": "State Street SPDR S&P North American Natural Resources ETF",
+        "currency": "USD",
+        "cik": "0001168164",
+        "isin": "US78463X1524",
+        "cusip": "78463X152",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management",
+        "website": "https://www.ssga.com/us/en/institutional/etfs/state-street-spdr-sp-north-american-natural-resources-etf-nanr",
+        "description": "The State Street SPDR S&P North American Natural Resources ETF (NANR) aims to replicate the total return performance of the S&P BMI North American Natural Resources Index, before accounting for fees and expenses. This ETF provides investors with access to large and mid-capitalization publicly traded companies within the energy, metals & mining, and agriculture industries located in the United States and Canada. Each quarter, during its index rebalancing, the portfolio's allocation to these sectors is set, specifically maintaining 45% in energy companies, 35% in metals and mining firms, and 20% in the agriculture sector.",
+        "ceo": "",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": null,
+        "phone": "1-866-787-2257",
+        "address": "1 Iron Street",
+        "city": "Boston",
+        "state": "MA",
+        "zip": "2210",
+        "image": "https://images.financialmodelingprep.com/symbol/NANR.png",
+        "ipoDate": "2015-12-15",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [],
+      "financial_health": {
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": []
+      },
+      "analysts": {
+        "grades_consensus": {},
+        "estimate_direction": {}
+      },
+      "valuation": {},
+      "news": [],
+      "news_diag": {
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
+      },
+      "sector": {
+        "sector": "Financial Services",
+        "industry": "Asset Management",
+        "sector_snapshot": {
+          "date": "2026-08-31",
+          "sector": "Financial Services",
+          "exchange": "NASDAQ",
+          "averageChange": -0.04700587313813953
+        },
+        "industry_snapshot": {}
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 9.4
+        },
+        "hourly_scan_cycles": {
+          "score": -0.5,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-28",
+          "month1": 3.84,
+          "month2": 3.86,
+          "month3": 3.9,
+          "month6": 4.02,
+          "year1": 4.15,
+          "year2": 4.34,
+          "year3": 4.41,
+          "year5": 4.48,
+          "year7": 4.59,
+          "year10": 4.73,
+          "year20": 5.21,
+          "year30": 5.22
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MD",
+            "event": "National Language Day",
+            "currency": "MDL",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "PH",
+            "event": "National Heroes Day",
+            "currency": "PHP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "KG",
+            "event": "Kyrgyz Republic Independence Day",
+            "currency": "KGS",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MY",
+            "event": "National Day",
+            "currency": "MYR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:00:00",
+            "country": "NZ",
+            "event": "ANZ Business Confidence (Aug)",
+            "currency": "NZD",
+            "previous": 56.1,
+            "estimate": 55.7,
+            "actual": 53.7,
+            "change": -2.4,
+            "impact": "Medium",
+            "changePercentage": -4.278,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Company Gross Profits QoQ (Q2)",
+            "currency": "AUD",
+            "previous": -1.5,
+            "estimate": 2,
+            "actual": 1.8,
+            "change": 3.3,
+            "impact": "Medium",
+            "changePercentage": 220,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Private Sector Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.8,
+            "estimate": 0.7,
+            "actual": 0.6,
+            "change": -0.2,
+            "impact": "Low",
+            "changePercentage": -25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Non Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49,
+            "estimate": 49.5,
+            "actual": 49,
+            "change": 0,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Housing Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.6,
+            "estimate": 0.5,
+            "actual": 0.5,
+            "change": -0.1,
+            "impact": "Low",
+            "changePercentage": -16.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Business Inventories QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.7,
+            "estimate": 0.7,
+            "actual": -0.2,
+            "change": -0.9,
+            "impact": "Low",
+            "changePercentage": -128.571,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.2,
+            "estimate": 49.7,
+            "actual": 49.8,
+            "change": 0.6,
+            "impact": "High",
+            "changePercentage": 1.22,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS General PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.3,
+            "estimate": 50.2,
+            "actual": 49.5,
+            "change": 0.2,
+            "impact": "Low",
+            "changePercentage": 0.406,
+            "unit": null
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term EMAs. VWAP reclamation, surging volume, strong ADX, and outperformance versus SPY support continuation, while contracting bands and a mildly falling RSI suggest momentum is cooling rather than breaking down.",
+        "financial_assessment": "not_applicable",
+        "financial_interpretation": "Quarterly financial results were unavailable, and NANR is an ETF rather than an operating company with directly applicable earnings statements. Therefore, acceleration, margins, cash flow, and earnings surprises cannot be assessed from the supplied data.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "No next earnings date or forward estimates are available; because this is an ETF, conventional company earnings-event risk is limited but constituent news can still affect volatility.",
+        "analyst_assessment": "unknown",
+        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable, so there is no external consensus confirmation.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "No valuation data was supplied, so valuation cannot be judged as a support or headwind.",
+        "news_assessment": "no_recent_news",
+        "news_interpretation": "No usable recent company-specific news was returned. There is no identified headline catalyst or immediate news-related risk in the supplied data.",
+        "sector_assessment": "neutral",
+        "sector_interpretation": "The broader sector was essentially flat, offering neither meaningful confirmation nor a significant drag on the setup.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "Neutral market risk and low volatility help, but elevated yields and a mildly unfavorable cycle backdrop could limit upside follow-through.",
+        "overall_assessment": "supportive",
+        "overall_summary": "The strong trend and defended pullback provide the clearest support for the scanner signal, with volume and relative strength confirming buyer participation. Fundamental, valuation, analyst, and news confirmation is largely unavailable, while sector conditions are neutral and macro conditions impose only a modest constraint.",
+        "key_positive": "Established uptrend, strong ADX, VWAP recovery, high volume, and outperformance versus SPY support bullish continuation.",
+        "key_risk": "Elevated yields and limited fundamental or valuation visibility increase the risk that the technical move loses momentum.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2589
+        }
+      ],
+      "is_etf": true,
+      "buy_confidence": 58,
+      "report": "🟡 NANR — State Street SPDR S&P North American Natural Resources ETF\nEntry: $89.75\neToro TP Value: $51.89\nShares: 2.79 ($250)\nScanner Potential: +20.7%\nTimeframe: 36–41 days\n\n═══ BUY CONFIDENCE: 58% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable, so there is no external consensus confirmation.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term EMAs. VWAP reclamation, surging volume, strong ADX, and outperformance versus SPY support continuation, while contracting bands and a mildly falling RSI suggest momentum is cooling rather than breaking down.\n🕒 Technical timestamp: 2026-08-31 21:32:00 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation data was supplied, so valuation cannot be judged as a support or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimates are available; because this is an ETF, conventional company earnings-event risk is limited but constituent news can still affect volatility.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: The broader sector was essentially flat, offering neither meaningful confirmation nor a significant drag on the setup.\n🧠 Macro: Neutral market risk and low volatility help, but elevated yields and a mildly unfavorable cycle backdrop could limit upside follow-through.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The strong trend and defended pullback provide the clearest support for the scanner signal, with volume and relative strength confirming buyer participation. Fundamental, valuation, analyst, and news confirmation is largely unavailable, while sector conditions are neutral and macro conditions impose only a modest constraint.\n🟢 Key Positive: Established uptrend, strong ADX, VWAP recovery, high volume, and outperformance versus SPY support bullish continuation.\n🔴 Key Risk: Elevated yields and limited fundamental or valuation visibility increase the risk that the technical move loses momentum.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "MMSI",
+      "alert": {
+        "alerted": "2026-08-31T21:32:00.564473+00:00",
+        "entry": 90.67,
+        "thesis_warned": false,
+        "tp": 112.18
+      },
+      "signal": {
+        "ticker": "MMSI",
+        "name": "Merit Medical Systems, Inc.",
+        "setup": "pullback",
+        "entry": 90.67,
+        "tp": 112.18,
+        "tp_pct": 0.23723392522333753,
+        "shares": 2.76,
+        "value": 250.24919999999997,
+        "pl_amount": 59.37,
+        "eta_days_low": 29,
+        "eta_days_high": 61,
+        "fee_pct": 0.03368840916594236,
+        "trend_score": 5,
+        "adx": 44.8,
+        "rs": 0.479,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 9,
+        "ema20": 88.39,
+        "ema50": 82.12,
+        "ema200": 77.23,
+        "above_ema200": true,
+        "quality": 1.0,
+        "q_detail": {
+          "rsi": 1.0,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 56.5 rising",
+          "bollinger": "band position 61%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.8x average, drying up",
+          "extension": "+0.5 ATR from 20 EMA, slope +0.3%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 56.5,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=56.5)",
+          "(nasdaq; tier assigned nightly by FMP)",
+          "hard-eligible; ranked in Step 2"
+        ],
+        "time": "2026-08-31T21:32:00.564451+00:00"
+      },
+      "profile": {
+        "symbol": "MMSI",
+        "price": 90.66,
+        "marketCap": 5413344864,
+        "beta": 0.484,
+        "lastDividend": 0,
+        "range": "59.74-94.75",
+        "change": 0.17,
+        "changePercentage": 0.18787,
+        "volume": 407593,
+        "averageVolume": 885774,
+        "companyName": "Merit Medical Systems, Inc.",
+        "currency": "USD",
+        "cik": "0000856982",
+        "isin": "US5898891040",
+        "cusip": "589889104",
+        "exchangeFullName": "NASDAQ Global Select",
+        "exchange": "NASDAQ",
+        "industry": "Medical - Instruments & Supplies",
+        "website": "https://www.merit.com",
+        "description": "Merit Medical Systems, Inc. (MMSI) is engaged in the design, development, manufacturing, and worldwide commercialization of disposable medical products. These devices are crucial for a broad spectrum of diagnostic, therapeutic, and interventional procedures, primarily within the fields of cardiology, radiology, oncology, critical care, and endoscopy. The company operates through two main divisions: Cardiovascular and Endoscopy. Its extensive product portfolio includes advanced solutions for diagnosing and treating conditions in peripheral vessels and organs, as well as a comprehensive suite of cardiac intervention products. The latter encompasses tools for vascular access, angiography, electrophysiology, cardiac rhythm management, fluid and hemodynamic monitoring, hemostasis, and various interventional therapies for heart-related ailments. Additionally, MMSI provides customized procedural solutions, offering critical care items, disinfection protection systems, specialized syringes, manifold kits, and tailored trays and packs. Their offerings further extend to coated tubes and wires, alongside sophisticated sensor components for microelectromechanical systems (MEMS). The company also features pulmonary products, such as laser-cut tracheobronchial stents with their accompanying over-the-wire and direct visualization delivery systems, and dilation balloons used for endoscopic stricture dilation. Gastroenterology products, as well as essential kits and accessories for endoscopy and bronchoscopy procedures, complete their diverse catalog. Merit Medical Systems sells its products to a wide client base, including hospitals and healthcare professionals (physicians, technicians, and nurses) working in alternative care settings. Distribution channels include a direct sales force, authorized distributors, original equipment manufacturer (OEM) partnerships, and custom procedure tray manufacturers, reaching customers throughout the United States and internationally. Founded in 1987, Merit Medical Systems, Inc. has its corporate headquarters situated in South Jordan, Utah.",
+        "ceo": "Martha Goldberg Aronson",
+        "sector": "Healthcare",
+        "country": "US",
+        "fullTimeEmployees": "7500",
+        "phone": "801 253 1600",
+        "address": "1600 West Merit Parkway",
+        "city": "South Jordan",
+        "state": "UT",
+        "zip": "84095",
+        "image": "https://images.financialmodelingprep.com/symbol/MMSI.png",
+        "ipoDate": "1990-05-14",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-07-30",
+          "fiscal_period": "",
+          "eps_actual": 1.19,
+          "eps_estimate": 0.959,
+          "eps_surprise": 0.23099999999999998,
+          "eps_surprise_pct": 0.2408759124087591,
+          "revenue": 418843000.0,
+          "net_income": 38803000.0,
+          "operating_margin": 0.1445601335106472,
+          "gross_margin": 0.513715162960823,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-04-30",
+          "fiscal_period": "",
+          "eps_actual": 0.94,
+          "eps_estimate": 0.84,
+          "eps_surprise": 0.09999999999999998,
+          "eps_surprise_pct": 0.11904761904761903,
+          "revenue": 418843000.0,
+          "net_income": 38803000.0,
+          "operating_margin": 0.1445601335106472,
+          "gross_margin": 0.513715162960823,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-02-24",
+          "fiscal_period": "",
+          "eps_actual": 1.04,
+          "eps_estimate": 0.96,
+          "eps_surprise": 0.08000000000000007,
+          "eps_surprise_pct": 0.08333333333333341,
+          "revenue": 418843000.0,
+          "net_income": 38803000.0,
+          "operating_margin": 0.1445601335106472,
+          "gross_margin": 0.513715162960823,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 448699000.0,
+        "total_debt": 820121000.0,
+        "total_liabilities": 1183816000.0,
+        "equity": 1679804000.0,
+        "operating_cash_flow": 69276000.0,
+        "capital_expenditure": -18191000.0,
+        "free_cash_flow": 51085000.0
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": [
+          {
+            "date": "2030-12-31",
+            "period": null,
+            "revenue_avg": 2070000000.0,
+            "eps_avg": 5.51,
+            "revenue_low": 2053317875.0,
+            "revenue_high": 2082293117.0,
+            "eps_low": 5.45227,
+            "eps_high": 5.55254,
+            "num_analysts_revenue": 6,
+            "num_analysts_eps": 1
+          },
+          {
+            "date": "2029-12-31",
+            "period": null,
+            "revenue_avg": 1952733333.0,
+            "eps_avg": 5.2,
+            "revenue_low": 1936996260.0,
+            "revenue_high": 1964330038.0,
+            "eps_low": 5.14552,
+            "eps_high": 5.24015,
+            "num_analysts_revenue": 6,
+            "num_analysts_eps": 1
+          },
+          {
+            "date": "2028-12-31",
+            "period": null,
+            "revenue_avg": 1837928425.0,
+            "eps_avg": 4.96351,
+            "revenue_low": 1800041736.0,
+            "revenue_high": 1853697440.0,
+            "eps_low": 4.70703,
+            "eps_high": 5.10049,
+            "num_analysts_revenue": 8,
+            "num_analysts_eps": 5
+          },
+          {
+            "date": "2027-12-31",
+            "period": null,
+            "revenue_avg": 1736151267.0,
+            "eps_avg": 4.61183,
+            "revenue_low": 1726115710.0,
+            "revenue_high": 1746186823.0,
+            "eps_low": 4.49204,
+            "eps_high": 4.76156,
+            "num_analysts_revenue": 9,
+            "num_analysts_eps": 7
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "MMSI",
+          "strongBuy": 0,
+          "buy": 12,
+          "hold": 2,
+          "sell": 1,
+          "strongSell": 0,
+          "consensus": "Buy"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 2070000000,
+            "prior": 1952733333,
+            "change": 0.06005257605750103
+          },
+          "epsAvg": {
+            "latest": 5.51,
+            "prior": 5.2,
+            "change": 0.059615384615384626
+          }
+        }
+      },
+      "valuation": {
+        "ratios": {
+          "symbol": "MMSI",
+          "grossProfitMarginTTM": 0.4951528242421479,
+          "ebitMarginTTM": 0.14325400670100122,
+          "ebitdaMarginTTM": 0.22930380384088572,
+          "operatingProfitMarginTTM": 0.12750646385087835,
+          "pretaxProfitMarginTTM": 0.12314087110482932,
+          "continuousOperationsProfitMarginTTM": 0.0921745451874311,
+          "netProfitMarginTTM": 0.0921745451874311,
+          "bottomLineProfitMarginTTM": 0.0921745451874311,
+          "receivablesTurnoverTTM": 6.294059737423176,
+          "payablesTurnoverTTM": 11.270452521311336,
+          "inventoryTurnoverTTM": 2.1310142417244036,
+          "fixedAssetTurnoverTTM": 3.033796647615388,
+          "assetTurnoverTTM": 0.5514582940473945,
+          "currentRatioTTM": 4.198185956449366,
+          "quickRatioTTM": 2.7860855386078742,
+          "solvencyRatioTTM": 0.23774471708441178,
+          "cashRatioTTM": 1.6936319748766668,
+          "priceToEarningsRatioTTM": 37.004081632653055,
+          "priceToEarningsGrowthRatioTTM": 1.788530612244896,
+          "forwardPriceToEarningsGrowthRatioTTM": 5.14871654214186,
+          "priceToEarningsDilutedRatioTTM": 37.46280991735537,
+          "priceToEarningsDilutedGrowthRatioTTM": 1.6400385674931153,
+          "priceToBookRatioTTM": 3.220910380020526,
+          "priceToSalesRatioTTM": 3.4279749158892,
+          "priceToFreeCashFlowRatioTTM": 26.60081111334968,
+          "priceToOperatingCashFlowRatioTTM": 19.088083358911128,
+          "debtToAssetsRatioTTM": 0.2863930968494423,
+          "debtToEquityRatioTTM": 0.48822422139725824,
+          "debtToCapitalRatioTTM": 0.3280582417472524,
+          "longTermDebtToCapitalRatioTTM": 0.3047347294895578,
+          "financialLeverageRatioTTM": 1.7047345999890464,
+          "workingCapitalTurnoverRatioTTM": 1.8233026691413545,
+          "operatingCashFlowRatioTTM": 1.0698893682553703,
+          "operatingCashFlowSalesRatioTTM": 0.1794927325609008,
+          "freeCashFlowOperatingCashFlowRatioTTM": 0.7179527886850897,
+          "debtServiceCoverageRatioTTM": 9.861091870788993,
+          "interestCoverageRatioTTM": 6.339462250488005,
+          "shortTermOperatingCashFlowCoverageRatioTTM": 0,
+          "operatingCashFlowCoverageRatioTTM": 0.3456185123902449,
+          "capitalExpenditureCoverageRatioTTM": 3.545505716358542,
+          "dividendPaidAndCapexCoverageRatioTTM": 3.545505716358542,
+          "dividendPayoutRatioTTM": 0,
+          "dividendYieldTTM": 0,
+          "enterpriseValueTTM": 5784766864,
+          "revenuePerShareTTM": 26.461016437942995,
+          "netIncomePerShareTTM": 2.4390321553645338,
+          "interestDebtPerShareTTM": 14.274418137033127,
+          "cashPerShareTTM": 7.518540860269106,
+          "bookValuePerShareTTM": 28.147321503376396,
+          "tangibleBookValuePerShareTTM": 8.847433770673101,
+          "shareholdersEquityPerShareTTM": 28.147321503376396,
+          "operatingCashFlowPerShareTTM": 4.749560146785301,
+          "capexPerShareTTM": 1.33960019437323,
+          "freeCashFlowPerShareTTM": 3.409959952412071,
+          "netIncomePerEBTTTM": 0.7485292605163015,
+          "ebtPerEbitTTM": 0.965761792663667,
+          "priceToFairValueTTM": 3.220910380020526,
+          "debtToMarketCapTTM": 0.13600796152786915,
+          "effectiveTaxRateTTM": 0.25147073948369847,
+          "enterpriseValueMultipleTTM": 15.975208746537646,
+          "dividendPerShareTTM": 0
+        },
+        "metrics": {
+          "symbol": "MMSI",
+          "marketCap": 5413344864,
+          "enterpriseValueTTM": 5784766864,
+          "evToSalesTTM": 3.66317613273327,
+          "evToOperatingCashFlowTTM": 20.408492758838452,
+          "evToFreeCashFlowTTM": 28.425953740239702,
+          "evToEBITDATTM": 15.975208746537646,
+          "netDebtToEBITDATTM": 1.0257187752858945,
+          "currentRatioTTM": 4.198185956449366,
+          "incomeQualityTTM": 1.9473134605211633,
+          "grahamNumberTTM": 39.302353622495296,
+          "grahamNetNetTTM": -6.030387573518323,
+          "taxBurdenTTM": 0.7485292605163015,
+          "interestBurdenTTM": 0.8595980939077543,
+          "workingCapitalTTM": 847305000,
+          "investedCapitalTTM": 2519628000,
+          "returnOnAssetsTTM": 0.05083041744365523,
+          "operatingReturnOnAssetsTTM": 0.07213235262508544,
+          "returnOnTangibleAssetsTTM": 0.08503162127838058,
+          "returnOnEquityTTM": 0.09068753316657951,
+          "returnOnInvestedCapitalTTM": 0.057755555900349545,
+          "returnOnCapitalEmployedTTM": 0.07748297505624956,
+          "earningsYieldTTM": 0.026903068115646744,
+          "freeCashFlowYieldTTM": 0.037592838644613644,
+          "capexToOperatingCashFlowTTM": 0.2820472113149103,
+          "capexToDepreciationTTM": 0.5883270658709074,
+          "capexToRevenueTTM": 0.05062542467009506,
+          "salesGeneralAndAdministrativeToRevenueTTM": 0.30526853714648294,
+          "researchAndDevelopementToRevenueTTM": 0.06237782324478665,
+          "stockBasedCompensationToRevenueTTM": 0.028739835622198284,
+          "intangiblesToTotalAssetsTTM": 0.40221747298873456,
+          "averageReceivablesTTM": 238949500,
+          "averagePayablesTTM": 69295000,
+          "averageInventoryTTM": 363249000,
+          "daysOfSalesOutstandingTTM": 57.991187759116045,
+          "daysOfPayablesOutstandingTTM": 32.38556742152281,
+          "daysOfInventoryOutstandingTTM": 171.27994400668308,
+          "operatingCycleTTM": 229.2711317657991,
+          "cashConversionCycleTTM": 196.8855643442763,
+          "freeCashFlowToEquityTTM": 203503000,
+          "freeCashFlowToFirmTTM": 227277786.37251878,
+          "tangibleAssetValueTTM": 528006000,
+          "netCurrentAssetValueTTM": -71578000
+        }
+      },
+      "news": [
+        {
+          "date": "2026-08-30 04:17 UTC",
+          "title": "Freestone Grove Partners LP Purchases Shares of 16,554 Merit Medical Systems, Inc. $MMSI",
+          "site": "defenseworld.net",
+          "text": "Freestone Grove Partners LP purchased a new position in Merit Medical Systems, Inc. (NASDAQ: MMSI) in the second quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The institutional investor purchased 16,554 shares of the medical instruments supplier's stock, valued at approximately $1,148,000. Other hedge funds and other"
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "1 usable article(s)"
+      },
+      "sector": {
+        "sector": "Healthcare",
+        "industry": "Medical - Instruments & Supplies",
+        "sector_snapshot": {
+          "date": "2026-08-31",
+          "sector": "Healthcare",
+          "exchange": "NASDAQ",
+          "averageChange": 1.2985021547554432
+        },
+        "industry_snapshot": {
+          "date": "2026-08-31",
+          "industry": "Medical - Instruments & Supplies",
+          "exchange": "NASDAQ",
+          "averageChange": 1.756353672358113
+        }
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 9.4
+        },
+        "hourly_scan_cycles": {
+          "score": -0.5,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-28",
+          "month1": 3.84,
+          "month2": 3.86,
+          "month3": 3.9,
+          "month6": 4.02,
+          "year1": 4.15,
+          "year2": 4.34,
+          "year3": 4.41,
+          "year5": 4.48,
+          "year7": 4.59,
+          "year10": 4.73,
+          "year20": 5.21,
+          "year30": 5.22
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MD",
+            "event": "National Language Day",
+            "currency": "MDL",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "PH",
+            "event": "National Heroes Day",
+            "currency": "PHP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "KG",
+            "event": "Kyrgyz Republic Independence Day",
+            "currency": "KGS",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MY",
+            "event": "National Day",
+            "currency": "MYR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:00:00",
+            "country": "NZ",
+            "event": "ANZ Business Confidence (Aug)",
+            "currency": "NZD",
+            "previous": 56.1,
+            "estimate": 55.7,
+            "actual": 53.7,
+            "change": -2.4,
+            "impact": "Medium",
+            "changePercentage": -4.278,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Company Gross Profits QoQ (Q2)",
+            "currency": "AUD",
+            "previous": -1.5,
+            "estimate": 2,
+            "actual": 1.8,
+            "change": 3.3,
+            "impact": "Medium",
+            "changePercentage": 220,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Private Sector Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.8,
+            "estimate": 0.7,
+            "actual": 0.6,
+            "change": -0.2,
+            "impact": "Low",
+            "changePercentage": -25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Non Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49,
+            "estimate": 49.5,
+            "actual": 49,
+            "change": 0,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Housing Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.6,
+            "estimate": 0.5,
+            "actual": 0.5,
+            "change": -0.1,
+            "impact": "Low",
+            "changePercentage": -16.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Business Inventories QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.7,
+            "estimate": 0.7,
+            "actual": -0.2,
+            "change": -0.9,
+            "impact": "Low",
+            "changePercentage": -128.571,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.2,
+            "estimate": 49.7,
+            "actual": 49.8,
+            "change": 0.6,
+            "impact": "High",
+            "changePercentage": 1.22,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS General PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.3,
+            "estimate": 50.2,
+            "actual": 49.5,
+            "change": 0.2,
+            "impact": "Low",
+            "changePercentage": 0.406,
+            "unit": null
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend rather than a fresh breakout. Strong trend strength, bullish EMA alignment, VWAP recovery, rising RSI, and contracting bands support continuation, while drying volume suggests limited immediate urgency.",
+        "financial_assessment": "positive",
+        "financial_interpretation": "The last three results all exceeded EPS expectations, with the latest surprise accelerating to 24.1% from 8.3% previously. However, the supplied revenue and net income figures are flat across periods; margins and positive free cash flow are supportive, while debt exceeds cash.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around the timing of the next catalyst. Longer-dated revenue and EPS estimates rise about 6%, but the lack of a confirmed date leaves event risk unresolved.",
+        "analyst_assessment": "positive",
+        "analyst_interpretation": "Analyst sentiment is strongly Buy-oriented, and forward revenue and EPS estimates have both been revised higher by roughly 6%.",
+        "valuation_assessment": "expensive",
+        "valuation_interpretation": "A trailing P/E near 37 makes valuation a headwind, particularly against the roughly 6% forward estimate growth supplied. The premium requires continued execution and leaves less room for earnings disappointment.",
+        "news_assessment": "no_major_risk",
+        "news_interpretation": "Recent news reports a new institutional position, which is mildly supportive but not a major company-specific catalyst. No material negative news risk is supplied.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "Healthcare and medical-instrument peers were positive recently, providing a supportive backdrop for the setup.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "No major upcoming event is supplied; elevated yields and a mildly unfavorable cycle backdrop create a modest macro headwind despite low volatility and neutral overall risk.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is well supported by a strong uptrend, recent earnings beats, positive analyst revisions, and firm sector performance. Valuation, leverage, unavailable earnings timing, and elevated yields temper the case, so the setup is constructive but not risk-free.",
+        "key_positive": "Persistent technical leadership is reinforced by repeated EPS beats and upward forward estimate revisions.",
+        "key_risk": "The main risk is that a premium valuation and unclear next earnings timing leave the stock vulnerable to disappointment or higher-rate pressure.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2737
         }
       ],
       "is_etf": false,
-      "buy_confidence": 58,
-      "report": "🟡 CMCSA — Comcast Corporation\nEntry: $26.86\neToro TP Value: $60.24\nShares: 9.31 ($250)\nScanner Potential: +24.1%\nTimeframe: 26–53 days\n\n═══ BUY CONFIDENCE: 58% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 34 | Hold: 25 | Sell: 2 | Strong Sell: 0\n🧠 The consensus is Buy, and forward revenue and EPS estimates have increased from the prior projections.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above the 200 EMA and a bullish EMA stack. Reclaiming VWAP, moderate RSI, contracting bands, and strong trend strength support continuation, although drying volume limits conviction.\n🕒 Technical timestamp: 2026-08-31 16:21:55 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all beat EPS expectations by a widening margin, but the supplied revenue and net-income figures show no displayed growth. Margins remain solid and cash flow is positive, though substantial debt is a balance-sheet consideration.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The low trailing P/E, modest price-to-sales ratio, and near-book price-to-book valuation are supportive rather than demanding. The discount may partly reflect slow displayed growth and elevated debt.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around event timing and gap risk. Longer-range analyst estimates point to higher revenue and EPS, but they do not remove near-term earnings-event risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: The broader group is weak while the more relevant industry reading is modestly positive, leaving sector support mixed but not clearly adverse.\n🧠 Macro: Elevated long-term yields and a mildly adverse cycle backdrop can pressure valuation-sensitive, debt-heavy telecom businesses despite currently low volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a bullish pullback continuation, with strong trend structure and relative strength. Earnings beats, positive estimate revisions, and attractive valuation help, but flat displayed growth, debt, uncertain earnings timing, and macro rate pressure temper conviction.\n🟢 Key Positive: A sustained uptrend is supported by repeated EPS beats, positive estimate revisions, and undemanding valuation.\n🔴 Key Risk: The main risks are unclear earnings timing, limited displayed business growth, high debt, and elevated interest-rate pressure.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 62,
+      "report": "🟡 MMSI — Merit Medical Systems, Inc.\nEntry: $90.67\neToro TP Value: $59.37\nShares: 2.76 ($250)\nScanner Potential: +23.7%\nTimeframe: 29–61 days\n\n═══ BUY CONFIDENCE: 62% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 12 | Hold: 2 | Sell: 1 | Strong Sell: 0\n🧠 Analyst sentiment is strongly Buy-oriented, and forward revenue and EPS estimates have both been revised higher by roughly 6%.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend rather than a fresh breakout. Strong trend strength, bullish EMA alignment, VWAP recovery, rising RSI, and contracting bands support continuation, while drying volume suggests limited immediate urgency.\n🕒 Technical timestamp: 2026-08-31 21:32:00 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three results all exceeded EPS expectations, with the latest surprise accelerating to 24.1% from 8.3% previously. However, the supplied revenue and net income figures are flat across periods; margins and positive free cash flow are supportive, while debt exceeds cash.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 A trailing P/E near 37 makes valuation a headwind, particularly against the roughly 6% forward estimate growth supplied. The premium requires continued execution and leaves less room for earnings disappointment.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around the timing of the next catalyst. Longer-dated revenue and EPS estimates rise about 6%, but the lack of a confirmed date leaves event risk unresolved.\n\n═══ RECENT NEWS ═══\n• 2026-08-30 04:17 UTC — Freestone Grove Partners LP Purchases Shares of 16,554 Merit Medical Systems, Inc. $MMSI\n⚪ Recent news reports a new institutional position, which is mildly supportive but not a major company-specific catalyst. No material negative news risk is supplied.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Healthcare and medical-instrument peers were positive recently, providing a supportive backdrop for the setup.\n🧠 Macro: No major upcoming event is supplied; elevated yields and a mildly unfavorable cycle backdrop create a modest macro headwind despite low volatility and neutral overall risk.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong uptrend, recent earnings beats, positive analyst revisions, and firm sector performance. Valuation, leverage, unavailable earnings timing, and elevated yields temper the case, so the setup is constructive but not risk-free.\n🟢 Key Positive: Persistent technical leadership is reinforced by repeated EPS beats and upward forward estimate revisions.\n🔴 Key Risk: The main risk is that a premium valuation and unclear next earnings timing leave the stock vulnerable to disappointment or higher-rate pressure.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "ERX",
+      "alert": {
+        "alerted": "2026-08-31T21:32:00.424105+00:00",
+        "entry": 108.28,
+        "thesis_warned": false,
+        "tp": 133.57
+      },
+      "signal": {
+        "ticker": "ERX",
+        "name": "Direxion Energy Bull 2x",
+        "setup": "pullback",
+        "entry": 108.28,
+        "tp": 133.57,
+        "tp_pct": 0.23356113779091237,
+        "shares": 2.31,
+        "value": 250.1268,
+        "pl_amount": 58.42,
+        "eta_days_low": 16,
+        "eta_days_high": 36,
+        "fee_pct": 0.0,
+        "trend_score": 5,
+        "adx": 28.4,
+        "rs": 0.19,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 6,
+        "ema20": 101.38,
+        "ema50": 95.45,
+        "ema200": 82.95,
+        "above_ema200": true,
+        "quality": 0.66,
+        "q_detail": {
+          "rsi": 0.7,
+          "bollinger": 0.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 0.6
+        },
+        "q_notes": {
+          "rsi": "RSI 63.5 rising",
+          "bollinger": "band position 78%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.5x average, drying up",
+          "extension": "+1.5 ATR from 20 EMA, slope +0.6%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 63.5,
+        "options_note": "",
+        "sector": "",
+        "warnings": [
+          "⚡ THIS IS A 2x LEVERAGED ETF — volatility decay erodes value on multi-week holds; extra caution with no-stoploss style"
+        ],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.66 (rsi +0.7, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=63.5)",
+          "⚡ THIS IS A 2x LEVERAGED ETF — volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
+          "(energy bull 2x)"
+        ],
+        "time": "2026-08-31T21:32:00.424083+00:00"
+      },
+      "profile": {
+        "symbol": "ERX",
+        "price": 108.34,
+        "marketCap": 240872972,
+        "beta": -0.03,
+        "lastDividend": 1.40912,
+        "range": "50.5-111.07",
+        "change": 4.32,
+        "changePercentage": 4.15305,
+        "volume": 290985,
+        "averageVolume": 312128,
+        "companyName": "Direxion Daily Energy Bull 2X ETF",
+        "currency": "USD",
+        "cik": "0001424958",
+        "isin": "US25460G6098",
+        "cusip": "25460G609",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management - Leveraged",
+        "website": "https://www.direxion.com/product/daily-energy-bull-bear-2x-etfs",
+        "description": "The Direxion Daily Energy Bull and Bear 2X ETFs are structured to provide daily investment returns that correspond to twice (200%) the performance of the Energy Select Sector Index, before accounting for fees and other expenses. Specifically, the \"Bull\" version aims for double the index's positive daily movement, while the \"Bear\" counterpart targets two times the index's inverse (opposite) daily performance. It's crucial to understand, however, that there is no guarantee these funds will consistently achieve their stated investment objectives.",
+        "ceo": "",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": null,
+        "phone": "1-866-476-7523",
+        "address": "535 Madison Avenue, 37th Floor",
+        "city": "New York City",
+        "state": "NY",
+        "zip": "10022",
+        "image": "https://images.financialmodelingprep.com/symbol/ERX.png",
+        "ipoDate": "2008-11-06",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [],
+      "financial_health": {
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": []
+      },
+      "analysts": {
+        "grades_consensus": {},
+        "estimate_direction": {}
+      },
+      "valuation": {},
+      "news": [
+        {
+          "date": "2026-08-31 14:07 UTC",
+          "title": "Oil Stocks Don't Need to Double for This ETF to Explode. Here's How 2X Energy Leverage Works",
+          "site": "247wallst.com",
+          "text": "Energy stocks have already had a strong 2026, but investors looking at the Direxion Daily Energy Bull 2X Shares (NYSEARCA:ERX) do not necessarily need Exxon Mobil, Chevron, or the broader energy sector to double from here for the ETF to"
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "1 usable article(s)"
+      },
+      "sector": {
+        "sector": "Financial Services",
+        "industry": "Asset Management - Leveraged",
+        "sector_snapshot": {
+          "date": "2026-08-31",
+          "sector": "Financial Services",
+          "exchange": "NASDAQ",
+          "averageChange": -0.04700587313813953
+        },
+        "industry_snapshot": {}
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 9.4
+        },
+        "hourly_scan_cycles": {
+          "score": -0.5,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-28",
+          "month1": 3.84,
+          "month2": 3.86,
+          "month3": 3.9,
+          "month6": 4.02,
+          "year1": 4.15,
+          "year2": 4.34,
+          "year3": 4.41,
+          "year5": 4.48,
+          "year7": 4.59,
+          "year10": 4.73,
+          "year20": 5.21,
+          "year30": 5.22
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MD",
+            "event": "National Language Day",
+            "currency": "MDL",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "PH",
+            "event": "National Heroes Day",
+            "currency": "PHP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "KG",
+            "event": "Kyrgyz Republic Independence Day",
+            "currency": "KGS",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MY",
+            "event": "National Day",
+            "currency": "MYR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:00:00",
+            "country": "NZ",
+            "event": "ANZ Business Confidence (Aug)",
+            "currency": "NZD",
+            "previous": 56.1,
+            "estimate": 55.7,
+            "actual": 53.7,
+            "change": -2.4,
+            "impact": "Medium",
+            "changePercentage": -4.278,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Company Gross Profits QoQ (Q2)",
+            "currency": "AUD",
+            "previous": -1.5,
+            "estimate": 2,
+            "actual": 1.8,
+            "change": 3.3,
+            "impact": "Medium",
+            "changePercentage": 220,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Private Sector Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.8,
+            "estimate": 0.7,
+            "actual": 0.6,
+            "change": -0.2,
+            "impact": "Low",
+            "changePercentage": -25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Non Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49,
+            "estimate": 49.5,
+            "actual": 49,
+            "change": 0,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Housing Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.6,
+            "estimate": 0.5,
+            "actual": 0.5,
+            "change": -0.1,
+            "impact": "Low",
+            "changePercentage": -16.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Business Inventories QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.7,
+            "estimate": 0.7,
+            "actual": -0.2,
+            "change": -0.9,
+            "impact": "Low",
+            "changePercentage": -128.571,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.2,
+            "estimate": 49.7,
+            "actual": 49.8,
+            "change": 0.6,
+            "impact": "High",
+            "changePercentage": 1.22,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS General PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.3,
+            "estimate": 50.2,
+            "actual": 49.5,
+            "change": 0.2,
+            "impact": "Low",
+            "changePercentage": 0.406,
+            "unit": null
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback continuation within a strong six-week uptrend. Price remains above rising EMAs, has reclaimed VWAP, and shows improving RSI, although it is somewhat extended and near its 52-week high.",
+        "financial_assessment": "not_applicable",
+        "financial_interpretation": "Quarterly financial results were unavailable, and ERX is a leveraged ETF rather than an operating company. Therefore, acceleration, margins, cash flow, and earnings surprises cannot be assessed from the supplied data.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "No next earnings date or forward estimates are available, so there is no identifiable earnings catalyst or event-risk schedule.",
+        "analyst_assessment": "unknown",
+        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "No valuation data is available for judging whether the ETF is attractively or excessively priced. The main valuation-like concern is that strong prior energy performance may already be reflected in the underlying holdings.",
+        "news_assessment": "no_major_risk",
+        "news_interpretation": "Recent coverage is broadly constructive about how energy stocks can produce amplified gains through ERX leverage. It is explanatory rather than a company-specific catalyst, and it provides no material adverse news signal.",
+        "sector_assessment": "headwind",
+        "sector_interpretation": "The supplied broader sector backdrop was weak and does not materially reinforce the setup, despite ERX's energy exposure.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "High and rising longer-term yields and a mildly unfavorable cycle backdrop can pressure risk appetite, while currently low volatility offers some offset.",
+        "overall_assessment": "caution",
+        "overall_summary": "Technicals strongly support a bullish pullback continuation, with trend, relative strength, and VWAP behavior all favorable. Fundamental and catalyst confirmation is unavailable, while weak sector context, elevated yields, and 2x leverage create meaningful risk for a multi-week hold. Volatility decay and sharp energy reversals warrant particular caution.",
+        "key_positive": "Strong trend structure, improving momentum, and substantial outperformance versus SPY support the existing signal.",
+        "key_risk": "ERX's 2x daily leverage can amplify an energy reversal and cause volatility decay even if the underlying sector is ultimately higher.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2610
+        }
+      ],
+      "is_etf": true,
+      "buy_confidence": 45,
+      "report": "🟡 ERX — Direxion Daily Energy Bull 2X ETF\nEntry: $108.28\neToro TP Value: $58.42\nShares: 2.31 ($250)\nScanner Potential: +23.4%\nTimeframe: 16–36 days\n\n═══ BUY CONFIDENCE: 45% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback continuation within a strong six-week uptrend. Price remains above rising EMAs, has reclaimed VWAP, and shows improving RSI, although it is somewhat extended and near its 52-week high.\n🕒 Technical timestamp: 2026-08-31 21:32:00 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation data is available for judging whether the ETF is attractively or excessively priced. The main valuation-like concern is that strong prior energy performance may already be reflected in the underlying holdings.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimates are available, so there is no identifiable earnings catalyst or event-risk schedule.\n\n═══ RECENT NEWS ═══\n• 2026-08-31 14:07 UTC — Oil Stocks Don't Need to Double for This ETF to Explode. Here's How 2X Energy Leverage Works\n⚪ Recent coverage is broadly constructive about how energy stocks can produce amplified gains through ERX leverage. It is explanatory rather than a company-specific catalyst, and it provides no material adverse news signal.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: The supplied broader sector backdrop was weak and does not materially reinforce the setup, despite ERX's energy exposure.\n🧠 Macro: High and rising longer-term yields and a mildly unfavorable cycle backdrop can pressure risk appetite, while currently low volatility offers some offset.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Caution\n🧠 Technicals strongly support a bullish pullback continuation, with trend, relative strength, and VWAP behavior all favorable. Fundamental and catalyst confirmation is unavailable, while weak sector context, elevated yields, and 2x leverage create meaningful risk for a multi-week hold. Volatility decay and sharp energy reversals warrant particular caution.\n🟢 Key Positive: Strong trend structure, improving momentum, and substantial outperformance versus SPY support the existing signal.\n🔴 Key Risk: ERX's 2x daily leverage can amplify an energy reversal and cause volatility decay even if the underlying sector is ultimately higher.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "COPX",
+      "alert": {
+        "alerted": "2026-08-31T21:32:00.347013+00:00",
+        "entry": 92.9,
+        "thesis_warned": false,
+        "tp": 115.57
+      },
+      "signal": {
+        "ticker": "COPX",
+        "name": "Global X Copper Miners",
+        "setup": "pullback",
+        "entry": 92.9,
+        "tp": 115.57,
+        "tp_pct": 0.24407645434873437,
+        "shares": 2.69,
+        "value": 249.8908318,
+        "pl_amount": 60.99,
+        "eta_days_low": 21,
+        "eta_days_high": 36,
+        "fee_pct": 0.0,
+        "trend_score": 4,
+        "adx": 42.8,
+        "rs": -0.018,
+        "runner": false,
+        "regime": "uptrend",
+        "regime_weeks": 3,
+        "ema20": 89.88,
+        "ema50": 85.55,
+        "ema200": 79.17,
+        "above_ema200": true,
+        "quality": 0.75,
+        "q_detail": {
+          "rsi": 0.6,
+          "bollinger": 1.0,
+          "vwap": 0.3,
+          "volume": 1.0,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 55.4 falling",
+          "bollinger": "band position 51%, expanding",
+          "vwap": "just above VWAP",
+          "volume": "0.5x average, drying up",
+          "extension": "+0.1 ATR from 20 EMA, slope +3.8%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 55.4,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 4/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "quality +0.75 (rsi +0.6, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=55.4)",
+          "(copper miners)"
+        ],
+        "time": "2026-08-31T21:32:00.346990+00:00"
+      },
+      "profile": {
+        "symbol": "COPX",
+        "price": 92.86,
+        "marketCap": 8601853114,
+        "beta": 1.31,
+        "lastDividend": 1.93048,
+        "range": "48.94-99.99",
+        "change": -1.56,
+        "changePercentage": -1.65219,
+        "volume": 2752174,
+        "averageVolume": 3474913,
+        "companyName": "Global X - Copper Miners ETF",
+        "currency": "USD",
+        "cik": "0001432353",
+        "isin": "US37954Y8306",
+        "cusip": "37954Y830",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management",
+        "website": "https://www.globalxetfs.com/funds/COPX",
+        "description": "The Global X Copper Miners ETF, identified by the ticker COPX, is structured to mirror the financial outcomes, encompassing both capital appreciation and dividend payouts, of the Solactive Global Copper Miners Total Return Index. This objective is considered prior to the deduction of the fund's operational costs and expenses.",
+        "ceo": "",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": null,
+        "phone": "1-888-493-8631",
+        "address": "605 Third Avenue, 43rd Floor",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10158",
+        "image": "https://images.financialmodelingprep.com/symbol/COPX.png",
+        "ipoDate": "2010-04-20",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [],
+      "financial_health": {
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": []
+      },
+      "analysts": {
+        "grades_consensus": {},
+        "estimate_direction": {}
+      },
+      "valuation": {},
+      "news": [
+        {
+          "date": "2026-08-31 08:00 UTC",
+          "title": "COPX: The Copper Shortage Trade Has One Major Weakness",
+          "site": "seekingalpha.com",
+          "text": "The Global X Copper Miners ETF (COPX) is rated Hold, with a 0% to 8% expected total return over 6–12 months. COPX's recent 23.39% monthly surge reflects tariff-driven copper scarcity in the U.S., but a global surplus projection tempers near-term optimism. Miners' earnings are improving on higher copper prices, yet COPX's elevated valuation and volatility limit its appeal for new entries."
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "1 usable article(s)"
+      },
+      "sector": {
+        "sector": "Financial Services",
+        "industry": "Asset Management",
+        "sector_snapshot": {
+          "date": "2026-08-31",
+          "sector": "Financial Services",
+          "exchange": "NASDAQ",
+          "averageChange": -0.04700587313813953
+        },
+        "industry_snapshot": {}
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 9.4
+        },
+        "hourly_scan_cycles": {
+          "score": -0.5,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-28",
+          "month1": 3.84,
+          "month2": 3.86,
+          "month3": 3.9,
+          "month6": 4.02,
+          "year1": 4.15,
+          "year2": 4.34,
+          "year3": 4.41,
+          "year5": 4.48,
+          "year7": 4.59,
+          "year10": 4.73,
+          "year20": 5.21,
+          "year30": 5.22
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MD",
+            "event": "National Language Day",
+            "currency": "MDL",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "PH",
+            "event": "National Heroes Day",
+            "currency": "PHP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "KG",
+            "event": "Kyrgyz Republic Independence Day",
+            "currency": "KGS",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MY",
+            "event": "National Day",
+            "currency": "MYR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:00:00",
+            "country": "NZ",
+            "event": "ANZ Business Confidence (Aug)",
+            "currency": "NZD",
+            "previous": 56.1,
+            "estimate": 55.7,
+            "actual": 53.7,
+            "change": -2.4,
+            "impact": "Medium",
+            "changePercentage": -4.278,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Company Gross Profits QoQ (Q2)",
+            "currency": "AUD",
+            "previous": -1.5,
+            "estimate": 2,
+            "actual": 1.8,
+            "change": 3.3,
+            "impact": "Medium",
+            "changePercentage": 220,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Private Sector Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.8,
+            "estimate": 0.7,
+            "actual": 0.6,
+            "change": -0.2,
+            "impact": "Low",
+            "changePercentage": -25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Non Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49,
+            "estimate": 49.5,
+            "actual": 49,
+            "change": 0,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Housing Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.6,
+            "estimate": 0.5,
+            "actual": 0.5,
+            "change": -0.1,
+            "impact": "Low",
+            "changePercentage": -16.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Business Inventories QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.7,
+            "estimate": 0.7,
+            "actual": -0.2,
+            "change": -0.9,
+            "impact": "Low",
+            "changePercentage": -128.571,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.2,
+            "estimate": 49.7,
+            "actual": 49.8,
+            "change": 0.6,
+            "impact": "High",
+            "changePercentage": 1.22,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS General PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.3,
+            "estimate": 50.2,
+            "actual": 49.5,
+            "change": 0.2,
+            "impact": "Low",
+            "changePercentage": 0.406,
+            "unit": null
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising 20-, 50-, and 200-period EMAs and ADX indicating strong trend strength. Falling RSI and drying volume suggest momentum has cooled, but the pullback remains orderly and near VWAP.",
+        "financial_assessment": "not_applicable",
+        "financial_interpretation": "No quarterly results were available, and COPX is an ETF rather than an operating company. Financial acceleration, margins, and cash-flow trends therefore cannot be assessed.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "No next earnings date or forward estimates are available. As an ETF, COPX has no single-company earnings catalyst, although constituent reports can still create event risk.",
+        "analyst_assessment": "unknown",
+        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "Formal valuation data is unavailable. Recent commentary describes COPX as elevated in valuation after its surge, making valuation a potential headwind rather than a confirmed support.",
+        "news_assessment": "mixed",
+        "news_interpretation": "The copper-shortage thesis and higher copper prices support miner earnings, but a projected global surplus, elevated volatility, and the ETF's sharp recent rise weaken the near-term risk-reward.",
+        "sector_assessment": "neutral",
+        "sector_interpretation": "The supplied sector snapshot is broadly flat to slightly negative, so it provides little additional support for the setup.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Elevated yields and soft Chinese activity are meaningful headwinds for a cyclical copper-mining trade, despite otherwise neutral market risk and low volatility.",
+        "overall_assessment": "mixed",
+        "overall_summary": "Technicals support a continuation attempt: the broader trend is strong, the pullback is contained, and price remains above key moving averages. Fundamental and news context is less favorable, with surplus concerns, elevated valuation, and macro pressure from yields and soft Chinese activity limiting conviction.",
+        "key_positive": "A strong uptrend with bullish EMA alignment and a contained pullback supports the existing technical signal.",
+        "key_risk": "The recent surge may be vulnerable to reversal if global surplus concerns, high valuation, or weak Chinese demand outweigh copper-shortage expectations.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2560
+        }
+      ],
+      "is_etf": true,
+      "buy_confidence": 48,
+      "report": "🟡 COPX — Global X - Copper Miners ETF\nEntry: $92.90\neToro TP Value: $60.99\nShares: 2.69 ($250)\nScanner Potential: +24.4%\nTimeframe: 21–36 days\n\n═══ BUY CONFIDENCE: 48% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising 20-, 50-, and 200-period EMAs and ADX indicating strong trend strength. Falling RSI and drying volume suggest momentum has cooled, but the pullback remains orderly and near VWAP.\n🕒 Technical timestamp: 2026-08-31 21:32:00 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 Formal valuation data is unavailable. Recent commentary describes COPX as elevated in valuation after its surge, making valuation a potential headwind rather than a confirmed support.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimates are available. As an ETF, COPX has no single-company earnings catalyst, although constituent reports can still create event risk.\n\n═══ RECENT NEWS ═══\n• 2026-08-31 08:00 UTC — COPX: The Copper Shortage Trade Has One Major Weakness\n🟡 The copper-shortage thesis and higher copper prices support miner earnings, but a projected global surplus, elevated volatility, and the ETF's sharp recent rise weaken the near-term risk-reward.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: The supplied sector snapshot is broadly flat to slightly negative, so it provides little additional support for the setup.\n🧠 Macro: Elevated yields and soft Chinese activity are meaningful headwinds for a cyclical copper-mining trade, despite otherwise neutral market risk and low volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technicals support a continuation attempt: the broader trend is strong, the pullback is contained, and price remains above key moving averages. Fundamental and news context is less favorable, with surplus concerns, elevated valuation, and macro pressure from yields and soft Chinese activity limiting conviction.\n🟢 Key Positive: A strong uptrend with bullish EMA alignment and a contained pullback supports the existing technical signal.\n🔴 Key Risk: The recent surge may be vulnerable to reversal if global surplus concerns, high valuation, or weak Chinese demand outweigh copper-shortage expectations.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "CBLL",
+      "alert": {
+        "alerted": "2026-08-31T21:32:00.308394+00:00",
+        "entry": 23.96,
+        "thesis_warned": false,
+        "tp": 27.91
+      },
+      "signal": {
+        "ticker": "CBLL",
+        "name": "CeriBell, Inc.",
+        "setup": "pullback",
+        "entry": 23.96,
+        "tp": 27.91,
+        "tp_pct": 0.16485809682804664,
+        "shares": 10.43,
+        "value": 249.9028,
+        "pl_amount": 41.2,
+        "eta_days_low": 12,
+        "eta_days_high": 17,
+        "fee_pct": 0.04854545675206623,
+        "trend_score": 5,
+        "adx": 42.9,
+        "rs": 0.361,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 3,
+        "ema20": 22.57,
+        "ema50": 20.88,
+        "ema200": 18.86,
+        "above_ema200": true,
+        "quality": 0.85,
+        "q_detail": {
+          "rsi": 0.7,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 0.5,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 61.8 rising",
+          "bollinger": "band position 48%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.9x average, surging",
+          "extension": "+0.9 ATR from 20 EMA, slope +1.1%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 61.8,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.85 (rsi +0.7, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=61.8)",
+          "(nasdaq; tier assigned nightly by FMP)",
+          "hard-eligible; ranked in Step 2"
+        ],
+        "time": "2026-08-31T21:32:00.308349+00:00"
+      },
+      "profile": {
+        "symbol": "CBLL",
+        "price": 23.98,
+        "marketCap": 909865946,
+        "beta": 0.8051046,
+        "lastDividend": 0,
+        "range": "10.85-25.33",
+        "change": 0.25,
+        "changePercentage": 1.05352,
+        "volume": 282736,
+        "averageVolume": 365714,
+        "companyName": "CeriBell, Inc.",
+        "currency": "USD",
+        "cik": "0001861107",
+        "isin": "US15678C1027",
+        "cusip": "15678C102",
+        "exchangeFullName": "NASDAQ Global Select",
+        "exchange": "NASDAQ",
+        "industry": "Medical - Devices",
+        "website": "https://ceribell.com",
+        "description": "CeriBell, Inc. specializes in pioneering artificial intelligence (AI)-powered electroencephalography (EEG) solutions designed for the immediate diagnosis and treatment of neurological conditions directly at the patient's bedside. The company's primary offering is the Ceribell System, an innovative, on-site EEG platform engineered to fulfill crucial, previously unmet requirements for patients in urgent medical environments. Beyond the core system, CeriBell also provides single-use EEG headbands and compact, battery-powered recording devices. Originally established in 2014 as Brain Stethoscope, Inc., the company underwent a name change to CeriBell, Inc. in August 2015. Its headquarters are located in Sunnyvale, California.",
+        "ceo": "Xingjuan Chao",
+        "sector": "Healthcare",
+        "country": "US",
+        "fullTimeEmployees": "327",
+        "phone": "800 436 0826",
+        "address": "360 North Pastoria Avenue",
+        "city": "Sunnyvale",
+        "state": "CA",
+        "zip": "94085",
+        "image": "https://images.financialmodelingprep.com/symbol/CBLL.png",
+        "ipoDate": "2024-10-11",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-08-10",
+          "fiscal_period": "",
+          "eps_actual": -0.51,
+          "eps_estimate": -0.47119,
+          "eps_surprise": -0.03881000000000001,
+          "eps_surprise_pct": -0.08236592457395109,
+          "revenue": 28097000.0,
+          "net_income": -19268000.0,
+          "operating_margin": -0.7111435384560629,
+          "gross_margin": 0.9231590561269887,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-05-11",
+          "fiscal_period": "",
+          "eps_actual": -0.52,
+          "eps_estimate": -0.39,
+          "eps_surprise": -0.13,
+          "eps_surprise_pct": -0.3333333333333333,
+          "revenue": 28097000.0,
+          "net_income": -19268000.0,
+          "operating_margin": -0.7111435384560629,
+          "gross_margin": 0.9231590561269887,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-02-24",
+          "fiscal_period": "",
+          "eps_actual": -0.36,
+          "eps_estimate": -0.43,
+          "eps_surprise": 0.07,
+          "eps_surprise_pct": 0.16279069767441862,
+          "revenue": 28097000.0,
+          "net_income": -19268000.0,
+          "operating_margin": -0.7111435384560629,
+          "gross_margin": 0.9231590561269887,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 32663000.0,
+        "total_debt": 21909000.0,
+        "total_liabilities": 38035000.0,
+        "equity": 128313000.0,
+        "operating_cash_flow": -12863000.0,
+        "capital_expenditure": -925000.0,
+        "free_cash_flow": -13788000.0
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": [
+          {
+            "date": "2030-12-31",
+            "period": null,
+            "revenue_avg": 280700000.0,
+            "eps_avg": -1.11,
+            "revenue_low": 277321497.0,
+            "revenue_high": 285010577.0,
+            "eps_low": -1.13216,
+            "eps_high": -1.09263,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 1
+          },
+          {
+            "date": "2029-12-31",
+            "period": null,
+            "revenue_avg": 229700000.0,
+            "eps_avg": -1.1531,
+            "revenue_low": 226935333.0,
+            "revenue_high": 233227394.0,
+            "eps_low": -1.17612,
+            "eps_high": -1.13506,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 1
+          },
+          {
+            "date": "2028-12-31",
+            "period": null,
+            "revenue_avg": 187771350.0,
+            "eps_avg": -1.27648,
+            "revenue_low": 182269228.0,
+            "revenue_high": 194716266.0,
+            "eps_low": -1.73699,
+            "eps_high": -0.77976,
+            "num_analysts_revenue": 4,
+            "num_analysts_eps": 4
+          },
+          {
+            "date": "2027-12-31",
+            "period": null,
+            "revenue_avg": 147099032.0,
+            "eps_avg": -1.5604,
+            "revenue_low": 146306829.0,
+            "revenue_high": 147811011.0,
+            "eps_low": -1.80046,
+            "eps_high": -1.30033,
+            "num_analysts_revenue": 6,
+            "num_analysts_eps": 6
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "CBLL",
+          "strongBuy": 0,
+          "buy": 4,
+          "hold": 0,
+          "sell": 0,
+          "strongSell": 0,
+          "consensus": "Buy"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 280700000,
+            "prior": 229700000,
+            "change": 0.2220287331301698
+          },
+          "epsAvg": {
+            "latest": -1.11,
+            "prior": -1.1531,
+            "change": -0.037377504119330385
+          }
+        }
+      },
+      "valuation": {
+        "ratios": {
+          "symbol": "CBLL",
+          "grossProfitMarginTTM": 0.888990231846534,
+          "ebitMarginTTM": -0.6294672629555529,
+          "ebitdaMarginTTM": -0.6184731866148837,
+          "operatingProfitMarginTTM": -0.6862127809815229,
+          "pretaxProfitMarginTTM": -0.6472578557137814,
+          "continuousOperationsProfitMarginTTM": -0.6472578557137814,
+          "netProfitMarginTTM": -0.6472578557137814,
+          "bottomLineProfitMarginTTM": -0.6472578557137814,
+          "receivablesTurnoverTTM": 6.374742106908409,
+          "payablesTurnoverTTM": 3.5538461538461537,
+          "inventoryTurnoverTTM": 1.6801246845777051,
+          "fixedAssetTurnoverTTM": 28.795255577520475,
+          "assetTurnoverTTM": 0.6129559718181162,
+          "currentRatioTTM": 9.177151162790699,
+          "quickRatioTTM": 8.78546511627907,
+          "solvencyRatioTTM": -1.7056921256737216,
+          "cashRatioTTM": 1.8990116279069766,
+          "priceToEarningsRatioTTM": -13.624999999999998,
+          "priceToEarningsGrowthRatioTTM": 0.7058608910324995,
+          "forwardPriceToEarningsGrowthRatioTTM": 0.6518673453301963,
+          "priceToEarningsDilutedRatioTTM": -13.624999999999998,
+          "priceToEarningsDilutedGrowthRatioTTM": 0.7058608910324995,
+          "priceToBookRatioTTM": 7.107663552718742,
+          "priceToSalesRatioTTM": 8.923403809187556,
+          "priceToFreeCashFlowRatioTTM": -16.15213552040617,
+          "priceToOperatingCashFlowRatioTTM": -16.878990846905538,
+          "debtToAssetsRatioTTM": 0.13170582153076682,
+          "debtToEquityRatioTTM": 0.17074653386640481,
+          "debtToCapitalRatioTTM": 0.1458441506570276,
+          "longTermDebtToCapitalRatioTTM": 0.13473909935668335,
+          "financialLeverageRatioTTM": 1.296423589192054,
+          "workingCapitalTurnoverRatioTTM": 0.7004393030229131,
+          "operatingCashFlowRatioTTM": -3.1413953488372095,
+          "operatingCashFlowSalesRatioTTM": -0.5299125181436586,
+          "freeCashFlowOperatingCashFlowRatioTTM": 1.0425488599348534,
+          "debtServiceCoverageRatioTTM": -21.062792251169004,
+          "interestCoverageRatioTTM": -38.57166482910694,
+          "shortTermOperatingCashFlowCoverageRatioTTM": -45.78983050847457,
+          "operatingCashFlowCoverageRatioTTM": -2.4662011045688987,
+          "capitalExpenditureCoverageRatioTTM": -23.502392344497608,
+          "dividendPaidAndCapexCoverageRatioTTM": -23.502392344497608,
+          "dividendPayoutRatioTTM": 0,
+          "dividendYieldTTM": 0,
+          "enterpriseValueTTM": 899111946,
+          "revenuePerShareTTM": 2.6810105446139887,
+          "netIncomePerShareTTM": -1.7353051362528873,
+          "interestDebtPerShareTTM": 0.6237653794464483,
+          "cashPerShareTTM": 3.398749597969369,
+          "bookValuePerShareTTM": 3.373823172992965,
+          "tangibleBookValuePerShareTTM": 3.3467143974399614,
+          "shareholdersEquityPerShareTTM": 3.373823172992965,
+          "operatingCashFlowPerShareTTM": -1.4207010488661,
+          "capexPerShareTTM": 0.06044920993750304,
+          "freeCashFlowPerShareTTM": -1.4811502588036032,
+          "netIncomePerEBTTTM": 1,
+          "ebtPerEbitTTM": 0.9432320027440724,
+          "priceToFairValueTTM": 7.107663552718742,
+          "debtToMarketCapTTM": 0.02325727223117767,
+          "effectiveTaxRateTTM": 0,
+          "enterpriseValueMultipleTTM": -14.25758691446513,
+          "dividendPerShareTTM": 0
+        },
+        "metrics": {
+          "symbol": "CBLL",
+          "marketCap": 909865946,
+          "enterpriseValueTTM": 899111946,
+          "evToSalesTTM": 8.817935212427916,
+          "evToOperatingCashFlowTTM": -16.640360267989337,
+          "evToFreeCashFlowTTM": -15.96122820471854,
+          "evToEBITDATTM": -14.25758691446513,
+          "netDebtToEBITDATTM": 0.17053058894421363,
+          "currentRatioTTM": 9.177151162790699,
+          "incomeQualityTTM": 0.8187038804794158,
+          "grahamNumberTTM": null,
+          "grahamNetNetTTM": 2.8026649082844286,
+          "taxBurdenTTM": 1,
+          "interestBurdenTTM": 1.0282629356683235,
+          "workingCapitalTTM": 140647000,
+          "investedCapitalTTM": 145218999,
+          "returnOnAssetsTTM": -0.3967405679659509,
+          "operatingReturnOnAssetsTTM": -0.40629336925783766,
+          "returnOnTangibleAssetsTTM": -0.3992148393739613,
+          "returnOnEquityTTM": -0.4485449661282183,
+          "returnOnInvestedCapitalTTM": -0.46544223298387527,
+          "returnOnCapitalEmployedTTM": -0.4691246278863947,
+          "earningsYieldTTM": -0.07236468458102116,
+          "freeCashFlowYieldTTM": -0.0619113180877307,
+          "capexToOperatingCashFlowTTM": -0.04254885993485342,
+          "capexToDepreciationTTM": 4.098039215686274,
+          "capexToRevenueTTM": 0.02254717351222,
+          "salesGeneralAndAdministrativeToRevenueTTM": 1.35009415087678,
+          "researchAndDevelopementToRevenueTTM": 0.2251088619512769,
+          "stockBasedCompensationToRevenueTTM": 0.1611254952728414,
+          "intangiblesToTotalAssetsTTM": 0.006197844278260033,
+          "averageReceivablesTTM": 15853500,
+          "averagePayablesTTM": 2583000,
+          "averageInventoryTTM": 6819500,
+          "daysOfSalesOutstandingTTM": 57.257218233886476,
+          "daysOfPayablesOutstandingTTM": 102.7056277056277,
+          "daysOfInventoryOutstandingTTM": 217.2457814294549,
+          "operatingCycleTTM": 274.50299966334137,
+          "cashConversionCycleTTM": 171.79737195771366,
+          "freeCashFlowToEquityTTM": -55630000,
+          "freeCashFlowToFirmTTM": -53816000,
+          "tangibleAssetValueTTM": 127282001,
+          "netCurrentAssetValueTTM": 119812000
+        }
+      },
+      "news": [],
+      "news_diag": {
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
+      },
+      "sector": {
+        "sector": "Healthcare",
+        "industry": "Medical - Devices",
+        "sector_snapshot": {
+          "date": "2026-08-31",
+          "sector": "Healthcare",
+          "exchange": "NASDAQ",
+          "averageChange": 1.2985021547554432
+        },
+        "industry_snapshot": {
+          "date": "2026-08-31",
+          "industry": "Medical - Devices",
+          "exchange": "NASDAQ",
+          "averageChange": 1.4196211825757699
+        }
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 9.4
+        },
+        "hourly_scan_cycles": {
+          "score": -0.5,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 8 avg +0.4%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-28",
+          "month1": 3.84,
+          "month2": 3.86,
+          "month3": 3.9,
+          "month6": 4.02,
+          "year1": 4.15,
+          "year2": 4.34,
+          "year3": 4.41,
+          "year5": 4.48,
+          "year7": 4.59,
+          "year10": 4.73,
+          "year20": 5.21,
+          "year30": 5.22
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            },
+            {
+              "name": "CPI",
+              "date": "2025-09-01",
+              "value": 324.245
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-09-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MD",
+            "event": "National Language Day",
+            "currency": "MDL",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "PH",
+            "event": "National Heroes Day",
+            "currency": "PHP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "KG",
+            "event": "Kyrgyz Republic Independence Day",
+            "currency": "KGS",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 00:00:00",
+            "country": "MY",
+            "event": "National Day",
+            "currency": "MYR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:00:00",
+            "country": "NZ",
+            "event": "ANZ Business Confidence (Aug)",
+            "currency": "NZD",
+            "previous": 56.1,
+            "estimate": 55.7,
+            "actual": 53.7,
+            "change": -2.4,
+            "impact": "Medium",
+            "changePercentage": -4.278,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Company Gross Profits QoQ (Q2)",
+            "currency": "AUD",
+            "previous": -1.5,
+            "estimate": 2,
+            "actual": 1.8,
+            "change": 3.3,
+            "impact": "Medium",
+            "changePercentage": 220,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Private Sector Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.8,
+            "estimate": 0.7,
+            "actual": 0.6,
+            "change": -0.2,
+            "impact": "Low",
+            "changePercentage": -25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Non Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49,
+            "estimate": 49.5,
+            "actual": 49,
+            "change": 0,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Housing Credit MoM (Jul)",
+            "currency": "AUD",
+            "previous": 0.6,
+            "estimate": 0.5,
+            "actual": 0.5,
+            "change": -0.1,
+            "impact": "Low",
+            "changePercentage": -16.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "AU",
+            "event": "Business Inventories QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.7,
+            "estimate": 0.7,
+            "actual": -0.2,
+            "change": -0.9,
+            "impact": "Low",
+            "changePercentage": -128.571,
+            "unit": "%"
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS Manufacturing PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.2,
+            "estimate": 49.7,
+            "actual": 49.8,
+            "change": 0.6,
+            "impact": "High",
+            "changePercentage": 1.22,
+            "unit": null
+          },
+          {
+            "date": "2026-08-31 01:30:00",
+            "country": "CN",
+            "event": "NBS General PMI (Aug)",
+            "currency": "CNY",
+            "previous": 49.3,
+            "estimate": 50.2,
+            "actual": 49.5,
+            "change": 0.2,
+            "impact": "Low",
+            "changePercentage": 0.406,
+            "unit": null
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback continuation within a strong uptrend. Buyers reclaimed VWAP, the moving-average stack is bullish, ADX is strong, and relative strength versus SPY is substantial without overbought RSI.",
+        "financial_assessment": "negative",
+        "financial_interpretation": "The last three results show persistently negative earnings, flat reported revenue, and recent EPS misses after an earlier beat, suggesting weak earnings execution. Despite high gross margin, operating losses and negative operating and free cash flow indicate ongoing cash-burn risk.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating event-timing uncertainty. Forward revenue estimates rise across periods and EPS is projected to become less negative, but forecasts still imply losses and have limited analyst coverage.",
+        "analyst_assessment": "positive",
+        "analyst_interpretation": "All four recorded ratings are Buys, while revenue estimates increased and EPS estimates became modestly less negative.",
+        "valuation_assessment": "very_expensive",
+        "valuation_interpretation": "The negative P/E is not meaningful, while a price-to-sales ratio near 9 and price-to-book ratio above 7 leave little valuation support. This is a headwind given current losses, cash burn, and limited demonstrated revenue growth.",
+        "news_assessment": "no_recent_news",
+        "news_interpretation": "No usable recent company-specific news was returned, so there is no identifiable news catalyst or immediate headline risk in the supplied data.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "The broader group is advancing, with the industry outperforming the sector average, which supports continuation.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Elevated longer-term yields and a mildly unfavorable cycle backdrop can pressure richly valued, loss-making growth stocks despite currently low volatility.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical setup is strongly supportive for a short-term continuation trade, reinforced by sector strength, relative outperformance, and positive analyst ratings. Fundamentals and valuation are materially weaker, with persistent losses, cash burn, and limited earnings visibility making the setup dependent on continued momentum rather than current profitability.",
+        "key_positive": "Strong trend quality, sector participation, and improving forward revenue expectations support the technical continuation.",
+        "key_risk": "Persistent operating losses, negative cash flow, expensive valuation, and an unknown earnings date create substantial downside and event risk.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2793
+        }
+      ],
+      "is_etf": false,
+      "buy_confidence": 44,
+      "report": "🟡 CBLL — CeriBell, Inc.\nEntry: $23.96\neToro TP Value: $41.20\nShares: 10.43 ($250)\nScanner Potential: +16.5%\nTimeframe: 12–17 days\n\n═══ BUY CONFIDENCE: 44% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 4 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All four recorded ratings are Buys, while revenue estimates increased and EPS estimates became modestly less negative.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback continuation within a strong uptrend. Buyers reclaimed VWAP, the moving-average stack is bullish, ADX is strong, and relative strength versus SPY is substantial without overbought RSI.\n🕒 Technical timestamp: 2026-08-31 21:32:00 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🟢 Strong\n🧠 The last three results show persistently negative earnings, flat reported revenue, and recent EPS misses after an earlier beat, suggesting weak earnings execution. Despite high gross margin, operating losses and negative operating and free cash flow indicate ongoing cash-burn risk.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The negative P/E is not meaningful, while a price-to-sales ratio near 9 and price-to-book ratio above 7 leave little valuation support. This is a headwind given current losses, cash burn, and limited demonstrated revenue growth.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating event-timing uncertainty. Forward revenue estimates rise across periods and EPS is projected to become less negative, but forecasts still imply losses and have limited analyst coverage.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: The broader group is advancing, with the industry outperforming the sector average, which supports continuation.\n🧠 Macro: Elevated longer-term yields and a mildly unfavorable cycle backdrop can pressure richly valued, loss-making growth stocks despite currently low volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical setup is strongly supportive for a short-term continuation trade, reinforced by sector strength, relative outperformance, and positive analyst ratings. Fundamentals and valuation are materially weaker, with persistent losses, cash burn, and limited earnings visibility making the setup dependent on continued momentum rather than current profitability.\n🟢 Key Positive: Strong trend quality, sector participation, and improving forward revenue expectations support the technical continuation.\n🔴 Key Risk: Persistent operating losses, negative cash flow, expensive valuation, and an unknown earnings date create substantial downside and event risk.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
