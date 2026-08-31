@@ -2,21 +2,39 @@
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
-    "scans_muted": 6,
+    "scans_muted": 7,
     "thesis_warned": false,
     "tp": 34.93
   },
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 11,
+    "scans_muted": 12,
     "thesis_warned": false,
     "tp": 77.16
+  },
+  "CBLL": {
+    "alerted": "2026-08-31T21:32:00.308394+00:00",
+    "entry": 23.96,
+    "thesis_warned": false,
+    "tp": 27.91
+  },
+  "COPX": {
+    "alerted": "2026-08-31T21:32:00.347013+00:00",
+    "entry": 92.9,
+    "thesis_warned": false,
+    "tp": 115.57
+  },
+  "ERX": {
+    "alerted": "2026-08-31T21:32:00.424105+00:00",
+    "entry": 108.28,
+    "thesis_warned": false,
+    "tp": 133.57
   },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",
     "entry": 83.54,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "thesis_warned": false,
     "tp": 99.56
   },
@@ -40,12 +58,24 @@
     "thesis_warned": false,
     "tp": 58.66
   },
+  "MMSI": {
+    "alerted": "2026-08-31T21:32:00.564473+00:00",
+    "entry": 90.67,
+    "thesis_warned": false,
+    "tp": 112.18
+  },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
     "scans_muted": 7,
     "thesis_warned": false,
     "tp": 558.48
+  },
+  "NANR": {
+    "alerted": "2026-08-31T21:32:00.593075+00:00",
+    "entry": 89.75,
+    "thesis_warned": false,
+    "tp": 108.35
   },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
@@ -64,8 +94,20 @@
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
-    "scans_muted": 7,
+    "scans_muted": 8,
     "thesis_warned": false,
     "tp": 429.71
+  },
+  "VUG": {
+    "alerted": "2026-08-31T21:32:00.799017+00:00",
+    "entry": 88.24,
+    "thesis_warned": false,
+    "tp": 103.56
+  },
+  "XES": {
+    "alerted": "2026-08-31T21:32:00.827413+00:00",
+    "entry": 122.0,
+    "thesis_warned": false,
+    "tp": 142.62
   }
 }
