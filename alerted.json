@@ -2,21 +2,27 @@
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
-    "scans_muted": 5,
+    "scans_muted": 6,
     "thesis_warned": false,
     "tp": 34.93
   },
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 10,
+    "scans_muted": 11,
     "thesis_warned": false,
     "tp": 77.16
+  },
+  "CMCSA": {
+    "alerted": "2026-08-31T16:21:55.089475+00:00",
+    "entry": 26.86,
+    "thesis_warned": false,
+    "tp": 33.33
   },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",
     "entry": 83.54,
-    "scans_muted": 7,
+    "scans_muted": 8,
     "thesis_warned": false,
     "tp": 99.56
   },
@@ -64,7 +70,7 @@
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
-    "scans_muted": 6,
+    "scans_muted": 7,
     "thesis_warned": false,
     "tp": 429.71
   }
