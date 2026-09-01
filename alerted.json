@@ -41,12 +41,6 @@
     "thesis_warned": false,
     "tp": 99.56
   },
-  "GLNG": {
-    "alerted": "2026-09-01T19:28:08.071604+00:00",
-    "entry": 52.39,
-    "thesis_warned": false,
-    "tp": 61.84
-  },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
     "entry": 345.5,
@@ -94,11 +88,5 @@
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 429.71
-  },
-  "XOM": {
-    "alerted": "2026-09-01T19:28:08.549555+00:00",
-    "entry": 164.56,
-    "thesis_warned": false,
-    "tp": 191.72
   }
 }
