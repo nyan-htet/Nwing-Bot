@@ -34,30 +34,12 @@
     "thesis_warned": false,
     "tp": 115.57
   },
-  "ERX": {
-    "alerted": "2026-09-01T13:37:48.207807+00:00",
-    "entry": 108.28,
-    "thesis_warned": false,
-    "tp": 133.57
-  },
-  "FIGR": {
-    "alerted": "2026-09-01T13:37:48.245391+00:00",
-    "entry": 36.69,
-    "thesis_warned": false,
-    "tp": 44.67
-  },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",
     "entry": 83.54,
     "scans_muted": 9,
     "thesis_warned": false,
     "tp": 99.56
-  },
-  "GLNG": {
-    "alerted": "2026-09-01T13:37:48.278902+00:00",
-    "entry": 51.46,
-    "thesis_warned": false,
-    "tp": 61.84
   },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
@@ -79,30 +61,12 @@
     "thesis_warned": false,
     "tp": 58.66
   },
-  "LW": {
-    "alerted": "2026-09-01T13:37:48.403799+00:00",
-    "entry": 54.52,
-    "thesis_warned": false,
-    "tp": 66.87
-  },
-  "MMSI": {
-    "alerted": "2026-09-01T13:37:48.420918+00:00",
-    "entry": 90.67,
-    "thesis_warned": false,
-    "tp": 112.18
-  },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
     "scans_muted": 7,
     "thesis_warned": false,
     "tp": 558.48
-  },
-  "NANR": {
-    "alerted": "2026-09-01T13:37:48.447559+00:00",
-    "entry": 89.75,
-    "thesis_warned": false,
-    "tp": 108.35
   },
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
