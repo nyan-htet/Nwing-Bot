@@ -9,28 +9,28 @@
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 15,
+    "scans_muted": 16,
     "thesis_warned": false,
     "tp": 77.16
   },
   "CAI": {
     "alerted": "2026-09-01T05:06:07.998807+00:00",
     "entry": 25.49,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 29.19
   },
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 27.91
   },
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 115.57
   },
@@ -78,9 +78,15 @@
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
-    "scans_muted": 23,
+    "scans_muted": 24,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "SGP": {
+    "alerted": "2026-09-01T22:38:21.261261+00:00",
+    "entry": 26.98,
+    "thesis_warned": false,
+    "tp": 30.27
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
