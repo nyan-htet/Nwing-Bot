@@ -373,3 +373,7 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-02 19:27 UTC,XBI,openai,True,0,2,OK,supportive,pullback continuation,62
 2026-09-02 19:27 UTC,NANR,openai,True,0,0,NO_NEWS,mixed,pullback continuation,48
 2026-09-02 19:27 UTC,COLO,openai,True,0,0,NO_NEWS,mixed,pullback continuation,50
+2026-09-02 22:40 UTC,XBI,openai,True,0,2,OK,mixed,pullback continuation,52
+2026-09-02 22:40 UTC,SILJ,openai,True,0,4,OK,mixed,pullback continuation,50
+2026-09-02 22:40 UTC,JNUG,openai,True,0,0,NO_NEWS,supportive,pullback continuation,58
+2026-09-02 22:40 UTC,GDXJ,openai,True,0,1,OK,mixed,pullback continuation,54

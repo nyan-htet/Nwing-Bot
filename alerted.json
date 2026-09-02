@@ -41,12 +41,6 @@
     "thesis_warned": false,
     "tp": 99.56
   },
-  "GDXJ": {
-    "alerted": "2026-09-02T22:39:16.740952+00:00",
-    "entry": 128.04,
-    "thesis_warned": false,
-    "tp": 157.36
-  },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
     "entry": 345.5,
@@ -59,12 +53,6 @@
     "entry": 153.93,
     "thesis_warned": false,
     "tp": 176.31
-  },
-  "JNUG": {
-    "alerted": "2026-09-02T22:39:16.892817+00:00",
-    "entry": 192.64,
-    "thesis_warned": false,
-    "tp": 230.8
   },
   "KRT": {
     "alerted": "2026-08-21T01:58:11.337366+00:00",
@@ -94,23 +82,11 @@
     "thesis_warned": false,
     "tp": 30.46
   },
-  "SILJ": {
-    "alerted": "2026-09-02T22:39:17.162905+00:00",
-    "entry": 31.65,
-    "thesis_warned": false,
-    "tp": 37.16
-  },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 429.71
-  },
-  "XBI": {
-    "alerted": "2026-09-02T22:39:17.413311+00:00",
-    "entry": 165.36,
-    "thesis_warned": false,
-    "tp": 201.84
   }
 }
