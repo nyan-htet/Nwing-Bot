@@ -370,3 +370,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-02 04:29 UTC,REGN,openai,True,3,8,OK,caution,pullback continuation,53
 2026-09-02 12:50 UTC,SGP,openai,True,3,1,OK,mixed,pullback continuation,46
 2026-09-02 12:50 UTC,REGN,openai,True,3,5,OK,mixed,pullback continuation,57
+2026-09-02 19:27 UTC,XBI,openai,True,0,2,OK,supportive,pullback continuation,62
+2026-09-02 19:27 UTC,NANR,openai,True,0,0,NO_NEWS,mixed,pullback continuation,48
+2026-09-02 19:27 UTC,COLO,openai,True,0,0,NO_NEWS,mixed,pullback continuation,50

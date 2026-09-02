@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02 12:50 UTC",
+  "generated": "2026-09-02 19:27 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -10,677 +10,54 @@
   ],
   "results": [
     {
-      "ticker": "SGP",
+      "ticker": "XBI",
       "alert": {
-        "alerted": "2026-09-02T12:49:27.176692+00:00",
-        "entry": 26.98,
+        "alerted": "2026-09-02T19:26:10.026448+00:00",
+        "entry": 164.88,
         "thesis_warned": false,
-        "tp": 30.27
+        "tp": 201.84
       },
       "signal": {
-        "ticker": "SGP",
-        "name": "SpyGlass Pharma, Inc. Common Stock",
+        "ticker": "XBI",
+        "name": "SPDR S&P Biotech",
         "setup": "pullback",
-        "entry": 26.98,
-        "tp": 30.27,
-        "tp_pct": 0.12194217939214225,
-        "shares": 9.27,
-        "value": 250.1046,
-        "pl_amount": 30.5,
-        "eta_days_low": 6,
-        "eta_days_high": 18,
-        "fee_pct": 0.06557742562700218,
-        "trend_score": 4,
-        "adx": 44.0,
-        "rs": 0.436,
-        "runner": false,
-        "regime": "uptrend",
-        "regime_weeks": 5,
-        "ema20": 25.58,
-        "ema50": 23.81,
-        "ema200": 23.99,
-        "above_ema200": true,
-        "quality": 0.74,
-        "q_detail": {
-          "rsi": 1.0,
-          "bollinger": 0.0,
-          "vwap": 1.0,
-          "volume": 0.5,
-          "extension": 1.0
-        },
-        "q_notes": {
-          "rsi": "RSI 58.1 flat",
-          "bollinger": "band position 75%, contracting",
-          "vwap": "reclaimed VWAP after dip (buyers defended)",
-          "volume": "1.4x average, steady",
-          "extension": "+0.8 ATR from 20 EMA, slope +1.2%, bullish stack (20>50>200)"
-        },
-        "context_notes": [],
-        "ext_atr": null,
-        "rsi": 58.1,
-        "options_note": "",
-        "sector": "",
-        "warnings": [],
-        "reasons": [
-          "daily uptrend (score 4/5)",
-          "4h pullback",
-          "1h momentum trigger",
-          "quality +0.74 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=58.1)",
-          "(nasdaq; tier assigned nightly by FMP)",
-          "hard-eligible; ranked in Step 2"
-        ],
-        "time": "2026-09-02T12:49:27.176665+00:00"
-      },
-      "profile": {
-        "symbol": "SGP",
-        "price": 26.86,
-        "marketCap": 898019835,
-        "beta": -1.013952,
-        "lastDividend": 0,
-        "range": "17.06-32.44",
-        "change": 0.76,
-        "changePercentage": 2.91188,
-        "volume": 87105,
-        "averageVolume": 99432,
-        "companyName": "SpyGlass Pharma, Inc. Common Stock",
-        "currency": "USD",
-        "cik": "0001778922",
-        "isin": "US85220G1094",
-        "cusip": "85220G109",
-        "exchangeFullName": "NASDAQ Global Market",
-        "exchange": "NASDAQ",
-        "industry": "Biotechnology",
-        "website": "http://www.spyglasspharma.com",
-        "description": "SpyGlass Pharma, Inc. is an advanced biopharmaceutical company dedicated to developing innovative therapeutic approaches for individuals suffering from chronic eye conditions. Its flagship investigational product, the Bimatoprost Drug Pad-IOL System (BIM-IOL System), is engineered for implantation during standard cataract removal procedures with the aim of reducing elevated intraocular pressure (IOP) in patients afflicted with either open-angle glaucoma (OAG) or ocular hypertension (OHT). Co-founded in January 2019 by Malik Y. Kahook and Glenn Sussman, the company maintains its headquarters in Aliso Viejo, CA.",
-        "ceo": "Patrick H. Mooney",
-        "sector": "Healthcare",
-        "country": "US",
-        "fullTimeEmployees": "76",
-        "phone": "1 949 535 0588",
-        "address": "27061 Aliso Creek Road",
-        "city": "Aliso Viejo",
-        "state": "CA",
-        "zip": "92656",
-        "image": "https://images.financialmodelingprep.com/symbol/SGP.png",
-        "ipoDate": "2026-02-06",
-        "defaultImage": false,
-        "isEtf": false,
-        "isActivelyTrading": true,
-        "isAdr": false,
-        "isFund": false
-      },
-      "financials": [
-        {
-          "date": "2026-08-06",
-          "fiscal_period": "",
-          "eps_actual": -0.59,
-          "eps_estimate": -0.51442,
-          "eps_surprise": -0.07557999999999998,
-          "eps_surprise_pct": -0.1469227479491466,
-          "revenue": 0.0,
-          "net_income": -19864000.0,
-          "operating_margin": null,
-          "gross_margin": null,
-          "revenue_yoy": null,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-05-15",
-          "fiscal_period": "",
-          "eps_actual": -0.69,
-          "eps_estimate": -0.67,
-          "eps_surprise": -0.019999999999999907,
-          "eps_surprise_pct": -0.029850746268656577,
-          "revenue": 0.0,
-          "net_income": -19864000.0,
-          "operating_margin": null,
-          "gross_margin": null,
-          "revenue_yoy": null,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-03-26",
-          "fiscal_period": "",
-          "eps_actual": -5.72,
-          "eps_estimate": -0.57422,
-          "eps_surprise": -5.14578,
-          "eps_surprise_pct": -8.96133885967051,
-          "revenue": 0.0,
-          "net_income": -19864000.0,
-          "operating_margin": null,
-          "gross_margin": null,
-          "revenue_yoy": null,
-          "net_income_yoy": null
-        }
-      ],
-      "financial_health": {
-        "cash": 223143000.0,
-        "total_debt": 1632000.0,
-        "total_liabilities": 11069000.0,
-        "equity": 232364000.0,
-        "operating_cash_flow": -14839000.0,
-        "capital_expenditure": -1932000.0,
-        "free_cash_flow": -16771000.0
-      },
-      "forward": {
-        "next_earnings": {
-          "symbol": "SGP",
-          "date": "2026-11-05",
-          "epsActual": null,
-          "epsEstimated": -0.66,
-          "revenueActual": null,
-          "revenueEstimated": null,
-          "lastUpdated": "2026-09-02"
-        },
-        "estimates": [
-          {
-            "date": "2030-12-31",
-            "period": null,
-            "revenue_avg": 85580333.0,
-            "eps_avg": -2.68,
-            "revenue_low": 85580333.0,
-            "revenue_high": 85580333.0,
-            "eps_low": -2.68,
-            "eps_high": -2.68,
-            "num_analysts_revenue": 2,
-            "num_analysts_eps": 1
-          },
-          {
-            "date": "2029-12-31",
-            "period": null,
-            "revenue_avg": 18858000.0,
-            "eps_avg": -3.07,
-            "revenue_low": 18858000.0,
-            "revenue_high": 18858000.0,
-            "eps_low": -3.07,
-            "eps_high": -3.07,
-            "num_analysts_revenue": 2,
-            "num_analysts_eps": 1
-          },
-          {
-            "date": "2028-12-31",
-            "period": null,
-            "revenue_avg": null,
-            "eps_avg": -3.0566,
-            "revenue_low": 0.0,
-            "revenue_high": 0.0,
-            "eps_low": -3.75636,
-            "eps_high": -2.64404,
-            "num_analysts_revenue": 0,
-            "num_analysts_eps": 4
-          },
-          {
-            "date": "2027-12-31",
-            "period": null,
-            "revenue_avg": null,
-            "eps_avg": -2.81442,
-            "revenue_low": 0.0,
-            "revenue_high": 0.0,
-            "eps_low": -3.08293,
-            "eps_high": -2.55585,
-            "num_analysts_revenue": 0,
-            "num_analysts_eps": 4
-          }
-        ]
-      },
-      "analysts": {
-        "grades_consensus": {},
-        "estimate_direction": {
-          "revenueAvg": {
-            "latest": 85580333,
-            "prior": 18858000,
-            "change": 3.5381447131191006
-          },
-          "epsAvg": {
-            "latest": -2.68,
-            "prior": -3.07,
-            "change": -0.12703583061889245
-          }
-        }
-      },
-      "valuation": {
-        "ratios": {
-          "symbol": "SGP",
-          "grossProfitMarginTTM": 0,
-          "ebitMarginTTM": 0,
-          "ebitdaMarginTTM": 0,
-          "operatingProfitMarginTTM": 0,
-          "pretaxProfitMarginTTM": 0,
-          "continuousOperationsProfitMarginTTM": 0,
-          "netProfitMarginTTM": 0,
-          "bottomLineProfitMarginTTM": 0,
-          "receivablesTurnoverTTM": 0,
-          "payablesTurnoverTTM": 0.21076438026474129,
-          "inventoryTurnoverTTM": 0,
-          "fixedAssetTurnoverTTM": 0,
-          "assetTurnoverTTM": 0,
-          "currentRatioTTM": 25.056797711137015,
-          "quickRatioTTM": 25.056797711137015,
-          "solvencyRatioTTM": -4.9724455687053934,
-          "cashRatioTTM": 23.645544134788597,
-          "priceToEarningsRatioTTM": -16.18072289156627,
-          "priceToEarningsGrowthRatioTTM": 0.11845664255871163,
-          "forwardPriceToEarningsGrowthRatioTTM": -1.2814580745572839,
-          "priceToEarningsDilutedRatioTTM": -16.18072289156627,
-          "priceToEarningsDilutedGrowthRatioTTM": 0.11845664255871163,
-          "priceToBookRatioTTM": 3.865427196037252,
-          "priceToSalesRatioTTM": 0,
-          "priceToFreeCashFlowRatioTTM": -18.05464193087919,
-          "priceToOperatingCashFlowRatioTTM": -19.291767794578806,
-          "debtToAssetsRatioTTM": 0.006704103387790481,
-          "debtToEquityRatioTTM": 0.007023463187068565,
-          "debtToCapitalRatioTTM": 0.006974478196208482,
-          "longTermDebtToCapitalRatioTTM": 0,
-          "financialLeverageRatioTTM": 1.047636466922587,
-          "workingCapitalTurnoverRatioTTM": 0,
-          "operatingCashFlowRatioTTM": -4.933559393875172,
-          "operatingCashFlowSalesRatioTTM": 0,
-          "freeCashFlowOperatingCashFlowRatioTTM": 1.0683233815885562,
-          "debtServiceCoverageRatioTTM": 0,
-          "interestCoverageRatioTTM": 0,
-          "shortTermOperatingCashFlowCoverageRatioTTM": 0,
-          "operatingCashFlowCoverageRatioTTM": -28.528186274509803,
-          "capitalExpenditureCoverageRatioTTM": -14.636277900031436,
-          "dividendPaidAndCapexCoverageRatioTTM": -14.636277900031436,
-          "dividendPayoutRatioTTM": 0,
-          "dividendYieldTTM": 0,
-          "enterpriseValueTTM": 676508835,
-          "revenuePerShareTTM": 0,
-          "netIncomePerShareTTM": -1.6762489846227862,
-          "interestDebtPerShareTTM": 0.04880449472649791,
-          "cashPerShareTTM": 7.003265564963014,
-          "bookValuePerShareTTM": 6.948779174404387,
-          "tangibleBookValuePerShareTTM": 6.948779174404387,
-          "shareholdersEquityPerShareTTM": 6.948779174404387,
-          "operatingCashFlowPerShareTTM": -1.3923037165908636,
-          "capexPerShareTTM": 0.0951268981158026,
-          "freeCashFlowPerShareTTM": -1.4874306147066663,
-          "netIncomePerEBTTTM": 1,
-          "ebtPerEbitTTM": 0.9025521294581756,
-          "priceToFairValueTTM": 3.865427196037252,
-          "debtToMarketCapTTM": 0,
-          "effectiveTaxRateTTM": 0,
-          "enterpriseValueMultipleTTM": -11.5784016048191,
-          "dividendPerShareTTM": 0
-        },
-        "metrics": {
-          "symbol": "SGP",
-          "marketCap": 898019835,
-          "enterpriseValueTTM": 676508835,
-          "evToSalesTTM": 0,
-          "evToOperatingCashFlowTTM": -14.530453090768503,
-          "evToFreeCashFlowTTM": -13.60117483262631,
-          "evToEBITDATTM": -11.5784016048191,
-          "netDebtToEBITDATTM": 3.791145340895782,
-          "currentRatioTTM": 25.056797711137015,
-          "incomeQualityTTM": 0.8306067471856993,
-          "grahamNumberTTM": null,
-          "grahamNetNetTTM": 6.68745682319881,
-          "taxBurdenTTM": 1,
-          "interestBurdenTTM": 0.9429941029264108,
-          "workingCapitalTTM": 227024000,
-          "investedCapitalTTM": 233237000,
-          "returnOnAssetsTTM": -0.23026048235037977,
-          "operatingReturnOnAssetsTTM": -0.24751952397179064,
-          "returnOnTangibleAssetsTTM": -0.23026048235037977,
-          "returnOnEquityTTM": -0.7564144629284582,
-          "returnOnInvestedCapitalTTM": -0.2654105209721983,
-          "returnOnCapitalEmployedTTM": -0.26541051983794595,
-          "earningsYieldTTM": -0.062406886992657715,
-          "freeCashFlowYieldTTM": -0.0553874180295806,
-          "capexToOperatingCashFlowTTM": -0.0683233815885562,
-          "capexToDepreciationTTM": 3.140177690029615,
-          "capexToRevenueTTM": 0,
-          "salesGeneralAndAdministrativeToRevenueTTM": 0,
-          "researchAndDevelopementToRevenueTTM": 0,
-          "stockBasedCompensationToRevenueTTM": 0,
-          "intangiblesToTotalAssetsTTM": 0,
-          "averageReceivablesTTM": 665500,
-          "averagePayablesTTM": 3834500,
-          "averageInventoryTTM": 0,
-          "daysOfSalesOutstandingTTM": 0,
-          "daysOfPayablesOutstandingTTM": 1731.791679132514,
-          "daysOfInventoryOutstandingTTM": 0,
-          "operatingCycleTTM": 0,
-          "cashConversionCycleTTM": -1731.791679132514,
-          "freeCashFlowToEquityTTM": -49739000,
-          "freeCashFlowToFirmTTM": -49739000,
-          "tangibleAssetValueTTM": 232364000,
-          "netCurrentAssetValueTTM": 225392000
-        }
-      },
-      "news": [
-        {
-          "date": "2026-09-02 08:00 UTC",
-          "title": "SpyGlass Pharma to Participate in Upcoming Investor Conferences",
-          "site": "globenewswire.com",
-          "text": "IRVINE, Calif., Sept. 02, 2026 (GLOBE NEWSWIRE) -- SpyGlass Pharma, Inc. (Nasdaq: SGP) (“SpyGlass Pharma” or “Company”), a late-stage biopharmaceutical company, today announced that members of the executive management team will participate in the following upcoming conferences: Wells Fargo 21 st Annual Healthcare Conference Date: Wednesday, September 9, 2026 Format: 1x1 Meetings only Citi's 2026 Biopharma Back to School Conference Date: Thursday, September 10, 2026Time: 10:40 a.m."
-        }
-      ],
-      "news_diag": {
-        "status": "OK",
-        "message": "1 usable article(s)"
-      },
-      "sector": {
-        "sector": "Healthcare",
-        "industry": "Biotechnology",
-        "sector_snapshot": {
-          "date": "2026-09-02",
-          "sector": "Healthcare",
-          "exchange": "NASDAQ",
-          "averageChange": 0.3015725515452372
-        },
-        "industry_snapshot": {
-          "date": "2026-09-02",
-          "industry": "Biotechnology",
-          "exchange": "NASDAQ",
-          "averageChange": 0.8067095254635559
-        }
-      },
-      "macro": {
-        "hourly_scan_macro": {
-          "risk": "neutral",
-          "vol": 7.1
-        },
-        "hourly_scan_cycles": {
-          "score": -1.0,
-          "label": "headwind",
-          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
-        },
-        "treasury": {
-          "date": "2026-08-31",
-          "month1": 3.85,
-          "month2": 3.88,
-          "month3": 3.91,
-          "month6": 3.99,
-          "year1": 4.16,
-          "year2": 4.34,
-          "year3": 4.4,
-          "year5": 4.49,
-          "year7": 4.62,
-          "year10": 4.75,
-          "year20": 5.24,
-          "year30": 5.25
-        },
-        "indicators": {
-          "GDP": [
-            {
-              "name": "GDP",
-              "date": "2025-10-01",
-              "value": 31422.526
-            }
-          ],
-          "CPI": [
-            {
-              "name": "CPI",
-              "date": "2025-12-01",
-              "value": 326.031
-            },
-            {
-              "name": "CPI",
-              "date": "2025-11-01",
-              "value": 325.063
-            }
-          ],
-          "unemploymentRate": [
-            {
-              "name": "unemploymentRate",
-              "date": "2025-12-01",
-              "value": 4.4
-            },
-            {
-              "name": "unemploymentRate",
-              "date": "2025-11-01",
-              "value": 4.5
-            }
-          ]
-        },
-        "calendar": [
-          {
-            "date": "2026-09-02 00:00:00",
-            "country": "VN",
-            "event": "National Day",
-            "currency": "VND",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-09-02 00:00:00",
-            "country": "VN",
-            "event": "Independence Day",
-            "currency": "VND",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-09-02 00:30:00",
-            "country": "DE",
-            "event": "Bundesbank Nagel Speech",
-            "currency": "EUR",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "Medium",
-            "changePercentage": null,
-            "unit": null
-          },
-          {
-            "date": "2026-09-02 01:30:00",
-            "country": "AU",
-            "event": "GDP Growth Rate YoY (Q2)",
-            "currency": "AUD",
-            "previous": 2.5,
-            "estimate": 1.8,
-            "actual": 2.1,
-            "change": -0.4,
-            "impact": "Medium",
-            "changePercentage": -16,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-02 01:30:00",
-            "country": "AU",
-            "event": "GDP Growth Rate QoQ (Q2)",
-            "currency": "AUD",
-            "previous": 0.3,
-            "estimate": 0.3,
-            "actual": 0.4,
-            "change": 0.1,
-            "impact": "High",
-            "changePercentage": 33.333,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-02 01:30:00",
-            "country": "AU",
-            "event": "GDP Final Consumption QoQ (Q2)",
-            "currency": "AUD",
-            "previous": 0.1,
-            "estimate": null,
-            "actual": 0.5,
-            "change": 0.4,
-            "impact": "Low",
-            "changePercentage": 400,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-02 01:30:00",
-            "country": "AU",
-            "event": "GDP Chain Price Index QoQ (Q2)",
-            "currency": "AUD",
-            "previous": 0.9,
-            "estimate": null,
-            "actual": -0.6,
-            "change": -1.5,
-            "impact": "Low",
-            "changePercentage": -166.667,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-02 01:30:00",
-            "country": "AU",
-            "event": "Gross Domestic Product YoY (Q2)",
-            "currency": "AUD",
-            "previous": 2.5,
-            "estimate": 1.8,
-            "actual": 2.1,
-            "change": -0.4,
-            "impact": "Medium",
-            "changePercentage": -16,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-02 01:30:00",
-            "country": "AU",
-            "event": "GDP Consumption QoQ (Q2)",
-            "currency": "AUD",
-            "previous": 0.1,
-            "estimate": null,
-            "actual": 0.5,
-            "change": 0.4,
-            "impact": "Low",
-            "changePercentage": 400,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-02 01:30:00",
-            "country": "AU",
-            "event": "GDP Capital Expenditure QoQ (Q2)",
-            "currency": "AUD",
-            "previous": 3.1,
-            "estimate": null,
-            "actual": -0.3,
-            "change": -3.4,
-            "impact": "Low",
-            "changePercentage": -109.677,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-02 01:30:00",
-            "country": "AU",
-            "event": "Gross Domestic Product QoQ (Q2)",
-            "currency": "AUD",
-            "previous": 0.3,
-            "estimate": 0.3,
-            "actual": 0.4,
-            "change": 0.1,
-            "impact": "Medium",
-            "changePercentage": 33.333,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-02 02:00:00",
-            "country": "NZ",
-            "event": "Monetary Policy Statement",
-            "currency": "NZD",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "Medium",
-            "changePercentage": null,
-            "unit": null
-          }
-        ]
-      },
-      "llm": {
-        "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price is above rising key EMAs, has reclaimed VWAP, and shows strong relative strength with moderate RSI rather than overbought momentum.",
-        "financial_assessment": "negative",
-        "financial_interpretation": "The last three reports show recurring losses and EPS misses, including a particularly large miss in March, with no reported revenue. Cash provides a buffer and debt is low, but operating and free cash flow remain negative, indicating continued funding risk.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings report is not due until November 5, reducing near-term event risk, but the next EPS estimate remains negative at -$0.66. Any clinical or business update could still produce substantial biotech volatility.",
-        "analyst_assessment": "unknown",
-        "analyst_interpretation": "Analyst ratings are unavailable, while the limited forward estimates remain loss-making and do not provide clear support.",
-        "valuation_assessment": "expensive",
-        "valuation_interpretation": "Valuation is difficult to justify from current fundamentals because the company reports no revenue and remains unprofitable. The positive price-to-book multiple therefore offers limited support while execution and funding risks remain.",
-        "news_assessment": "no_major_risk",
-        "news_interpretation": "The company announced participation in upcoming healthcare and biopharma investor conferences. This may improve visibility, but it is routine investor-relations news rather than a confirmed fundamental catalyst.",
-        "sector_assessment": "supportive",
-        "sector_interpretation": "Healthcare and especially biotechnology are outperforming on the supplied snapshot, providing a supportive backdrop for the setup.",
-        "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and a seasonally unfavorable cycle backdrop create a modest headwind for speculative, loss-making biotech shares despite otherwise neutral market risk.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported as a bullish pullback continuation, with strong trend structure, VWAP recovery, and sector relative strength. Fundamental support is weak because losses, cash burn, and negative expectations persist, so the setup remains dependent on technical follow-through and could be volatile around company updates.",
-        "key_positive": "Strong uptrend, relative strength, VWAP recovery, and supportive biotechnology performance favor continuation.",
-        "key_risk": "Persistent losses, negative cash flow, limited revenue visibility, and elevated yields leave the stock vulnerable to sharp reversals.",
-        "technical_assessment": ""
-      },
-      "llm_provider": "openai",
-      "llm_ok": true,
-      "llm_diagnostics": [
-        {
-          "provider": "openai",
-          "provider_name": "OpenAI",
-          "model": "gpt-5.6-luna",
-          "status": "received",
-          "chars": 2808
-        }
-      ],
-      "is_etf": false,
-      "buy_confidence": 46,
-      "report": "🟡 SGP — SpyGlass Pharma, Inc. Common Stock\nEntry: $26.98\neToro TP Value: $30.50\nShares: 9.27 ($250)\nScanner Potential: +12.2%\nTimeframe: 6–18 days\n\n═══ BUY CONFIDENCE: 46% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings are unavailable, while the limited forward estimates remain loss-making and do not provide clear support.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price is above rising key EMAs, has reclaimed VWAP, and shows strong relative strength with moderate RSI rather than overbought momentum.\n🕒 Technical timestamp: 2026-09-02 12:49:27 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🔴 Weak\n🧠 The last three reports show recurring losses and EPS misses, including a particularly large miss in March, with no reported revenue. Cash provides a buffer and debt is low, but operating and free cash flow remain negative, indicating continued funding risk.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 Valuation is difficult to justify from current fundamentals because the company reports no revenue and remains unprofitable. The positive price-to-book multiple therefore offers limited support while execution and funding risks remain.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+64 days)\n🟡 Mixed\n🧠 The next earnings report is not due until November 5, reducing near-term event risk, but the next EPS estimate remains negative at -$0.66. Any clinical or business update could still produce substantial biotech volatility.\n\n═══ RECENT NEWS ═══\n• 2026-09-02 08:00 UTC — SpyGlass Pharma to Participate in Upcoming Investor Conferences\n⚪ The company announced participation in upcoming healthcare and biopharma investor conferences. This may improve visibility, but it is routine investor-relations news rather than a confirmed fundamental catalyst.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Healthcare and especially biotechnology are outperforming on the supplied snapshot, providing a supportive backdrop for the setup.\n🧠 Macro: Elevated long-term yields and a seasonally unfavorable cycle backdrop create a modest headwind for speculative, loss-making biotech shares despite otherwise neutral market risk.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a bullish pullback continuation, with strong trend structure, VWAP recovery, and sector relative strength. Fundamental support is weak because losses, cash burn, and negative expectations persist, so the setup remains dependent on technical follow-through and could be volatile around company updates.\n🟢 Key Positive: Strong uptrend, relative strength, VWAP recovery, and supportive biotechnology performance favor continuation.\n🔴 Key Risk: Persistent losses, negative cash flow, limited revenue visibility, and elevated yields leave the stock vulnerable to sharp reversals.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
-    },
-    {
-      "ticker": "REGN",
-      "alert": {
-        "alerted": "2026-09-02T12:49:27.130266+00:00",
-        "entry": 824.42,
-        "thesis_warned": false,
-        "tp": 1004.74
-      },
-      "signal": {
-        "ticker": "REGN",
-        "name": "Regeneron Pharmaceuticals, Inc.",
-        "setup": "pullback",
-        "entry": 824.42,
-        "tp": 1004.74,
-        "tp_pct": 0.21872349576001304,
-        "shares": 0.3,
-        "value": 247.32599399999998,
-        "pl_amount": 54.1,
-        "eta_days_low": 23,
-        "eta_days_high": 50,
-        "fee_pct": 0.036971306162602836,
+        "entry": 164.88,
+        "tp": 201.84,
+        "tp_pct": 0.22416302765647744,
+        "shares": 1.52,
+        "value": 250.6176,
+        "pl_amount": 56.18,
+        "eta_days_low": 21,
+        "eta_days_high": 63,
+        "fee_pct": 0.0,
         "trend_score": 5,
-        "adx": 41.9,
-        "rs": 0.321,
+        "adx": 26.9,
+        "rs": 0.225,
         "runner": true,
         "regime": "uptrend",
-        "regime_weeks": 5,
-        "ema20": 796.47,
-        "ema50": 749.78,
-        "ema200": 706.04,
+        "regime_weeks": 21,
+        "ema20": 161.97,
+        "ema50": 155.89,
+        "ema200": 137.72,
         "above_ema200": true,
-        "quality": 0.89,
+        "quality": 0.76,
         "q_detail": {
-          "rsi": 1.0,
+          "rsi": 0.8,
           "bollinger": 1.0,
-          "vwap": 1.0,
-          "volume": 0.5,
+          "vwap": 0.3,
+          "volume": 1.0,
           "extension": 0.8
         },
         "q_notes": {
-          "rsi": "RSI 58.3 rising",
-          "bollinger": "band position 56%, contracting",
-          "vwap": "reclaimed VWAP after dip (buyers defended)",
-          "volume": "1.2x average, steady",
-          "extension": "+1.0 ATR from 20 EMA, slope -0.8%, bullish stack (20>50>200)"
+          "rsi": "RSI 54.9 rising, BEARISH DIVERGENCE",
+          "bollinger": "band position 48%, contracting",
+          "vwap": "just above VWAP",
+          "volume": "0.0x average, drying up",
+          "extension": "+0.4 ATR from 20 EMA, slope -0.0%, bullish stack (20>50>200)"
         },
         "context_notes": [],
         "ext_atr": null,
-        "rsi": 58.3,
+        "rsi": 54.9,
         "options_note": "",
         "sector": "",
         "warnings": [],
@@ -689,350 +66,114 @@
           "4h pullback",
           "1h momentum trigger",
           "RUNNER: near 52w high + outperforming SPY",
-          "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=58.3)",
-          "hard-eligible; ranked in Step 2"
+          "quality +0.76 (rsi +0.8, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=54.9)",
+          "(biotech)"
         ],
-        "time": "2026-09-02T12:49:27.130237+00:00"
+        "time": "2026-09-02T19:26:10.026405+00:00"
       },
       "profile": {
-        "symbol": "REGN",
-        "price": 823.82,
-        "marketCap": 84871584040,
-        "beta": 0.236,
-        "lastDividend": 3.7,
-        "range": "541-847",
-        "change": 24.74,
-        "changePercentage": 3.09606,
-        "volume": 673082,
-        "averageVolume": 935968,
-        "companyName": "Regeneron Pharmaceuticals, Inc.",
+        "symbol": "XBI",
+        "price": 164.84,
+        "marketCap": 8618728798,
+        "beta": 1.1,
+        "lastDividend": 0.5713,
+        "range": "92.49-169.89",
+        "change": 1.44,
+        "changePercentage": 0.88127,
+        "volume": 6743456,
+        "averageVolume": 8783953,
+        "companyName": "State Street SPDR S&P Biotech ETF",
         "currency": "USD",
-        "cik": "0000872589",
-        "isin": "US75886F1075",
-        "cusip": "75886F107",
-        "exchangeFullName": "NASDAQ Global Select",
-        "exchange": "NASDAQ",
-        "industry": "Biotechnology",
-        "website": "https://www.regeneron.com",
-        "description": "Regeneron Pharmaceuticals, Inc. is a global biopharmaceutical enterprise focused on discovering, inventing, developing, manufacturing, and bringing to market medical treatments for a wide array of illnesses. Its therapeutic portfolio includes EYLEA, an injection used to treat various ophthalmic conditions such as wet age-related macular degeneration, diabetic macular edema, myopic choroidal neovascularization, diabetic retinopathy, and macular edema resulting from retinal vein occlusion (both central and branch). Other significant offerings are Dupixent, an injectable solution for atopic dermatitis and asthma in both adults and pediatric patients; Libtayo, indicated for metastatic or locally advanced cutaneous squamous cell carcinoma; Praluent, an injection prescribed for adults with heterozygous familial hypercholesterolemia or clinical atherosclerotic cardiovascular disease; REGEN-COV for COVID-19; and Kevzara, a solution targeting rheumatoid arthritis in adult patients. Furthermore, Regeneron provides Inmazeb for infections caused by Zaire ebolavirus; ARCALYST, an injection for cryopyrin-associated periodic syndromes, including familial cold auto-inflammatory syndrome and Muckle-Wells syndrome; and ZALTRAP, an intravenous infusion used in the treatment of metastatic colorectal cancer. In addition to its existing product lineup, the company is actively engaged in developing novel product candidates aimed at addressing unmet medical needs in areas such as ocular diseases, allergic and inflammatory conditions, cardiovascular and metabolic disorders, infectious diseases, rare diseases, cancer, pain management, and hematologic conditions. Regeneron maintains extensive collaboration and licensing agreements with a diverse range of partners, including Sanofi, Bayer, Teva Pharmaceutical Industries Ltd., Mitsubishi Tanabe Pharma Corporation, Alnylam Pharmaceuticals, Inc., Roche Pharmaceuticals, and Kiniksa Pharmaceuticals, Ltd. It also holds agreements with entities such as the U.S. Department of Health and Human Services, Zai Lab Limited, Intellia Therapeutics, Inc., the Biomedical Advanced Research Development Authority, and AstraZeneca PLC. The company was founded in 1988 and its corporate headquarters are situated in Tarrytown, New York.",
-        "ceo": "Leonard S. Schleifer",
-        "sector": "Healthcare",
+        "cik": "0001064642",
+        "isin": "US78464A8707",
+        "cusip": "78464A870",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management",
+        "website": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-biotech-etf-xbi",
+        "description": "SPDR Series Trust - State Street SPDR S&P Biotech ETF is an exchange traded fund launched by State Street Global Advisors, Inc. The fund is managed by SSGA Funds Management, Inc. It invests in public equity markets of the United States. It invests in stocks of companies operating across health care, pharmaceuticals, biotechnology and life sciences sectors. The fund invests in growth and value stocks of companies across diversified market capitalization. It seeks to track the performance of the S&P Biotechnology Select Industry Index, by using representative sampling technique. SPDR Series Trust - State Street SPDR S&P Biotech ETF was formed on January 31, 2006 and is domiciled in the United States.",
+        "ceo": "",
+        "sector": "Financial Services",
         "country": "US",
-        "fullTimeEmployees": "15410",
-        "phone": "914 847 7000",
-        "address": "777 Old Saw Mill River Road",
-        "city": "Tarrytown",
-        "state": "NY",
-        "zip": "10591-6707",
-        "image": "https://images.financialmodelingprep.com/symbol/REGN.png",
-        "ipoDate": "1991-04-02",
+        "fullTimeEmployees": null,
+        "phone": "1-866-787-2257",
+        "address": "1 Iron Street",
+        "city": "Boston",
+        "state": "MA",
+        "zip": "2210",
+        "image": "https://images.financialmodelingprep.com/symbol/XBI.png",
+        "ipoDate": "2006-02-06",
         "defaultImage": false,
-        "isEtf": false,
+        "isEtf": true,
         "isActivelyTrading": true,
         "isAdr": false,
         "isFund": false
       },
-      "financials": [
-        {
-          "date": "2026-07-30",
-          "fiscal_period": "",
-          "eps_actual": 14.29,
-          "eps_estimate": 10.16,
-          "eps_surprise": 4.129999999999999,
-          "eps_surprise_pct": 0.4064960629921259,
-          "revenue": 4290700000.0,
-          "net_income": 1296900000.0,
-          "operating_margin": 0.33106486121145734,
-          "gross_margin": 0.8656396392197078,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-04-29",
-          "fiscal_period": "",
-          "eps_actual": 9.47,
-          "eps_estimate": 8.91,
-          "eps_surprise": 0.5600000000000005,
-          "eps_surprise_pct": 0.06285072951739624,
-          "revenue": 4290700000.0,
-          "net_income": 1296900000.0,
-          "operating_margin": 0.33106486121145734,
-          "gross_margin": 0.8656396392197078,
-          "revenue_yoy": 0.0,
-          "net_income_yoy": 0.0
-        },
-        {
-          "date": "2026-01-30",
-          "fiscal_period": "",
-          "eps_actual": 11.44,
-          "eps_estimate": 10.74,
-          "eps_surprise": 0.6999999999999993,
-          "eps_surprise_pct": 0.06517690875232768,
-          "revenue": 4290700000.0,
-          "net_income": 1296900000.0,
-          "operating_margin": 0.33106486121145734,
-          "gross_margin": 0.8656396392197078,
-          "revenue_yoy": null,
-          "net_income_yoy": null
-        }
-      ],
+      "financials": [],
       "financial_health": {
-        "cash": 2455800000.0,
-        "total_debt": 1986600000.0,
-        "total_liabilities": 10019000000.0,
-        "equity": 31711000000.0,
-        "operating_cash_flow": 574500000.0,
-        "capital_expenditure": -240200000.0,
-        "free_cash_flow": 334300000.0
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
       },
       "forward": {
         "next_earnings": {},
-        "estimates": [
-          {
-            "date": "2030-12-31",
-            "period": null,
-            "revenue_avg": 22407074592.0,
-            "eps_avg": 80.03142,
-            "revenue_low": 20048628033.0,
-            "revenue_high": 24158882927.0,
-            "eps_low": 69.08065,
-            "eps_high": 88.16544,
-            "num_analysts_revenue": 10,
-            "num_analysts_eps": 5
-          },
-          {
-            "date": "2029-12-31",
-            "period": null,
-            "revenue_avg": 21337309196.0,
-            "eps_avg": 75.64408,
-            "revenue_low": 19091460313.0,
-            "revenue_high": 23005482163.0,
-            "eps_low": 65.29363,
-            "eps_high": 83.33219,
-            "num_analysts_revenue": 10,
-            "num_analysts_eps": 5
-          },
-          {
-            "date": "2028-12-31",
-            "period": null,
-            "revenue_avg": 19816711410.0,
-            "eps_avg": 68.02825,
-            "revenue_low": 17630116485.0,
-            "revenue_high": 21807893033.0,
-            "eps_low": 60.70076,
-            "eps_high": 77.6683,
-            "num_analysts_revenue": 21,
-            "num_analysts_eps": 8
-          },
-          {
-            "date": "2027-12-31",
-            "period": null,
-            "revenue_avg": 18554451068.0,
-            "eps_avg": 60.87577,
-            "revenue_low": 16715721682.0,
-            "revenue_high": 20288707192.0,
-            "eps_low": 47.06208,
-            "eps_high": 68.40774,
-            "num_analysts_revenue": 19,
-            "num_analysts_eps": 10
-          }
-        ]
+        "estimates": []
       },
       "analysts": {
         "grades_consensus": {
-          "symbol": "REGN",
+          "symbol": "XBI",
           "strongBuy": 0,
-          "buy": 34,
-          "hold": 15,
+          "buy": 0,
+          "hold": 1,
           "sell": 0,
           "strongSell": 0,
-          "consensus": "Buy"
+          "consensus": "Hold"
         },
-        "estimate_direction": {
-          "revenueAvg": {
-            "latest": 22407074592,
-            "prior": 21337309196,
-            "change": 0.05013590918017652
-          },
-          "epsAvg": {
-            "latest": 80.03142,
-            "prior": 75.64408,
-            "change": 0.05799978002244188
-          }
-        }
+        "estimate_direction": {}
       },
-      "valuation": {
-        "ratios": {
-          "symbol": "REGN",
-          "grossProfitMarginTTM": 0.8485905746490116,
-          "ebitMarginTTM": 0.33611205881027634,
-          "ebitdaMarginTTM": 0.3701391079325639,
-          "operatingProfitMarginTTM": 0.25556335172227335,
-          "pretaxProfitMarginTTM": 0.33254584897036954,
-          "continuousOperationsProfitMarginTTM": 0.27864715765351117,
-          "netProfitMarginTTM": 0.27864715765351117,
-          "bottomLineProfitMarginTTM": 0.27864715765351117,
-          "receivablesTurnoverTTM": 2.3661467694276053,
-          "payablesTurnoverTTM": 2.0288967480376088,
-          "inventoryTurnoverTTM": 0.762604156534708,
-          "fixedAssetTurnoverTTM": 2.845756471083918,
-          "assetTurnoverTTM": 0.37226695422957107,
-          "currentRatioTTM": 3.33526199689003,
-          "quickRatioTTM": 2.7775829023975698,
-          "solvencyRatioTTM": 0.484808863159996,
-          "cashRatioTTM": 0.44403862148772283,
-          "priceToEarningsRatioTTM": 19.67096466093601,
-          "priceToEarningsGrowthRatioTTM": 63.17405958416001,
-          "forwardPriceToEarningsGrowthRatioTTM": 1.6068458800614052,
-          "priceToEarningsDilutedRatioTTM": 20.376453128864704,
-          "priceToEarningsDilutedGrowthRatioTTM": 10.780502135378072,
-          "priceToBookRatioTTM": 2.6862283750118254,
-          "priceToSalesRatioTTM": 5.463355200937257,
-          "priceToFreeCashFlowRatioTTM": 24.09823789431841,
-          "priceToOperatingCashFlowRatioTTM": 19.173266408571173,
-          "debtToAssetsRatioTTM": 0.04760603882099209,
-          "debtToEquityRatioTTM": 0.06264703099870707,
-          "debtToCapitalRatioTTM": 0.058953753383030244,
-          "longTermDebtToCapitalRatioTTM": 0.058953753383030244,
-          "financialLeverageRatioTTM": 1.315947147677462,
-          "workingCapitalTurnoverRatioTTM": 1.1942006926267157,
-          "operatingCashFlowRatioTTM": 0.8033124796586265,
-          "operatingCashFlowSalesRatioTTM": 0.28599200499526867,
-          "freeCashFlowOperatingCashFlowRatioTTM": 0.7927208066984784,
-          "debtServiceCoverageRatioTTM": 88.67689530685921,
-          "interestCoverageRatioTTM": 71.66245487364621,
-          "shortTermOperatingCashFlowCoverageRatioTTM": 0,
-          "operatingCashFlowCoverageRatioTTM": 2.236383771267492,
-          "capitalExpenditureCoverageRatioTTM": 4.8244109023781085,
-          "dividendPaidAndCapexCoverageRatioTTM": 3.4191165153147605,
-          "dividendPayoutRatioTTM": 0.08743964700718461,
-          "dividendYieldTTM": 0.00449127,
-          "enterpriseValueTTM": 84402384040,
-          "revenuePerShareTTM": 150.23887814313346,
-          "netIncomePerShareTTM": 41.86363636363637,
-          "interestDebtPerShareTTM": 19.748549323017407,
-          "cashPerShareTTM": 77.31721470019342,
-          "bookValuePerShareTTM": 306.6827852998066,
-          "tangibleBookValuePerShareTTM": 294.0154738878143,
-          "shareholdersEquityPerShareTTM": 306.6827852998066,
-          "operatingCashFlowPerShareTTM": 42.967117988394584,
-          "capexPerShareTTM": 8.906189555125726,
-          "freeCashFlowPerShareTTM": 34.060928433268856,
-          "netIncomePerEBTTTM": 0.8379210220673635,
-          "ebtPerEbitTTM": 1.3012266693534167,
-          "priceToFairValueTTM": 2.6862283750118254,
-          "debtToMarketCapTTM": 0.02340712763253853,
-          "effectiveTaxRateTTM": 0.16207897793263648,
-          "enterpriseValueMultipleTTM": 14.678675485217392,
-          "dividendPerShareTTM": 3.7
-        },
-        "metrics": {
-          "symbol": "REGN",
-          "marketCap": 84871584040,
-          "enterpriseValueTTM": 84402384040,
-          "evToSalesTTM": 5.43315184972996,
-          "evToOperatingCashFlowTTM": 18.997565508238047,
-          "evToFreeCashFlowTTM": 23.965014350208694,
-          "evToEBITDATTM": 14.678675485217392,
-          "netDebtToEBITDATTM": -0.0816,
-          "currentRatioTTM": 3.33526199689003,
-          "incomeQualityTTM": 1.0263589530343984,
-          "grahamNumberTTM": 537.4702536536427,
-          "grahamNetNetTTM": 42.95744680851064,
-          "taxBurdenTTM": 0.8379210220673635,
-          "interestBurdenTTM": 0.9893898188225381,
-          "workingCapitalTTM": 12915400000,
-          "investedCapitalTTM": 19684100000,
-          "returnOnAssetsTTM": 0.10373112868439971,
-          "operatingReturnOnAssetsTTM": 0.09612972585558144,
-          "returnOnTangibleAssetsTTM": 0.10709249335728176,
-          "returnOnEquityTTM": 0.13813240281357775,
-          "returnOnInvestedCapitalTTM": 0.09189738641274828,
-          "returnOnCapitalEmployedTTM": 0.10967308850422935,
-          "earningsYieldTTM": 0.05081648462484082,
-          "freeCashFlowYieldTTM": 0.04149681003173132,
-          "capexToOperatingCashFlowTTM": 0.20727919330152156,
-          "capexToDepreciationTTM": 1.7421490730230798,
-          "capexToRevenueTTM": 0.059280192086104015,
-          "salesGeneralAndAdministrativeToRevenueTTM": 0.17654669868101733,
-          "researchAndDevelopementToRevenueTTM": 0.4159204876824142,
-          "stockBasedCompensationToRevenueTTM": 0.06351587092122796,
-          "intangiblesToTotalAssetsTTM": 0.03138749101365924,
-          "averageReceivablesTTM": 6148200000,
-          "averagePayablesTTM": 1093200000,
-          "averageInventoryTTM": 3093950000,
-          "daysOfSalesOutstandingTTM": 154.25923899399407,
-          "daysOfPayablesOutstandingTTM": 179.90072700990603,
-          "daysOfInventoryOutstandingTTM": 478.6231452744356,
-          "operatingCycleTTM": 632.8823842684296,
-          "cashConversionCycleTTM": 452.98165725852357,
-          "freeCashFlowToEquityTTM": 3436600000,
-          "freeCashFlowToFirmTTM": 3483020824.622532,
-          "tangibleAssetValueTTM": 30401200000,
-          "netCurrentAssetValueTTM": 8427000000
-        }
-      },
+      "valuation": {},
       "news": [
         {
-          "date": "2026-09-01 17:29 UTC",
-          "title": "INVESTOR ALERT: Pomerantz Law Firm Reminds Investors with Losses on their Investment in Regeneron Pharmaceuticals, Inc. of Class Action Lawsuit and Upcoming Deadlines – REGN",
-          "site": "globenewswire.com",
-          "text": "NEW YORK, Sept. 01, 2026 (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against Regeneron Pharmaceuticals, Inc. (“Regeneron” or the “Company”) (NASDAQ: REGN)."
+          "date": "2026-09-01 12:25 UTC",
+          "title": "Next Biotech Boom May Be Cancer Vaccines: Watch These ETFs",
+          "site": "benzinga.com",
+          "text": "The biotech sector has a new catalyst beyond GLP-1 drugs. Moderna Inc (NASDAQ:MRNA) and Merck & Co Inc's (NYSE:MRK) positive Phase 3 results for a personalized mRNA cancer vaccine could revive investor interest in genomics, immunotherapy and precision medicine ETFs."
         },
         {
-          "date": "2026-09-01 15:53 UTC",
-          "title": "Portnoy Law Firm Announces Class Action on Behalf of Regeneron Pharmaceuticals, Inc. Investors",
-          "site": "globenewswire.com",
-          "text": "LOS ANGELES, Sept. 01, 2026 (GLOBE NEWSWIRE) -- The Portnoy Law Firm advises Regeneron Pharmaceuticals, Inc., (“Regeneron” or the \"Company\") (NASDAQ: REGN) investors of a class action on behalf of investors that bought securities between August 1, 2025 and May 15, 2026, inclusive (the “Class Period”). Regeneron investors have until September 14, 2026 to file a lead plaintiff motion."
-        },
-        {
-          "date": "2026-09-01 12:21 UTC",
-          "title": "INVESTOR DEADLINE: Regeneron Pharmaceuticals, Inc. (REGN) Investors with Substantial Losses Have Opportunity to Lead the Regeneron Class Action Lawsuit Before September 14, 2026 Deadline",
-          "site": "prnewswire.com",
-          "text": "SAN FRANCISCO, Sept. 1, 2026 /PRNewswire/ -- Hagens Berman Sobol Shapiro LLP alerts investors in Regeneron Pharmaceuticals (NASDAQ: REGN) that a securities class action lawsuit has been filed after its surprising revelations concerning a Phase 3 clinical trial of a therapy intended to treat patients with melanoma."
-        },
-        {
-          "date": "2026-09-01 10:29 UTC",
-          "title": "REGN UPCOMING DEADLINE: SueWallSt Alerts Regeneron Pharmaceuticals, Inc. Stockholders of Securities Class Action - Contact the Firm",
-          "site": "globenewswire.com",
-          "text": "Time-Sensitive: Allegations focus on Regeneron's statements about clinical differentiation in the Phase III Fianlimab-Libtayo Study and the last-minute protocol amendment used to force a trial readout Time-Sensitive: Allegations focus on Regeneron's statements about clinical differentiation in the Phase III Fianlimab-Libtayo Study and the last-minute protocol amendment used to force a trial readout"
-        },
-        {
-          "date": "2026-08-31 18:05 UTC",
-          "title": "REGN EQUITY ACTION REMINDER: Faruqi & Faruqi, LLP Reminds Regeneron Investors of Securities Class Action Lawsuit Deadline on September 14, 2026",
-          "site": "newsfilecorp.com",
-          "text": "Faruqi & Faruqi, LLP Securities Litigation Partner James (Josh) Wilson Encourages Investors Who Suffered Losses In Regeneron To Contact Him Directly To Discuss Their Options If you purchased or acquired securities in Regeneron between August 1, 2025 and May 15, 2026 and would like to discuss your legal rights, call Faruqi & Faruqi partner Josh Wilson directly at 877-247-4292 or 212-983-9330 (Ext. 1310). [You may also click here for additional information] New York, New York--(Newsfile Corp. - August 31, 2026) - Faruqi & Faruqi, LLP, a leading national securities law firm, is investigating potential claims against Regeneron Pharmaceuticals, Inc. (\"Regeneron\" or the \"Company\") (NASDAQ: REGN) and reminds investors of the September 14, 2026 deadline to seek the role of lead plaintiff in a federal securities class action that has been filed against the Company."
+          "date": "2026-09-01 11:31 UTC",
+          "title": "Healthcare ETFs to Watch Post Merck-Moderna Cancer Vaccine Breakthrough",
+          "site": "zacks.com",
+          "text": "Merck-Moderna's melanoma vaccine success could boost immunotherapy growth, putting healthcare ETFs in the spotlight."
         }
       ],
       "news_diag": {
         "status": "OK",
-        "message": "5 usable article(s)"
+        "message": "2 usable article(s)"
       },
       "sector": {
-        "sector": "Healthcare",
-        "industry": "Biotechnology",
+        "sector": "Financial Services",
+        "industry": "Asset Management",
         "sector_snapshot": {
           "date": "2026-09-02",
-          "sector": "Healthcare",
+          "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": 0.3015725515452372
+          "averageChange": 0.22741827024468364
         },
-        "industry_snapshot": {
-          "date": "2026-09-02",
-          "industry": "Biotechnology",
-          "exchange": "NASDAQ",
-          "averageChange": 0.8067095254635559
-        }
+        "industry_snapshot": {}
       },
       "macro": {
         "hourly_scan_macro": {
           "risk": "neutral",
-          "vol": 7.1
+          "vol": 7.4
         },
         "hourly_scan_cycles": {
           "score": -1.0,
           "label": "headwind",
-          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.9% (informative only)"
         },
         "treasury": {
           "date": "2026-08-31",
@@ -1086,7 +227,7 @@
           {
             "date": "2026-09-02 00:00:00",
             "country": "VN",
-            "event": "National Day",
+            "event": "Independence Day",
             "currency": "VND",
             "previous": null,
             "estimate": null,
@@ -1099,7 +240,7 @@
           {
             "date": "2026-09-02 00:00:00",
             "country": "VN",
-            "event": "Independence Day",
+            "event": "National Day",
             "currency": "VND",
             "previous": null,
             "estimate": null,
@@ -1125,14 +266,14 @@
           {
             "date": "2026-09-02 01:30:00",
             "country": "AU",
-            "event": "GDP Growth Rate YoY (Q2)",
+            "event": "GDP Capital Expenditure QoQ (Q2)",
             "currency": "AUD",
-            "previous": 2.5,
-            "estimate": 1.8,
-            "actual": 2.1,
-            "change": -0.4,
-            "impact": "Medium",
-            "changePercentage": -16,
+            "previous": 3.1,
+            "estimate": null,
+            "actual": -0.3,
+            "change": -3.4,
+            "impact": "Low",
+            "changePercentage": -109.677,
             "unit": "%"
           },
           {
@@ -1151,6 +292,32 @@
           {
             "date": "2026-09-02 01:30:00",
             "country": "AU",
+            "event": "GDP Chain Price Index QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.9,
+            "estimate": null,
+            "actual": -0.6,
+            "change": -1.5,
+            "impact": "Low",
+            "changePercentage": -166.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
+            "change": -0.4,
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
             "event": "GDP Final Consumption QoQ (Q2)",
             "currency": "AUD",
             "previous": 0.1,
@@ -1164,14 +331,14 @@
           {
             "date": "2026-09-02 01:30:00",
             "country": "AU",
-            "event": "GDP Chain Price Index QoQ (Q2)",
+            "event": "Gross Domestic Product QoQ (Q2)",
             "currency": "AUD",
-            "previous": 0.9,
-            "estimate": null,
-            "actual": -0.6,
-            "change": -1.5,
-            "impact": "Low",
-            "changePercentage": -166.667,
+            "previous": 0.3,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 33.333,
             "unit": "%"
           },
           {
@@ -1201,6 +368,292 @@
             "unit": "%"
           },
           {
+            "date": "2026-09-02 02:00:00",
+            "country": "AU",
+            "event": "RBA Rate Statement",
+            "currency": "AUD",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a pullback within a well-established bullish trend, with price above rising short- and long-term EMAs and strong relative performance versus SPY. Contracting Bollinger Bands and neutral RSI support consolidation, although bearish RSI divergence and drying volume temper momentum conviction.",
+        "financial_assessment": "not_applicable",
+        "financial_interpretation": "No quarterly financial results were supplied, likely because XBI is an ETF rather than an operating company. Therefore, acceleration, margins, cash flow, and earnings surprises cannot be assessed.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "No next earnings date or forward estimate direction is available; as an ETF, XBI has no single-company earnings event, but holdings can still create constituent-level event risk.",
+        "analyst_assessment": "mixed",
+        "analyst_interpretation": "The only reported rating is Hold, with no estimate-direction data, so analyst support is limited rather than bullish.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "Valuation data is unavailable, so it cannot be judged as a catalyst or headwind.",
+        "news_assessment": "positive",
+        "news_interpretation": "Recent coverage highlights encouraging Merck-Moderna cancer-vaccine results as a potential catalyst for immunotherapy, genomics, and precision-medicine exposure. This is supportive thematic news, though it is not a direct XBI-specific fundamental update.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "Recent biotech and immunotherapy interest, alongside strong reported sector performance, supports the setup.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Elevated longer-term yields and seasonally weaker cycle tendencies can pressure rate-sensitive biotech valuations, despite currently neutral overall risk conditions.",
+        "overall_assessment": "supportive",
+        "overall_summary": "The technical signal is supported by a durable uptrend, strong relative strength, and a constructive biotech catalyst backdrop. Missing fundamentals and valuation data limit confirmation, while bearish RSI divergence, low volume, and elevated yields argue for monitoring follow-through rather than assuming uninterrupted momentum.",
+        "key_positive": "XBI remains in a strong long-term uptrend and is benefiting from renewed investor interest in biotech innovation.",
+        "key_risk": "Weakening momentum participation, elevated yields, and the lack of direct financial confirmation could undermine the pullback continuation.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2656
+        }
+      ],
+      "is_etf": true,
+      "buy_confidence": 62,
+      "report": "🟡 XBI — State Street SPDR S&P Biotech ETF\nEntry: $164.88\neToro TP Value: $56.18\nShares: 1.52 ($251)\nScanner Potential: +22.4%\nTimeframe: 21–63 days\n\n═══ BUY CONFIDENCE: 62% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 0 | Hold: 1 | Sell: 0 | Strong Sell: 0\n🧠 The only reported rating is Hold, with no estimate-direction data, so analyst support is limited rather than bullish.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a pullback within a well-established bullish trend, with price above rising short- and long-term EMAs and strong relative performance versus SPY. Contracting Bollinger Bands and neutral RSI support consolidation, although bearish RSI divergence and drying volume temper momentum conviction.\n🕒 Technical timestamp: 2026-09-02 19:26:10 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 Valuation data is unavailable, so it cannot be judged as a catalyst or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimate direction is available; as an ETF, XBI has no single-company earnings event, but holdings can still create constituent-level event risk.\n\n═══ RECENT NEWS ═══\n• 2026-09-01 12:25 UTC — Next Biotech Boom May Be Cancer Vaccines: Watch These ETFs\n• 2026-09-01 11:31 UTC — Healthcare ETFs to Watch Post Merck-Moderna Cancer Vaccine Breakthrough\n🟢 Recent coverage highlights encouraging Merck-Moderna cancer-vaccine results as a potential catalyst for immunotherapy, genomics, and precision-medicine exposure. This is supportive thematic news, though it is not a direct XBI-specific fundamental update.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent biotech and immunotherapy interest, alongside strong reported sector performance, supports the setup.\n🧠 Macro: Elevated longer-term yields and seasonally weaker cycle tendencies can pressure rate-sensitive biotech valuations, despite currently neutral overall risk conditions.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The technical signal is supported by a durable uptrend, strong relative strength, and a constructive biotech catalyst backdrop. Missing fundamentals and valuation data limit confirmation, while bearish RSI divergence, low volume, and elevated yields argue for monitoring follow-through rather than assuming uninterrupted momentum.\n🟢 Key Positive: XBI remains in a strong long-term uptrend and is benefiting from renewed investor interest in biotech innovation.\n🔴 Key Risk: Weakening momentum participation, elevated yields, and the lack of direct financial confirmation could undermine the pullback continuation.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "NANR",
+      "alert": {
+        "alerted": "2026-09-02T19:26:09.567424+00:00",
+        "entry": 90.86,
+        "thesis_warned": false,
+        "tp": 108.35
+      },
+      "signal": {
+        "ticker": "NANR",
+        "name": "SPDR Natural Resources",
+        "setup": "pullback",
+        "entry": 90.86,
+        "tp": 108.35,
+        "tp_pct": 0.19242832773895335,
+        "shares": 2.75,
+        "value": 249.87875,
+        "pl_amount": 48.08,
+        "eta_days_low": 35,
+        "eta_days_high": 43,
+        "fee_pct": 0.0,
+        "trend_score": 5,
+        "adx": 48.2,
+        "rs": 0.077,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 4,
+        "ema20": 87.79,
+        "ema50": 84.41,
+        "ema200": 78.68,
+        "above_ema200": true,
+        "quality": 0.66,
+        "q_detail": {
+          "rsi": 0.7,
+          "bollinger": 0.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 0.6
+        },
+        "q_notes": {
+          "rsi": "RSI 65.4 rising",
+          "bollinger": "band position 76%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.1x average, drying up",
+          "extension": "+1.9 ATR from 20 EMA, slope +0.8%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 65.4,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.66 (rsi +0.7, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=65.4)",
+          "(natres)"
+        ],
+        "time": "2026-09-02T19:26:09.567394+00:00"
+      },
+      "profile": {
+        "symbol": "NANR",
+        "price": 90.855,
+        "marketCap": 833481147,
+        "beta": 0.49,
+        "lastDividend": 1.41246,
+        "range": "61.4-91.57",
+        "change": 1.205,
+        "changePercentage": 1.34412,
+        "volume": 71792,
+        "averageVolume": 29639,
+        "companyName": "State Street SPDR S&P North American Natural Resources ETF",
+        "currency": "USD",
+        "cik": "0001168164",
+        "isin": "US78463X1524",
+        "cusip": "78463X152",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management",
+        "website": "https://www.ssga.com/us/en/institutional/etfs/state-street-spdr-sp-north-american-natural-resources-etf-nanr",
+        "description": "The State Street SPDR S&P North American Natural Resources ETF (NANR) aims to replicate the total return performance of the S&P BMI North American Natural Resources Index, before accounting for fees and expenses. This ETF provides investors with access to large and mid-capitalization publicly traded companies within the energy, metals & mining, and agriculture industries located in the United States and Canada. Each quarter, during its index rebalancing, the portfolio's allocation to these sectors is set, specifically maintaining 45% in energy companies, 35% in metals and mining firms, and 20% in the agriculture sector.",
+        "ceo": "",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": null,
+        "phone": "1-866-787-2257",
+        "address": "1 Iron Street",
+        "city": "Boston",
+        "state": "MA",
+        "zip": "2210",
+        "image": "https://images.financialmodelingprep.com/symbol/NANR.png",
+        "ipoDate": "2015-12-15",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [],
+      "financial_health": {
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": []
+      },
+      "analysts": {
+        "grades_consensus": {},
+        "estimate_direction": {}
+      },
+      "valuation": {},
+      "news": [],
+      "news_diag": {
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
+      },
+      "sector": {
+        "sector": "Financial Services",
+        "industry": "Asset Management",
+        "sector_snapshot": {
+          "date": "2026-09-02",
+          "sector": "Financial Services",
+          "exchange": "NASDAQ",
+          "averageChange": 0.22741827024468364
+        },
+        "industry_snapshot": {}
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 7.4
+        },
+        "hourly_scan_cycles": {
+          "score": -1.0,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.9% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-31",
+          "month1": 3.85,
+          "month2": 3.88,
+          "month3": 3.91,
+          "month6": 3.99,
+          "year1": 4.16,
+          "year2": 4.34,
+          "year3": 4.4,
+          "year5": 4.49,
+          "year7": 4.62,
+          "year10": 4.75,
+          "year20": 5.24,
+          "year30": 5.25
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-12-01",
+              "value": 326.031
+            },
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-12-01",
+              "value": 4.4
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-09-02 00:00:00",
+            "country": "VN",
+            "event": "Independence Day",
+            "currency": "VND",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 00:00:00",
+            "country": "VN",
+            "event": "National Day",
+            "currency": "VND",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 00:30:00",
+            "country": "DE",
+            "event": "Bundesbank Nagel Speech",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          },
+          {
             "date": "2026-09-02 01:30:00",
             "country": "AU",
             "event": "GDP Capital Expenditure QoQ (Q2)",
@@ -1211,6 +664,58 @@
             "change": -3.4,
             "impact": "Low",
             "changePercentage": -109.677,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.3,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.1,
+            "impact": "High",
+            "changePercentage": 33.333,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Chain Price Index QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.9,
+            "estimate": null,
+            "actual": -0.6,
+            "change": -1.5,
+            "impact": "Low",
+            "changePercentage": -166.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
+            "change": -0.4,
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Final Consumption QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.1,
+            "estimate": null,
+            "actual": 0.5,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 400,
             "unit": "%"
           },
           {
@@ -1227,10 +732,36 @@
             "unit": "%"
           },
           {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "Gross Domestic Product YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
+            "change": -0.4,
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Consumption QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.1,
+            "estimate": null,
+            "actual": 0.5,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 400,
+            "unit": "%"
+          },
+          {
             "date": "2026-09-02 02:00:00",
-            "country": "NZ",
-            "event": "Monetary Policy Statement",
-            "currency": "NZD",
+            "country": "AU",
+            "event": "RBA Rate Statement",
+            "currency": "AUD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1243,25 +774,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish continuation within a strong uptrend. Price remains above rising key EMAs, has reclaimed VWAP, and shows healthy but not overbought RSI with strong relative performance.",
-        "financial_assessment": "positive",
-        "financial_interpretation": "Recent earnings consistently beat estimates, with the latest EPS surprise accelerating to 40.6% from roughly 6% previously. Margins are strong and cash flow is positive, although the supplied revenue and net income figures show no displayed growth.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty over event timing and near-term gap risk. Longer-term revenue and EPS estimates have been revised upward by about 5% and 6%, respectively.",
-        "analyst_assessment": "positive",
-        "analyst_interpretation": "Ratings are firmly bullish, with 34 buys, 15 holds, no sells, and forward revenue and EPS estimates moving higher.",
-        "valuation_assessment": "reasonable",
-        "valuation_interpretation": "A trailing P/E near 20 is not an obvious valuation barrier given the company's strong profitability and upward estimate direction. No industry or historical valuation comparison was supplied, so the margin of safety cannot be confirmed.",
-        "news_assessment": "negative",
-        "news_interpretation": "Multiple recent law-firm notices report a securities class action tied to disclosures surrounding the Phase 3 Fianlimab-Libtayo melanoma trial. This creates material headline, litigation, and clinical-development risk despite the otherwise strong operating results.",
-        "sector_assessment": "supportive",
-        "sector_interpretation": "Recent sector and industry performance is supportive of the setup and reinforces the stock's relative-strength profile.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a strong established uptrend. Rising RSI, VWAP reclamation, bullish EMA alignment, strong ADX, and outperformance versus SPY support continuation, though price is somewhat extended near its highs.",
+        "financial_assessment": "not_applicable",
+        "financial_interpretation": "No quarterly financial results were returned, and the instrument is an ETF rather than an operating company. Therefore, recent earnings, margins, cash flow, and surprise trends cannot be assessed.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "No next earnings date or forward estimates are available; as an ETF, company-specific earnings-event risk is limited, but underlying holdings can still react to results.",
+        "analyst_assessment": "unknown",
+        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable, providing no additional confirmation or warning.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "No valuation data is available, so valuation cannot be judged as a support or headwind.",
+        "news_assessment": "no_recent_news",
+        "news_interpretation": "No usable recent company-specific news was supplied. There is no identified news catalyst or headline risk to materially alter the technical setup.",
+        "sector_assessment": "neutral",
+        "sector_interpretation": "The supplied broader sector snapshot is mildly positive, but it offers limited confirmation for this natural-resources-focused ETF.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "High bond yields and a seasonally unfavorable market cycle can pressure growth-oriented equities, although neutral overall volatility limits the macro warning.",
+        "macro_interpretation": "Elevated long-term yields and a seasonally unfavorable cycle modestly weigh on risk appetite, although overall volatility is neutral rather than stressed.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported by a strong trend, improving momentum, earnings beats, favorable analyst revisions, and supportive group performance. However, the class-action and clinical-trial disclosure headlines are meaningful risks, while elevated yields may limit follow-through.",
-        "key_positive": "Strong trend quality is backed by repeated earnings beats, upward estimate revisions, solid margins, and sector strength.",
-        "key_risk": "The central risk is renewed negative news around the Fianlimab-Libtayo trial and related litigation, potentially causing sharp headline-driven volatility.",
+        "overall_summary": "Technicals strongly support a pullback-continuation setup, with trend strength, relative performance, and buyer defense all favorable. Fundamental, earnings, analyst, valuation, and news confirmation is unavailable, while elevated yields add a modest macro constraint. The signal is therefore technically attractive but lacks broader confirmation.",
+        "key_positive": "Strong trend structure, VWAP recovery, and outperformance versus SPY support continuation.",
+        "key_risk": "The ETF is near its highs and somewhat extended, with no fundamental or valuation data available and elevated yields acting as a potential headwind.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1272,12 +803,402 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2764
+          "chars": 2481
         }
       ],
-      "is_etf": false,
-      "buy_confidence": 57,
-      "report": "🟡 REGN — Regeneron Pharmaceuticals, Inc.\nEntry: $824.42\neToro TP Value: $54.10\nShares: 0.30 ($247)\nScanner Potential: +21.9%\nTimeframe: 23–50 days\n\n═══ BUY CONFIDENCE: 57% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 34 | Hold: 15 | Sell: 0 | Strong Sell: 0\n🧠 Ratings are firmly bullish, with 34 buys, 15 holds, no sells, and forward revenue and EPS estimates moving higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish continuation within a strong uptrend. Price remains above rising key EMAs, has reclaimed VWAP, and shows healthy but not overbought RSI with strong relative performance.\n🕒 Technical timestamp: 2026-09-02 12:49:27 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 Recent earnings consistently beat estimates, with the latest EPS surprise accelerating to 40.6% from roughly 6% previously. Margins are strong and cash flow is positive, although the supplied revenue and net income figures show no displayed growth.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 20 is not an obvious valuation barrier given the company's strong profitability and upward estimate direction. No industry or historical valuation comparison was supplied, so the margin of safety cannot be confirmed.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty over event timing and near-term gap risk. Longer-term revenue and EPS estimates have been revised upward by about 5% and 6%, respectively.\n\n═══ RECENT NEWS ═══\n• 2026-09-01 17:29 UTC — INVESTOR ALERT: Pomerantz Law Firm Reminds Investors with Losses on their Investment in Regeneron Pharmaceuticals, Inc. of Class Action Lawsuit and Upcoming Deadlines – REGN\n• 2026-09-01 15:53 UTC — Portnoy Law Firm Announces Class Action on Behalf of Regeneron Pharmaceuticals, Inc. Investors\n• 2026-09-01 12:21 UTC — INVESTOR DEADLINE: Regeneron Pharmaceuticals, Inc. (REGN) Investors with Substantial Losses Have Opportunity to Lead the Regeneron Class Action Lawsuit Before September 14, 2026 Deadline\n• 2026-09-01 10:29 UTC — REGN UPCOMING DEADLINE: SueWallSt Alerts Regeneron Pharmaceuticals, Inc. Stockholders of Securities Class Action - Contact the Firm\n• 2026-08-31 18:05 UTC — REGN EQUITY ACTION REMINDER: Faruqi & Faruqi, LLP Reminds Regeneron Investors of Securities Class Action Lawsuit Deadline on September 14, 2026\n🔴 Multiple recent law-firm notices report a securities class action tied to disclosures surrounding the Phase 3 Fianlimab-Libtayo melanoma trial. This creates material headline, litigation, and clinical-development risk despite the otherwise strong operating results.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector and industry performance is supportive of the setup and reinforces the stock's relative-strength profile.\n🧠 Macro: High bond yields and a seasonally unfavorable market cycle can pressure growth-oriented equities, although neutral overall volatility limits the macro warning.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong trend, improving momentum, earnings beats, favorable analyst revisions, and supportive group performance. However, the class-action and clinical-trial disclosure headlines are meaningful risks, while elevated yields may limit follow-through.\n🟢 Key Positive: Strong trend quality is backed by repeated earnings beats, upward estimate revisions, solid margins, and sector strength.\n🔴 Key Risk: The central risk is renewed negative news around the Fianlimab-Libtayo trial and related litigation, potentially causing sharp headline-driven volatility.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "is_etf": true,
+      "buy_confidence": 48,
+      "report": "🟡 NANR — State Street SPDR S&P North American Natural Resources ETF\nEntry: $90.86\neToro TP Value: $48.08\nShares: 2.75 ($250)\nScanner Potential: +19.2%\nTimeframe: 35–43 days\n\n═══ BUY CONFIDENCE: 48% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable, providing no additional confirmation or warning.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong established uptrend. Rising RSI, VWAP reclamation, bullish EMA alignment, strong ADX, and outperformance versus SPY support continuation, though price is somewhat extended near its highs.\n🕒 Technical timestamp: 2026-09-02 19:26:09 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation data is available, so valuation cannot be judged as a support or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimates are available; as an ETF, company-specific earnings-event risk is limited, but underlying holdings can still react to results.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: The supplied broader sector snapshot is mildly positive, but it offers limited confirmation for this natural-resources-focused ETF.\n🧠 Macro: Elevated long-term yields and a seasonally unfavorable cycle modestly weigh on risk appetite, although overall volatility is neutral rather than stressed.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technicals strongly support a pullback-continuation setup, with trend strength, relative performance, and buyer defense all favorable. Fundamental, earnings, analyst, valuation, and news confirmation is unavailable, while elevated yields add a modest macro constraint. The signal is therefore technically attractive but lacks broader confirmation.\n🟢 Key Positive: Strong trend structure, VWAP recovery, and outperformance versus SPY support continuation.\n🔴 Key Risk: The ETF is near its highs and somewhat extended, with no fundamental or valuation data available and elevated yields acting as a potential headwind.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "COLO",
+      "alert": {
+        "alerted": "2026-09-02T19:26:09.059778+00:00",
+        "entry": 49.24,
+        "thesis_warned": false,
+        "tp": 59.7
+      },
+      "signal": {
+        "ticker": "COLO",
+        "name": "Global X Data Center & Digital Infra",
+        "setup": "pullback",
+        "entry": 49.24,
+        "tp": 59.7,
+        "tp_pct": 0.21242891957757926,
+        "shares": 5.08,
+        "value": 250.13920000000002,
+        "pl_amount": 53.14,
+        "eta_days_low": 28,
+        "eta_days_high": 80,
+        "fee_pct": 0.0,
+        "trend_score": 5,
+        "adx": 34.9,
+        "rs": 0.195,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 13,
+        "ema20": 48.38,
+        "ema50": 46.32,
+        "ema200": 41.44,
+        "above_ema200": true,
+        "quality": 0.55,
+        "q_detail": {
+          "rsi": 0.8,
+          "bollinger": 1.0,
+          "vwap": -0.7,
+          "volume": 1.0,
+          "extension": 0.8
+        },
+        "q_notes": {
+          "rsi": "RSI 55.8 rising, BEARISH DIVERGENCE",
+          "bollinger": "band position 50%, stable",
+          "vwap": "below VWAP (sellers in control)",
+          "volume": "0.1x average, drying up",
+          "extension": "+0.5 ATR from 20 EMA, slope -0.5%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 55.8,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.55 (rsi +0.8, bb +1.0, vwap -0.7, vol +1.0, opt +0.0; RSI=55.8)",
+          "(data-centers)"
+        ],
+        "time": "2026-09-02T19:26:09.059742+00:00"
+      },
+      "profile": {
+        "symbol": "COLO",
+        "price": 49.24,
+        "marketCap": 147086183,
+        "beta": 0.45,
+        "lastDividend": 1.99553,
+        "range": "31.51-50.57",
+        "change": 0.55,
+        "changePercentage": 1.1296,
+        "volume": 71206,
+        "averageVolume": 194077,
+        "companyName": "Global X - MSCI Colombia ETF",
+        "currency": "USD",
+        "cik": "0001432353",
+        "isin": "US37954Y3273",
+        "cusip": "37954Y327",
+        "exchangeFullName": "New York Stock Exchange Arca",
+        "exchange": "AMEX",
+        "industry": "Asset Management - Global",
+        "website": "https://www.globalxetfs.com/funds/COLO",
+        "description": "The Global X MSCI Colombia ETF (COLO) aims to replicate the financial performance, encompassing both capital appreciation and dividend income, of the MSCI All Colombia Select 25/50 Index, before factoring in any fund-related fees and expenses.",
+        "ceo": null,
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": null,
+        "phone": "",
+        "address": "605 Third Avenue, 43rd Floor",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10158",
+        "image": "https://images.financialmodelingprep.com/symbol/COLO.png",
+        "ipoDate": "2009-02-05",
+        "defaultImage": false,
+        "isEtf": true,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [],
+      "financial_health": {
+        "cash": null,
+        "total_debt": null,
+        "total_liabilities": null,
+        "equity": null,
+        "operating_cash_flow": null,
+        "capital_expenditure": null,
+        "free_cash_flow": null
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": []
+      },
+      "analysts": {
+        "grades_consensus": {},
+        "estimate_direction": {}
+      },
+      "valuation": {},
+      "news": [],
+      "news_diag": {
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
+      },
+      "sector": {
+        "sector": "Financial Services",
+        "industry": "Asset Management - Global",
+        "sector_snapshot": {
+          "date": "2026-09-02",
+          "sector": "Financial Services",
+          "exchange": "NASDAQ",
+          "averageChange": 0.22741827024468364
+        },
+        "industry_snapshot": {}
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 7.4
+        },
+        "hourly_scan_cycles": {
+          "score": -1.0,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.9% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-31",
+          "month1": 3.85,
+          "month2": 3.88,
+          "month3": 3.91,
+          "month6": 3.99,
+          "year1": 4.16,
+          "year2": 4.34,
+          "year3": 4.4,
+          "year5": 4.49,
+          "year7": 4.62,
+          "year10": 4.75,
+          "year20": 5.24,
+          "year30": 5.25
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-12-01",
+              "value": 326.031
+            },
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-12-01",
+              "value": 4.4
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-09-02 00:00:00",
+            "country": "VN",
+            "event": "Independence Day",
+            "currency": "VND",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 00:00:00",
+            "country": "VN",
+            "event": "National Day",
+            "currency": "VND",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 00:30:00",
+            "country": "DE",
+            "event": "Bundesbank Nagel Speech",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Capital Expenditure QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 3.1,
+            "estimate": null,
+            "actual": -0.3,
+            "change": -3.4,
+            "impact": "Low",
+            "changePercentage": -109.677,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.3,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.1,
+            "impact": "High",
+            "changePercentage": 33.333,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Chain Price Index QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.9,
+            "estimate": null,
+            "actual": -0.6,
+            "change": -1.5,
+            "impact": "Low",
+            "changePercentage": -166.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
+            "change": -0.4,
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Final Consumption QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.1,
+            "estimate": null,
+            "actual": 0.5,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 400,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "Gross Domestic Product QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.3,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 33.333,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "Gross Domestic Product YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
+            "change": -0.4,
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Consumption QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.1,
+            "estimate": null,
+            "actual": 0.5,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 400,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 02:00:00",
+            "country": "AU",
+            "event": "RBA Rate Statement",
+            "currency": "AUD",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "This resembles a pullback continuation within a well-established bullish trend. The strong daily regime, bullish EMA stack, ADX, and SPY outperformance support continuation, but sub-VWAP trading, bearish RSI divergence, and drying volume weaken immediate confirmation.",
+        "financial_assessment": "not_applicable",
+        "financial_interpretation": "No quarterly financial results were available, and COLO is an ETF rather than an operating company. Profit, margin, cash-flow, and surprise trends therefore cannot be assessed.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "The next earnings date is unavailable and no forward estimates were supplied. ETF-level event risk from earnings cannot be assessed.",
+        "analyst_assessment": "unknown",
+        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "No valuation data was supplied, so valuation cannot be judged as a support or headwind.",
+        "news_assessment": "no_recent_news",
+        "news_interpretation": "No recent usable company-specific news was returned, so no discrete catalyst or risk is identified.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "The broader sector backdrop is modestly supportive, although no industry-specific confirmation was supplied.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Elevated long-term yields and a seasonal cycle headwind temper the otherwise neutral macro backdrop.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical setup is constructive: COLO remains in a strong uptrend and is outperforming SPY, with the current weakness resembling a pullback rather than a confirmed trend break. However, bearish RSI divergence, trading below VWAP, low volume, elevated yields, and limited fundamental or catalyst data argue for caution around immediate follow-through.",
+        "key_positive": "Strong long-term trend, bullish EMA alignment, and relative outperformance support the continuation case.",
+        "key_risk": "The pullback lacks strong buying confirmation and could deepen if bearish divergence and below-VWAP weakness persist.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2270
+        }
+      ],
+      "is_etf": true,
+      "buy_confidence": 50,
+      "report": "🟡 COLO — Global X - MSCI Colombia ETF\nEntry: $49.24\neToro TP Value: $53.14\nShares: 5.08 ($250)\nScanner Potential: +21.2%\nTimeframe: 28–80 days\n\n═══ BUY CONFIDENCE: 50% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 This resembles a pullback continuation within a well-established bullish trend. The strong daily regime, bullish EMA stack, ADX, and SPY outperformance support continuation, but sub-VWAP trading, bearish RSI divergence, and drying volume weaken immediate confirmation.\n🕒 Technical timestamp: 2026-09-02 19:26:09 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation data was supplied, so valuation cannot be judged as a support or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable and no forward estimates were supplied. ETF-level event risk from earnings cannot be assessed.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: The broader sector backdrop is modestly supportive, although no industry-specific confirmation was supplied.\n🧠 Macro: Elevated long-term yields and a seasonal cycle headwind temper the otherwise neutral macro backdrop.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical setup is constructive: COLO remains in a strong uptrend and is outperforming SPY, with the current weakness resembling a pullback rather than a confirmed trend break. However, bearish RSI divergence, trading below VWAP, low volume, elevated yields, and limited fundamental or catalyst data argue for caution around immediate follow-through.\n🟢 Key Positive: Strong long-term trend, bullish EMA alignment, and relative outperformance support the continuation case.\n🔴 Key Risk: The pullback lacks strong buying confirmation and could deepen if bearish divergence and below-VWAP weakness persist.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
