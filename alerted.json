@@ -9,7 +9,7 @@
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 17,
+    "scans_muted": 18,
     "thesis_warned": false,
     "tp": 77.16
   },
@@ -30,7 +30,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "thesis_warned": false,
     "tp": 115.57
   },
@@ -64,7 +64,7 @@
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
-    "scans_muted": 8,
+    "scans_muted": 9,
     "thesis_warned": false,
     "tp": 558.48
   },
@@ -75,12 +75,24 @@
     "thesis_warned": false,
     "tp": 173.37
   },
+  "REGN": {
+    "alerted": "2026-09-02T12:49:27.130266+00:00",
+    "entry": 824.42,
+    "thesis_warned": false,
+    "tp": 1004.74
+  },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
     "scans_muted": 24,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "SGP": {
+    "alerted": "2026-09-02T12:49:27.176692+00:00",
+    "entry": 26.98,
+    "thesis_warned": false,
+    "tp": 30.27
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
