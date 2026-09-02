@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01 22:39 UTC",
+  "generated": "2026-09-02 04:29 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "SGP",
       "alert": {
-        "alerted": "2026-09-01T22:38:21.261261+00:00",
+        "alerted": "2026-09-02T04:28:41.247641+00:00",
         "entry": 26.98,
         "thesis_warned": false,
         "tp": 30.27
@@ -69,7 +69,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-01T22:38:21.261227+00:00"
+        "time": "2026-09-02T04:28:41.247614+00:00"
       },
       "profile": {
         "symbol": "SGP",
@@ -163,15 +163,7 @@
         "free_cash_flow": -16771000.0
       },
       "forward": {
-        "next_earnings": {
-          "symbol": "SGP",
-          "date": "2026-11-05",
-          "epsActual": null,
-          "epsEstimated": -0.66,
-          "revenueActual": null,
-          "revenueEstimated": null,
-          "lastUpdated": "2026-09-01"
-        },
+        "next_earnings": {},
         "estimates": [
           {
             "date": "2030-12-31",
@@ -358,17 +350,12 @@
         "sector": "Healthcare",
         "industry": "Biotechnology",
         "sector_snapshot": {
-          "date": "2026-09-01",
+          "date": "2026-09-02",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": 0.30151812933640887
+          "averageChange": 0.3015725494254662
         },
-        "industry_snapshot": {
-          "date": "2026-09-01",
-          "industry": "Biotechnology",
-          "exchange": "NASDAQ",
-          "averageChange": 0.8064217675719076
-        }
+        "industry_snapshot": {}
       },
       "macro": {
         "hourly_scan_macro": {
@@ -381,19 +368,19 @@
           "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
         },
         "treasury": {
-          "date": "2026-08-28",
-          "month1": 3.84,
-          "month2": 3.86,
-          "month3": 3.9,
-          "month6": 4.02,
-          "year1": 4.15,
+          "date": "2026-08-31",
+          "month1": 3.85,
+          "month2": 3.88,
+          "month3": 3.91,
+          "month6": 3.99,
+          "year1": 4.16,
           "year2": 4.34,
-          "year3": 4.41,
-          "year5": 4.48,
-          "year7": 4.59,
-          "year10": 4.73,
-          "year20": 5.21,
-          "year30": 5.22
+          "year3": 4.4,
+          "year5": 4.49,
+          "year7": 4.62,
+          "year10": 4.75,
+          "year20": 5.24,
+          "year30": 5.25
         },
         "indicators": {
           "GDP": [
@@ -406,60 +393,34 @@
           "CPI": [
             {
               "name": "CPI",
-              "date": "2025-11-01",
-              "value": 325.063
+              "date": "2025-12-01",
+              "value": 326.031
             },
             {
               "name": "CPI",
-              "date": "2025-09-01",
-              "value": 324.245
+              "date": "2025-11-01",
+              "value": 325.063
             }
           ],
           "unemploymentRate": [
             {
               "name": "unemploymentRate",
-              "date": "2025-11-01",
-              "value": 4.5
+              "date": "2025-12-01",
+              "value": 4.4
             },
             {
               "name": "unemploymentRate",
-              "date": "2025-09-01",
-              "value": 4.4
+              "date": "2025-11-01",
+              "value": 4.5
             }
           ]
         },
         "calendar": [
           {
-            "date": "2026-09-01 00:00:00",
-            "country": "SK",
-            "event": "Constitution Day",
-            "currency": "EUR",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-09-01 00:00:00",
-            "country": "KR",
-            "event": "Balance of Trade (Aug)",
-            "currency": "KRW",
-            "previous": 30.32,
-            "estimate": 30.7,
-            "actual": 34.75,
-            "change": 4.43,
-            "impact": "Low",
-            "changePercentage": 14.611,
-            "unit": "B"
-          },
-          {
-            "date": "2026-09-01 00:00:00",
-            "country": "UZ",
+            "date": "2026-09-02 00:00:00",
+            "country": "VN",
             "event": "Independence Day",
-            "currency": "UZS",
+            "currency": "VND",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -469,145 +430,171 @@
             "unit": null
           },
           {
-            "date": "2026-09-01 00:00:00",
-            "country": "KR",
-            "event": "Exports YoY (Aug)",
-            "currency": "KRW",
-            "previous": 63,
-            "estimate": 62.6,
-            "actual": 68.7,
-            "change": 5.7,
+            "date": "2026-09-02 00:00:00",
+            "country": "VN",
+            "event": "National Day",
+            "currency": "VND",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 00:30:00",
+            "country": "DE",
+            "event": "Bundesbank Nagel Speech",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
             "impact": "Medium",
-            "changePercentage": 9.048,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-01 00:00:00",
-            "country": "KR",
-            "event": "Imports YoY (Aug)",
-            "currency": "KRW",
-            "previous": 26.5,
-            "estimate": 24.7,
-            "actual": 22.5,
-            "change": -4,
-            "impact": "Low",
-            "changePercentage": -15.094,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-01 00:00:00",
-            "country": "ER",
-            "event": "Revolution Day",
-            "currency": "ERN",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
+            "changePercentage": null,
             "unit": null
           },
           {
-            "date": "2026-09-01 00:01:00",
-            "country": "IE",
-            "event": "S&P Global Manufacturing PMI (Aug)",
-            "currency": "EUR",
-            "previous": 55.1,
-            "estimate": null,
-            "actual": 55.4,
-            "change": 0.3,
-            "impact": "Low",
-            "changePercentage": 0.544,
-            "unit": "Points"
-          },
-          {
-            "date": "2026-09-01 00:01:00",
-            "country": "IE",
-            "event": "AIB Manufacturing PMI (Aug)",
-            "currency": "EUR",
-            "previous": 55.1,
-            "estimate": 54.5,
-            "actual": 55.4,
-            "change": 0.3,
-            "impact": "Low",
-            "changePercentage": 0.544,
-            "unit": null
-          },
-          {
-            "date": "2026-09-01 00:30:00",
-            "country": "ID",
-            "event": "S&P Global Manufacturing PMI (Aug)",
-            "currency": "IDR",
-            "previous": 50.2,
-            "estimate": 50.5,
-            "actual": 49.8,
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
             "change": -0.4,
-            "impact": "Low",
-            "changePercentage": -0.797,
-            "unit": "Points"
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
           },
           {
-            "date": "2026-09-01 00:30:00",
-            "country": "JP",
-            "event": "S&P Global Manufacturing PMI (Aug)",
-            "currency": "JPY",
-            "previous": 54.5,
-            "estimate": 55.1,
-            "actual": 54.9,
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Chain Price Index QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.9,
+            "estimate": null,
+            "actual": -0.6,
+            "change": -1.5,
+            "impact": "Low",
+            "changePercentage": -166.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Capital Expenditure QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 3.1,
+            "estimate": null,
+            "actual": -0.3,
+            "change": -3.4,
+            "impact": "Low",
+            "changePercentage": -109.677,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.3,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.1,
+            "impact": "High",
+            "changePercentage": 33.333,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Consumption QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.1,
+            "estimate": null,
+            "actual": 0.5,
             "change": 0.4,
             "impact": "Low",
-            "changePercentage": 0.734,
-            "unit": "Points"
+            "changePercentage": 400,
+            "unit": "%"
           },
           {
-            "date": "2026-09-01 00:30:00",
-            "country": "TH",
-            "event": "S&P Global Manufacturing PMI (Aug)",
-            "currency": "THB",
-            "previous": 54.2,
-            "estimate": 54.5,
-            "actual": 53.8,
-            "change": -0.4,
-            "impact": "Low",
-            "changePercentage": -0.738,
-            "unit": "Points"
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "Gross Domestic Product QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.3,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 33.333,
+            "unit": "%"
           },
           {
-            "date": "2026-09-01 00:30:00",
-            "country": "TW",
-            "event": "S&P Global Manufacturing PMI (Aug)",
-            "currency": "TWD",
-            "previous": 55.1,
-            "estimate": 54.5,
-            "actual": 54.7,
-            "change": -0.4,
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Final Consumption QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.1,
+            "estimate": null,
+            "actual": 0.5,
+            "change": 0.4,
             "impact": "Low",
-            "changePercentage": -0.726,
-            "unit": "Points"
+            "changePercentage": 400,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "Gross Domestic Product YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
+            "change": -0.4,
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 02:00:00",
+            "country": "NZ",
+            "event": "RBNZ Interest Rate Decision",
+            "currency": "NZD",
+            "previous": 2.5,
+            "estimate": 2.75,
+            "actual": 2.75,
+            "change": 0.25,
+            "impact": "Medium",
+            "changePercentage": 10,
+            "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price is above rising moving averages, has reclaimed VWAP, and shows strong relative strength without overbought RSI.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising key EMAs and strong relative strength. VWAP reclamation, steady volume, and an ADX of 44 support renewed buying, although contracting bands suggest momentum may remain measured.",
         "financial_assessment": "negative",
-        "financial_interpretation": "Results remain loss-making with zero reported revenue, and the latest three EPS readings all missed estimates, although the loss improved from the extreme March result. Negative operating and free cash flow indicate continued cash burn despite substantial cash and low debt.",
+        "financial_interpretation": "Recent results show persistent losses, no reported revenue, negative operating and free cash flow, and EPS misses in all three periods, including a larger miss in the latest quarter. Cash substantially exceeds debt, but there is no evidence of improving margins, revenue, or profitability.",
         "earnings_assessment": "negative",
-        "earnings_interpretation": "Earnings are scheduled for November 5, with the next EPS estimate still negative at -$0.66, implying continued losses and meaningful event risk. The report is outside the scanner's 6–18 trading-day timeframe but could affect the broader swing.",
+        "earnings_interpretation": "The next earnings date is unavailable, creating timing uncertainty. Available long-range estimates still project substantial losses, while the limited analyst coverage increases event and forecast risk.",
         "analyst_assessment": "unknown",
-        "analyst_interpretation": "Ratings are unavailable, while the limited forward estimates indicate continued losses rather than a clear earnings inflection.",
-        "valuation_assessment": "expensive",
-        "valuation_interpretation": "Negative earnings and no reported sales make the P/E and P/S metrics unsupportive, while the price-to-book ratio is elevated for a company still burning cash. No supplied growth or industry valuation data offsets this headwind.",
+        "analyst_interpretation": "Ratings are unavailable, and the limited forward estimates do not provide a reliable consensus trend.",
+        "valuation_assessment": "unknown",
+        "valuation_interpretation": "Traditional earnings and sales valuation support is absent because the company is loss-making and reports no revenue. The price-to-book ratio alone cannot establish attractiveness without comparable industry or historical benchmarks.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was returned. The absence of news removes a known catalyst but does not add a specific headline risk.",
+        "news_interpretation": "No usable recent company-specific news was provided. This removes an identified headline catalyst but also leaves potential clinical, regulatory, or financing developments unassessed.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Recent industry strength is stronger than the broader sector, providing a modest tailwind for the setup.",
+        "sector_interpretation": "The broader sector backdrop is modestly positive, providing some support, although the lack of industry-specific data limits confidence.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and a mildly unfavorable seasonal cycle can pressure speculative, pre-profit biotechnology shares despite currently neutral overall risk and volatility.",
-        "overall_assessment": "mixed",
-        "overall_summary": "Technically, SGP has a credible pullback-continuation setup supported by trend strength, VWAP recovery, volume, and sector momentum. Fundamentals remain weak, with repeated EPS misses, no reported revenue, ongoing cash burn, and expensive valuation characteristics. The near-term setup is therefore tradable but vulnerable to sentiment, rates, and any deterioration in momentum.",
-        "key_positive": "Strong uptrend, relative strength, and supportive biotechnology-sector momentum reinforce the existing technical signal.",
-        "key_risk": "Persistent losses, absent revenue, negative cash flow, and elevated valuation create substantial downside sensitivity if buyers stop defending the pullback.",
+        "macro_interpretation": "Elevated long-term yields and a seasonally unfavorable market cycle can pressure speculative, cash-burning biotechnology shares despite currently contained volatility.",
+        "overall_assessment": "caution",
+        "overall_summary": "Technicals support the scanner signal: this is a strong relative-strength pullback continuation with buyers defending the recovery. Fundamental and earnings conditions are materially weak, with persistent losses, no reported revenue, negative cash flow, and uncertain event timing, so the setup is technically attractive but catalyst- and risk-sensitive.",
+        "key_positive": "Strong uptrend structure, VWAP recovery, volume support, and significant relative strength versus SPY favor continuation.",
+        "key_risk": "Persistent operating losses, absent reported revenue, negative cash flow, and unknown earnings timing create substantial downside and event risk.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -618,12 +605,672 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2800
+          "chars": 2868
         }
       ],
       "is_etf": false,
-      "buy_confidence": 38,
-      "report": "🔴 SGP — SpyGlass Pharma, Inc. Common Stock\nEntry: $26.98\neToro TP Value: $30.50\nShares: 9.27 ($250)\nScanner Potential: +12.2%\nTimeframe: 6–18 days\n\n═══ BUY CONFIDENCE: 38% ═══\n🟥🟥🟥🟥⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Ratings are unavailable, while the limited forward estimates indicate continued losses rather than a clear earnings inflection.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price is above rising moving averages, has reclaimed VWAP, and shows strong relative strength without overbought RSI.\n🕒 Technical timestamp: 2026-09-01 22:38:21 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🔴 Weak\n🧠 Results remain loss-making with zero reported revenue, and the latest three EPS readings all missed estimates, although the loss improved from the extreme March result. Negative operating and free cash flow indicate continued cash burn despite substantial cash and low debt.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 Negative earnings and no reported sales make the P/E and P/S metrics unsupportive, while the price-to-book ratio is elevated for a company still burning cash. No supplied growth or industry valuation data offsets this headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-05 (+65 days)\n🔴 Negative\n🧠 Earnings are scheduled for November 5, with the next EPS estimate still negative at -$0.66, implying continued losses and meaningful event risk. The report is outside the scanner's 6–18 trading-day timeframe but could affect the broader swing.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent industry strength is stronger than the broader sector, providing a modest tailwind for the setup.\n🧠 Macro: Elevated long-term yields and a mildly unfavorable seasonal cycle can pressure speculative, pre-profit biotechnology shares despite currently neutral overall risk and volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technically, SGP has a credible pullback-continuation setup supported by trend strength, VWAP recovery, volume, and sector momentum. Fundamentals remain weak, with repeated EPS misses, no reported revenue, ongoing cash burn, and expensive valuation characteristics. The near-term setup is therefore tradable but vulnerable to sentiment, rates, and any deterioration in momentum.\n🟢 Key Positive: Strong uptrend, relative strength, and supportive biotechnology-sector momentum reinforce the existing technical signal.\n🔴 Key Risk: Persistent losses, absent revenue, negative cash flow, and elevated valuation create substantial downside sensitivity if buyers stop defending the pullback.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 36,
+      "report": "🔴 SGP — SpyGlass Pharma, Inc. Common Stock\nEntry: $26.98\neToro TP Value: $30.50\nShares: 9.27 ($250)\nScanner Potential: +12.2%\nTimeframe: 6–18 days\n\n═══ BUY CONFIDENCE: 36% ═══\n🟥🟥🟥🟥⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Ratings are unavailable, and the limited forward estimates do not provide a reliable consensus trend.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising key EMAs and strong relative strength. VWAP reclamation, steady volume, and an ADX of 44 support renewed buying, although contracting bands suggest momentum may remain measured.\n🕒 Technical timestamp: 2026-09-02 04:28:41 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🔴 Weak\n🧠 Recent results show persistent losses, no reported revenue, negative operating and free cash flow, and EPS misses in all three periods, including a larger miss in the latest quarter. Cash substantially exceeds debt, but there is no evidence of improving margins, revenue, or profitability.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 Traditional earnings and sales valuation support is absent because the company is loss-making and reports no revenue. The price-to-book ratio alone cannot establish attractiveness without comparable industry or historical benchmarks.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing uncertainty. Available long-range estimates still project substantial losses, while the limited analyst coverage increases event and forecast risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: The broader sector backdrop is modestly positive, providing some support, although the lack of industry-specific data limits confidence.\n🧠 Macro: Elevated long-term yields and a seasonally unfavorable market cycle can pressure speculative, cash-burning biotechnology shares despite currently contained volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Caution\n🧠 Technicals support the scanner signal: this is a strong relative-strength pullback continuation with buyers defending the recovery. Fundamental and earnings conditions are materially weak, with persistent losses, no reported revenue, negative cash flow, and uncertain event timing, so the setup is technically attractive but catalyst- and risk-sensitive.\n🟢 Key Positive: Strong uptrend structure, VWAP recovery, volume support, and significant relative strength versus SPY favor continuation.\n🔴 Key Risk: Persistent operating losses, absent reported revenue, negative cash flow, and unknown earnings timing create substantial downside and event risk.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "REGN",
+      "alert": {
+        "alerted": "2026-09-02T04:28:41.200204+00:00",
+        "entry": 824.42,
+        "thesis_warned": false,
+        "tp": 1004.74
+      },
+      "signal": {
+        "ticker": "REGN",
+        "name": "Regeneron Pharmaceuticals, Inc.",
+        "setup": "pullback",
+        "entry": 824.42,
+        "tp": 1004.74,
+        "tp_pct": 0.21872349576001304,
+        "shares": 0.3,
+        "value": 247.32599399999998,
+        "pl_amount": 54.1,
+        "eta_days_low": 23,
+        "eta_days_high": 50,
+        "fee_pct": 0.036971306162602836,
+        "trend_score": 5,
+        "adx": 41.9,
+        "rs": 0.321,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 5,
+        "ema20": 796.47,
+        "ema50": 749.78,
+        "ema200": 706.04,
+        "above_ema200": true,
+        "quality": 0.89,
+        "q_detail": {
+          "rsi": 1.0,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 0.5,
+          "extension": 0.8
+        },
+        "q_notes": {
+          "rsi": "RSI 58.3 rising",
+          "bollinger": "band position 56%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "1.2x average, steady",
+          "extension": "+1.0 ATR from 20 EMA, slope -0.8%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 58.3,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=58.3)",
+          "hard-eligible; ranked in Step 2"
+        ],
+        "time": "2026-09-02T04:28:41.200176+00:00"
+      },
+      "profile": {
+        "symbol": "REGN",
+        "price": 823.82,
+        "marketCap": 84871584040,
+        "beta": 0.236,
+        "lastDividend": 3.7,
+        "range": "541-847",
+        "change": 24.74,
+        "changePercentage": 3.09606,
+        "volume": 673082,
+        "averageVolume": 935968,
+        "companyName": "Regeneron Pharmaceuticals, Inc.",
+        "currency": "USD",
+        "cik": "0000872589",
+        "isin": "US75886F1075",
+        "cusip": "75886F107",
+        "exchangeFullName": "NASDAQ Global Select",
+        "exchange": "NASDAQ",
+        "industry": "Biotechnology",
+        "website": "https://www.regeneron.com",
+        "description": "Regeneron Pharmaceuticals, Inc. is a global biopharmaceutical enterprise focused on discovering, inventing, developing, manufacturing, and bringing to market medical treatments for a wide array of illnesses. Its therapeutic portfolio includes EYLEA, an injection used to treat various ophthalmic conditions such as wet age-related macular degeneration, diabetic macular edema, myopic choroidal neovascularization, diabetic retinopathy, and macular edema resulting from retinal vein occlusion (both central and branch). Other significant offerings are Dupixent, an injectable solution for atopic dermatitis and asthma in both adults and pediatric patients; Libtayo, indicated for metastatic or locally advanced cutaneous squamous cell carcinoma; Praluent, an injection prescribed for adults with heterozygous familial hypercholesterolemia or clinical atherosclerotic cardiovascular disease; REGEN-COV for COVID-19; and Kevzara, a solution targeting rheumatoid arthritis in adult patients. Furthermore, Regeneron provides Inmazeb for infections caused by Zaire ebolavirus; ARCALYST, an injection for cryopyrin-associated periodic syndromes, including familial cold auto-inflammatory syndrome and Muckle-Wells syndrome; and ZALTRAP, an intravenous infusion used in the treatment of metastatic colorectal cancer. In addition to its existing product lineup, the company is actively engaged in developing novel product candidates aimed at addressing unmet medical needs in areas such as ocular diseases, allergic and inflammatory conditions, cardiovascular and metabolic disorders, infectious diseases, rare diseases, cancer, pain management, and hematologic conditions. Regeneron maintains extensive collaboration and licensing agreements with a diverse range of partners, including Sanofi, Bayer, Teva Pharmaceutical Industries Ltd., Mitsubishi Tanabe Pharma Corporation, Alnylam Pharmaceuticals, Inc., Roche Pharmaceuticals, and Kiniksa Pharmaceuticals, Ltd. It also holds agreements with entities such as the U.S. Department of Health and Human Services, Zai Lab Limited, Intellia Therapeutics, Inc., the Biomedical Advanced Research Development Authority, and AstraZeneca PLC. The company was founded in 1988 and its corporate headquarters are situated in Tarrytown, New York.",
+        "ceo": "Leonard S. Schleifer",
+        "sector": "Healthcare",
+        "country": "US",
+        "fullTimeEmployees": "15410",
+        "phone": "914 847 7000",
+        "address": "777 Old Saw Mill River Road",
+        "city": "Tarrytown",
+        "state": "NY",
+        "zip": "10591-6707",
+        "image": "https://images.financialmodelingprep.com/symbol/REGN.png",
+        "ipoDate": "1991-04-02",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-07-30",
+          "fiscal_period": "",
+          "eps_actual": 14.29,
+          "eps_estimate": 10.16,
+          "eps_surprise": 4.129999999999999,
+          "eps_surprise_pct": 0.4064960629921259,
+          "revenue": 4290700000.0,
+          "net_income": 1296900000.0,
+          "operating_margin": 0.33106486121145734,
+          "gross_margin": 0.8656396392197078,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-04-29",
+          "fiscal_period": "",
+          "eps_actual": 9.47,
+          "eps_estimate": 8.91,
+          "eps_surprise": 0.5600000000000005,
+          "eps_surprise_pct": 0.06285072951739624,
+          "revenue": 4290700000.0,
+          "net_income": 1296900000.0,
+          "operating_margin": 0.33106486121145734,
+          "gross_margin": 0.8656396392197078,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-01-30",
+          "fiscal_period": "",
+          "eps_actual": 11.44,
+          "eps_estimate": 10.74,
+          "eps_surprise": 0.6999999999999993,
+          "eps_surprise_pct": 0.06517690875232768,
+          "revenue": 4290700000.0,
+          "net_income": 1296900000.0,
+          "operating_margin": 0.33106486121145734,
+          "gross_margin": 0.8656396392197078,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 2455800000.0,
+        "total_debt": 1986600000.0,
+        "total_liabilities": 10019000000.0,
+        "equity": 31711000000.0,
+        "operating_cash_flow": 574500000.0,
+        "capital_expenditure": -240200000.0,
+        "free_cash_flow": 334300000.0
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": [
+          {
+            "date": "2030-12-31",
+            "period": null,
+            "revenue_avg": 22407074592.0,
+            "eps_avg": 80.03142,
+            "revenue_low": 20048628033.0,
+            "revenue_high": 24158882927.0,
+            "eps_low": 69.08065,
+            "eps_high": 88.16544,
+            "num_analysts_revenue": 10,
+            "num_analysts_eps": 5
+          },
+          {
+            "date": "2029-12-31",
+            "period": null,
+            "revenue_avg": 21337309196.0,
+            "eps_avg": 75.64408,
+            "revenue_low": 19091460313.0,
+            "revenue_high": 23005482163.0,
+            "eps_low": 65.29363,
+            "eps_high": 83.33219,
+            "num_analysts_revenue": 10,
+            "num_analysts_eps": 5
+          },
+          {
+            "date": "2028-12-31",
+            "period": null,
+            "revenue_avg": 19816711410.0,
+            "eps_avg": 68.02825,
+            "revenue_low": 17630116485.0,
+            "revenue_high": 21807893033.0,
+            "eps_low": 60.70076,
+            "eps_high": 77.6683,
+            "num_analysts_revenue": 21,
+            "num_analysts_eps": 8
+          },
+          {
+            "date": "2027-12-31",
+            "period": null,
+            "revenue_avg": 18554451068.0,
+            "eps_avg": 60.87577,
+            "revenue_low": 16715721682.0,
+            "revenue_high": 20288707192.0,
+            "eps_low": 47.06208,
+            "eps_high": 68.40774,
+            "num_analysts_revenue": 19,
+            "num_analysts_eps": 10
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "REGN",
+          "strongBuy": 0,
+          "buy": 34,
+          "hold": 15,
+          "sell": 0,
+          "strongSell": 0,
+          "consensus": "Buy"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 22407074592,
+            "prior": 21337309196,
+            "change": 0.05013590918017652
+          },
+          "epsAvg": {
+            "latest": 80.03142,
+            "prior": 75.64408,
+            "change": 0.05799978002244188
+          }
+        }
+      },
+      "valuation": {
+        "ratios": {
+          "symbol": "REGN",
+          "grossProfitMarginTTM": 0.8485905746490116,
+          "ebitMarginTTM": 0.33611205881027634,
+          "ebitdaMarginTTM": 0.3701391079325639,
+          "operatingProfitMarginTTM": 0.25556335172227335,
+          "pretaxProfitMarginTTM": 0.33254584897036954,
+          "continuousOperationsProfitMarginTTM": 0.27864715765351117,
+          "netProfitMarginTTM": 0.27864715765351117,
+          "bottomLineProfitMarginTTM": 0.27864715765351117,
+          "receivablesTurnoverTTM": 2.3661467694276053,
+          "payablesTurnoverTTM": 2.0288967480376088,
+          "inventoryTurnoverTTM": 0.762604156534708,
+          "fixedAssetTurnoverTTM": 2.845756471083918,
+          "assetTurnoverTTM": 0.37226695422957107,
+          "currentRatioTTM": 3.33526199689003,
+          "quickRatioTTM": 2.7775829023975698,
+          "solvencyRatioTTM": 0.484808863159996,
+          "cashRatioTTM": 0.44403862148772283,
+          "priceToEarningsRatioTTM": 19.67096466093601,
+          "priceToEarningsGrowthRatioTTM": 63.17405958416001,
+          "forwardPriceToEarningsGrowthRatioTTM": 1.6068458800614052,
+          "priceToEarningsDilutedRatioTTM": 20.376453128864704,
+          "priceToEarningsDilutedGrowthRatioTTM": 10.780502135378072,
+          "priceToBookRatioTTM": 2.6862283750118254,
+          "priceToSalesRatioTTM": 5.463355200937257,
+          "priceToFreeCashFlowRatioTTM": 24.09823789431841,
+          "priceToOperatingCashFlowRatioTTM": 19.173266408571173,
+          "debtToAssetsRatioTTM": 0.04760603882099209,
+          "debtToEquityRatioTTM": 0.06264703099870707,
+          "debtToCapitalRatioTTM": 0.058953753383030244,
+          "longTermDebtToCapitalRatioTTM": 0.058953753383030244,
+          "financialLeverageRatioTTM": 1.315947147677462,
+          "workingCapitalTurnoverRatioTTM": 1.1942006926267157,
+          "operatingCashFlowRatioTTM": 0.8033124796586265,
+          "operatingCashFlowSalesRatioTTM": 0.28599200499526867,
+          "freeCashFlowOperatingCashFlowRatioTTM": 0.7927208066984784,
+          "debtServiceCoverageRatioTTM": 88.67689530685921,
+          "interestCoverageRatioTTM": 71.66245487364621,
+          "shortTermOperatingCashFlowCoverageRatioTTM": 0,
+          "operatingCashFlowCoverageRatioTTM": 2.236383771267492,
+          "capitalExpenditureCoverageRatioTTM": 4.8244109023781085,
+          "dividendPaidAndCapexCoverageRatioTTM": 3.4191165153147605,
+          "dividendPayoutRatioTTM": 0.08743964700718461,
+          "dividendYieldTTM": 0.00449127,
+          "enterpriseValueTTM": 84402384040,
+          "revenuePerShareTTM": 150.23887814313346,
+          "netIncomePerShareTTM": 41.86363636363637,
+          "interestDebtPerShareTTM": 19.748549323017407,
+          "cashPerShareTTM": 77.31721470019342,
+          "bookValuePerShareTTM": 306.6827852998066,
+          "tangibleBookValuePerShareTTM": 294.0154738878143,
+          "shareholdersEquityPerShareTTM": 306.6827852998066,
+          "operatingCashFlowPerShareTTM": 42.967117988394584,
+          "capexPerShareTTM": 8.906189555125726,
+          "freeCashFlowPerShareTTM": 34.060928433268856,
+          "netIncomePerEBTTTM": 0.8379210220673635,
+          "ebtPerEbitTTM": 1.3012266693534167,
+          "priceToFairValueTTM": 2.6862283750118254,
+          "debtToMarketCapTTM": 0.02340712763253853,
+          "effectiveTaxRateTTM": 0.16207897793263648,
+          "enterpriseValueMultipleTTM": 14.678675485217392,
+          "dividendPerShareTTM": 3.7
+        },
+        "metrics": {
+          "symbol": "REGN",
+          "marketCap": 84871584040,
+          "enterpriseValueTTM": 84402384040,
+          "evToSalesTTM": 5.43315184972996,
+          "evToOperatingCashFlowTTM": 18.997565508238047,
+          "evToFreeCashFlowTTM": 23.965014350208694,
+          "evToEBITDATTM": 14.678675485217392,
+          "netDebtToEBITDATTM": -0.0816,
+          "currentRatioTTM": 3.33526199689003,
+          "incomeQualityTTM": 1.0263589530343984,
+          "grahamNumberTTM": 537.4702536536427,
+          "grahamNetNetTTM": 42.95744680851064,
+          "taxBurdenTTM": 0.8379210220673635,
+          "interestBurdenTTM": 0.9893898188225381,
+          "workingCapitalTTM": 12915400000,
+          "investedCapitalTTM": 19684100000,
+          "returnOnAssetsTTM": 0.10373112868439971,
+          "operatingReturnOnAssetsTTM": 0.09612972585558144,
+          "returnOnTangibleAssetsTTM": 0.10709249335728176,
+          "returnOnEquityTTM": 0.13813240281357775,
+          "returnOnInvestedCapitalTTM": 0.09189738641274828,
+          "returnOnCapitalEmployedTTM": 0.10967308850422935,
+          "earningsYieldTTM": 0.05081648462484082,
+          "freeCashFlowYieldTTM": 0.04149681003173132,
+          "capexToOperatingCashFlowTTM": 0.20727919330152156,
+          "capexToDepreciationTTM": 1.7421490730230798,
+          "capexToRevenueTTM": 0.059280192086104015,
+          "salesGeneralAndAdministrativeToRevenueTTM": 0.17654669868101733,
+          "researchAndDevelopementToRevenueTTM": 0.4159204876824142,
+          "stockBasedCompensationToRevenueTTM": 0.06351587092122796,
+          "intangiblesToTotalAssetsTTM": 0.03138749101365924,
+          "averageReceivablesTTM": 6148200000,
+          "averagePayablesTTM": 1093200000,
+          "averageInventoryTTM": 3093950000,
+          "daysOfSalesOutstandingTTM": 154.25923899399407,
+          "daysOfPayablesOutstandingTTM": 179.90072700990603,
+          "daysOfInventoryOutstandingTTM": 478.6231452744356,
+          "operatingCycleTTM": 632.8823842684296,
+          "cashConversionCycleTTM": 452.98165725852357,
+          "freeCashFlowToEquityTTM": 3436600000,
+          "freeCashFlowToFirmTTM": 3483020824.622532,
+          "tangibleAssetValueTTM": 30401200000,
+          "netCurrentAssetValueTTM": 8427000000
+        }
+      },
+      "news": [
+        {
+          "date": "2026-09-01 17:29 UTC",
+          "title": "INVESTOR ALERT: Pomerantz Law Firm Reminds Investors with Losses on their Investment in Regeneron Pharmaceuticals, Inc. of Class Action Lawsuit and Upcoming Deadlines – REGN",
+          "site": "globenewswire.com",
+          "text": "NEW YORK, Sept. 01, 2026 (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against Regeneron Pharmaceuticals, Inc. (“Regeneron” or the “Company”) (NASDAQ: REGN)."
+        },
+        {
+          "date": "2026-09-01 15:53 UTC",
+          "title": "Portnoy Law Firm Announces Class Action on Behalf of Regeneron Pharmaceuticals, Inc. Investors",
+          "site": "globenewswire.com",
+          "text": "LOS ANGELES, Sept. 01, 2026 (GLOBE NEWSWIRE) -- The Portnoy Law Firm advises Regeneron Pharmaceuticals, Inc., (“Regeneron” or the \"Company\") (NASDAQ: REGN) investors of a class action on behalf of investors that bought securities between August 1, 2025 and May 15, 2026, inclusive (the “Class Period”). Regeneron investors have until September 14, 2026 to file a lead plaintiff motion."
+        },
+        {
+          "date": "2026-09-01 12:21 UTC",
+          "title": "INVESTOR DEADLINE: Regeneron Pharmaceuticals, Inc. (REGN) Investors with Substantial Losses Have Opportunity to Lead the Regeneron Class Action Lawsuit Before September 14, 2026 Deadline",
+          "site": "prnewswire.com",
+          "text": "SAN FRANCISCO, Sept. 1, 2026 /PRNewswire/ -- Hagens Berman Sobol Shapiro LLP alerts investors in Regeneron Pharmaceuticals (NASDAQ: REGN) that a securities class action lawsuit has been filed after its surprising revelations concerning a Phase 3 clinical trial of a therapy intended to treat patients with melanoma."
+        },
+        {
+          "date": "2026-09-01 10:29 UTC",
+          "title": "REGN UPCOMING DEADLINE: SueWallSt Alerts Regeneron Pharmaceuticals, Inc. Stockholders of Securities Class Action - Contact the Firm",
+          "site": "globenewswire.com",
+          "text": "Time-Sensitive: Allegations focus on Regeneron's statements about clinical differentiation in the Phase III Fianlimab-Libtayo Study and the last-minute protocol amendment used to force a trial readout Time-Sensitive: Allegations focus on Regeneron's statements about clinical differentiation in the Phase III Fianlimab-Libtayo Study and the last-minute protocol amendment used to force a trial readout"
+        },
+        {
+          "date": "2026-08-31 18:05 UTC",
+          "title": "REGN EQUITY ACTION REMINDER: Faruqi & Faruqi, LLP Reminds Regeneron Investors of Securities Class Action Lawsuit Deadline on September 14, 2026",
+          "site": "newsfilecorp.com",
+          "text": "Faruqi & Faruqi, LLP Securities Litigation Partner James (Josh) Wilson Encourages Investors Who Suffered Losses In Regeneron To Contact Him Directly To Discuss Their Options If you purchased or acquired securities in Regeneron between August 1, 2025 and May 15, 2026 and would like to discuss your legal rights, call Faruqi & Faruqi partner Josh Wilson directly at 877-247-4292 or 212-983-9330 (Ext. 1310). [You may also click here for additional information] New York, New York--(Newsfile Corp. - August 31, 2026) - Faruqi & Faruqi, LLP, a leading national securities law firm, is investigating potential claims against Regeneron Pharmaceuticals, Inc. (\"Regeneron\" or the \"Company\") (NASDAQ: REGN) and reminds investors of the September 14, 2026 deadline to seek the role of lead plaintiff in a federal securities class action that has been filed against the Company."
+        },
+        {
+          "date": "2026-08-31 10:20 UTC",
+          "title": "REGN Shareholder Alert: Regeneron Pharmaceuticals, Inc. Securities Class Action Lawsuit - Investors Should Contact Levi & Korsinsky",
+          "site": "globenewswire.com",
+          "text": "This timeline-focused notice highlights allegations that Regeneron's Phase III Fianlimab-Libtayo disclosures evolved from delayed event accrual to a protocol amendment and then a failed primary endpoint, with REGN investors allegedly absorbing substantial share-price losses This timeline-focused notice highlights allegations that Regeneron's Phase III Fianlimab-Libtayo disclosures evolved from delayed event accrual to a protocol amendment and then a failed primary endpoint, with REGN investors allegedly absorbing substantial share-price losses"
+        },
+        {
+          "date": "2026-08-31 09:56 UTC",
+          "title": "REGN Investors Have Opportunity to Lead Regeneron Pharmaceuticals, Inc. Securities Fraud Lawsuit with SBS Law",
+          "site": "globenewswire.com",
+          "text": "LOS ANGELES, Aug. 31, 2026 (GLOBE NEWSWIRE) -- Schall, Brown & Schwartz LLP (“SBS”), a national shareholder rights litigation firm, reminds investors of a class action lawsuit against Regeneron Pharmaceuticals, Inc. (“Regeneron” or “the Company”) (NASDAQ: REGN) for violations of §§10(b) and 20(a) of the Securities Exchange Act of 1934 and Rule 10b-5 promulgated thereunder by the U.S. Securities and Exchange Commission. Shareholders who purchased shares of REGN during the class period listed are encouraged to contact the firm regarding possible lead plaintiff appointments."
+        },
+        {
+          "date": "2026-08-31 09:30 UTC",
+          "title": "REGN 2-WEEK DEADLINE ALERT: Regeneron Pharmaceuticals, Inc. Investors Alerted to September 14, 2026 Lead Plaintiff Deadline in Class Action Lawsuit - HBSS",
+          "site": "globenewswire.com",
+          "text": "SAN FRANCISCO, Aug. 31, 2026 (GLOBE NEWSWIRE) -- Hagens Berman Sobol Shapiro LLP alerts investors in Regeneron Pharmaceuticals (NASDAQ: REGN) that a securities class action lawsuit has been filed after its surprising revelations concerning a Phase 3 clinical trial of a therapy intended to treat patients with melanoma. The news that the trial failed drove the price of Regeneron shares sharply lower and, along with the severe market reaction ($11 billion market cap wipeout), triggered the lawsuit which seeks to represent investors who purchased or otherwise acquired shares of Regeneron common stock between August 1, 2025 and May 15, 2026."
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "8 usable article(s)"
+      },
+      "sector": {
+        "sector": "Healthcare",
+        "industry": "Biotechnology",
+        "sector_snapshot": {
+          "date": "2026-09-02",
+          "sector": "Healthcare",
+          "exchange": "NASDAQ",
+          "averageChange": 0.3015725494254662
+        },
+        "industry_snapshot": {}
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 7.1
+        },
+        "hourly_scan_cycles": {
+          "score": -1.0,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-08-31",
+          "month1": 3.85,
+          "month2": 3.88,
+          "month3": 3.91,
+          "month6": 3.99,
+          "year1": 4.16,
+          "year2": 4.34,
+          "year3": 4.4,
+          "year5": 4.49,
+          "year7": 4.62,
+          "year10": 4.75,
+          "year20": 5.24,
+          "year30": 5.25
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-12-01",
+              "value": 326.031
+            },
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-12-01",
+              "value": 4.4
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-09-02 00:00:00",
+            "country": "VN",
+            "event": "Independence Day",
+            "currency": "VND",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 00:00:00",
+            "country": "VN",
+            "event": "National Day",
+            "currency": "VND",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 00:30:00",
+            "country": "DE",
+            "event": "Bundesbank Nagel Speech",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
+            "change": -0.4,
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Chain Price Index QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.9,
+            "estimate": null,
+            "actual": -0.6,
+            "change": -1.5,
+            "impact": "Low",
+            "changePercentage": -166.667,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Capital Expenditure QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 3.1,
+            "estimate": null,
+            "actual": -0.3,
+            "change": -3.4,
+            "impact": "Low",
+            "changePercentage": -109.677,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Growth Rate QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.3,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.1,
+            "impact": "High",
+            "changePercentage": 33.333,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Consumption QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.1,
+            "estimate": null,
+            "actual": 0.5,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 400,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "Gross Domestic Product QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.3,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 33.333,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "GDP Final Consumption QoQ (Q2)",
+            "currency": "AUD",
+            "previous": 0.1,
+            "estimate": null,
+            "actual": 0.5,
+            "change": 0.4,
+            "impact": "Low",
+            "changePercentage": 400,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 01:30:00",
+            "country": "AU",
+            "event": "Gross Domestic Product YoY (Q2)",
+            "currency": "AUD",
+            "previous": 2.5,
+            "estimate": 1.8,
+            "actual": 2.1,
+            "change": -0.4,
+            "impact": "Medium",
+            "changePercentage": -16,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-02 02:00:00",
+            "country": "NZ",
+            "event": "RBNZ Interest Rate Decision",
+            "currency": "NZD",
+            "previous": 2.5,
+            "estimate": 2.75,
+            "actual": 2.75,
+            "change": 0.25,
+            "impact": "Medium",
+            "changePercentage": 10,
+            "unit": "%"
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within a strong established uptrend. Price remains above rising moving averages, has reclaimed VWAP, and shows positive momentum without an overbought RSI.",
+        "financial_assessment": "positive",
+        "financial_interpretation": "Regeneron beat EPS estimates in all three reported periods, with the latest surprise accelerating sharply to 40.6%. Margins remain strong and cash flow is positive, although the supplied revenue and net-income figures show no displayed growth.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating timing uncertainty and event risk over the scanner horizon. Longer-term revenue and EPS estimates are moving higher, but recent clinical-trial developments increase uncertainty around future results.",
+        "analyst_assessment": "positive",
+        "analyst_interpretation": "Analysts are broadly constructive, with a Buy consensus, no sell ratings, and the latest revenue and EPS estimates revised upward.",
+        "valuation_assessment": "reasonable",
+        "valuation_interpretation": "A trailing P/E near 20 appears reasonable rather than prohibitive for a highly profitable biotechnology company. However, the data does not provide enough industry or historical valuation context to identify a clear discount.",
+        "news_assessment": "negative",
+        "news_interpretation": "Multiple recent reports concern securities class-action lawsuits tied to the failed Phase 3 Fianlimab-Libtayo trial and alleged disclosure issues. This is a meaningful company-specific overhang that can produce sharp volatility despite the improving chart.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "Recent healthcare performance is modestly supportive, although the absence of specific biotechnology data limits conviction.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "No major near-term macro event is supplied, but elevated Treasury yields and a seasonally unfavorable cycle can pressure high-duration growth and healthcare valuations.",
+        "overall_assessment": "caution",
+        "overall_summary": "The technical signal is strongly supported by trend strength, relative outperformance, repeated earnings beats, and upward analyst revisions. However, the failed clinical-trial controversy and related lawsuits create substantial event risk, while higher yields add a modest macro headwind.",
+        "key_positive": "Strong trend structure is reinforced by profitable operations, repeated EPS beats, and constructive analyst revisions.",
+        "key_risk": "The recent failed trial and ongoing securities litigation could trigger renewed downside or volatility independent of the technical setup.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2793
+        }
+      ],
+      "is_etf": false,
+      "buy_confidence": 53,
+      "report": "🟡 REGN — Regeneron Pharmaceuticals, Inc.\nEntry: $824.42\neToro TP Value: $54.10\nShares: 0.30 ($247)\nScanner Potential: +21.9%\nTimeframe: 23–50 days\n\n═══ BUY CONFIDENCE: 53% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 34 | Hold: 15 | Sell: 0 | Strong Sell: 0\n🧠 Analysts are broadly constructive, with a Buy consensus, no sell ratings, and the latest revenue and EPS estimates revised upward.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong established uptrend. Price remains above rising moving averages, has reclaimed VWAP, and shows positive momentum without an overbought RSI.\n🕒 Technical timestamp: 2026-09-02 04:28:41 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 Regeneron beat EPS estimates in all three reported periods, with the latest surprise accelerating sharply to 40.6%. Margins remain strong and cash flow is positive, although the supplied revenue and net-income figures show no displayed growth.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 20 appears reasonable rather than prohibitive for a highly profitable biotechnology company. However, the data does not provide enough industry or historical valuation context to identify a clear discount.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing uncertainty and event risk over the scanner horizon. Longer-term revenue and EPS estimates are moving higher, but recent clinical-trial developments increase uncertainty around future results.\n\n═══ RECENT NEWS ═══\n• 2026-09-01 17:29 UTC — INVESTOR ALERT: Pomerantz Law Firm Reminds Investors with Losses on their Investment in Regeneron Pharmaceuticals, Inc. of Class Action Lawsuit and Upcoming Deadlines – REGN\n• 2026-09-01 15:53 UTC — Portnoy Law Firm Announces Class Action on Behalf of Regeneron Pharmaceuticals, Inc. Investors\n• 2026-09-01 12:21 UTC — INVESTOR DEADLINE: Regeneron Pharmaceuticals, Inc. (REGN) Investors with Substantial Losses Have Opportunity to Lead the Regeneron Class Action Lawsuit Before September 14, 2026 Deadline\n• 2026-09-01 10:29 UTC — REGN UPCOMING DEADLINE: SueWallSt Alerts Regeneron Pharmaceuticals, Inc. Stockholders of Securities Class Action - Contact the Firm\n• 2026-08-31 18:05 UTC — REGN EQUITY ACTION REMINDER: Faruqi & Faruqi, LLP Reminds Regeneron Investors of Securities Class Action Lawsuit Deadline on September 14, 2026\n🔴 Multiple recent reports concern securities class-action lawsuits tied to the failed Phase 3 Fianlimab-Libtayo trial and alleged disclosure issues. This is a meaningful company-specific overhang that can produce sharp volatility despite the improving chart.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent healthcare performance is modestly supportive, although the absence of specific biotechnology data limits conviction.\n🧠 Macro: No major near-term macro event is supplied, but elevated Treasury yields and a seasonally unfavorable cycle can pressure high-duration growth and healthcare valuations.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Caution\n🧠 The technical signal is strongly supported by trend strength, relative outperformance, repeated earnings beats, and upward analyst revisions. However, the failed clinical-trial controversy and related lawsuits create substantial event risk, while higher yields add a modest macro headwind.\n🟢 Key Positive: Strong trend structure is reinforced by profitable operations, repeated EPS beats, and constructive analyst revisions.\n🔴 Key Risk: The recent failed trial and ongoing securities litigation could trigger renewed downside or volatility independent of the technical setup.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }

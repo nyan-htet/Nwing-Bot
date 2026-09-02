@@ -75,24 +75,12 @@
     "thesis_warned": false,
     "tp": 173.37
   },
-  "REGN": {
-    "alerted": "2026-09-02T04:28:41.200204+00:00",
-    "entry": 824.42,
-    "thesis_warned": false,
-    "tp": 1004.74
-  },
   "RELY": {
     "alerted": "2026-08-13T13:47:20.098065+00:00",
     "entry": 24.7,
     "scans_muted": 24,
     "thesis_warned": false,
     "tp": 30.46
-  },
-  "SGP": {
-    "alerted": "2026-09-02T04:28:41.247641+00:00",
-    "entry": 26.98,
-    "thesis_warned": false,
-    "tp": 30.27
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
