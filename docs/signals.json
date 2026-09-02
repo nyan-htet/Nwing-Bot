@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T22:38:33.867260+00:00",
+  "generated": "2026-09-02T04:28:59.080127+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 7.1
@@ -10,6 +10,60 @@
     "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
   },
   "signals": [
+    {
+      "ticker": "REGN",
+      "name": "Regeneron Pharmaceuticals, Inc.",
+      "setup": "pullback",
+      "entry": 824.42,
+      "tp": 1004.74,
+      "tp_pct": 0.21872349576001304,
+      "shares": 0.3,
+      "value": 247.32599399999998,
+      "pl_amount": 54.1,
+      "eta_days_low": 23,
+      "eta_days_high": 50,
+      "fee_pct": 0.036971306162602836,
+      "trend_score": 5,
+      "adx": 41.9,
+      "rs": 0.321,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 5,
+      "ema20": 796.47,
+      "ema50": 749.78,
+      "ema200": 706.04,
+      "above_ema200": true,
+      "quality": 0.89,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.8
+      },
+      "q_notes": {
+        "rsi": "RSI 58.3 rising",
+        "bollinger": "band position 56%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.2x average, steady",
+        "extension": "+1.0 ATR from 20 EMA, slope -0.8%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 58.3,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=58.3)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-02T04:28:41.200176+00:00"
+    },
     {
       "ticker": "SGP",
       "name": "SpyGlass Pharma, Inc. Common Stock",
@@ -62,7 +116,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-01T22:38:21.261227+00:00"
+      "time": "2026-09-02T04:28:41.247614+00:00"
     }
   ],
   "position_alerts": []
