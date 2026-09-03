@@ -399,3 +399,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-03 12:55 UTC,EGBN,openai,True,3,1,OK,mixed,pullback continuation,54
 2026-09-03 12:55 UTC,CBC,openai,True,3,0,NO_NEWS,supportive,pullback continuation,66
 2026-09-03 12:55 UTC,CADL,openai,True,3,1,OK,mixed,pullback continuation,50
+2026-09-03 19:22 UTC,V,openai,True,3,6,OK,mixed,pullback continuation,62
+2026-09-03 19:22 UTC,TXG,openai,True,3,1,OK,caution,pullback continuation,36
+2026-09-03 19:22 UTC,IBRX,openai,True,3,3,OK,caution,pullback continuation,37
