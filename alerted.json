@@ -2,7 +2,7 @@
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
-    "scans_muted": 9,
+    "scans_muted": 10,
     "thesis_warned": false,
     "tp": 34.93
   },
@@ -30,7 +30,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 9,
+    "scans_muted": 10,
     "thesis_warned": false,
     "tp": 115.57
   },
@@ -40,6 +40,12 @@
     "scans_muted": 9,
     "thesis_warned": false,
     "tp": 99.56
+  },
+  "IBRX": {
+    "alerted": "2026-09-03T19:21:14.759289+00:00",
+    "entry": 8.03,
+    "thesis_warned": false,
+    "tp": 9.54
   },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
@@ -71,7 +77,7 @@
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
-    "scans_muted": 17,
+    "scans_muted": 18,
     "thesis_warned": false,
     "tp": 173.37
   },
@@ -88,5 +94,17 @@
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 429.71
+  },
+  "TXG": {
+    "alerted": "2026-09-03T19:21:15.335675+00:00",
+    "entry": 62.89,
+    "thesis_warned": false,
+    "tp": 78.61
+  },
+  "V": {
+    "alerted": "2026-09-03T19:21:15.421665+00:00",
+    "entry": 379.44,
+    "thesis_warned": false,
+    "tp": 442.23
   }
 }
