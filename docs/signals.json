@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T04:22:43.820199+00:00",
+  "generated": "2026-09-03T12:52:42.524876+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 7.4
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T04:22:21.035845+00:00"
+      "time": "2026-09-03T12:52:17.183846+00:00"
     },
     {
       "ticker": "CBC",
@@ -118,7 +118,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T04:22:21.053450+00:00"
+      "time": "2026-09-03T12:52:17.204408+00:00"
     },
     {
       "ticker": "EGBN",
@@ -173,7 +173,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T04:22:21.158596+00:00"
+      "time": "2026-09-03T12:52:17.325922+00:00"
     },
     {
       "ticker": "FDMT",
@@ -228,7 +228,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T04:22:21.271093+00:00"
+      "time": "2026-09-03T12:52:17.456698+00:00"
     },
     {
       "ticker": "GDXJ",
@@ -281,7 +281,7 @@
         "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=53.8)",
         "(gold-miners)"
       ],
-      "time": "2026-09-03T04:22:21.296206+00:00"
+      "time": "2026-09-03T12:52:17.486260+00:00"
     },
     {
       "ticker": "IBRX",
@@ -335,7 +335,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T04:22:21.418910+00:00"
+      "time": "2026-09-03T12:52:17.628970+00:00"
     },
     {
       "ticker": "JNUG",
@@ -391,7 +391,7 @@
         "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(junior gold miners bull 2x)"
       ],
-      "time": "2026-09-03T04:22:21.500780+00:00"
+      "time": "2026-09-03T12:52:17.723021+00:00"
     },
     {
       "ticker": "SILJ",
@@ -444,7 +444,7 @@
         "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=54.9)",
         "(silver-miners)"
       ],
-      "time": "2026-09-03T04:22:21.795812+00:00"
+      "time": "2026-09-03T12:52:18.062427+00:00"
     },
     {
       "ticker": "SSRM",
@@ -499,7 +499,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T04:22:21.870576+00:00"
+      "time": "2026-09-03T12:52:18.147579+00:00"
     },
     {
       "ticker": "STEP",
@@ -553,7 +553,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T04:22:21.888311+00:00"
+      "time": "2026-09-03T12:52:18.168463+00:00"
     },
     {
       "ticker": "XBI",
@@ -607,7 +607,7 @@
         "quality +0.76 (rsi +0.8, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=56.0)",
         "(biotech)"
       ],
-      "time": "2026-09-03T04:22:22.116135+00:00"
+      "time": "2026-09-03T12:52:18.441121+00:00"
     }
   ],
   "position_alerts": []
