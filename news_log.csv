@@ -434,3 +434,4 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-04 19:09 UTC,URBN,openai,True,3,2,OK,mixed,pullback continuation,64
 2026-09-04 19:09 UTC,TXG,openai,True,3,1,OK,mixed,pullback continuation,40
 2026-09-04 19:09 UTC,BVS,openai,True,3,0,NO_NEWS,supportive,pullback continuation,66
+2026-09-04 22:24 UTC,XES,openai,True,0,0,NO_NEWS,mixed,pullback continuation,52
