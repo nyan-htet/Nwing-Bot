@@ -411,3 +411,13 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-03 22:38 UTC,COLO,openai,True,0,0,NO_NEWS,mixed,pullback continuation,52
 2026-09-03 22:38 UTC,CBC,openai,True,3,0,NO_NEWS,supportive,pullback continuation,66
 2026-09-03 22:38 UTC,ALM,openai,True,3,0,NO_NEWS,mixed,pullback continuation,42
+2026-09-04 04:31 UTC,XBI,openai,True,0,0,NO_NEWS,supportive,pullback continuation,61
+2026-09-04 04:31 UTC,NUGT,openai,True,0,0,NO_NEWS,mixed,pullback continuation,52
+2026-09-04 04:31 UTC,MDT,openai,True,3,5,OK,supportive,pullback continuation,65
+2026-09-04 04:31 UTC,JNUG,openai,True,0,0,NO_NEWS,mixed,pullback continuation,50
+2026-09-04 04:31 UTC,IBRX,openai,True,3,2,OK,mixed,pullback continuation,43
+2026-09-04 04:31 UTC,GDXJ,openai,True,0,0,NO_NEWS,supportive,pullback continuation,61
+2026-09-04 04:31 UTC,CRWD,openai,True,3,6,OK,mixed,pullback continuation,58
+2026-09-04 04:31 UTC,COLO,openai,True,0,0,NO_NEWS,mixed,pullback continuation,52
+2026-09-04 04:31 UTC,CBC,openai,True,3,0,NO_NEWS,mixed,pullback continuation,58
+2026-09-04 04:31 UTC,ALM,openai,True,3,0,NO_NEWS,mixed,pullback continuation,45
