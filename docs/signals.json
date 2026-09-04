@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T22:36:42.222963+00:00",
+  "generated": "2026-09-04T04:29:30.040017+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 8.2
@@ -62,7 +62,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T22:36:16.305873+00:00"
+      "time": "2026-09-04T04:29:06.096647+00:00"
     },
     {
       "ticker": "CBC",
@@ -117,7 +117,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T22:36:16.469166+00:00"
+      "time": "2026-09-04T04:29:06.247662+00:00"
     },
     {
       "ticker": "COLO",
@@ -171,49 +171,49 @@
         "quality +0.58 (rsi +0.7, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=62.4)",
         "(data-centers)"
       ],
-      "time": "2026-09-03T22:36:16.511084+00:00"
+      "time": "2026-09-04T04:29:06.296229+00:00"
     },
     {
-      "ticker": "FDMT",
-      "name": "4D Molecular Therapeutics, Inc.",
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings, Inc.",
       "setup": "pullback",
-      "entry": 14.71,
-      "tp": 16.91,
-      "tp_pct": 0.14955812372535693,
-      "shares": 17.0,
-      "value": 250.07000000000002,
-      "pl_amount": 37.4,
-      "eta_days_low": 5,
-      "eta_days_high": 15,
-      "fee_pct": 0.05347593582887702,
+      "entry": 214.97,
+      "tp": 268.71,
+      "tp_pct": 0.2499883704702981,
+      "shares": 1.16,
+      "value": 249.3652,
+      "pl_amount": 62.34,
+      "eta_days_low": 9,
+      "eta_days_high": 27,
+      "fee_pct": 0.03208295368504808,
       "trend_score": 5,
-      "adx": 27.3,
-      "rs": 0.652,
+      "adx": 26.9,
+      "rs": 0.233,
       "runner": true,
       "regime": "uptrend",
-      "regime_weeks": 10,
-      "ema20": 14.04,
-      "ema50": 12.63,
-      "ema200": 10.88,
+      "regime_weeks": 19,
+      "ema20": 207.92,
+      "ema50": 197.06,
+      "ema200": 157.91,
       "above_ema200": true,
-      "quality": 0.96,
+      "quality": 0.82,
       "q_detail": {
-        "rsi": 1.0,
+        "rsi": 0.6,
         "bollinger": 1.0,
         "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 0.8
+        "volume": 0.5,
+        "extension": 1.0
       },
       "q_notes": {
-        "rsi": "RSI 53.1 rising",
-        "bollinger": "band position 41%, contracting",
+        "rsi": "RSI 53.9 falling",
+        "bollinger": "band position 64%, expanding",
         "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.8x average, drying up",
-        "extension": "+0.2 ATR from 20 EMA, slope -1.1%, bullish stack (20>50>200)"
+        "volume": "0.8x average, steady",
+        "extension": "+0.6 ATR from 20 EMA, slope +3.8%, bullish stack (20>50>200)"
       },
       "context_notes": [],
       "ext_atr": null,
-      "rsi": 53.1,
+      "rsi": 53.9,
       "options_note": "",
       "sector": "",
       "warnings": [],
@@ -222,11 +222,10 @@
         "4h pullback",
         "1h momentum trigger",
         "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.96 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.1)",
-        "(nasdaq; tier assigned nightly by FMP)",
+        "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=53.9)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T22:36:16.702682+00:00"
+      "time": "2026-09-04T04:29:06.328073+00:00"
     },
     {
       "ticker": "GDXJ",
@@ -279,7 +278,7 @@
         "quality +0.69 (rsi +0.7, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=60.3)",
         "(gold-miners)"
       ],
-      "time": "2026-09-03T22:36:16.732018+00:00"
+      "time": "2026-09-04T04:29:06.549965+00:00"
     },
     {
       "ticker": "IBRX",
@@ -333,7 +332,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-03T22:36:16.873567+00:00"
+      "time": "2026-09-04T04:29:06.665408+00:00"
     },
     {
       "ticker": "JNUG",
@@ -389,7 +388,61 @@
         "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(junior gold miners bull 2x)"
       ],
-      "time": "2026-09-03T22:36:16.972058+00:00"
+      "time": "2026-09-04T04:29:06.758490+00:00"
+    },
+    {
+      "ticker": "MDT",
+      "name": "Medtronic plc",
+      "setup": "pullback",
+      "entry": 93.12,
+      "tp": 109.07,
+      "tp_pct": 0.17128436426116833,
+      "shares": 2.68,
+      "value": 249.56160000000003,
+      "pl_amount": 42.75,
+      "eta_days_low": 17,
+      "eta_days_high": 51,
+      "fee_pct": 0.0467880035558883,
+      "trend_score": 5,
+      "adx": 34.0,
+      "rs": 0.092,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 7,
+      "ema20": 90.73,
+      "ema50": 87.67,
+      "ema200": 87.99,
+      "above_ema200": true,
+      "quality": 0.77,
+      "q_detail": {
+        "rsi": 0.8,
+        "bollinger": 0.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 57.1 rising, BEARISH DIVERGENCE",
+        "bollinger": "band position 75%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.9x average, drying up",
+        "extension": "+0.7 ATR from 20 EMA, slope +0.5%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 57.1,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.77 (rsi +0.8, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=57.1)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-04T04:29:06.853695+00:00"
     },
     {
       "ticker": "NUGT",
@@ -445,7 +498,7 @@
         "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(gold miners bull 2x)"
       ],
-      "time": "2026-09-03T22:36:17.126428+00:00"
+      "time": "2026-09-04T04:29:06.996794+00:00"
     },
     {
       "ticker": "XBI",
@@ -499,7 +552,7 @@
         "quality +0.96 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.2)",
         "(biotech)"
       ],
-      "time": "2026-09-03T22:36:17.610089+00:00"
+      "time": "2026-09-04T04:29:07.540932+00:00"
     }
   ],
   "position_alerts": []
