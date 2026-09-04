@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T04:29:30.040017+00:00",
+  "generated": "2026-09-04T12:47:19.471199+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 8.2
@@ -62,7 +62,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-04T04:29:06.096647+00:00"
+      "time": "2026-09-04T12:46:48.358117+00:00"
     },
     {
       "ticker": "CBC",
@@ -117,7 +117,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-04T04:29:06.247662+00:00"
+      "time": "2026-09-04T12:46:48.513514+00:00"
     },
     {
       "ticker": "COLO",
@@ -171,7 +171,7 @@
         "quality +0.58 (rsi +0.7, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=62.4)",
         "(data-centers)"
       ],
-      "time": "2026-09-04T04:29:06.296229+00:00"
+      "time": "2026-09-04T12:46:48.561559+00:00"
     },
     {
       "ticker": "CRWD",
@@ -225,7 +225,7 @@
         "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=53.9)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-04T04:29:06.328073+00:00"
+      "time": "2026-09-04T12:46:48.593911+00:00"
     },
     {
       "ticker": "GDXJ",
@@ -278,7 +278,7 @@
         "quality +0.69 (rsi +0.7, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=60.3)",
         "(gold-miners)"
       ],
-      "time": "2026-09-04T04:29:06.549965+00:00"
+      "time": "2026-09-04T12:46:48.825117+00:00"
     },
     {
       "ticker": "IBRX",
@@ -332,7 +332,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-04T04:29:06.665408+00:00"
+      "time": "2026-09-04T12:46:48.941028+00:00"
     },
     {
       "ticker": "JNUG",
@@ -388,7 +388,7 @@
         "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(junior gold miners bull 2x)"
       ],
-      "time": "2026-09-04T04:29:06.758490+00:00"
+      "time": "2026-09-04T12:46:49.037005+00:00"
     },
     {
       "ticker": "MDT",
@@ -442,7 +442,7 @@
         "quality +0.77 (rsi +0.8, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=57.1)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-04T04:29:06.853695+00:00"
+      "time": "2026-09-04T12:46:49.133392+00:00"
     },
     {
       "ticker": "NUGT",
@@ -498,7 +498,7 @@
         "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(gold miners bull 2x)"
       ],
-      "time": "2026-09-04T04:29:06.996794+00:00"
+      "time": "2026-09-04T12:46:49.278981+00:00"
     },
     {
       "ticker": "XBI",
@@ -552,7 +552,7 @@
         "quality +0.96 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.2)",
         "(biotech)"
       ],
-      "time": "2026-09-04T04:29:07.540932+00:00"
+      "time": "2026-09-04T12:46:49.805844+00:00"
     }
   ],
   "position_alerts": []
