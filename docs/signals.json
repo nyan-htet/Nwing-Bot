@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T04:35:42.175160+00:00",
+  "generated": "2026-09-07T14:19:04.721357+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 8.1
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-07T04:35:26.441591+00:00"
+      "time": "2026-09-07T14:18:49.295692+00:00"
     },
     {
       "ticker": "RUSHA",
@@ -118,7 +118,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-07T04:35:26.548835+00:00"
+      "time": "2026-09-07T14:18:49.405576+00:00"
     },
     {
       "ticker": "WMB",
@@ -171,7 +171,7 @@
         "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.8)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-07T04:35:26.862958+00:00"
+      "time": "2026-09-07T14:18:49.727983+00:00"
     },
     {
       "ticker": "XES",
@@ -224,7 +224,7 @@
         "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=55.6)",
         "(energy-services)"
       ],
-      "time": "2026-09-07T04:35:26.891501+00:00"
+      "time": "2026-09-07T14:18:49.757392+00:00"
     }
   ],
   "position_alerts": []
