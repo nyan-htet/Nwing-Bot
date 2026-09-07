@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07 19:59 UTC",
+  "generated": "2026-09-07 22:52 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "XES",
       "alert": {
-        "alerted": "2026-09-07T19:58:47.626148+00:00",
+        "alerted": "2026-09-07T22:51:30.722270+00:00",
         "entry": 122.46,
         "thesis_warned": false,
         "tp": 141.83
@@ -68,7 +68,7 @@
           "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=55.6)",
           "(energy-services)"
         ],
-        "time": "2026-09-07T19:58:47.626115+00:00"
+        "time": "2026-09-07T22:51:30.722241+00:00"
       },
       "profile": {
         "symbol": "XES",
@@ -139,7 +139,7 @@
           "date": "2026-09-07",
           "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": 0.9281516022683789
+          "averageChange": 0.9281516022683123
         },
         "industry_snapshot": {}
       },
@@ -204,19 +204,6 @@
         "calendar": [
           {
             "date": "2026-09-07 00:00:00",
-            "country": "CA",
-            "event": "Labour Day",
-            "currency": "CAD",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-09-07 00:00:00",
             "country": "BR",
             "event": "Independence Day",
             "currency": "BRL",
@@ -243,6 +230,19 @@
           },
           {
             "date": "2026-09-07 00:00:00",
+            "country": "MZ",
+            "event": "Lusaka Peace Agreement Day",
+            "currency": "MZN",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-07 00:00:00",
             "country": "US",
             "event": "Labour Day",
             "currency": "USD",
@@ -256,9 +256,9 @@
           },
           {
             "date": "2026-09-07 00:00:00",
-            "country": "FJ",
-            "event": "Constitution Day",
-            "currency": "FJD",
+            "country": "CA",
+            "event": "Labour Day",
+            "currency": "CAD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -269,9 +269,9 @@
           },
           {
             "date": "2026-09-07 00:00:00",
-            "country": "MZ",
-            "event": "Lusaka Peace Agreement Day",
-            "currency": "MZN",
+            "country": "FJ",
+            "event": "Constitution Day",
+            "currency": "FJD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -362,25 +362,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price is above rising key EMAs, has reclaimed VWAP, and shows moderate RSI without being overbought, although weakening relative strength and light volume limit conviction.",
+        "technical_interpretation": "The setup resembles a bullish pullback continuation within an established uptrend. Price remains above rising short-, medium-, and long-term EMAs, with VWAP reclaimed, contracting bands, and moderate RSI leaving room for continuation.",
         "financial_assessment": "not_applicable",
-        "financial_interpretation": "No quarterly financial results were returned, which is consistent with this being an ETF rather than an operating company. Therefore, acceleration, margins, cash flow, and earnings surprises cannot be assessed.",
+        "financial_interpretation": "No quarterly results were returned, which is consistent with this being an ETF rather than an operating company. Acceleration, margins, cash flow, and earnings surprises therefore cannot be assessed from the supplied data.",
         "earnings_assessment": "unknown",
-        "earnings_interpretation": "No earnings date or forward estimates are available, so there is no identifiable earnings catalyst or event-risk assessment.",
+        "earnings_interpretation": "No next earnings date or forward estimates are available. ETF-level earnings event risk cannot be evaluated from the supplied information.",
         "analyst_assessment": "unknown",
-        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable, leaving no external consensus support.",
+        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable.",
         "valuation_assessment": "unknown",
-        "valuation_interpretation": "Valuation data is unavailable, so it cannot be identified as either a support or a headwind.",
+        "valuation_interpretation": "No valuation metrics are available, so valuation cannot be confirmed as either a support or a headwind.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable company-specific news was returned. There is no identified headline risk, but the absence of news also provides no fundamental catalyst.",
+        "news_interpretation": "No usable company-specific news was returned. There is no identified news catalyst or company-specific headline risk in the supplied data.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "The broader backdrop is modestly supportive, helping the setup but not providing strong confirmation.",
-        "macro_assessment": "neutral",
-        "macro_interpretation": "Risk-on conditions and low volatility help, but elevated yields and a mildly unfavorable seasonal cycle temper the macro backdrop.",
+        "sector_interpretation": "The broader sector backdrop was positive, supporting the setup, although the underlying industry snapshot was unavailable.",
+        "macro_assessment": "mixed",
+        "macro_interpretation": "Risk-on conditions and low volatility are supportive, but elevated Treasury yields and a cyclical seasonal headwind could limit follow-through.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is reasonably supported as a bullish pullback continuation, with trend structure, VWAP recovery, and low volatility favoring follow-through. However, ETF-specific fundamentals, valuation, analyst data, news, and earnings catalysts are unavailable, while relative weakness and light volume reduce conviction.",
-        "key_positive": "The ETF remains above a bullish EMA stack and has defended the pullback near VWAP.",
-        "key_risk": "Weak three-month relative strength and drying volume could signal limited participation or a failed continuation.",
+        "overall_summary": "The technical signal is well supported as a pullback within a three-week uptrend, with healthy trend structure and no scanner warnings. Fundamental, earnings, analyst, valuation, and news confirmation are largely unavailable, while macro conditions are supportive overall but not risk-free.",
+        "key_positive": "Bullish trend structure, reclaimed VWAP, contracting volatility, and risk-on conditions support continuation.",
+        "key_risk": "The ETF lacks current fundamental and catalyst confirmation, while elevated yields and relative underperformance versus SPY may weaken follow-through.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -391,17 +391,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2330
+          "chars": 2370
         }
       ],
       "is_etf": true,
       "buy_confidence": 52,
-      "report": "🟡 XES — State Street SPDR S&P Oil & Gas Equipment & Services ETF\nEntry: $122.46\neToro TP Value: $39.51\nShares: 2.04 ($250)\nScanner Potential: +15.8%\nTimeframe: 16–48 days\n\n═══ BUY CONFIDENCE: 52% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable, leaving no external consensus support.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price is above rising key EMAs, has reclaimed VWAP, and shows moderate RSI without being overbought, although weakening relative strength and light volume limit conviction.\n🕒 Technical timestamp: 2026-09-07 19:58:47 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 Valuation data is unavailable, so it cannot be identified as either a support or a headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No earnings date or forward estimates are available, so there is no identifiable earnings catalyst or event-risk assessment.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: The broader backdrop is modestly supportive, helping the setup but not providing strong confirmation.\n🧠 Macro: Risk-on conditions and low volatility help, but elevated yields and a mildly unfavorable seasonal cycle temper the macro backdrop.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is reasonably supported as a bullish pullback continuation, with trend structure, VWAP recovery, and low volatility favoring follow-through. However, ETF-specific fundamentals, valuation, analyst data, news, and earnings catalysts are unavailable, while relative weakness and light volume reduce conviction.\n🟢 Key Positive: The ETF remains above a bullish EMA stack and has defended the pullback near VWAP.\n🔴 Key Risk: Weak three-month relative strength and drying volume could signal limited participation or a failed continuation.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 XES — State Street SPDR S&P Oil & Gas Equipment & Services ETF\nEntry: $122.46\neToro TP Value: $39.51\nShares: 2.04 ($250)\nScanner Potential: +15.8%\nTimeframe: 16–48 days\n\n═══ BUY CONFIDENCE: 52% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback continuation within an established uptrend. Price remains above rising short-, medium-, and long-term EMAs, with VWAP reclaimed, contracting bands, and moderate RSI leaving room for continuation.\n🕒 Technical timestamp: 2026-09-07 22:51:30 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\n⚪ Not available / not applicable.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation metrics are available, so valuation cannot be confirmed as either a support or a headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimates are available. ETF-level earnings event risk cannot be evaluated from the supplied information.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Mixed\n🧠 Sector: The broader sector backdrop was positive, supporting the setup, although the underlying industry snapshot was unavailable.\n🧠 Macro: Risk-on conditions and low volatility are supportive, but elevated Treasury yields and a cyclical seasonal headwind could limit follow-through.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a pullback within a three-week uptrend, with healthy trend structure and no scanner warnings. Fundamental, earnings, analyst, valuation, and news confirmation are largely unavailable, while macro conditions are supportive overall but not risk-free.\n🟢 Key Positive: Bullish trend structure, reclaimed VWAP, contracting volatility, and risk-on conditions support continuation.\n🔴 Key Risk: The ETF lacks current fundamental and catalyst confirmation, while elevated yields and relative underperformance versus SPY may weaken follow-through.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "WMB",
       "alert": {
-        "alerted": "2026-09-07T19:58:47.599812+00:00",
+        "alerted": "2026-09-07T22:51:30.696686+00:00",
         "entry": 74.19,
         "thesis_warned": false,
         "tp": 86.71
@@ -457,7 +457,7 @@
           "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.8)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-07T19:58:47.599774+00:00"
+        "time": "2026-09-07T22:51:30.696637+00:00"
       },
       "profile": {
         "symbol": "WMB",
@@ -762,13 +762,13 @@
           "date": "2026-09-07",
           "sector": "Energy",
           "exchange": "NASDAQ",
-          "averageChange": -0.7529454984127604
+          "averageChange": -0.7529454984127382
         },
         "industry_snapshot": {
           "date": "2026-09-07",
           "industry": "Oil & Gas Midstream",
           "exchange": "NASDAQ",
-          "averageChange": 0.2809628152600663
+          "averageChange": 0.28096281526002187
         }
       },
       "macro": {
@@ -832,19 +832,6 @@
         "calendar": [
           {
             "date": "2026-09-07 00:00:00",
-            "country": "CA",
-            "event": "Labour Day",
-            "currency": "CAD",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-09-07 00:00:00",
             "country": "BR",
             "event": "Independence Day",
             "currency": "BRL",
@@ -871,6 +858,19 @@
           },
           {
             "date": "2026-09-07 00:00:00",
+            "country": "MZ",
+            "event": "Lusaka Peace Agreement Day",
+            "currency": "MZN",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-07 00:00:00",
             "country": "US",
             "event": "Labour Day",
             "currency": "USD",
@@ -884,9 +884,9 @@
           },
           {
             "date": "2026-09-07 00:00:00",
-            "country": "FJ",
-            "event": "Constitution Day",
-            "currency": "FJD",
+            "country": "CA",
+            "event": "Labour Day",
+            "currency": "CAD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -897,9 +897,9 @@
           },
           {
             "date": "2026-09-07 00:00:00",
-            "country": "MZ",
-            "event": "Lusaka Peace Agreement Day",
-            "currency": "MZN",
+            "country": "FJ",
+            "event": "Constitution Day",
+            "currency": "FJD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -990,25 +990,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a developing uptrend, with price above rising 20-, 50-, and 200-period EMAs. Reclaimed VWAP and stable Bollinger positioning support renewed buying, though falling RSI and below-average volume suggest moderate rather than strong momentum.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a developing uptrend, with price above the 200 EMA and a bullish EMA stack. Reclaimed VWAP, stable Bollinger positioning, and moderate ADX support continuation, though falling RSI and below-average volume limit momentum strength.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "Results are broadly stable: the latest EPS was nearly in line after a strong prior beat, while revenue and net income showed no displayed growth. Margins are strong, but substantial debt and negative free cash flow weaken the fundamental backdrop.",
+        "financial_interpretation": "Results show inconsistent earnings execution: one strong beat was followed by a slight miss, while reported revenue and net income were flat across the supplied periods. High operating margins and solid operating cash flow are positives, but negative free cash flow and substantial debt weaken the profile.",
         "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around event timing. Forward EPS estimates have risen versus the prior forecast, but revenue estimates declined and the limited analyst coverage makes the outlook less reliable.",
+        "earnings_interpretation": "The next earnings date is unavailable, creating timing uncertainty. Longer-term estimates imply lower revenue but higher EPS versus the prior forecast, so the catalyst backdrop is mixed and event risk remains difficult to gauge.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Ratings are firmly positive with 27 buys versus 7 holds, while EPS estimates improved despite lower revenue expectations.",
+        "analyst_interpretation": "Analysts are strongly constructive with a Buy consensus and no sell ratings, although revenue estimates have declined while EPS estimates increased.",
         "valuation_assessment": "expensive",
-        "valuation_interpretation": "The valuation appears demanding, with a trailing P/E near 29 and elevated price-to-sales and price-to-book ratios. Without supplied growth or peer comparisons, these multiples represent a headwind to the setup.",
+        "valuation_interpretation": "The elevated earnings, sales, and book-value multiples make valuation a headwind rather than a clear support. This premium is harder to justify against flat recent revenue and inconsistent earnings surprises.",
         "news_assessment": "positive",
-        "news_interpretation": "Recent coverage is supportive, highlighting dividend appeal and improving natural-gas demand from LNG, storage, and cooling needs. No material company-specific negative catalyst is supplied.",
+        "news_interpretation": "Recent coverage is favorable, highlighting dividend reliability and potential exposure to rising LNG and cooling demand. The items are supportive but promotional in nature and do not remove balance-sheet or earnings risks.",
         "sector_assessment": "neutral",
-        "sector_interpretation": "The broader energy group is weak, but the midstream segment is modestly positive, leaving sector influence broadly neutral.",
-        "macro_assessment": "headwind",
-        "macro_interpretation": "Risk appetite and low volatility help, but elevated long-term yields and a seasonally unfavorable cycle can pressure yield-sensitive infrastructure stocks.",
+        "sector_interpretation": "The company’s immediate industry backdrop is mildly supportive, but broader energy weakness offsets that benefit.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "Risk-on conditions help, but elevated long-term yields and a modest seasonal-cycle headwind can pressure dividend-sensitive energy infrastructure shares.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is reasonably supported as a pullback continuation, with bullish trend structure and buyers defending VWAP. Fundamental support is mixed because earnings are stable and analyst sentiment is positive, but debt, negative free cash flow, rich valuation, uncertain earnings timing, and elevated yields limit conviction.",
-        "key_positive": "Bullish moving-average structure, VWAP recovery, positive analyst ratings, and supportive natural-gas demand provide the main support.",
-        "key_risk": "High valuation combined with heavy debt, negative free cash flow, muted growth, and elevated yields could weaken follow-through.",
+        "overall_summary": "The technical signal is reasonably supported by an orderly pullback, reclaimed VWAP, and a bullish longer-term trend. Fundamental and valuation support is less convincing because revenue is flat, free cash flow is negative, leverage is high, and the stock appears expensive, leaving the setup dependent mainly on technical follow-through.",
+        "key_positive": "Bullish trend structure, favorable analyst consensus, and supportive natural-gas demand narratives reinforce the setup.",
+        "key_risk": "Expensive valuation combined with negative free cash flow, heavy debt, and uncertain earnings timing could limit upside or amplify a reversal.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1019,17 +1019,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2817
+          "chars": 2903
         }
       ],
       "is_etf": false,
-      "buy_confidence": 54,
-      "report": "🟡 WMB — The Williams Companies, Inc.\nEntry: $74.19\neToro TP Value: $42.21\nShares: 3.37 ($250)\nScanner Potential: +16.9%\nTimeframe: 17–51 days\n\n═══ BUY CONFIDENCE: 54% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 27 | Hold: 7 | Sell: 0 | Strong Sell: 0\n🧠 Ratings are firmly positive with 27 buys versus 7 holds, while EPS estimates improved despite lower revenue expectations.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a developing uptrend, with price above rising 20-, 50-, and 200-period EMAs. Reclaimed VWAP and stable Bollinger positioning support renewed buying, though falling RSI and below-average volume suggest moderate rather than strong momentum.\n🕒 Technical timestamp: 2026-09-07 19:58:47 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 Results are broadly stable: the latest EPS was nearly in line after a strong prior beat, while revenue and net income showed no displayed growth. Margins are strong, but substantial debt and negative free cash flow weaken the fundamental backdrop.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 The valuation appears demanding, with a trailing P/E near 29 and elevated price-to-sales and price-to-book ratios. Without supplied growth or peer comparisons, these multiples represent a headwind to the setup.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around event timing. Forward EPS estimates have risen versus the prior forecast, but revenue estimates declined and the limited analyst coverage makes the outlook less reliable.\n\n═══ RECENT NEWS ═══\n• 2026-09-07 13:30 UTC — 2 Safe High-Yield Energy Dividend Stocks You've Probably Never Heard Of\n• 2026-09-07 09:10 UTC — Natural Gas Posts a 3% Weekly Gain on Supportive Demand Trends\n🟢 Recent coverage is supportive, highlighting dividend appeal and improving natural-gas demand from LNG, storage, and cooling needs. No material company-specific negative catalyst is supplied.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: The broader energy group is weak, but the midstream segment is modestly positive, leaving sector influence broadly neutral.\n🧠 Macro: Risk appetite and low volatility help, but elevated long-term yields and a seasonally unfavorable cycle can pressure yield-sensitive infrastructure stocks.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is reasonably supported as a pullback continuation, with bullish trend structure and buyers defending VWAP. Fundamental support is mixed because earnings are stable and analyst sentiment is positive, but debt, negative free cash flow, rich valuation, uncertain earnings timing, and elevated yields limit conviction.\n🟢 Key Positive: Bullish moving-average structure, VWAP recovery, positive analyst ratings, and supportive natural-gas demand provide the main support.\n🔴 Key Risk: High valuation combined with heavy debt, negative free cash flow, muted growth, and elevated yields could weaken follow-through.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 56,
+      "report": "🟡 WMB — The Williams Companies, Inc.\nEntry: $74.19\neToro TP Value: $42.21\nShares: 3.37 ($250)\nScanner Potential: +16.9%\nTimeframe: 17–51 days\n\n═══ BUY CONFIDENCE: 56% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 27 | Hold: 7 | Sell: 0 | Strong Sell: 0\n🧠 Analysts are strongly constructive with a Buy consensus and no sell ratings, although revenue estimates have declined while EPS estimates increased.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a developing uptrend, with price above the 200 EMA and a bullish EMA stack. Reclaimed VWAP, stable Bollinger positioning, and moderate ADX support continuation, though falling RSI and below-average volume limit momentum strength.\n🕒 Technical timestamp: 2026-09-07 22:51:30 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 Results show inconsistent earnings execution: one strong beat was followed by a slight miss, while reported revenue and net income were flat across the supplied periods. High operating margins and solid operating cash flow are positives, but negative free cash flow and substantial debt weaken the profile.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 The elevated earnings, sales, and book-value multiples make valuation a headwind rather than a clear support. This premium is harder to justify against flat recent revenue and inconsistent earnings surprises.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing uncertainty. Longer-term estimates imply lower revenue but higher EPS versus the prior forecast, so the catalyst backdrop is mixed and event risk remains difficult to gauge.\n\n═══ RECENT NEWS ═══\n• 2026-09-07 13:30 UTC — 2 Safe High-Yield Energy Dividend Stocks You've Probably Never Heard Of\n• 2026-09-07 09:10 UTC — Natural Gas Posts a 3% Weekly Gain on Supportive Demand Trends\n🟢 Recent coverage is favorable, highlighting dividend reliability and potential exposure to rising LNG and cooling demand. The items are supportive but promotional in nature and do not remove balance-sheet or earnings risks.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: The company’s immediate industry backdrop is mildly supportive, but broader energy weakness offsets that benefit.\n🧠 Macro: Risk-on conditions help, but elevated long-term yields and a modest seasonal-cycle headwind can pressure dividend-sensitive energy infrastructure shares.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is reasonably supported by an orderly pullback, reclaimed VWAP, and a bullish longer-term trend. Fundamental and valuation support is less convincing because revenue is flat, free cash flow is negative, leverage is high, and the stock appears expensive, leaving the setup dependent mainly on technical follow-through.\n🟢 Key Positive: Bullish trend structure, favorable analyst consensus, and supportive natural-gas demand narratives reinforce the setup.\n🔴 Key Risk: Expensive valuation combined with negative free cash flow, heavy debt, and uncertain earnings timing could limit upside or amplify a reversal.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "RUSHA",
       "alert": {
-        "alerted": "2026-09-07T19:58:47.309208+00:00",
+        "alerted": "2026-09-07T22:51:30.413377+00:00",
         "entry": 50.99,
         "thesis_warned": false,
         "tp": 63.01
@@ -1087,7 +1087,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-07T19:58:47.309170+00:00"
+        "time": "2026-09-07T22:51:30.413344+00:00"
       },
       "profile": {
         "symbol": "RUSHA",
@@ -1379,7 +1379,7 @@
           "date": "2026-09-07",
           "sector": "Consumer Cyclical",
           "exchange": "NASDAQ",
-          "averageChange": -0.8675325183639448
+          "averageChange": -0.8675325183639226
         },
         "industry_snapshot": {
           "date": "2026-09-07",
@@ -1449,19 +1449,6 @@
         "calendar": [
           {
             "date": "2026-09-07 00:00:00",
-            "country": "CA",
-            "event": "Labour Day",
-            "currency": "CAD",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-09-07 00:00:00",
             "country": "BR",
             "event": "Independence Day",
             "currency": "BRL",
@@ -1488,6 +1475,19 @@
           },
           {
             "date": "2026-09-07 00:00:00",
+            "country": "MZ",
+            "event": "Lusaka Peace Agreement Day",
+            "currency": "MZN",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-07 00:00:00",
             "country": "US",
             "event": "Labour Day",
             "currency": "USD",
@@ -1501,9 +1501,9 @@
           },
           {
             "date": "2026-09-07 00:00:00",
-            "country": "FJ",
-            "event": "Constitution Day",
-            "currency": "FJD",
+            "country": "CA",
+            "event": "Labour Day",
+            "currency": "CAD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1514,9 +1514,9 @@
           },
           {
             "date": "2026-09-07 00:00:00",
-            "country": "MZ",
-            "event": "Lusaka Peace Agreement Day",
-            "currency": "MZN",
+            "country": "FJ",
+            "event": "Constitution Day",
+            "currency": "FJD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1607,25 +1607,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend rather than a fresh breakout. Strong trend structure, outperformance versus SPY, rising RSI, VWAP reclamation, and contained volatility support continuation.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend. Strong trend structure, relative strength, VWAP reclamation, and moderate rising RSI support continuation without clear overextension.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "EPS exceeded estimates in each of the last three reported results, including two moderate surprises after the larger February beat, but the supplied revenue and net-income figures show no displayed growth. Margins are positive and operating cash flow is positive, though free cash flow is modest relative to debt.",
+        "financial_interpretation": "The last three reports delivered positive EPS surprises, but reported revenue and net income were shown as flat across the periods. Margins were stable, while operating cash flow was positive but free cash flow remained modest relative to debt.",
         "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating timing and event-risk uncertainty. Forward revenue and EPS estimates rise into 2027-2028, but coverage is limited and the latest estimates are not a near-term catalyst.",
+        "earnings_interpretation": "The next earnings date is unavailable, creating timing and event risk. Forward estimates are rising, with revenue and EPS expectations higher for 2028 than 2027, but the latest forecast has limited analyst coverage.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "Ratings lean Hold with more Holds than Buys, although forward revenue and EPS estimates have increased.",
+        "analyst_interpretation": "Analysts are split between buy and hold ratings with a Hold consensus, although forward revenue and EPS estimates have increased.",
         "valuation_assessment": "reasonable",
-        "valuation_interpretation": "A trailing P/E near 15, price-to-sales below 1, and price-to-book near 1.7 appear broadly reasonable based on the supplied metrics. Valuation supports the setup but does not provide a strong standalone catalyst.",
+        "valuation_interpretation": "The valuation appears reasonable, with a trailing P/E near 15 and modest price-to-sales and price-to-book ratios. It is supportive of the setup but does not provide a clear valuation-driven catalyst.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was returned, so there is no identified headline catalyst or immediate company-specific risk.",
+        "news_interpretation": "No usable recent company-specific news was returned, so there is no identified news catalyst or immediate headline risk.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "The industry is outperforming even though the broader consumer-cyclical sector is weaker, providing modest support.",
+        "sector_interpretation": "Industry strength is supportive and currently outweighs weakness across the broader consumer-cyclical sector.",
         "macro_assessment": "neutral",
-        "macro_interpretation": "Risk appetite and low volatility help, but elevated long-term yields and a mildly unfavorable seasonal cycle can pressure cyclical stocks.",
-        "overall_assessment": "supportive",
-        "overall_summary": "The technical signal is strong: an orderly pullback inside a durable uptrend with notable market outperformance. Fundamentals are generally credible but mixed because earnings beats coexist with limited displayed growth, debt, sparse forward coverage, and no known earnings date; supportive industry conditions offset a neutral macro backdrop.",
-        "key_positive": "Strong trend quality, repeated EPS beats, positive estimate revisions, and industry outperformance support continuation.",
-        "key_risk": "Unknown earnings timing, limited revenue-growth evidence, elevated yields, and the company's debt load could weaken the setup if sentiment turns.",
+        "macro_interpretation": "Risk-on conditions and low volatility help, but elevated yields and a seasonal cycle headwind keep macro support limited.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is strong and resembles a high-quality pullback continuation, reinforced by substantial relative strength and an industry that is outperforming its sector. Fundamental results are constructive through repeated EPS beats, but flat reported growth, limited earnings-date visibility, mixed analyst conviction, and elevated-rate exposure temper the broader confirmation.",
+        "key_positive": "Strong trend quality, repeated EPS beats, rising forward estimates, and supportive industry momentum favor continuation.",
+        "key_risk": "Flat reported growth, modest free cash flow relative to debt, unknown earnings timing, and elevated yields could weaken follow-through.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1636,12 +1636,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2725
+          "chars": 2645
         }
       ],
       "is_etf": false,
-      "buy_confidence": 61,
-      "report": "🟡 RUSHA — Rush Enterprises, Inc.\nEntry: $50.99\neToro TP Value: $58.90\nShares: 4.90 ($250)\nScanner Potential: +23.6%\nTimeframe: 18–40 days\n\n═══ BUY CONFIDENCE: 61% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 8 | Hold: 9 | Sell: 0 | Strong Sell: 0\n🧠 Ratings lean Hold with more Holds than Buys, although forward revenue and EPS estimates have increased.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend rather than a fresh breakout. Strong trend structure, outperformance versus SPY, rising RSI, VWAP reclamation, and contained volatility support continuation.\n🕒 Technical timestamp: 2026-09-07 19:58:47 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 EPS exceeded estimates in each of the last three reported results, including two moderate surprises after the larger February beat, but the supplied revenue and net-income figures show no displayed growth. Margins are positive and operating cash flow is positive, though free cash flow is modest relative to debt.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 15, price-to-sales below 1, and price-to-book near 1.7 appear broadly reasonable based on the supplied metrics. Valuation supports the setup but does not provide a strong standalone catalyst.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing and event-risk uncertainty. Forward revenue and EPS estimates rise into 2027-2028, but coverage is limited and the latest estimates are not a near-term catalyst.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: The industry is outperforming even though the broader consumer-cyclical sector is weaker, providing modest support.\n🧠 Macro: Risk appetite and low volatility help, but elevated long-term yields and a mildly unfavorable seasonal cycle can pressure cyclical stocks.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The technical signal is strong: an orderly pullback inside a durable uptrend with notable market outperformance. Fundamentals are generally credible but mixed because earnings beats coexist with limited displayed growth, debt, sparse forward coverage, and no known earnings date; supportive industry conditions offset a neutral macro backdrop.\n🟢 Key Positive: Strong trend quality, repeated EPS beats, positive estimate revisions, and industry outperformance support continuation.\n🔴 Key Risk: Unknown earnings timing, limited revenue-growth evidence, elevated yields, and the company's debt load could weaken the setup if sentiment turns.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 52,
+      "report": "🟡 RUSHA — Rush Enterprises, Inc.\nEntry: $50.99\neToro TP Value: $58.90\nShares: 4.90 ($250)\nScanner Potential: +23.6%\nTimeframe: 18–40 days\n\n═══ BUY CONFIDENCE: 52% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 8 | Hold: 9 | Sell: 0 | Strong Sell: 0\n🧠 Analysts are split between buy and hold ratings with a Hold consensus, although forward revenue and EPS estimates have increased.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend. Strong trend structure, relative strength, VWAP reclamation, and moderate rising RSI support continuation without clear overextension.\n🕒 Technical timestamp: 2026-09-07 22:51:30 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports delivered positive EPS surprises, but reported revenue and net income were shown as flat across the periods. Margins were stable, while operating cash flow was positive but free cash flow remained modest relative to debt.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The valuation appears reasonable, with a trailing P/E near 15 and modest price-to-sales and price-to-book ratios. It is supportive of the setup but does not provide a clear valuation-driven catalyst.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing and event risk. Forward estimates are rising, with revenue and EPS expectations higher for 2028 than 2027, but the latest forecast has limited analyst coverage.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: Industry strength is supportive and currently outweighs weakness across the broader consumer-cyclical sector.\n🧠 Macro: Risk-on conditions and low volatility help, but elevated yields and a seasonal cycle headwind keep macro support limited.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strong and resembles a high-quality pullback continuation, reinforced by substantial relative strength and an industry that is outperforming its sector. Fundamental results are constructive through repeated EPS beats, but flat reported growth, limited earnings-date visibility, mixed analyst conviction, and elevated-rate exposure temper the broader confirmation.\n🟢 Key Positive: Strong trend quality, repeated EPS beats, rising forward estimates, and supportive industry momentum favor continuation.\n🔴 Key Risk: Flat reported growth, modest free cash flow relative to debt, unknown earnings timing, and elevated yields could weaken follow-through.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
