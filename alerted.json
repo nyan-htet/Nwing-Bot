@@ -89,29 +89,11 @@
     "thesis_warned": false,
     "tp": 30.46
   },
-  "RUSHA": {
-    "alerted": "2026-09-07T14:18:49.405608+00:00",
-    "entry": 50.99,
-    "thesis_warned": false,
-    "tp": 63.01
-  },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
     "scans_muted": 8,
     "thesis_warned": false,
     "tp": 429.71
-  },
-  "WMB": {
-    "alerted": "2026-09-07T14:18:49.728012+00:00",
-    "entry": 74.19,
-    "thesis_warned": false,
-    "tp": 86.71
-  },
-  "XES": {
-    "alerted": "2026-09-07T14:18:49.757418+00:00",
-    "entry": 122.46,
-    "thesis_warned": false,
-    "tp": 141.83
   }
 }
