@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T19:59:02.381210+00:00",
+  "generated": "2026-09-07T22:51:42.692947+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 8.1
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-07T19:58:47.309170+00:00"
+      "time": "2026-09-07T22:51:30.413344+00:00"
     },
     {
       "ticker": "WMB",
@@ -116,7 +116,7 @@
         "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.8)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-07T19:58:47.599774+00:00"
+      "time": "2026-09-07T22:51:30.696637+00:00"
     },
     {
       "ticker": "XES",
@@ -169,7 +169,7 @@
         "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=55.6)",
         "(energy-services)"
       ],
-      "time": "2026-09-07T19:58:47.626115+00:00"
+      "time": "2026-09-07T22:51:30.722241+00:00"
     }
   ],
   "position_alerts": []
