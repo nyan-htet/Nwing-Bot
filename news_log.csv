@@ -455,3 +455,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-08 12:55 UTC,XES,openai,True,0,0,NO_NEWS,mixed,pullback continuation,50
 2026-09-08 12:55 UTC,WMB,openai,True,3,2,OK,mixed,pullback continuation,56
 2026-09-08 12:55 UTC,RUSHA,openai,True,3,0,NO_NEWS,supportive,pullback continuation,64
+2026-09-09 04:39 UTC,SRRK,openai,True,3,1,OK,mixed,pullback continuation,42
+2026-09-09 04:39 UTC,SAIC,openai,True,3,1,OK,mixed,pullback continuation,55

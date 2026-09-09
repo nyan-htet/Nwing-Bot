@@ -90,18 +90,6 @@
     "thesis_warned": false,
     "tp": 30.46
   },
-  "SAIC": {
-    "alerted": "2026-09-09T04:38:33.990211+00:00",
-    "entry": 127.67,
-    "thesis_warned": false,
-    "tp": 157.47
-  },
-  "SRRK": {
-    "alerted": "2026-09-09T04:38:34.065838+00:00",
-    "entry": 57.48,
-    "thesis_warned": false,
-    "tp": 68.01
-  },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
