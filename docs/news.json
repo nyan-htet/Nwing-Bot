@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09 04:39 UTC",
+  "generated": "2026-09-09 13:00 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "SRRK",
       "alert": {
-        "alerted": "2026-09-09T04:38:34.065838+00:00",
+        "alerted": "2026-09-09T12:59:36.790503+00:00",
         "entry": 57.48,
         "thesis_warned": false,
         "tp": 68.01
@@ -70,7 +70,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-09T04:38:34.065805+00:00"
+        "time": "2026-09-09T12:59:36.790468+00:00"
       },
       "profile": {
         "symbol": "SRRK",
@@ -82,7 +82,7 @@
         "change": 2.09,
         "changePercentage": 3.77734,
         "volume": 1660828,
-        "averageVolume": 1286435,
+        "averageVolume": 1287339,
         "companyName": "Scholar Rock Holding Corporation",
         "currency": "USD",
         "cik": "0001727196",
@@ -171,7 +171,7 @@
           "epsEstimated": -0.87,
           "revenueActual": null,
           "revenueEstimated": 75000,
-          "lastUpdated": "2026-09-08"
+          "lastUpdated": "2026-09-09"
         },
         "estimates": [
           {
@@ -358,17 +358,10 @@
           "netCurrentAssetValueTTM": 237424000
         }
       },
-      "news": [
-        {
-          "date": "2026-09-07 10:23 UTC",
-          "title": "Scholar Rock: Manufacturing Noise Obscures A Muscle-Targeted Franchise",
-          "site": "seekingalpha.com",
-          "text": "Scholar Rock is positioned to launch apitegromab as the first muscle-targeted therapy for SMA, pending FDA approval by September 30, 2026. Manufacturing setbacks were production-based, not due to drug efficacy or safety; the alternate fill-finish facility mitigates approval risk but does not eliminate it. SAPPHIRE trial data support apitegromab's add-on value in SMA, showing statistically significant motor function gains over placebo for nonambulatory patients."
-        }
-      ],
+      "news": [],
       "news_diag": {
-        "status": "OK",
-        "message": "1 usable article(s)"
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
       },
       "sector": {
         "sector": "Healthcare",
@@ -377,13 +370,13 @@
           "date": "2026-09-09",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": -0.8536294014863666
+          "averageChange": -0.8536352231430788
         },
         "industry_snapshot": {
           "date": "2026-09-09",
           "industry": "Biotechnology",
           "exchange": "NASDAQ",
-          "averageChange": 0.22690775270799435
+          "averageChange": 0.22690798670872425
         }
       },
       "macro": {
@@ -487,14 +480,14 @@
           {
             "date": "2026-09-09 01:30:00",
             "country": "CN",
-            "event": "Producer Price Index YoY (Aug)",
+            "event": "Inflation Rate MoM (Aug)",
             "currency": "CNY",
-            "previous": 3.5,
-            "estimate": 3.7,
-            "actual": 3.8,
-            "change": 0.3,
+            "previous": -0.1,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.5,
             "impact": "Medium",
-            "changePercentage": 8.571,
+            "changePercentage": 500,
             "unit": "%"
           },
           {
@@ -513,14 +506,14 @@
           {
             "date": "2026-09-09 01:30:00",
             "country": "CN",
-            "event": "Inflation Rate MoM (Aug)",
+            "event": "Producer Price Index YoY (Aug)",
             "currency": "CNY",
-            "previous": -0.1,
-            "estimate": 0.3,
-            "actual": 0.4,
-            "change": 0.5,
+            "previous": 3.5,
+            "estimate": 3.7,
+            "actual": 3.8,
+            "change": 0.3,
             "impact": "Medium",
-            "changePercentage": 500,
+            "changePercentage": 8.571,
             "unit": "%"
           },
           {
@@ -551,19 +544,6 @@
           },
           {
             "date": "2026-09-09 03:00:00",
-            "country": "ID",
-            "event": "Consumer Confidence (Aug)",
-            "currency": "IDR",
-            "previous": 116.8,
-            "estimate": 117,
-            "actual": 118.5,
-            "change": 1.7,
-            "impact": "Low",
-            "changePercentage": 1.455,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-09 03:00:00",
             "country": "BD",
             "event": "Inflation Rate MoM (Aug)",
             "currency": "BDT",
@@ -573,6 +553,19 @@
             "change": 0.87,
             "impact": "Low",
             "changePercentage": 60.417,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-09 03:00:00",
+            "country": "ID",
+            "event": "Consumer Confidence (Aug)",
+            "currency": "IDR",
+            "previous": 116.8,
+            "estimate": 117,
+            "actual": 118.5,
+            "change": 1.7,
+            "impact": "Low",
+            "changePercentage": 1.455,
             "unit": "%"
           },
           {
@@ -605,25 +598,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a strong uptrend rather than a fresh breakout. Rising RSI, reclaimed VWAP, bullish EMA alignment, strong ADX, and relative outperformance support continuation, though proximity to the 52-week high can increase volatility.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a strong uptrend, with price above rising long-term moving averages and a 5/5 trend score. Reclaimed VWAP, rising RSI, contracting bands, and relative outperformance support continuation, though the stock is near its 52-week high.",
         "financial_assessment": "negative",
-        "financial_interpretation": "The last three reports show persistent large losses, no reported revenue, and negative operating and free cash flow. EPS was broadly in line with estimates, but the company remains dependent on cash reserves and future commercialization.",
+        "financial_interpretation": "The last three results show persistent losses, no reported revenue, and essentially flat net income, with only negligible EPS surprises. Negative operating and free cash flow indicate ongoing cash burn despite a reported cash balance exceeding debt.",
         "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings report is expected on November 13, with another projected loss and a small revenue estimate, creating event risk beyond the scanner window. Longer-term forecasts imply a substantial revenue ramp and eventual profitability, but those expectations remain execution-dependent.",
+        "earnings_interpretation": "The next earnings report is expected on November 13, with another projected EPS loss and a very small revenue estimate, creating event risk beyond the scan horizon. Longer-range estimates imply a potential revenue ramp and eventual profitability, but those expectations remain distant.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "All 12 recorded analysts rate the stock Buy, while longer-term revenue estimates rise materially and EPS expectations move from losses toward profitability.",
+        "analyst_interpretation": "All 12 recorded analyst ratings are Buy, and longer-range estimates point to sharply higher revenue with a projected shift from losses to profit.",
         "valuation_assessment": "very_expensive",
-        "valuation_interpretation": "Negative earnings and no reported trailing sales make conventional earnings or sales valuation supportive metrics unavailable. A price-to-book ratio near 30 leaves little margin for disappointment and reflects substantial expectations for future commercialization.",
-        "news_assessment": "mixed",
-        "news_interpretation": "Apitegromab has supportive efficacy data and manufacturing issues were reportedly addressed through an alternate facility. However, FDA approval remains pending and the manufacturing risk is reduced rather than eliminated.",
-        "sector_assessment": "neutral",
-        "sector_interpretation": "Biotech performance is modestly supportive, but broader healthcare weakness limits sector confirmation.",
+        "valuation_interpretation": "Valuation is a headwind: the company has a negative P/E, no reported trailing sales, and a very high price-to-book ratio. This leaves the stock dependent on successful future growth and execution rather than current fundamentals.",
+        "news_assessment": "no_recent_news",
+        "news_interpretation": "No usable recent company-specific news was provided, so there is no identified catalyst or headline risk to reinforce the setup.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "Biotechnology performance is modestly supportive, although broader healthcare weakness limits the sector tailwind.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated yields and a seasonally unfavorable market cycle can pressure high-risk, long-duration biotech shares despite currently neutral overall volatility.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical setup is strongly constructive, with a high-quality pullback inside a confirmed uptrend and meaningful relative strength. Fundamental support is mainly catalyst-driven: potential FDA approval and projected commercialization help, but ongoing losses, cash burn, expensive valuation, and manufacturing or regulatory risk warrant caution.",
-        "key_positive": "Strong trend structure is reinforced by positive analyst sentiment and a potentially important near-term approval catalyst.",
-        "key_risk": "The stock remains highly dependent on FDA and manufacturing execution while carrying negative earnings, cash burn, and a demanding valuation.",
+        "macro_interpretation": "Elevated longer-term yields and a seasonally unfavorable market cycle can pressure speculative, cash-burning biotechnology shares despite otherwise neutral volatility.",
+        "overall_assessment": "caution",
+        "overall_summary": "The technical signal is strong and resembles a bullish pullback continuation, reinforced by outperformance and defensive buying behavior. However, persistent losses, cash burn, expensive valuation, and limited near-term earnings support make the fundamental backdrop weak and increase sensitivity to sentiment or a failed continuation.",
+        "key_positive": "Strong trend structure, improving momentum, and unanimous Buy ratings support the technical continuation case.",
+        "key_risk": "The stock lacks current revenue and profitability, while high valuation and upcoming earnings uncertainty leave substantial downside if growth expectations weaken.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -634,17 +627,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2966
+          "chars": 2872
         }
       ],
       "is_etf": false,
-      "buy_confidence": 42,
-      "report": "🟡 SRRK — Scholar Rock Holding Corporation\nEntry: $57.48\neToro TP Value: $45.81\nShares: 4.35 ($250)\nScanner Potential: +18.3%\nTimeframe: 12–36 days\n\n═══ BUY CONFIDENCE: 42% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 12 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All 12 recorded analysts rate the stock Buy, while longer-term revenue estimates rise materially and EPS expectations move from losses toward profitability.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong uptrend rather than a fresh breakout. Rising RSI, reclaimed VWAP, bullish EMA alignment, strong ADX, and relative outperformance support continuation, though proximity to the 52-week high can increase volatility.\n🕒 Technical timestamp: 2026-09-09 04:38:34 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 The last three reports show persistent large losses, no reported revenue, and negative operating and free cash flow. EPS was broadly in line with estimates, but the company remains dependent on cash reserves and future commercialization.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Negative earnings and no reported trailing sales make conventional earnings or sales valuation supportive metrics unavailable. A price-to-book ratio near 30 leaves little margin for disappointment and reflects substantial expectations for future commercialization.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-13 (+65 days)\n🟡 Mixed\n🧠 The next earnings report is expected on November 13, with another projected loss and a small revenue estimate, creating event risk beyond the scanner window. Longer-term forecasts imply a substantial revenue ramp and eventual profitability, but those expectations remain execution-dependent.\n\n═══ RECENT NEWS ═══\n• 2026-09-07 10:23 UTC — Scholar Rock: Manufacturing Noise Obscures A Muscle-Targeted Franchise\n🟡 Apitegromab has supportive efficacy data and manufacturing issues were reportedly addressed through an alternate facility. However, FDA approval remains pending and the manufacturing risk is reduced rather than eliminated.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: Biotech performance is modestly supportive, but broader healthcare weakness limits sector confirmation.\n🧠 Macro: Elevated yields and a seasonally unfavorable market cycle can pressure high-risk, long-duration biotech shares despite currently neutral overall volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical setup is strongly constructive, with a high-quality pullback inside a confirmed uptrend and meaningful relative strength. Fundamental support is mainly catalyst-driven: potential FDA approval and projected commercialization help, but ongoing losses, cash burn, expensive valuation, and manufacturing or regulatory risk warrant caution.\n🟢 Key Positive: Strong trend structure is reinforced by positive analyst sentiment and a potentially important near-term approval catalyst.\n🔴 Key Risk: The stock remains highly dependent on FDA and manufacturing execution while carrying negative earnings, cash burn, and a demanding valuation.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 40,
+      "report": "🟡 SRRK — Scholar Rock Holding Corporation\nEntry: $57.48\neToro TP Value: $45.81\nShares: 4.35 ($250)\nScanner Potential: +18.3%\nTimeframe: 12–36 days\n\n═══ BUY CONFIDENCE: 40% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 12 | Hold: 0 | Sell: 0 | Strong Sell: 0\n🧠 All 12 recorded analyst ratings are Buy, and longer-range estimates point to sharply higher revenue with a projected shift from losses to profit.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong uptrend, with price above rising long-term moving averages and a 5/5 trend score. Reclaimed VWAP, rising RSI, contracting bands, and relative outperformance support continuation, though the stock is near its 52-week high.\n🕒 Technical timestamp: 2026-09-09 12:59:36 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 The last three results show persistent losses, no reported revenue, and essentially flat net income, with only negligible EPS surprises. Negative operating and free cash flow indicate ongoing cash burn despite a reported cash balance exceeding debt.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Valuation is a headwind: the company has a negative P/E, no reported trailing sales, and a very high price-to-book ratio. This leaves the stock dependent on successful future growth and execution rather than current fundamentals.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-13 (+65 days)\n🟡 Mixed\n🧠 The next earnings report is expected on November 13, with another projected EPS loss and a very small revenue estimate, creating event risk beyond the scan horizon. Longer-range estimates imply a potential revenue ramp and eventual profitability, but those expectations remain distant.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Biotechnology performance is modestly supportive, although broader healthcare weakness limits the sector tailwind.\n🧠 Macro: Elevated longer-term yields and a seasonally unfavorable market cycle can pressure speculative, cash-burning biotechnology shares despite otherwise neutral volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Caution\n🧠 The technical signal is strong and resembles a bullish pullback continuation, reinforced by outperformance and defensive buying behavior. However, persistent losses, cash burn, expensive valuation, and limited near-term earnings support make the fundamental backdrop weak and increase sensitivity to sentiment or a failed continuation.\n🟢 Key Positive: Strong trend structure, improving momentum, and unanimous Buy ratings support the technical continuation case.\n🔴 Key Risk: The stock lacks current revenue and profitability, while high valuation and upcoming earnings uncertainty leave substantial downside if growth expectations weaken.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "SAIC",
       "alert": {
-        "alerted": "2026-09-09T04:38:33.990211+00:00",
+        "alerted": "2026-09-09T12:59:36.724799+00:00",
         "entry": 127.67,
         "thesis_warned": false,
         "tp": 157.47
@@ -702,7 +695,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-09T04:38:33.990182+00:00"
+        "time": "2026-09-09T12:59:36.724765+00:00"
       },
       "profile": {
         "symbol": "SAIC",
@@ -802,43 +795,43 @@
           "epsActual": null,
           "epsEstimated": 2.35,
           "revenueActual": null,
-          "revenueEstimated": 1814696000,
-          "lastUpdated": "2026-09-08"
+          "revenueEstimated": 1813867000,
+          "lastUpdated": "2026-09-09"
         },
         "estimates": [
           {
             "date": "2029-01-30",
             "period": null,
-            "revenue_avg": 7524659452.0,
-            "eps_avg": 12.88834,
-            "revenue_low": 7464977311.0,
-            "revenue_high": 7584341593.0,
-            "eps_low": 11.98059,
-            "eps_high": 13.77708,
+            "revenue_avg": 7569066023.0,
+            "eps_avg": 13.07263,
+            "revenue_low": 7487180596.0,
+            "revenue_high": 7650951449.0,
+            "eps_low": 12.1519,
+            "eps_high": 13.97408,
             "num_analysts_revenue": 6,
             "num_analysts_eps": 4
           },
           {
             "date": "2028-01-30",
             "period": null,
-            "revenue_avg": 7378475850.0,
-            "eps_avg": 11.3888,
-            "revenue_low": 7288249922.0,
-            "revenue_high": 7428601365.0,
-            "eps_low": 10.84849,
-            "eps_high": 11.81257,
+            "revenue_avg": 7397157294.0,
+            "eps_avg": 11.48435,
+            "revenue_low": 7306702924.0,
+            "revenue_high": 7447409721.0,
+            "eps_low": 10.93951,
+            "eps_high": 11.91167,
             "num_analysts_revenue": 7,
             "num_analysts_eps": 6
           },
           {
             "date": "2027-01-30",
             "period": null,
-            "revenue_avg": 7285872700.0,
-            "eps_avg": 10.75584,
-            "revenue_low": 7175022631.0,
-            "revenue_high": 7356413652.0,
-            "eps_low": 9.66256,
-            "eps_high": 11.20357,
+            "revenue_avg": 7297445000.0,
+            "eps_avg": 10.81384,
+            "revenue_low": 7186418865.0,
+            "revenue_high": 7368097994.0,
+            "eps_low": 9.71466,
+            "eps_high": 11.26398,
             "num_analysts_revenue": 7,
             "num_analysts_eps": 7
           },
@@ -849,8 +842,8 @@
             "eps_avg": 10.09229,
             "revenue_low": 7257096332.0,
             "revenue_high": 7287084333.0,
-            "eps_low": 9.86341,
-            "eps_high": 10.28495,
+            "eps_low": 9.93775,
+            "eps_high": 10.2712,
             "num_analysts_revenue": 3,
             "num_analysts_eps": 4
           }
@@ -868,14 +861,14 @@
         },
         "estimate_direction": {
           "revenueAvg": {
-            "latest": 7524659452,
-            "prior": 7378475850,
-            "change": 0.019812167847645723
+            "latest": 7569066023,
+            "prior": 7397157294,
+            "change": 0.023239836895105448
           },
           "epsAvg": {
-            "latest": 12.88834,
-            "prior": 11.3888,
-            "change": 0.13166795448159596
+            "latest": 13.07263,
+            "prior": 11.48435,
+            "change": 0.13829951194451584
           }
         }
       },
@@ -901,7 +894,7 @@
           "cashRatioTTM": 0.11864406779661017,
           "priceToEarningsRatioTTM": 14.77983777520278,
           "priceToEarningsGrowthRatioTTM": 3.9667177512802265,
-          "forwardPriceToEarningsGrowthRatioTTM": 2.51152632608754,
+          "forwardPriceToEarningsGrowthRatioTTM": 2.3836602127783197,
           "priceToEarningsDilutedRatioTTM": 14.91812865497076,
           "priceToEarningsDilutedGrowthRatioTTM": 4.249094575519281,
           "priceToBookRatioTTM": 3.7661002785515323,
@@ -992,6 +985,12 @@
       },
       "news": [
         {
+          "date": "2026-09-09 03:59 UTC",
+          "title": "Comparing TriNet Group (NYSE:TNET) & Science Applications International (NASDAQ:SAIC)",
+          "site": "defenseworld.net",
+          "text": "Science Applications International (NASDAQ: SAIC - Get Free Report) and TriNet Group (NYSE: TNET - Get Free Report) are both mid-cap industrials companies, but which is the superior stock? We will compare the two companies based on the strength of their profitability, valuation, dividends, earnings, institutional ownership, analyst recommendations and risk. Institutional and Insider Ownership 76.0% of"
+        },
+        {
           "date": "2026-09-08 03:54 UTC",
           "title": "Public Employees Retirement System of Ohio Acquires New Holdings in Science Applications International Corporation $SAIC",
           "site": "defenseworld.net",
@@ -1000,7 +999,7 @@
       ],
       "news_diag": {
         "status": "OK",
-        "message": "1 usable article(s)"
+        "message": "2 usable article(s)"
       },
       "sector": {
         "sector": "Technology",
@@ -1009,7 +1008,7 @@
           "date": "2026-09-09",
           "sector": "Technology",
           "exchange": "NASDAQ",
-          "averageChange": -0.6092138233292688
+          "averageChange": -0.6092138233293021
         },
         "industry_snapshot": {
           "date": "2026-09-09",
@@ -1119,14 +1118,14 @@
           {
             "date": "2026-09-09 01:30:00",
             "country": "CN",
-            "event": "Producer Price Index YoY (Aug)",
+            "event": "Inflation Rate MoM (Aug)",
             "currency": "CNY",
-            "previous": 3.5,
-            "estimate": 3.7,
-            "actual": 3.8,
-            "change": 0.3,
+            "previous": -0.1,
+            "estimate": 0.3,
+            "actual": 0.4,
+            "change": 0.5,
             "impact": "Medium",
-            "changePercentage": 8.571,
+            "changePercentage": 500,
             "unit": "%"
           },
           {
@@ -1145,14 +1144,14 @@
           {
             "date": "2026-09-09 01:30:00",
             "country": "CN",
-            "event": "Inflation Rate MoM (Aug)",
+            "event": "Producer Price Index YoY (Aug)",
             "currency": "CNY",
-            "previous": -0.1,
-            "estimate": 0.3,
-            "actual": 0.4,
-            "change": 0.5,
+            "previous": 3.5,
+            "estimate": 3.7,
+            "actual": 3.8,
+            "change": 0.3,
             "impact": "Medium",
-            "changePercentage": 500,
+            "changePercentage": 8.571,
             "unit": "%"
           },
           {
@@ -1183,19 +1182,6 @@
           },
           {
             "date": "2026-09-09 03:00:00",
-            "country": "ID",
-            "event": "Consumer Confidence (Aug)",
-            "currency": "IDR",
-            "previous": 116.8,
-            "estimate": 117,
-            "actual": 118.5,
-            "change": 1.7,
-            "impact": "Low",
-            "changePercentage": 1.455,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-09 03:00:00",
             "country": "BD",
             "event": "Inflation Rate MoM (Aug)",
             "currency": "BDT",
@@ -1205,6 +1191,19 @@
             "change": 0.87,
             "impact": "Low",
             "changePercentage": 60.417,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-09 03:00:00",
+            "country": "ID",
+            "event": "Consumer Confidence (Aug)",
+            "currency": "IDR",
+            "previous": 116.8,
+            "estimate": 117,
+            "actual": 118.5,
+            "change": 1.7,
+            "impact": "Low",
+            "changePercentage": 1.455,
             "unit": "%"
           },
           {
@@ -1237,25 +1236,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend, with price above rising longer-term EMAs and having reclaimed VWAP. Moderate RSI and contracting bands support room for continuation, though the bearish divergence warrants monitoring.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend, with price above rising long-term EMAs and buyers reclaiming VWAP. Contracting bands and moderate RSI support continuation, although the bearish RSI divergence warrants caution.",
         "financial_assessment": "positive",
-        "financial_interpretation": "The last three reports all beat EPS estimates, with surprises accelerating from 13.4% to over 30%, while reported margins remained positive. Revenue and net income appear flat in the supplied periods, but operating cash flow and free cash flow provide support despite substantial debt.",
+        "financial_interpretation": "The last three reports all beat EPS estimates, with surprises accelerating from 13.4% to 41.7% and then 30.3%, while reported margins remain positive. Revenue and net income were flat across the supplied periods, and positive free cash flow is tempered by substantial debt.",
         "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings report is 85 days away, limiting immediate event risk, but the next revenue estimate is below the latest reported figure. Longer-range EPS and revenue estimates have been revised upward, which is supportive but does not remove the next-report uncertainty.",
+        "earnings_interpretation": "Next earnings are scheduled in 85 days, outside most of the scanner window, but the next estimates imply lower EPS and revenue than the latest reported figures. Longer-term analyst EPS and revenue estimates have been raised, providing some support but not eliminating event risk.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "The consensus is Hold with more buys than sells, while forward EPS and revenue estimates have risen, suggesting improving expectations without strong analyst conviction.",
+        "analyst_interpretation": "Ratings are concentrated around Hold, but forward revenue and EPS estimates have improved meaningfully.",
         "valuation_assessment": "reasonable",
-        "valuation_interpretation": "A trailing P/E near 15 and price-to-sales ratio below 1 appear broadly supportive rather than demanding. The elevated debt load and limited reported revenue growth temper the valuation case.",
+        "valuation_interpretation": "The trailing P/E near 15 and low price-to-sales ratio do not indicate an excessive valuation. However, the debt burden limits how strongly valuation can support the setup.",
         "news_assessment": "no_major_risk",
-        "news_interpretation": "Recent news is limited to a public pension fund establishing a modest stake, which is mildly constructive but not a major catalyst. No meaningful company-specific negative development was supplied.",
+        "news_interpretation": "Recent coverage is routine comparison and institutional-ownership news, with no material negative company-specific catalyst or clear near-term catalyst reported.",
         "sector_assessment": "headwind",
-        "sector_interpretation": "Recent weakness across the broader technology group, especially its services segment, modestly weakens the setup.",
+        "sector_interpretation": "Recent weakness in the broader technology group and especially the relevant industry weakens the setup despite SAIC's relative strength.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated longer-term yields and an unfavorable seasonal cycle create a modest macro headwind, although current volatility and overall risk conditions are not extreme.",
+        "macro_interpretation": "Elevated Treasury yields and a seasonally unfavorable cycle create a modest risk headwind, while overall volatility remains manageable.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported by a strong uptrend, repeated earnings beats, reasonable valuation, and positive cash generation. However, flat reported growth, heavy debt, weaker industry momentum, elevated yields, and a bearish RSI divergence argue for caution rather than an unqualified fundamental confirmation.",
-        "key_positive": "Strong recent EPS surprises and a defended pullback within a high-quality long-term uptrend are the main supports.",
-        "key_risk": "The key risk is that weak sector momentum and limited revenue growth undermine continuation before the next earnings catalyst.",
+        "overall_summary": "The technical signal is well supported by a strong uptrend, recent earnings beats, improving forward estimates, and reasonable valuation. Flat reported revenue, high debt, sector weakness, elevated yields, and bearish RSI divergence argue for caution rather than an unqualified confirmation.",
+        "key_positive": "Strong trend structure and repeated EPS beats provide the clearest support.",
+        "key_risk": "Sector weakness and high debt could amplify a reversal if the pullback loses technical support.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1266,12 +1265,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2872
+          "chars": 2629
         }
       ],
       "is_etf": false,
       "buy_confidence": 55,
-      "report": "🟡 SAIC — Science Applications International Corporation\nEntry: $127.67\neToro TP Value: $58.41\nShares: 1.96 ($250)\nScanner Potential: +23.3%\nTimeframe: 15–45 days\n\n═══ BUY CONFIDENCE: 55% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 8 | Hold: 9 | Sell: 1 | Strong Sell: 0\n🧠 The consensus is Hold with more buys than sells, while forward EPS and revenue estimates have risen, suggesting improving expectations without strong analyst conviction.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend, with price above rising longer-term EMAs and having reclaimed VWAP. Moderate RSI and contracting bands support room for continuation, though the bearish divergence warrants monitoring.\n🕒 Technical timestamp: 2026-09-09 04:38:33 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all beat EPS estimates, with surprises accelerating from 13.4% to over 30%, while reported margins remained positive. Revenue and net income appear flat in the supplied periods, but operating cash flow and free cash flow provide support despite substantial debt.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 15 and price-to-sales ratio below 1 appear broadly supportive rather than demanding. The elevated debt load and limited reported revenue growth temper the valuation case.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-12-03 (+85 days)\n🟡 Mixed\n🧠 The next earnings report is 85 days away, limiting immediate event risk, but the next revenue estimate is below the latest reported figure. Longer-range EPS and revenue estimates have been revised upward, which is supportive but does not remove the next-report uncertainty.\n\n═══ RECENT NEWS ═══\n• 2026-09-08 03:54 UTC — Public Employees Retirement System of Ohio Acquires New Holdings in Science Applications International Corporation $SAIC\n⚪ Recent news is limited to a public pension fund establishing a modest stake, which is mildly constructive but not a major catalyst. No meaningful company-specific negative development was supplied.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent weakness across the broader technology group, especially its services segment, modestly weakens the setup.\n🧠 Macro: Elevated longer-term yields and an unfavorable seasonal cycle create a modest macro headwind, although current volatility and overall risk conditions are not extreme.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong uptrend, repeated earnings beats, reasonable valuation, and positive cash generation. However, flat reported growth, heavy debt, weaker industry momentum, elevated yields, and a bearish RSI divergence argue for caution rather than an unqualified fundamental confirmation.\n🟢 Key Positive: Strong recent EPS surprises and a defended pullback within a high-quality long-term uptrend are the main supports.\n🔴 Key Risk: The key risk is that weak sector momentum and limited revenue growth undermine continuation before the next earnings catalyst.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 SAIC — Science Applications International Corporation\nEntry: $127.67\neToro TP Value: $58.41\nShares: 1.96 ($250)\nScanner Potential: +23.3%\nTimeframe: 15–45 days\n\n═══ BUY CONFIDENCE: 55% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 8 | Hold: 9 | Sell: 1 | Strong Sell: 0\n🧠 Ratings are concentrated around Hold, but forward revenue and EPS estimates have improved meaningfully.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend, with price above rising long-term EMAs and buyers reclaiming VWAP. Contracting bands and moderate RSI support continuation, although the bearish RSI divergence warrants caution.\n🕒 Technical timestamp: 2026-09-09 12:59:36 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all beat EPS estimates, with surprises accelerating from 13.4% to 41.7% and then 30.3%, while reported margins remain positive. Revenue and net income were flat across the supplied periods, and positive free cash flow is tempered by substantial debt.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The trailing P/E near 15 and low price-to-sales ratio do not indicate an excessive valuation. However, the debt burden limits how strongly valuation can support the setup.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-12-03 (+85 days)\n🟡 Mixed\n🧠 Next earnings are scheduled in 85 days, outside most of the scanner window, but the next estimates imply lower EPS and revenue than the latest reported figures. Longer-term analyst EPS and revenue estimates have been raised, providing some support but not eliminating event risk.\n\n═══ RECENT NEWS ═══\n• 2026-09-09 03:59 UTC — Comparing TriNet Group (NYSE:TNET) & Science Applications International (NASDAQ:SAIC)\n• 2026-09-08 03:54 UTC — Public Employees Retirement System of Ohio Acquires New Holdings in Science Applications International Corporation $SAIC\n⚪ Recent coverage is routine comparison and institutional-ownership news, with no material negative company-specific catalyst or clear near-term catalyst reported.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent weakness in the broader technology group and especially the relevant industry weakens the setup despite SAIC's relative strength.\n🧠 Macro: Elevated Treasury yields and a seasonally unfavorable cycle create a modest risk headwind, while overall volatility remains manageable.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong uptrend, recent earnings beats, improving forward estimates, and reasonable valuation. Flat reported revenue, high debt, sector weakness, elevated yields, and bearish RSI divergence argue for caution rather than an unqualified confirmation.\n🟢 Key Positive: Strong trend structure and repeated EPS beats provide the clearest support.\n🔴 Key Risk: Sector weakness and high debt could amplify a reversal if the pullback loses technical support.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
