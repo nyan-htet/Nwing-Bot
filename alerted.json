@@ -30,7 +30,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 26,
+    "scans_muted": 27,
     "thesis_warned": false,
     "tp": 115.57
   },
@@ -58,7 +58,7 @@
   "KRT": {
     "alerted": "2026-08-21T01:58:11.337366+00:00",
     "entry": 47.57,
-    "scans_muted": 28,
+    "scans_muted": 29,
     "thesis_warned": false,
     "tp": 58.66
   },
@@ -72,7 +72,7 @@
   "PAGP": {
     "alerted": "2026-09-07T14:18:49.295736+00:00",
     "entry": 27.91,
-    "scans_muted": 9,
+    "scans_muted": 10,
     "thesis_warned": false,
     "tp": 32.53
   },

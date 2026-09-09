@@ -1,13 +1,13 @@
 {
-  "generated": "2026-09-09T19:27:58.917673+00:00",
+  "generated": "2026-09-09T22:34:35.689815+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 8.3
+    "vol": 8.4
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.8% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
   },
   "signals": [],
   "position_alerts": []
