@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T04:38:32.023661+00:00",
+  "generated": "2026-09-10T12:56:59.319814+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 8.4
@@ -62,7 +62,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-10T04:38:11.358028+00:00"
+      "time": "2026-09-10T12:56:38.492557+00:00"
     },
     {
       "ticker": "SLAB",
@@ -116,7 +116,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-10T04:38:11.570355+00:00"
+      "time": "2026-09-10T12:56:38.705482+00:00"
     }
   ],
   "position_alerts": []

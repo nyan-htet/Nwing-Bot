@@ -23,14 +23,14 @@
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "thesis_warned": false,
     "tp": 27.91
   },
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 28,
+    "scans_muted": 29,
     "thesis_warned": false,
     "tp": 115.57
   },
@@ -40,6 +40,12 @@
     "scans_muted": 17,
     "thesis_warned": false,
     "tp": 99.56
+  },
+  "IBRX": {
+    "alerted": "2026-09-10T12:56:38.492592+00:00",
+    "entry": 8.08,
+    "thesis_warned": false,
+    "tp": 8.76
   },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
@@ -89,6 +95,12 @@
     "scans_muted": 28,
     "thesis_warned": false,
     "tp": 30.46
+  },
+  "SLAB": {
+    "alerted": "2026-09-10T12:56:38.705516+00:00",
+    "entry": 219.89,
+    "thesis_warned": false,
+    "tp": 240.68
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
