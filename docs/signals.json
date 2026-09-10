@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T19:19:57.279779+00:00",
+  "generated": "2026-09-10T22:36:07.040565+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 8.5
@@ -10,8 +10,5 @@
     "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.4% (informative only)"
   },
   "signals": [],
-  "position_alerts": [
-    "\u26a0\ufe0f JCI thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $142.65, signalled at $153.93, -7.3%, target $176.31). The reason for the signal is gone. Your call.",
-    "\u26a0\ufe0f RELY thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $22.34, signalled at $24.70, -9.6%, target $30.46). The reason for the signal is gone. Your call."
-  ]
+  "position_alerts": []
 }
