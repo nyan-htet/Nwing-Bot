@@ -1,123 +1,17 @@
 {
-  "generated": "2026-09-10T12:56:59.319814+00:00",
+  "generated": "2026-09-10T19:19:57.279779+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 8.4
+    "vol": 8.5
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.4% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "IBRX",
-      "name": "ImmunityBio, Inc.",
-      "setup": "pullback",
-      "entry": 8.08,
-      "tp": 8.76,
-      "tp_pct": 0.08415841584158423,
-      "shares": 30.94,
-      "value": 249.9952,
-      "pl_amount": 21.04,
-      "eta_days_low": 4,
-      "eta_days_high": 12,
-      "fee_pct": 0.09506064869386673,
-      "trend_score": 4,
-      "adx": 32.1,
-      "rs": 0.106,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 3,
-      "ema20": 7.96,
-      "ema50": 7.81,
-      "ema200": 6.67,
-      "above_ema200": true,
-      "quality": 0.78,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 0.3,
-        "volume": 0.5,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 51.9 flat",
-        "bollinger": "band position 46%, contracting",
-        "vwap": "just above VWAP",
-        "volume": "1.5x average, surging",
-        "extension": "+0.1 ATR from 20 EMA, slope +1.2%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 51.9,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.78 (rsi +1.0, bb +1.0, vwap +0.3, vol +0.5, opt +0.0; RSI=51.9)",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-09-10T12:56:38.492557+00:00"
-    },
-    {
-      "ticker": "SLAB",
-      "name": "Silicon Laboratories Inc.",
-      "setup": "pullback",
-      "entry": 219.89,
-      "tp": 240.68,
-      "tp_pct": 0.09454727363681847,
-      "shares": 1.14,
-      "value": 250.67459999999997,
-      "pl_amount": 23.7,
-      "eta_days_low": 46,
-      "eta_days_high": 138,
-      "fee_pct": 0.08438604929832992,
-      "trend_score": 4,
-      "adx": 42.0,
-      "rs": -0.042,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 38,
-      "ema20": 219.24,
-      "ema50": 218.31,
-      "ema200": 197.81,
-      "above_ema200": true,
-      "quality": 0.75,
-      "q_detail": {
-        "rsi": 0.6,
-        "bollinger": 1.0,
-        "vwap": 0.3,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 55.9 falling",
-        "bollinger": "band position 64%, expanding",
-        "vwap": "just above VWAP",
-        "volume": "0.8x average, drying up",
-        "extension": "+0.4 ATR from 20 EMA, slope +0.4%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 55.9,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.75 (rsi +0.6, bb +1.0, vwap +0.3, vol +1.0, opt +0.0; RSI=55.9)",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-09-10T12:56:38.705482+00:00"
-    }
-  ],
-  "position_alerts": []
+  "signals": [],
+  "position_alerts": [
+    "\u26a0\ufe0f JCI thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $142.65, signalled at $153.93, -7.3%, target $176.31). The reason for the signal is gone. Your call.",
+    "\u26a0\ufe0f RELY thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $22.34, signalled at $24.70, -9.6%, target $30.46). The reason for the signal is gone. Your call."
+  ]
 }
