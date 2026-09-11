@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T22:36:07.040565+00:00",
+  "generated": "2026-09-11T04:36:31.273325+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 8.5
@@ -9,6 +9,117 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.4% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "CBSH",
+      "name": "Commerce Bancshares, Inc.",
+      "setup": "pullback",
+      "entry": 58.3,
+      "tp": 64.6,
+      "tp_pct": 0.10806174957118353,
+      "shares": 4.29,
+      "value": 250.107,
+      "pl_amount": 27.03,
+      "eta_days_low": 13,
+      "eta_days_high": 27,
+      "fee_pct": 0.07400007400007404,
+      "trend_score": 4,
+      "adx": 28.6,
+      "rs": 0.031,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 18,
+      "ema20": 58.4,
+      "ema50": 57.98,
+      "ema200": 54.57,
+      "above_ema200": true,
+      "quality": 0.93,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 49.9 flat",
+        "bollinger": "band position 66%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.5x average, surging",
+        "extension": "+0.1 ATR from 20 EMA, slope +0.0%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 49.9,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=49.9)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-11T04:36:10.111067+00:00"
+    },
+    {
+      "ticker": "RIGL",
+      "name": "Rigel Pharmaceuticals, Inc.",
+      "setup": "pullback",
+      "entry": 47.25,
+      "tp": 56.5,
+      "tp_pct": 0.1957671957671958,
+      "shares": 5.29,
+      "value": 249.95250000000001,
+      "pl_amount": 48.93,
+      "eta_days_low": 15,
+      "eta_days_high": 32,
+      "fee_pct": 0.040872630664691156,
+      "trend_score": 5,
+      "adx": 41.4,
+      "rs": 0.447,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 13,
+      "ema20": 45.94,
+      "ema50": 42.45,
+      "ema200": 36.72,
+      "above_ema200": true,
+      "quality": 0.9,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 54.1 falling",
+        "bollinger": "band position 46%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.9x average, drying up",
+        "extension": "+0.1 ATR from 20 EMA, slope +1.7%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 54.1,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=54.1)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-11T04:36:10.674938+00:00"
+    }
+  ],
   "position_alerts": []
 }
