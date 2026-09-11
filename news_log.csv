@@ -465,3 +465,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-10 12:57 UTC,IBRX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,44
 2026-09-11 04:37 UTC,RIGL,openai,True,3,0,NO_NEWS,mixed,pullback continuation,55
 2026-09-11 04:37 UTC,CBSH,openai,True,3,1,OK,supportive,pullback continuation,68
+2026-09-11 12:53 UTC,RIGL,openai,True,3,0,NO_NEWS,supportive,pullback continuation,66
+2026-09-11 12:53 UTC,CBSH,openai,True,3,1,OK,mixed,pullback continuation,64

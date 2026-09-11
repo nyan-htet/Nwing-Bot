@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11 04:37 UTC",
+  "generated": "2026-09-11 12:53 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "RIGL",
       "alert": {
-        "alerted": "2026-09-11T04:36:10.674965+00:00",
+        "alerted": "2026-09-11T12:51:58.880867+00:00",
         "entry": 47.25,
         "thesis_warned": false,
         "tp": 56.5
@@ -70,7 +70,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-11T04:36:10.674938+00:00"
+        "time": "2026-09-11T12:51:58.880830+00:00"
       },
       "profile": {
         "symbol": "RIGL",
@@ -82,7 +82,7 @@
         "change": 0.06,
         "changePercentage": 0.12706,
         "volume": 130856,
-        "averageVolume": 363789,
+        "averageVolume": 363657,
         "companyName": "Rigel Pharmaceuticals, Inc.",
         "currency": "USD",
         "cik": "0001034842",
@@ -362,9 +362,14 @@
           "date": "2026-09-11",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": -0.3006860576039605
+          "averageChange": -0.300686032022357
         },
-        "industry_snapshot": {}
+        "industry_snapshot": {
+          "date": "2026-09-11",
+          "industry": "Biotechnology",
+          "exchange": "NASDAQ",
+          "averageChange": -0.6806429983016171
+        }
       },
       "macro": {
         "hourly_scan_macro": {
@@ -427,19 +432,6 @@
         "calendar": [
           {
             "date": "2026-09-11 00:00:00",
-            "country": "ET",
-            "event": "Ethiopian New Year",
-            "currency": "ETB",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-09-11 00:00:00",
             "country": "ER",
             "event": "Keddus Johannes",
             "currency": "ERN",
@@ -465,6 +457,19 @@
             "unit": null
           },
           {
+            "date": "2026-09-11 00:00:00",
+            "country": "ET",
+            "event": "Ethiopian New Year",
+            "currency": "ETB",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
             "date": "2026-09-11 02:00:00",
             "country": "JO",
             "event": "Inflation Rate YoY (Aug)",
@@ -476,45 +481,6 @@
             "impact": "Low",
             "changePercentage": 0,
             "unit": "%"
-          },
-          {
-            "date": "2026-09-11 02:00:00",
-            "country": "KR",
-            "event": "Thomson Reuters IPSOS PCSI (Sep)",
-            "currency": "KRW",
-            "previous": 44.52,
-            "estimate": null,
-            "actual": 44.27,
-            "change": -0.25,
-            "impact": "Low",
-            "changePercentage": -0.562,
-            "unit": null
-          },
-          {
-            "date": "2026-09-11 02:00:00",
-            "country": "JP",
-            "event": "Thomson Reuters IPSOS PCSI (Sep)",
-            "currency": "JPY",
-            "previous": 39.94,
-            "estimate": null,
-            "actual": 39.42,
-            "change": -0.52,
-            "impact": "Low",
-            "changePercentage": -1.302,
-            "unit": null
-          },
-          {
-            "date": "2026-09-11 02:00:00",
-            "country": "IN",
-            "event": "Thomson Reuters IPSOS PCSI (Sep)",
-            "currency": "INR",
-            "previous": 65.26,
-            "estimate": null,
-            "actual": 66.92,
-            "change": 1.66,
-            "impact": "Low",
-            "changePercentage": 2.544,
-            "unit": null
           },
           {
             "date": "2026-09-11 02:00:00",
@@ -556,17 +522,43 @@
             "unit": null
           },
           {
-            "date": "2026-09-11 02:30:00",
-            "country": "KR",
-            "event": "50-Year KTB Auction",
-            "currency": "KRW",
-            "previous": 4.62,
+            "date": "2026-09-11 02:00:00",
+            "country": "IN",
+            "event": "Thomson Reuters IPSOS PCSI (Sep)",
+            "currency": "INR",
+            "previous": 65.26,
             "estimate": null,
-            "actual": 4.72,
-            "change": 0.1,
+            "actual": 66.92,
+            "change": 1.66,
             "impact": "Low",
-            "changePercentage": 2.165,
-            "unit": "%"
+            "changePercentage": 2.544,
+            "unit": null
+          },
+          {
+            "date": "2026-09-11 02:00:00",
+            "country": "JP",
+            "event": "Thomson Reuters IPSOS PCSI (Sep)",
+            "currency": "JPY",
+            "previous": 39.94,
+            "estimate": null,
+            "actual": 39.42,
+            "change": -0.52,
+            "impact": "Low",
+            "changePercentage": -1.302,
+            "unit": null
+          },
+          {
+            "date": "2026-09-11 02:00:00",
+            "country": "KR",
+            "event": "Thomson Reuters IPSOS PCSI (Sep)",
+            "currency": "KRW",
+            "previous": 44.52,
+            "estimate": null,
+            "actual": 44.27,
+            "change": -0.25,
+            "impact": "Low",
+            "changePercentage": -0.562,
+            "unit": null
           },
           {
             "date": "2026-09-11 02:30:00",
@@ -580,30 +572,43 @@
             "impact": "Low",
             "changePercentage": 0,
             "unit": "%"
+          },
+          {
+            "date": "2026-09-11 02:30:00",
+            "country": "KR",
+            "event": "50-Year KTB Auction",
+            "currency": "KRW",
+            "previous": 4.62,
+            "estimate": null,
+            "actual": 4.72,
+            "change": 0.1,
+            "impact": "Low",
+            "changePercentage": 2.165,
+            "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend. Strong trend strength, bullish EMA alignment, VWAP reclamation, and relative outperformance support continuation, while the falling RSI and contracting volume suggest measured rather than aggressive momentum.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend, with price above rising short- and long-term EMAs. Reclaimed VWAP, contracting bands, strong ADX, and substantial relative strength support continuation, although falling RSI and drying volume show momentum is pausing.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "The latest quarter showed a major EPS beat with strong gross and operating margins, but the two preceding quarters missed estimates and displayed revenue is flat. Positive operating and free cash flow are supportive, though the earnings history is inconsistent.",
-        "earnings_assessment": "unknown",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty over event timing during the scan window. Longer-term revenue and EPS estimates have risen, but the limited analyst coverage and unknown reporting date leave meaningful event risk.",
+        "financial_interpretation": "Results were inconsistent: two preceding EPS misses were followed by a very large latest beat, while the supplied revenue figures show no reported growth. Strong gross and operating margins, positive operating cash flow, and positive free cash flow support financial quality, but the apparent earnings acceleration needs confirmation.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating timing uncertainty, while longer-term revenue and EPS estimates have been revised higher. The absence of a confirmed date limits near-term catalyst visibility and leaves event risk unresolved.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "The consensus is Buy, with eight buys versus seven holds, while forward revenue and EPS estimates increased.",
+        "analyst_interpretation": "Analysts show a Buy consensus with no sell ratings, and forward revenue and EPS estimates have risen versus the prior outlook.",
         "valuation_assessment": "attractive",
-        "valuation_interpretation": "The low trailing P/E is supportive, particularly alongside positive cash flow and higher forward estimates. No industry or historical valuation comparison was supplied, so the discount may also reflect execution or biotech-specific risk.",
+        "valuation_interpretation": "The low trailing P/E and moderate price-to-book ratio are supportive for a profitable company with positive cash flow. The valuation is not a headwind, though limited analyst coverage and inconsistent recent results reduce confidence in relying on the low multiple alone.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was returned. This limits identifiable catalyst support but also provides no new fundamental risk signal.",
+        "news_interpretation": "No usable recent company-specific news was returned, so there is no identifiable news catalyst or immediate headline risk in the supplied data.",
         "sector_assessment": "headwind",
-        "sector_interpretation": "Recent sector performance was slightly negative, so the broader group is a modest drag even though RIGL is materially outperforming the market.",
-        "macro_assessment": "headwind",
-        "macro_interpretation": "No major upcoming macro catalyst is flagged; relatively high longer-term yields and a seasonal cycle headwind can pressure higher-risk healthcare equities.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is strongly supported by trend quality, VWAP defense, and substantial relative strength, with valuation and revised estimates adding fundamental support. Inconsistent prior earnings, unavailable earnings timing, and modest sector and macro headwinds argue for caution around catalyst risk.",
-        "key_positive": "A strong uptrend combines with positive cash flow, attractive earnings valuation, and upward-revised forward estimates.",
-        "key_risk": "The next earnings date is unknown and recent earnings performance has been uneven, creating event and execution risk.",
+        "sector_interpretation": "The broader group was modestly weaker, with biotechnology underperforming healthcare, creating a mild relative headwind despite RIGL's strong individual performance.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "Overall macro risk is neutral, but elevated longer-term yields and a mildly unfavorable seasonal cycle could constrain risk appetite for biotechnology shares.",
+        "overall_assessment": "supportive",
+        "overall_summary": "The strong technical trend, relative strength, analyst revisions, profitability, and low valuation support the existing pullback-continuation signal. Mixed recent earnings, unavailable earnings timing, weaker industry performance, and fading short-term momentum argue for monitoring confirmation rather than assuming uninterrupted continuation.",
+        "key_positive": "RIGL combines a high-quality uptrend with strong relative strength, positive cash flow, favorable analyst revisions, and an attractive trailing valuation.",
+        "key_risk": "The main risks are inconsistent recent earnings, no confirmed next earnings date, weakening biotechnology-sector breadth, and a pullback occurring on subdued volume.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -614,17 +619,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2778
+          "chars": 3056
         }
       ],
       "is_etf": false,
-      "buy_confidence": 55,
-      "report": "🟡 RIGL — Rigel Pharmaceuticals, Inc.\nEntry: $47.25\neToro TP Value: $48.93\nShares: 5.29 ($250)\nScanner Potential: +19.6%\nTimeframe: 15–32 days\n\n═══ BUY CONFIDENCE: 55% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 8 | Hold: 7 | Sell: 0 | Strong Sell: 0\n🧠 The consensus is Buy, with eight buys versus seven holds, while forward revenue and EPS estimates increased.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend. Strong trend strength, bullish EMA alignment, VWAP reclamation, and relative outperformance support continuation, while the falling RSI and contracting volume suggest measured rather than aggressive momentum.\n🕒 Technical timestamp: 2026-09-11 04:36:10 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 The latest quarter showed a major EPS beat with strong gross and operating margins, but the two preceding quarters missed estimates and displayed revenue is flat. Positive operating and free cash flow are supportive, though the earnings history is inconsistent.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The low trailing P/E is supportive, particularly alongside positive cash flow and higher forward estimates. No industry or historical valuation comparison was supplied, so the discount may also reflect execution or biotech-specific risk.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty over event timing during the scan window. Longer-term revenue and EPS estimates have risen, but the limited analyst coverage and unknown reporting date leave meaningful event risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector performance was slightly negative, so the broader group is a modest drag even though RIGL is materially outperforming the market.\n🧠 Macro: No major upcoming macro catalyst is flagged; relatively high longer-term yields and a seasonal cycle headwind can pressure higher-risk healthcare equities.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is strongly supported by trend quality, VWAP defense, and substantial relative strength, with valuation and revised estimates adding fundamental support. Inconsistent prior earnings, unavailable earnings timing, and modest sector and macro headwinds argue for caution around catalyst risk.\n🟢 Key Positive: A strong uptrend combines with positive cash flow, attractive earnings valuation, and upward-revised forward estimates.\n🔴 Key Risk: The next earnings date is unknown and recent earnings performance has been uneven, creating event and execution risk.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 66,
+      "report": "🟢 RIGL — Rigel Pharmaceuticals, Inc.\nEntry: $47.25\neToro TP Value: $48.93\nShares: 5.29 ($250)\nScanner Potential: +19.6%\nTimeframe: 15–32 days\n\n═══ BUY CONFIDENCE: 66% ═══\n🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 8 | Hold: 7 | Sell: 0 | Strong Sell: 0\n🧠 Analysts show a Buy consensus with no sell ratings, and forward revenue and EPS estimates have risen versus the prior outlook.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend, with price above rising short- and long-term EMAs. Reclaimed VWAP, contracting bands, strong ADX, and substantial relative strength support continuation, although falling RSI and drying volume show momentum is pausing.\n🕒 Technical timestamp: 2026-09-11 12:51:58 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 Results were inconsistent: two preceding EPS misses were followed by a very large latest beat, while the supplied revenue figures show no reported growth. Strong gross and operating margins, positive operating cash flow, and positive free cash flow support financial quality, but the apparent earnings acceleration needs confirmation.\n\n═══ VALUATION ═══\n🟢 Attractive\n🧠 The low trailing P/E and moderate price-to-book ratio are supportive for a profitable company with positive cash flow. The valuation is not a headwind, though limited analyst coverage and inconsistent recent results reduce confidence in relying on the low multiple alone.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing uncertainty, while longer-term revenue and EPS estimates have been revised higher. The absence of a confirmed date limits near-term catalyst visibility and leaves event risk unresolved.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🟡 Neutral\n🧠 Sector: The broader group was modestly weaker, with biotechnology underperforming healthcare, creating a mild relative headwind despite RIGL's strong individual performance.\n🧠 Macro: Overall macro risk is neutral, but elevated longer-term yields and a mildly unfavorable seasonal cycle could constrain risk appetite for biotechnology shares.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The strong technical trend, relative strength, analyst revisions, profitability, and low valuation support the existing pullback-continuation signal. Mixed recent earnings, unavailable earnings timing, weaker industry performance, and fading short-term momentum argue for monitoring confirmation rather than assuming uninterrupted continuation.\n🟢 Key Positive: RIGL combines a high-quality uptrend with strong relative strength, positive cash flow, favorable analyst revisions, and an attractive trailing valuation.\n🔴 Key Risk: The main risks are inconsistent recent earnings, no confirmed next earnings date, weakening biotechnology-sector breadth, and a pullback occurring on subdued volume.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "CBSH",
       "alert": {
-        "alerted": "2026-09-11T04:36:10.111096+00:00",
+        "alerted": "2026-09-11T12:51:58.374390+00:00",
         "entry": 58.3,
         "thesis_warned": false,
         "tp": 64.6
@@ -682,7 +687,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-11T04:36:10.111067+00:00"
+        "time": "2026-09-11T12:51:58.374349+00:00"
       },
       "profile": {
         "symbol": "CBSH",
@@ -981,9 +986,14 @@
           "date": "2026-09-11",
           "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": 0.19107855655395856
+          "averageChange": 0.19107855655409178
         },
-        "industry_snapshot": {}
+        "industry_snapshot": {
+          "date": "2026-09-11",
+          "industry": "Banks - Regional",
+          "exchange": "NASDAQ",
+          "averageChange": 0.7152122383937254
+        }
       },
       "macro": {
         "hourly_scan_macro": {
@@ -1046,19 +1056,6 @@
         "calendar": [
           {
             "date": "2026-09-11 00:00:00",
-            "country": "ET",
-            "event": "Ethiopian New Year",
-            "currency": "ETB",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-09-11 00:00:00",
             "country": "ER",
             "event": "Keddus Johannes",
             "currency": "ERN",
@@ -1084,6 +1081,19 @@
             "unit": null
           },
           {
+            "date": "2026-09-11 00:00:00",
+            "country": "ET",
+            "event": "Ethiopian New Year",
+            "currency": "ETB",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
             "date": "2026-09-11 02:00:00",
             "country": "JO",
             "event": "Inflation Rate YoY (Aug)",
@@ -1095,45 +1105,6 @@
             "impact": "Low",
             "changePercentage": 0,
             "unit": "%"
-          },
-          {
-            "date": "2026-09-11 02:00:00",
-            "country": "KR",
-            "event": "Thomson Reuters IPSOS PCSI (Sep)",
-            "currency": "KRW",
-            "previous": 44.52,
-            "estimate": null,
-            "actual": 44.27,
-            "change": -0.25,
-            "impact": "Low",
-            "changePercentage": -0.562,
-            "unit": null
-          },
-          {
-            "date": "2026-09-11 02:00:00",
-            "country": "JP",
-            "event": "Thomson Reuters IPSOS PCSI (Sep)",
-            "currency": "JPY",
-            "previous": 39.94,
-            "estimate": null,
-            "actual": 39.42,
-            "change": -0.52,
-            "impact": "Low",
-            "changePercentage": -1.302,
-            "unit": null
-          },
-          {
-            "date": "2026-09-11 02:00:00",
-            "country": "IN",
-            "event": "Thomson Reuters IPSOS PCSI (Sep)",
-            "currency": "INR",
-            "previous": 65.26,
-            "estimate": null,
-            "actual": 66.92,
-            "change": 1.66,
-            "impact": "Low",
-            "changePercentage": 2.544,
-            "unit": null
           },
           {
             "date": "2026-09-11 02:00:00",
@@ -1175,17 +1146,43 @@
             "unit": null
           },
           {
-            "date": "2026-09-11 02:30:00",
-            "country": "KR",
-            "event": "50-Year KTB Auction",
-            "currency": "KRW",
-            "previous": 4.62,
+            "date": "2026-09-11 02:00:00",
+            "country": "IN",
+            "event": "Thomson Reuters IPSOS PCSI (Sep)",
+            "currency": "INR",
+            "previous": 65.26,
             "estimate": null,
-            "actual": 4.72,
-            "change": 0.1,
+            "actual": 66.92,
+            "change": 1.66,
             "impact": "Low",
-            "changePercentage": 2.165,
-            "unit": "%"
+            "changePercentage": 2.544,
+            "unit": null
+          },
+          {
+            "date": "2026-09-11 02:00:00",
+            "country": "JP",
+            "event": "Thomson Reuters IPSOS PCSI (Sep)",
+            "currency": "JPY",
+            "previous": 39.94,
+            "estimate": null,
+            "actual": 39.42,
+            "change": -0.52,
+            "impact": "Low",
+            "changePercentage": -1.302,
+            "unit": null
+          },
+          {
+            "date": "2026-09-11 02:00:00",
+            "country": "KR",
+            "event": "Thomson Reuters IPSOS PCSI (Sep)",
+            "currency": "KRW",
+            "previous": 44.52,
+            "estimate": null,
+            "actual": 44.27,
+            "change": -0.25,
+            "impact": "Low",
+            "changePercentage": -0.562,
+            "unit": null
           },
           {
             "date": "2026-09-11 02:30:00",
@@ -1199,30 +1196,43 @@
             "impact": "Low",
             "changePercentage": 0,
             "unit": "%"
+          },
+          {
+            "date": "2026-09-11 02:30:00",
+            "country": "KR",
+            "event": "50-Year KTB Auction",
+            "currency": "KRW",
+            "previous": 4.62,
+            "estimate": null,
+            "actual": 4.72,
+            "change": 0.1,
+            "impact": "Low",
+            "changePercentage": 2.165,
+            "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, not a fresh breakout. Price is above the long-term EMA, has reclaimed VWAP, and shows supportive volume, while neutral RSI and contracting bands leave room for continuation.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above the 200 EMA and a strong trend score. VWAP reclamation, contracting bands, and elevated volume support renewed buying, although neutral RSI and tangled short-term averages indicate limited momentum.",
         "financial_assessment": "positive",
-        "financial_interpretation": "The last three quarters all beat EPS estimates, including a stronger 16.5% surprise in April, although reported revenue and net income were flat across the displayed periods. Strong operating and free cash flow, along with high reported margins, supports the setup despite limited recent growth.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty over the catalyst and event risk. Forward revenue and EPS estimates have increased versus the prior forecast, which is constructive but not a near-term confirmation.",
+        "financial_interpretation": "The last three quarters all beat EPS estimates, though the latest surprise decelerated from the prior quarter and reported revenue and net income were unchanged. Strong operating margins and positive operating and free cash flow support the financial quality.",
+        "earnings_assessment": "positive",
+        "earnings_interpretation": "Forward revenue and EPS estimates are rising into later years, which supports the outlook. The next earnings date is unavailable, leaving near-term catalyst timing and event risk uncertain.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "The consensus is Hold with heavily concentrated hold ratings, but forward revenue and EPS estimates have been raised.",
+        "analyst_interpretation": "The consensus is Hold with most analysts neutral, but forward revenue and EPS estimates have been revised higher.",
         "valuation_assessment": "reasonable",
-        "valuation_interpretation": "The reported valuation appears reasonable, with a trailing P/E near 14 and P/B near 1.9. Without peer or historical comparisons, valuation looks more supportive than restrictive but is not a strong standalone catalyst.",
+        "valuation_interpretation": "A trailing P/E near 14 and P/B near 1.9 appear reasonable rather than stretched. No peer or historical valuation comparison is supplied, so valuation is supportive but not a strong catalyst.",
         "news_assessment": "no_major_risk",
-        "news_interpretation": "The only recent item is a routine comparison with another financial company and does not identify a material CBSH-specific catalyst or risk.",
+        "news_interpretation": "The only recent item is a routine comparison with another bank and does not identify a material company-specific catalyst or risk.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Recent sector performance is modestly positive, providing mild support rather than a strong industry tailwind.",
+        "sector_interpretation": "The peer backdrop supports the setup, with regional banks showing stronger recent performance than the broader financial sector.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated longer-term yields and a seasonally unfavorable cycle backdrop may pressure bank valuations and create a modest macro headwind.",
-        "overall_assessment": "supportive",
-        "overall_summary": "The technical signal is supported by a durable uptrend, successful pullback defense, repeated earnings beats, and solid cash generation. Analyst caution, unavailable earnings timing, flat displayed recent growth, and elevated yields limit conviction but do not currently invalidate the continuation setup.",
-        "key_positive": "Established trend, repeated EPS beats, strong margins, and supportive cash flow provide fundamental backing.",
-        "key_risk": "The main risks are an unclear earnings catalyst, consensus Hold ratings, limited displayed growth, and pressure from elevated long-term yields.",
+        "macro_interpretation": "Neutral volatility is not restrictive, but elevated yields and a seasonal cycle headwind could temper gains in the near term.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is well supported as a pullback continuation within a durable uptrend, with VWAP recovery and volume confirming buyer interest. Earnings quality, cash flow, rising estimates, and sector performance are constructive, but neutral analyst sentiment, unavailable earnings timing, and a modest macro headwind argue for measured conviction.",
+        "key_positive": "Established trend strength is reinforced by repeated EPS beats, solid margins, positive cash flow, and supportive regional-bank performance.",
+        "key_risk": "The main risks are limited short-term momentum, mostly Hold analyst ratings, uncertain earnings timing, and sensitivity to elevated yields.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1233,12 +1243,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2706
+          "chars": 2717
         }
       ],
       "is_etf": false,
-      "buy_confidence": 68,
-      "report": "🟢 CBSH — Commerce Bancshares, Inc.\nEntry: $58.30\neToro TP Value: $27.03\nShares: 4.29 ($250)\nScanner Potential: +10.8%\nTimeframe: 13–27 days\n\n═══ BUY CONFIDENCE: 68% ═══\n🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 2 | Hold: 12 | Sell: 1 | Strong Sell: 0\n🧠 The consensus is Hold with heavily concentrated hold ratings, but forward revenue and EPS estimates have been raised.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, not a fresh breakout. Price is above the long-term EMA, has reclaimed VWAP, and shows supportive volume, while neutral RSI and contracting bands leave room for continuation.\n🕒 Technical timestamp: 2026-09-11 04:36:10 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 The last three quarters all beat EPS estimates, including a stronger 16.5% surprise in April, although reported revenue and net income were flat across the displayed periods. Strong operating and free cash flow, along with high reported margins, supports the setup despite limited recent growth.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The reported valuation appears reasonable, with a trailing P/E near 14 and P/B near 1.9. Without peer or historical comparisons, valuation looks more supportive than restrictive but is not a strong standalone catalyst.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty over the catalyst and event risk. Forward revenue and EPS estimates have increased versus the prior forecast, which is constructive but not a near-term confirmation.\n\n═══ RECENT NEWS ═══\n• 2026-09-10 03:45 UTC — Financial Comparison: Commerce Bancshares (NASDAQ:CBSH) versus Merchants Bancorp (NASDAQ:MBIN)\n⚪ The only recent item is a routine comparison with another financial company and does not identify a material CBSH-specific catalyst or risk.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector performance is modestly positive, providing mild support rather than a strong industry tailwind.\n🧠 Macro: Elevated longer-term yields and a seasonally unfavorable cycle backdrop may pressure bank valuations and create a modest macro headwind.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The technical signal is supported by a durable uptrend, successful pullback defense, repeated earnings beats, and solid cash generation. Analyst caution, unavailable earnings timing, flat displayed recent growth, and elevated yields limit conviction but do not currently invalidate the continuation setup.\n🟢 Key Positive: Established trend, repeated EPS beats, strong margins, and supportive cash flow provide fundamental backing.\n🔴 Key Risk: The main risks are an unclear earnings catalyst, consensus Hold ratings, limited displayed growth, and pressure from elevated long-term yields.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 64,
+      "report": "🟡 CBSH — Commerce Bancshares, Inc.\nEntry: $58.30\neToro TP Value: $27.03\nShares: 4.29 ($250)\nScanner Potential: +10.8%\nTimeframe: 13–27 days\n\n═══ BUY CONFIDENCE: 64% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 2 | Hold: 12 | Sell: 1 | Strong Sell: 0\n🧠 The consensus is Hold with most analysts neutral, but forward revenue and EPS estimates have been revised higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above the 200 EMA and a strong trend score. VWAP reclamation, contracting bands, and elevated volume support renewed buying, although neutral RSI and tangled short-term averages indicate limited momentum.\n🕒 Technical timestamp: 2026-09-11 12:51:58 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 The last three quarters all beat EPS estimates, though the latest surprise decelerated from the prior quarter and reported revenue and net income were unchanged. Strong operating margins and positive operating and free cash flow support the financial quality.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 14 and P/B near 1.9 appear reasonable rather than stretched. No peer or historical valuation comparison is supplied, so valuation is supportive but not a strong catalyst.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 Forward revenue and EPS estimates are rising into later years, which supports the outlook. The next earnings date is unavailable, leaving near-term catalyst timing and event risk uncertain.\n\n═══ RECENT NEWS ═══\n• 2026-09-10 03:45 UTC — Financial Comparison: Commerce Bancshares (NASDAQ:CBSH) versus Merchants Bancorp (NASDAQ:MBIN)\n⚪ The only recent item is a routine comparison with another bank and does not identify a material company-specific catalyst or risk.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: The peer backdrop supports the setup, with regional banks showing stronger recent performance than the broader financial sector.\n🧠 Macro: Neutral volatility is not restrictive, but elevated yields and a seasonal cycle headwind could temper gains in the near term.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a pullback continuation within a durable uptrend, with VWAP recovery and volume confirming buyer interest. Earnings quality, cash flow, rising estimates, and sector performance are constructive, but neutral analyst sentiment, unavailable earnings timing, and a modest macro headwind argue for measured conviction.\n🟢 Key Positive: Established trend strength is reinforced by repeated EPS beats, solid margins, positive cash flow, and supportive regional-bank performance.\n🔴 Key Risk: The main risks are limited short-term momentum, mostly Hold analyst ratings, uncertain earnings timing, and sensitivity to elevated yields.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
