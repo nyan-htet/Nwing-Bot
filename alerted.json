@@ -30,7 +30,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 34,
+    "scans_muted": 35,
     "thesis_warned": false,
     "tp": 115.57
   },
@@ -44,7 +44,7 @@
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
     "entry": 345.5,
-    "scans_muted": 19,
+    "scans_muted": 20,
     "thesis_warned": false,
     "tp": 412.35
   },
@@ -91,6 +91,18 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-10T19:19:52.465446+00:00",
     "tp": 30.46
+  },
+  "SAIC": {
+    "alerted": "2026-09-11T22:35:12.535926+00:00",
+    "entry": 129.94,
+    "thesis_warned": false,
+    "tp": 157.47
+  },
+  "SHBI": {
+    "alerted": "2026-09-11T22:35:12.565870+00:00",
+    "entry": 23.46,
+    "thesis_warned": false,
+    "tp": 26.82
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
