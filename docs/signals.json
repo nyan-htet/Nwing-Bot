@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11T04:36:31.273325+00:00",
+  "generated": "2026-09-11T12:52:24.435103+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 8.5
@@ -63,7 +63,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-11T04:36:10.111067+00:00"
+      "time": "2026-09-11T12:51:58.374349+00:00"
     },
     {
       "ticker": "RIGL",
@@ -118,7 +118,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-11T04:36:10.674938+00:00"
+      "time": "2026-09-11T12:51:58.880830+00:00"
     }
   ],
   "position_alerts": []
