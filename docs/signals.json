@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11T22:35:32.276096+00:00",
+  "generated": "2026-09-14T04:53:49.528045+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 8.7
@@ -10,6 +10,169 @@
     "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.9% (informative only)"
   },
   "signals": [
+    {
+      "ticker": "EMR",
+      "name": "Emerson Electric Co.",
+      "setup": "pullback",
+      "entry": 152.17,
+      "tp": 178.24,
+      "tp_pct": 0.1713215482683843,
+      "shares": 1.64,
+      "value": 249.55879999999996,
+      "pl_amount": 42.75,
+      "eta_days_low": 12,
+      "eta_days_high": 24,
+      "fee_pct": 0.04677837342239932,
+      "trend_score": 4,
+      "adx": 31.4,
+      "rs": 0.033,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 7,
+      "ema20": 152.93,
+      "ema50": 151.05,
+      "ema200": 144.52,
+      "above_ema200": true,
+      "quality": 0.84,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.6
+      },
+      "q_notes": {
+        "rsi": "RSI 49.2 flat",
+        "bollinger": "band position 62%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.1x average, steady",
+        "extension": "+0.2 ATR from 20 EMA, slope -0.8%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 49.2,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.84 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=49.2)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-14T04:53:28.922817+00:00"
+    },
+    {
+      "ticker": "HSTM",
+      "name": "HealthStream, Inc.",
+      "setup": "pullback",
+      "entry": 29.09,
+      "tp": 34.21,
+      "tp_pct": 0.17600550017188032,
+      "shares": 8.59,
+      "value": 249.88309999999998,
+      "pl_amount": 43.98,
+      "eta_days_low": 17,
+      "eta_days_high": 51,
+      "fee_pct": 0.045474388824214194,
+      "trend_score": 4,
+      "adx": 33.6,
+      "rs": 0.085,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 18,
+      "ema20": 28.94,
+      "ema50": 28.21,
+      "ema200": 25.47,
+      "above_ema200": true,
+      "quality": 0.89,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.8
+      },
+      "q_notes": {
+        "rsi": "RSI 52.1 rising, reset from 39",
+        "bollinger": "band position 47%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.0x average, steady",
+        "extension": "+0.2 ATR from 20 EMA, slope -0.9%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 52.1,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.1)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-14T04:53:29.130533+00:00"
+    },
+    {
+      "ticker": "QMCO",
+      "name": "Quantum Corporation",
+      "setup": "pullback",
+      "entry": 23.63,
+      "tp": 27.8,
+      "tp_pct": 0.17647058823529416,
+      "shares": 10.58,
+      "value": 250.00539999999998,
+      "pl_amount": 44.12,
+      "eta_days_low": 6,
+      "eta_days_high": 16,
+      "fee_pct": 0.045332354154483584,
+      "trend_score": 5,
+      "adx": 27.9,
+      "rs": 0.692,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 21,
+      "ema20": 22.27,
+      "ema50": 18.39,
+      "ema200": 12.11,
+      "above_ema200": true,
+      "quality": 0.9,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 53.1 falling",
+        "bollinger": "band position 46%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.6x average, drying up",
+        "extension": "+0.0 ATR from 20 EMA, slope +3.5%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 53.1,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.1)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-14T04:53:29.426394+00:00"
+    },
     {
       "ticker": "SAIC",
       "name": "Science Applications International Corporation",
@@ -63,7 +226,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-11T22:35:12.535894+00:00"
+      "time": "2026-09-14T04:53:29.518875+00:00"
     },
     {
       "ticker": "SHBI",
@@ -117,7 +280,61 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-11T22:35:12.565838+00:00"
+      "time": "2026-09-14T04:53:29.548833+00:00"
+    },
+    {
+      "ticker": "SLAB",
+      "name": "Silicon Laboratories Inc.",
+      "setup": "pullback",
+      "entry": 220.34,
+      "tp": 239.68,
+      "tp_pct": 0.08777344104565676,
+      "shares": 1.13,
+      "value": 248.9842,
+      "pl_amount": 21.85,
+      "eta_days_low": 35,
+      "eta_days_high": 105,
+      "fee_pct": 0.0915155896807021,
+      "trend_score": 4,
+      "adx": 34.0,
+      "rs": -0.027,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 38,
+      "ema20": 219.35,
+      "ema50": 218.43,
+      "ema200": 198.1,
+      "above_ema200": true,
+      "quality": 0.74,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 0.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 59.2 flat",
+        "bollinger": "band position 76%, expanding",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.7x average, steady",
+        "extension": "+0.7 ATR from 20 EMA, slope +0.2%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 59.2,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.74 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=59.2)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-14T04:53:29.579003+00:00"
     }
   ],
   "position_alerts": []
