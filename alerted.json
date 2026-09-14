@@ -2,7 +2,7 @@
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
-    "scans_muted": 12,
+    "scans_muted": 13,
     "thesis_warned": false,
     "tp": 34.93
   },
@@ -30,7 +30,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 36,
+    "scans_muted": 37,
     "thesis_warned": false,
     "tp": 115.57
   },
@@ -40,6 +40,12 @@
     "scans_muted": 17,
     "thesis_warned": false,
     "tp": 99.56
+  },
+  "GTLB": {
+    "alerted": "2026-09-14T15:03:01.153873+00:00",
+    "entry": 48.7,
+    "thesis_warned": false,
+    "tp": 55.55
   },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
@@ -95,7 +101,7 @@
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
-    "scans_muted": 9,
+    "scans_muted": 10,
     "thesis_warned": false,
     "tp": 429.71
   }
