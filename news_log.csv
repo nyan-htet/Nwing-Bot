@@ -489,3 +489,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-15 13:36 UTC,APPF,openai,True,3,0,NO_NEWS,mixed,pullback continuation,50
 2026-09-15 13:36 UTC,ADBE,openai,True,3,7,OK,supportive,pullback continuation,74
 2026-09-15 19:45 UTC,IBRX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,39
+2026-09-15 22:56 UTC,TBPH,openai,True,3,0,NO_NEWS,caution,pullback continuation,32
+2026-09-15 22:56 UTC,ING,openai,True,3,1,OK,mixed,pullback continuation,54
+2026-09-15 22:56 UTC,GILD,openai,True,3,7,OK,mixed,pullback continuation,52
