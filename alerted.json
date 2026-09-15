@@ -1,4 +1,16 @@
 {
+  "ADBE": {
+    "alerted": "2026-09-15T04:53:21.905833+00:00",
+    "entry": 265.4,
+    "thesis_warned": false,
+    "tp": 322.93
+  },
+  "APPF": {
+    "alerted": "2026-09-15T04:53:21.973386+00:00",
+    "entry": 222.17,
+    "thesis_warned": false,
+    "tp": 262.14
+  },
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
@@ -16,21 +28,21 @@
   "CAI": {
     "alerted": "2026-09-01T05:06:07.998807+00:00",
     "entry": 25.49,
-    "scans_muted": 15,
+    "scans_muted": 16,
     "thesis_warned": false,
     "tp": 29.19
   },
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
-    "scans_muted": 7,
+    "scans_muted": 8,
     "thesis_warned": false,
     "tp": 27.91
   },
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 38,
+    "scans_muted": 39,
     "thesis_warned": false,
     "tp": 115.57
   },
@@ -40,6 +52,12 @@
     "scans_muted": 17,
     "thesis_warned": false,
     "tp": 99.56
+  },
+  "GILD": {
+    "alerted": "2026-09-15T04:53:22.308433+00:00",
+    "entry": 146.45,
+    "thesis_warned": false,
+    "tp": 161.01
   },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
@@ -51,7 +69,7 @@
   "JCI": {
     "alerted": "2026-08-17T20:43:10.378919+00:00",
     "entry": 153.93,
-    "scans_muted": 12,
+    "scans_muted": 13,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-10T19:19:43.900233+00:00",
     "tp": 176.31
@@ -62,6 +80,12 @@
     "scans_muted": 29,
     "thesis_warned": false,
     "tp": 58.66
+  },
+  "MDT": {
+    "alerted": "2026-09-15T04:53:22.564643+00:00",
+    "entry": 93.86,
+    "thesis_warned": false,
+    "tp": 101.42
   },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
@@ -80,7 +104,7 @@
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
-    "scans_muted": 19,
+    "scans_muted": 20,
     "thesis_warned": false,
     "tp": 173.37
   },
@@ -91,6 +115,12 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-10T19:19:52.465446+00:00",
     "tp": 30.46
+  },
+  "SGP": {
+    "alerted": "2026-09-15T04:53:22.894971+00:00",
+    "entry": 28.75,
+    "thesis_warned": false,
+    "tp": 33.59
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
