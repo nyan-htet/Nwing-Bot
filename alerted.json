@@ -48,12 +48,6 @@
     "thesis_warned": false,
     "tp": 99.56
   },
-  "IBRX": {
-    "alerted": "2026-09-15T19:44:58.935924+00:00",
-    "entry": 8.07,
-    "thesis_warned": false,
-    "tp": 8.76
-  },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
     "entry": 345.5,
