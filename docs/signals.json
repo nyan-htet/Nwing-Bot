@@ -1,13 +1,13 @@
 {
-  "generated": "2026-09-15T04:53:42.969667+00:00",
+  "generated": "2026-09-15T13:34:09.935291+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 8.8
+    "vol": 8.7
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.5% (informative only)"
   },
   "signals": [
     {
@@ -25,7 +25,7 @@
       "fee_pct": 0.036983473051162084,
       "trend_score": 4,
       "adx": 33.5,
-      "rs": 0.279,
+      "rs": 0.275,
       "runner": false,
       "regime": "uptrend",
       "regime_weeks": 6,
@@ -61,7 +61,7 @@
         "quality +0.84 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=49.4)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-15T04:53:21.905801+00:00"
+      "time": "2026-09-15T13:33:48.231715+00:00"
     },
     {
       "ticker": "APPF",
@@ -78,7 +78,7 @@
       "fee_pct": 0.04428099835938902,
       "trend_score": 4,
       "adx": 31.3,
-      "rs": 0.395,
+      "rs": 0.392,
       "runner": false,
       "regime": "uptrend",
       "regime_weeks": 10,
@@ -115,7 +115,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-15T04:53:21.973356+00:00"
+      "time": "2026-09-15T13:33:48.295680+00:00"
     },
     {
       "ticker": "GILD",
@@ -132,7 +132,7 @@
       "fee_pct": 0.08032902769744873,
       "trend_score": 5,
       "adx": 28.9,
-      "rs": 0.17,
+      "rs": 0.166,
       "runner": true,
       "regime": "uptrend",
       "regime_weeks": 7,
@@ -169,7 +169,7 @@
         "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=51.7)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-15T04:53:22.308405+00:00"
+      "time": "2026-09-15T13:33:48.614632+00:00"
     },
     {
       "ticker": "MDT",
@@ -186,7 +186,7 @@
       "fee_pct": 0.0993892530400688,
       "trend_score": 5,
       "adx": 28.4,
-      "rs": 0.159,
+      "rs": 0.155,
       "runner": true,
       "regime": "uptrend",
       "regime_weeks": 8,
@@ -223,7 +223,7 @@
         "quality +0.71 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=58.8)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-15T04:53:22.564615+00:00"
+      "time": "2026-09-15T13:33:48.862426+00:00"
     },
     {
       "ticker": "SGP",
@@ -240,7 +240,7 @@
       "fee_pct": 0.04744789627889871,
       "trend_score": 5,
       "adx": 42.1,
-      "rs": 0.508,
+      "rs": 0.504,
       "runner": true,
       "regime": "uptrend",
       "regime_weeks": 6,
@@ -278,7 +278,62 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-15T04:53:22.894942+00:00"
+      "time": "2026-09-15T13:33:49.181665+00:00"
+    },
+    {
+      "ticker": "UBSI",
+      "name": "United Bankshares, Inc.",
+      "setup": "pullback",
+      "entry": 47.72,
+      "tp": 58.98,
+      "tp_pct": 0.23608928010059715,
+      "shares": 5.24,
+      "value": 250.02660000000003,
+      "pl_amount": 59.03,
+      "eta_days_low": 29,
+      "eta_days_high": 60,
+      "fee_pct": 0.03388188098650487,
+      "trend_score": 4,
+      "adx": 30.0,
+      "rs": 0.047,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 22,
+      "ema20": 47.57,
+      "ema50": 47.25,
+      "ema200": 43.85,
+      "above_ema200": true,
+      "quality": 0.74,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 0.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 0.6
+      },
+      "q_notes": {
+        "rsi": "RSI 54.8 rising, reset from 40",
+        "bollinger": "band position 75%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.0x average, drying up",
+        "extension": "+0.7 ATR from 20 EMA, slope -0.2%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 54.8,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.74 (rsi +1.0, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=54.8)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-15T13:33:49.349409+00:00"
     }
   ],
   "position_alerts": []
