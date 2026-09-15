@@ -5,12 +5,6 @@
     "thesis_warned": false,
     "tp": 322.93
   },
-  "APPF": {
-    "alerted": "2026-09-15T13:33:48.295724+00:00",
-    "entry": 222.17,
-    "thesis_warned": false,
-    "tp": 262.14
-  },
   "BBVA": {
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
@@ -53,12 +47,6 @@
     "thesis_warned": false,
     "tp": 99.56
   },
-  "GILD": {
-    "alerted": "2026-09-15T13:33:48.614674+00:00",
-    "entry": 146.45,
-    "thesis_warned": false,
-    "tp": 161.01
-  },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
     "entry": 345.5,
@@ -80,12 +68,6 @@
     "scans_muted": 29,
     "thesis_warned": false,
     "tp": 58.66
-  },
-  "MDT": {
-    "alerted": "2026-09-15T13:33:48.862467+00:00",
-    "entry": 93.86,
-    "thesis_warned": false,
-    "tp": 101.42
   },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
@@ -116,23 +98,11 @@
     "thesis_warned_on": "2026-09-10T19:19:52.465446+00:00",
     "tp": 30.46
   },
-  "SGP": {
-    "alerted": "2026-09-15T13:33:49.181708+00:00",
-    "entry": 28.75,
-    "thesis_warned": false,
-    "tp": 33.59
-  },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
     "scans_muted": 11,
     "thesis_warned": false,
     "tp": 429.71
-  },
-  "UBSI": {
-    "alerted": "2026-09-15T13:33:49.349454+00:00",
-    "entry": 47.72,
-    "thesis_warned": false,
-    "tp": 58.98
   }
 }

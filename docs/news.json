@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15 04:54 UTC",
+  "generated": "2026-09-15 13:36 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -10,9 +10,626 @@
   ],
   "results": [
     {
+      "ticker": "UBSI",
+      "alert": {
+        "alerted": "2026-09-15T13:33:49.349454+00:00",
+        "entry": 47.72,
+        "thesis_warned": false,
+        "tp": 58.98
+      },
+      "signal": {
+        "ticker": "UBSI",
+        "name": "United Bankshares, Inc.",
+        "setup": "pullback",
+        "entry": 47.72,
+        "tp": 58.98,
+        "tp_pct": 0.23608928010059715,
+        "shares": 5.24,
+        "value": 250.02660000000003,
+        "pl_amount": 59.03,
+        "eta_days_low": 29,
+        "eta_days_high": 60,
+        "fee_pct": 0.03388188098650487,
+        "trend_score": 4,
+        "adx": 30.0,
+        "rs": 0.047,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 22,
+        "ema20": 47.57,
+        "ema50": 47.25,
+        "ema200": 43.85,
+        "above_ema200": true,
+        "quality": 0.74,
+        "q_detail": {
+          "rsi": 1.0,
+          "bollinger": 0.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 0.6
+        },
+        "q_notes": {
+          "rsi": "RSI 54.8 rising, reset from 40",
+          "bollinger": "band position 75%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.0x average, drying up",
+          "extension": "+0.7 ATR from 20 EMA, slope -0.2%, mixed / tangled"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 54.8,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 4/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.74 (rsi +1.0, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=54.8)",
+          "(nasdaq; tier assigned nightly by FMP)",
+          "hard-eligible; ranked in Step 2"
+        ],
+        "time": "2026-09-15T13:33:49.349409+00:00"
+      },
+      "profile": {
+        "symbol": "UBSI",
+        "price": 47.82,
+        "marketCap": 6589548180,
+        "beta": 0.721,
+        "lastDividend": 1.52,
+        "range": "34.1-49.62",
+        "change": 0.13,
+        "changePercentage": 0.27259,
+        "volume": 16616.84053,
+        "averageVolume": 917951,
+        "companyName": "United Bankshares, Inc.",
+        "currency": "USD",
+        "cik": "0000729986",
+        "isin": "US9099071071",
+        "cusip": "909907107",
+        "exchangeFullName": "NASDAQ Global Select",
+        "exchange": "NASDAQ",
+        "industry": "Banks - Regional",
+        "website": "https://www.ubsi-inc.com",
+        "description": "Founded in 1982 and headquartered in Charleston, West Virginia, United Bankshares, Inc. operates as a prominent financial holding company. It offers a comprehensive array of banking solutions for both commercial clients and individual customers throughout the United States, primarily organized into its Community Banking and Mortgage Banking divisions. The company provides various deposit options, such as checking, savings, money market, and retirement accounts. Its lending portfolio is equally diverse, encompassing financing for commercial enterprises and real estate, personal and student loans, credit card facilities, and home equity products. Beyond traditional banking, United Bankshares extends its services to include investment and security offerings, asset management, real property title insurance, financial planning, safe deposit boxes, electronic fund transfers, and convenient digital and ATM banking access. As of December 31, 2021, its extensive branch network comprised 250 locations spread across Virginia, Maryland, Washington D.C., North Carolina, South Carolina, Georgia, Pennsylvania, West Virginia, and Ohio.",
+        "ceo": "Richard Matthew Adams Jr.",
+        "sector": "Financial Services",
+        "country": "US",
+        "fullTimeEmployees": "2694",
+        "phone": "304 424 8716",
+        "address": "300 United Center",
+        "city": "Charleston",
+        "state": "WV",
+        "zip": "25301",
+        "image": "https://images.financialmodelingprep.com/symbol/UBSI.png",
+        "ipoDate": "1987-06-04",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-07-23",
+          "fiscal_period": "",
+          "eps_actual": 0.95,
+          "eps_estimate": 0.887,
+          "eps_surprise": 0.06299999999999994,
+          "eps_surprise_pct": 0.07102593010146555,
+          "revenue": 418197000.0,
+          "net_income": 131377000.0,
+          "operating_margin": 0.30042300638215963,
+          "gross_margin": 0.6822430576976879,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-04-23",
+          "fiscal_period": "",
+          "eps_actual": 0.89,
+          "eps_estimate": 0.85,
+          "eps_surprise": 0.040000000000000036,
+          "eps_surprise_pct": 0.047058823529411806,
+          "revenue": 418197000.0,
+          "net_income": 131377000.0,
+          "operating_margin": 0.30042300638215963,
+          "gross_margin": 0.6822430576976879,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-01-22",
+          "fiscal_period": "",
+          "eps_actual": 0.91,
+          "eps_estimate": 0.86,
+          "eps_surprise": 0.050000000000000044,
+          "eps_surprise_pct": 0.058139534883720985,
+          "revenue": 418197000.0,
+          "net_income": 131377000.0,
+          "operating_margin": 0.30042300638215963,
+          "gross_margin": 0.6822430576976879,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 2081303000.0,
+        "total_debt": 799368000.0,
+        "total_liabilities": 28241295000.0,
+        "equity": 5510537000.0,
+        "operating_cash_flow": 105160000.0,
+        "capital_expenditure": 4840000.0,
+        "free_cash_flow": 110000000.0
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": [
+          {
+            "date": "2027-12-31",
+            "period": null,
+            "revenue_avg": 1345451200.0,
+            "eps_avg": 3.85833,
+            "revenue_low": 1340820927.0,
+            "revenue_high": 1348360688.0,
+            "eps_low": 3.8285,
+            "eps_high": 3.87822,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 4
+          },
+          {
+            "date": "2026-12-31",
+            "period": null,
+            "revenue_avg": 1294461000.0,
+            "eps_avg": 3.70833,
+            "revenue_low": 1290006206.0,
+            "revenue_high": 1297260224.0,
+            "eps_low": 3.69833,
+            "eps_high": 3.72832,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 5
+          },
+          {
+            "date": "2025-12-31",
+            "period": null,
+            "revenue_avg": 1228375750.0,
+            "eps_avg": 3.22,
+            "revenue_low": 1224148383.0,
+            "revenue_high": 1231032067.0,
+            "eps_low": 3.21,
+            "eps_high": 3.23,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 3
+          },
+          {
+            "date": "2024-12-31",
+            "period": null,
+            "revenue_avg": 1037566250.0,
+            "eps_avg": 2.728,
+            "revenue_low": 1033995540.0,
+            "revenue_high": 1039809948.0,
+            "eps_low": 2.69802,
+            "eps_high": 2.73799,
+            "num_analysts_revenue": 2,
+            "num_analysts_eps": 4
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "UBSI",
+          "strongBuy": 0,
+          "buy": 2,
+          "hold": 8,
+          "sell": 1,
+          "strongSell": 0,
+          "consensus": "Hold"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 1345451200,
+            "prior": 1294461000,
+            "change": 0.03939106701553774
+          },
+          "epsAvg": {
+            "latest": 3.85833,
+            "prior": 3.70833,
+            "change": 0.04044947456132553
+          }
+        }
+      },
+      "valuation": {
+        "ratios": {
+          "symbol": "UBSI",
+          "grossProfitMarginTTM": 0.6782945632633084,
+          "ebitMarginTTM": 0.34011832354712446,
+          "ebitdaMarginTTM": 0.34113848647403744,
+          "operatingProfitMarginTTM": 0.34011832354712446,
+          "pretaxProfitMarginTTM": 0.3577280673894364,
+          "continuousOperationsProfitMarginTTM": 0.28593035489011065,
+          "netProfitMarginTTM": 0.28593035489011065,
+          "bottomLineProfitMarginTTM": 0.28593035489011065,
+          "receivablesTurnoverTTM": 0,
+          "payablesTurnoverTTM": 0,
+          "inventoryTurnoverTTM": 0,
+          "fixedAssetTurnoverTTM": 9.357930488393956,
+          "assetTurnoverTTM": 0.053380006128259945,
+          "currentRatioTTM": 32.342409399027524,
+          "quickRatioTTM": 32.342409399027524,
+          "solvencyRatioTTM": 0.018306207275551635,
+          "cashRatioTTM": 12.463190735107428,
+          "priceToEarningsRatioTTM": 13.03648501362398,
+          "priceToEarningsGrowthRatioTTM": 0.4460676799842419,
+          "forwardPriceToEarningsGrowthRatioTTM": 3.222905898038141,
+          "priceToEarningsDilutedRatioTTM": 13.07210382513661,
+          "priceToEarningsDilutedGrowthRatioTTM": 0.45274115687058497,
+          "priceToBookRatioTTM": 1.211749734513188,
+          "priceToSalesRatioTTM": 3.659288660960834,
+          "priceToFreeCashFlowRatioTTM": 11.95045973307038,
+          "priceToOperatingCashFlowRatioTTM": 12.018862850042298,
+          "debtToAssetsRatioTTM": 0.02368369219187865,
+          "debtToEquityRatioTTM": 0.1450617244744024,
+          "debtToCapitalRatioTTM": 0.126684633128391,
+          "longTermDebtToCapitalRatioTTM": 0.08813529760628229,
+          "financialLeverageRatioTTM": 6.124962412919104,
+          "workingCapitalTurnoverRatioTTM": 0.3404204140807717,
+          "operatingCashFlowRatioTTM": 3.3268820810079283,
+          "operatingCashFlowSalesRatioTTM": 0.30836672376639196,
+          "freeCashFlowOperatingCashFlowRatioTTM": 0.9929892579953058,
+          "debtServiceCoverageRatioTTM": 0.6677335417546747,
+          "interestCoverageRatioTTM": 1.094767721269096,
+          "shortTermOperatingCashFlowCoverageRatioTTM": 3.3268820810079283,
+          "operatingCashFlowCoverageRatioTTM": 0.6950190650613985,
+          "capitalExpenditureCoverageRatioTTM": 142.6382541720154,
+          "dividendPaidAndCapexCoverageRatioTTM": 2.574757389539249,
+          "dividendPayoutRatioTTM": 0.411301108602687,
+          "dividendYieldTTM": 0.03176999,
+          "enterpriseValueTTM": 5310906576,
+          "revenuePerShareTTM": 12.909091763035564,
+          "netIncomePerShareTTM": 3.691101189113763,
+          "interestDebtPerShareTTM": 9.738066325209134,
+          "cashPerShareTTM": 38.6988586900716,
+          "bookValuePerShareTTM": 39.48331791400883,
+          "tangibleBookValuePerShareTTM": 24.813298468256022,
+          "shareholdersEquityPerShareTTM": 39.48331791400883,
+          "operatingCashFlowPerShareTTM": 3.9807343337669936,
+          "capexPerShareTTM": 0.027907901403268754,
+          "freeCashFlowPerShareTTM": 3.9528264323637248,
+          "netIncomePerEBTTTM": 0.7992952774903066,
+          "ebtPerEbitTTM": 1.0517753458815697,
+          "priceToFairValueTTM": 1.211749734513188,
+          "debtToMarketCapTTM": 0.10611676193567313,
+          "effectiveTaxRateTTM": 0.20070472250969343,
+          "enterpriseValueMultipleTTM": 8.640959578276007,
+          "dividendPerShareTTM": 1.52
+        },
+        "metrics": {
+          "symbol": "UBSI",
+          "marketCap": 6592841576,
+          "enterpriseValueTTM": 5310906576,
+          "evToSalesTTM": 2.9477638722164143,
+          "evToOperatingCashFlowTTM": 9.559280055293964,
+          "evToFreeCashFlowTTM": 9.626770862146785,
+          "evToEBITDATTM": 8.640959578276007,
+          "netDebtToEBITDATTM": -2.0857359018580586,
+          "currentRatioTTM": 32.342409399027524,
+          "incomeQualityTTM": 1.446368043153406,
+          "grahamNumberTTM": 57.26325818801688,
+          "grahamNetNetTTM": -163.65166155655916,
+          "taxBurdenTTM": 0.7992952774903066,
+          "interestBurdenTTM": 1.0517753458815697,
+          "workingCapitalTTM": 5234057000,
+          "investedCapitalTTM": 7474025000,
+          "returnOnAssetsTTM": 0.015262964096289647,
+          "operatingReturnOnAssetsTTM": 0.018168020344511124,
+          "returnOnTangibleAssetsTTM": 0.01624863153822248,
+          "returnOnEquityTTM": 0.0939187828313308,
+          "returnOnInvestedCapitalTTM": 0.06410056440507951,
+          "returnOnCapitalEmployedTTM": 0.018245794024422213,
+          "earningsYieldTTM": 0.077148835883232,
+          "freeCashFlowYieldTTM": 0.08367878912915046,
+          "capexToOperatingCashFlowTTM": 0.007010742004694227,
+          "capexToDepreciationTTM": 0,
+          "capexToRevenueTTM": 0.002161879543158986,
+          "salesGeneralAndAdministrativeToRevenueTTM": 0.3081474830938508,
+          "researchAndDevelopementToRevenueTTM": 0,
+          "stockBasedCompensationToRevenueTTM": 0,
+          "intangiblesToTotalAssetsTTM": 0.060661566459562846,
+          "averageReceivablesTTM": 0,
+          "averagePayablesTTM": 0,
+          "averageInventoryTTM": 0,
+          "daysOfSalesOutstandingTTM": 0,
+          "daysOfPayablesOutstandingTTM": 0,
+          "daysOfInventoryOutstandingTTM": 0,
+          "operatingCycleTTM": 0,
+          "cashConversionCycleTTM": 0,
+          "freeCashFlowToEquityTTM": 551351000,
+          "freeCashFlowToFirmTTM": 1000763140.7365918,
+          "tangibleAssetValueTTM": 3463098000,
+          "netCurrentAssetValueTTM": -22840242000
+        }
+      },
+      "news": [],
+      "news_diag": {
+        "status": "NO_NEWS",
+        "message": "0 usable article(s)"
+      },
+      "sector": {
+        "sector": "Financial Services",
+        "industry": "Banks - Regional",
+        "sector_snapshot": {
+          "date": "2026-09-15",
+          "sector": "Financial Services",
+          "exchange": "NASDAQ",
+          "averageChange": 0.7331871663915024
+        },
+        "industry_snapshot": {
+          "date": "2026-09-15",
+          "industry": "Banks - Regional",
+          "exchange": "NASDAQ",
+          "averageChange": 0.6750500359795408
+        }
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 8.7
+        },
+        "hourly_scan_cycles": {
+          "score": -1.0,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.5% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-09-11",
+          "month1": 3.93,
+          "month2": 4.05,
+          "month3": 4.07,
+          "month6": 4.12,
+          "year1": 4.35,
+          "year2": 4.63,
+          "year3": 4.69,
+          "year5": 4.78,
+          "year7": 4.87,
+          "year10": 4.96,
+          "year20": 5.38,
+          "year30": 5.35
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-12-01",
+              "value": 326.031
+            },
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-12-01",
+              "value": 4.4
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-09-15 00:00:00",
+            "country": "SV",
+            "event": "Independence Day",
+            "currency": "USD",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-15 00:00:00",
+            "country": "SK",
+            "event": "The Day of the Virgin Mary of the Seven Sorrows",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-15 00:00:00",
+            "country": "CR",
+            "event": "Independence Day",
+            "currency": "CRC",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-15 00:00:00",
+            "country": "GT",
+            "event": "Independence Day",
+            "currency": "GTQ",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-15 01:30:00",
+            "country": "CN",
+            "event": "House Price Index YoY (Aug)",
+            "currency": "CNY",
+            "previous": -3.2,
+            "estimate": -3.1,
+            "actual": -3,
+            "change": 0.2,
+            "impact": "Medium",
+            "changePercentage": 6.25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Industrial Production YoY (Aug)",
+            "currency": "CNY",
+            "previous": 4.5,
+            "estimate": 4.8,
+            "actual": 5.2,
+            "change": 0.7,
+            "impact": "High",
+            "changePercentage": 15.556,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Retail Sales YoY (Aug)",
+            "currency": "CNY",
+            "previous": 0.6,
+            "estimate": 0.8,
+            "actual": 0.4,
+            "change": -0.2,
+            "impact": "High",
+            "changePercentage": -33.333,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Unemployment Rate (Aug)",
+            "currency": "CNY",
+            "previous": 5.2,
+            "estimate": 5.2,
+            "actual": 5.3,
+            "change": 0.1,
+            "impact": "High",
+            "changePercentage": 1.923,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "NBS Press Conference",
+            "currency": "CNY",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
+            "currency": "CNY",
+            "previous": -6.7,
+            "estimate": -7.2,
+            "actual": -7.2,
+            "change": -0.5,
+            "impact": "Medium",
+            "changePercentage": -7.463,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:35:00",
+            "country": "NZ",
+            "event": "6-Month Bill Auction",
+            "currency": "NZD",
+            "previous": 3.068,
+            "estimate": null,
+            "actual": 3.161,
+            "change": 0.093,
+            "impact": "Low",
+            "changePercentage": 3.031,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:35:00",
+            "country": "NZ",
+            "event": "1-Year Bill Auction",
+            "currency": "NZD",
+            "previous": 3.368,
+            "estimate": null,
+            "actual": 3.57,
+            "change": 0.202,
+            "impact": "Low",
+            "changePercentage": 5.998,
+            "unit": "%"
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising long-term trend support and outperforming SPY. Reclaimed VWAP, recovering RSI, and ADX near 30 support continuation, although contracting volume and mixed EMA slope temper conviction.",
+        "financial_assessment": "positive",
+        "financial_interpretation": "The last three reports each exceeded EPS expectations, with surprises ranging from roughly 5% to 7%, supporting earnings reliability. Reported revenue and net income were flat across the displayed periods, but margins and positive free cash flow remain supportive.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating timing uncertainty for a 29-60 trading-day setup. Forward revenue and EPS estimates have risen about 4%, which is constructive, but the eventual report remains an event-risk variable.",
+        "analyst_assessment": "mixed",
+        "analyst_interpretation": "Analysts remain largely at Hold despite modestly higher forward revenue and EPS estimates, with limited Buy support and one Sell rating.",
+        "valuation_assessment": "reasonable",
+        "valuation_interpretation": "A trailing P/E near 13 and price-to-book near 1.2 appear broadly reasonable for a profitable regional bank. The supplied data do not establish a discount or premium versus industry history, so valuation is supportive but not a major catalyst.",
+        "news_assessment": "no_recent_news",
+        "news_interpretation": "No usable recent company-specific news was returned. There is no identified headline catalyst or news-based risk in the supplied data.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "Financial-services and regional-bank groups are gaining modestly, providing a supportive backdrop for the setup.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Elevated longer-term yields and a seasonally adverse cycle can pressure bank valuations and risk appetite, despite currently low volatility.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is well supported by a durable uptrend, relative strength, repeated earnings beats, and a constructive sector backdrop. Flat reported growth, mostly Hold analyst coverage, unavailable earnings timing, and macro rate pressure keep the setup from being fully confirmed.",
+        "key_positive": "Repeated EPS beats, positive cash flow, reasonable valuation, and bullish price structure support continuation.",
+        "key_risk": "The main risks are an earnings-date surprise, limited demonstrated revenue growth, and pressure from elevated long-term yields.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2724
+        }
+      ],
+      "is_etf": false,
+      "buy_confidence": 56,
+      "report": "🟡 UBSI — United Bankshares, Inc.\nEntry: $47.72\neToro TP Value: $59.03\nShares: 5.24 ($250)\nScanner Potential: +23.6%\nTimeframe: 29–60 days\n\n═══ BUY CONFIDENCE: 56% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 2 | Hold: 8 | Sell: 1 | Strong Sell: 0\n🧠 Analysts remain largely at Hold despite modestly higher forward revenue and EPS estimates, with limited Buy support and one Sell rating.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising long-term trend support and outperforming SPY. Reclaimed VWAP, recovering RSI, and ADX near 30 support continuation, although contracting volume and mixed EMA slope temper conviction.\n🕒 Technical timestamp: 2026-09-15 13:33:49 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟢 Strong\n🧠 The last three reports each exceeded EPS expectations, with surprises ranging from roughly 5% to 7%, supporting earnings reliability. Reported revenue and net income were flat across the displayed periods, but margins and positive free cash flow remain supportive.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 13 and price-to-book near 1.2 appear broadly reasonable for a profitable regional bank. The supplied data do not establish a discount or premium versus industry history, so valuation is supportive but not a major catalyst.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing uncertainty for a 29-60 trading-day setup. Forward revenue and EPS estimates have risen about 4%, which is constructive, but the eventual report remains an event-risk variable.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Financial-services and regional-bank groups are gaining modestly, providing a supportive backdrop for the setup.\n🧠 Macro: Elevated longer-term yields and a seasonally adverse cycle can pressure bank valuations and risk appetite, despite currently low volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a durable uptrend, relative strength, repeated earnings beats, and a constructive sector backdrop. Flat reported growth, mostly Hold analyst coverage, unavailable earnings timing, and macro rate pressure keep the setup from being fully confirmed.\n🟢 Key Positive: Repeated EPS beats, positive cash flow, reasonable valuation, and bullish price structure support continuation.\n🔴 Key Risk: The main risks are an earnings-date surprise, limited demonstrated revenue growth, and pressure from elevated long-term yields.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
       "ticker": "SGP",
       "alert": {
-        "alerted": "2026-09-15T04:53:22.894971+00:00",
+        "alerted": "2026-09-15T13:33:49.181708+00:00",
         "entry": 28.75,
         "thesis_warned": false,
         "tp": 33.59
@@ -32,7 +649,7 @@
         "fee_pct": 0.04744789627889871,
         "trend_score": 5,
         "adx": 42.1,
-        "rs": 0.508,
+        "rs": 0.504,
         "runner": true,
         "regime": "uptrend",
         "regime_weeks": 6,
@@ -70,18 +687,18 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-15T04:53:22.894942+00:00"
+        "time": "2026-09-15T13:33:49.181665+00:00"
       },
       "profile": {
         "symbol": "SGP",
-        "price": 28.66,
-        "marketCap": 958199868,
+        "price": 28.362,
+        "marketCap": 948236729,
         "beta": -0.925,
         "lastDividend": 0,
         "range": "17.06-32.44",
-        "change": 1.14,
-        "changePercentage": 4.14244,
-        "volume": 130170,
+        "change": -0.298,
+        "changePercentage": -1.03978,
+        "volume": 2513.21875,
         "averageVolume": 102203,
         "companyName": "SpyGlass Pharma, Inc. Common Stock",
         "currency": "USD",
@@ -251,15 +868,15 @@
           "quickRatioTTM": 25.056797711137015,
           "solvencyRatioTTM": -4.9724455687053934,
           "cashRatioTTM": 23.645544134788597,
-          "priceToEarningsRatioTTM": -17.26506024096386,
-          "priceToEarningsGrowthRatioTTM": 0.12639491346733714,
-          "forwardPriceToEarningsGrowthRatioTTM": -1.3673338948924703,
-          "priceToEarningsDilutedRatioTTM": -17.26506024096386,
-          "priceToEarningsDilutedGrowthRatioTTM": 0.12639491346733714,
-          "priceToBookRatioTTM": 4.12446550403677,
+          "priceToEarningsRatioTTM": -17.070481927710848,
+          "priceToEarningsGrowthRatioTTM": 0.12497043485428934,
+          "forwardPriceToEarningsGrowthRatioTTM": -1.351923956021212,
+          "priceToEarningsDilutedRatioTTM": -17.070481927710848,
+          "priceToEarningsDilutedGrowthRatioTTM": 0.12497043485428934,
+          "priceToBookRatioTTM": 4.077982518767968,
           "priceToSalesRatioTTM": 0,
-          "priceToFreeCashFlowRatioTTM": -19.26455835461107,
-          "priceToOperatingCashFlowRatioTTM": -20.584589165771728,
+          "priceToFreeCashFlowRatioTTM": -19.047445585958705,
+          "priceToOperatingCashFlowRatioTTM": -20.35259955305211,
           "debtToAssetsRatioTTM": 0.006704103387790481,
           "debtToEquityRatioTTM": 0.007023463187068565,
           "debtToCapitalRatioTTM": 0.006974478196208482,
@@ -277,7 +894,7 @@
           "dividendPaidAndCapexCoverageRatioTTM": -14.636277900031436,
           "dividendPayoutRatioTTM": 0,
           "dividendYieldTTM": 0,
-          "enterpriseValueTTM": 736688868,
+          "enterpriseValueTTM": 725889896,
           "revenuePerShareTTM": 0,
           "netIncomePerShareTTM": -1.6762489846227862,
           "interestDebtPerShareTTM": 0.04880449472649791,
@@ -290,20 +907,20 @@
           "freeCashFlowPerShareTTM": -1.4874306147066663,
           "netIncomePerEBTTTM": 1,
           "ebtPerEbitTTM": 0.9025521294581756,
-          "priceToFairValueTTM": 4.12446550403677,
+          "priceToFairValueTTM": 4.077982518767968,
           "debtToMarketCapTTM": 0,
           "effectiveTaxRateTTM": 0,
-          "enterpriseValueMultipleTTM": -12.60837867919872,
+          "enterpriseValueMultipleTTM": -12.423555025365438,
           "dividendPerShareTTM": 0
         },
         "metrics": {
           "symbol": "SGP",
-          "marketCap": 958199868,
-          "enterpriseValueTTM": 736688868,
+          "marketCap": 947400896,
+          "enterpriseValueTTM": 725889896,
           "evToSalesTTM": 0,
-          "evToOperatingCashFlowTTM": -15.823035096009278,
-          "evToFreeCashFlowTTM": -14.81109125635819,
-          "evToEBITDATTM": -12.60837867919872,
+          "evToOperatingCashFlowTTM": -15.59108844881653,
+          "evToFreeCashFlowTTM": -14.593978487705824,
+          "evToEBITDATTM": -12.423555025365438,
           "netDebtToEBITDATTM": 3.791145340895782,
           "currentRatioTTM": 25.056797711137015,
           "incomeQualityTTM": 0.8306067471856993,
@@ -319,8 +936,8 @@
           "returnOnEquityTTM": -0.7564144629284582,
           "returnOnInvestedCapitalTTM": -0.2654105209721983,
           "returnOnCapitalEmployedTTM": -0.26541051983794595,
-          "earningsYieldTTM": -0.05848740351091368,
-          "freeCashFlowYieldTTM": -0.05190879446040583,
+          "earningsYieldTTM": -0.059154073635980735,
+          "freeCashFlowYieldTTM": -0.052500478108055325,
           "capexToOperatingCashFlowTTM": -0.0683233815885562,
           "capexToDepreciationTTM": 3.140177690029615,
           "capexToRevenueTTM": 0,
@@ -354,24 +971,24 @@
           "date": "2026-09-15",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": 0.01675913902323689
+          "averageChange": 0.016758631520574774
         },
         "industry_snapshot": {
           "date": "2026-09-15",
           "industry": "Biotechnology",
           "exchange": "NASDAQ",
-          "averageChange": -0.4031080673632781
+          "averageChange": -0.40310806655112774
         }
       },
       "macro": {
         "hourly_scan_macro": {
           "risk": "neutral",
-          "vol": 8.8
+          "vol": 8.7
         },
         "hourly_scan_cycles": {
           "score": -1.0,
           "label": "headwind",
-          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.5% (informative only)"
         },
         "treasury": {
           "date": "2026-09-11",
@@ -424,9 +1041,9 @@
         "calendar": [
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SK",
-            "event": "The Day of the Virgin Mary of the Seven Sorrows",
-            "currency": "EUR",
+            "country": "SV",
+            "event": "Independence Day",
+            "currency": "USD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -437,9 +1054,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "GT",
-            "event": "Independence Day",
-            "currency": "GTQ",
+            "country": "SK",
+            "event": "The Day of the Virgin Mary of the Seven Sorrows",
+            "currency": "EUR",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -463,9 +1080,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SV",
+            "country": "GT",
             "event": "Independence Day",
-            "currency": "USD",
+            "currency": "GTQ",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -485,6 +1102,19 @@
             "change": 0.2,
             "impact": "Medium",
             "changePercentage": 6.25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Industrial Production YoY (Aug)",
+            "currency": "CNY",
+            "previous": 4.5,
+            "estimate": 4.8,
+            "actual": 5.2,
+            "change": 0.7,
+            "impact": "High",
+            "changePercentage": 15.556,
             "unit": "%"
           },
           {
@@ -516,19 +1146,6 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
-            "currency": "CNY",
-            "previous": -6.7,
-            "estimate": -7.2,
-            "actual": -7.2,
-            "change": -0.5,
-            "impact": "Medium",
-            "changePercentage": -7.463,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:00:00",
-            "country": "CN",
             "event": "NBS Press Conference",
             "currency": "CNY",
             "previous": null,
@@ -542,27 +1159,14 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Industrial Production YoY (Aug)",
+            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
             "currency": "CNY",
-            "previous": 4.5,
-            "estimate": 4.8,
-            "actual": 5.2,
-            "change": 0.7,
-            "impact": "High",
-            "changePercentage": 15.556,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:35:00",
-            "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.878,
-            "estimate": 2.809,
-            "actual": 2.902,
-            "change": 0.024,
-            "impact": "Low",
-            "changePercentage": 0.834,
+            "previous": -6.7,
+            "estimate": -7.2,
+            "actual": -7.2,
+            "change": -0.5,
+            "impact": "Medium",
+            "changePercentage": -7.463,
             "unit": "%"
           },
           {
@@ -577,30 +1181,43 @@
             "impact": "Low",
             "changePercentage": 3.031,
             "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:35:00",
+            "country": "NZ",
+            "event": "1-Year Bill Auction",
+            "currency": "NZD",
+            "previous": 3.368,
+            "estimate": null,
+            "actual": 3.57,
+            "change": 0.202,
+            "impact": "Low",
+            "changePercentage": 5.998,
+            "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a strong established uptrend. Rising RSI, VWAP reclamation, elevated volume, bullish EMA alignment, and strong relative strength support continuation, though the move is somewhat extended.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend. Rising RSI, VWAP reclamation, strong volume, bullish EMA alignment, and substantial relative strength support continuation, though the stock is already near its highs.",
         "financial_assessment": "negative",
-        "financial_interpretation": "The last three reports showed losses, no reported revenue, and EPS misses, with the latest shortfall smaller than the extreme March miss but still negative. Negative operating and free cash flow add fundamental risk despite substantial cash and minimal debt.",
-        "earnings_assessment": "unknown",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around event timing. Sparse forward estimates remain loss-making through 2030, with revenue expectations appearing only in later years, so earnings-event risk is meaningful.",
+        "financial_interpretation": "Losses have persisted, with the latest EPS miss widening to -14.7% from -3.0% previously, while reported revenue remains zero. Operating cash flow and free cash flow are negative, although the balance sheet shows substantial cash and little debt.",
+        "earnings_assessment": "negative",
+        "earnings_interpretation": "The next earnings date is unavailable, creating event-timing uncertainty. Sparse forward estimates remain loss-making through 2030, which leaves a negative earnings backdrop and meaningful biotechnology event risk.",
         "analyst_assessment": "unknown",
-        "analyst_interpretation": "Analyst ratings are unavailable, while the limited estimates point to continued losses and provide little confirmation of near-term improvement.",
-        "valuation_assessment": "very_expensive",
-        "valuation_interpretation": "Negative earnings and no reported sales make conventional valuation support unavailable, while the price-to-book ratio above 4 provides little cushion for a pre-revenue, loss-making company. Valuation is therefore a fundamental headwind unless commercialization expectations improve.",
+        "analyst_interpretation": "Analyst ratings are unavailable, and the limited estimates provide no reliable consensus-support signal.",
+        "valuation_assessment": "expensive",
+        "valuation_interpretation": "Negative earnings and no reported sales prevent conventional P/E or P/S support, while the roughly 4.1 price-to-book ratio offers limited comfort for a loss-making company. Valuation is therefore a fundamental headwind unless future commercialization improves materially.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was provided. The absence of a clear catalyst leaves the technical move dependent mainly on momentum and future clinical or commercialization developments.",
-        "sector_assessment": "headwind",
-        "sector_interpretation": "Broader healthcare is supportive, but the biotechnology segment is weakening and modestly detracts from the setup.",
+        "news_interpretation": "No recent usable company-specific news was returned, so there is no identified catalyst or headline risk to validate the move.",
+        "sector_assessment": "neutral",
+        "sector_interpretation": "Broader healthcare strength is offset by weaker biotechnology performance, leaving the group context neither clearly supportive nor damaging.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Neutral risk conditions help, but elevated long-term yields and a seasonally unfavorable cycle backdrop can pressure speculative, loss-making biotechnology shares.",
+        "macro_interpretation": "Elevated yields and a mildly unfavorable seasonal-cycle backdrop create a modest headwind for loss-making biotechnology stocks, despite neutral overall market risk and volatility.",
         "overall_assessment": "caution",
-        "overall_summary": "Technically, SGP presents a high-quality pullback continuation with strong trend, momentum, volume, and relative strength. Fundamentals are materially weak, valuation lacks earnings or sales support, and sector, rate, and catalyst risks argue for caution despite the favorable chart.",
-        "key_positive": "Strong trend structure and major outperformance provide clear technical support for continuation.",
-        "key_risk": "Persistent losses, negative cash flow, sparse earnings visibility, and no clear catalyst could cause a sharp reversal if momentum fades.",
+        "overall_summary": "The technical signal is strong and resembles a supported pullback continuation, reinforced by trend strength, volume, and relative performance. Fundamental and earnings conditions are weak, valuation is demanding, and there is no confirmed catalyst, so the setup is technically attractive but fundamentally vulnerable.",
+        "key_positive": "Strong trend structure, VWAP defense, volume expansion, and major outperformance versus SPY support the technical continuation case.",
+        "key_risk": "Persistent losses, negative cash flow, sparse negative forecasts, and elevated biotech sensitivity could undermine the setup without a favorable catalyst.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -611,17 +1228,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2809
+          "chars": 2791
         }
       ],
       "is_etf": false,
-      "buy_confidence": 30,
-      "report": "🔴 SGP — SpyGlass Pharma, Inc. Common Stock\nEntry: $28.75\neToro TP Value: $42.15\nShares: 8.70 ($250)\nScanner Potential: +16.9%\nTimeframe: 9–27 days\n\n═══ BUY CONFIDENCE: 30% ═══\n🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings are unavailable, while the limited estimates point to continued losses and provide little confirmation of near-term improvement.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong established uptrend. Rising RSI, VWAP reclamation, elevated volume, bullish EMA alignment, and strong relative strength support continuation, though the move is somewhat extended.\n🕒 Technical timestamp: 2026-09-15 04:53:22 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🔴 Weak\n🧠 The last three reports showed losses, no reported revenue, and EPS misses, with the latest shortfall smaller than the extreme March miss but still negative. Negative operating and free cash flow add fundamental risk despite substantial cash and minimal debt.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Negative earnings and no reported sales make conventional valuation support unavailable, while the price-to-book ratio above 4 provides little cushion for a pre-revenue, loss-making company. Valuation is therefore a fundamental headwind unless commercialization expectations improve.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around event timing. Sparse forward estimates remain loss-making through 2030, with revenue expectations appearing only in later years, so earnings-event risk is meaningful.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Broader healthcare is supportive, but the biotechnology segment is weakening and modestly detracts from the setup.\n🧠 Macro: Neutral risk conditions help, but elevated long-term yields and a seasonally unfavorable cycle backdrop can pressure speculative, loss-making biotechnology shares.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Caution\n🧠 Technically, SGP presents a high-quality pullback continuation with strong trend, momentum, volume, and relative strength. Fundamentals are materially weak, valuation lacks earnings or sales support, and sector, rate, and catalyst risks argue for caution despite the favorable chart.\n🟢 Key Positive: Strong trend structure and major outperformance provide clear technical support for continuation.\n🔴 Key Risk: Persistent losses, negative cash flow, sparse earnings visibility, and no clear catalyst could cause a sharp reversal if momentum fades.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 31,
+      "report": "🔴 SGP — SpyGlass Pharma, Inc. Common Stock\nEntry: $28.75\neToro TP Value: $42.15\nShares: 8.70 ($250)\nScanner Potential: +16.9%\nTimeframe: 9–27 days\n\n═══ BUY CONFIDENCE: 31% ═══\n🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings are unavailable, and the limited estimates provide no reliable consensus-support signal.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend. Rising RSI, VWAP reclamation, strong volume, bullish EMA alignment, and substantial relative strength support continuation, though the stock is already near its highs.\n🕒 Technical timestamp: 2026-09-15 13:33:49 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🔴 Weak\n🧠 Losses have persisted, with the latest EPS miss widening to -14.7% from -3.0% previously, while reported revenue remains zero. Operating cash flow and free cash flow are negative, although the balance sheet shows substantial cash and little debt.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 Negative earnings and no reported sales prevent conventional P/E or P/S support, while the roughly 4.1 price-to-book ratio offers limited comfort for a loss-making company. Valuation is therefore a fundamental headwind unless future commercialization improves materially.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating event-timing uncertainty. Sparse forward estimates remain loss-making through 2030, which leaves a negative earnings backdrop and meaningful biotechnology event risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: Broader healthcare strength is offset by weaker biotechnology performance, leaving the group context neither clearly supportive nor damaging.\n🧠 Macro: Elevated yields and a mildly unfavorable seasonal-cycle backdrop create a modest headwind for loss-making biotechnology stocks, despite neutral overall market risk and volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Caution\n🧠 The technical signal is strong and resembles a supported pullback continuation, reinforced by trend strength, volume, and relative performance. Fundamental and earnings conditions are weak, valuation is demanding, and there is no confirmed catalyst, so the setup is technically attractive but fundamentally vulnerable.\n🟢 Key Positive: Strong trend structure, VWAP defense, volume expansion, and major outperformance versus SPY support the technical continuation case.\n🔴 Key Risk: Persistent losses, negative cash flow, sparse negative forecasts, and elevated biotech sensitivity could undermine the setup without a favorable catalyst.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "MDT",
       "alert": {
-        "alerted": "2026-09-15T04:53:22.564643+00:00",
+        "alerted": "2026-09-15T13:33:48.862467+00:00",
         "entry": 93.86,
         "thesis_warned": false,
         "tp": 101.42
@@ -641,7 +1258,7 @@
         "fee_pct": 0.0993892530400688,
         "trend_score": 5,
         "adx": 28.4,
-        "rs": 0.159,
+        "rs": 0.155,
         "runner": true,
         "regime": "uptrend",
         "regime_weeks": 8,
@@ -678,18 +1295,18 @@
           "quality +0.71 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=58.8)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-15T04:53:22.564615+00:00"
+        "time": "2026-09-15T13:33:48.862426+00:00"
       },
       "profile": {
         "symbol": "MDT",
-        "price": 93.8,
-        "marketCap": 120068690000,
+        "price": 93.32,
+        "marketCap": 119454266000,
         "beta": 0.574,
         "lastDividend": 2.85,
         "range": "73.31-106.33",
-        "change": 2.84,
-        "changePercentage": 3.12225,
-        "volume": 9206743,
+        "change": -0.48,
+        "changePercentage": -0.51173,
+        "volume": 127173,
         "averageVolume": 9097353,
         "companyName": "Medtronic plc",
         "currency": "USD",
@@ -779,7 +1396,7 @@
           "epsEstimated": 1.34,
           "revenueActual": null,
           "revenueEstimated": 9482441000,
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-15"
         },
         "estimates": [
           {
@@ -787,10 +1404,10 @@
             "period": null,
             "revenue_avg": 45992500000.0,
             "eps_avg": 8.09,
-            "revenue_low": 43497661657.0,
-            "revenue_high": 46902015757.0,
-            "eps_low": 7.51951,
-            "eps_high": 8.29798,
+            "revenue_low": 43499873718.0,
+            "revenue_high": 46904400946.0,
+            "eps_low": 7.52002,
+            "eps_high": 8.29852,
             "num_analysts_revenue": 7,
             "num_analysts_eps": 3
           },
@@ -799,36 +1416,36 @@
             "period": null,
             "revenue_avg": 44719040000.0,
             "eps_avg": 7.49833,
-            "revenue_low": 42293279807.0,
-            "revenue_high": 45603372696.0,
-            "eps_low": 6.96956,
-            "eps_high": 7.6911,
+            "revenue_low": 42295430620.0,
+            "revenue_high": 45605691843.0,
+            "eps_low": 6.97003,
+            "eps_high": 7.6916,
             "num_analysts_revenue": 8,
             "num_analysts_eps": 4
           },
           {
             "date": "2029-04-24",
             "period": null,
-            "revenue_avg": 42265749104.0,
-            "eps_avg": 6.93163,
-            "revenue_low": 39054962734.0,
-            "revenue_high": 43939013769.0,
-            "eps_low": 6.06686,
-            "eps_high": 7.40132,
+            "revenue_avg": 42123826282.0,
+            "eps_avg": 6.91097,
+            "revenue_low": 38923821310.0,
+            "revenue_high": 43791472344.0,
+            "eps_low": 6.04878,
+            "eps_high": 7.37926,
             "num_analysts_revenue": 16,
             "num_analysts_eps": 6
           },
           {
             "date": "2028-04-24",
             "period": null,
-            "revenue_avg": 40339305388.0,
-            "eps_avg": 6.39413,
-            "revenue_low": 37099281358.0,
-            "revenue_high": 41023534065.0,
-            "eps_low": 6.26364,
-            "eps_high": 6.58485,
-            "num_analysts_revenue": 22,
-            "num_analysts_eps": 17
+            "revenue_avg": 40269275559.0,
+            "eps_avg": 6.39388,
+            "revenue_low": 37034876274.0,
+            "revenue_high": 40952316401.0,
+            "eps_low": 6.26339,
+            "eps_high": 6.58459,
+            "num_analysts_revenue": 21,
+            "num_analysts_eps": 16
           }
         ]
       },
@@ -875,15 +1492,15 @@
           "quickRatioTTM": 2.0874650394101195,
           "solvencyRatioTTM": 0.1730968532127379,
           "cashRatioTTM": 0.143317230273752,
-          "priceToEarningsRatioTTM": 22.93398533007335,
-          "priceToEarningsGrowthRatioTTM": 1.8097905814818793,
-          "forwardPriceToEarningsGrowthRatioTTM": 3.2664855404863804,
-          "priceToEarningsDilutedRatioTTM": 23.10344827586207,
-          "priceToEarningsDilutedGrowthRatioTTM": 1.9503608660785892,
-          "priceToBookRatioTTM": 2.389816053511706,
-          "priceToSalesRatioTTM": 3.1982496936764155,
-          "priceToFreeCashFlowRatioTTM": 19.580673515981736,
-          "priceToOperatingCashFlowRatioTTM": 14.940291225886744,
+          "priceToEarningsRatioTTM": 22.816625916870414,
+          "priceToEarningsGrowthRatioTTM": 1.8005293930052126,
+          "forwardPriceToEarningsGrowthRatioTTM": 3.2647889703806747,
+          "priceToEarningsDilutedRatioTTM": 22.985221674876847,
+          "priceToEarningsDilutedGrowthRatioTTM": 1.9403803413907668,
+          "priceToBookRatioTTM": 2.377586717630196,
+          "priceToSalesRatioTTM": 3.1818833839433167,
+          "priceToFreeCashFlowRatioTTM": 19.48047390737117,
+          "priceToOperatingCashFlowRatioTTM": 14.863837710018666,
           "debtToAssetsRatioTTM": 0.30172764881143765,
           "debtToEquityRatioTTM": 0.5604594680681637,
           "debtToCapitalRatioTTM": 0.3591631051859412,
@@ -900,8 +1517,8 @@
           "capitalExpenditureCoverageRatioTTM": 4.222280609563847,
           "dividendPaidAndCapexCoverageRatioTTM": 1.4469656041779217,
           "dividendPayoutRatioTTM": 0.6978967495219885,
-          "dividendYieldTTM": 0.0303838,
-          "enterpriseValueTTM": 146530690000,
+          "dividendYieldTTM": 0.03054008,
+          "enterpriseValueTTM": 145916266000,
           "revenuePerShareTTM": 29.3342709798406,
           "netIncomePerShareTTM": 4.0865760275042975,
           "interestDebtPerShareTTM": 22.56446319737459,
@@ -914,20 +1531,20 @@
           "freeCashFlowPerShareTTM": 4.791373652133146,
           "netIncomePerEBTTTM": 0.7920642132364077,
           "ebtPerEbitTTM": 0.9730327144120248,
-          "priceToFairValueTTM": 2.389816053511706,
-          "debtToMarketCapTTM": 0.23447411644118046,
+          "priceToFairValueTTM": 2.377586717630196,
+          "debtToMarketCapTTM": 0.23568015561704594,
           "effectiveTaxRateTTM": 0.20187793427230047,
-          "enterpriseValueMultipleTTM": 15.50917548687553,
+          "enterpriseValueMultipleTTM": 15.4441433107536,
           "dividendPerShareTTM": 2.85
         },
         "metrics": {
           "symbol": "MDT",
-          "marketCap": 120068690000,
-          "enterpriseValueTTM": 146530690000,
-          "evToSalesTTM": 3.903113579457674,
-          "evToOperatingCashFlowTTM": 18.2365513378967,
-          "evToFreeCashFlowTTM": 23.896068166992826,
-          "evToEBITDATTM": 15.50917548687553,
+          "marketCap": 119454266000,
+          "enterpriseValueTTM": 145916266000,
+          "evToSalesTTM": 3.886747269724575,
+          "evToOperatingCashFlowTTM": 18.160082887367764,
+          "evToFreeCashFlowTTM": 23.795868558382256,
+          "evToEBITDATTM": 15.4441433107536,
           "netDebtToEBITDATTM": 2.8008044030482644,
           "currentRatioTTM": 2.0671243325705566,
           "incomeQualityTTM": 1.5249572973998862,
@@ -943,8 +1560,8 @@
           "returnOnEquityTTM": 0.1060142298258772,
           "returnOnInvestedCapitalTTM": 0.06444387204202812,
           "returnOnCapitalEmployedTTM": 0.08325665280282675,
-          "earningsYieldTTM": 0.04356690860878782,
-          "freeCashFlowYieldTTM": 0.051070766242223516,
+          "earningsYieldTTM": 0.04379099900883302,
+          "freeCashFlowYieldTTM": 0.051333453423923765,
           "capexToOperatingCashFlowTTM": 0.23683883011823273,
           "capexToDepreciationTTM": 0.6474991493705342,
           "capexToRevenueTTM": 0.050689893985403016,
@@ -984,17 +1601,11 @@
           "title": "Integrated Wealth Concepts LLC Sells 6,025 Shares of Medtronic PLC $MDT",
           "site": "defenseworld.net",
           "text": "Integrated Wealth Concepts LLC lessened its stake in Medtronic PLC (NYSE: MDT) by 14.8% in the second quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission (SEC). The institutional investor owned 34,691 shares of the medical technology company's stock after selling 6,025 shares during the"
-        },
-        {
-          "date": "2026-09-13 10:36 UTC",
-          "title": "Two Medical Device Dividend Giants, One Better Buy: Medtronic vs. Abbott",
-          "site": "247wallst.com",
-          "text": "Both Medtronic and Abbott have raised their dividends for nearly half a century, but retirement investors with limited capital can only choose one."
         }
       ],
       "news_diag": {
         "status": "OK",
-        "message": "4 usable article(s)"
+        "message": "3 usable article(s)"
       },
       "sector": {
         "sector": "Healthcare",
@@ -1003,24 +1614,24 @@
           "date": "2026-09-15",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": 0.01675913902323689
+          "averageChange": 0.016758631520574774
         },
         "industry_snapshot": {
           "date": "2026-09-15",
           "industry": "Medical - Devices",
           "exchange": "NASDAQ",
-          "averageChange": 0.9483547707808349
+          "averageChange": 0.9483547707808127
         }
       },
       "macro": {
         "hourly_scan_macro": {
           "risk": "neutral",
-          "vol": 8.8
+          "vol": 8.7
         },
         "hourly_scan_cycles": {
           "score": -1.0,
           "label": "headwind",
-          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.5% (informative only)"
         },
         "treasury": {
           "date": "2026-09-11",
@@ -1073,9 +1684,9 @@
         "calendar": [
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SK",
-            "event": "The Day of the Virgin Mary of the Seven Sorrows",
-            "currency": "EUR",
+            "country": "SV",
+            "event": "Independence Day",
+            "currency": "USD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1086,9 +1697,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "GT",
-            "event": "Independence Day",
-            "currency": "GTQ",
+            "country": "SK",
+            "event": "The Day of the Virgin Mary of the Seven Sorrows",
+            "currency": "EUR",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1112,9 +1723,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SV",
+            "country": "GT",
             "event": "Independence Day",
-            "currency": "USD",
+            "currency": "GTQ",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1134,6 +1745,19 @@
             "change": 0.2,
             "impact": "Medium",
             "changePercentage": 6.25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Industrial Production YoY (Aug)",
+            "currency": "CNY",
+            "previous": 4.5,
+            "estimate": 4.8,
+            "actual": 5.2,
+            "change": 0.7,
+            "impact": "High",
+            "changePercentage": 15.556,
             "unit": "%"
           },
           {
@@ -1165,19 +1789,6 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
-            "currency": "CNY",
-            "previous": -6.7,
-            "estimate": -7.2,
-            "actual": -7.2,
-            "change": -0.5,
-            "impact": "Medium",
-            "changePercentage": -7.463,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:00:00",
-            "country": "CN",
             "event": "NBS Press Conference",
             "currency": "CNY",
             "previous": null,
@@ -1191,27 +1802,14 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Industrial Production YoY (Aug)",
+            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
             "currency": "CNY",
-            "previous": 4.5,
-            "estimate": 4.8,
-            "actual": 5.2,
-            "change": 0.7,
-            "impact": "High",
-            "changePercentage": 15.556,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:35:00",
-            "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.878,
-            "estimate": 2.809,
-            "actual": 2.902,
-            "change": 0.024,
-            "impact": "Low",
-            "changePercentage": 0.834,
+            "previous": -6.7,
+            "estimate": -7.2,
+            "actual": -7.2,
+            "change": -0.5,
+            "impact": "Medium",
+            "changePercentage": -7.463,
             "unit": "%"
           },
           {
@@ -1226,30 +1824,43 @@
             "impact": "Low",
             "changePercentage": 3.031,
             "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:35:00",
+            "country": "NZ",
+            "event": "1-Year Bill Auction",
+            "currency": "NZD",
+            "previous": 3.368,
+            "estimate": null,
+            "actual": 3.57,
+            "change": 0.202,
+            "impact": "Low",
+            "changePercentage": 5.998,
+            "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Rising RSI, VWAP reclamation, a bullish EMA stack, and relative outperformance support continuation, though price is near the upper Bollinger range.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, not a fresh breakout. Price remains above the key moving averages, with rising RSI, reclaimed VWAP, improving volume, and strong relative strength supporting continuation.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "Medtronic has exceeded EPS estimates in each of the last three reports, but revenue and net income are shown as flat across the periods, indicating limited recent acceleration. Margins remain solid, and operating cash flow and free cash flow are positive, though leverage is substantial.",
+        "financial_interpretation": "The last three reports consistently beat EPS estimates, but revenue and net income were essentially flat across the supplied periods, indicating limited operating acceleration. Margins and positive operating/free cash flow are supportive, though substantial debt reduces the quality of the fundamental backdrop.",
         "earnings_assessment": "mixed",
-        "earnings_interpretation": "Next earnings are scheduled for November 17, leaving meaningful room before the event. Current estimates of $1.34 EPS and $9.48 billion revenue are below the latest reported figures, creating some expectation and event risk.",
+        "earnings_interpretation": "The next earnings report is not due until November 17, reducing immediate event risk for the scanner window. Current estimates are below the latest reported quarter, although longer-term EPS and revenue estimates have moved higher.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "The consensus is Buy with no sell ratings, while longer-term revenue and EPS estimates have been revised higher.",
+        "analyst_interpretation": "Analyst sentiment is broadly bullish with a Buy consensus, no sell ratings, and upward revisions to longer-term revenue and EPS estimates.",
         "valuation_assessment": "reasonable",
-        "valuation_interpretation": "A trailing P/E near 23 appears reasonable rather than deeply discounted. With recent revenue growth flat, valuation is supportive but leaves limited room for execution disappointments.",
+        "valuation_interpretation": "The valuation is not obviously cheap, but it appears reasonable for a profitable, cash-generative medical-device company with positive long-term estimate revisions. Flat recent growth and debt limit the valuation upside.",
         "news_assessment": "mixed",
-        "news_interpretation": "The MiniMed exchange offer and planned separation may sharpen portfolio focus and provide a catalyst, but the transaction introduces execution and shareholder-response uncertainty. No other supplied company news presents a major immediate risk.",
+        "news_interpretation": "The MiniMed separation exchange offer may sharpen Medtronic's strategic focus and unlock value, but the transaction introduces execution, timing, and investor-reaction risk. The remaining news is routine and not a material signal.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Recent industry performance is strongly supportive of the setup, with the broader group also modestly positive.",
-        "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and a seasonally unfavorable cycle create a modest headwind, although volatility and overall risk conditions remain manageable.",
+        "sector_interpretation": "Recent healthcare and especially medical-device performance supports rather than weakens the setup.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "Neutral risk conditions and low volatility are helpful, but elevated bond yields and a seasonally weaker cycle can limit upside multiples.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported as a pullback continuation within a strong, outperforming trend. Earnings consistency, analyst support, and sector strength help, but flat recent growth, lower next-quarter estimates, transaction uncertainty, and elevated yields argue for caution rather than an unqualified fundamental confirmation.",
-        "key_positive": "Strong trend structure, repeated EPS beats, positive cash flow, analyst Buy consensus, and supportive industry momentum reinforce the setup.",
-        "key_risk": "Flat recent operating growth and below-latest next-quarter estimates could make the near-term rally vulnerable if the MiniMed separation or macro rate backdrop disappoints.",
+        "overall_summary": "The technical signal is well supported by a strong uptrend, improving momentum, relative strength, and a favorable industry backdrop. Fundamentals are stable but not accelerating, while the MiniMed separation adds a potentially constructive yet event-driven risk. The setup is tradable, but continuation depends more on technical follow-through than on a strong near-term earnings catalyst.",
+        "key_positive": "Strong trend structure, repeated earnings beats, positive analyst revisions, and supportive medical-device momentum reinforce the setup.",
+        "key_risk": "Flat recent business growth, substantial debt, elevated yields, and uncertainty around the MiniMed separation could weaken follow-through.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1260,17 +1871,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2836
+          "chars": 2924
         }
       ],
       "is_etf": false,
-      "buy_confidence": 55,
-      "report": "🟡 MDT — Medtronic plc\nEntry: $93.86\neToro TP Value: $20.12\nShares: 2.66 ($250)\nScanner Potential: +8.1%\nTimeframe: 8–24 days\n\n═══ BUY CONFIDENCE: 55% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 1 | Buy: 30 | Hold: 20 | Sell: 0 | Strong Sell: 0\n🧠 The consensus is Buy with no sell ratings, while longer-term revenue and EPS estimates have been revised higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Rising RSI, VWAP reclamation, a bullish EMA stack, and relative outperformance support continuation, though price is near the upper Bollinger range.\n🕒 Technical timestamp: 2026-09-15 04:53:22 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 Medtronic has exceeded EPS estimates in each of the last three reports, but revenue and net income are shown as flat across the periods, indicating limited recent acceleration. Margins remain solid, and operating cash flow and free cash flow are positive, though leverage is substantial.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 23 appears reasonable rather than deeply discounted. With recent revenue growth flat, valuation is supportive but leaves limited room for execution disappointments.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-17 (+63 days)\n🟡 Mixed\n🧠 Next earnings are scheduled for November 17, leaving meaningful room before the event. Current estimates of $1.34 EPS and $9.48 billion revenue are below the latest reported figures, creating some expectation and event risk.\n\n═══ RECENT NEWS ═══\n• 2026-09-14 07:30 UTC — Medtronic Launches Exchange Offer to Complete Separation of MiniMed Group, Inc.\n• 2026-09-14 07:30 UTC — MiniMed Files Form S-4 Registration Statement in Connection with Medtronic Exchange Offer Announcement\n• 2026-09-14 04:42 UTC — Integrated Wealth Concepts LLC Sells 6,025 Shares of Medtronic PLC $MDT\n• 2026-09-13 10:36 UTC — Two Medical Device Dividend Giants, One Better Buy: Medtronic vs. Abbott\n🟡 The MiniMed exchange offer and planned separation may sharpen portfolio focus and provide a catalyst, but the transaction introduces execution and shareholder-response uncertainty. No other supplied company news presents a major immediate risk.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent industry performance is strongly supportive of the setup, with the broader group also modestly positive.\n🧠 Macro: Elevated long-term yields and a seasonally unfavorable cycle create a modest headwind, although volatility and overall risk conditions remain manageable.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a pullback continuation within a strong, outperforming trend. Earnings consistency, analyst support, and sector strength help, but flat recent growth, lower next-quarter estimates, transaction uncertainty, and elevated yields argue for caution rather than an unqualified fundamental confirmation.\n🟢 Key Positive: Strong trend structure, repeated EPS beats, positive cash flow, analyst Buy consensus, and supportive industry momentum reinforce the setup.\n🔴 Key Risk: Flat recent operating growth and below-latest next-quarter estimates could make the near-term rally vulnerable if the MiniMed separation or macro rate backdrop disappoints.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 58,
+      "report": "🟡 MDT — Medtronic plc\nEntry: $93.86\neToro TP Value: $20.12\nShares: 2.66 ($250)\nScanner Potential: +8.1%\nTimeframe: 8–24 days\n\n═══ BUY CONFIDENCE: 58% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 1 | Buy: 30 | Hold: 20 | Sell: 0 | Strong Sell: 0\n🧠 Analyst sentiment is broadly bullish with a Buy consensus, no sell ratings, and upward revisions to longer-term revenue and EPS estimates.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, not a fresh breakout. Price remains above the key moving averages, with rising RSI, reclaimed VWAP, improving volume, and strong relative strength supporting continuation.\n🕒 Technical timestamp: 2026-09-15 13:33:48 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 The last three reports consistently beat EPS estimates, but revenue and net income were essentially flat across the supplied periods, indicating limited operating acceleration. Margins and positive operating/free cash flow are supportive, though substantial debt reduces the quality of the fundamental backdrop.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The valuation is not obviously cheap, but it appears reasonable for a profitable, cash-generative medical-device company with positive long-term estimate revisions. Flat recent growth and debt limit the valuation upside.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-17 (+63 days)\n🟡 Mixed\n🧠 The next earnings report is not due until November 17, reducing immediate event risk for the scanner window. Current estimates are below the latest reported quarter, although longer-term EPS and revenue estimates have moved higher.\n\n═══ RECENT NEWS ═══\n• 2026-09-14 07:30 UTC — Medtronic Launches Exchange Offer to Complete Separation of MiniMed Group, Inc.\n• 2026-09-14 07:30 UTC — MiniMed Files Form S-4 Registration Statement in Connection with Medtronic Exchange Offer Announcement\n• 2026-09-14 04:42 UTC — Integrated Wealth Concepts LLC Sells 6,025 Shares of Medtronic PLC $MDT\n🟡 The MiniMed separation exchange offer may sharpen Medtronic's strategic focus and unlock value, but the transaction introduces execution, timing, and investor-reaction risk. The remaining news is routine and not a material signal.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: Recent healthcare and especially medical-device performance supports rather than weakens the setup.\n🧠 Macro: Neutral risk conditions and low volatility are helpful, but elevated bond yields and a seasonally weaker cycle can limit upside multiples.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong uptrend, improving momentum, relative strength, and a favorable industry backdrop. Fundamentals are stable but not accelerating, while the MiniMed separation adds a potentially constructive yet event-driven risk. The setup is tradable, but continuation depends more on technical follow-through than on a strong near-term earnings catalyst.\n🟢 Key Positive: Strong trend structure, repeated earnings beats, positive analyst revisions, and supportive medical-device momentum reinforce the setup.\n🔴 Key Risk: Flat recent business growth, substantial debt, elevated yields, and uncertainty around the MiniMed separation could weaken follow-through.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "GILD",
       "alert": {
-        "alerted": "2026-09-15T04:53:22.308433+00:00",
+        "alerted": "2026-09-15T13:33:48.614674+00:00",
         "entry": 146.45,
         "thesis_warned": false,
         "tp": 161.01
@@ -1290,7 +1901,7 @@
         "fee_pct": 0.08032902769744873,
         "trend_score": 5,
         "adx": 28.9,
-        "rs": 0.17,
+        "rs": 0.166,
         "runner": true,
         "regime": "uptrend",
         "regime_weeks": 7,
@@ -1327,18 +1938,18 @@
           "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=51.7)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-15T04:53:22.308405+00:00"
+        "time": "2026-09-15T13:33:48.614632+00:00"
       },
       "profile": {
         "symbol": "GILD",
-        "price": 146.41,
-        "marketCap": 181778245252,
+        "price": 144.35,
+        "marketCap": 179220611312,
         "beta": 0.35,
         "lastDividend": 3.22,
         "range": "108.46-157.29",
-        "change": 2.69,
-        "changePercentage": 1.87169,
-        "volume": 4919763,
+        "change": -2.06,
+        "changePercentage": -1.40701,
+        "volume": 196632.27756,
         "averageVolume": 7102108,
         "companyName": "Gilead Sciences, Inc.",
         "currency": "USD",
@@ -1462,12 +2073,12 @@
           {
             "date": "2027-12-31",
             "period": null,
-            "revenue_avg": 32711983210.0,
-            "eps_avg": 9.89415,
-            "revenue_low": 31708548142.0,
-            "revenue_high": 33384284705.0,
-            "eps_low": 9.3829,
-            "eps_high": 11.06701,
+            "revenue_avg": 32698149877.0,
+            "eps_avg": 9.92799,
+            "revenue_low": 31695139144.0,
+            "revenue_high": 33370167067.0,
+            "eps_low": 9.41499,
+            "eps_high": 11.10486,
             "num_analysts_revenue": 18,
             "num_analysts_eps": 16
           }
@@ -1516,15 +2127,15 @@
           "quickRatioTTM": 1.0882032667876589,
           "solvencyRatioTTM": -0.03131479610824605,
           "cashRatioTTM": 0.288475499092559,
-          "priceToEarningsRatioTTM": -56.31153846153847,
-          "priceToEarningsGrowthRatioTTM": 0.3719796143803977,
-          "forwardPriceToEarningsGrowthRatioTTM": 0.02400930866296491,
-          "priceToEarningsDilutedRatioTTM": -54.83520599250939,
-          "priceToEarningsDilutedGrowthRatioTTM": 0.3579619428899833,
-          "priceToBookRatioTTM": 15.386170950287454,
-          "priceToSalesRatioTTM": 5.968552838586813,
-          "priceToFreeCashFlowRatioTTM": 13.77212252837336,
-          "priceToOperatingCashFlowRatioTTM": 13.42983027082872,
+          "priceToEarningsRatioTTM": -55.484615384615395,
+          "priceToEarningsGrowthRatioTTM": 0.36651717212291635,
+          "forwardPriceToEarningsGrowthRatioTTM": 0.02355903281169793,
+          "priceToEarningsDilutedRatioTTM": -54.029962546816506,
+          "priceToEarningsDilutedGrowthRatioTTM": 0.35270534718467994,
+          "priceToBookRatioTTM": 15.160228271897193,
+          "priceToSalesRatioTTM": 5.880905897786971,
+          "priceToFreeCashFlowRatioTTM": 13.569881810970527,
+          "priceToOperatingCashFlowRatioTTM": 13.23261604309645,
           "debtToAssetsRatioTTM": 0.5317045500587496,
           "debtToEquityRatioTTM": 2.21897193101116,
           "debtToCapitalRatioTTM": 0.6893418080579923,
@@ -1541,8 +2152,8 @@
           "capitalExpenditureCoverageRatioTTM": 38.49715909090909,
           "dividendPaidAndCapexCoverageRatioTTM": 3.0658371040723984,
           "dividendPayoutRatioTTM": -1.2555555555555555,
-          "dividendYieldTTM": 0.02199303,
-          "enterpriseValueTTM": 204845245252,
+          "dividendYieldTTM": 0.02252877,
+          "enterpriseValueTTM": 202175870023,
           "revenuePerShareTTM": 24.50201126307321,
           "netIncomePerShareTTM": -2.6065969428801288,
           "interestDebtPerShareTTM": 21.917940466613032,
@@ -1555,20 +2166,20 @@
           "freeCashFlowPerShareTTM": 10.618664521319388,
           "netIncomePerEBTTTM": 1.6572890025575449,
           "ebtPerEbitTTM": 1.3094440723375753,
-          "priceToFairValueTTM": 15.386170950287454,
-          "debtToMarketCapTTM": 0.14438471426333252,
+          "priceToFairValueTTM": 15.160228271897193,
+          "debtToMarketCapTTM": 0.14653657296051087,
           "effectiveTaxRateTTM": -0.6572890025575447,
-          "enterpriseValueMultipleTTM": 322.08371894968553,
-          "dividendPerShareTTM": 3.22
+          "enterpriseValueMultipleTTM": 317.88658808647796,
+          "dividendPerShareTTM": 3.25
         },
         "metrics": {
           "symbol": "GILD",
-          "marketCap": 181778245252,
-          "enterpriseValueTTM": 204845245252,
-          "evToSalesTTM": 6.725940545442605,
-          "evToOperatingCashFlowTTM": 15.116614659582318,
-          "evToFreeCashFlowTTM": 15.519754924767026,
-          "evToEBITDATTM": 322.08371894968553,
+          "marketCap": 179108870023,
+          "enterpriseValueTTM": 202175870023,
+          "evToSalesTTM": 6.6382936046427625,
+          "evToOperatingCashFlowTTM": 14.919627335473397,
+          "evToFreeCashFlowTTM": 15.317514207364193,
+          "evToEBITDATTM": 317.88658808647796,
           "netDebtToEBITDATTM": 36.2688679245283,
           "currentRatioTTM": 1.265426497277677,
           "incomeQualityTTM": 2.588538681948424,
@@ -1584,8 +2195,8 @@
           "returnOnEquityTTM": -0.16284475717786015,
           "returnOnInvestedCapitalTTM": -0.03663174424025321,
           "returnOnCapitalEmployedTTM": -0.03893902248187366,
-          "earningsYieldTTM": -0.017803407847005865,
-          "freeCashFlowYieldTTM": 0.07261044896600342,
+          "earningsYieldTTM": -0.018068743538611737,
+          "freeCashFlowYieldTTM": 0.0736926094073681,
           "capexToOperatingCashFlowTTM": 0.025975942734853517,
           "capexToDepreciationTTM": 0.2563729060451566,
           "capexToRevenueTTM": 0.01155765694772787,
@@ -1609,6 +2220,12 @@
       },
       "news": [
         {
+          "date": "2026-09-15 03:16 UTC",
+          "title": "Bank of America Corp DE Sells 1,329,871 Shares of Gilead Sciences, Inc. $GILD",
+          "site": "defenseworld.net",
+          "text": "Bank of America Corp DE lessened its stake in Gilead Sciences, Inc. (NASDAQ: GILD) by 6.7% during the second quarter, according to its most recent Form 13F filing with the Securities and Exchange Commission. The institutional investor owned 18,649,065 shares of the biopharmaceutical company's stock after selling 1,329,871 shares during the quarter. Bank"
+        },
+        {
           "date": "2026-09-14 19:00 UTC",
           "title": "Gilead Sciences (GILD) Gains As Market Dips: What You Should Know",
           "site": "zacks.com",
@@ -1617,7 +2234,7 @@
       ],
       "news_diag": {
         "status": "OK",
-        "message": "1 usable article(s)"
+        "message": "2 usable article(s)"
       },
       "sector": {
         "sector": "Healthcare",
@@ -1626,7 +2243,7 @@
           "date": "2026-09-15",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": 0.01675913902323689
+          "averageChange": 0.016758631520574774
         },
         "industry_snapshot": {
           "date": "2026-09-15",
@@ -1638,12 +2255,12 @@
       "macro": {
         "hourly_scan_macro": {
           "risk": "neutral",
-          "vol": 8.8
+          "vol": 8.7
         },
         "hourly_scan_cycles": {
           "score": -1.0,
           "label": "headwind",
-          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.5% (informative only)"
         },
         "treasury": {
           "date": "2026-09-11",
@@ -1696,9 +2313,9 @@
         "calendar": [
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SK",
-            "event": "The Day of the Virgin Mary of the Seven Sorrows",
-            "currency": "EUR",
+            "country": "SV",
+            "event": "Independence Day",
+            "currency": "USD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1709,9 +2326,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "GT",
-            "event": "Independence Day",
-            "currency": "GTQ",
+            "country": "SK",
+            "event": "The Day of the Virgin Mary of the Seven Sorrows",
+            "currency": "EUR",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1735,9 +2352,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SV",
+            "country": "GT",
             "event": "Independence Day",
-            "currency": "USD",
+            "currency": "GTQ",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1757,6 +2374,19 @@
             "change": 0.2,
             "impact": "Medium",
             "changePercentage": 6.25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Industrial Production YoY (Aug)",
+            "currency": "CNY",
+            "previous": 4.5,
+            "estimate": 4.8,
+            "actual": 5.2,
+            "change": 0.7,
+            "impact": "High",
+            "changePercentage": 15.556,
             "unit": "%"
           },
           {
@@ -1788,19 +2418,6 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
-            "currency": "CNY",
-            "previous": -6.7,
-            "estimate": -7.2,
-            "actual": -7.2,
-            "change": -0.5,
-            "impact": "Medium",
-            "changePercentage": -7.463,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:00:00",
-            "country": "CN",
             "event": "NBS Press Conference",
             "currency": "CNY",
             "previous": null,
@@ -1814,27 +2431,14 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Industrial Production YoY (Aug)",
+            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
             "currency": "CNY",
-            "previous": 4.5,
-            "estimate": 4.8,
-            "actual": 5.2,
-            "change": 0.7,
-            "impact": "High",
-            "changePercentage": 15.556,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:35:00",
-            "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.878,
-            "estimate": 2.809,
-            "actual": 2.902,
-            "change": 0.024,
-            "impact": "Low",
-            "changePercentage": 0.834,
+            "previous": -6.7,
+            "estimate": -7.2,
+            "actual": -7.2,
+            "change": -0.5,
+            "impact": "Medium",
+            "changePercentage": -7.463,
             "unit": "%"
           },
           {
@@ -1849,30 +2453,43 @@
             "impact": "Low",
             "changePercentage": 3.031,
             "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:35:00",
+            "country": "NZ",
+            "event": "1-Year Bill Auction",
+            "currency": "NZD",
+            "previous": 3.368,
+            "estimate": null,
+            "actual": 3.57,
+            "change": 0.202,
+            "impact": "Low",
+            "changePercentage": 5.998,
+            "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price remains above rising key EMAs, has reclaimed VWAP, and shows improving RSI with steady volume and strong relative performance.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising 20-, 50-, and 200-day EMAs. Reclaimed VWAP, improving RSI, contracting bands, steady volume, and strong relative strength indicate buyers are defending the retracement.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "The last three reports beat EPS estimates, but the latest showed a large loss with sharply negative operating margins and flat reported revenue. Positive operating and free cash flow provide some support, though the latest profitability deterioration is a material weakness.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty about event timing and near-term gap risk. Longer-term analyst estimates are rising for both revenue and EPS, but the absence of a confirmed date limits catalyst visibility.",
+        "financial_interpretation": "The last three reports all beat EPS estimates, but revenue was flat and the latest period showed a substantial net loss with deeply negative operating margin. Positive operating and free cash flow provide support, although the debt load and distorted profitability reduce fundamental clarity.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty about the timing of the next catalyst. Longer-term revenue and EPS estimates are rising, but the absence of a confirmed date leaves event risk unresolved.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Ratings are decisively Buy-biased, and forward revenue and EPS estimates have increased versus the prior forecast period.",
+        "analyst_interpretation": "Analysts are strongly skewed toward Buy, while forward revenue and EPS averages have increased versus the prior estimates.",
         "valuation_assessment": "very_expensive",
-        "valuation_interpretation": "Valuation is a headwind: trailing earnings are negative while price-to-sales and price-to-book are elevated. The forward growth outlook offers support, but no supplied industry or historical comparison confirms that premium.",
+        "valuation_interpretation": "The negative trailing P/E is not useful because of reported losses, while price-to-sales and price-to-book ratios indicate a demanding valuation. This creates a headwind if growth or earnings normalization disappoints.",
         "news_assessment": "no_major_risk",
-        "news_interpretation": "Recent coverage only notes GILD's gain while the broader market dipped, without a substantive company-specific catalyst or new risk.",
+        "news_interpretation": "Recent coverage is broadly routine and price-positive, while Bank of America’s reported stake reduction is a filing-based transaction rather than a clear company-specific negative catalyst.",
         "sector_assessment": "neutral",
-        "sector_interpretation": "Broader healthcare performance supports the setup, but weaker industry performance offsets that benefit.",
-        "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and an unfavorable seasonal/presidential-cycle backdrop are modest headwinds, despite currently neutral risk and low volatility.",
+        "sector_interpretation": "Healthcare strength supports the setup, but the broader drug-manufacturer group has been slightly weaker, leaving the industry backdrop neutral.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "The macro backdrop is broadly neutral, although elevated long-term yields and a seasonally softer cycle could limit upside appetite.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported as a pullback continuation within a strong uptrend, with favorable relative strength and improving short-term momentum. Fundamental context is mixed: repeated EPS beats, cash generation, and positive estimates are offset by the latest loss, severely negative margins, expensive valuation, and limited earnings-date visibility.",
-        "key_positive": "Strong trend structure, relative outperformance, repeated EPS beats, positive cash flow, and upward-revised analyst estimates support the setup.",
-        "key_risk": "The latest loss and negative operating margin, elevated valuation, and unknown earnings timing increase downside and gap risk.",
+        "overall_summary": "Technicals strongly support a continuation attempt, reinforced by relative strength, repeated earnings beats, and positive analyst estimate direction. However, flat revenue, recent reported losses, demanding valuation, a neutral industry backdrop, and an unavailable earnings date argue for caution around fundamental and event risk.",
+        "key_positive": "Strong trend structure, improving pullback momentum, positive cash flow, and favorable analyst revisions support the setup.",
+        "key_risk": "The main risk is that the expensive valuation and unstable reported profitability leave the trade vulnerable to earnings or guidance disappointment.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1883,17 +2500,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2741
+          "chars": 2840
         }
       ],
       "is_etf": false,
-      "buy_confidence": 52,
-      "report": "🟡 GILD — Gilead Sciences, Inc.\nEntry: $146.45\neToro TP Value: $24.90\nShares: 1.71 ($250)\nScanner Potential: +9.9%\nTimeframe: 11–33 days\n\n═══ BUY CONFIDENCE: 52% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 38 | Hold: 19 | Sell: 1 | Strong Sell: 0\n🧠 Ratings are decisively Buy-biased, and forward revenue and EPS estimates have increased versus the prior forecast period.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price remains above rising key EMAs, has reclaimed VWAP, and shows improving RSI with steady volume and strong relative performance.\n🕒 Technical timestamp: 2026-09-15 04:53:22 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 The last three reports beat EPS estimates, but the latest showed a large loss with sharply negative operating margins and flat reported revenue. Positive operating and free cash flow provide some support, though the latest profitability deterioration is a material weakness.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Valuation is a headwind: trailing earnings are negative while price-to-sales and price-to-book are elevated. The forward growth outlook offers support, but no supplied industry or historical comparison confirms that premium.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty about event timing and near-term gap risk. Longer-term analyst estimates are rising for both revenue and EPS, but the absence of a confirmed date limits catalyst visibility.\n\n═══ RECENT NEWS ═══\n• 2026-09-14 19:00 UTC — Gilead Sciences (GILD) Gains As Market Dips: What You Should Know\n⚪ Recent coverage only notes GILD's gain while the broader market dipped, without a substantive company-specific catalyst or new risk.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: Broader healthcare performance supports the setup, but weaker industry performance offsets that benefit.\n🧠 Macro: Elevated long-term yields and an unfavorable seasonal/presidential-cycle backdrop are modest headwinds, despite currently neutral risk and low volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a pullback continuation within a strong uptrend, with favorable relative strength and improving short-term momentum. Fundamental context is mixed: repeated EPS beats, cash generation, and positive estimates are offset by the latest loss, severely negative margins, expensive valuation, and limited earnings-date visibility.\n🟢 Key Positive: Strong trend structure, relative outperformance, repeated EPS beats, positive cash flow, and upward-revised analyst estimates support the setup.\n🔴 Key Risk: The latest loss and negative operating margin, elevated valuation, and unknown earnings timing increase downside and gap risk.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 54,
+      "report": "🟡 GILD — Gilead Sciences, Inc.\nEntry: $146.45\neToro TP Value: $24.90\nShares: 1.71 ($250)\nScanner Potential: +9.9%\nTimeframe: 11–33 days\n\n═══ BUY CONFIDENCE: 54% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 38 | Hold: 19 | Sell: 1 | Strong Sell: 0\n🧠 Analysts are strongly skewed toward Buy, while forward revenue and EPS averages have increased versus the prior estimates.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising 20-, 50-, and 200-day EMAs. Reclaimed VWAP, improving RSI, contracting bands, steady volume, and strong relative strength indicate buyers are defending the retracement.\n🕒 Technical timestamp: 2026-09-15 13:33:48 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟡 Mixed\n🧠 The last three reports all beat EPS estimates, but revenue was flat and the latest period showed a substantial net loss with deeply negative operating margin. Positive operating and free cash flow provide support, although the debt load and distorted profitability reduce fundamental clarity.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The negative trailing P/E is not useful because of reported losses, while price-to-sales and price-to-book ratios indicate a demanding valuation. This creates a headwind if growth or earnings normalization disappoints.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty about the timing of the next catalyst. Longer-term revenue and EPS estimates are rising, but the absence of a confirmed date leaves event risk unresolved.\n\n═══ RECENT NEWS ═══\n• 2026-09-15 03:16 UTC — Bank of America Corp DE Sells 1,329,871 Shares of Gilead Sciences, Inc. $GILD\n• 2026-09-14 19:00 UTC — Gilead Sciences (GILD) Gains As Market Dips: What You Should Know\n⚪ Recent coverage is broadly routine and price-positive, while Bank of America’s reported stake reduction is a filing-based transaction rather than a clear company-specific negative catalyst.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: Healthcare strength supports the setup, but the broader drug-manufacturer group has been slightly weaker, leaving the industry backdrop neutral.\n🧠 Macro: The macro backdrop is broadly neutral, although elevated long-term yields and a seasonally softer cycle could limit upside appetite.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technicals strongly support a continuation attempt, reinforced by relative strength, repeated earnings beats, and positive analyst estimate direction. However, flat revenue, recent reported losses, demanding valuation, a neutral industry backdrop, and an unavailable earnings date argue for caution around fundamental and event risk.\n🟢 Key Positive: Strong trend structure, improving pullback momentum, positive cash flow, and favorable analyst revisions support the setup.\n🔴 Key Risk: The main risk is that the expensive valuation and unstable reported profitability leave the trade vulnerable to earnings or guidance disappointment.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "APPF",
       "alert": {
-        "alerted": "2026-09-15T04:53:21.973386+00:00",
+        "alerted": "2026-09-15T13:33:48.295724+00:00",
         "entry": 222.17,
         "thesis_warned": false,
         "tp": 262.14
@@ -1913,7 +2530,7 @@
         "fee_pct": 0.04428099835938902,
         "trend_score": 4,
         "adx": 31.3,
-        "rs": 0.395,
+        "rs": 0.392,
         "runner": false,
         "regime": "uptrend",
         "regime_weeks": 10,
@@ -1950,18 +2567,18 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-15T04:53:21.973356+00:00"
+        "time": "2026-09-15T13:33:48.295680+00:00"
       },
       "profile": {
         "symbol": "APPF",
-        "price": 221.87,
-        "marketCap": 7927389363,
+        "price": 220.3861,
+        "marketCap": 7874369788,
         "beta": 0.848,
         "lastDividend": 0,
         "range": "142.56-285.61",
-        "change": 13.39,
-        "changePercentage": 6.42268,
-        "volume": 263597,
+        "change": -1.4839,
+        "changePercentage": -0.66882,
+        "volume": 5830.13755,
         "averageVolume": 380459,
         "companyName": "AppFolio Inc.",
         "currency": "USD",
@@ -2139,15 +2756,15 @@
           "quickRatioTTM": 3.831024245423058,
           "solvencyRatioTTM": 1.4615107707663484,
           "cashRatioTTM": 2.5612143917438326,
-          "priceToEarningsRatioTTM": 50.31065759637188,
-          "priceToEarningsGrowthRatioTTM": -2.3833608132518553,
-          "forwardPriceToEarningsGrowthRatioTTM": 2.2087558928716984,
-          "priceToEarningsDilutedRatioTTM": 50.65525114155252,
-          "priceToEarningsDilutedGrowthRatioTTM": -2.419224925208629,
-          "priceToBookRatioTTM": 14.988629077321331,
-          "priceToSalesRatioTTM": 7.616023475260908,
-          "priceToFreeCashFlowRatioTTM": 29.460539840570824,
-          "priceToOperatingCashFlowRatioTTM": 28.897677455762025,
+          "priceToEarningsRatioTTM": 49.974172335600905,
+          "priceToEarningsGrowthRatioTTM": -2.367420536915332,
+          "forwardPriceToEarningsGrowthRatioTTM": 2.193983400558937,
+          "priceToEarningsDilutedRatioTTM": 50.316461187214614,
+          "priceToEarningsDilutedGrowthRatioTTM": -2.4030447842859393,
+          "priceToBookRatioTTM": 14.888382866982678,
+          "priceToSalesRatioTTM": 7.565086362252049,
+          "priceToFreeCashFlowRatioTTM": 29.263503309363212,
+          "priceToOperatingCashFlowRatioTTM": 28.704405433512036,
           "debtToAssetsRatioTTM": 0.055176742945011424,
           "debtToEquityRatioTTM": 0.06799495193312832,
           "debtToCapitalRatioTTM": 0.06366598625775693,
@@ -2165,7 +2782,7 @@
           "dividendPaidAndCapexCoverageRatioTTM": 71.55191400104877,
           "dividendPayoutRatioTTM": 0,
           "dividendYieldTTM": 0,
-          "enterpriseValueTTM": 7745763363,
+          "enterpriseValueTTM": 7692743788,
           "revenuePerShareTTM": 29.284351789331534,
           "netIncomePerShareTTM": 4.431915372496062,
           "interestDebtPerShareTTM": 1.0064989871708305,
@@ -2178,20 +2795,20 @@
           "freeCashFlowPerShareTTM": 7.570476029709655,
           "netIncomePerEBTTTM": 0.8296842493350538,
           "ebtPerEbitTTM": 1.0412290852056794,
-          "priceToFairValueTTM": 14.988629077321331,
+          "priceToFairValueTTM": 14.888382866982678,
           "debtToMarketCapTTM": 0,
           "effectiveTaxRateTTM": 0.17031575066494614,
-          "enterpriseValueMultipleTTM": 37.385012539275735,
+          "enterpriseValueMultipleTTM": 37.129112974144384,
           "dividendPerShareTTM": 0
         },
         "metrics": {
           "symbol": "APPF",
-          "marketCap": 7927389363,
-          "enterpriseValueTTM": 7745763363,
-          "evToSalesTTM": 7.441531241263427,
-          "evToOperatingCashFlowTTM": 28.383260338073793,
-          "evToFreeCashFlowTTM": 28.78556353196945,
-          "evToEBITDATTM": 37.385012539275735,
+          "marketCap": 7874369788,
+          "enterpriseValueTTM": 7692743788,
+          "evToSalesTTM": 7.390594128254568,
+          "evToOperatingCashFlowTTM": 28.188977563127754,
+          "evToFreeCashFlowTTM": 28.588527000761843,
+          "evToEBITDATTM": 37.129112974144384,
           "netDebtToEBITDATTM": -0.8766198977744958,
           "currentRatioTTM": 3.831024245423058,
           "incomeQualityTTM": 1.7323840840993348,
@@ -2207,8 +2824,8 @@
           "returnOnEquityTTM": 0.3092093156549386,
           "returnOnInvestedCapitalTTM": 0.2888688414605488,
           "returnOnCapitalEmployedTTM": 0.3236034776189065,
-          "earningsYieldTTM": 0.01997527999502439,
-          "freeCashFlowYieldTTM": 0.03394370929424979,
+          "earningsYieldTTM": 0.020109777215968076,
+          "freeCashFlowYieldTTM": 0.034172258510143515,
           "capexToOperatingCashFlowTTM": 0.013975866529375337,
           "capexToDepreciationTTM": 0.16264392324093815,
           "capexToRevenueTTM": 0.003664196648422541,
@@ -2242,7 +2859,7 @@
           "date": "2026-09-15",
           "sector": "Technology",
           "exchange": "NASDAQ",
-          "averageChange": 0.5705419515107613
+          "averageChange": 0.5705419515108501
         },
         "industry_snapshot": {
           "date": "2026-09-15",
@@ -2254,12 +2871,12 @@
       "macro": {
         "hourly_scan_macro": {
           "risk": "neutral",
-          "vol": 8.8
+          "vol": 8.7
         },
         "hourly_scan_cycles": {
           "score": -1.0,
           "label": "headwind",
-          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.5% (informative only)"
         },
         "treasury": {
           "date": "2026-09-11",
@@ -2312,9 +2929,9 @@
         "calendar": [
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SK",
-            "event": "The Day of the Virgin Mary of the Seven Sorrows",
-            "currency": "EUR",
+            "country": "SV",
+            "event": "Independence Day",
+            "currency": "USD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -2325,9 +2942,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "GT",
-            "event": "Independence Day",
-            "currency": "GTQ",
+            "country": "SK",
+            "event": "The Day of the Virgin Mary of the Seven Sorrows",
+            "currency": "EUR",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -2351,9 +2968,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SV",
+            "country": "GT",
             "event": "Independence Day",
-            "currency": "USD",
+            "currency": "GTQ",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -2373,6 +2990,19 @@
             "change": 0.2,
             "impact": "Medium",
             "changePercentage": 6.25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Industrial Production YoY (Aug)",
+            "currency": "CNY",
+            "previous": 4.5,
+            "estimate": 4.8,
+            "actual": 5.2,
+            "change": 0.7,
+            "impact": "High",
+            "changePercentage": 15.556,
             "unit": "%"
           },
           {
@@ -2404,19 +3034,6 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
-            "currency": "CNY",
-            "previous": -6.7,
-            "estimate": -7.2,
-            "actual": -7.2,
-            "change": -0.5,
-            "impact": "Medium",
-            "changePercentage": -7.463,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:00:00",
-            "country": "CN",
             "event": "NBS Press Conference",
             "currency": "CNY",
             "previous": null,
@@ -2430,27 +3047,14 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Industrial Production YoY (Aug)",
+            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
             "currency": "CNY",
-            "previous": 4.5,
-            "estimate": 4.8,
-            "actual": 5.2,
-            "change": 0.7,
-            "impact": "High",
-            "changePercentage": 15.556,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:35:00",
-            "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.878,
-            "estimate": 2.809,
-            "actual": 2.902,
-            "change": 0.024,
-            "impact": "Low",
-            "changePercentage": 0.834,
+            "previous": -6.7,
+            "estimate": -7.2,
+            "actual": -7.2,
+            "change": -0.5,
+            "impact": "Medium",
+            "changePercentage": -7.463,
             "unit": "%"
           },
           {
@@ -2465,30 +3069,43 @@
             "impact": "Low",
             "changePercentage": 3.031,
             "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:35:00",
+            "country": "NZ",
+            "event": "1-Year Bill Auction",
+            "currency": "NZD",
+            "previous": 3.368,
+            "estimate": null,
+            "actual": 3.57,
+            "change": 0.202,
+            "impact": "Low",
+            "changePercentage": 5.998,
+            "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Reclaimed VWAP, rising RSI, expanding bands, positive volume, and a bullish EMA stack support continuation, though price is somewhat extended from the short-term EMA.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Rising RSI, expanding bands, VWAP recovery, and above-average volume support renewed buying momentum.",
         "financial_assessment": "mixed",
-        "financial_interpretation": "The last three reports beat EPS estimates, but the surprise narrowed from strong double-digit beats to a modest latest beat and displayed revenue and earnings growth were flat. Margins and cash generation are healthy, with positive operating and free cash flow and limited debt.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty over event timing during the scanner's holding window. Longer-term analyst estimates point to rising revenue and EPS, but an unconfirmed earnings catalyst remains a risk.",
+        "financial_interpretation": "The last three reports beat EPS estimates, but the latest surprise narrowed to 1.2% from 11.8% and 13.9%, suggesting deceleration in earnings outperformance. Margins remain solid, while positive operating and free cash flow and low debt support financial quality; reported revenue and net income growth were flat.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around event timing and gap risk. Longer-range analyst estimates imply rising revenue and EPS expectations, but the lack of a confirmed date limits catalyst visibility.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Ratings show a clear Buy consensus, while forward revenue and EPS estimates have increased materially.",
+        "analyst_interpretation": "Analysts lean Buy, with 9 buys versus 3 holds and 1 sell, while forward revenue and EPS estimates have increased.",
         "valuation_assessment": "very_expensive",
-        "valuation_interpretation": "The elevated earnings, sales, and book multiples make valuation a meaningful headwind and leave limited room for disappointment. The valuation may be supported by expected growth, but that growth is not yet confirmed by the latest displayed operating trend.",
+        "valuation_interpretation": "Valuation is a meaningful headwind, with a roughly 50 P/E and elevated price-to-sales and price-to-book ratios. Continued execution and strong growth expectations appear necessary to justify the premium.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was returned. There is no identified headline catalyst or immediate news risk in the supplied data.",
+        "news_interpretation": "No usable recent company-specific news was provided. There is no identified headline catalyst or immediate company-specific risk beyond normal disclosure uncertainty.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Recent industry strength is stronger than the broader technology sector and supports the setup.",
+        "sector_interpretation": "The broader technology group is supportive, while application software is showing stronger recent momentum and reinforces the setup.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and a seasonally unfavorable cycle backdrop weigh on expensive growth stocks, despite otherwise neutral volatility conditions.",
+        "macro_interpretation": "Elevated longer-term yields and a stated seasonal cycle headwind can pressure richly valued growth stocks, despite currently moderate volatility.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported by a strong uptrend, improving momentum, relative strength, and favorable industry participation. Earnings quality and analyst expectations are constructive, but narrowing recent surprises, very rich valuation, unknown earnings timing, and elevated yields argue for caution around continuation.",
-        "key_positive": "Bullish technical structure is reinforced by positive analyst revisions, repeated EPS beats, healthy margins, and strong cash flow.",
-        "key_risk": "Very expensive valuation combined with uncertain earnings timing and elevated yields could amplify downside if momentum stalls or expectations are missed.",
+        "overall_summary": "The technical signal is well supported as a bullish pullback continuation, with strong relative strength and improving short-term momentum. Fundamentals are broadly healthy and analyst expectations are positive, but expensive valuation, slowing earnings-surprise magnitude, uncertain earnings timing, and macro rate pressure warrant caution.",
+        "key_positive": "Strong trend structure, sector momentum, cash generation, and positive analyst estimate revisions support the continuation setup.",
+        "key_risk": "The high valuation and elevated yields leave APPF vulnerable to a sharp reaction if earnings timing or execution disappoints.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -2499,17 +3116,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2772
+          "chars": 2734
         }
       ],
       "is_etf": false,
       "buy_confidence": 50,
-      "report": "🟡 APPF — AppFolio Inc.\nEntry: $222.17\neToro TP Value: $45.17\nShares: 1.13 ($251)\nScanner Potential: +18.0%\nTimeframe: 11–33 days\n\n═══ BUY CONFIDENCE: 50% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 9 | Hold: 3 | Sell: 1 | Strong Sell: 0\n🧠 Ratings show a clear Buy consensus, while forward revenue and EPS estimates have increased materially.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Reclaimed VWAP, rising RSI, expanding bands, positive volume, and a bullish EMA stack support continuation, though price is somewhat extended from the short-term EMA.\n🕒 Technical timestamp: 2026-09-15 04:53:21 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports beat EPS estimates, but the surprise narrowed from strong double-digit beats to a modest latest beat and displayed revenue and earnings growth were flat. Margins and cash generation are healthy, with positive operating and free cash flow and limited debt.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The elevated earnings, sales, and book multiples make valuation a meaningful headwind and leave limited room for disappointment. The valuation may be supported by expected growth, but that growth is not yet confirmed by the latest displayed operating trend.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty over event timing during the scanner's holding window. Longer-term analyst estimates point to rising revenue and EPS, but an unconfirmed earnings catalyst remains a risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent industry strength is stronger than the broader technology sector and supports the setup.\n🧠 Macro: Elevated long-term yields and a seasonally unfavorable cycle backdrop weigh on expensive growth stocks, despite otherwise neutral volatility conditions.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong uptrend, improving momentum, relative strength, and favorable industry participation. Earnings quality and analyst expectations are constructive, but narrowing recent surprises, very rich valuation, unknown earnings timing, and elevated yields argue for caution around continuation.\n🟢 Key Positive: Bullish technical structure is reinforced by positive analyst revisions, repeated EPS beats, healthy margins, and strong cash flow.\n🔴 Key Risk: Very expensive valuation combined with uncertain earnings timing and elevated yields could amplify downside if momentum stalls or expectations are missed.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 APPF — AppFolio Inc.\nEntry: $222.17\neToro TP Value: $45.17\nShares: 1.13 ($251)\nScanner Potential: +18.0%\nTimeframe: 11–33 days\n\n═══ BUY CONFIDENCE: 50% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 9 | Hold: 3 | Sell: 1 | Strong Sell: 0\n🧠 Analysts lean Buy, with 9 buys versus 3 holds and 1 sell, while forward revenue and EPS estimates have increased.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Rising RSI, expanding bands, VWAP recovery, and above-average volume support renewed buying momentum.\n🕒 Technical timestamp: 2026-09-15 13:33:48 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports beat EPS estimates, but the latest surprise narrowed to 1.2% from 11.8% and 13.9%, suggesting deceleration in earnings outperformance. Margins remain solid, while positive operating and free cash flow and low debt support financial quality; reported revenue and net income growth were flat.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Valuation is a meaningful headwind, with a roughly 50 P/E and elevated price-to-sales and price-to-book ratios. Continued execution and strong growth expectations appear necessary to justify the premium.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around event timing and gap risk. Longer-range analyst estimates imply rising revenue and EPS expectations, but the lack of a confirmed date limits catalyst visibility.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: The broader technology group is supportive, while application software is showing stronger recent momentum and reinforces the setup.\n🧠 Macro: Elevated longer-term yields and a stated seasonal cycle headwind can pressure richly valued growth stocks, despite currently moderate volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a bullish pullback continuation, with strong relative strength and improving short-term momentum. Fundamentals are broadly healthy and analyst expectations are positive, but expensive valuation, slowing earnings-surprise magnitude, uncertain earnings timing, and macro rate pressure warrant caution.\n🟢 Key Positive: Strong trend structure, sector momentum, cash generation, and positive analyst estimate revisions support the continuation setup.\n🔴 Key Risk: The high valuation and elevated yields leave APPF vulnerable to a sharp reaction if earnings timing or execution disappoints.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "ADBE",
       "alert": {
-        "alerted": "2026-09-15T04:53:21.905833+00:00",
+        "alerted": "2026-09-15T13:33:48.231761+00:00",
         "entry": 265.4,
         "thesis_warned": false,
         "tp": 322.93
@@ -2529,7 +3146,7 @@
         "fee_pct": 0.036983473051162084,
         "trend_score": 4,
         "adx": 33.5,
-        "rs": 0.279,
+        "rs": 0.275,
         "runner": false,
         "regime": "uptrend",
         "regime_weeks": 6,
@@ -2565,19 +3182,19 @@
           "quality +0.84 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=49.4)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-15T04:53:21.905801+00:00"
+        "time": "2026-09-15T13:33:48.231715+00:00"
       },
       "profile": {
         "symbol": "ADBE",
-        "price": 265.6,
-        "marketCap": 105576000000,
+        "price": 259.33,
+        "marketCap": 103083675000,
         "beta": 1.417,
         "lastDividend": 0,
         "range": "190.12-370.86",
-        "change": 13.37,
-        "changePercentage": 5.30072,
-        "volume": 5690281,
-        "averageVolume": 5938537,
+        "change": -6.27,
+        "changePercentage": -2.36069,
+        "volume": 280739.24843,
+        "averageVolume": 5958327,
         "companyName": "Adobe Inc.",
         "currency": "USD",
         "cik": "0000796343",
@@ -2663,10 +3280,10 @@
           "symbol": "ADBE",
           "date": "2026-12-09",
           "epsActual": null,
-          "epsEstimated": 6.3,
+          "epsEstimated": 6.31,
           "revenueActual": null,
           "revenueEstimated": 6834117000,
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-15"
         },
         "estimates": [
           {
@@ -2674,10 +3291,10 @@
             "period": null,
             "revenue_avg": 37385300000.0,
             "eps_avg": 34.84,
-            "revenue_low": 36823494559.0,
-            "revenue_high": 38176100459.0,
-            "eps_low": 34.15938,
-            "eps_high": 35.79805,
+            "revenue_low": 36818846655.0,
+            "revenue_high": 38171281829.0,
+            "eps_low": 34.15375,
+            "eps_high": 35.79221,
             "num_analysts_revenue": 16,
             "num_analysts_eps": 6
           },
@@ -2686,20 +3303,20 @@
             "period": null,
             "revenue_avg": 34428000000.0,
             "eps_avg": 34.77,
-            "revenue_low": 33910635214.0,
-            "revenue_high": 35156245546.0,
-            "eps_low": 34.09074,
-            "eps_high": 35.72612,
+            "revenue_low": 33906354975.0,
+            "revenue_high": 35151808085.0,
+            "eps_low": 34.08512,
+            "eps_high": 35.7203,
             "num_analysts_revenue": 21,
             "num_analysts_eps": 11
           },
           {
             "date": "2028-11-28",
             "period": null,
-            "revenue_avg": 31597463643.0,
+            "revenue_avg": 31609942569.0,
             "eps_avg": 31.53149,
-            "revenue_low": 30679449446.0,
-            "revenue_high": 33363954375.0,
+            "revenue_low": 30673360388.0,
+            "revenue_high": 33357332514.0,
             "eps_low": 28.96485,
             "eps_high": 37.0136,
             "num_analysts_revenue": 23,
@@ -2708,12 +3325,12 @@
           {
             "date": "2027-11-28",
             "period": null,
-            "revenue_avg": 29061466966.0,
-            "eps_avg": 27.70248,
-            "revenue_low": 28488678716.0,
-            "revenue_high": 29744793298.0,
-            "eps_low": 26.39243,
-            "eps_high": 28.69005,
+            "revenue_avg": 29078183139.0,
+            "eps_avg": 27.72384,
+            "revenue_low": 28505065421.0,
+            "revenue_high": 29761902521.0,
+            "eps_low": 26.41278,
+            "eps_high": 28.71218,
             "num_analysts_revenue": 27,
             "num_analysts_eps": 23
           }
@@ -2762,15 +3379,15 @@
           "quickRatioTTM": 0.7703566621803499,
           "solvencyRatioTTM": 0.44189493330405666,
           "cashRatioTTM": 0.3666722745625841,
-          "priceToEarningsRatioTTM": 14.796657381615601,
-          "priceToEarningsGrowthRatioTTM": 1.2799904154311597,
-          "forwardPriceToEarningsGrowthRatioTTM": 1.1223134030688175,
-          "priceToEarningsDilutedRatioTTM": 14.821428571428571,
-          "priceToEarningsDilutedGrowthRatioTTM": 1.2797427035330236,
-          "priceToBookRatioTTM": 8.918055083305,
-          "priceToSalesRatioTTM": 4.0653061224489795,
-          "priceToFreeCashFlowRatioTTM": 9.651339244903555,
-          "priceToOperatingCashFlowRatioTTM": 9.406617053707524,
+          "priceToEarningsRatioTTM": 14.445404456824514,
+          "priceToEarningsGrowthRatioTTM": 1.2496051489801459,
+          "forwardPriceToEarningsGrowthRatioTTM": 1.0887319420440507,
+          "priceToEarningsDilutedRatioTTM": 14.46958761160714,
+          "priceToEarningsDilutedGrowthRatioTTM": 1.2493633174323129,
+          "priceToBookRatioTTM": 8.706352341890513,
+          "priceToSalesRatioTTM": 3.9688012259530225,
+          "priceToFreeCashFlowRatioTTM": 9.422229439436878,
+          "priceToOperatingCashFlowRatioTTM": 9.183316502286381,
           "debtToAssetsRatioTTM": 0.225542843801074,
           "debtToEquityRatioTTM": 0.5748044882692962,
           "debtToCapitalRatioTTM": 0.3650005397819281,
@@ -2788,7 +3405,7 @@
           "dividendPaidAndCapexCoverageRatioTTM": 52.11682242990654,
           "dividendPayoutRatioTTM": 0,
           "dividendYieldTTM": 0,
-          "enterpriseValueTTM": 107979000000,
+          "enterpriseValueTTM": 105472767838,
           "revenuePerShareTTM": 65.74683544303798,
           "netIncomePerShareTTM": 18.440506329113923,
           "interestDebtPerShareTTM": 17.458227848101266,
@@ -2801,20 +3418,20 @@
           "freeCashFlowPerShareTTM": 27.69367088607595,
           "netIncomePerEBTTTM": 0.7848292209891176,
           "ebtPerEbitTTM": 1.0010786322942509,
-          "priceToFairValueTTM": 8.918055083305,
-          "debtToMarketCapTTM": 0.060269379404410094,
+          "priceToFairValueTTM": 8.706352341890513,
+          "debtToMarketCapTTM": 0.061734882434207584,
           "effectiveTaxRateTTM": 0.21517077901088244,
-          "enterpriseValueMultipleTTM": 10.74845709735218,
+          "enterpriseValueMultipleTTM": 10.498981469042405,
           "dividendPerShareTTM": 0
         },
         "metrics": {
           "symbol": "ADBE",
-          "marketCap": 105576000000,
-          "enterpriseValueTTM": 107979000000,
-          "evToSalesTTM": 4.157835964574509,
-          "evToOperatingCashFlowTTM": 9.681610329059446,
-          "evToFreeCashFlowTTM": 9.871011975500503,
-          "evToEBITDATTM": 10.74845709735218,
+          "marketCap": 103045912500,
+          "enterpriseValueTTM": 105448912500,
+          "evToSalesTTM": 4.060412495186754,
+          "evToOperatingCashFlowTTM": 9.4547576885143,
+          "evToFreeCashFlowTTM": 9.63972140963525,
+          "evToEBITDATTM": 10.496606858451125,
           "netDebtToEBITDATTM": 0.2391996814652598,
           "currentRatioTTM": 0.7703566621803499,
           "incomeQualityTTM": 1.5311641954969797,
@@ -2830,8 +3447,8 @@
           "returnOnEquityTTM": 0.6287712029004273,
           "returnOnInvestedCapitalTTM": 0.36787257736943774,
           "returnOnCapitalEmployedTTM": 0.5124081136351075,
-          "earningsYieldTTM": 0.06942961720298917,
-          "freeCashFlowYieldTTM": 0.10361256346139273,
+          "earningsYieldTTM": 0.07113432340970131,
+          "freeCashFlowYieldTTM": 0.10615656394910375,
           "capexToOperatingCashFlowTTM": 0.01918766251232852,
           "capexToDepreciationTTM": 0.2793733681462141,
           "capexToRevenueTTM": 0.00824027724297266,
@@ -2908,7 +3525,7 @@
           "date": "2026-09-15",
           "sector": "Technology",
           "exchange": "NASDAQ",
-          "averageChange": 0.5705419515107613
+          "averageChange": 0.5705419515108501
         },
         "industry_snapshot": {
           "date": "2026-09-15",
@@ -2920,12 +3537,12 @@
       "macro": {
         "hourly_scan_macro": {
           "risk": "neutral",
-          "vol": 8.8
+          "vol": 8.7
         },
         "hourly_scan_cycles": {
           "score": -1.0,
           "label": "headwind",
-          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.9%, decade-pos 6 avg +10.5% (informative only)"
         },
         "treasury": {
           "date": "2026-09-11",
@@ -2978,9 +3595,9 @@
         "calendar": [
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SK",
-            "event": "The Day of the Virgin Mary of the Seven Sorrows",
-            "currency": "EUR",
+            "country": "SV",
+            "event": "Independence Day",
+            "currency": "USD",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -2991,9 +3608,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "GT",
-            "event": "Independence Day",
-            "currency": "GTQ",
+            "country": "SK",
+            "event": "The Day of the Virgin Mary of the Seven Sorrows",
+            "currency": "EUR",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -3017,9 +3634,9 @@
           },
           {
             "date": "2026-09-15 00:00:00",
-            "country": "SV",
+            "country": "GT",
             "event": "Independence Day",
-            "currency": "USD",
+            "currency": "GTQ",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -3039,6 +3656,19 @@
             "change": 0.2,
             "impact": "Medium",
             "changePercentage": 6.25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:00:00",
+            "country": "CN",
+            "event": "Industrial Production YoY (Aug)",
+            "currency": "CNY",
+            "previous": 4.5,
+            "estimate": 4.8,
+            "actual": 5.2,
+            "change": 0.7,
+            "impact": "High",
+            "changePercentage": 15.556,
             "unit": "%"
           },
           {
@@ -3070,19 +3700,6 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
-            "currency": "CNY",
-            "previous": -6.7,
-            "estimate": -7.2,
-            "actual": -7.2,
-            "change": -0.5,
-            "impact": "Medium",
-            "changePercentage": -7.463,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:00:00",
-            "country": "CN",
             "event": "NBS Press Conference",
             "currency": "CNY",
             "previous": null,
@@ -3096,27 +3713,14 @@
           {
             "date": "2026-09-15 02:00:00",
             "country": "CN",
-            "event": "Industrial Production YoY (Aug)",
+            "event": "Fixed Asset Investment (YTD) YoY (Aug)",
             "currency": "CNY",
-            "previous": 4.5,
-            "estimate": 4.8,
-            "actual": 5.2,
-            "change": 0.7,
-            "impact": "High",
-            "changePercentage": 15.556,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-15 02:35:00",
-            "country": "NZ",
-            "event": "3-Month Bill Auction",
-            "currency": "NZD",
-            "previous": 2.878,
-            "estimate": 2.809,
-            "actual": 2.902,
-            "change": 0.024,
-            "impact": "Low",
-            "changePercentage": 0.834,
+            "previous": -6.7,
+            "estimate": -7.2,
+            "actual": -7.2,
+            "change": -0.5,
+            "impact": "Medium",
+            "changePercentage": -7.463,
             "unit": "%"
           },
           {
@@ -3131,30 +3735,43 @@
             "impact": "Low",
             "changePercentage": 3.031,
             "unit": "%"
+          },
+          {
+            "date": "2026-09-15 02:35:00",
+            "country": "NZ",
+            "event": "1-Year Bill Auction",
+            "currency": "NZD",
+            "previous": 3.368,
+            "estimate": null,
+            "actual": 3.57,
+            "change": 0.202,
+            "impact": "Low",
+            "changePercentage": 5.998,
+            "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a pullback continuation within a six-week daily uptrend, supported by rising RSI, a VWAP reclaim, and expanding Bollinger Bands. It remains somewhat conflicted because price is below the 200 EMA and the moving averages are tangled.",
-        "financial_assessment": "mixed",
-        "financial_interpretation": "Adobe has continued to beat EPS estimates, but the surprise has decelerated from 3.2% to 0.8%, while reported revenue and net income were flat across the displayed periods. Very strong margins, operating cash flow, and free cash flow support financial quality despite limited recent growth acceleration.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a six-week uptrend, supported by rising RSI, VWAP reclamation, expanding bands, and strong relative strength. It remains somewhat conflicted because price is near and below the 200 EMA, while the moving averages are tangled.",
+        "financial_assessment": "positive",
+        "financial_interpretation": "Adobe beat EPS estimates in each of the last three reports, although the supplied periods show flat revenue and net income rather than clear acceleration. Very strong gross and operating margins, along with positive operating and free cash flow, support financial quality.",
         "earnings_assessment": "positive",
-        "earnings_interpretation": "Next earnings are 85 days away, beyond the scanner's expected holding period, reducing immediate event risk. The next EPS estimate is modestly above the latest reported EPS, while longer-term revenue estimates have improved but EPS estimates are nearly unchanged.",
+        "earnings_interpretation": "Next earnings are scheduled for December 9, outside the scanner's projected holding window, reducing immediate event risk. The next-quarter EPS and revenue estimates are above the latest reported figures, while longer-term revenue expectations have improved and EPS expectations are nearly unchanged.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Ratings lean Buy, with 30 buys versus 28 holds and 6 sells, while forward revenue estimates increased and EPS estimates were essentially stable.",
+        "analyst_interpretation": "The consensus is Buy, with substantially more buy ratings than sell ratings, and forward revenue estimates have risen while EPS estimates are broadly stable.",
         "valuation_assessment": "reasonable",
-        "valuation_interpretation": "The trailing P/E near 15 provides valuation support rather than an obvious headwind. However, the relatively flat recent revenue and EPS outlook limits the case for a strong valuation re-rating.",
+        "valuation_interpretation": "The trailing P/E near 14.4 provides valuation support for a profitable, high-margin software company. The supplied data does not establish a direct industry or historical comparison, so valuation is supportive but not decisively cheap.",
         "news_assessment": "mixed",
-        "news_interpretation": "Recent coverage is broadly constructive after solid results and a rebound in the AI software trade. Conflicting commentary about mixed earnings reactions and AI disruption shows that sentiment remains sensitive despite the low valuation.",
+        "news_interpretation": "Recent coverage is broadly constructive, highlighting solid results and renewed interest in Adobe as AI concerns ease. However, continued concern about AI disruption and the possibility of muted market reaction to good results remain meaningful sentiment risks.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Recent technology and application-software strength supports the setup and aligns with Adobe's rebound.",
+        "sector_interpretation": "Technology is modestly positive and application software is performing more strongly, providing a supportive backdrop for the setup.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and seasonally unfavorable cycle conditions can pressure software multiples, although current volatility and overall risk conditions are not extreme.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is credible as a pullback continuation, with improving momentum and supportive software-sector participation. Strong profitability, cash flow, valuation, and analyst sentiment help, but decelerating earnings surprises, a price position below the 200 EMA, and elevated yields argue for caution rather than an unqualified fundamental confirmation.",
-        "key_positive": "Improving technical momentum is supported by strong margins, cash generation, reasonable valuation, and a favorable software-sector backdrop.",
-        "key_risk": "The main risk is a failed trend recovery as price remains below the 200 EMA while earnings-surprise momentum and forward EPS growth have slowed.",
+        "macro_interpretation": "No major near-term macro catalyst is supplied, while elevated longer-term yields and a seasonally unfavorable cycle can pressure software valuations and risk appetite.",
+        "overall_assessment": "supportive",
+        "overall_summary": "The technical pullback signal is supported by improving momentum, strong relative strength, positive earnings surprises, healthy cash flow, and a favorable software backdrop. The main caveats are the unresolved position below the 200 EMA, AI-related sentiment risk, elevated yields, and limited evidence of recent revenue acceleration.",
+        "key_positive": "Consistent EPS beats, strong margins and cash flow, positive analyst sentiment, and sector strength reinforce the technical recovery.",
+        "key_risk": "Failure to reclaim the 200 EMA or renewed concern about AI disruption could undermine the pullback continuation.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -3165,12 +3782,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2977
+          "chars": 3038
         }
       ],
       "is_etf": false,
-      "buy_confidence": 59,
-      "report": "🟡 ADBE — Adobe Inc.\nEntry: $265.40\neToro TP Value: $54.08\nShares: 0.94 ($249)\nScanner Potential: +21.7%\nTimeframe: 8–17 days\n\n═══ BUY CONFIDENCE: 59% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 30 | Hold: 28 | Sell: 6 | Strong Sell: 0\n🧠 Ratings lean Buy, with 30 buys versus 28 holds and 6 sells, while forward revenue estimates increased and EPS estimates were essentially stable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a pullback continuation within a six-week daily uptrend, supported by rising RSI, a VWAP reclaim, and expanding Bollinger Bands. It remains somewhat conflicted because price is below the 200 EMA and the moving averages are tangled.\n🕒 Technical timestamp: 2026-09-15 04:53:21 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 Adobe has continued to beat EPS estimates, but the surprise has decelerated from 3.2% to 0.8%, while reported revenue and net income were flat across the displayed periods. Very strong margins, operating cash flow, and free cash flow support financial quality despite limited recent growth acceleration.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The trailing P/E near 15 provides valuation support rather than an obvious headwind. However, the relatively flat recent revenue and EPS outlook limits the case for a strong valuation re-rating.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-12-09 (+85 days)\n🟢 Positive\n🧠 Next earnings are 85 days away, beyond the scanner's expected holding period, reducing immediate event risk. The next EPS estimate is modestly above the latest reported EPS, while longer-term revenue estimates have improved but EPS estimates are nearly unchanged.\n\n═══ RECENT NEWS ═══\n• 2026-09-14 19:50 UTC — Is Adobe Stock a Buy Right Now in September?\n• 2026-09-14 14:22 UTC — Analysts Are Punting Their Calls Into the Next Quarter After Adobe's Mixed Earnings\n• 2026-09-14 14:06 UTC — Adobe Stock Jumps 4.2% as Investors Reassess the AI Software Trade\n• 2026-09-14 12:10 UTC — Master your Classes and Prep for What's Next with Student Spaces in Acrobat\n• 2026-09-14 11:05 UTC — AI Trade Stumbles as CEOs Talk Model Slowdown\n🟡 Recent coverage is broadly constructive after solid results and a rebound in the AI software trade. Conflicting commentary about mixed earnings reactions and AI disruption shows that sentiment remains sensitive despite the low valuation.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent technology and application-software strength supports the setup and aligns with Adobe's rebound.\n🧠 Macro: Elevated long-term yields and seasonally unfavorable cycle conditions can pressure software multiples, although current volatility and overall risk conditions are not extreme.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is credible as a pullback continuation, with improving momentum and supportive software-sector participation. Strong profitability, cash flow, valuation, and analyst sentiment help, but decelerating earnings surprises, a price position below the 200 EMA, and elevated yields argue for caution rather than an unqualified fundamental confirmation.\n🟢 Key Positive: Improving technical momentum is supported by strong margins, cash generation, reasonable valuation, and a favorable software-sector backdrop.\n🔴 Key Risk: The main risk is a failed trend recovery as price remains below the 200 EMA while earnings-surprise momentum and forward EPS growth have slowed.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 74,
+      "report": "🟢 ADBE — Adobe Inc.\nEntry: $265.40\neToro TP Value: $54.08\nShares: 0.94 ($249)\nScanner Potential: +21.7%\nTimeframe: 8–17 days\n\n═══ BUY CONFIDENCE: 74% ═══\n🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 30 | Hold: 28 | Sell: 6 | Strong Sell: 0\n🧠 The consensus is Buy, with substantially more buy ratings than sell ratings, and forward revenue estimates have risen while EPS estimates are broadly stable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a six-week uptrend, supported by rising RSI, VWAP reclamation, expanding bands, and strong relative strength. It remains somewhat conflicted because price is near and below the 200 EMA, while the moving averages are tangled.\n🕒 Technical timestamp: 2026-09-15 13:33:48 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟡 Mixed\nQ1 2026 — 🟡 Mixed\n🧠 Adobe beat EPS estimates in each of the last three reports, although the supplied periods show flat revenue and net income rather than clear acceleration. Very strong gross and operating margins, along with positive operating and free cash flow, support financial quality.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The trailing P/E near 14.4 provides valuation support for a profitable, high-margin software company. The supplied data does not establish a direct industry or historical comparison, so valuation is supportive but not decisively cheap.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-12-09 (+85 days)\n🟢 Positive\n🧠 Next earnings are scheduled for December 9, outside the scanner's projected holding window, reducing immediate event risk. The next-quarter EPS and revenue estimates are above the latest reported figures, while longer-term revenue expectations have improved and EPS expectations are nearly unchanged.\n\n═══ RECENT NEWS ═══\n• 2026-09-14 19:50 UTC — Is Adobe Stock a Buy Right Now in September?\n• 2026-09-14 14:22 UTC — Analysts Are Punting Their Calls Into the Next Quarter After Adobe's Mixed Earnings\n• 2026-09-14 14:06 UTC — Adobe Stock Jumps 4.2% as Investors Reassess the AI Software Trade\n• 2026-09-14 12:10 UTC — Master your Classes and Prep for What's Next with Student Spaces in Acrobat\n• 2026-09-14 11:05 UTC — AI Trade Stumbles as CEOs Talk Model Slowdown\n🟡 Recent coverage is broadly constructive, highlighting solid results and renewed interest in Adobe as AI concerns ease. However, continued concern about AI disruption and the possibility of muted market reaction to good results remain meaningful sentiment risks.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Technology is modestly positive and application software is performing more strongly, providing a supportive backdrop for the setup.\n🧠 Macro: No major near-term macro catalyst is supplied, while elevated longer-term yields and a seasonally unfavorable cycle can pressure software valuations and risk appetite.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The technical pullback signal is supported by improving momentum, strong relative strength, positive earnings surprises, healthy cash flow, and a favorable software backdrop. The main caveats are the unresolved position below the 200 EMA, AI-related sentiment risk, elevated yields, and limited evidence of recent revenue acceleration.\n🟢 Key Positive: Consistent EPS beats, strong margins and cash flow, positive analyst sentiment, and sector strength reinforce the technical recovery.\n🔴 Key Risk: Failure to reclaim the 200 EMA or renewed concern about AI disruption could undermine the pullback continuation.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
