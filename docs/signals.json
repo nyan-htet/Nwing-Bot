@@ -1,17 +1,14 @@
 {
-  "generated": "2026-09-16T19:35:47.852927+00:00",
+  "generated": "2026-09-16T22:57:55.160467+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 8.7
+    "vol": 8.6
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.7%, decade-pos 6 avg +10.0% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.8%, decade-pos 6 avg +10.1% (informative only)"
   },
   "signals": [],
-  "position_alerts": [
-    "\u26a0\ufe0f ADBE thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $249.87, signalled at $265.40, -5.9%, target $322.93). The reason for the signal is gone. Your call.",
-    "\u26a0\ufe0f COPX thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $83.46, signalled at $92.90, -10.2%, target $115.57). The reason for the signal is gone. Your call."
-  ]
+  "position_alerts": []
 }
