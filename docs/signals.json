@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15T22:56:13.523032+00:00",
+  "generated": "2026-09-16T04:48:56.879238+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 8.8
@@ -62,7 +62,7 @@
         "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=51.2)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-15T22:55:57.850057+00:00"
+      "time": "2026-09-16T04:48:38.618382+00:00"
     },
     {
       "ticker": "ING",
@@ -116,7 +116,62 @@
         "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=56.4)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-15T22:55:58.006392+00:00"
+      "time": "2026-09-16T04:48:38.750013+00:00"
+    },
+    {
+      "ticker": "LFST",
+      "name": "LifeStance Health Group, Inc.",
+      "setup": "pullback",
+      "entry": 13.06,
+      "tp": 16.3,
+      "tp_pct": 0.24760811327975518,
+      "shares": 19.14,
+      "value": 250.0641,
+      "pl_amount": 61.92,
+      "eta_days_low": 14,
+      "eta_days_high": 42,
+      "fee_pct": 0.032300837076192815,
+      "trend_score": 5,
+      "adx": 38.0,
+      "rs": 0.504,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 20,
+      "ema20": 12.58,
+      "ema50": 11.67,
+      "ema200": 8.95,
+      "above_ema200": true,
+      "quality": 0.78,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.2,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 55.9 falling",
+        "bollinger": "band position 67%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "2.2x average, steady",
+        "extension": "+0.4 ATR from 20 EMA, slope +2.3%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 55.9,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.78 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.2, opt +0.0; RSI=55.9)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-16T04:48:38.807286+00:00"
     },
     {
       "ticker": "TBPH",
@@ -170,7 +225,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-15T22:55:58.520610+00:00"
+      "time": "2026-09-16T04:48:39.222940+00:00"
     }
   ],
   "position_alerts": []
