@@ -1,17 +1,72 @@
 {
-  "generated": "2026-09-17T19:58:50.185568+00:00",
+  "generated": "2026-09-17T22:53:07.707000+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 9.7
+    "vol": 9.6
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.8% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
   },
-  "signals": [],
-  "position_alerts": [
-    "\u26a0\ufe0f BMY thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $62.77, signalled at $64.64, -2.9%, target $77.16). The reason for the signal is gone. Your call.",
-    "\ud83c\udfaf CAI reached its target $29.19 (now $30.95, signalled at $25.49, +21.4%). Tracking stops here \u2014 a new signal may follow if the trend continues."
-  ]
+  "signals": [
+    {
+      "ticker": "TBPH",
+      "name": "Theravance Biopharma Inc",
+      "setup": "pullback",
+      "entry": 17.04,
+      "tp": 20.73,
+      "tp_pct": 0.21654922438091417,
+      "shares": 14.67,
+      "value": 249.97681467,
+      "pl_amount": 54.13,
+      "eta_days_low": 191,
+      "eta_days_high": 250,
+      "fee_pct": 0.03694652808038023,
+      "trend_score": 4,
+      "adx": 54.1,
+      "rs": 0.006,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 12,
+      "ema20": 17.03,
+      "ema50": 16.95,
+      "ema200": 16.74,
+      "above_ema200": true,
+      "quality": 0.89,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.8
+      },
+      "q_notes": {
+        "rsi": "RSI 51.7 rising",
+        "bollinger": "band position 42%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.4x average, surging",
+        "extension": "+0.0 ATR from 20 EMA, slope -0.0%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 51.7,
+      "options_note": "",
+      "sector": "",
+      "warnings": [
+        "\u26a0 monthly opex 2026-09-18 \u2014 pinning/chop risk"
+      ],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=51.7)",
+        "\u26a0 monthly opex 2026-09-18 \u2014 pinning/chop risk",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-17T22:52:46.569530+00:00"
+    }
+  ],
+  "position_alerts": []
 }
