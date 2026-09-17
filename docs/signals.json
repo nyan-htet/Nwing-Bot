@@ -1,14 +1,17 @@
 {
-  "generated": "2026-09-16T22:57:55.160467+00:00",
+  "generated": "2026-09-17T19:58:50.185568+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 8.6
+    "vol": 9.7
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +1.8%, decade-pos 6 avg +10.1% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.8% (informative only)"
   },
   "signals": [],
-  "position_alerts": []
+  "position_alerts": [
+    "\u26a0\ufe0f BMY thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $62.77, signalled at $64.64, -2.9%, target $77.16). The reason for the signal is gone. Your call.",
+    "\ud83c\udfaf CAI reached its target $29.19 (now $30.95, signalled at $25.49, +21.4%). Tracking stops here \u2014 a new signal may follow if the trend continues."
+  ]
 }

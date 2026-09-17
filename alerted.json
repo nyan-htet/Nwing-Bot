@@ -18,15 +18,9 @@
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
     "scans_muted": 24,
-    "thesis_warned": false,
+    "thesis_warned": true,
+    "thesis_warned_on": "2026-09-17T19:58:29.287771+00:00",
     "tp": 77.16
-  },
-  "CAI": {
-    "alerted": "2026-09-01T05:06:07.998807+00:00",
-    "entry": 25.49,
-    "scans_muted": 23,
-    "thesis_warned": false,
-    "tp": 29.19
   },
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
@@ -38,7 +32,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 48,
+    "scans_muted": 49,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
