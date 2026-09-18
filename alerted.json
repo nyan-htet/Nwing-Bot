@@ -102,11 +102,5 @@
     "scans_muted": 11,
     "thesis_warned": false,
     "tp": 429.71
-  },
-  "VRNS": {
-    "alerted": "2026-09-18T22:35:47.037655+00:00",
-    "entry": 47.51,
-    "thesis_warned": false,
-    "tp": 57.66
   }
 }
