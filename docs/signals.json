@@ -1,129 +1,16 @@
 {
-  "generated": "2026-09-18T12:59:51.744720+00:00",
+  "generated": "2026-09-18T19:03:59.225429+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 9.6
+    "vol": 9.1
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "TBPH",
-      "name": "Theravance Biopharma Inc",
-      "setup": "pullback",
-      "entry": 17.04,
-      "tp": 20.73,
-      "tp_pct": 0.21654922438091417,
-      "shares": 14.67,
-      "value": 249.97681467,
-      "pl_amount": 54.13,
-      "eta_days_low": 191,
-      "eta_days_high": 250,
-      "fee_pct": 0.03694652808038023,
-      "trend_score": 4,
-      "adx": 54.1,
-      "rs": 0.006,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 12,
-      "ema20": 17.03,
-      "ema50": 16.95,
-      "ema200": 16.74,
-      "above_ema200": true,
-      "quality": 0.89,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 0.8
-      },
-      "q_notes": {
-        "rsi": "RSI 51.7 rising",
-        "bollinger": "band position 42%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "1.4x average, surging",
-        "extension": "+0.0 ATR from 20 EMA, slope -0.0%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 51.7,
-      "options_note": "",
-      "sector": "",
-      "warnings": [
-        "\u26a0 monthly opex 2026-09-18 \u2014 pinning/chop risk"
-      ],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=51.7)",
-        "\u26a0 monthly opex 2026-09-18 \u2014 pinning/chop risk",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-09-18T12:59:30.750176+00:00"
-    },
-    {
-      "ticker": "TGT",
-      "name": "Target Corporation",
-      "setup": "pullback",
-      "entry": 159.88,
-      "tp": 185.51,
-      "tp_pct": 0.16030773079809846,
-      "shares": 1.56,
-      "value": 249.4128,
-      "pl_amount": 39.98,
-      "eta_days_low": 10,
-      "eta_days_high": 20,
-      "fee_pct": 0.05002150924897706,
-      "trend_score": 5,
-      "adx": 26.2,
-      "rs": 0.201,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 39,
-      "ema20": 158.21,
-      "ema50": 151.92,
-      "ema200": 129.17,
-      "above_ema200": true,
-      "quality": 0.89,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 0.8
-      },
-      "q_notes": {
-        "rsi": "RSI 52.7 rising, reset from 37",
-        "bollinger": "band position 56%, stable",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "1.4x average, steady",
-        "extension": "+0.5 ATR from 20 EMA, slope -1.7%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 52.7,
-      "options_note": "",
-      "sector": "",
-      "warnings": [
-        "\u26a0 monthly opex 2026-09-18 \u2014 pinning/chop risk"
-      ],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.7)",
-        "\u26a0 monthly opex 2026-09-18 \u2014 pinning/chop risk",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-09-18T12:59:30.779653+00:00"
-    }
-  ],
-  "position_alerts": []
+  "signals": [],
+  "position_alerts": [
+    "\u26a0\ufe0f FTDR thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $78.22, signalled at $83.54, -6.4%, target $99.56). The reason for the signal is gone. Your call."
+  ]
 }
