@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-18 04:41 UTC",
+  "generated": "2026-09-18 13:00 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "TGT",
       "alert": {
-        "alerted": "2026-09-18T04:40:24.639135+00:00",
+        "alerted": "2026-09-18T12:59:30.779682+00:00",
         "entry": 159.88,
         "thesis_warned": false,
         "tp": 185.51
@@ -72,7 +72,7 @@
           "⚠ monthly opex 2026-09-18 — pinning/chop risk",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-18T04:40:24.639102+00:00"
+        "time": "2026-09-18T12:59:30.779653+00:00"
       },
       "profile": {
         "symbol": "TGT",
@@ -173,7 +173,7 @@
           "epsEstimated": 2.05,
           "revenueActual": null,
           "revenueEstimated": 26370390000,
-          "lastUpdated": "2026-09-17"
+          "lastUpdated": "2026-09-18"
         },
         "estimates": [
           {
@@ -362,6 +362,18 @@
       },
       "news": [
         {
+          "date": "2026-09-18 08:16 UTC",
+          "title": "The Dividend Kings Ranked By Quality Scores (September 2026)",
+          "site": "seekingalpha.com",
+          "text": "Dividend Kings have a 50+ year track record of increasing dividends, showcasing resilience through economic challenges. I rank the Dividend Kings using my 9F Quality Scores, blending qualitative and quantitative factors for a robust, investment-grade assessment. ADP stands out as the best total-return candidate. It is undervalued, high-quality, and offering a strong projected dividend growth rate and Adjusted Chowder Number."
+        },
+        {
+          "date": "2026-09-18 08:00 UTC",
+          "title": "0.53% Wo3 In Soil At The Rowland Tungsten Property As Phase 2 Refines Drill Target Zones",
+          "site": "thenewswire.com",
+          "text": "Vancouver, British Columbia – September 18, 2026 - TheNewswire - Western Star Resources Inc. (CSE: WSR) (OTC: WSRIF) (FRA: 4K2) (the “Company” or “Western Star”) is pleased to announce results from the Phase 2 soil geochemical survey at its Rowland Tungsten Property in Elko County, Nevada, USA. The survey has defined two discrete, spatially coherent tungsten-in-soil anomalies, each expanding the zones around historical workings. Blake Morgan, the CEO and President of Western Star, stated, “These results show the methodical exploration approach is paying off. We have defined two significant soil anomalies over the historical workings and extended the recognised footprint well beyond them. Northern Zone B is the tighter of the two, a compact cluster elongate to the northeast, sitting within the modelled intrusive. Rowland Main is the larger footprint, and its best sample, 0.53% WO₃, lies 250 metres from the nearest historical working on ground with no recorded past activity. That is the "
+        },
+        {
           "date": "2026-09-17 15:50 UTC",
           "title": "Applied Digital Surges After Wells Fargo Names Stock a Top Pick With $50 Price Target",
           "site": "benzinga.com",
@@ -390,18 +402,6 @@
           "title": "Thunder Gold Reports 121.5 metres Averaging 0.376 g/t Au in New Target Located 200 metres East of Current Resource Pit Optimization Limit",
           "site": "newsfilecorp.com",
           "text": "Thunder Bay, Ontario--(Newsfile Corp. - September 17, 2026) - Thunder Gold Corp. (TSXV: TGOL) (FSE: Z25) (OTCQB: TGOLF) (\"Thunder Gold\" or the \"Company\") is pleased to announce exploration diamond drill results from the Bench Target, at the Company's flagship Tower Mountain Property, 40 kilometres west of Thunder Bay, Ontario. Highlights: TM26-205 identified significant new mineralization east of the current resource pit limit; All seven (7) holes intersected mineralization above the current resource cut-off grade in areas previously estimated to be waste; Results demonstrate good to excellent correlation to the current resource model; TM26-207 and TM26-207A provide twinned hole results indicating minimal variation (less than 5%) over the first 40 metres of both holes and; TM26-213 intersected 287.7 metres averaging 0.223 g/t Au, extending the mineralized trend to the southeast."
-        },
-        {
-          "date": "2026-09-17 07:27 UTC",
-          "title": "Silicon Motion: I'm Raising My Price Target As Enterprise Growth Accelerates",
-          "site": "seekingalpha.com",
-          "text": "I maintain a Strong Buy on Silicon Motion Technology with a revised $409 price target, reflecting accelerated enterprise and AI storage growth. Ferri and Enterprise Boot Drive solutions now contribute nearly 30% of revenue, up from 4% a year ago, materially strengthening my thesis. While PCIe Gen5 adoption is slower than expected, this is offset by rapid scaling in MonTitan, Ferri, and enterprise boot drives, driving my 2027 EPS estimate to $15.13."
-        },
-        {
-          "date": "2026-09-17 07:00 UTC",
-          "title": "San Lorenzo Outlines New ~2 Km Gold-Bearing Corridor And Expands San Juan Target Footprint",
-          "site": "thenewswire.com",
-          "text": "Quebrada Salada emerges as a new epithermal-style target adjacent to IP chargeability responses; new D10 and D11 IP lines extend the San Juan target area; Cerro Blanco's drill program is underway. Calgary, Alberta – TheNewswire - September 17, 2026 – San Lorenzo Gold Corp. (“San Lorenzo” or the “Company”) (TSXV: SLG; OTC: SNLGF) is pleased to provide an exploration update from its 11,962-hectare Salvadora Project in Chile's Atacama Region."
         }
       ],
       "news_diag": {
@@ -415,7 +415,7 @@
           "date": "2026-09-18",
           "sector": "Consumer Defensive",
           "exchange": "NASDAQ",
-          "averageChange": -0.36026781152205256
+          "averageChange": -0.36026781152207477
         },
         "industry_snapshot": {
           "date": "2026-09-18",
@@ -498,9 +498,9 @@
           },
           {
             "date": "2026-09-18 00:00:00",
-            "country": "AO",
-            "event": "National Heroes Day",
-            "currency": "AOA",
+            "country": "CL",
+            "event": "National Day",
+            "currency": "CLP",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -511,9 +511,9 @@
           },
           {
             "date": "2026-09-18 00:00:00",
-            "country": "CL",
-            "event": "National Day",
-            "currency": "CLP",
+            "country": "AO",
+            "event": "National Heroes Day",
+            "currency": "AOA",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -551,19 +551,6 @@
           {
             "date": "2026-09-18 04:00:00",
             "country": "MY",
-            "event": "Inflation Rate YoY (Aug)",
-            "currency": "MYR",
-            "previous": 1.8,
-            "estimate": 1.8,
-            "actual": 1.9,
-            "change": 0.1,
-            "impact": "Medium",
-            "changePercentage": 5.556,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-18 04:00:00",
-            "country": "MY",
             "event": "Inflation Rate MoM (Aug)",
             "currency": "MYR",
             "previous": 0,
@@ -592,12 +579,12 @@
             "country": "MY",
             "event": "Imports YoY (Aug)",
             "currency": "MYR",
-            "previous": 36.4,
+            "previous": 36.3,
             "estimate": 33.3,
             "actual": 41.1,
-            "change": 4.7,
+            "change": 4.8,
             "impact": "Low",
-            "changePercentage": 12.912,
+            "changePercentage": 13.223,
             "unit": "%"
           },
           {
@@ -614,54 +601,67 @@
             "unit": "M"
           },
           {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Inflation Rate YoY (Aug)",
+            "currency": "MYR",
+            "previous": 1.8,
+            "estimate": 1.8,
+            "actual": 1.9,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 5.556,
+            "unit": "%"
+          },
+          {
             "date": "2026-09-18 06:00:00",
-            "country": "UK",
-            "event": "Retail Sales Ex Fuel YoY (Aug)",
-            "currency": "GBP",
-            "previous": 2.3,
-            "estimate": 1.9,
-            "actual": null,
-            "change": null,
-            "impact": "High",
+            "country": "DE",
+            "event": "Producer Price Index MoM (Aug)",
+            "currency": "EUR",
+            "previous": 1.1,
+            "estimate": 0.4,
+            "actual": 1.1,
+            "change": 0,
+            "impact": "Low",
             "changePercentage": 0,
             "unit": "%"
           },
           {
             "date": "2026-09-18 06:00:00",
             "country": "UK",
-            "event": "Retail Sales Ex Fuel MoM (Aug)",
+            "event": "Retail Sales YoY (Aug)",
             "currency": "GBP",
-            "previous": -0.9,
-            "estimate": -0.2,
-            "actual": null,
-            "change": null,
+            "previous": 1.2,
+            "estimate": 1.9,
+            "actual": 2.4,
+            "change": 1.2,
             "impact": "High",
-            "changePercentage": 0,
+            "changePercentage": 100,
             "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend. Rising RSI, VWAP recovery, steady volume, and a bullish EMA stack support renewed upside, although monthly options expiration may cause short-term chop.",
+        "technical_interpretation": "The setup resembles a bullish continuation within an established uptrend rather than a fresh breakout. Rising RSI, VWAP reclamation, positive EMA alignment, steady volume, and strong relative strength support renewed buying after the pullback.",
         "financial_assessment": "positive",
-        "financial_interpretation": "The last three reports all exceeded EPS expectations, with the latest surprise accelerating sharply to 74.9%, while reported margins remain solid. Positive operating and free cash flow support the setup, though the supplied revenue and income figures show no reported growth across the displayed periods.",
+        "financial_interpretation": "The last three reports all beat EPS expectations, with surprise magnitude accelerating to 74.9% in the latest result. Reported margins are solid, and positive operating and free cash flow provide additional support, although the supplied revenue and margin figures show no clear recent expansion.",
         "earnings_assessment": "positive",
-        "earnings_interpretation": "Next earnings are not scheduled until November 18, reducing immediate event risk for the 10–20 trading-day window. Forward revenue and EPS estimates have been revised higher, though the eventual report remains a future catalyst risk.",
+        "earnings_interpretation": "Next earnings are not expected for 61 days, limiting immediate event risk for the scanner horizon. Prior beats are encouraging, while the next-quarter estimates provide a future catalyst but not an imminent one.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Analysts show a Buy consensus, and forward revenue and EPS estimates have risen from prior levels despite an evenly split buy/hold count.",
+        "analyst_interpretation": "The consensus is Buy, and forward revenue and EPS estimates have risen 3.5% and 9.5%, respectively.",
         "valuation_assessment": "reasonable",
-        "valuation_interpretation": "The trailing P/E near 16.5 and price-to-sales ratio below 1 are not excessive in isolation. However, the recent rally has moved valuation above its one-year median, making further upside more dependent on continued execution.",
-        "news_assessment": "mixed",
-        "news_interpretation": "Recent coverage highlights stronger traffic, digital momentum, and higher-margin growth, supporting the bullish narrative. The main news-related concern is that the six-month rally has already made valuation less attractive.",
+        "valuation_interpretation": "A trailing P/E near 16.5 and price-to-sales ratio below 1 are not extreme, but the recent rally has pushed valuation above its one-year median according to the supplied commentary. This makes valuation a modest headwind rather than a major fundamental obstacle.",
+        "news_assessment": "no_major_risk",
+        "news_interpretation": "Recent Target commentary points to stronger traffic, digital momentum, and higher-margin growth, with no material negative company-specific headline supplied. The main news-related caution is that the rally may have already priced in part of that improvement.",
         "sector_assessment": "headwind",
-        "sector_interpretation": "The broader defensive retail group has recently softened modestly, so sector performance is a mild drag on an otherwise stronger TGT setup.",
+        "sector_interpretation": "The broader defensive retail group has been modestly weaker, so sector performance slightly weakens the otherwise strong setup.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated bond yields and a seasonally unfavorable market cycle create a modest valuation and risk-appetite headwind, while overall volatility remains neutral.",
-        "overall_assessment": "supportive",
-        "overall_summary": "The strong technical trend and repeated earnings beats support the scanner's pullback-continuation signal. Higher estimates and positive operating cash flow add confirmation, but sector softness, elevated yields, valuation after a large rally, and options-expiration chop argue for disciplined risk management.",
-        "key_positive": "TGT combines a high-quality bullish technical trend with three consecutive EPS beats and upwardly revised forward estimates.",
-        "key_risk": "The main risks are short-term expiration-related chop and a reduced valuation cushion after the recent advance.",
+        "macro_interpretation": "High yields and a mildly unfavorable seasonal backdrop create a modest valuation and risk-appetite headwind, despite currently neutral volatility.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is well supported by a durable uptrend, strong relative strength, repeated earnings beats, and improving analyst expectations. Sector weakness, elevated yields, valuation above its recent median, and monthly options-expiration chop argue for caution rather than invalidating the continuation setup.",
+        "key_positive": "Strong trend structure is reinforced by repeated EPS beats, positive cash flow, and upward-revised forward estimates.",
+        "key_risk": "The main risks are profit-taking after the sharp rally, monthly options-expiration pinning, and modestly adverse sector and rate conditions.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -672,17 +672,17 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2853
+          "chars": 2883
         }
       ],
       "is_etf": false,
-      "buy_confidence": 68,
-      "report": "🟢 TGT — Target Corporation\nEntry: $159.88\neToro TP Value: $39.98\nShares: 1.56 ($249)\nScanner Potential: +16.0%\nTimeframe: 10–20 days\n\n═══ BUY CONFIDENCE: 68% ═══\n🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 28 | Hold: 28 | Sell: 4 | Strong Sell: 0\n🧠 Analysts show a Buy consensus, and forward revenue and EPS estimates have risen from prior levels despite an evenly split buy/hold count.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend. Rising RSI, VWAP recovery, steady volume, and a bullish EMA stack support renewed upside, although monthly options expiration may cause short-term chop.\n🕒 Technical timestamp: 2026-09-18 04:40:24 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all exceeded EPS expectations, with the latest surprise accelerating sharply to 74.9%, while reported margins remain solid. Positive operating and free cash flow support the setup, though the supplied revenue and income figures show no reported growth across the displayed periods.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The trailing P/E near 16.5 and price-to-sales ratio below 1 are not excessive in isolation. However, the recent rally has moved valuation above its one-year median, making further upside more dependent on continued execution.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-18 (+61 days)\n🟢 Positive\n🧠 Next earnings are not scheduled until November 18, reducing immediate event risk for the 10–20 trading-day window. Forward revenue and EPS estimates have been revised higher, though the eventual report remains a future catalyst risk.\n\n═══ RECENT NEWS ═══\n• 2026-09-17 15:50 UTC — Applied Digital Surges After Wells Fargo Names Stock a Top Pick With $50 Price Target\n• 2026-09-17 14:45 UTC — Target Hospitality CEO Archer Buys 13,385 Shares\n• 2026-09-17 12:08 UTC — Oscar Health Stock Rises Following Raised 2026 Guidance and Wall Street Price Target Hikes\n• 2026-09-17 10:15 UTC — Target Stock Up More Than 30% in 6 Months: Is It Too Late to Buy TGT?\n• 2026-09-17 07:30 UTC — Thunder Gold Reports 121.5 metres Averaging 0.376 g/t Au in New Target Located 200 metres East of Current Resource Pit Optimization Limit\n🟡 Recent coverage highlights stronger traffic, digital momentum, and higher-margin growth, supporting the bullish narrative. The main news-related concern is that the six-month rally has already made valuation less attractive.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: The broader defensive retail group has recently softened modestly, so sector performance is a mild drag on an otherwise stronger TGT setup.\n🧠 Macro: Elevated bond yields and a seasonally unfavorable market cycle create a modest valuation and risk-appetite headwind, while overall volatility remains neutral.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The strong technical trend and repeated earnings beats support the scanner's pullback-continuation signal. Higher estimates and positive operating cash flow add confirmation, but sector softness, elevated yields, valuation after a large rally, and options-expiration chop argue for disciplined risk management.\n🟢 Key Positive: TGT combines a high-quality bullish technical trend with three consecutive EPS beats and upwardly revised forward estimates.\n🔴 Key Risk: The main risks are short-term expiration-related chop and a reduced valuation cushion after the recent advance.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 64,
+      "report": "🟡 TGT — Target Corporation\nEntry: $159.88\neToro TP Value: $39.98\nShares: 1.56 ($249)\nScanner Potential: +16.0%\nTimeframe: 10–20 days\n\n═══ BUY CONFIDENCE: 64% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 28 | Hold: 28 | Sell: 4 | Strong Sell: 0\n🧠 The consensus is Buy, and forward revenue and EPS estimates have risen 3.5% and 9.5%, respectively.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish continuation within an established uptrend rather than a fresh breakout. Rising RSI, VWAP reclamation, positive EMA alignment, steady volume, and strong relative strength support renewed buying after the pullback.\n🕒 Technical timestamp: 2026-09-18 12:59:30 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all beat EPS expectations, with surprise magnitude accelerating to 74.9% in the latest result. Reported margins are solid, and positive operating and free cash flow provide additional support, although the supplied revenue and margin figures show no clear recent expansion.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 16.5 and price-to-sales ratio below 1 are not extreme, but the recent rally has pushed valuation above its one-year median according to the supplied commentary. This makes valuation a modest headwind rather than a major fundamental obstacle.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-18 (+61 days)\n🟢 Positive\n🧠 Next earnings are not expected for 61 days, limiting immediate event risk for the scanner horizon. Prior beats are encouraging, while the next-quarter estimates provide a future catalyst but not an imminent one.\n\n═══ RECENT NEWS ═══\n• 2026-09-18 08:16 UTC — The Dividend Kings Ranked By Quality Scores (September 2026)\n• 2026-09-18 08:00 UTC — 0.53% Wo3 In Soil At The Rowland Tungsten Property As Phase 2 Refines Drill Target Zones\n• 2026-09-17 15:50 UTC — Applied Digital Surges After Wells Fargo Names Stock a Top Pick With $50 Price Target\n• 2026-09-17 14:45 UTC — Target Hospitality CEO Archer Buys 13,385 Shares\n• 2026-09-17 12:08 UTC — Oscar Health Stock Rises Following Raised 2026 Guidance and Wall Street Price Target Hikes\n⚪ Recent Target commentary points to stronger traffic, digital momentum, and higher-margin growth, with no material negative company-specific headline supplied. The main news-related caution is that the rally may have already priced in part of that improvement.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: The broader defensive retail group has been modestly weaker, so sector performance slightly weakens the otherwise strong setup.\n🧠 Macro: High yields and a mildly unfavorable seasonal backdrop create a modest valuation and risk-appetite headwind, despite currently neutral volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a durable uptrend, strong relative strength, repeated earnings beats, and improving analyst expectations. Sector weakness, elevated yields, valuation above its recent median, and monthly options-expiration chop argue for caution rather than invalidating the continuation setup.\n🟢 Key Positive: Strong trend structure is reinforced by repeated EPS beats, positive cash flow, and upward-revised forward estimates.\n🔴 Key Risk: The main risks are profit-taking after the sharp rally, monthly options-expiration pinning, and modestly adverse sector and rate conditions.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     },
     {
       "ticker": "TBPH",
       "alert": {
-        "alerted": "2026-09-18T04:40:24.605878+00:00",
+        "alerted": "2026-09-18T12:59:30.750210+00:00",
         "entry": 17.04,
         "thesis_warned": false,
         "tp": 20.73
@@ -742,7 +742,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-18T04:40:24.605842+00:00"
+        "time": "2026-09-18T12:59:30.750176+00:00"
       },
       "profile": {
         "symbol": "TBPH",
@@ -843,7 +843,7 @@
           "epsEstimated": 0.24,
           "revenueActual": null,
           "revenueEstimated": 21954000,
-          "lastUpdated": "2026-09-17"
+          "lastUpdated": "2026-09-18"
         },
         "estimates": [
           {
@@ -1042,13 +1042,13 @@
           "date": "2026-09-18",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": 0.461157698299286
+          "averageChange": 0.46115770364856257
         },
         "industry_snapshot": {
           "date": "2026-09-18",
           "industry": "Biotechnology",
           "exchange": "NASDAQ",
-          "averageChange": 0.36509097828176795
+          "averageChange": 0.3650909849923112
         }
       },
       "macro": {
@@ -1125,9 +1125,9 @@
           },
           {
             "date": "2026-09-18 00:00:00",
-            "country": "AO",
-            "event": "National Heroes Day",
-            "currency": "AOA",
+            "country": "CL",
+            "event": "National Day",
+            "currency": "CLP",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1138,9 +1138,9 @@
           },
           {
             "date": "2026-09-18 00:00:00",
-            "country": "CL",
-            "event": "National Day",
-            "currency": "CLP",
+            "country": "AO",
+            "event": "National Heroes Day",
+            "currency": "AOA",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -1178,19 +1178,6 @@
           {
             "date": "2026-09-18 04:00:00",
             "country": "MY",
-            "event": "Inflation Rate YoY (Aug)",
-            "currency": "MYR",
-            "previous": 1.8,
-            "estimate": 1.8,
-            "actual": 1.9,
-            "change": 0.1,
-            "impact": "Medium",
-            "changePercentage": 5.556,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-18 04:00:00",
-            "country": "MY",
             "event": "Inflation Rate MoM (Aug)",
             "currency": "MYR",
             "previous": 0,
@@ -1219,12 +1206,12 @@
             "country": "MY",
             "event": "Imports YoY (Aug)",
             "currency": "MYR",
-            "previous": 36.4,
+            "previous": 36.3,
             "estimate": 33.3,
             "actual": 41.1,
-            "change": 4.7,
+            "change": 4.8,
             "impact": "Low",
-            "changePercentage": 12.912,
+            "changePercentage": 13.223,
             "unit": "%"
           },
           {
@@ -1241,54 +1228,67 @@
             "unit": "M"
           },
           {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Inflation Rate YoY (Aug)",
+            "currency": "MYR",
+            "previous": 1.8,
+            "estimate": 1.8,
+            "actual": 1.9,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 5.556,
+            "unit": "%"
+          },
+          {
             "date": "2026-09-18 06:00:00",
-            "country": "UK",
-            "event": "Retail Sales Ex Fuel YoY (Aug)",
-            "currency": "GBP",
-            "previous": 2.3,
-            "estimate": 1.9,
-            "actual": null,
-            "change": null,
-            "impact": "High",
+            "country": "DE",
+            "event": "Producer Price Index MoM (Aug)",
+            "currency": "EUR",
+            "previous": 1.1,
+            "estimate": 0.4,
+            "actual": 1.1,
+            "change": 0,
+            "impact": "Low",
             "changePercentage": 0,
             "unit": "%"
           },
           {
             "date": "2026-09-18 06:00:00",
             "country": "UK",
-            "event": "Retail Sales Ex Fuel MoM (Aug)",
+            "event": "Retail Sales YoY (Aug)",
             "currency": "GBP",
-            "previous": -0.9,
-            "estimate": -0.2,
-            "actual": null,
-            "change": null,
+            "previous": 1.2,
+            "estimate": 1.9,
+            "actual": 2.4,
+            "change": 1.2,
             "impact": "High",
-            "changePercentage": 0,
+            "changePercentage": 100,
             "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above a rising long-term EMA structure. Rising RSI, VWAP reclamation, contracting bands, and increased volume support renewed buying, although monthly options expiry may cause short-term chop.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price is above the major EMAs, RSI is rising from neutral territory, VWAP was reclaimed, and volume increased, although monthly options expiry may create short-term chop.",
         "financial_assessment": "negative",
-        "financial_interpretation": "The last three results show repeated, increasingly severe EPS misses, flat reported revenue, continued losses, and negative operating and free cash flow. Strong gross margin and substantial cash relative to debt provide some support, but profitability has not yet translated into cash generation.",
+        "financial_interpretation": "The last three reports show persistent earnings misses, flat reported revenue, and recurring losses with negative operating cash flow and free cash flow. High gross margin is encouraging, but the weak operating margin and lack of demonstrated growth do not yet confirm the technical strength.",
         "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings report is expected in 53 days, with estimates calling for EPS of 0.24 and revenue of $21.95M. The modest forward outlook is constructive, but the history of large misses creates meaningful event risk.",
+        "earnings_interpretation": "The next report is expected on November 10, with estimates calling for EPS of 0.24 and revenue of $21.95 million. Estimates have edged higher, but the repeated prior misses make earnings a meaningful event risk.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "The consensus is Hold, with most ratings at Hold, although longer-term revenue and EPS estimates have edged higher by roughly 6% and 4%, respectively.",
-        "valuation_assessment": "expensive",
-        "valuation_interpretation": "The valuation is not clearly supported by current fundamentals: the price-to-sales ratio is elevated while revenue is flat and cash flow is negative. The trailing P/E is moderate, but recent operating results weaken the case for a cheap valuation.",
+        "analyst_interpretation": "Ratings are concentrated around Hold, while long-range revenue and EPS estimates have risen modestly, offering limited confirmation rather than strong conviction.",
+        "valuation_assessment": "reasonable",
+        "valuation_interpretation": "The trailing P/E near 16 is not obviously stretched, but the elevated price-to-sales ratio and currently weak profitability reduce valuation support. Without comparable industry or historical multiples, valuation appears neutral rather than a clear catalyst.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was returned, so there is no identified headline catalyst or incremental company-specific risk.",
+        "news_interpretation": "No usable recent company-specific news was returned. There is no identified news catalyst or discrete headline risk in the supplied data.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Recent healthcare and biotechnology performance is modestly positive, providing a supportive backdrop for the technical setup.",
+        "sector_interpretation": "Recent healthcare and biotechnology performance is modestly positive, providing a generally supportive backdrop for the setup.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated yields and a mildly unfavorable market cycle create a valuation headwind for a loss-making biotechnology company, despite currently low volatility and neutral broad-market risk.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported as a pullback continuation within a strong uptrend, and the sector backdrop is favorable. However, repeated earnings misses, negative cash flow, elevated sales valuation, and the upcoming earnings event materially weaken the fundamental confirmation.",
-        "key_positive": "Strong trend structure, VWAP recovery, improving momentum, and supportive biotechnology-sector performance favor continuation.",
-        "key_risk": "Repeated large EPS misses and negative cash flow make the next earnings report the main threat to the technical setup.",
+        "macro_interpretation": "Elevated longer-term yields and a mildly unfavorable seasonal cycle can pressure biotech valuations, while otherwise neutral risk conditions limit but do not remove that headwind.",
+        "overall_assessment": "caution",
+        "overall_summary": "The technical signal is constructive: it is a high-quality pullback continuation inside a strong daily uptrend. However, repeated earnings misses, flat revenue, negative cash flow, and the upcoming earnings event materially weaken fundamental confirmation, so the setup is technically supported but catalyst-sensitive.",
+        "key_positive": "Strong trend structure, VWAP recovery, rising RSI, and supportive sector performance favor continuation.",
+        "key_risk": "Persistent earnings underperformance and negative cash flow could invalidate the technical setup, particularly around the next earnings report.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -1299,12 +1299,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2824
+          "chars": 2834
         }
       ],
       "is_etf": false,
-      "buy_confidence": 42,
-      "report": "🟡 TBPH — Theravance Biopharma Inc\nEntry: $17.04\neToro TP Value: $54.13\nShares: 14.67 ($250)\nScanner Potential: +21.7%\nTimeframe: 191–250 days\n\n═══ BUY CONFIDENCE: 42% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 4 | Hold: 10 | Sell: 3 | Strong Sell: 0\n🧠 The consensus is Hold, with most ratings at Hold, although longer-term revenue and EPS estimates have edged higher by roughly 6% and 4%, respectively.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above a rising long-term EMA structure. Rising RSI, VWAP reclamation, contracting bands, and increased volume support renewed buying, although monthly options expiry may cause short-term chop.\n🕒 Technical timestamp: 2026-09-18 04:40:24 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🔴 Weak\n🧠 The last three results show repeated, increasingly severe EPS misses, flat reported revenue, continued losses, and negative operating and free cash flow. Strong gross margin and substantial cash relative to debt provide some support, but profitability has not yet translated into cash generation.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 The valuation is not clearly supported by current fundamentals: the price-to-sales ratio is elevated while revenue is flat and cash flow is negative. The trailing P/E is moderate, but recent operating results weaken the case for a cheap valuation.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-10 (+53 days)\n🟡 Mixed\n🧠 The next earnings report is expected in 53 days, with estimates calling for EPS of 0.24 and revenue of $21.95M. The modest forward outlook is constructive, but the history of large misses creates meaningful event risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent healthcare and biotechnology performance is modestly positive, providing a supportive backdrop for the technical setup.\n🧠 Macro: Elevated yields and a mildly unfavorable market cycle create a valuation headwind for a loss-making biotechnology company, despite currently low volatility and neutral broad-market risk.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a pullback continuation within a strong uptrend, and the sector backdrop is favorable. However, repeated earnings misses, negative cash flow, elevated sales valuation, and the upcoming earnings event materially weaken the fundamental confirmation.\n🟢 Key Positive: Strong trend structure, VWAP recovery, improving momentum, and supportive biotechnology-sector performance favor continuation.\n🔴 Key Risk: Repeated large EPS misses and negative cash flow make the next earnings report the main threat to the technical setup.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 40,
+      "report": "🟡 TBPH — Theravance Biopharma Inc\nEntry: $17.04\neToro TP Value: $54.13\nShares: 14.67 ($250)\nScanner Potential: +21.7%\nTimeframe: 191–250 days\n\n═══ BUY CONFIDENCE: 40% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 4 | Hold: 10 | Sell: 3 | Strong Sell: 0\n🧠 Ratings are concentrated around Hold, while long-range revenue and EPS estimates have risen modestly, offering limited confirmation rather than strong conviction.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price is above the major EMAs, RSI is rising from neutral territory, VWAP was reclaimed, and volume increased, although monthly options expiry may create short-term chop.\n🕒 Technical timestamp: 2026-09-18 12:59:30 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🔴 Weak\n🧠 The last three reports show persistent earnings misses, flat reported revenue, and recurring losses with negative operating cash flow and free cash flow. High gross margin is encouraging, but the weak operating margin and lack of demonstrated growth do not yet confirm the technical strength.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The trailing P/E near 16 is not obviously stretched, but the elevated price-to-sales ratio and currently weak profitability reduce valuation support. Without comparable industry or historical multiples, valuation appears neutral rather than a clear catalyst.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-10 (+53 days)\n🟡 Mixed\n🧠 The next report is expected on November 10, with estimates calling for EPS of 0.24 and revenue of $21.95 million. Estimates have edged higher, but the repeated prior misses make earnings a meaningful event risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent healthcare and biotechnology performance is modestly positive, providing a generally supportive backdrop for the setup.\n🧠 Macro: Elevated longer-term yields and a mildly unfavorable seasonal cycle can pressure biotech valuations, while otherwise neutral risk conditions limit but do not remove that headwind.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Caution\n🧠 The technical signal is constructive: it is a high-quality pullback continuation inside a strong daily uptrend. However, repeated earnings misses, flat revenue, negative cash flow, and the upcoming earnings event materially weaken fundamental confirmation, so the setup is technically supported but catalyst-sensitive.\n🟢 Key Positive: Strong trend structure, VWAP recovery, rising RSI, and supportive sector performance favor continuation.\n🔴 Key Risk: Persistent earnings underperformance and negative cash flow could invalidate the technical setup, particularly around the next earnings report.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
