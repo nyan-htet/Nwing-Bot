@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-18T04:40:44.401674+00:00",
+  "generated": "2026-09-18T12:59:51.744720+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 9.6
@@ -65,7 +65,7 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-18T04:40:24.605842+00:00"
+      "time": "2026-09-18T12:59:30.750176+00:00"
     },
     {
       "ticker": "TGT",
@@ -122,7 +122,7 @@
         "\u26a0 monthly opex 2026-09-18 \u2014 pinning/chop risk",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-18T04:40:24.639102+00:00"
+      "time": "2026-09-18T12:59:30.779653+00:00"
     }
   ],
   "position_alerts": []
