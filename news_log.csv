@@ -501,3 +501,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-16 13:33 UTC,ING,openai,True,3,1,OK,supportive,pullback continuation,62
 2026-09-16 13:33 UTC,GILD,openai,True,3,8,OK,supportive,pullback continuation,58
 2026-09-17 22:53 UTC,TBPH,openai,True,3,0,NO_NEWS,mixed,pullback continuation,42
+2026-09-18 04:41 UTC,TGT,openai,True,3,7,OK,supportive,pullback continuation,68
+2026-09-18 04:41 UTC,TBPH,openai,True,3,0,NO_NEWS,mixed,pullback continuation,42

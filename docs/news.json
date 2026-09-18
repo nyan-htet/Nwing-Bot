@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17 22:53 UTC",
+  "generated": "2026-09-18 04:41 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -10,9 +10,679 @@
   ],
   "results": [
     {
+      "ticker": "TGT",
+      "alert": {
+        "alerted": "2026-09-18T04:40:24.639135+00:00",
+        "entry": 159.88,
+        "thesis_warned": false,
+        "tp": 185.51
+      },
+      "signal": {
+        "ticker": "TGT",
+        "name": "Target Corporation",
+        "setup": "pullback",
+        "entry": 159.88,
+        "tp": 185.51,
+        "tp_pct": 0.16030773079809846,
+        "shares": 1.56,
+        "value": 249.4128,
+        "pl_amount": 39.98,
+        "eta_days_low": 10,
+        "eta_days_high": 20,
+        "fee_pct": 0.05002150924897706,
+        "trend_score": 5,
+        "adx": 26.2,
+        "rs": 0.201,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 39,
+        "ema20": 158.21,
+        "ema50": 151.92,
+        "ema200": 129.17,
+        "above_ema200": true,
+        "quality": 0.89,
+        "q_detail": {
+          "rsi": 1.0,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 0.5,
+          "extension": 0.8
+        },
+        "q_notes": {
+          "rsi": "RSI 52.7 rising, reset from 37",
+          "bollinger": "band position 56%, stable",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "1.4x average, steady",
+          "extension": "+0.5 ATR from 20 EMA, slope -1.7%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 52.7,
+        "options_note": "",
+        "sector": "",
+        "warnings": [
+          "⚠ monthly opex 2026-09-18 — pinning/chop risk"
+        ],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=52.7)",
+          "⚠ monthly opex 2026-09-18 — pinning/chop risk",
+          "hard-eligible; ranked in Step 2"
+        ],
+        "time": "2026-09-18T04:40:24.639102+00:00"
+      },
+      "profile": {
+        "symbol": "TGT",
+        "price": 159.89,
+        "marketCap": 72620598990,
+        "beta": 0.986,
+        "lastDividend": 4.58,
+        "range": "83.44-170.75",
+        "change": 5.21,
+        "changePercentage": 3.36824,
+        "volume": 4062250,
+        "averageVolume": 4659248,
+        "companyName": "Target Corporation",
+        "currency": "USD",
+        "cik": "0000027419",
+        "isin": "US87612E1064",
+        "cusip": "87612E106",
+        "exchangeFullName": "New York Stock Exchange",
+        "exchange": "NYSE",
+        "industry": "Discount Stores",
+        "website": "https://corporate.target.com",
+        "description": "Target Corp. engages in the operation and ownership of general merchandise stores. It offers food and general merchandise, clothing and household goods, electronics, and toys. Its brands include A New Day, All in Motion, Art Class, Auden, AVA & VIV, Boots and Barkley, Brightroom, Bullseye's Playground, Casaluna, Cat & Jack, Cloud Island, Colsie, dealworthy, Embark, Everspring, Favorite Day, Figmint, Future Collective, Gigglescape, Good & Gather, Goodfellow & Co, Hearth & Hand with Magnolia, Heyday, Hyde & EEK! Boutique, JoyLab, Kindfull, Kona Sol, Made By Design, Market Pantry, Mondo Llama, More Than Magic, Opalhouse, Open Story, Original Use, Pillowfort, Project 62, Room Essentials, Shade & Shore, Smartly, Smith & Hawken, Sonia Kashuk, Spritz, Sun Squad, Threshold, Universal Thread, up&up, Wild Fable, Wondershop, Xhilaration, California Roots, Casa Cantina, The Collection, Headliner, Jingle & Mingle, Rosé Bae, Photograph, SunPop, and Wine Cube. The company was founded by George Draper Dayton in 1902 and is headquartered in Minneapolis, MN.",
+        "ceo": "Michael J. Fiddelke",
+        "sector": "Consumer Defensive",
+        "country": "US",
+        "fullTimeEmployees": "400000",
+        "phone": "612 304 6073",
+        "address": "1000 Nicollet Mall",
+        "city": "Minneapolis",
+        "state": "MN",
+        "zip": "55403",
+        "image": "https://images.financialmodelingprep.com/symbol/TGT.png",
+        "ipoDate": "1967-10-18",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-08-19",
+          "fiscal_period": "",
+          "eps_actual": 4.11,
+          "eps_estimate": 2.35,
+          "eps_surprise": 1.7600000000000002,
+          "eps_surprise_pct": 0.748936170212766,
+          "revenue": 26539000000.0,
+          "net_income": 1877000000.0,
+          "operating_margin": 0.09646181091977844,
+          "gross_margin": 0.3367120087418516,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-05-20",
+          "fiscal_period": "",
+          "eps_actual": 1.71,
+          "eps_estimate": 1.47,
+          "eps_surprise": 0.24,
+          "eps_surprise_pct": 0.16326530612244897,
+          "revenue": 26539000000.0,
+          "net_income": 1877000000.0,
+          "operating_margin": 0.09646181091977844,
+          "gross_margin": 0.3367120087418516,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-03-03",
+          "fiscal_period": "",
+          "eps_actual": 2.44,
+          "eps_estimate": 2.16,
+          "eps_surprise": 0.2799999999999998,
+          "eps_surprise_pct": 0.12962962962962954,
+          "revenue": 26539000000.0,
+          "net_income": 1877000000.0,
+          "operating_margin": 0.09646181091977844,
+          "gross_margin": 0.3367120087418516,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 5411000000.0,
+        "total_debt": 18701000000.0,
+        "total_liabilities": 43392000000.0,
+        "equity": 17843000000.0,
+        "operating_cash_flow": 3803000000.0,
+        "capital_expenditure": -1369000000.0,
+        "free_cash_flow": 2434000000.0
+      },
+      "forward": {
+        "next_earnings": {
+          "symbol": "TGT",
+          "date": "2026-11-18",
+          "epsActual": null,
+          "epsEstimated": 2.05,
+          "revenueActual": null,
+          "revenueEstimated": 26370390000,
+          "lastUpdated": "2026-09-17"
+        },
+        "estimates": [
+          {
+            "date": "2031-01-31",
+            "period": null,
+            "revenue_avg": 124546000000.0,
+            "eps_avg": 11.72333,
+            "revenue_low": 121720069138.0,
+            "revenue_high": 126052979796.0,
+            "eps_low": 11.37753,
+            "eps_high": 11.90773,
+            "num_analysts_revenue": 8,
+            "num_analysts_eps": 9
+          },
+          {
+            "date": "2030-01-31",
+            "period": null,
+            "revenue_avg": 120312866667.0,
+            "eps_avg": 10.70338,
+            "revenue_low": 117582984992.0,
+            "revenue_high": 121768626461.0,
+            "eps_low": 10.38766,
+            "eps_high": 10.87174,
+            "num_analysts_revenue": 17,
+            "num_analysts_eps": 5
+          },
+          {
+            "date": "2029-01-31",
+            "period": null,
+            "revenue_avg": 117277549836.0,
+            "eps_avg": 10.29423,
+            "revenue_low": 113295864098.0,
+            "revenue_high": 120218379462.0,
+            "eps_low": 8.15358,
+            "eps_high": 11.53061,
+            "num_analysts_revenue": 19,
+            "num_analysts_eps": 13
+          },
+          {
+            "date": "2028-01-31",
+            "period": null,
+            "revenue_avg": 113628071338.0,
+            "eps_avg": 9.58499,
+            "revenue_low": 111741628613.0,
+            "revenue_high": 114802080905.0,
+            "eps_low": 9.04341,
+            "eps_high": 10.07548,
+            "num_analysts_revenue": 28,
+            "num_analysts_eps": 26
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "TGT",
+          "strongBuy": 0,
+          "buy": 28,
+          "hold": 28,
+          "sell": 4,
+          "strongSell": 0,
+          "consensus": "Buy"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 124546000000,
+            "prior": 120312866667,
+            "change": 0.0351843776170373
+          },
+          "epsAvg": {
+            "latest": 11.72333,
+            "prior": 10.70338,
+            "change": 0.09529232821781553
+          }
+        }
+      },
+      "valuation": {
+        "ratios": {
+          "symbol": "TGT",
+          "grossProfitMarginTTM": 0.2930318926697925,
+          "ebitMarginTTM": 0.05652476672392182,
+          "ebitdaMarginTTM": 0.0787057239682466,
+          "operatingProfitMarginTTM": 0.05592126642217167,
+          "pretaxProfitMarginTTM": 0.052541664732370826,
+          "continuousOperationsProfitMarginTTM": 0.04077805115825635,
+          "netProfitMarginTTM": 0.04077805115825635,
+          "bottomLineProfitMarginTTM": 0.04077805115825635,
+          "receivablesTurnoverTTM": 0,
+          "payablesTurnoverTTM": 5.722531188937322,
+          "inventoryTurnoverTTM": 5.747150728356857,
+          "fixedAssetTurnoverTTM": 2.8081816759660008,
+          "assetTurnoverTTM": 1.7588797256470972,
+          "currentRatioTTM": 0.9881019830028328,
+          "quickRatioTTM": 0.3625590179414542,
+          "solvencyRatioTTM": 0.15627304572271386,
+          "cashRatioTTM": 0.25547686496694993,
+          "priceToEarningsRatioTTM": 16.517561983471072,
+          "priceToEarningsGrowthRatioTTM": 1.3432206065803833,
+          "forwardPriceToEarningsGrowthRatioTTM": -3.372579571050252,
+          "priceToEarningsDilutedRatioTTM": 16.58609958506224,
+          "priceToEarningsDilutedGrowthRatioTTM": 1.3425352305644727,
+          "priceToBookRatioTTM": 4.0718498010424256,
+          "priceToSalesRatioTTM": 0.6742546677498723,
+          "priceToFreeCashFlowRatioTTM": 15.957064159525379,
+          "priceToOperatingCashFlowRatioTTM": 8.329017081279376,
+          "debtToAssetsRatioTTM": 0.30539724014044256,
+          "debtToEquityRatioTTM": 1.0480860841786694,
+          "debtToCapitalRatioTTM": 0.5117392732049036,
+          "longTermDebtToCapitalRatioTTM": 0.4435192115768463,
+          "financialLeverageRatioTTM": 3.4318780474135515,
+          "workingCapitalTurnoverRatioTTM": -137.1164863144494,
+          "operatingCashFlowRatioTTM": 0.41185080264400376,
+          "operatingCashFlowSalesRatioTTM": 0.08098974049487025,
+          "freeCashFlowOperatingCashFlowRatioTTM": 0.5217241774618824,
+          "debtServiceCoverageRatioTTM": 4.60702875399361,
+          "interestCoverageRatioTTM": 14.039627039627039,
+          "shortTermOperatingCashFlowCoverageRatioTTM": 7.678697183098592,
+          "operatingCashFlowCoverageRatioTTM": 0.46644564461793486,
+          "capitalExpenditureCoverageRatioTTM": 2.0908437200383507,
+          "dividendPaidAndCapexCoverageRatioTTM": 1.3979166666666667,
+          "dividendPayoutRatioTTM": 0.470856102003643,
+          "dividendYieldTTM": 0.02864469,
+          "enterpriseValueTTM": 85910598990,
+          "revenuePerShareTTM": 237.02684859154928,
+          "netIncomePerShareTTM": 9.665492957746478,
+          "interestDebtPerShareTTM": 42.09947183098591,
+          "cashPerShareTTM": 11.908010563380282,
+          "bookValuePerShareTTM": 39.267165492957744,
+          "tangibleBookValuePerShareTTM": 39.267165492957744,
+          "shareholdersEquityPerShareTTM": 39.267165492957744,
+          "operatingCashFlowPerShareTTM": 19.19674295774648,
+          "capexPerShareTTM": 9.181338028169014,
+          "freeCashFlowPerShareTTM": 10.015404929577464,
+          "netIncomePerEBTTTM": 0.7761088531542676,
+          "ebtPerEbitTTM": 0.939565000830151,
+          "priceToFairValueTTM": 4.0718498010424256,
+          "debtToMarketCapTTM": 0.21146892498249276,
+          "effectiveTaxRateTTM": 0.22389114684573247,
+          "enterpriseValueMultipleTTM": 10.134552198891116,
+          "dividendPerShareTTM": 4.58
+        },
+        "metrics": {
+          "symbol": "TGT",
+          "marketCap": 72620598990,
+          "enterpriseValueTTM": 85910598990,
+          "evToSalesTTM": 0.7976472679077109,
+          "evToOperatingCashFlowTTM": 9.848744582139172,
+          "evToFreeCashFlowTTM": 18.877301470006593,
+          "evToEBITDATTM": 10.134552198891116,
+          "netDebtToEBITDATTM": 1.5677716173174472,
+          "currentRatioTTM": 0.9881019830028328,
+          "incomeQualityTTM": 1.9861111111111112,
+          "grahamNumberTTM": 92.4098020218315,
+          "grahamNetNetTTM": -69.00638204225352,
+          "taxBurdenTTM": 0.7761088531542676,
+          "interestBurdenTTM": 0.9295335085413929,
+          "workingCapitalTTM": -252000000,
+          "investedCapitalTTM": 38102000000,
+          "returnOnAssetsTTM": 0.07172368743365722,
+          "operatingReturnOnAssetsTTM": 0.10101891064614868,
+          "returnOnTangibleAssetsTTM": 0.07172368743365722,
+          "returnOnEquityTTM": 0.26656955571740715,
+          "returnOnInvestedCapitalTTM": 0.11348361590027319,
+          "returnOnCapitalEmployedTTM": 0.15036824366496068,
+          "earningsYieldTTM": 0.060450890973459744,
+          "freeCashFlowYieldTTM": 0.06266816940778307,
+          "capexToOperatingCashFlowTTM": 0.4782758225381176,
+          "capexToDepreciationTTM": 1.3148439962180902,
+          "capexToRevenueTTM": 0.03873543475233276,
+          "salesGeneralAndAdministrativeToRevenueTTM": 0.2123578292558377,
+          "researchAndDevelopementToRevenueTTM": 0,
+          "stockBasedCompensationToRevenueTTM": 0.00280395524813147,
+          "intangiblesToTotalAssetsTTM": 0,
+          "averageReceivablesTTM": 0,
+          "averagePayablesTTM": 12747000000,
+          "averageInventoryTTM": 12783000000,
+          "daysOfSalesOutstandingTTM": 0,
+          "daysOfPayablesOutstandingTTM": 63.78296385795335,
+          "daysOfInventoryOutstandingTTM": 63.50973156125236,
+          "operatingCycleTTM": 63.50973156125236,
+          "cashConversionCycleTTM": -0.27323229670098925,
+          "freeCashFlowToEquityTTM": 3409000000,
+          "freeCashFlowToFirmTTM": 4883950698.003181,
+          "tangibleAssetValueTTM": 17843000000,
+          "netCurrentAssetValueTTM": -22464000000
+        }
+      },
+      "news": [
+        {
+          "date": "2026-09-17 15:50 UTC",
+          "title": "Applied Digital Surges After Wells Fargo Names Stock a Top Pick With $50 Price Target",
+          "site": "benzinga.com",
+          "text": "Shares of Applied Digital Corp. (NASDAQ:APLD) are trading higher Thursday afternoon as a broader equity market rebound propelled AI infrastructure and digital hosting providers."
+        },
+        {
+          "date": "2026-09-17 14:45 UTC",
+          "title": "Target Hospitality CEO Archer Buys 13,385 Shares",
+          "site": "fool.com",
+          "text": "The transaction was valued at approximately $250,166. The acquisition size was equal to 0.73% of the executive's direct equity holdings prior to the filing."
+        },
+        {
+          "date": "2026-09-17 12:08 UTC",
+          "title": "Oscar Health Stock Rises Following Raised 2026 Guidance and Wall Street Price Target Hikes",
+          "site": "benzinga.com",
+          "text": "Shares of Oscar Health Inc. (NYSE:OSCR) are trading higher Thursday morning as Wall Street analysts raised price targets following the company's 2026 Investor Day presentation. Here's what investors need to know."
+        },
+        {
+          "date": "2026-09-17 10:15 UTC",
+          "title": "Target Stock Up More Than 30% in 6 Months: Is It Too Late to Buy TGT?",
+          "site": "zacks.com",
+          "text": "Target's 34.4% six-month rally is backed by stronger traffic, digital momentum and higher-margin growth, but its valuation now tops its one-year median."
+        },
+        {
+          "date": "2026-09-17 07:30 UTC",
+          "title": "Thunder Gold Reports 121.5 metres Averaging 0.376 g/t Au in New Target Located 200 metres East of Current Resource Pit Optimization Limit",
+          "site": "newsfilecorp.com",
+          "text": "Thunder Bay, Ontario--(Newsfile Corp. - September 17, 2026) - Thunder Gold Corp. (TSXV: TGOL) (FSE: Z25) (OTCQB: TGOLF) (\"Thunder Gold\" or the \"Company\") is pleased to announce exploration diamond drill results from the Bench Target, at the Company's flagship Tower Mountain Property, 40 kilometres west of Thunder Bay, Ontario. Highlights: TM26-205 identified significant new mineralization east of the current resource pit limit; All seven (7) holes intersected mineralization above the current resource cut-off grade in areas previously estimated to be waste; Results demonstrate good to excellent correlation to the current resource model; TM26-207 and TM26-207A provide twinned hole results indicating minimal variation (less than 5%) over the first 40 metres of both holes and; TM26-213 intersected 287.7 metres averaging 0.223 g/t Au, extending the mineralized trend to the southeast."
+        },
+        {
+          "date": "2026-09-17 07:27 UTC",
+          "title": "Silicon Motion: I'm Raising My Price Target As Enterprise Growth Accelerates",
+          "site": "seekingalpha.com",
+          "text": "I maintain a Strong Buy on Silicon Motion Technology with a revised $409 price target, reflecting accelerated enterprise and AI storage growth. Ferri and Enterprise Boot Drive solutions now contribute nearly 30% of revenue, up from 4% a year ago, materially strengthening my thesis. While PCIe Gen5 adoption is slower than expected, this is offset by rapid scaling in MonTitan, Ferri, and enterprise boot drives, driving my 2027 EPS estimate to $15.13."
+        },
+        {
+          "date": "2026-09-17 07:00 UTC",
+          "title": "San Lorenzo Outlines New ~2 Km Gold-Bearing Corridor And Expands San Juan Target Footprint",
+          "site": "thenewswire.com",
+          "text": "Quebrada Salada emerges as a new epithermal-style target adjacent to IP chargeability responses; new D10 and D11 IP lines extend the San Juan target area; Cerro Blanco's drill program is underway. Calgary, Alberta – TheNewswire - September 17, 2026 – San Lorenzo Gold Corp. (“San Lorenzo” or the “Company”) (TSXV: SLG; OTC: SNLGF) is pleased to provide an exploration update from its 11,962-hectare Salvadora Project in Chile's Atacama Region."
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "7 usable article(s)"
+      },
+      "sector": {
+        "sector": "Consumer Defensive",
+        "industry": "Discount Stores",
+        "sector_snapshot": {
+          "date": "2026-09-18",
+          "sector": "Consumer Defensive",
+          "exchange": "NASDAQ",
+          "averageChange": -0.36026781152205256
+        },
+        "industry_snapshot": {
+          "date": "2026-09-18",
+          "industry": "Discount Stores",
+          "exchange": "NASDAQ",
+          "averageChange": -0.2831049151906906
+        }
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 9.6
+        },
+        "hourly_scan_cycles": {
+          "score": -1.0,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-09-16",
+          "month1": 3.96,
+          "month2": 4.07,
+          "month3": 4.14,
+          "month6": 4.22,
+          "year1": 4.45,
+          "year2": 4.74,
+          "year3": 4.82,
+          "year5": 4.86,
+          "year7": 4.94,
+          "year10": 5.01,
+          "year20": 5.39,
+          "year30": 5.35
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-12-01",
+              "value": 326.031
+            },
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-12-01",
+              "value": 4.4
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-09-18 00:00:00",
+            "country": "EU",
+            "event": "Eurogroup Meeting",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Low",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-18 00:00:00",
+            "country": "AO",
+            "event": "National Heroes Day",
+            "currency": "AOA",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-18 00:00:00",
+            "country": "CL",
+            "event": "National Day",
+            "currency": "CLP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-18 02:30:00",
+            "country": "JP",
+            "event": "Monetary Policy Statement",
+            "currency": "JPY",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          },
+          {
+            "date": "2026-09-18 03:00:00",
+            "country": "JP",
+            "event": "BoJ Interest Rate Decision",
+            "currency": "JPY",
+            "previous": 1,
+            "estimate": 1.25,
+            "actual": 1.25,
+            "change": 0.25,
+            "impact": "High",
+            "changePercentage": 25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Inflation Rate YoY (Aug)",
+            "currency": "MYR",
+            "previous": 1.8,
+            "estimate": 1.8,
+            "actual": 1.9,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 5.556,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Inflation Rate MoM (Aug)",
+            "currency": "MYR",
+            "previous": 0,
+            "estimate": 0.2,
+            "actual": 0.3,
+            "change": 0.3,
+            "impact": "Medium",
+            "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Exports YoY (Aug)",
+            "currency": "MYR",
+            "previous": 38,
+            "estimate": 38,
+            "actual": 45.5,
+            "change": 7.5,
+            "impact": "Low",
+            "changePercentage": 19.737,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Imports YoY (Aug)",
+            "currency": "MYR",
+            "previous": 36.4,
+            "estimate": 33.3,
+            "actual": 41.1,
+            "change": 4.7,
+            "impact": "Low",
+            "changePercentage": 12.912,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Balance of Trade (Aug)",
+            "currency": "MYR",
+            "previous": 22.5,
+            "estimate": 25.3,
+            "actual": 28.1,
+            "change": 5.6,
+            "impact": "Low",
+            "changePercentage": 24.889,
+            "unit": "M"
+          },
+          {
+            "date": "2026-09-18 06:00:00",
+            "country": "UK",
+            "event": "Retail Sales Ex Fuel YoY (Aug)",
+            "currency": "GBP",
+            "previous": 2.3,
+            "estimate": 1.9,
+            "actual": null,
+            "change": null,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 06:00:00",
+            "country": "UK",
+            "event": "Retail Sales Ex Fuel MoM (Aug)",
+            "currency": "GBP",
+            "previous": -0.9,
+            "estimate": -0.2,
+            "actual": null,
+            "change": null,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": "%"
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within a well-established uptrend. Rising RSI, VWAP recovery, steady volume, and a bullish EMA stack support renewed upside, although monthly options expiration may cause short-term chop.",
+        "financial_assessment": "positive",
+        "financial_interpretation": "The last three reports all exceeded EPS expectations, with the latest surprise accelerating sharply to 74.9%, while reported margins remain solid. Positive operating and free cash flow support the setup, though the supplied revenue and income figures show no reported growth across the displayed periods.",
+        "earnings_assessment": "positive",
+        "earnings_interpretation": "Next earnings are not scheduled until November 18, reducing immediate event risk for the 10–20 trading-day window. Forward revenue and EPS estimates have been revised higher, though the eventual report remains a future catalyst risk.",
+        "analyst_assessment": "positive",
+        "analyst_interpretation": "Analysts show a Buy consensus, and forward revenue and EPS estimates have risen from prior levels despite an evenly split buy/hold count.",
+        "valuation_assessment": "reasonable",
+        "valuation_interpretation": "The trailing P/E near 16.5 and price-to-sales ratio below 1 are not excessive in isolation. However, the recent rally has moved valuation above its one-year median, making further upside more dependent on continued execution.",
+        "news_assessment": "mixed",
+        "news_interpretation": "Recent coverage highlights stronger traffic, digital momentum, and higher-margin growth, supporting the bullish narrative. The main news-related concern is that the six-month rally has already made valuation less attractive.",
+        "sector_assessment": "headwind",
+        "sector_interpretation": "The broader defensive retail group has recently softened modestly, so sector performance is a mild drag on an otherwise stronger TGT setup.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Elevated bond yields and a seasonally unfavorable market cycle create a modest valuation and risk-appetite headwind, while overall volatility remains neutral.",
+        "overall_assessment": "supportive",
+        "overall_summary": "The strong technical trend and repeated earnings beats support the scanner's pullback-continuation signal. Higher estimates and positive operating cash flow add confirmation, but sector softness, elevated yields, valuation after a large rally, and options-expiration chop argue for disciplined risk management.",
+        "key_positive": "TGT combines a high-quality bullish technical trend with three consecutive EPS beats and upwardly revised forward estimates.",
+        "key_risk": "The main risks are short-term expiration-related chop and a reduced valuation cushion after the recent advance.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2853
+        }
+      ],
+      "is_etf": false,
+      "buy_confidence": 68,
+      "report": "🟢 TGT — Target Corporation\nEntry: $159.88\neToro TP Value: $39.98\nShares: 1.56 ($249)\nScanner Potential: +16.0%\nTimeframe: 10–20 days\n\n═══ BUY CONFIDENCE: 68% ═══\n🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 28 | Hold: 28 | Sell: 4 | Strong Sell: 0\n🧠 Analysts show a Buy consensus, and forward revenue and EPS estimates have risen from prior levels despite an evenly split buy/hold count.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a well-established uptrend. Rising RSI, VWAP recovery, steady volume, and a bullish EMA stack support renewed upside, although monthly options expiration may cause short-term chop.\n🕒 Technical timestamp: 2026-09-18 04:40:24 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all exceeded EPS expectations, with the latest surprise accelerating sharply to 74.9%, while reported margins remain solid. Positive operating and free cash flow support the setup, though the supplied revenue and income figures show no reported growth across the displayed periods.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 The trailing P/E near 16.5 and price-to-sales ratio below 1 are not excessive in isolation. However, the recent rally has moved valuation above its one-year median, making further upside more dependent on continued execution.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-18 (+61 days)\n🟢 Positive\n🧠 Next earnings are not scheduled until November 18, reducing immediate event risk for the 10–20 trading-day window. Forward revenue and EPS estimates have been revised higher, though the eventual report remains a future catalyst risk.\n\n═══ RECENT NEWS ═══\n• 2026-09-17 15:50 UTC — Applied Digital Surges After Wells Fargo Names Stock a Top Pick With $50 Price Target\n• 2026-09-17 14:45 UTC — Target Hospitality CEO Archer Buys 13,385 Shares\n• 2026-09-17 12:08 UTC — Oscar Health Stock Rises Following Raised 2026 Guidance and Wall Street Price Target Hikes\n• 2026-09-17 10:15 UTC — Target Stock Up More Than 30% in 6 Months: Is It Too Late to Buy TGT?\n• 2026-09-17 07:30 UTC — Thunder Gold Reports 121.5 metres Averaging 0.376 g/t Au in New Target Located 200 metres East of Current Resource Pit Optimization Limit\n🟡 Recent coverage highlights stronger traffic, digital momentum, and higher-margin growth, supporting the bullish narrative. The main news-related concern is that the six-month rally has already made valuation less attractive.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: The broader defensive retail group has recently softened modestly, so sector performance is a mild drag on an otherwise stronger TGT setup.\n🧠 Macro: Elevated bond yields and a seasonally unfavorable market cycle create a modest valuation and risk-appetite headwind, while overall volatility remains neutral.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The strong technical trend and repeated earnings beats support the scanner's pullback-continuation signal. Higher estimates and positive operating cash flow add confirmation, but sector softness, elevated yields, valuation after a large rally, and options-expiration chop argue for disciplined risk management.\n🟢 Key Positive: TGT combines a high-quality bullish technical trend with three consecutive EPS beats and upwardly revised forward estimates.\n🔴 Key Risk: The main risks are short-term expiration-related chop and a reduced valuation cushion after the recent advance.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
       "ticker": "TBPH",
       "alert": {
-        "alerted": "2026-09-17T22:52:46.569558+00:00",
+        "alerted": "2026-09-18T04:40:24.605878+00:00",
         "entry": 17.04,
         "thesis_warned": false,
         "tp": 20.73
@@ -72,7 +742,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-17T22:52:46.569530+00:00"
+        "time": "2026-09-18T04:40:24.605842+00:00"
       },
       "profile": {
         "symbol": "TBPH",
@@ -84,7 +754,7 @@
         "change": 0.01,
         "changePercentage": 0.05871991,
         "volume": 306932,
-        "averageVolume": 561968,
+        "averageVolume": 563244,
         "companyName": "Theravance Biopharma Inc",
         "currency": "USD",
         "cik": "0001583107",
@@ -369,16 +1039,16 @@
         "sector": "Healthcare",
         "industry": "Biotechnology",
         "sector_snapshot": {
-          "date": "2026-09-17",
+          "date": "2026-09-18",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": 0.4611554429924114
+          "averageChange": 0.461157698299286
         },
         "industry_snapshot": {
-          "date": "2026-09-17",
+          "date": "2026-09-18",
           "industry": "Biotechnology",
           "exchange": "NASDAQ",
-          "averageChange": 0.36508868215943124
+          "averageChange": 0.36509097828176795
         }
       },
       "macro": {
@@ -392,19 +1062,19 @@
           "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
         },
         "treasury": {
-          "date": "2026-09-15",
-          "month1": 3.93,
-          "month2": 4.06,
-          "month3": 4.11,
-          "month6": 4.17,
-          "year1": 4.39,
-          "year2": 4.67,
-          "year3": 4.76,
-          "year5": 4.83,
-          "year7": 4.91,
-          "year10": 5,
-          "year20": 5.4,
-          "year30": 5.36
+          "date": "2026-09-16",
+          "month1": 3.96,
+          "month2": 4.07,
+          "month3": 4.14,
+          "month6": 4.22,
+          "year1": 4.45,
+          "year2": 4.74,
+          "year3": 4.82,
+          "year5": 4.86,
+          "year7": 4.94,
+          "year10": 5.01,
+          "year20": 5.39,
+          "year30": 5.35
         },
         "indicators": {
           "GDP": [
@@ -441,113 +1111,9 @@
         },
         "calendar": [
           {
-            "date": "2026-09-17 00:00:00",
-            "country": "HK",
-            "event": "Interest Rate Decision",
-            "currency": "HKD",
-            "previous": 4,
-            "estimate": 4.25,
-            "actual": 4.25,
-            "change": 0.25,
-            "impact": "Low",
-            "changePercentage": 6.25,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-17 00:30:00",
-            "country": "SG",
-            "event": "Balance of Trade (Aug)",
-            "currency": "SGD",
-            "previous": 10.898,
-            "estimate": 11,
-            "actual": 13.78,
-            "change": 2.882,
-            "impact": "Low",
-            "changePercentage": 26.445,
-            "unit": "B"
-          },
-          {
-            "date": "2026-09-17 00:30:00",
-            "country": "SG",
-            "event": "Non-Oil Exports MoM (Aug)",
-            "currency": "SGD",
-            "previous": -0.3,
-            "estimate": null,
-            "actual": 10.9,
-            "change": 11.2,
-            "impact": "Low",
-            "changePercentage": 3733.333,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-17 00:30:00",
-            "country": "SG",
-            "event": "Non-Oil Exports YoY (Aug)",
-            "currency": "SGD",
-            "previous": 24.1,
-            "estimate": 35,
-            "actual": 46.2,
-            "change": 22.1,
-            "impact": "Low",
-            "changePercentage": 91.701,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-17 00:45:00",
-            "country": "MO",
-            "event": "Interest Rate Decision",
-            "currency": "MOP",
-            "previous": 4,
-            "estimate": 4.25,
-            "actual": 4.25,
-            "change": 0.25,
-            "impact": "Low",
-            "changePercentage": 6.25,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-17 03:35:00",
-            "country": "JP",
-            "event": "3-Month Bill Auction",
-            "currency": "JPY",
-            "previous": 1.115,
-            "estimate": null,
-            "actual": 1.207,
-            "change": 0.092,
-            "impact": "Low",
-            "changePercentage": 8.251,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-17 04:30:00",
-            "country": "NL",
-            "event": "Unemployment Rate (Aug)",
-            "currency": "EUR",
-            "previous": 4,
-            "estimate": 4.1,
-            "actual": 4,
-            "change": 0,
-            "impact": "Medium",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-17 06:00:00",
-            "country": "CH",
-            "event": "Balance of Trade (Aug)",
-            "currency": "CHF",
-            "previous": 8.1,
-            "estimate": 7.5,
-            "actual": 5.6,
-            "change": -2.5,
-            "impact": "Medium",
-            "changePercentage": -30.864,
-            "unit": "B"
-          },
-          {
-            "date": "2026-09-17 07:00:00",
+            "date": "2026-09-18 00:00:00",
             "country": "EU",
-            "event": "ECB Lane Speech",
+            "event": "Eurogroup Meeting",
             "currency": "EUR",
             "previous": null,
             "estimate": null,
@@ -558,67 +1124,171 @@
             "unit": null
           },
           {
-            "date": "2026-09-17 07:00:00",
-            "country": "AT",
+            "date": "2026-09-18 00:00:00",
+            "country": "AO",
+            "event": "National Heroes Day",
+            "currency": "AOA",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-18 00:00:00",
+            "country": "CL",
+            "event": "National Day",
+            "currency": "CLP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-18 02:30:00",
+            "country": "JP",
+            "event": "Monetary Policy Statement",
+            "currency": "JPY",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          },
+          {
+            "date": "2026-09-18 03:00:00",
+            "country": "JP",
+            "event": "BoJ Interest Rate Decision",
+            "currency": "JPY",
+            "previous": 1,
+            "estimate": 1.25,
+            "actual": 1.25,
+            "change": 0.25,
+            "impact": "High",
+            "changePercentage": 25,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Inflation Rate YoY (Aug)",
+            "currency": "MYR",
+            "previous": 1.8,
+            "estimate": 1.8,
+            "actual": 1.9,
+            "change": 0.1,
+            "impact": "Medium",
+            "changePercentage": 5.556,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
             "event": "Inflation Rate MoM (Aug)",
-            "currency": "EUR",
+            "currency": "MYR",
             "previous": 0,
-            "estimate": 0.6,
-            "actual": 0.6,
-            "change": 0.6,
-            "impact": "Low",
+            "estimate": 0.2,
+            "actual": 0.3,
+            "change": 0.3,
+            "impact": "Medium",
             "changePercentage": 0,
             "unit": "%"
           },
           {
-            "date": "2026-09-17 07:00:00",
-            "country": "SK",
-            "event": "Harmonised Inflation Rate MoM (Aug)",
-            "currency": "EUR",
-            "previous": 0.1,
-            "estimate": 0,
-            "actual": 0,
-            "change": -0.1,
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Exports YoY (Aug)",
+            "currency": "MYR",
+            "previous": 38,
+            "estimate": 38,
+            "actual": 45.5,
+            "change": 7.5,
             "impact": "Low",
-            "changePercentage": -100,
+            "changePercentage": 19.737,
             "unit": "%"
           },
           {
-            "date": "2026-09-17 07:00:00",
-            "country": "AT",
-            "event": "Inflation Rate YoY (Aug)",
-            "currency": "EUR",
-            "previous": 2.8,
-            "estimate": 3.2,
-            "actual": 3.2,
-            "change": 0.4,
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Imports YoY (Aug)",
+            "currency": "MYR",
+            "previous": 36.4,
+            "estimate": 33.3,
+            "actual": 41.1,
+            "change": 4.7,
             "impact": "Low",
-            "changePercentage": 14.286,
+            "changePercentage": 12.912,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 04:00:00",
+            "country": "MY",
+            "event": "Balance of Trade (Aug)",
+            "currency": "MYR",
+            "previous": 22.5,
+            "estimate": 25.3,
+            "actual": 28.1,
+            "change": 5.6,
+            "impact": "Low",
+            "changePercentage": 24.889,
+            "unit": "M"
+          },
+          {
+            "date": "2026-09-18 06:00:00",
+            "country": "UK",
+            "event": "Retail Sales Ex Fuel YoY (Aug)",
+            "currency": "GBP",
+            "previous": 2.3,
+            "estimate": 1.9,
+            "actual": null,
+            "change": null,
+            "impact": "High",
+            "changePercentage": 0,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-18 06:00:00",
+            "country": "UK",
+            "event": "Retail Sales Ex Fuel MoM (Aug)",
+            "currency": "GBP",
+            "previous": -0.9,
+            "estimate": -0.2,
+            "actual": null,
+            "change": null,
+            "impact": "High",
+            "changePercentage": 0,
             "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a pullback within an established bullish trend, with price holding above rising long-term averages. Reclaimed VWAP, rising RSI, contracting bands, and stronger volume support renewed buying, though monthly options expiration may increase near-term chop.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above a rising long-term EMA structure. Rising RSI, VWAP reclamation, contracting bands, and increased volume support renewed buying, although monthly options expiry may cause short-term chop.",
         "financial_assessment": "negative",
-        "financial_interpretation": "The last three results show repeated and worsening EPS misses, while revenue was essentially flat and profitability remained weak with a negative operating margin. Negative operating cash flow and free cash flow further weaken the fundamental backdrop despite strong gross margin.",
+        "financial_interpretation": "The last three results show repeated, increasingly severe EPS misses, flat reported revenue, continued losses, and negative operating and free cash flow. Strong gross margin and substantial cash relative to debt provide some support, but profitability has not yet translated into cash generation.",
         "earnings_assessment": "mixed",
-        "earnings_interpretation": "Next earnings are expected on November 10, with estimates calling for modestly higher revenue and positive EPS. However, the history of large misses makes the event a meaningful downside-risk catalyst.",
+        "earnings_interpretation": "The next earnings report is expected in 53 days, with estimates calling for EPS of 0.24 and revenue of $21.95M. The modest forward outlook is constructive, but the history of large misses creates meaningful event risk.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "The consensus is Hold, with substantially more holds than buys, although longer-term revenue and EPS estimates have been revised modestly higher.",
+        "analyst_interpretation": "The consensus is Hold, with most ratings at Hold, although longer-term revenue and EPS estimates have edged higher by roughly 6% and 4%, respectively.",
         "valuation_assessment": "expensive",
-        "valuation_interpretation": "The valuation is not clearly supported by recent operating performance: price-to-sales is elevated while revenue is flat and recent earnings and cash flow are negative. The trailing P/E is more moderate, but it does not offset the weak current fundamentals.",
+        "valuation_interpretation": "The valuation is not clearly supported by current fundamentals: the price-to-sales ratio is elevated while revenue is flat and cash flow is negative. The trailing P/E is moderate, but recent operating results weaken the case for a cheap valuation.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable recent company-specific news was supplied. This leaves the setup without a fresh fundamental catalyst or identified headline risk.",
+        "news_interpretation": "No usable recent company-specific news was returned, so there is no identified headline catalyst or incremental company-specific risk.",
         "sector_assessment": "supportive",
-        "sector_interpretation": "Recent sector and industry performance has been modestly positive, providing a mild tailwind rather than a strong confirmation.",
+        "sector_interpretation": "Recent healthcare and biotechnology performance is modestly positive, providing a supportive backdrop for the technical setup.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and a mildly unfavorable seasonal cycle can pressure valuation-sensitive biotech shares, despite otherwise neutral market volatility.",
+        "macro_interpretation": "Elevated yields and a mildly unfavorable market cycle create a valuation headwind for a loss-making biotechnology company, despite currently low volatility and neutral broad-market risk.",
         "overall_assessment": "mixed",
-        "overall_summary": "Technically, TBPH presents a high-quality pullback continuation within a strong uptrend, with buyers recently defending key short-term levels. Fundamentals are a material counterweight because of repeated earnings misses, flat revenue, negative cash flow, and an upcoming earnings event, while sector conditions offer only modest support.",
-        "key_positive": "Strong trend structure, improving short-term momentum, and modestly positive sector performance support the technical signal.",
-        "key_risk": "Repeated large EPS misses and negative cash flow create substantial fundamental and earnings-event risk despite the bullish chart.",
+        "overall_summary": "The technical signal is well supported as a pullback continuation within a strong uptrend, and the sector backdrop is favorable. However, repeated earnings misses, negative cash flow, elevated sales valuation, and the upcoming earnings event materially weaken the fundamental confirmation.",
+        "key_positive": "Strong trend structure, VWAP recovery, improving momentum, and supportive biotechnology-sector performance favor continuation.",
+        "key_risk": "Repeated large EPS misses and negative cash flow make the next earnings report the main threat to the technical setup.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -629,12 +1299,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2836
+          "chars": 2824
         }
       ],
       "is_etf": false,
       "buy_confidence": 42,
-      "report": "🟡 TBPH — Theravance Biopharma Inc\nEntry: $17.04\neToro TP Value: $54.13\nShares: 14.67 ($250)\nScanner Potential: +21.7%\nTimeframe: 191–250 days\n\n═══ BUY CONFIDENCE: 42% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 4 | Hold: 10 | Sell: 3 | Strong Sell: 0\n🧠 The consensus is Hold, with substantially more holds than buys, although longer-term revenue and EPS estimates have been revised modestly higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a pullback within an established bullish trend, with price holding above rising long-term averages. Reclaimed VWAP, rising RSI, contracting bands, and stronger volume support renewed buying, though monthly options expiration may increase near-term chop.\n🕒 Technical timestamp: 2026-09-17 22:52:46 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🔴 Weak\n🧠 The last three results show repeated and worsening EPS misses, while revenue was essentially flat and profitability remained weak with a negative operating margin. Negative operating cash flow and free cash flow further weaken the fundamental backdrop despite strong gross margin.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 The valuation is not clearly supported by recent operating performance: price-to-sales is elevated while revenue is flat and recent earnings and cash flow are negative. The trailing P/E is more moderate, but it does not offset the weak current fundamentals.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-10 (+54 days)\n🟡 Mixed\n🧠 Next earnings are expected on November 10, with estimates calling for modestly higher revenue and positive EPS. However, the history of large misses makes the event a meaningful downside-risk catalyst.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector and industry performance has been modestly positive, providing a mild tailwind rather than a strong confirmation.\n🧠 Macro: Elevated long-term yields and a mildly unfavorable seasonal cycle can pressure valuation-sensitive biotech shares, despite otherwise neutral market volatility.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technically, TBPH presents a high-quality pullback continuation within a strong uptrend, with buyers recently defending key short-term levels. Fundamentals are a material counterweight because of repeated earnings misses, flat revenue, negative cash flow, and an upcoming earnings event, while sector conditions offer only modest support.\n🟢 Key Positive: Strong trend structure, improving short-term momentum, and modestly positive sector performance support the technical signal.\n🔴 Key Risk: Repeated large EPS misses and negative cash flow create substantial fundamental and earnings-event risk despite the bullish chart.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 TBPH — Theravance Biopharma Inc\nEntry: $17.04\neToro TP Value: $54.13\nShares: 14.67 ($250)\nScanner Potential: +21.7%\nTimeframe: 191–250 days\n\n═══ BUY CONFIDENCE: 42% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 4 | Hold: 10 | Sell: 3 | Strong Sell: 0\n🧠 The consensus is Hold, with most ratings at Hold, although longer-term revenue and EPS estimates have edged higher by roughly 6% and 4%, respectively.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above a rising long-term EMA structure. Rising RSI, VWAP reclamation, contracting bands, and increased volume support renewed buying, although monthly options expiry may cause short-term chop.\n🕒 Technical timestamp: 2026-09-18 04:40:24 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🔴 Weak\nQ2 2026 — 🔴 Weak\nQ1 2026 — 🔴 Weak\n🧠 The last three results show repeated, increasingly severe EPS misses, flat reported revenue, continued losses, and negative operating and free cash flow. Strong gross margin and substantial cash relative to debt provide some support, but profitability has not yet translated into cash generation.\n\n═══ VALUATION ═══\n🟡 Expensive\n🧠 The valuation is not clearly supported by current fundamentals: the price-to-sales ratio is elevated while revenue is flat and cash flow is negative. The trailing P/E is moderate, but recent operating results weaken the case for a cheap valuation.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-10 (+53 days)\n🟡 Mixed\n🧠 The next earnings report is expected in 53 days, with estimates calling for EPS of 0.24 and revenue of $21.95M. The modest forward outlook is constructive, but the history of large misses creates meaningful event risk.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🔴 Headwind\n🧠 Sector: Recent healthcare and biotechnology performance is modestly positive, providing a supportive backdrop for the technical setup.\n🧠 Macro: Elevated yields and a mildly unfavorable market cycle create a valuation headwind for a loss-making biotechnology company, despite currently low volatility and neutral broad-market risk.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported as a pullback continuation within a strong uptrend, and the sector backdrop is favorable. However, repeated earnings misses, negative cash flow, elevated sales valuation, and the upcoming earnings event materially weaken the fundamental confirmation.\n🟢 Key Positive: Strong trend structure, VWAP recovery, improving momentum, and supportive biotechnology-sector performance favor continuation.\n🔴 Key Risk: Repeated large EPS misses and negative cash flow make the next earnings report the main threat to the technical setup.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
