@@ -32,7 +32,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 56,
+    "scans_muted": 57,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
@@ -95,6 +95,12 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-10T19:19:52.465446+00:00",
     "tp": 30.46
+  },
+  "RIGL": {
+    "alerted": "2026-09-21T20:27:22.873509+00:00",
+    "entry": 47.03,
+    "thesis_warned": false,
+    "tp": 56.4
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
