@@ -510,3 +510,4 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-21 04:54 UTC,SCZM,openai,True,3,0,NO_NEWS,mixed,pullback continuation,55
 2026-09-21 04:54 UTC,RIGL,openai,True,3,0,NO_NEWS,supportive,pullback continuation,64
 2026-09-21 04:54 UTC,NET,openai,True,3,0,NO_NEWS,mixed,pullback continuation,48
+2026-09-21 20:28 UTC,RIGL,openai,True,3,0,NO_NEWS,supportive,pullback continuation,75
