@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21T20:27:44.162057+00:00",
+  "generated": "2026-09-22T04:52:13.930301+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 10.6
@@ -9,62 +9,6 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 9 avg -0.9%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.5% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "RIGL",
-      "name": "Rigel Pharmaceuticals, Inc.",
-      "setup": "pullback",
-      "entry": 47.03,
-      "tp": 56.4,
-      "tp_pct": 0.1992345311503294,
-      "shares": 5.32,
-      "value": 250.19960000000003,
-      "pl_amount": 49.85,
-      "eta_days_low": 15,
-      "eta_days_high": 45,
-      "fee_pct": 0.0401216488392807,
-      "trend_score": 5,
-      "adx": 25.5,
-      "rs": 0.267,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 14,
-      "ema20": 45.91,
-      "ema50": 43.28,
-      "ema200": 37.65,
-      "above_ema200": true,
-      "quality": 0.89,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 0.8
-      },
-      "q_notes": {
-        "rsi": "RSI 55.3 rising, reset from 39",
-        "bollinger": "band position 68%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.1x average, steady",
-        "extension": "+0.7 ATR from 20 EMA, slope -1.3%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 55.3,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=55.3)",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-09-21T20:27:22.873466+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
