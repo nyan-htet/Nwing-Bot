@@ -1,67 +1,68 @@
 {
-  "generated": "2026-09-24T04:45:27.793283+00:00",
+  "generated": "2026-09-24T13:34:18.851853+00:00",
   "macro": {
-    "risk": "risk-on",
-    "vol": 10.9
+    "risk": "neutral",
+    "vol": 11.0
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -0.9%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.9% (informative only)"
   },
   "signals": [
     {
-      "ticker": "NOW",
-      "name": "ServiceNow, Inc.",
+      "ticker": "USO",
+      "name": "US Oil Fund",
       "setup": "pullback",
-      "entry": 140.81,
-      "tp": 168.19,
-      "tp_pct": 0.19444641715787236,
-      "shares": 1.78,
-      "value": 250.64180000000002,
-      "pl_amount": 48.74,
-      "eta_days_low": 11,
-      "eta_days_high": 33,
-      "fee_pct": 0.04103708932132862,
-      "trend_score": 4,
-      "adx": 25.1,
-      "rs": 0.526,
-      "runner": false,
+      "entry": 151.25,
+      "tp": 179.92,
+      "tp_pct": 0.18955371900826434,
+      "shares": 1.65,
+      "value": 249.5625,
+      "pl_amount": 47.31,
+      "eta_days_low": 14,
+      "eta_days_high": 31,
+      "fee_pct": 0.0,
+      "trend_score": 5,
+      "adx": 30.5,
+      "rs": 0.385,
+      "runner": true,
       "regime": "uptrend",
-      "regime_weeks": 8,
-      "ema20": 135.91,
-      "ema50": 127.4,
-      "ema200": 124.15,
+      "regime_weeks": 6,
+      "ema20": 146.83,
+      "ema50": 137.98,
+      "ema200": 116.68,
       "above_ema200": true,
-      "quality": 0.89,
+      "quality": 0.73,
       "q_detail": {
-        "rsi": 1.0,
+        "rsi": 0.1,
         "bollinger": 1.0,
         "vwap": 1.0,
-        "volume": 0.5,
+        "volume": 1.0,
         "extension": 0.8
       },
       "q_notes": {
-        "rsi": "RSI 56.2 rising",
-        "bollinger": "band position 67%, contracting",
+        "rsi": "RSI 53.7 falling, BEARISH DIVERGENCE",
+        "bollinger": "band position 38%, contracting",
         "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.7x average, steady",
-        "extension": "+0.7 ATR from 20 EMA, slope -0.0%, bullish stack (20>50>200)"
+        "volume": "0.0x average, drying up",
+        "extension": "+0.3 ATR from 20 EMA, slope -0.9%, bullish stack (20>50>200)"
       },
       "context_notes": [],
       "ext_atr": null,
-      "rsi": 56.2,
+      "rsi": 53.7,
       "options_note": "",
       "sector": "",
       "warnings": [],
       "reasons": [
-        "daily uptrend (score 4/5)",
+        "daily uptrend (score 5/5)",
         "4h pullback",
         "1h momentum trigger",
-        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=56.2)",
-        "hard-eligible; ranked in Step 2"
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.73 (rsi +0.1, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.7)",
+        "(crude oil)"
       ],
-      "time": "2026-09-24T04:45:07.200982+00:00"
+      "time": "2026-09-24T13:33:58.245653+00:00"
     }
   ],
   "position_alerts": []

@@ -32,7 +32,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 66,
+    "scans_muted": 67,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
@@ -70,7 +70,7 @@
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
-    "scans_muted": 28,
+    "scans_muted": 29,
     "thesis_warned": false,
     "tp": 558.48
   },
@@ -109,5 +109,11 @@
     "scans_muted": 11,
     "thesis_warned": false,
     "tp": 429.71
+  },
+  "USO": {
+    "alerted": "2026-09-24T13:33:58.245688+00:00",
+    "entry": 151.25,
+    "thesis_warned": false,
+    "tp": 179.92
   }
 }
