@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-23T19:43:17.924005+00:00",
+  "generated": "2026-09-24T04:45:27.793283+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 10.9
@@ -9,6 +9,60 @@
     "label": "headwind",
     "line": "Cycles [headwind]: month 9 avg -0.9%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.1% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "NOW",
+      "name": "ServiceNow, Inc.",
+      "setup": "pullback",
+      "entry": 140.81,
+      "tp": 168.19,
+      "tp_pct": 0.19444641715787236,
+      "shares": 1.78,
+      "value": 250.64180000000002,
+      "pl_amount": 48.74,
+      "eta_days_low": 11,
+      "eta_days_high": 33,
+      "fee_pct": 0.04103708932132862,
+      "trend_score": 4,
+      "adx": 25.1,
+      "rs": 0.526,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 8,
+      "ema20": 135.91,
+      "ema50": 127.4,
+      "ema200": 124.15,
+      "above_ema200": true,
+      "quality": 0.89,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.8
+      },
+      "q_notes": {
+        "rsi": "RSI 56.2 rising",
+        "bollinger": "band position 67%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.7x average, steady",
+        "extension": "+0.7 ATR from 20 EMA, slope -0.0%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 56.2,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.89 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=56.2)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-24T04:45:07.200982+00:00"
+    }
+  ],
   "position_alerts": []
 }
