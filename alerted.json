@@ -22,12 +22,6 @@
     "thesis_warned_on": "2026-09-17T19:58:29.287771+00:00",
     "tp": 77.16
   },
-  "CBC": {
-    "alerted": "2026-09-25T13:45:14.638629+00:00",
-    "entry": 32.16,
-    "thesis_warned": false,
-    "tp": 36.52
-  },
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
@@ -108,12 +102,6 @@
     "scans_muted": 4,
     "thesis_warned": false,
     "tp": 56.4
-  },
-  "TGTX": {
-    "alerted": "2026-09-25T13:45:15.233193+00:00",
-    "entry": 58.25,
-    "thesis_warned": false,
-    "tp": 66.44
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",

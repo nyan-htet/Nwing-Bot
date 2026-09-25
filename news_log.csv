@@ -515,3 +515,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-24 04:46 UTC,NOW,openai,True,3,6,OK,caution,pullback continuation,45
 2026-09-24 13:35 UTC,USO,openai,True,3,7,OK,mixed,pullback continuation,48
 2026-09-25 04:55 UTC,SABR,openai,True,3,1,OK,mixed,pullback continuation,52
+2026-09-25 13:46 UTC,TGTX,openai,True,3,0,NO_NEWS,mixed,pullback continuation,46
+2026-09-25 13:46 UTC,CBC,openai,True,3,0,NO_NEWS,mixed,pullback continuation,50
