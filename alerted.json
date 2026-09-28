@@ -45,18 +45,6 @@
     "thesis_warned_on": "2026-09-18T19:03:46.917659+00:00",
     "tp": 99.56
   },
-  "GCMG": {
-    "alerted": "2026-09-28T05:20:14.019599+00:00",
-    "entry": 13.05,
-    "thesis_warned": false,
-    "tp": 14.38
-  },
-  "GILD": {
-    "alerted": "2026-09-28T05:20:14.057018+00:00",
-    "entry": 150.95,
-    "thesis_warned": false,
-    "tp": 163.12
-  },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
     "entry": 345.5,
@@ -78,12 +66,6 @@
     "scans_muted": 33,
     "thesis_warned": false,
     "tp": 58.66
-  },
-  "MRK": {
-    "alerted": "2026-09-28T05:20:14.304898+00:00",
-    "entry": 148.74,
-    "thesis_warned": false,
-    "tp": 170.25
   },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
