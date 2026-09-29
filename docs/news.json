@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29 00:24 UTC",
+  "generated": "2026-09-29 10:41 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -10,9 +10,633 @@
   ],
   "results": [
     {
+      "ticker": "XMTR",
+      "alert": {
+        "alerted": "2026-09-29T10:40:50.191633+00:00",
+        "entry": 102.91,
+        "thesis_warned": false,
+        "tp": 126.57
+      },
+      "signal": {
+        "ticker": "XMTR",
+        "name": "Xometry, Inc.",
+        "setup": "pullback",
+        "entry": 102.91,
+        "tp": 126.57,
+        "tp_pct": 0.22990962977358853,
+        "shares": 2.43,
+        "value": 250.0713,
+        "pl_amount": 57.49,
+        "eta_days_low": 10,
+        "eta_days_high": 30,
+        "fee_pct": 0.03478635957268436,
+        "trend_score": 5,
+        "adx": 29.8,
+        "rs": 0.041,
+        "runner": true,
+        "regime": "uptrend",
+        "regime_weeks": 20,
+        "ema20": 95.63,
+        "ema50": 91.99,
+        "ema200": 76.98,
+        "above_ema200": true,
+        "quality": 0.72,
+        "q_detail": {
+          "rsi": 0.6,
+          "bollinger": 0.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 59.3 falling",
+          "bollinger": "band position 71%, expanding",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.9x average, drying up",
+          "extension": "+1.0 ATR from 20 EMA, slope +6.2%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 59.3,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 5/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "RUNNER: near 52w high + outperforming SPY",
+          "quality +0.72 (rsi +0.6, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=59.3)",
+          "(nasdaq; tier assigned nightly by FMP)",
+          "hard-eligible; ranked in Step 2"
+        ],
+        "time": "2026-09-29T10:40:50.191586+00:00"
+      },
+      "profile": {
+        "symbol": "XMTR",
+        "price": 103.14,
+        "marketCap": 5545889370,
+        "beta": 1.32,
+        "lastDividend": 0,
+        "range": "35.86-107.93",
+        "change": 2.57,
+        "changePercentage": 2.55543,
+        "volume": 806230,
+        "averageVolume": 798049,
+        "companyName": "Xometry, Inc.",
+        "currency": "USD",
+        "cik": "0001657573",
+        "isin": "US98423F1093",
+        "cusip": "98423F109",
+        "exchangeFullName": "NASDAQ Global Select",
+        "exchange": "NASDAQ",
+        "industry": "Industrial - Distribution",
+        "website": "https://www.xometry.com",
+        "description": "Xometry, Inc. manages a global digital marketplace designed to streamline the sourcing of custom manufactured components and assemblies. The company's extensive service portfolio encompasses both traditional and cutting-edge manufacturing processes. These include precision CNC machining, covering milling and turning operations; various sheet metal fabrication techniques such as laser, waterjet, and plasma cutting, in addition to sheet metal forming. Their advanced 3D printing capabilities span a wide array of additive manufacturing methods, including carbon digital light synthesis, fused deposition modeling, HP Multi Jet Fusion, PolyJet, selective laser sintering, stereolithography, and specialized metal 3D printing services like direct metal laser sintering and metal binder jetting. Furthermore, Xometry offers comprehensive injection molding solutions, including plastic, over, insert, and prototype molding, alongside tooling for both bridge production and high-volume manufacturing. Beyond these core services, the company provides urethane and die casting, vapor smoothing, finishing, rapid prototyping, high-volume production, and assembly services. Xometry also distributes products and components from recognized industry brands such as Allied Machine & Engineering, Brubaker, HTC, OSG, Kyocera, Mitsubishi Materials, SOWA, Viking Drill & Tool, Dauphin, and Sandvik. Its diverse clientele spans numerous industries, including aerospace and defense, automotive, consumer products, education, electronics and semiconductors, energy, industrial, medical and dental, robotics, and serves product designers, hardware startups, and supply chain/purchasing departments. Originally incorporated in 2013 as NextLine Manufacturing Corp., the company rebranded to Xometry, Inc. in June 2015 and maintains its headquarters in Derwood, Maryland.",
+        "ceo": "Sanjeev Singh Sahni",
+        "sector": "Industrials",
+        "country": "US",
+        "fullTimeEmployees": "1174",
+        "phone": "240 335 7914",
+        "address": "6116 Executive Boulevard",
+        "city": "North Bethesda",
+        "state": "MD",
+        "zip": "20852",
+        "image": "https://images.financialmodelingprep.com/symbol/XMTR.png",
+        "ipoDate": "2021-06-30",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-08-04",
+          "fiscal_period": "",
+          "eps_actual": 0.16,
+          "eps_estimate": 0.1456,
+          "eps_surprise": 0.014399999999999996,
+          "eps_surprise_pct": 0.09890109890109887,
+          "revenue": 229280000.0,
+          "net_income": -5314000.0,
+          "operating_margin": -0.02418440334961619,
+          "gross_margin": 0.3801160153524075,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-05-07",
+          "fiscal_period": "",
+          "eps_actual": 0.12,
+          "eps_estimate": 0.07,
+          "eps_surprise": 0.04999999999999999,
+          "eps_surprise_pct": 0.7142857142857141,
+          "revenue": 229280000.0,
+          "net_income": -5314000.0,
+          "operating_margin": -0.02418440334961619,
+          "gross_margin": 0.3801160153524075,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-02-24",
+          "fiscal_period": "",
+          "eps_actual": 0.16,
+          "eps_estimate": 0.12,
+          "eps_surprise": 0.04000000000000001,
+          "eps_surprise_pct": 0.3333333333333334,
+          "revenue": 229280000.0,
+          "net_income": -5314000.0,
+          "operating_margin": -0.02418440334961619,
+          "gross_margin": 0.3801160153524075,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 21753000.0,
+        "total_debt": 339769000.0,
+        "total_liabilities": 461633000.0,
+        "equity": 595023000.0,
+        "operating_cash_flow": 2539000.0,
+        "capital_expenditure": -13379000.0,
+        "free_cash_flow": -10840000.0
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": [
+          {
+            "date": "2030-12-31",
+            "period": null,
+            "revenue_avg": 1904000000.0,
+            "eps_avg": 3.3,
+            "revenue_low": 1856321549.0,
+            "revenue_high": 1931798279.0,
+            "eps_low": 3.19257,
+            "eps_high": 3.36263,
+            "num_analysts_revenue": 6,
+            "num_analysts_eps": 2
+          },
+          {
+            "date": "2029-12-31",
+            "period": null,
+            "revenue_avg": 1628000000.0,
+            "eps_avg": 2.47,
+            "revenue_low": 1587232921.0,
+            "revenue_high": 1651768697.0,
+            "eps_low": 2.38959,
+            "eps_high": 2.51688,
+            "num_analysts_revenue": 6,
+            "num_analysts_eps": 3
+          },
+          {
+            "date": "2028-12-31",
+            "period": null,
+            "revenue_avg": 1340185057.0,
+            "eps_avg": 1.92565,
+            "revenue_low": 1259018522.0,
+            "revenue_high": 1376683856.0,
+            "eps_low": 1.12459,
+            "eps_high": 3.10793,
+            "num_analysts_revenue": 8,
+            "num_analysts_eps": 6
+          },
+          {
+            "date": "2027-12-31",
+            "period": null,
+            "revenue_avg": 1111756155.0,
+            "eps_avg": 1.28331,
+            "revenue_low": 1101829760.0,
+            "revenue_high": 1121682549.0,
+            "eps_low": 1.13748,
+            "eps_high": 1.42914,
+            "num_analysts_revenue": 9,
+            "num_analysts_eps": 7
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "XMTR",
+          "strongBuy": 0,
+          "buy": 12,
+          "hold": 3,
+          "sell": 0,
+          "strongSell": 0,
+          "consensus": "Buy"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 1904000000,
+            "prior": 1628000000,
+            "change": 0.16953316953316944
+          },
+          "epsAvg": {
+            "latest": 3.3,
+            "prior": 2.47,
+            "change": 0.33603238866396734
+          }
+        }
+      },
+      "valuation": {
+        "ratios": {
+          "symbol": "XMTR",
+          "grossProfitMarginTTM": 0.3874860531669992,
+          "ebitMarginTTM": -0.03058458313055474,
+          "ebitdaMarginTTM": -0.012345035670457234,
+          "operatingProfitMarginTTM": -0.03787346863464065,
+          "pretaxProfitMarginTTM": -0.0366660834073243,
+          "continuousOperationsProfitMarginTTM": -0.038150856128123876,
+          "netProfitMarginTTM": -0.03816571747709995,
+          "bottomLineProfitMarginTTM": -0.03815457239412481,
+          "receivablesTurnoverTTM": 6.1975226210485115,
+          "payablesTurnoverTTM": 7.004021523647692,
+          "inventoryTurnoverTTM": 127.54615781330583,
+          "fixedAssetTurnoverTTM": 8.988246162750576,
+          "assetTurnoverTTM": 0.7633996307461933,
+          "currentRatioTTM": 3.213713242497957,
+          "quickRatioTTM": 3.195179767065087,
+          "solvencyRatioTTM": -0.03485669352061053,
+          "cashRatioTTM": 0.10396046701681777,
+          "priceToEarningsRatioTTM": -171.9,
+          "priceToEarningsGrowthRatioTTM": -2.6233124478293117,
+          "forwardPriceToEarningsGrowthRatioTTM": -1.538522340282448,
+          "priceToEarningsDilutedRatioTTM": -171.9,
+          "priceToEarningsDilutedGrowthRatioTTM": -2.6233124478293117,
+          "priceToBookRatioTTM": 9.199535641647465,
+          "priceToSalesRatioTTM": 6.867710799956905,
+          "priceToFreeCashFlowRatioTTM": -397.5547935483871,
+          "priceToOperatingCashFlowRatioTTM": 197.41543912651474,
+          "debtToAssetsRatioTTM": 0.32120070825640545,
+          "debtToEquityRatioTTM": 0.5710182631595754,
+          "debtToCapitalRatioTTM": 0.36347016234627594,
+          "longTermDebtToCapitalRatioTTM": 0.29011556949022727,
+          "financialLeverageRatioTTM": 1.77776153190717,
+          "workingCapitalTurnoverRatioTTM": 2.593031675515817,
+          "operatingCashFlowRatioTTM": 0.1325157830847388,
+          "operatingCashFlowSalesRatioTTM": 0.03433676230386202,
+          "freeCashFlowOperatingCashFlowRatioTTM": -0.5031015579919216,
+          "debtServiceCoverageRatioTTM": -0.12354937882358147,
+          "interestCoverageRatioTTM": -6.227652209326003,
+          "shortTermOperatingCashFlowCoverageRatioTTM": 0.32437238248988093,
+          "operatingCashFlowCoverageRatioTTM": 0.08160838687461187,
+          "capitalExpenditureCoverageRatioTTM": 0.6652910408368924,
+          "dividendPaidAndCapexCoverageRatioTTM": 0.6652910408368924,
+          "dividendPayoutRatioTTM": 0,
+          "dividendYieldTTM": 0,
+          "enterpriseValueTTM": 5863905370,
+          "revenuePerShareTTM": 15.215515499304589,
+          "netIncomePerShareTTM": -0.5807110658148943,
+          "interestDebtPerShareTTM": 6.494467558892854,
+          "cashPerShareTTM": 9.735087789212058,
+          "bookValuePerShareTTM": 11.233160297639857,
+          "tangibleBookValuePerShareTTM": 5.760589710014713,
+          "shareholdersEquityPerShareTTM": 11.21143544822764,
+          "operatingCashFlowPerShareTTM": 0.52245153903035,
+          "capexPerShareTTM": 0.7852977222917964,
+          "freeCashFlowPerShareTTM": -0.2628461832614463,
+          "netIncomePerEBTTTM": 1.0408997615893736,
+          "ebtPerEbitTTM": 0.9681205532304473,
+          "priceToFairValueTTM": 9.199535641647465,
+          "debtToMarketCapTTM": 0.059261189337428126,
+          "effectiveTaxRateTTM": -0.04049444562445356,
+          "enterpriseValueMultipleTTM": -588.2140594055633,
+          "dividendPerShareTTM": 0
+        },
+        "metrics": {
+          "symbol": "XMTR",
+          "marketCap": 5545889370,
+          "enterpriseValueTTM": 5863905370,
+          "evToSalesTTM": 7.261523545226127,
+          "evToOperatingCashFlowTTM": 211.4795646999423,
+          "evToFreeCashFlowTTM": -420.3516394265233,
+          "evToEBITDATTM": -588.2140594055633,
+          "netDebtToEBITDATTM": -31.90049472369292,
+          "currentRatioTTM": 3.213713242497957,
+          "incomeQualityTTM": -0.9001428385923906,
+          "grahamNumberTTM": null,
+          "grahamNetNetTTM": 2.9148464097425304,
+          "taxBurdenTTM": 1.0408997615893736,
+          "interestBurdenTTM": 1.1988420195498428,
+          "workingCapitalTTM": 463204000,
+          "investedCapitalTTM": 843492000,
+          "returnOnAssetsTTM": -0.029135694629181638,
+          "operatingReturnOnAssetsTTM": -0.034018659986919324,
+          "returnOnTangibleAssetsTTM": -0.04016346870585537,
+          "returnOnEquityTTM": -0.08653608571621106,
+          "returnOnInvestedCapitalTTM": -0.032655292551232104,
+          "returnOnCapitalEmployedTTM": -0.036041981413349106,
+          "earningsYieldTTM": -0.005630318652461647,
+          "freeCashFlowYieldTTM": -0.002515376537343369,
+          "capexToOperatingCashFlowTTM": 1.5031015579919216,
+          "capexToDepreciationTTM": 1.911747167561121,
+          "capexToRevenueTTM": 0.05161164091533328,
+          "salesGeneralAndAdministrativeToRevenueTTM": 0.26697674764188617,
+          "researchAndDevelopementToRevenueTTM": 0.060704790280496974,
+          "stockBasedCompensationToRevenueTTM": 0.05052189946887488,
+          "intangiblesToTotalAssetsTTM": 0.27457225264674434,
+          "averageReceivablesTTM": 125022500,
+          "averagePayablesTTM": 66445500,
+          "averageInventoryTTM": 3739000,
+          "daysOfSalesOutstandingTTM": 58.894500644557304,
+          "daysOfPayablesOutstandingTTM": 52.11291809536132,
+          "daysOfInventoryOutstandingTTM": 2.8617090962023677,
+          "operatingCycleTTM": 61.75620974075967,
+          "cashConversionCycleTTM": 9.64329164539835,
+          "freeCashFlowToEquityTTM": -13950000,
+          "freeCashFlowToFirmTTM": -8840131.777538307,
+          "tangibleAssetValueTTM": 305731000,
+          "netCurrentAssetValueTTM": 210814000
+        }
+      },
+      "news": [
+        {
+          "date": "2026-09-28 13:11 UTC",
+          "title": "Top 3D Printing Stocks to Buy for Solid Long-Term Returns",
+          "site": "zacks.com",
+          "text": "3D Printing is reshaping industries with faster production and lower costs, drawing investor interest. Stocks like ATI, NVDA, AVNT, PRLB and SNPS offer strong growth potential."
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "1 usable article(s)"
+      },
+      "sector": {
+        "sector": "Industrials",
+        "industry": "Industrial - Distribution",
+        "sector_snapshot": {
+          "date": "2026-09-29",
+          "sector": "Industrials",
+          "exchange": "NASDAQ",
+          "averageChange": -1.1458611426320542
+        },
+        "industry_snapshot": {
+          "date": "2026-09-29",
+          "industry": "Industrial - Distribution",
+          "exchange": "NASDAQ",
+          "averageChange": 0.6120561118108991
+        }
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "risk-on",
+          "vol": 11.1
+        },
+        "hourly_scan_cycles": {
+          "score": -1.0,
+          "label": "headwind",
+          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +11.0% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-09-25",
+          "month1": 4.04,
+          "month2": 4.2,
+          "month3": 4.24,
+          "month6": 4.33,
+          "year1": 4.5,
+          "year2": 4.81,
+          "year3": 4.94,
+          "year5": 4.98,
+          "year7": 5.06,
+          "year10": 5.17,
+          "year20": 5.54,
+          "year30": 5.49
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31422.526
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-12-01",
+              "value": 326.031
+            },
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-12-01",
+              "value": 4.4
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-09-29 00:00:00",
+            "country": "PY",
+            "event": "Boqueron Battle Victory Day",
+            "currency": "PYG",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-09-29 01:30:00",
+            "country": "AU",
+            "event": "Household Spending YoY (Aug)",
+            "currency": "AUD",
+            "previous": 7,
+            "estimate": 6.4,
+            "actual": 6.8,
+            "change": -0.2,
+            "impact": "Low",
+            "changePercentage": -2.857,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 01:30:00",
+            "country": "AU",
+            "event": "Household Spending MoM (Aug)",
+            "currency": "AUD",
+            "previous": 1.1,
+            "estimate": 0.3,
+            "actual": 0,
+            "change": -1.1,
+            "impact": "Low",
+            "changePercentage": -100,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 01:30:00",
+            "country": "AU",
+            "event": "RBA Rate Statement",
+            "currency": "AUD",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Medium",
+            "changePercentage": null,
+            "unit": null
+          },
+          {
+            "date": "2026-09-29 01:35:00",
+            "country": "NZ",
+            "event": "6-Month Bill Auction",
+            "currency": "NZD",
+            "previous": 3.14,
+            "estimate": null,
+            "actual": 3.19,
+            "change": 0.05,
+            "impact": "Low",
+            "changePercentage": 1.592,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 01:35:00",
+            "country": "NZ",
+            "event": "1-Year Bill Auction",
+            "currency": "NZD",
+            "previous": 3.61,
+            "estimate": null,
+            "actual": 3.693,
+            "change": 0.083,
+            "impact": "Low",
+            "changePercentage": 2.299,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 01:35:00",
+            "country": "NZ",
+            "event": "3-Month Bill Auction",
+            "currency": "NZD",
+            "previous": 2.902,
+            "estimate": 2.909,
+            "actual": 3.084,
+            "change": 0.182,
+            "impact": "Low",
+            "changePercentage": 6.272,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 03:30:00",
+            "country": "SG",
+            "event": "Import Prices YoY (Aug)",
+            "currency": "SGD",
+            "previous": 13.5,
+            "estimate": 14.9,
+            "actual": 15.6,
+            "change": 2.1,
+            "impact": "Low",
+            "changePercentage": 15.556,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 03:30:00",
+            "country": "SG",
+            "event": "Producer Price Index YoY (Aug)",
+            "currency": "SGD",
+            "previous": 33.6,
+            "estimate": 35,
+            "actual": 38.8,
+            "change": 5.2,
+            "impact": "Low",
+            "changePercentage": 15.476,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 03:30:00",
+            "country": "SG",
+            "event": "Export Prices YoY (Aug)",
+            "currency": "SGD",
+            "previous": 13.1,
+            "estimate": 15.3,
+            "actual": 15.2,
+            "change": 2.1,
+            "impact": "Low",
+            "changePercentage": 16.031,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 03:35:00",
+            "country": "JP",
+            "event": "40-Year JGB Auction",
+            "currency": "JPY",
+            "previous": 3.865,
+            "estimate": null,
+            "actual": 4.125,
+            "change": 0.26,
+            "impact": "Low",
+            "changePercentage": 6.727,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 04:30:00",
+            "country": "AU",
+            "event": "Interest Rate Decision (Sep)",
+            "currency": "AUD",
+            "previous": 4.35,
+            "estimate": 4.6,
+            "actual": 4.6,
+            "change": 0.25,
+            "impact": "High",
+            "changePercentage": 5.747,
+            "unit": "%"
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price remains above rising short- and long-term averages, has reclaimed VWAP, and is outperforming SPY, although RSI is easing and volume is drying up.",
+        "financial_assessment": "mixed",
+        "financial_interpretation": "The last three reports all exceeded EPS estimates, but the supplied figures show flat revenue, a net loss, negative free cash flow, and a negative operating margin. The earnings surprises support momentum, while weak profitability and leverage temper the fundamental backing.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty over the event window. Longer-range revenue and EPS estimates have risen, but an unpriced earnings event remains a potential source of volatility.",
+        "analyst_assessment": "positive",
+        "analyst_interpretation": "Analysts are decisively positive, with a Buy consensus and upward revisions to the longer-range revenue and EPS averages.",
+        "valuation_assessment": "very_expensive",
+        "valuation_interpretation": "The negative trailing P/E, elevated price-to-sales ratio, and high price-to-book ratio indicate a demanding valuation. Future growth expectations may help justify it, but current losses and negative free cash flow make valuation a headwind.",
+        "news_assessment": "no_major_risk",
+        "news_interpretation": "Recent coverage is a broad 3D-printing industry investment article rather than material company-specific news. It provides some thematic support but no clear catalyst or identified risk for XMTR.",
+        "sector_assessment": "neutral",
+        "sector_interpretation": "Mixed performance between the broader group and its industry provides neither a strong tailwind nor a decisive sector headwind.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Risk appetite and low volatility are supportive, but elevated yields and an unfavorable seasonal cycle can pressure richly valued growth-oriented equities.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is constructive: XMTR is showing a pullback continuation pattern inside a strong, outperforming uptrend. Earnings beats, analyst optimism, and improving long-range estimates help, but weak current profitability, negative free cash flow, expensive valuation, and elevated yields argue for caution around the otherwise favorable setup.",
+        "key_positive": "Strong trend structure combined with repeated EPS beats and positive analyst estimate direction supports continuation.",
+        "key_risk": "The main risk is that expensive valuation and weak cash-generation fundamentals leave the stock vulnerable to an earnings surprise or rate-driven derating.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2829
+        }
+      ],
+      "is_etf": false,
+      "buy_confidence": 52,
+      "report": "🟡 XMTR — Xometry, Inc.\nEntry: $102.91\neToro TP Value: $57.49\nShares: 2.43 ($250)\nScanner Potential: +23.0%\nTimeframe: 10–30 days\n\n═══ BUY CONFIDENCE: 52% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 12 | Hold: 3 | Sell: 0 | Strong Sell: 0\n🧠 Analysts are decisively positive, with a Buy consensus and upward revisions to the longer-range revenue and EPS averages.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price remains above rising short- and long-term averages, has reclaimed VWAP, and is outperforming SPY, although RSI is easing and volume is drying up.\n🕒 Technical timestamp: 2026-09-29 10:40:50 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all exceeded EPS estimates, but the supplied figures show flat revenue, a net loss, negative free cash flow, and a negative operating margin. The earnings surprises support momentum, while weak profitability and leverage temper the fundamental backing.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The negative trailing P/E, elevated price-to-sales ratio, and high price-to-book ratio indicate a demanding valuation. Future growth expectations may help justify it, but current losses and negative free cash flow make valuation a headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty over the event window. Longer-range revenue and EPS estimates have risen, but an unpriced earnings event remains a potential source of volatility.\n\n═══ RECENT NEWS ═══\n• 2026-09-28 13:11 UTC — Top 3D Printing Stocks to Buy for Solid Long-Term Returns\n⚪ Recent coverage is a broad 3D-printing industry investment article rather than material company-specific news. It provides some thematic support but no clear catalyst or identified risk for XMTR.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: Mixed performance between the broader group and its industry provides neither a strong tailwind nor a decisive sector headwind.\n🧠 Macro: Risk appetite and low volatility are supportive, but elevated yields and an unfavorable seasonal cycle can pressure richly valued growth-oriented equities.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is constructive: XMTR is showing a pullback continuation pattern inside a strong, outperforming uptrend. Earnings beats, analyst optimism, and improving long-range estimates help, but weak current profitability, negative free cash flow, expensive valuation, and elevated yields argue for caution around the otherwise favorable setup.\n🟢 Key Positive: Strong trend structure combined with repeated EPS beats and positive analyst estimate direction supports continuation.\n🔴 Key Risk: The main risk is that expensive valuation and weak cash-generation fundamentals leave the stock vulnerable to an earnings surprise or rate-driven derating.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
       "ticker": "USO",
       "alert": {
-        "alerted": "2026-09-29T00:23:46.995776+00:00",
+        "alerted": "2026-09-29T10:40:50.036665+00:00",
         "entry": 149.99,
         "thesis_warned": false,
         "tp": 179.92
@@ -69,7 +693,7 @@
           "quality +0.53 (rsi +1.0, bb +1.0, vwap -0.7, vol +0.5, opt +0.0; RSI=51.3)",
           "(crude oil)"
         ],
-        "time": "2026-09-29T00:23:46.995733+00:00"
+        "time": "2026-09-29T10:40:50.036589+00:00"
       },
       "profile": {
         "symbol": "USO",
@@ -173,48 +797,60 @@
       "valuation": {},
       "news": [
         {
-          "date": "2026-09-28 13:54 UTC",
-          "title": "US Supreme Court's Alito won't participate in climate case involving oil companies",
+          "date": "2026-09-29 05:41 UTC",
+          "title": "Oil giants rush to help Italy's Meloni curb energy costs with fuel price caps",
           "site": "reuters.com",
-          "text": "US Supreme Court Justice Samuel Alito will not ​participate in an upcoming case involving a bid ‌by oil companies to scuttle a lawsuit seeking to hold them liable for helping fuel climate change, a court official ​said on Monday."
+          "text": "Kuwait energy firm Q8 will introduce a price cap on Italian petrol pump prices ​for one month starting from October 1, it said on Tuesday, following similar commitments ‌by Italy's Eni and Azerbaijan's SOCAR."
         },
         {
-          "date": "2026-09-28 11:42 UTC",
-          "title": "Oil stocks in US strategic petroleum reserve fall to lowest level since 1982",
-          "site": "reuters.com",
-          "text": "Stocks of crude ​oil in ‌the U.S. Strategic Petroleum ​Reserve fell ​to 283.8 million ⁠barrels last ​week, the ​lowest level since October 1982, ​according to ​data from the ‌Department ⁠of Energy."
-        },
-        {
-          "date": "2026-09-28 10:26 UTC",
-          "title": "UK diesel prices hit record highs due to impact of Iran war",
-          "site": "reuters.com",
-          "text": "The price of diesel at the pump in the United Kingdom has hit record highs due to the US-Israeli war on Iran, the motoring body RAC said in a ​release on Monday."
-        },
-        {
-          "date": "2026-09-28 06:29 UTC",
-          "title": "1947 Oil & Gas starts AIM trading after £50m fundraising and Gulf acquisition",
+          "date": "2026-09-29 04:56 UTC",
+          "title": "Jersey Oil & Gas rated ‘buy' by Cavendish despite delays to North Sea project",
           "site": "proactiveinvestors.com",
-          "text": "1947 Oil & Gas, a newly listed oil and gas producer focused on US assets, began trading on London's AIM market on Monday with an initial valuation of about £65 million. The company issued 500 million shares at 10p each, raising £50 million through a combination of shares issued to the vendor of Renaissance Offshore and a placing with new investors."
+          "text": "Cavendish, the City broker, has retained its ‘buy' rating and 537p target on Jersey Oil and Gas PLC (AIM:JOG, OTC:JYOGF), saying the company offers significant exposure to a recovery in UK North Sea development activity despite delays to the Buchan project. Project timelines have been pushed out, but Cavendish argues the case rests on a fully funded minority stake in a large, discovered resource base with significant infrastructure-led expansion potential at Buchan."
         },
         {
-          "date": "2026-09-28 03:45 UTC",
-          "title": "1947 Oil & Gas makes AIM debut with ambitions to grow production sharply in coming years",
-          "site": "proactiveinvestors.com",
-          "text": "1947 Oil & Gas PLC (AIM:1947) begins trading on AIM today, with shares marked at a premium price and ambitions to lift production from its newly acquired US Gulf of America assets by around 50% over the next two years. In its London IPO, the junior oil and gas raised roughly £30 million at 10p a share to help fund its US$65 million acquisition of Houston-based Renaissance Offshore."
+          "date": "2026-09-29 04:19 UTC",
+          "title": "Stock Market Today: Oil Prices Strengthen, Bond Selloff Pauses",
+          "site": "wsj.com",
+          "text": "Stocks set for muted open"
+        },
+        {
+          "date": "2026-09-29 04:09 UTC",
+          "title": "IEA member states will discuss strategic oil reserve releases if needed, Birol says",
+          "site": "reuters.com",
+          "text": "The International Energy Agency's member states may ​discuss whether more strategic ‌oil reserves could be released on the market in ​the future, IEA head ​Fatih Birol said on Tuesday."
+        },
+        {
+          "date": "2026-09-29 03:54 UTC",
+          "title": "Iran's Supreme Leader Says US Won't Dare to Advance Beyond Arabian Sea While Trump Confirms Talks With Mediators",
+          "site": "benzinga.com",
+          "text": "Iran's Supreme Leader Ayatollah Mojtaba Khamenei mocked the U.S. on Monday, saying that Tehran's enemies would eventually be kicked out of the Middle East amid the ongoing war with Iran."
+        },
+        {
+          "date": "2026-09-29 02:35 UTC",
+          "title": "Saudi resumes Yanbu oil loading after pipeline restart",
+          "site": "reuters.com",
+          "text": "Saudi Arabia has resumed oil loadings from its Red Sea port of Yanbu after restarting operations on the East-West Pipeline, according to trade sources and shipping data, improving the outlook for ​oil exports from the Middle East."
+        },
+        {
+          "date": "2026-09-28 23:09 UTC",
+          "title": "Oil Price Forecast: Brent and WTI Rise as Strait of Hormuz Risks Persist",
+          "site": "fxempire.com",
+          "text": "Oil prices rise for a second day as uncertainty over Hormuz shipping supports Brent and WTI despite higher Gulf exports."
         }
       ],
       "news_diag": {
         "status": "OK",
-        "message": "5 usable article(s)"
+        "message": "7 usable article(s)"
       },
       "sector": {
         "sector": "Financial Services",
         "industry": "Asset Management",
         "sector_snapshot": {
-          "date": "2026-09-28",
+          "date": "2026-09-29",
           "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": -0.6079854025249576
+          "averageChange": -0.6077476777557433
         },
         "industry_snapshot": {}
       },
@@ -297,10 +933,10 @@
             "currency": "AUD",
             "previous": 7,
             "estimate": 6.4,
-            "actual": null,
-            "change": null,
+            "actual": 6.8,
+            "change": -0.2,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -2.857,
             "unit": "%"
           },
           {
@@ -310,10 +946,10 @@
             "currency": "AUD",
             "previous": 1.1,
             "estimate": 0.3,
-            "actual": null,
-            "change": null,
+            "actual": 0,
+            "change": -1.1,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": -100,
             "unit": "%"
           },
           {
@@ -332,14 +968,14 @@
           {
             "date": "2026-09-29 01:35:00",
             "country": "NZ",
-            "event": "3-Month Bill Auction",
+            "event": "6-Month Bill Auction",
             "currency": "NZD",
-            "previous": 2.902,
-            "estimate": 2.909,
-            "actual": null,
-            "change": null,
+            "previous": 3.14,
+            "estimate": null,
+            "actual": 3.19,
+            "change": 0.05,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 1.592,
             "unit": "%"
           },
           {
@@ -349,62 +985,23 @@
             "currency": "NZD",
             "previous": 3.61,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 3.693,
+            "change": 0.083,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 2.299,
             "unit": "%"
           },
           {
             "date": "2026-09-29 01:35:00",
             "country": "NZ",
-            "event": "6-Month Bill Auction",
+            "event": "3-Month Bill Auction",
             "currency": "NZD",
-            "previous": 3.14,
-            "estimate": null,
-            "actual": null,
-            "change": null,
+            "previous": 2.902,
+            "estimate": 2.909,
+            "actual": 3.084,
+            "change": 0.182,
             "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-29 03:30:00",
-            "country": "SN",
-            "event": "GDP Growth Rate YoY (Q2)",
-            "currency": "XOF",
-            "previous": 5.8,
-            "estimate": 5.4,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-29 03:30:00",
-            "country": "SG",
-            "event": "Export Prices YoY (Aug)",
-            "currency": "SGD",
-            "previous": 13.1,
-            "estimate": 15.3,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-29 03:30:00",
-            "country": "SG",
-            "event": "Producer Price Index YoY (Aug)",
-            "currency": "SGD",
-            "previous": 33.4,
-            "estimate": 35,
-            "actual": null,
-            "change": null,
-            "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 6.272,
             "unit": "%"
           },
           {
@@ -414,10 +1011,36 @@
             "currency": "SGD",
             "previous": 13.5,
             "estimate": 14.9,
-            "actual": null,
-            "change": null,
+            "actual": 15.6,
+            "change": 2.1,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 15.556,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 03:30:00",
+            "country": "SG",
+            "event": "Producer Price Index YoY (Aug)",
+            "currency": "SGD",
+            "previous": 33.6,
+            "estimate": 35,
+            "actual": 38.8,
+            "change": 5.2,
+            "impact": "Low",
+            "changePercentage": 15.476,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 03:30:00",
+            "country": "SG",
+            "event": "Export Prices YoY (Aug)",
+            "currency": "SGD",
+            "previous": 13.1,
+            "estimate": 15.3,
+            "actual": 15.2,
+            "change": 2.1,
+            "impact": "Low",
+            "changePercentage": 16.031,
             "unit": "%"
           },
           {
@@ -427,35 +1050,48 @@
             "currency": "JPY",
             "previous": 3.865,
             "estimate": null,
-            "actual": null,
-            "change": null,
+            "actual": 4.125,
+            "change": 0.26,
             "impact": "Low",
-            "changePercentage": 0,
+            "changePercentage": 6.727,
+            "unit": "%"
+          },
+          {
+            "date": "2026-09-29 04:30:00",
+            "country": "AU",
+            "event": "Interest Rate Decision (Sep)",
+            "currency": "AUD",
+            "previous": 4.35,
+            "estimate": 4.6,
+            "actual": 4.6,
+            "change": 0.25,
+            "impact": "High",
+            "changePercentage": 5.747,
             "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a pullback within a strong, established uptrend, with price above rising longer-term EMAs and substantial relative strength versus SPY. Neutral RSI, contracting bands, and below-VWAP trading show that momentum has paused and short-term sellers remain active.",
+        "technical_interpretation": "The setup resembles a pullback continuation within a strong daily uptrend, with price above rising long-term averages and strong relative performance. Flat RSI, contracting bands, and below-VWAP trading show consolidation and near-term seller control rather than fully confirmed momentum.",
         "financial_assessment": "not_applicable",
-        "financial_interpretation": "USO is an oil-linked ETF rather than an operating company, so the supplied EPS results are not a meaningful measure of its underlying financial performance. No supported cash-flow, margin, balance-sheet, or earnings-surprise trend is available.",
+        "financial_interpretation": "USO is an oil-tracking ETF, so company-style earnings, margins, and cash-flow analysis are not applicable. The last three reported EPS figures were volatile, with no estimates, revenue, or financial-health data available to establish a fundamental trend.",
         "earnings_assessment": "unknown",
-        "earnings_interpretation": "No next earnings date or forward estimates are available, and USO does not offer a conventional corporate earnings catalyst. Event risk is therefore primarily tied to crude-oil and geopolitical developments rather than earnings.",
+        "earnings_interpretation": "The next earnings date and forward estimates are unavailable. There is therefore no identifiable earnings catalyst or event-risk adjustment for the setup.",
         "analyst_assessment": "unknown",
-        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable, so they provide no confirmation or warning.",
+        "analyst_interpretation": "Analyst ratings and estimate direction are unavailable, providing no independent confirmation.",
         "valuation_assessment": "unknown",
-        "valuation_interpretation": "No valuation data is supplied, and standard company valuation measures are not directly applicable to this commodity ETF. Valuation cannot therefore be assessed as a catalyst or headwind.",
+        "valuation_interpretation": "No valuation data is supplied for USO. Valuation cannot therefore be assessed as a support or headwind.",
         "news_assessment": "mixed",
-        "news_interpretation": "Iran-related fuel-price pressure and historically low U.S. Strategic Petroleum Reserve inventories are potentially supportive for oil exposure. However, the geopolitical backdrop can also produce sharp reversals, while the climate litigation item has no clear direct impact on USO.",
+        "news_interpretation": "Geopolitical tension and Strait of Hormuz risks support oil prices, but resumed Saudi exports and possible strategic-reserve releases could ease supply concerns. Fuel-price caps and other oil-company notes are secondary rather than direct USO catalysts.",
         "sector_assessment": "neutral",
-        "sector_interpretation": "The supplied financial-sector weakness is of limited relevance to an oil-linked ETF, leaving sector conditions broadly neutral for this setup.",
+        "sector_interpretation": "The broader classified sector is slightly weak, but its limited relevance to an oil ETF makes it neither a clear support nor a material headwind.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Risk-on conditions and low volatility are helpful, but elevated Treasury yields and a mildly unfavorable cycle backdrop can weigh on commodity positioning and risk appetite.",
+        "macro_interpretation": "Risk appetite and low volatility are supportive, but elevated yields and a seasonally unfavorable cycle backdrop could limit follow-through in a multi-week oil advance.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is reasonably supported by a strong multi-week uptrend, high relative strength, and a controlled pullback, although below-VWAP trading indicates incomplete short-term confirmation. Fundamental and analyst data provide little validation, while geopolitical oil support is offset by reversal risk and elevated yields.",
-        "key_positive": "USO remains in a strong uptrend and is materially outperforming SPY, with geopolitical supply concerns potentially supporting oil prices.",
-        "key_risk": "The pullback is not fully resolved, and high yields plus volatile geopolitical headlines could quickly undermine the oil-driven trend.",
+        "overall_summary": "The technical signal is constructive: a strong uptrend is undergoing a relatively orderly pullback, with USO outperforming the broad market. Fundamental and analyst confirmation is unavailable, while oil news is mixed and elevated yields create a modest macro headwind.",
+        "key_positive": "Strong trend structure, relative strength, and geopolitical supply-risk headlines support continuation.",
+        "key_risk": "Below-VWAP trading, possible reserve releases, and resumed Middle East exports could undermine the pullback continuation.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -466,12 +1102,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2896
+          "chars": 2609
         }
       ],
       "is_etf": true,
       "buy_confidence": 48,
-      "report": "🟡 USO — United States Oil Fund, LP\nEntry: $149.99\neToro TP Value: $49.98\nShares: 1.67 ($250)\nScanner Potential: +20.0%\nTimeframe: 13–39 days\n\n═══ BUY CONFIDENCE: 48% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable, so they provide no confirmation or warning.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a pullback within a strong, established uptrend, with price above rising longer-term EMAs and substantial relative strength versus SPY. Neutral RSI, contracting bands, and below-VWAP trading show that momentum has paused and short-term sellers remain active.\n🕒 Technical timestamp: 2026-09-29 00:23:46 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2023 — 🟡 Mixed\nQ2 2023 — 🟡 Mixed\nQ1 2023 — 🟡 Mixed\n🧠 USO is an oil-linked ETF rather than an operating company, so the supplied EPS results are not a meaningful measure of its underlying financial performance. No supported cash-flow, margin, balance-sheet, or earnings-surprise trend is available.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation data is supplied, and standard company valuation measures are not directly applicable to this commodity ETF. Valuation cannot therefore be assessed as a catalyst or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimates are available, and USO does not offer a conventional corporate earnings catalyst. Event risk is therefore primarily tied to crude-oil and geopolitical developments rather than earnings.\n\n═══ RECENT NEWS ═══\n• 2026-09-28 13:54 UTC — US Supreme Court's Alito won't participate in climate case involving oil companies\n• 2026-09-28 11:42 UTC — Oil stocks in US strategic petroleum reserve fall to lowest level since 1982\n• 2026-09-28 10:26 UTC — UK diesel prices hit record highs due to impact of Iran war\n• 2026-09-28 06:29 UTC — 1947 Oil & Gas starts AIM trading after £50m fundraising and Gulf acquisition\n• 2026-09-28 03:45 UTC — 1947 Oil & Gas makes AIM debut with ambitions to grow production sharply in coming years\n🟡 Iran-related fuel-price pressure and historically low U.S. Strategic Petroleum Reserve inventories are potentially supportive for oil exposure. However, the geopolitical backdrop can also produce sharp reversals, while the climate litigation item has no clear direct impact on USO.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: The supplied financial-sector weakness is of limited relevance to an oil-linked ETF, leaving sector conditions broadly neutral for this setup.\n🧠 Macro: Risk-on conditions and low volatility are helpful, but elevated Treasury yields and a mildly unfavorable cycle backdrop can weigh on commodity positioning and risk appetite.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is reasonably supported by a strong multi-week uptrend, high relative strength, and a controlled pullback, although below-VWAP trading indicates incomplete short-term confirmation. Fundamental and analyst data provide little validation, while geopolitical oil support is offset by reversal risk and elevated yields.\n🟢 Key Positive: USO remains in a strong uptrend and is materially outperforming SPY, with geopolitical supply concerns potentially supporting oil prices.\n🔴 Key Risk: The pullback is not fully resolved, and high yields plus volatile geopolitical headlines could quickly undermine the oil-driven trend.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 USO — United States Oil Fund, LP\nEntry: $149.99\neToro TP Value: $49.98\nShares: 1.67 ($250)\nScanner Potential: +20.0%\nTimeframe: 13–39 days\n\n═══ BUY CONFIDENCE: 48% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable, providing no independent confirmation.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a pullback continuation within a strong daily uptrend, with price above rising long-term averages and strong relative performance. Flat RSI, contracting bands, and below-VWAP trading show consolidation and near-term seller control rather than fully confirmed momentum.\n🕒 Technical timestamp: 2026-09-29 10:40:50 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2023 — 🟡 Mixed\nQ2 2023 — 🟡 Mixed\nQ1 2023 — 🟡 Mixed\n🧠 USO is an oil-tracking ETF, so company-style earnings, margins, and cash-flow analysis are not applicable. The last three reported EPS figures were volatile, with no estimates, revenue, or financial-health data available to establish a fundamental trend.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation data is supplied for USO. Valuation cannot therefore be assessed as a support or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date and forward estimates are unavailable. There is therefore no identifiable earnings catalyst or event-risk adjustment for the setup.\n\n═══ RECENT NEWS ═══\n• 2026-09-29 05:41 UTC — Oil giants rush to help Italy's Meloni curb energy costs with fuel price caps\n• 2026-09-29 04:56 UTC — Jersey Oil & Gas rated ‘buy' by Cavendish despite delays to North Sea project\n• 2026-09-29 04:19 UTC — Stock Market Today: Oil Prices Strengthen, Bond Selloff Pauses\n• 2026-09-29 04:09 UTC — IEA member states will discuss strategic oil reserve releases if needed, Birol says\n• 2026-09-29 03:54 UTC — Iran's Supreme Leader Says US Won't Dare to Advance Beyond Arabian Sea While Trump Confirms Talks With Mediators\n🟡 Geopolitical tension and Strait of Hormuz risks support oil prices, but resumed Saudi exports and possible strategic-reserve releases could ease supply concerns. Fuel-price caps and other oil-company notes are secondary rather than direct USO catalysts.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🔴 Headwind\n🧠 Sector: The broader classified sector is slightly weak, but its limited relevance to an oil ETF makes it neither a clear support nor a material headwind.\n🧠 Macro: Risk appetite and low volatility are supportive, but elevated yields and a seasonally unfavorable cycle backdrop could limit follow-through in a multi-week oil advance.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is constructive: a strong uptrend is undergoing a relatively orderly pullback, with USO outperforming the broad market. Fundamental and analyst confirmation is unavailable, while oil news is mixed and elevated yields create a modest macro headwind.\n🟢 Key Positive: Strong trend structure, relative strength, and geopolitical supply-risk headlines support continuation.\n🔴 Key Risk: Below-VWAP trading, possible reserve releases, and resumed Middle East exports could undermine the pullback continuation.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
