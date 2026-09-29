@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T00:24:02.328561+00:00",
+  "generated": "2026-09-29T10:41:08.757452+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 11.1
@@ -62,7 +62,62 @@
         "quality +0.53 (rsi +1.0, bb +1.0, vwap -0.7, vol +0.5, opt +0.0; RSI=51.3)",
         "(crude oil)"
       ],
-      "time": "2026-09-29T00:23:46.995733+00:00"
+      "time": "2026-09-29T10:40:50.036589+00:00"
+    },
+    {
+      "ticker": "XMTR",
+      "name": "Xometry, Inc.",
+      "setup": "pullback",
+      "entry": 102.91,
+      "tp": 126.57,
+      "tp_pct": 0.22990962977358853,
+      "shares": 2.43,
+      "value": 250.0713,
+      "pl_amount": 57.49,
+      "eta_days_low": 10,
+      "eta_days_high": 30,
+      "fee_pct": 0.03478635957268436,
+      "trend_score": 5,
+      "adx": 29.8,
+      "rs": 0.041,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 20,
+      "ema20": 95.63,
+      "ema50": 91.99,
+      "ema200": 76.98,
+      "above_ema200": true,
+      "quality": 0.72,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 0.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 59.3 falling",
+        "bollinger": "band position 71%, expanding",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.9x average, drying up",
+        "extension": "+1.0 ATR from 20 EMA, slope +6.2%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 59.3,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.72 (rsi +0.6, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=59.3)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-29T10:40:50.191586+00:00"
     }
   ],
   "position_alerts": []
