@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T18:06:26.195356+00:00",
+  "generated": "2026-09-29T23:43:49.306872+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 11.1
@@ -7,104 +7,50 @@
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.8% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.9% (informative only)"
   },
   "signals": [
-    {
-      "ticker": "GILD",
-      "name": "Gilead Sciences, Inc.",
-      "setup": "pullback",
-      "entry": 150.91,
-      "tp": 163.12,
-      "tp_pct": 0.080909151149692,
-      "shares": 1.66,
-      "value": 250.51059999999998,
-      "pl_amount": 20.27,
-      "eta_days_low": 9,
-      "eta_days_high": 27,
-      "fee_pct": 0.09867479746997812,
-      "trend_score": 5,
-      "adx": 27.1,
-      "rs": 0.174,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 9,
-      "ema20": 148.77,
-      "ema50": 143.87,
-      "ema200": 136.46,
-      "above_ema200": true,
-      "quality": 0.9,
-      "q_detail": {
-        "rsi": 0.6,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 54.2 falling",
-        "bollinger": "band position 57%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.0x average, drying up",
-        "extension": "+0.3 ATR from 20 EMA, slope +0.7%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 54.2,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 5/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=54.2)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-09-29T18:06:04.031078+00:00"
-    },
     {
       "ticker": "MRK",
       "name": "Merck & Co., Inc.",
       "setup": "pullback",
-      "entry": 148.69,
+      "entry": 149.32,
       "tp": 170.25,
-      "tp_pct": 0.14496116211036014,
-      "shares": 1.68,
-      "value": 249.80759999999998,
-      "pl_amount": 36.21,
+      "tp_pct": 0.14016868871091015,
+      "shares": 1.67,
+      "value": 249.3644167,
+      "pl_amount": 34.95,
       "eta_days_low": 15,
       "eta_days_high": 45,
-      "fee_pct": 0.055229700323646026,
+      "fee_pct": 0.05721955865335634,
       "trend_score": 4,
       "adx": 25.4,
-      "rs": 0.162,
+      "rs": 0.166,
       "runner": true,
       "regime": "uptrend",
       "regime_weeks": 17,
-      "ema20": 147.29,
-      "ema50": 141.76,
+      "ema20": 147.35,
+      "ema50": 141.78,
       "ema200": 124.57,
       "above_ema200": true,
-      "quality": 1.0,
+      "quality": 0.93,
       "q_detail": {
         "rsi": 1.0,
         "bollinger": 1.0,
         "vwap": 1.0,
-        "volume": 1.0,
+        "volume": 0.5,
         "extension": 1.0
       },
       "q_notes": {
-        "rsi": "RSI 53.0 flat",
-        "bollinger": "band position 59%, contracting",
+        "rsi": "RSI 54.9 flat",
+        "bollinger": "band position 67%, contracting",
         "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.0x average, drying up",
-        "extension": "+0.3 ATR from 20 EMA, slope +0.3%, bullish stack (20>50>200)"
+        "volume": "0.9x average, steady",
+        "extension": "+0.5 ATR from 20 EMA, slope +0.3%, bullish stack (20>50>200)"
       },
       "context_notes": [],
       "ext_atr": null,
-      "rsi": 53.0,
+      "rsi": 54.9,
       "options_note": "",
       "sector": "",
       "warnings": [],
@@ -113,69 +59,11 @@
         "4h pullback",
         "1h momentum trigger",
         "RUNNER: near 52w high + outperforming SPY",
-        "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.0)",
+        "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=54.9)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-29T18:06:04.206821+00:00"
-    },
-    {
-      "ticker": "VCTR",
-      "name": "Victory Capital Holdings, Inc.",
-      "setup": "pullback",
-      "entry": 109.85,
-      "tp": 123.55,
-      "tp_pct": 0.12471552116522533,
-      "shares": 2.28,
-      "value": 250.45799999999997,
-      "pl_amount": 31.24,
-      "eta_days_low": 7,
-      "eta_days_high": 14,
-      "fee_pct": 0.06402868485081316,
-      "trend_score": 4,
-      "adx": 30.0,
-      "rs": 0.256,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 23,
-      "ema20": 108.96,
-      "ema50": 106.7,
-      "ema200": 88.85,
-      "above_ema200": true,
-      "quality": 0.82,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 0.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 56.9 rising",
-        "bollinger": "band position 89%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.0x average, drying up",
-        "extension": "+0.9 ATR from 20 EMA, slope +0.5%, mixed / tangled"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 56.9,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.82 (rsi +1.0, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=56.9)",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-09-29T18:06:04.479900+00:00"
+      "time": "2026-09-29T23:43:30.151952+00:00"
     }
   ],
-  "position_alerts": [
-    "\u26a0\ufe0f PCTY thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $140.09, signalled at $145.38, -3.6%, target $173.37). The reason for the signal is gone. Your call.",
-    "\u26a0\ufe0f TRV thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $361.12, signalled at $369.70, -2.3%, target $429.71). The reason for the signal is gone. Your call."
-  ]
+  "position_alerts": []
 }
