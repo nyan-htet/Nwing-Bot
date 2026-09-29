@@ -17,7 +17,7 @@
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 28,
+    "scans_muted": 29,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-17T19:58:29.287771+00:00",
     "tp": 77.16
@@ -25,14 +25,14 @@
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
-    "scans_muted": 16,
+    "scans_muted": 17,
     "thesis_warned": false,
     "tp": 27.91
   },
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 77,
+    "scans_muted": 78,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
@@ -44,6 +44,12 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-18T19:03:46.917659+00:00",
     "tp": 99.56
+  },
+  "GILD": {
+    "alerted": "2026-09-29T18:06:04.031114+00:00",
+    "entry": 150.91,
+    "thesis_warned": false,
+    "tp": 163.12
   },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
@@ -67,6 +73,12 @@
     "thesis_warned": false,
     "tp": 58.66
   },
+  "MRK": {
+    "alerted": "2026-09-29T18:06:04.206857+00:00",
+    "entry": 148.69,
+    "thesis_warned": false,
+    "tp": 170.25
+  },
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
@@ -85,7 +97,8 @@
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
     "scans_muted": 23,
-    "thesis_warned": false,
+    "thesis_warned": true,
+    "thesis_warned_on": "2026-09-29T18:06:18.048687+00:00",
     "tp": 173.37
   },
   "RELY": {
@@ -107,7 +120,14 @@
     "alerted": "2026-08-26T01:59:37.555016+00:00",
     "entry": 369.7,
     "scans_muted": 11,
-    "thesis_warned": false,
+    "thesis_warned": true,
+    "thesis_warned_on": "2026-09-29T18:06:22.817209+00:00",
     "tp": 429.71
+  },
+  "VCTR": {
+    "alerted": "2026-09-29T18:06:04.479934+00:00",
+    "entry": 109.85,
+    "thesis_warned": false,
+    "tp": 123.55
   }
 }
