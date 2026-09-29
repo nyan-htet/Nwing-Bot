@@ -526,3 +526,4 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-09-29 18:07 UTC,VCTR,openai,True,3,0,NO_NEWS,mixed,pullback continuation,51
 2026-09-29 18:07 UTC,MRK,openai,True,3,8,OK,mixed,pullback continuation,50
 2026-09-29 18:07 UTC,GILD,openai,True,3,0,NO_NEWS,mixed,pullback continuation,56
+2026-09-29 23:44 UTC,MRK,openai,True,3,8,OK,mixed,pullback continuation,50
