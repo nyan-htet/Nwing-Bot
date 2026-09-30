@@ -11,7 +11,8 @@
     "alerted": "2026-08-26T04:56:49.414348+00:00",
     "entry": 28.95,
     "scans_muted": 21,
-    "thesis_warned": false,
+    "thesis_warned": true,
+    "thesis_warned_on": "2026-09-30T20:50:02.038899+00:00",
     "tp": 34.93
   },
   "BMY": {
@@ -25,14 +26,14 @@
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
-    "scans_muted": 20,
+    "scans_muted": 21,
     "thesis_warned": false,
     "tp": 27.91
   },
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 81,
+    "scans_muted": 82,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
@@ -70,7 +71,7 @@
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
-    "scans_muted": 37,
+    "scans_muted": 38,
     "thesis_warned": false,
     "tp": 558.48
   },
@@ -112,5 +113,11 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-29T18:06:22.817209+00:00",
     "tp": 429.71
+  },
+  "VCTR": {
+    "alerted": "2026-09-30T20:50:00.122032+00:00",
+    "entry": 110.61,
+    "thesis_warned": false,
+    "tp": 119.56
   }
 }

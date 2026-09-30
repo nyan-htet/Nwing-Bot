@@ -1,16 +1,72 @@
 {
-  "generated": "2026-09-30T14:56:36.233589+00:00",
+  "generated": "2026-09-30T20:50:20.210743+00:00",
   "macro": {
-    "risk": "risk-on",
-    "vol": 11.0
+    "risk": "neutral",
+    "vol": 10.8
   },
   "cycles": {
     "score": -1.0,
     "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -0.9%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.2% (informative only)"
+    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "VCTR",
+      "name": "Victory Capital Holdings, Inc.",
+      "setup": "pullback",
+      "entry": 110.61,
+      "tp": 119.56,
+      "tp_pct": 0.08091492631769293,
+      "shares": 2.26,
+      "value": 249.97859999999997,
+      "pl_amount": 20.23,
+      "eta_days_low": 4,
+      "eta_days_high": 8,
+      "fee_pct": 0.09887773767736192,
+      "trend_score": 4,
+      "adx": 28.2,
+      "rs": 0.237,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 23,
+      "ema20": 109.17,
+      "ema50": 106.88,
+      "ema200": 89.16,
+      "above_ema200": true,
+      "quality": 0.74,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 0.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 59.2 rising",
+        "bollinger": "band position 89%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.3x average, surging",
+        "extension": "+0.9 ATR from 20 EMA, slope +1.1%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 59.2,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 4/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.74 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=59.2)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-30T20:50:00.121983+00:00"
+    }
+  ],
   "position_alerts": [
-    "\u26a0\ufe0f PAGP thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $25.82, signalled at $27.91, -7.5%, target $32.53). The reason for the signal is gone. Your call."
+    "\u26a0\ufe0f BBVA thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $27.87, signalled at $28.95, -3.7%, target $34.93). The reason for the signal is gone. Your call."
   ]
 }
