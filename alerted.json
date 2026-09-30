@@ -25,14 +25,14 @@
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
-    "scans_muted": 19,
+    "scans_muted": 20,
     "thesis_warned": false,
     "tp": 27.91
   },
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 80,
+    "scans_muted": 81,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
@@ -70,7 +70,7 @@
   "MSFT": {
     "alerted": "2026-08-26T01:59:37.232800+00:00",
     "entry": 491.55,
-    "scans_muted": 36,
+    "scans_muted": 37,
     "thesis_warned": false,
     "tp": 558.48
   },
@@ -78,7 +78,8 @@
     "alerted": "2026-09-07T14:18:49.295736+00:00",
     "entry": 27.91,
     "scans_muted": 10,
-    "thesis_warned": false,
+    "thesis_warned": true,
+    "thesis_warned_on": "2026-09-30T14:56:29.243378+00:00",
     "tp": 32.53
   },
   "PCTY": {
