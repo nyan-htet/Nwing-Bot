@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T23:43:49.306872+00:00",
+  "generated": "2026-09-30T05:30:10.526201+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 11.1
@@ -10,6 +10,60 @@
     "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.9% (informative only)"
   },
   "signals": [
+    {
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "setup": "pullback",
+      "entry": 739.02,
+      "tp": 849.26,
+      "tp_pct": 0.14917049202537158,
+      "shares": 0.34,
+      "value": 251.26680680000004,
+      "pl_amount": 37.48,
+      "eta_days_low": 9,
+      "eta_days_high": 15,
+      "fee_pct": 0.05335952474933752,
+      "trend_score": 5,
+      "adx": 61.6,
+      "rs": 0.181,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 3,
+      "ema20": 686.81,
+      "ema50": 643.13,
+      "ema200": 621.05,
+      "above_ema200": true,
+      "quality": 0.82,
+      "q_detail": {
+        "rsi": 0.3,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 59.8 falling, peaked 78",
+        "bollinger": "band position 62%, expanding",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.0x average, drying up",
+        "extension": "+1.0 ATR from 20 EMA, slope +5.6%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 59.8,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.82 (rsi +0.3, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=59.8)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-30T05:29:51.081060+00:00"
+    },
     {
       "ticker": "MRK",
       "name": "Merck & Co., Inc.",
@@ -62,7 +116,61 @@
         "quality +0.93 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=54.9)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-29T23:43:30.151952+00:00"
+      "time": "2026-09-30T05:29:51.119070+00:00"
+    },
+    {
+      "ticker": "S",
+      "name": "SentinelOne, Inc.",
+      "setup": "pullback",
+      "entry": 23.32,
+      "tp": 27.82,
+      "tp_pct": 0.1927116827438371,
+      "shares": 10.72,
+      "value": 250.044,
+      "pl_amount": 48.19,
+      "eta_days_low": 10,
+      "eta_days_high": 30,
+      "fee_pct": 0.041505487025384744,
+      "trend_score": 5,
+      "adx": 30.0,
+      "rs": 0.301,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 22,
+      "ema20": 22.4,
+      "ema50": 21.1,
+      "ema200": 17.88,
+      "above_ema200": true,
+      "quality": 0.82,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 55.6 falling",
+        "bollinger": "band position 50%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.2x average, steady",
+        "extension": "+0.5 ATR from 20 EMA, slope +2.0%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 55.6,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.82 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=55.6)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-09-30T05:29:51.298960+00:00"
     }
   ],
   "position_alerts": []
