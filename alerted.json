@@ -113,11 +113,5 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-29T18:06:22.817209+00:00",
     "tp": 429.71
-  },
-  "VCTR": {
-    "alerted": "2026-09-30T20:50:00.122032+00:00",
-    "entry": 110.61,
-    "thesis_warned": false,
-    "tp": 119.56
   }
 }
