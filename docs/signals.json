@@ -1,123 +1,14 @@
 {
-  "generated": "2026-10-01T05:48:09.491596+00:00",
+  "generated": "2026-10-01T15:27:50.536333+00:00",
   "macro": {
     "risk": "neutral",
-    "vol": 10.8
+    "vol": 10.7
   },
   "cycles": {
-    "score": -0.22,
+    "score": -0.24,
     "label": "neutral",
-    "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+    "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
   },
-  "signals": [
-    {
-      "ticker": "INTC",
-      "name": "Intel Corp.",
-      "setup": "pullback",
-      "entry": 120.16,
-      "tp": 132.75,
-      "tp_pct": 0.10477696404793613,
-      "shares": 2.08,
-      "value": 249.93280000000001,
-      "pl_amount": 26.19,
-      "eta_days_low": 5,
-      "eta_days_high": 9,
-      "fee_pct": 0.07637318995539803,
-      "trend_score": 3,
-      "adx": 36.3,
-      "rs": -0.026,
-      "runner": false,
-      "regime": "uptrend",
-      "regime_weeks": 2,
-      "ema20": 111.14,
-      "ema50": 105.24,
-      "ema200": 85.49,
-      "above_ema200": true,
-      "quality": 0.9,
-      "q_detail": {
-        "rsi": 0.6,
-        "bollinger": 1.0,
-        "vwap": 1.0,
-        "volume": 1.0,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 59.2 falling",
-        "bollinger": "band position 57%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "0.6x average, drying up",
-        "extension": "+1.0 ATR from 20 EMA, slope +4.9%, bullish stack (20>50>200)"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 59.2,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 3/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=59.2)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-10-01T05:47:46.942903+00:00"
-    },
-    {
-      "ticker": "VCTR",
-      "name": "Victory Capital Holdings, Inc.",
-      "setup": "pullback",
-      "entry": 110.61,
-      "tp": 119.56,
-      "tp_pct": 0.08091492631769293,
-      "shares": 2.26,
-      "value": 249.97859999999997,
-      "pl_amount": 20.23,
-      "eta_days_low": 4,
-      "eta_days_high": 8,
-      "fee_pct": 0.09887773767736192,
-      "trend_score": 4,
-      "adx": 28.2,
-      "rs": 0.237,
-      "runner": true,
-      "regime": "uptrend",
-      "regime_weeks": 23,
-      "ema20": 109.17,
-      "ema50": 106.88,
-      "ema200": 89.16,
-      "above_ema200": true,
-      "quality": 0.74,
-      "q_detail": {
-        "rsi": 1.0,
-        "bollinger": 0.0,
-        "vwap": 1.0,
-        "volume": 0.5,
-        "extension": 1.0
-      },
-      "q_notes": {
-        "rsi": "RSI 59.2 rising",
-        "bollinger": "band position 89%, contracting",
-        "vwap": "reclaimed VWAP after dip (buyers defended)",
-        "volume": "1.3x average, surging",
-        "extension": "+0.9 ATR from 20 EMA, slope +1.1%, mixed / tangled"
-      },
-      "context_notes": [],
-      "ext_atr": null,
-      "rsi": 59.2,
-      "options_note": "",
-      "sector": "",
-      "warnings": [],
-      "reasons": [
-        "daily uptrend (score 4/5)",
-        "4h pullback",
-        "1h momentum trigger",
-        "RUNNER: near 52w high + outperforming SPY",
-        "quality +0.74 (rsi +1.0, bb +0.0, vwap +1.0, vol +0.5, opt +0.0; RSI=59.2)",
-        "(nasdaq; tier assigned nightly by FMP)",
-        "hard-eligible; ranked in Step 2"
-      ],
-      "time": "2026-10-01T05:47:47.302207+00:00"
-    }
-  ],
+  "signals": [],
   "position_alerts": []
 }
