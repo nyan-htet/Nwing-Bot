@@ -53,12 +53,6 @@
     "thesis_warned": false,
     "tp": 412.35
   },
-  "INTC": {
-    "alerted": "2026-10-01T05:47:46.942940+00:00",
-    "entry": 120.16,
-    "thesis_warned": false,
-    "tp": 132.75
-  },
   "JCI": {
     "alerted": "2026-08-17T20:43:10.378919+00:00",
     "entry": 153.93,
@@ -119,11 +113,5 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-29T18:06:22.817209+00:00",
     "tp": 429.71
-  },
-  "VCTR": {
-    "alerted": "2026-10-01T05:47:47.302243+00:00",
-    "entry": 110.61,
-    "thesis_warned": false,
-    "tp": 119.56
   }
 }

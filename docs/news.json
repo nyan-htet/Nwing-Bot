@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-30 20:50 UTC",
+  "generated": "2026-10-01 05:48 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "VCTR",
       "alert": {
-        "alerted": "2026-09-30T20:50:00.122032+00:00",
+        "alerted": "2026-10-01T05:47:47.302243+00:00",
         "entry": 110.61,
         "thesis_warned": false,
         "tp": 119.56
@@ -70,7 +70,7 @@
           "(nasdaq; tier assigned nightly by FMP)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-09-30T20:50:00.121983+00:00"
+        "time": "2026-10-01T05:47:47.302207+00:00"
       },
       "profile": {
         "symbol": "VCTR",
@@ -366,10 +366,10 @@
         "sector": "Financial Services",
         "industry": "Asset Management",
         "sector_snapshot": {
-          "date": "2026-09-30",
+          "date": "2026-10-01",
           "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": -2.034151852762822
+          "averageChange": -2.0376947670490697
         },
         "industry_snapshot": {}
       },
@@ -379,24 +379,24 @@
           "vol": 10.8
         },
         "hourly_scan_cycles": {
-          "score": -1.0,
-          "label": "headwind",
-          "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+          "score": -0.22,
+          "label": "neutral",
+          "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
         },
         "treasury": {
-          "date": "2026-09-28",
+          "date": "2026-09-29",
           "month1": 4.04,
-          "month2": 4.2,
-          "month3": 4.28,
-          "month6": 4.41,
-          "year1": 4.59,
-          "year2": 4.92,
-          "year3": 5.01,
+          "month2": 4.18,
+          "month3": 4.25,
+          "month6": 4.36,
+          "year1": 4.58,
+          "year2": 4.89,
+          "year3": 4.98,
           "year5": 5.06,
-          "year7": 5.15,
-          "year10": 5.24,
-          "year20": 5.6,
-          "year30": 5.56
+          "year7": 5.16,
+          "year10": 5.26,
+          "year20": 5.64,
+          "year30": 5.59
         },
         "indicators": {
           "GDP": [
@@ -433,23 +433,10 @@
         },
         "calendar": [
           {
-            "date": "2026-09-30 00:00:00",
-            "country": "NZ",
-            "event": "ANZ Business Confidence (Sep)",
-            "currency": "NZD",
-            "previous": 53.7,
-            "estimate": 55.1,
-            "actual": 51.9,
-            "change": -1.8,
-            "impact": "Medium",
-            "changePercentage": -3.352,
-            "unit": null
-          },
-          {
-            "date": "2026-09-30 00:00:00",
-            "country": "CA",
-            "event": "National Day for Truth and Reconciliation",
-            "currency": "CAD",
+            "date": "2026-10-01 00:00:00",
+            "country": "UZ",
+            "event": "Day of Teachers and Instructors",
+            "currency": "UZS",
             "previous": null,
             "estimate": null,
             "actual": null,
@@ -459,158 +446,171 @@
             "unit": null
           },
           {
-            "date": "2026-09-30 01:00:00",
-            "country": "PH",
-            "event": "Producer Price Index YoY (Aug)",
-            "currency": "PHP",
-            "previous": 3,
-            "estimate": 3.1,
-            "actual": 3.1,
-            "change": 0.1,
-            "impact": "Low",
-            "changePercentage": 3.333,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-30 01:00:00",
-            "country": "PH",
-            "event": "Imports YoY (Aug)",
-            "currency": "PHP",
-            "previous": 23,
+            "date": "2026-10-01 00:00:00",
+            "country": "IN",
+            "event": "Bank Holiday - Mid-Year Accounts Closing",
+            "currency": "INR",
+            "previous": null,
             "estimate": null,
-            "actual": 16.6,
-            "change": -6.4,
-            "impact": "Low",
-            "changePercentage": -27.826,
-            "unit": "%"
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
           },
           {
-            "date": "2026-09-30 01:00:00",
-            "country": "PH",
-            "event": "Exports YoY (Aug)",
-            "currency": "PHP",
-            "previous": 10.9,
+            "date": "2026-10-01 00:00:00",
+            "country": "HK",
+            "event": "National Day",
+            "currency": "HKD",
+            "previous": null,
             "estimate": null,
-            "actual": 27.8,
-            "change": 16.9,
-            "impact": "Low",
-            "changePercentage": 155.046,
-            "unit": "%"
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
           },
           {
-            "date": "2026-09-30 01:00:00",
-            "country": "PH",
-            "event": "Balance of Trade (Aug)",
-            "currency": "PHP",
-            "previous": -6.345,
-            "estimate": -6.3,
-            "actual": -3.85,
-            "change": 2.495,
+            "date": "2026-10-01 00:00:00",
+            "country": "NG",
+            "event": "National Day",
+            "currency": "NGN",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "CY",
+            "event": "Cyprus Independence Day",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "BW",
+            "event": "Botswana Day",
+            "currency": "BWP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "KR",
+            "event": "Balance of Trade (Sep)",
+            "currency": "KRW",
+            "previous": 34.79,
+            "estimate": 38.2,
+            "actual": 49.85,
+            "change": 15.06,
             "impact": "Low",
-            "changePercentage": 39.322,
+            "changePercentage": 43.288,
             "unit": "B"
           },
           {
-            "date": "2026-09-30 01:30:00",
-            "country": "CN",
-            "event": "S&P Global Composite PMI (Sep)",
-            "currency": "CNY",
-            "previous": 49.5,
-            "estimate": 50.1,
-            "actual": 50.7,
-            "change": 1.2,
+            "date": "2026-10-01 00:00:00",
+            "country": "KR",
+            "event": "Imports YoY (Sep)",
+            "currency": "KRW",
+            "previous": 22.4,
+            "estimate": 21.5,
+            "actual": 26,
+            "change": 3.6,
             "impact": "Low",
-            "changePercentage": 2.424,
+            "changePercentage": 16.071,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "KR",
+            "event": "Exports YoY (Sep)",
+            "currency": "KRW",
+            "previous": 68.7,
+            "estimate": 61.7,
+            "actual": 83.5,
+            "change": 14.8,
+            "impact": "Medium",
+            "changePercentage": 21.543,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-01 00:01:00",
+            "country": "IE",
+            "event": "S&P Global Manufacturing PMI (Sep)",
+            "currency": "EUR",
+            "previous": 55.4,
+            "estimate": 54,
+            "actual": 55.5,
+            "change": 0.1,
+            "impact": "Low",
+            "changePercentage": 0.181,
             "unit": "Points"
           },
           {
-            "date": "2026-09-30 01:30:00",
-            "country": "AU",
-            "event": "Median CPI MoM (Aug)",
-            "currency": "AUD",
-            "previous": 0.4,
-            "estimate": 0.4,
-            "actual": 0.3,
-            "change": -0.1,
-            "impact": "High",
-            "changePercentage": -25,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-30 01:30:00",
-            "country": "AU",
-            "event": "RBA Trimmed Mean CPI YoY (Aug)",
-            "currency": "AUD",
-            "previous": 3.6,
-            "estimate": 3.6,
-            "actual": 3.6,
-            "change": 0,
-            "impact": "High",
-            "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-30 01:30:00",
-            "country": "AU",
-            "event": "Housing Credit MoM (Aug)",
-            "currency": "AUD",
-            "previous": 0.5,
-            "estimate": 0.4,
-            "actual": 0.4,
-            "change": -0.1,
+            "date": "2026-10-01 00:30:00",
+            "country": "VN",
+            "event": "S&P Global Manufacturing PMI (Sep)",
+            "currency": "VND",
+            "previous": 53.3,
+            "estimate": 53,
+            "actual": 51.9,
+            "change": -1.4,
             "impact": "Low",
-            "changePercentage": -20,
-            "unit": "%"
+            "changePercentage": -2.627,
+            "unit": "Points"
           },
           {
-            "date": "2026-09-30 01:30:00",
-            "country": "AU",
-            "event": "Building Permits MoM (Aug)",
-            "currency": "AUD",
-            "previous": -1.9,
-            "estimate": -2,
-            "actual": -6.1,
-            "change": -4.2,
-            "impact": "Medium",
-            "changePercentage": -221.053,
-            "unit": "%"
-          },
-          {
-            "date": "2026-09-30 01:30:00",
-            "country": "AU",
-            "event": "Inflation Rate YoY (Aug)",
-            "currency": "AUD",
-            "previous": 3.5,
-            "estimate": 4.1,
-            "actual": 4,
+            "date": "2026-10-01 00:30:00",
+            "country": "TH",
+            "event": "S&P Global Manufacturing PMI (Sep)",
+            "currency": "THB",
+            "previous": 53.8,
+            "estimate": 54,
+            "actual": 54.3,
             "change": 0.5,
-            "impact": "Medium",
-            "changePercentage": 14.286,
-            "unit": "%"
+            "impact": "Low",
+            "changePercentage": 0.929,
+            "unit": "Points"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend. Price is above rising EMAs, has reclaimed VWAP, RSI is rising without being overbought, and volume is supportive.",
+        "technical_interpretation": "The setup resembles a bullish pullback continuation within a well-established uptrend. Price remains above rising long-term averages, reclaimed VWAP, and shows improving RSI and volume without an overbought reading.",
         "financial_assessment": "positive",
-        "financial_interpretation": "The last three results all exceeded EPS expectations, with surprises improving from 7.2% to 23.5%, while reported margins remained strong. Operating and free cash flow are positive, although the supplied revenue and income figures show no displayed sequential growth.",
-        "earnings_assessment": "mixed",
-        "earnings_interpretation": "The next earnings date is unavailable, creating event-timing uncertainty. Forward revenue and EPS estimates are rising, but the absence of a confirmed date limits visibility over near-term earnings risk.",
+        "financial_interpretation": "The last three reports all beat EPS estimates, with surprise magnitude accelerating from 7.2% to 23.5%, although the supplied revenue and profit figures are unchanged across periods. Strong operating margins and positive free cash flow support the setup, while debt remains a consideration.",
+        "earnings_assessment": "positive",
+        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty for a 4-8 trading-day position. Forward revenue and EPS estimates are rising, which is supportive, but the unknown event timing leaves potential event risk.",
         "analyst_assessment": "mixed",
-        "analyst_interpretation": "Ratings are balanced between buy and hold with a Hold consensus, while forward revenue and EPS estimates have been revised higher.",
+        "analyst_interpretation": "Ratings lean Hold with seven Holds versus six Buys, but forward revenue and EPS estimates have been revised higher.",
         "valuation_assessment": "reasonable",
-        "valuation_interpretation": "A trailing P/E near 20 is not an obvious valuation bargain, but it appears reasonable against the supplied forward growth expectations. The strong prior rally limits margin for disappointment.",
-        "news_assessment": "mixed",
-        "news_interpretation": "The reported First Eagle acquisition and expected AUM, revenue, and EPS expansion provide a meaningful company-specific catalyst. However, much of the upside depends on acquisition execution after a substantial stock rally.",
+        "valuation_interpretation": "A trailing P/E near 20 is reasonable against the supplied forward growth outlook, though it offers less valuation cushion after the strong share-price rally. The valuation is supportive but not a major catalyst by itself.",
+        "news_assessment": "positive",
+        "news_interpretation": "Recent coverage highlights strong inflows, acquisitions, and potential First Eagle-related EPS and AUM growth. The main risk is execution and expectations after a substantial year-to-date rally.",
         "sector_assessment": "headwind",
-        "sector_interpretation": "Recent weakness across the broader sector weakens the setup modestly despite VCTR's stronger relative performance.",
+        "sector_interpretation": "Recent weakness across the broader sector modestly weakens the setup despite VCTR's company-specific strength.",
         "macro_assessment": "headwind",
-        "macro_interpretation": "Elevated long-term yields and a mildly unfavorable cycle backdrop can pressure asset-manager valuations, while overall volatility remains contained.",
-        "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is well supported by a strong uptrend, improving momentum, repeated earnings beats, and positive acquisition-related growth expectations. Sector weakness, elevated yields, limited earnings-date visibility, and the stock's substantial prior rally argue for caution rather than treating the setup as risk-free.",
-        "key_positive": "Strong trend structure combines with repeated EPS beats, positive cash flow, and upward forward estimate revisions.",
-        "key_risk": "A high-rally backdrop with sector weakness, elevated yields, and acquisition-execution or earnings-event uncertainty could trigger a sharp pullback.",
+        "macro_interpretation": "Elevated and rising longer-term yields can pressure asset-manager valuations and risk appetite, while the broader macro backdrop is otherwise neutral.",
+        "overall_assessment": "supportive",
+        "overall_summary": "The technical signal is well supported by an established uptrend, relative strength, improving momentum, and repeated earnings beats. Company growth and acquisition news add support, but sector weakness, elevated yields, valuation after a large rally, and unknown earnings timing warrant monitoring.",
+        "key_positive": "Strong trend structure is reinforced by improving earnings surprises, cash generation, upward estimate revisions, and favorable company-specific growth news.",
+        "key_risk": "The principal risks are a crowded post-rally valuation, sector weakness, elevated yields, and an unknown upcoming earnings date.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -621,12 +621,676 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2703
+          "chars": 2757
         }
       ],
       "is_etf": false,
-      "buy_confidence": 51,
-      "report": "🟡 VCTR — Victory Capital Holdings, Inc.\nEntry: $110.61\neToro TP Value: $20.23\nShares: 2.26 ($250)\nScanner Potential: +8.1%\nTimeframe: 4–8 days\n\n═══ BUY CONFIDENCE: 51% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 6 | Hold: 7 | Sell: 0 | Strong Sell: 0\n🧠 Ratings are balanced between buy and hold with a Hold consensus, while forward revenue and EPS estimates have been revised higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend. Price is above rising EMAs, has reclaimed VWAP, RSI is rising without being overbought, and volume is supportive.\n🕒 Technical timestamp: 2026-09-30 20:50:00 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three results all exceeded EPS expectations, with surprises improving from 7.2% to 23.5%, while reported margins remained strong. Operating and free cash flow are positive, although the supplied revenue and income figures show no displayed sequential growth.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 20 is not an obvious valuation bargain, but it appears reasonable against the supplied forward growth expectations. The strong prior rally limits margin for disappointment.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating event-timing uncertainty. Forward revenue and EPS estimates are rising, but the absence of a confirmed date limits visibility over near-term earnings risk.\n\n═══ RECENT NEWS ═══\n• 2026-09-30 03:29 UTC — Victory Capital Holdings: Multiple Pillars Of Growth\n🟡 The reported First Eagle acquisition and expected AUM, revenue, and EPS expansion provide a meaningful company-specific catalyst. However, much of the upside depends on acquisition execution after a substantial stock rally.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent weakness across the broader sector weakens the setup modestly despite VCTR's stronger relative performance.\n🧠 Macro: Elevated long-term yields and a mildly unfavorable cycle backdrop can pressure asset-manager valuations, while overall volatility remains contained.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong uptrend, improving momentum, repeated earnings beats, and positive acquisition-related growth expectations. Sector weakness, elevated yields, limited earnings-date visibility, and the stock's substantial prior rally argue for caution rather than treating the setup as risk-free.\n🟢 Key Positive: Strong trend structure combines with repeated EPS beats, positive cash flow, and upward forward estimate revisions.\n🔴 Key Risk: A high-rally backdrop with sector weakness, elevated yields, and acquisition-execution or earnings-event uncertainty could trigger a sharp pullback.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "buy_confidence": 68,
+      "report": "🟢 VCTR — Victory Capital Holdings, Inc.\nEntry: $110.61\neToro TP Value: $20.23\nShares: 2.26 ($250)\nScanner Potential: +8.1%\nTimeframe: 4–8 days\n\n═══ BUY CONFIDENCE: 68% ═══\n🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 6 | Hold: 7 | Sell: 0 | Strong Sell: 0\n🧠 Ratings lean Hold with seven Holds versus six Buys, but forward revenue and EPS estimates have been revised higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback continuation within a well-established uptrend. Price remains above rising long-term averages, reclaimed VWAP, and shows improving RSI and volume without an overbought reading.\n🕒 Technical timestamp: 2026-10-01 05:47:47 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all beat EPS estimates, with surprise magnitude accelerating from 7.2% to 23.5%, although the supplied revenue and profit figures are unchanged across periods. Strong operating margins and positive free cash flow support the setup, while debt remains a consideration.\n\n═══ VALUATION ═══\n⚪ Reasonable\n🧠 A trailing P/E near 20 is reasonable against the supplied forward growth outlook, though it offers less valuation cushion after the strong share-price rally. The valuation is supportive but not a major catalyst by itself.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty for a 4-8 trading-day position. Forward revenue and EPS estimates are rising, which is supportive, but the unknown event timing leaves potential event risk.\n\n═══ RECENT NEWS ═══\n• 2026-09-30 03:29 UTC — Victory Capital Holdings: Multiple Pillars Of Growth\n🟢 Recent coverage highlights strong inflows, acquisitions, and potential First Eagle-related EPS and AUM growth. The main risk is execution and expectations after a substantial year-to-date rally.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent weakness across the broader sector modestly weakens the setup despite VCTR's company-specific strength.\n🧠 Macro: Elevated and rising longer-term yields can pressure asset-manager valuations and risk appetite, while the broader macro backdrop is otherwise neutral.\n\n═══ OVERALL ASSESSMENT ═══\n🟢 Supportive\n🧠 The technical signal is well supported by an established uptrend, relative strength, improving momentum, and repeated earnings beats. Company growth and acquisition news add support, but sector weakness, elevated yields, valuation after a large rally, and unknown earnings timing warrant monitoring.\n🟢 Key Positive: Strong trend structure is reinforced by improving earnings surprises, cash generation, upward estimate revisions, and favorable company-specific growth news.\n🔴 Key Risk: The principal risks are a crowded post-rally valuation, sector weakness, elevated yields, and an unknown upcoming earnings date.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "INTC",
+      "alert": {
+        "alerted": "2026-10-01T05:47:46.942940+00:00",
+        "entry": 120.16,
+        "thesis_warned": false,
+        "tp": 132.75
+      },
+      "signal": {
+        "ticker": "INTC",
+        "name": "Intel Corp.",
+        "setup": "pullback",
+        "entry": 120.16,
+        "tp": 132.75,
+        "tp_pct": 0.10477696404793613,
+        "shares": 2.08,
+        "value": 249.93280000000001,
+        "pl_amount": 26.19,
+        "eta_days_low": 5,
+        "eta_days_high": 9,
+        "fee_pct": 0.07637318995539803,
+        "trend_score": 3,
+        "adx": 36.3,
+        "rs": -0.026,
+        "runner": false,
+        "regime": "uptrend",
+        "regime_weeks": 2,
+        "ema20": 111.14,
+        "ema50": 105.24,
+        "ema200": 85.49,
+        "above_ema200": true,
+        "quality": 0.9,
+        "q_detail": {
+          "rsi": 0.6,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 59.2 falling",
+          "bollinger": "band position 57%, contracting",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.6x average, drying up",
+          "extension": "+1.0 ATR from 20 EMA, slope +4.9%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 59.2,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 3/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=59.2)",
+          "hard-eligible; ranked in Step 2"
+        ],
+        "time": "2026-10-01T05:47:46.942903+00:00"
+      },
+      "profile": {
+        "symbol": "INTC",
+        "price": 120.23,
+        "marketCap": 606440089582,
+        "beta": 2.231,
+        "lastDividend": 0,
+        "range": "32.89-142.35",
+        "change": 4.3,
+        "changePercentage": 3.70913,
+        "volume": 93602906,
+        "averageVolume": 114205668,
+        "companyName": "Intel Corp.",
+        "currency": "USD",
+        "cik": "0000050863",
+        "isin": "US4581401001",
+        "cusip": "458140100",
+        "exchangeFullName": "NASDAQ",
+        "exchange": "NASDAQ",
+        "industry": "Semiconductors",
+        "website": "https://www.intel.com",
+        "description": "Intel Corporation designs, develops, manufactures, markets, sells, and services computing and related end products and services in the United States, Ireland, Israel, and internationally. It operates through three segments: CCG, DCAI, and Intel Foundry. The company offers client computing group products, including client and commercial CPUs, discrete client GPUs, edge computing, and connectivity products; data center and AI products, such as server CPUs, discrete GPUs, and networking products; and semiconductors comprising wafer fabrication, substrates, and other related products and services. It also provides driving assistance and self-driving solutions; and develops and manufactures multi-beam mask writing tools. The company sells its products through sales organizations, distributors, resellers, retailers, and OEM partners. It serves original equipment manufacturers, original design manufacturers, cloud service providers, and other manufacturers and service providers. Intel Corporation has a strategic collaboration with Infosys Limited to develop a multi-layer AI fabric that unifies infrastructure, models, data, applications, and workflows into a composable and agent-ready ecosystem. The company was incorporated in 1968 and is headquartered in Santa Clara, California.",
+        "ceo": "Lip-Bu Tan",
+        "sector": "Technology",
+        "country": "US",
+        "fullTimeEmployees": "85100",
+        "phone": "408 765 8080",
+        "address": "2200 Mission College Boulevard",
+        "city": "Santa Clara",
+        "state": "CA",
+        "zip": "95054-1549",
+        "image": "https://images.financialmodelingprep.com/symbol/INTC.png",
+        "ipoDate": "1980-03-17",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-07-23",
+          "fiscal_period": "",
+          "eps_actual": 0.42,
+          "eps_estimate": 0.21,
+          "eps_surprise": 0.21,
+          "eps_surprise_pct": 1.0,
+          "revenue": 16128000000.0,
+          "net_income": -11033000000.0,
+          "operating_margin": 0.1228298611111111,
+          "gross_margin": 0.4150545634920635,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-04-23",
+          "fiscal_period": "",
+          "eps_actual": 0.29,
+          "eps_estimate": 0.01897,
+          "eps_surprise": 0.27103,
+          "eps_surprise_pct": 14.287295730100157,
+          "revenue": 16128000000.0,
+          "net_income": -11033000000.0,
+          "operating_margin": 0.1228298611111111,
+          "gross_margin": 0.4150545634920635,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-01-22",
+          "fiscal_period": "",
+          "eps_actual": 0.15,
+          "eps_estimate": 0.08136,
+          "eps_surprise": 0.06863999999999999,
+          "eps_surprise_pct": 0.8436578171091444,
+          "revenue": 16128000000.0,
+          "net_income": -11033000000.0,
+          "operating_margin": 0.1228298611111111,
+          "gross_margin": 0.4150545634920635,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 12874000000.0,
+        "total_debt": 50537000000.0,
+        "total_liabilities": 99296000000.0,
+        "equity": 87542000000.0,
+        "operating_cash_flow": 7006000000.0,
+        "capital_expenditure": -2556000000.0,
+        "free_cash_flow": 4450000000.0
+      },
+      "forward": {
+        "next_earnings": {},
+        "estimates": [
+          {
+            "date": "2030-12-27",
+            "period": null,
+            "revenue_avg": 126981940000.0,
+            "eps_avg": 6.7025,
+            "revenue_low": 109821190689.0,
+            "revenue_high": 145085679003.0,
+            "eps_low": 5.52496,
+            "eps_high": 7.94474,
+            "num_analysts_revenue": 30,
+            "num_analysts_eps": 7
+          },
+          {
+            "date": "2029-12-27",
+            "period": null,
+            "revenue_avg": 97906300000.0,
+            "eps_avg": 4.558,
+            "revenue_low": 84674926544.0,
+            "revenue_high": 111864742452.0,
+            "eps_low": 3.75722,
+            "eps_high": 5.40278,
+            "num_analysts_revenue": 26,
+            "num_analysts_eps": 6
+          },
+          {
+            "date": "2028-12-27",
+            "period": null,
+            "revenue_avg": 83245807251.0,
+            "eps_avg": 3.15992,
+            "revenue_low": 63289268538.0,
+            "revenue_high": 99817243742.0,
+            "eps_low": 1.60074,
+            "eps_high": 5.66046,
+            "num_analysts_revenue": 34,
+            "num_analysts_eps": 14
+          },
+          {
+            "date": "2027-12-27",
+            "period": null,
+            "revenue_avg": 72795393827.0,
+            "eps_avg": 2.12128,
+            "revenue_low": 65925578836.0,
+            "revenue_high": 79767896635.0,
+            "eps_low": 1.72083,
+            "eps_high": 2.64078,
+            "num_analysts_revenue": 36,
+            "num_analysts_eps": 29
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "INTC",
+          "strongBuy": 0,
+          "buy": 32,
+          "hold": 46,
+          "sell": 7,
+          "strongSell": 0,
+          "consensus": "Hold"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 126981940000,
+            "prior": 97906300000,
+            "change": 0.2969741477310448
+          },
+          "epsAvg": {
+            "latest": 6.7025,
+            "prior": 4.558,
+            "change": 0.4704914436156209
+          }
+        }
+      },
+      "valuation": {
+        "ratios": {
+          "symbol": "INTC",
+          "grossProfitMarginTTM": 0.3892902230326834,
+          "ebitMarginTTM": -0.15266867723383365,
+          "ebitdaMarginTTM": 0.06438490671903493,
+          "operatingProfitMarginTTM": 0.0013676532472997615,
+          "pretaxProfitMarginTTM": -0.1727626595595455,
+          "continuousOperationsProfitMarginTTM": -0.19624070697152476,
+          "netProfitMarginTTM": -0.19794150652265394,
+          "bottomLineProfitMarginTTM": -0.19794150652265394,
+          "receivablesTurnoverTTM": 14.141333994545004,
+          "payablesTurnoverTTM": 3.9778437642759252,
+          "inventoryTurnoverTTM": 2.788184438040346,
+          "fixedAssetTurnoverTTM": 0.539355595275248,
+          "assetTurnoverTTM": 0.28172437129209293,
+          "currentRatioTTM": 1.6039529015979814,
+          "quickRatioTTM": 1.2537426408746846,
+          "solvencyRatioTTM": 0.010977280051563003,
+          "cashRatioTTM": 0.36091954022988504,
+          "priceToEarningsRatioTTM": -56.981042654028435,
+          "priceToEarningsGrowthRatioTTM": 0.0047220799967557636,
+          "forwardPriceToEarningsGrowthRatioTTM": -0.16491364621215612,
+          "priceToEarningsDilutedRatioTTM": -56.981042654028435,
+          "priceToEarningsDilutedGrowthRatioTTM": 0.0047220799967557636,
+          "priceToBookRatioTTM": 7.0098229421306355,
+          "priceToSalesRatioTTM": 10.633330228327956,
+          "priceToFreeCashFlowRatioTTM": 214.21409027975983,
+          "priceToOperatingCashFlowRatioTTM": 41.08555972147831,
+          "debtToAssetsRatioTTM": 0.2496406324868232,
+          "debtToEquityRatioTTM": 0.5772886157501542,
+          "debtToCapitalRatioTTM": 0.36600062283185714,
+          "longTermDebtToCapitalRatioTTM": 0.35673924065514984,
+          "financialLeverageRatioTTM": 2.312478581709351,
+          "workingCapitalTurnoverRatioTTM": 2.0076388277743553,
+          "operatingCashFlowRatioTTM": 0.4187272217549762,
+          "operatingCashFlowSalesRatioTTM": 0.2618880628419133,
+          "freeCashFlowOperatingCashFlowRatioTTM": 0.189542046063203,
+          "debtServiceCoverageRatioTTM": 0.7434671765455704,
+          "interestCoverageRatioTTM": 0.06782608695652174,
+          "shortTermOperatingCashFlowCoverageRatioTTM": 7.51307847082495,
+          "operatingCashFlowCoverageRatioTTM": 0.295545837703069,
+          "capitalExpenditureCoverageRatioTTM": 1.2338703015282941,
+          "dividendPaidAndCapexCoverageRatioTTM": 0.5648162153985782,
+          "dividendPayoutRatioTTM": -1.2701745061564356,
+          "dividendYieldTTM": 0,
+          "enterpriseValueTTM": 644103089582,
+          "revenuePerShareTTM": 11.17398119122257,
+          "netIncomePerShareTTM": -2.211794670846395,
+          "interestDebtPerShareTTM": 10.126763322884013,
+          "cashPerShareTTM": 5.824255485893417,
+          "bookValuePerShareTTM": 20.208268025078368,
+          "tangibleBookValuePerShareTTM": 15.700039184952978,
+          "shareholdersEquityPerShareTTM": 17.151645768025077,
+          "operatingCashFlowPerShareTTM": 2.926332288401254,
+          "capexPerShareTTM": 2.3716692789968654,
+          "freeCashFlowPerShareTTM": 0.5546630094043887,
+          "netIncomePerEBTTTM": 1.1457424134781284,
+          "ebtPerEbitTTM": -126.32051282051282,
+          "priceToFairValueTTM": 7.0098229421306355,
+          "debtToMarketCapTTM": 0.0833338706793503,
+          "effectiveTaxRateTTM": -0.13589769613315741,
+          "enterpriseValueMultipleTTM": 175.40933812145968,
+          "dividendPerShareTTM": 0
+        },
+        "metrics": {
+          "symbol": "INTC",
+          "marketCap": 606440089582,
+          "enterpriseValueTTM": 644103089582,
+          "evToSalesTTM": 11.29371387259784,
+          "evToOperatingCashFlowTTM": 43.12420256976433,
+          "evToFreeCashFlowTTM": 227.51786986294596,
+          "evToEBITDATTM": 175.40933812145968,
+          "netDebtToEBITDATTM": 10.256808278867103,
+          "currentRatioTTM": 1.6039529015979814,
+          "incomeQualityTTM": -1.3798965262379896,
+          "grahamNumberTTM": null,
+          "grahamNetNetTTM": -11.813920454545455,
+          "taxBurdenTTM": 1.1457424134781284,
+          "interestBurdenTTM": 1.1316182381991502,
+          "workingCapitalTTM": 21543000000,
+          "investedCapitalTTM": 150294000000,
+          "returnOnAssetsTTM": -0.05576494647770439,
+          "operatingReturnOnAssetsTTM": 0.0003825676666560398,
+          "returnOnTangibleAssetsTTM": -0.06291625099621577,
+          "returnOnEquityTTM": -0.10761857323644579,
+          "returnOnInvestedCapitalTTM": 0.0004622030493549897,
+          "returnOnCapitalEmployedTTM": 0.0004677128243258639,
+          "earningsYieldTTM": -0.01839636256214252,
+          "freeCashFlowYieldTTM": 0.004668226999886038,
+          "capexToOperatingCashFlowTTM": 0.810457953936797,
+          "capexToDepreciationTTM": 0.9778657403667501,
+          "capexToRevenueTTM": 0.21224926357132837,
+          "salesGeneralAndAdministrativeToRevenueTTM": 0.0788855379436106,
+          "researchAndDevelopementToRevenueTTM": 0.23132627296956096,
+          "stockBasedCompensationToRevenueTTM": 0.041958900266517045,
+          "intangiblesToTotalAssetsTTM": 0.11366386911612882,
+          "averageReceivablesTTM": 4049500000,
+          "averagePayablesTTM": 7957500000,
+          "averageInventoryTTM": 12459000000,
+          "daysOfSalesOutstandingTTM": 25.81086056950484,
+          "daysOfPayablesOutstandingTTM": 91.75825437840942,
+          "daysOfInventoryOutstandingTTM": 130.9095607235142,
+          "operatingCycleTTM": 156.72042129301906,
+          "cashConversionCycleTTM": 64.96216691460964,
+          "freeCashFlowToEquityTTM": -909000000,
+          "freeCashFlowToFirmTTM": 4137282350.553131,
+          "tangibleAssetValueTTM": 80133000000,
+          "netCurrentAssetValueTTM": -42083000000
+        }
+      },
+      "news": [
+        {
+          "date": "2026-09-30 13:00 UTC",
+          "title": "32 Analysts Say Hold on Intel. Here's What the Numbers Actually Show",
+          "site": "247wallst.com",
+          "text": "Wall Street has overwhelmingly parked Intel in hold territory, but the stock just posted a 212% gain this year while simultaneously losing billions in its foundry division."
+        },
+        {
+          "date": "2026-09-30 12:29 UTC",
+          "title": "Intel Rises 3% as Chip Contender Caps Off Surprisingly Strong September; NVIDIA Ticks Up, AMD Slips",
+          "site": "247wallst.com",
+          "text": "Intel closed out September with a move that has investors debating whether the chip giant's turnaround is finally gaining real traction or whether the rally has already run ahead of the fundamentals."
+        },
+        {
+          "date": "2026-09-30 11:02 UTC",
+          "title": "AI Uncertainty Is Rising, But These 3 Chip ETFs Still Have Momentum",
+          "site": "marketbeat.com",
+          "text": "It's easy to get skittish about the tech sector amid recent talk of slowing AI development and OpenAI scrapping the launch of its latest model due to safety concerns. AI demand has driven much of the sector's growth in recent years, after all."
+        },
+        {
+          "date": "2026-09-30 10:19 UTC",
+          "title": "Intel's Recovery Has Moved From Survival To Factory Economics",
+          "site": "seekingalpha.com",
+          "text": "Intel (INTC) offers substantial upside if processor growth and manufacturing yield improvements materialize together, driving faster earnings growth than sales alone. I assign a speculative Buy rating, contingent on Intel delivering competitive processors, improving factory economics, and maintaining or growing high-margin server product share. INTC's advanced packaging opens incremental revenue streams, but sustainable profitability hinges on internal execution, not just external foundry or packaging wins."
+        },
+        {
+          "date": "2026-09-29 11:32 UTC",
+          "title": "NVIDIA Just Turned AI Safety Into a Spending Story and These 3 Stocks Benefit",
+          "site": "marketbeat.com",
+          "text": "NVIDIA NASDAQ: NVDA spent most of September arguing that AI safety is an engineering problem, not a legal one. On Sept. 28, the company shipped the product to prove it."
+        },
+        {
+          "date": "2026-09-29 11:13 UTC",
+          "title": "Semiconductor Stock Pops on U.S. Army Contract",
+          "site": "schaeffersresearch.com",
+          "text": "Shares of Navitas Semiconductor (NASDAQ:NVTS) were surging premarket, though the stock has since pared gains, last seen up 2% to trade at $11.96, after the company was selected to produce chips for the U.S. Army's ALATTIS (Accelerated, Large-Area, 10 kV SiC IGBT) program."
+        },
+        {
+          "date": "2026-09-29 08:30 UTC",
+          "title": "Intel Is Trying to Reinvent Itself. Here's Where INTC Stock Could Be in 2027",
+          "site": "247wallst.com",
+          "text": "Intel stock has already surged over 230% this year, yet Wall Street's consensus target still sits below the current price."
+        },
+        {
+          "date": "2026-09-29 06:13 UTC",
+          "title": "Intel: An Overlooked Business And A Ticking Clock",
+          "site": "seekingalpha.com",
+          "text": "Intel Corporation is rated Buy, with segmental operating profit and advanced packaging driving the turnaround, despite headline gross margin and GAAP EPS masking progress. Data Center and AI segment operating income nearly quadrupled in Q2, and the Rule of 45 framework highlights strong momentum in core business units. Advanced packaging (EMIB-T) could deliver multi-billion-dollar revenues by 2028, with high-margin potential and early customer traction from Google and possibly Amazon."
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "8 usable article(s)"
+      },
+      "sector": {
+        "sector": "Technology",
+        "industry": "Semiconductors",
+        "sector_snapshot": {
+          "date": "2026-10-01",
+          "sector": "Technology",
+          "exchange": "NASDAQ",
+          "averageChange": -0.11629346725632317
+        },
+        "industry_snapshot": {
+          "date": "2026-10-01",
+          "industry": "Semiconductors",
+          "exchange": "NASDAQ",
+          "averageChange": -0.6156841282747072
+        }
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "neutral",
+          "vol": 10.8
+        },
+        "hourly_scan_cycles": {
+          "score": -0.22,
+          "label": "neutral",
+          "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-09-29",
+          "month1": 4.04,
+          "month2": 4.18,
+          "month3": 4.25,
+          "month6": 4.36,
+          "year1": 4.58,
+          "year2": 4.89,
+          "year3": 4.98,
+          "year5": 5.06,
+          "year7": 5.16,
+          "year10": 5.26,
+          "year20": 5.64,
+          "year30": 5.59
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2025-10-01",
+              "value": 31462.523
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2025-12-01",
+              "value": 326.031
+            },
+            {
+              "name": "CPI",
+              "date": "2025-11-01",
+              "value": 325.063
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2025-12-01",
+              "value": 4.4
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-11-01",
+              "value": 4.5
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "UZ",
+            "event": "Day of Teachers and Instructors",
+            "currency": "UZS",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "IN",
+            "event": "Bank Holiday - Mid-Year Accounts Closing",
+            "currency": "INR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "HK",
+            "event": "National Day",
+            "currency": "HKD",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "NG",
+            "event": "National Day",
+            "currency": "NGN",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "CY",
+            "event": "Cyprus Independence Day",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "BW",
+            "event": "Botswana Day",
+            "currency": "BWP",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "KR",
+            "event": "Balance of Trade (Sep)",
+            "currency": "KRW",
+            "previous": 34.79,
+            "estimate": 38.2,
+            "actual": 49.85,
+            "change": 15.06,
+            "impact": "Low",
+            "changePercentage": 43.288,
+            "unit": "B"
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "KR",
+            "event": "Imports YoY (Sep)",
+            "currency": "KRW",
+            "previous": 22.4,
+            "estimate": 21.5,
+            "actual": 26,
+            "change": 3.6,
+            "impact": "Low",
+            "changePercentage": 16.071,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-01 00:00:00",
+            "country": "KR",
+            "event": "Exports YoY (Sep)",
+            "currency": "KRW",
+            "previous": 68.7,
+            "estimate": 61.7,
+            "actual": 83.5,
+            "change": 14.8,
+            "impact": "Medium",
+            "changePercentage": 21.543,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-01 00:01:00",
+            "country": "IE",
+            "event": "S&P Global Manufacturing PMI (Sep)",
+            "currency": "EUR",
+            "previous": 55.4,
+            "estimate": 54,
+            "actual": 55.5,
+            "change": 0.1,
+            "impact": "Low",
+            "changePercentage": 0.181,
+            "unit": "Points"
+          },
+          {
+            "date": "2026-10-01 00:30:00",
+            "country": "VN",
+            "event": "S&P Global Manufacturing PMI (Sep)",
+            "currency": "VND",
+            "previous": 53.3,
+            "estimate": 53,
+            "actual": 51.9,
+            "change": -1.4,
+            "impact": "Low",
+            "changePercentage": -2.627,
+            "unit": "Points"
+          },
+          {
+            "date": "2026-10-01 00:30:00",
+            "country": "TH",
+            "event": "S&P Global Manufacturing PMI (Sep)",
+            "currency": "THB",
+            "previous": 53.8,
+            "estimate": 54,
+            "actual": 54.3,
+            "change": 0.5,
+            "impact": "Low",
+            "changePercentage": 0.929,
+            "unit": "Points"
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within a developing uptrend, with price above rising 20-, 50-, and 200-EMAs. VWAP recovery, contracting bands, and a non-overbought RSI support continuation, though relative strength versus SPY is modestly weak.",
+        "financial_assessment": "mixed",
+        "financial_interpretation": "The last three reports showed substantial EPS beats, but the supplied revenue figures were flat and reported net income remained deeply negative. Gross and operating margins were positive, while operating cash flow and free cash flow provide support despite high debt.",
+        "earnings_assessment": "unknown",
+        "earnings_interpretation": "The next earnings date is unavailable, limiting event-risk assessment. Longer-term analyst revenue and EPS estimates have risen materially, but the timing and reliability of those expectations are uncertain.",
+        "analyst_assessment": "mixed",
+        "analyst_interpretation": "The consensus is Hold with many Holds and some Buys, even as forward revenue and EPS estimates have increased.",
+        "valuation_assessment": "very_expensive",
+        "valuation_interpretation": "Valuation is a headwind: trailing earnings are negative while price-to-sales and price-to-book are elevated. The premium therefore depends heavily on successful execution of the turnaround and future earnings growth.",
+        "news_assessment": "mixed",
+        "news_interpretation": "Recent coverage highlights strong share-price momentum and possible progress in processors, packaging, and factory economics. However, the rally may be ahead of fundamentals, with foundry losses and execution risk remaining central concerns.",
+        "sector_assessment": "headwind",
+        "sector_interpretation": "Recent semiconductor and broader technology performance was slightly weak, so the group backdrop does not reinforce the setup.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Elevated long-term yields can pressure richly valued technology stocks, while the neutral volatility and risk backdrop offers limited macro support.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is reasonably constructive for a short-term pullback continuation, supported by trend structure and buyer defense at VWAP. Fundamental and news evidence is mixed: earnings beats and improving estimates help, but expensive valuation, negative net income, foundry losses, and uncertain earnings timing increase the risk that the rally is ahead of execution.",
+        "key_positive": "Bullish trend structure, repeated EPS surprises, positive operating cash flow, and rising forward estimates support the setup.",
+        "key_risk": "High valuation and unresolved profitability and foundry-execution issues leave the stock vulnerable if momentum fades or expectations disappoint.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2867
+        }
+      ],
+      "is_etf": false,
+      "buy_confidence": 40,
+      "report": "🟡 INTC — Intel Corp.\nEntry: $120.16\neToro TP Value: $26.19\nShares: 2.08 ($250)\nScanner Potential: +10.5%\nTimeframe: 5–9 days\n\n═══ BUY CONFIDENCE: 40% ═══\n🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟡 Mixed\nStrong Buy: 0 | Buy: 32 | Hold: 46 | Sell: 7 | Strong Sell: 0\n🧠 The consensus is Hold with many Holds and some Buys, even as forward revenue and EPS estimates have increased.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a developing uptrend, with price above rising 20-, 50-, and 200-EMAs. VWAP recovery, contracting bands, and a non-overbought RSI support continuation, though relative strength versus SPY is modestly weak.\n🕒 Technical timestamp: 2026-10-01 05:47:46 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports showed substantial EPS beats, but the supplied revenue figures were flat and reported net income remained deeply negative. Gross and operating margins were positive, while operating cash flow and free cash flow provide support despite high debt.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 Valuation is a headwind: trailing earnings are negative while price-to-sales and price-to-book are elevated. The premium therefore depends heavily on successful execution of the turnaround and future earnings growth.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, limiting event-risk assessment. Longer-term analyst revenue and EPS estimates have risen materially, but the timing and reliability of those expectations are uncertain.\n\n═══ RECENT NEWS ═══\n• 2026-09-30 13:00 UTC — 32 Analysts Say Hold on Intel. Here's What the Numbers Actually Show\n• 2026-09-30 12:29 UTC — Intel Rises 3% as Chip Contender Caps Off Surprisingly Strong September; NVIDIA Ticks Up, AMD Slips\n• 2026-09-30 11:02 UTC — AI Uncertainty Is Rising, But These 3 Chip ETFs Still Have Momentum\n• 2026-09-30 10:19 UTC — Intel's Recovery Has Moved From Survival To Factory Economics\n• 2026-09-29 11:32 UTC — NVIDIA Just Turned AI Safety Into a Spending Story and These 3 Stocks Benefit\n🟡 Recent coverage highlights strong share-price momentum and possible progress in processors, packaging, and factory economics. However, the rally may be ahead of fundamentals, with foundry losses and execution risk remaining central concerns.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent semiconductor and broader technology performance was slightly weak, so the group backdrop does not reinforce the setup.\n🧠 Macro: Elevated long-term yields can pressure richly valued technology stocks, while the neutral volatility and risk backdrop offers limited macro support.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is reasonably constructive for a short-term pullback continuation, supported by trend structure and buyer defense at VWAP. Fundamental and news evidence is mixed: earnings beats and improving estimates help, but expensive valuation, negative net income, foundry losses, and uncertain earnings timing increase the risk that the rally is ahead of execution.\n🟢 Key Positive: Bullish trend structure, repeated EPS surprises, positive operating cash flow, and rising forward estimates support the setup.\n🔴 Key Risk: High valuation and unresolved profitability and foundry-execution issues leave the stock vulnerable if momentum fades or expectations disappoint.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
