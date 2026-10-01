@@ -33,10 +33,16 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 84,
+    "scans_muted": 85,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
+  },
+  "ERX": {
+    "alerted": "2026-10-01T21:02:16.880396+00:00",
+    "entry": 104.06,
+    "thesis_warned": false,
+    "tp": 127.0
   },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",

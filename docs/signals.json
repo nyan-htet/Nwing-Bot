@@ -1,14 +1,72 @@
 {
-  "generated": "2026-10-01T15:27:50.536333+00:00",
+  "generated": "2026-10-01T21:02:39.387610+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 10.7
   },
   "cycles": {
-    "score": -0.24,
+    "score": -0.23,
     "label": "neutral",
-    "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.6% (informative only)"
+    "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.1%, decade-pos 6 avg +10.8% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "ERX",
+      "name": "Direxion Energy Bull 2x",
+      "setup": "pullback",
+      "entry": 104.06,
+      "tp": 127.0,
+      "tp_pct": 0.2204497639909624,
+      "shares": 2.4,
+      "value": 249.74399519999997,
+      "pl_amount": 55.06,
+      "eta_days_low": 10,
+      "eta_days_high": 20,
+      "fee_pct": 0.0,
+      "trend_score": 5,
+      "adx": 30.9,
+      "rs": 0.351,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 10,
+      "ema20": 104.72,
+      "ema50": 101.91,
+      "ema200": 87.94,
+      "above_ema200": true,
+      "quality": 0.84,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.6
+      },
+      "q_notes": {
+        "rsi": "RSI 49.0 rising, reset from 36",
+        "bollinger": "band position 57%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.0x average, steady",
+        "extension": "+0.1 ATR from 20 EMA, slope -2.8%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 49.0,
+      "options_note": "",
+      "sector": "",
+      "warnings": [
+        "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style"
+      ],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.84 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=49.0)",
+        "\u26a1 THIS IS A 2x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
+        "(energy bull 2x)"
+      ],
+      "time": "2026-10-01T21:02:16.880358+00:00"
+    }
+  ],
   "position_alerts": []
 }
