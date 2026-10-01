@@ -1,15 +1,68 @@
 {
-  "generated": "2026-09-30T20:50:20.210743+00:00",
+  "generated": "2026-10-01T05:48:09.491596+00:00",
   "macro": {
     "risk": "neutral",
     "vol": 10.8
   },
   "cycles": {
-    "score": -1.0,
-    "label": "headwind",
-    "line": "Cycles [headwind]: month 9 avg -1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
+    "score": -0.22,
+    "label": "neutral",
+    "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.0%, decade-pos 6 avg +10.7% (informative only)"
   },
   "signals": [
+    {
+      "ticker": "INTC",
+      "name": "Intel Corp.",
+      "setup": "pullback",
+      "entry": 120.16,
+      "tp": 132.75,
+      "tp_pct": 0.10477696404793613,
+      "shares": 2.08,
+      "value": 249.93280000000001,
+      "pl_amount": 26.19,
+      "eta_days_low": 5,
+      "eta_days_high": 9,
+      "fee_pct": 0.07637318995539803,
+      "trend_score": 3,
+      "adx": 36.3,
+      "rs": -0.026,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 2,
+      "ema20": 111.14,
+      "ema50": 105.24,
+      "ema200": 85.49,
+      "above_ema200": true,
+      "quality": 0.9,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 1.0
+      },
+      "q_notes": {
+        "rsi": "RSI 59.2 falling",
+        "bollinger": "band position 57%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.6x average, drying up",
+        "extension": "+1.0 ATR from 20 EMA, slope +4.9%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 59.2,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 3/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.90 (rsi +0.6, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=59.2)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-10-01T05:47:46.942903+00:00"
+    },
     {
       "ticker": "VCTR",
       "name": "Victory Capital Holdings, Inc.",
@@ -63,10 +116,8 @@
         "(nasdaq; tier assigned nightly by FMP)",
         "hard-eligible; ranked in Step 2"
       ],
-      "time": "2026-09-30T20:50:00.121983+00:00"
+      "time": "2026-10-01T05:47:47.302207+00:00"
     }
   ],
-  "position_alerts": [
-    "\u26a0\ufe0f BBVA thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $27.87, signalled at $28.95, -3.7%, target $34.93). The reason for the signal is gone. Your call."
-  ]
+  "position_alerts": []
 }
