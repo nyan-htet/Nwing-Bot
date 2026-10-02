@@ -534,3 +534,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-10-01 05:48 UTC,VCTR,openai,True,3,1,OK,supportive,pullback continuation,68
 2026-10-01 05:48 UTC,INTC,openai,True,3,8,OK,mixed,pullback continuation,40
 2026-10-01 21:04 UTC,ERX,openai,True,0,0,NO_NEWS,mixed,pullback continuation,50
+2026-10-02 05:33 UTC,FCBC,openai,True,3,1,OK,mixed,pullback continuation,62
+2026-10-02 05:33 UTC,ERX,openai,True,0,0,NO_NEWS,mixed,pullback continuation,50
+2026-10-02 05:33 UTC,CRM,openai,True,3,4,OK,supportive,pullback continuation,69
