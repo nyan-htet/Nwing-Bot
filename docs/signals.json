@@ -1,14 +1,69 @@
 {
-  "generated": "2026-10-02T14:45:32.232901+00:00",
+  "generated": "2026-10-02T20:43:58.399350+00:00",
   "macro": {
     "risk": "risk-on",
-    "vol": 10.7
+    "vol": 10.4
   },
   "cycles": {
-    "score": -0.2,
+    "score": -0.21,
     "label": "neutral",
-    "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.3%, decade-pos 6 avg +11.4% (informative only)"
+    "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.2%, decade-pos 6 avg +11.3% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "BOAT",
+      "name": "SonicShares Global Shipping",
+      "setup": "pullback",
+      "entry": 52.52,
+      "tp": 58.46,
+      "tp_pct": 0.11299381247025231,
+      "shares": 4.76,
+      "value": 250.01899999999998,
+      "pl_amount": 28.25,
+      "eta_days_low": 14,
+      "eta_days_high": 42,
+      "fee_pct": 0.0,
+      "trend_score": 5,
+      "adx": 25.9,
+      "rs": 0.295,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 11,
+      "ema20": 51.07,
+      "ema50": 48.78,
+      "ema200": 42.49,
+      "above_ema200": true,
+      "quality": 0.58,
+      "q_detail": {
+        "rsi": 0.7,
+        "bollinger": 0.0,
+        "vwap": 1.0,
+        "volume": 1.0,
+        "extension": 0.2
+      },
+      "q_notes": {
+        "rsi": "RSI 61.7 rising",
+        "bollinger": "band position 82%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "0.0x average, drying up",
+        "extension": "+1.5 ATR from 20 EMA, slope -0.3%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 61.7,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.58 (rsi +0.7, bb +0.0, vwap +1.0, vol +1.0, opt +0.0; RSI=61.7)",
+        "(shipping)"
+      ],
+      "time": "2026-10-02T20:43:37.358914+00:00"
+    }
+  ],
   "position_alerts": []
 }

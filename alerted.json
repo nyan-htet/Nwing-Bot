@@ -2,7 +2,7 @@
   "ADBE": {
     "alerted": "2026-09-15T13:33:48.231761+00:00",
     "entry": 265.4,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:30.996348+00:00",
     "tp": 322.93
@@ -23,6 +23,12 @@
     "thesis_warned_on": "2026-09-17T19:58:29.287771+00:00",
     "tp": 77.16
   },
+  "BOAT": {
+    "alerted": "2026-10-02T20:43:37.358941+00:00",
+    "entry": 52.52,
+    "thesis_warned": false,
+    "tp": 58.46
+  },
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
@@ -33,7 +39,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 87,
+    "scans_muted": 88,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
