@@ -2,7 +2,7 @@
   "ADBE": {
     "alerted": "2026-09-15T13:33:48.231761+00:00",
     "entry": 265.4,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:30.996348+00:00",
     "tp": 322.93
@@ -33,10 +33,28 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 85,
+    "scans_muted": 86,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
+  },
+  "CRM": {
+    "alerted": "2026-10-02T05:32:17.814397+00:00",
+    "entry": 236.7,
+    "thesis_warned": false,
+    "tp": 268.27
+  },
+  "ERX": {
+    "alerted": "2026-10-02T05:32:17.895026+00:00",
+    "entry": 104.06,
+    "thesis_warned": false,
+    "tp": 127.0
+  },
+  "FCBC": {
+    "alerted": "2026-10-02T05:32:17.927379+00:00",
+    "entry": 47.53,
+    "thesis_warned": false,
+    "tp": 52.73
   },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",
