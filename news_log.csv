@@ -542,3 +542,6 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-10-05 05:35 UTC,HAFC,openai,True,3,0,NO_NEWS,mixed,pullback continuation,48
 2026-10-05 05:35 UTC,GSBC,openai,True,3,0,NO_NEWS,mixed,pullback continuation,48
 2026-10-05 05:35 UTC,CAC,openai,True,3,0,NO_NEWS,mixed,pullback continuation,52
+2026-10-05 17:10 UTC,MA,openai,True,3,3,OK,supportive,pullback continuation,67
+2026-10-05 17:10 UTC,FEIM,openai,True,3,1,OK,mixed,pullback continuation,52
+2026-10-05 17:10 UTC,CAC,openai,True,3,1,OK,supportive,pullback continuation,76
