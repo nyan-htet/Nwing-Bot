@@ -23,12 +23,6 @@
     "thesis_warned_on": "2026-09-17T19:58:29.287771+00:00",
     "tp": 77.16
   },
-  "CAC": {
-    "alerted": "2026-10-05T05:33:52.608824+00:00",
-    "entry": 57.16,
-    "thesis_warned": false,
-    "tp": 64.67
-  },
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
@@ -51,18 +45,6 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-18T19:03:46.917659+00:00",
     "tp": 99.56
-  },
-  "GSBC": {
-    "alerted": "2026-10-05T05:33:52.827731+00:00",
-    "entry": 79.28,
-    "thesis_warned": false,
-    "tp": 87.66
-  },
-  "HAFC": {
-    "alerted": "2026-10-05T05:33:52.876355+00:00",
-    "entry": 31.66,
-    "thesis_warned": false,
-    "tp": 35.18
   },
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
@@ -131,11 +113,5 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-29T18:06:22.817209+00:00",
     "tp": 429.71
-  },
-  "UGA": {
-    "alerted": "2026-10-05T05:33:53.216288+00:00",
-    "entry": 149.12,
-    "thesis_warned": false,
-    "tp": 169.77
   }
 }
