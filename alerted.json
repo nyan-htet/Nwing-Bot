@@ -26,6 +26,7 @@
   "CAC": {
     "alerted": "2026-10-05T17:09:03.464463+00:00",
     "entry": 57.07,
+    "scans_muted": 1,
     "thesis_warned": false,
     "tp": 64.67
   },
@@ -39,7 +40,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 90,
+    "scans_muted": 91,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
@@ -55,7 +56,7 @@
   "IDCC": {
     "alerted": "2026-08-26T04:56:49.877731+00:00",
     "entry": 345.5,
-    "scans_muted": 29,
+    "scans_muted": 30,
     "thesis_warned": false,
     "tp": 412.35
   },
