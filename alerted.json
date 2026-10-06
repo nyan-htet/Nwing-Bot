@@ -26,24 +26,42 @@
   "CAC": {
     "alerted": "2026-10-05T17:09:03.464463+00:00",
     "entry": 57.07,
-    "scans_muted": 2,
+    "scans_muted": 3,
     "thesis_warned": false,
     "tp": 64.67
   },
   "CBLL": {
     "alerted": "2026-09-01T05:06:08.017413+00:00",
     "entry": 23.96,
-    "scans_muted": 22,
+    "scans_muted": 23,
     "thesis_warned": false,
     "tp": 27.91
+  },
+  "CME": {
+    "alerted": "2026-10-06T18:22:10.097941+00:00",
+    "entry": 270.56,
+    "thesis_warned": false,
+    "tp": 317.1
+  },
+  "COLO": {
+    "alerted": "2026-10-06T18:22:10.118606+00:00",
+    "entry": 49.28,
+    "thesis_warned": false,
+    "tp": 56.61
   },
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 92,
+    "scans_muted": 93,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
+  },
+  "ELV": {
+    "alerted": "2026-10-06T18:22:10.280223+00:00",
+    "entry": 399.09,
+    "thesis_warned": false,
+    "tp": 470.83
   },
   "FTDR": {
     "alerted": "2026-08-26T04:56:49.753112+00:00",
@@ -93,7 +111,7 @@
   "PCTY": {
     "alerted": "2026-08-13T17:13:51.683869+00:00",
     "entry": 145.38,
-    "scans_muted": 24,
+    "scans_muted": 25,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-29T18:06:18.048687+00:00",
     "tp": 173.37
