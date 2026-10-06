@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-06T01:20:16.735628+00:00",
+  "generated": "2026-10-06T11:16:59.322981+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 10.6
@@ -9,6 +9,62 @@
     "label": "neutral",
     "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.4%, decade-pos 6 avg +11.6% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "CAI",
+      "name": "Caris Life Sciences, Inc.",
+      "setup": "pullback",
+      "entry": 30.38,
+      "tp": 37.96,
+      "tp_pct": 0.2495062541145492,
+      "shares": 8.23,
+      "value": 250.0274,
+      "pl_amount": 62.38,
+      "eta_days_low": 12,
+      "eta_days_high": 29,
+      "fee_pct": 0.03205981078299675,
+      "trend_score": 5,
+      "adx": 38.8,
+      "rs": 0.714,
+      "runner": true,
+      "regime": "uptrend",
+      "regime_weeks": 8,
+      "ema20": 29.03,
+      "ema50": 25.77,
+      "ema200": 22.29,
+      "above_ema200": true,
+      "quality": 0.78,
+      "q_detail": {
+        "rsi": 0.6,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.8
+      },
+      "q_notes": {
+        "rsi": "RSI 54.1 falling",
+        "bollinger": "band position 41%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.4x average, surging",
+        "extension": "+0.3 ATR from 20 EMA, slope -1.4%, bullish stack (20>50>200)"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 54.1,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 5/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "RUNNER: near 52w high + outperforming SPY",
+        "quality +0.78 (rsi +0.6, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=54.1)",
+        "(nasdaq; tier assigned nightly by FMP)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-10-06T11:16:40.130389+00:00"
+    }
+  ],
   "position_alerts": []
 }
