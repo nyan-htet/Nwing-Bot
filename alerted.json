@@ -18,7 +18,7 @@
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 30,
+    "scans_muted": 31,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-17T19:58:29.287771+00:00",
     "tp": 77.16
@@ -40,7 +40,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 94,
+    "scans_muted": 95,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
@@ -120,5 +120,11 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-29T18:06:22.817209+00:00",
     "tp": 429.71
+  },
+  "UGA": {
+    "alerted": "2026-10-07T05:54:33.988426+00:00",
+    "entry": 148.63,
+    "thesis_warned": false,
+    "tp": 169.77
   }
 }
