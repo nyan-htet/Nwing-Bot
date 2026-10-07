@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-07T05:54:55.856683+00:00",
+  "generated": "2026-10-07T15:36:45.083585+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 10.5
   },
   "cycles": {
-    "score": -0.17,
+    "score": -0.19,
     "label": "neutral",
-    "line": "Cycles [neutral]: month 10 avg +1.1%, presidential-cycle year 2 avg +2.5%, decade-pos 6 avg +11.9% (informative only)"
+    "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.4%, decade-pos 6 avg +11.6% (informative only)"
   },
   "signals": [
     {
@@ -25,7 +25,7 @@
       "fee_pct": 0.0,
       "trend_score": 5,
       "adx": 37.9,
-      "rs": 0.349,
+      "rs": 0.359,
       "runner": true,
       "regime": "uptrend",
       "regime_weeks": 12,
@@ -62,8 +62,10 @@
         "quality +0.79 (rsi +0.6, bb +1.0, vwap +0.5, vol +1.0, opt +0.0; RSI=56.7)",
         "(gasoline)"
       ],
-      "time": "2026-10-07T05:54:33.988389+00:00"
+      "time": "2026-10-07T15:36:22.661051+00:00"
     }
   ],
-  "position_alerts": []
+  "position_alerts": [
+    "\u26a0\ufe0f CAC thesis broken \u2014 daily close below EMA50 with a lower-low structure break (now $55.81, signalled at $57.07, -2.2%, target $64.67). The reason for the signal is gone. Your call."
+  ]
 }
