@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-07 05:55 UTC",
+  "generated": "2026-10-07 15:37 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,7 +12,7 @@
     {
       "ticker": "UGA",
       "alert": {
-        "alerted": "2026-10-07T05:54:33.988426+00:00",
+        "alerted": "2026-10-07T15:36:22.661088+00:00",
         "entry": 148.63,
         "thesis_warned": false,
         "tp": 169.77
@@ -32,7 +32,7 @@
         "fee_pct": 0.0,
         "trend_score": 5,
         "adx": 37.9,
-        "rs": 0.349,
+        "rs": 0.359,
         "runner": true,
         "regime": "uptrend",
         "regime_weeks": 12,
@@ -69,19 +69,19 @@
           "quality +0.79 (rsi +0.6, bb +1.0, vwap +0.5, vol +1.0, opt +0.0; RSI=56.7)",
           "(gasoline)"
         ],
-        "time": "2026-10-07T05:54:33.988389+00:00"
+        "time": "2026-10-07T15:36:22.661051+00:00"
       },
       "profile": {
         "symbol": "UGA",
-        "price": 148.91,
-        "marketCap": 136448467,
+        "price": 147.675,
+        "marketCap": 135316818,
         "beta": 1.62,
         "lastDividend": 0,
         "range": "60.4-153.46",
-        "change": 3.73,
-        "changePercentage": 2.56922,
-        "volume": 30673,
-        "averageVolume": 47681,
+        "change": -1.235,
+        "changePercentage": -0.82936,
+        "volume": 13768,
+        "averageVolume": 47374,
         "companyName": "United States Gasoline Fund, LP",
         "currency": "USD",
         "cik": "0001396878",
@@ -183,7 +183,7 @@
           "date": "2026-10-07",
           "sector": "Financial Services",
           "exchange": "NASDAQ",
-          "averageChange": -0.16252899760015316
+          "averageChange": -0.5961906165116049
         },
         "industry_snapshot": {}
       },
@@ -193,9 +193,9 @@
           "vol": 10.5
         },
         "hourly_scan_cycles": {
-          "score": -0.17,
+          "score": -0.19,
           "label": "neutral",
-          "line": "Cycles [neutral]: month 10 avg +1.1%, presidential-cycle year 2 avg +2.5%, decade-pos 6 avg +11.9% (informative only)"
+          "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.4%, decade-pos 6 avg +11.6% (informative only)"
         },
         "treasury": {
           "date": "2026-10-05",
@@ -248,19 +248,6 @@
         "calendar": [
           {
             "date": "2026-10-07 00:00:00",
-            "country": "CN",
-            "event": "National Day Golden Week",
-            "currency": "CNY",
-            "previous": null,
-            "estimate": null,
-            "actual": null,
-            "change": null,
-            "impact": "None",
-            "changePercentage": 0,
-            "unit": null
-          },
-          {
-            "date": "2026-10-07 00:00:00",
             "country": "LA",
             "event": "Bank of Laosablishment Day",
             "currency": "LAK",
@@ -273,16 +260,29 @@
             "unit": null
           },
           {
+            "date": "2026-10-07 00:00:00",
+            "country": "CN",
+            "event": "National Day Golden Week",
+            "currency": "CNY",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
             "date": "2026-10-07 00:30:00",
             "country": "AU",
-            "event": "Private House Approvals MoM (Aug)",
+            "event": "Building Permits MoM (Aug)",
             "currency": "AUD",
             "previous": -1.9,
-            "estimate": 3.7,
-            "actual": 3.7,
-            "change": 5.6,
+            "estimate": -6.1,
+            "actual": -6.1,
+            "change": -4.2,
             "impact": "Low",
-            "changePercentage": 294.737,
+            "changePercentage": -221.053,
             "unit": "%"
           },
           {
@@ -301,14 +301,14 @@
           {
             "date": "2026-10-07 00:30:00",
             "country": "AU",
-            "event": "Building Permits MoM (Aug)",
+            "event": "Private House Approvals MoM (Aug)",
             "currency": "AUD",
             "previous": -1.9,
-            "estimate": -6.1,
-            "actual": -6.1,
-            "change": -4.2,
+            "estimate": 3.7,
+            "actual": 3.7,
+            "change": 5.6,
             "impact": "Low",
-            "changePercentage": -221.053,
+            "changePercentage": 294.737,
             "unit": "%"
           },
           {
@@ -364,6 +364,19 @@
             "unit": "%"
           },
           {
+            "date": "2026-10-07 03:00:00",
+            "country": "CN",
+            "event": "Foreign Exchange Reserves (Sep)",
+            "currency": "CNY",
+            "previous": 3.438,
+            "estimate": 3.43,
+            "actual": 3.4,
+            "change": -0.038,
+            "impact": "Low",
+            "changePercentage": -1.105,
+            "unit": "T"
+          },
+          {
             "date": "2026-10-07 04:00:00",
             "country": "ID",
             "event": "Foreign Exchange Reserves (Sep)",
@@ -379,52 +392,39 @@
           {
             "date": "2026-10-07 04:30:00",
             "country": "IN",
-            "event": "Cash Reserve Ratio",
+            "event": "Reverse Repo Rate",
             "currency": "INR",
-            "previous": 3,
-            "estimate": 3,
-            "actual": 3,
+            "previous": 3.35,
+            "estimate": null,
+            "actual": 3.35,
             "change": 0,
             "impact": "Low",
             "changePercentage": 0,
-            "unit": "%"
-          },
-          {
-            "date": "2026-10-07 04:30:00",
-            "country": "IN",
-            "event": "Interest Rate Decision",
-            "currency": "INR",
-            "previous": 5.25,
-            "estimate": 5.5,
-            "actual": 5.5,
-            "change": 0.25,
-            "impact": "Medium",
-            "changePercentage": 4.762,
             "unit": "%"
           }
         ]
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a strong established uptrend. Price remains above rising moving averages, has reclaimed VWAP, and shows strong relative strength, although drying volume and moderate RSI momentum favor confirmation rather than aggressive chasing.",
+        "technical_interpretation": "The setup resembles a bullish pullback within a strong established uptrend, with price above rising short- and long-term EMAs and strong relative strength. Reclaiming VWAP and moderate RSI support continuation, although drying volume and extension above VWAP warrant caution.",
         "financial_assessment": "not_applicable",
-        "financial_interpretation": "The reported EPS figures are not sufficient to establish an operating earnings trend for this commodity ETF. Revenue, margins, cash flow, balance-sheet data, and earnings surprises were not supplied.",
+        "financial_interpretation": "UGA is an exchange-traded commodity fund, so the supplied historical EPS figures are not a meaningful operating-fundamental record for this instrument. Revenue, margins, cash flow, and balance-sheet data are unavailable, and the reported periods are too limited to establish acceleration or deceleration.",
         "earnings_assessment": "unknown",
-        "earnings_interpretation": "The next earnings date and forward estimates are unavailable, so no earnings catalyst or event-risk direction can be assessed.",
+        "earnings_interpretation": "No next earnings date or forward estimate is available. Earnings-event risk cannot be assessed reliably from the supplied data.",
         "analyst_assessment": "unknown",
         "analyst_interpretation": "Analyst ratings and estimate direction are unavailable.",
         "valuation_assessment": "unknown",
-        "valuation_interpretation": "No valuation data was supplied, so valuation cannot be judged as a support or headwind.",
+        "valuation_interpretation": "No valuation metrics are supplied, so valuation cannot be judged as a support or headwind.",
         "news_assessment": "no_recent_news",
-        "news_interpretation": "No usable company-specific news was returned. There is therefore no identified news catalyst or immediate company-specific risk in the supplied data.",
+        "news_interpretation": "No recent usable company-specific news was returned. There is no identified headline catalyst or company-specific risk from the supplied information.",
         "sector_assessment": "neutral",
-        "sector_interpretation": "The broader sector snapshot is mildly weak, but it offers limited guidance for this gasoline-linked ETF and neither materially supports nor undermines the setup.",
+        "sector_interpretation": "The broader classified sector was modestly weaker, but its relevance to this gasoline-fund setup is limited.",
         "macro_assessment": "neutral",
-        "macro_interpretation": "Risk-on conditions and low volatility are supportive, but elevated yields may limit risk appetite and no clearly relevant near-term macro catalyst is identified.",
+        "macro_interpretation": "Risk-on conditions are supportive, but elevated Treasury yields remain a meaningful headwind for risk assets and commodity positioning.",
         "overall_assessment": "mixed",
-        "overall_summary": "Technicals strongly support a pullback-continuation setup, with a durable uptrend, positive relative strength, and defended VWAP. Fundamental, earnings, valuation, and news confirmation are largely unavailable, while elevated yields and low volume warrant caution on follow-through.",
-        "key_positive": "Strong trend quality and substantial outperformance versus SPY provide the clearest support.",
-        "key_risk": "Drying volume and limited fundamental visibility increase the risk of a failed continuation or sharp commodity-driven reversal.",
+        "overall_summary": "The technical signal is well supported by a strong, persistent uptrend, market outperformance, and a defended pullback. Fundamental, earnings, analyst, valuation, and news confirmation are largely unavailable, while low volume, elevated extension, and high yields argue for caution rather than strong confirmation.",
+        "key_positive": "Strong trend structure and relative strength favor continuation if the pullback remains supported.",
+        "key_risk": "The move is extended with drying volume, and the absence of current fundamental or catalyst data leaves the setup vulnerable to a technical reversal.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -435,12 +435,12 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2379
+          "chars": 2469
         }
       ],
       "is_etf": true,
       "buy_confidence": 50,
-      "report": "🟡 UGA — United States Gasoline Fund, LP\nEntry: $148.63\neToro TP Value: $35.52\nShares: 1.68 ($250)\nScanner Potential: +14.2%\nTimeframe: 10–30 days\n\n═══ BUY CONFIDENCE: 50% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong established uptrend. Price remains above rising moving averages, has reclaimed VWAP, and shows strong relative strength, although drying volume and moderate RSI momentum favor confirmation rather than aggressive chasing.\n🕒 Technical timestamp: 2026-10-07 05:54:33 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2023 — 🟡 Mixed\nQ2 2023 — 🟡 Mixed\nQ1 2023 — 🟡 Mixed\n🧠 The reported EPS figures are not sufficient to establish an operating earnings trend for this commodity ETF. Revenue, margins, cash flow, balance-sheet data, and earnings surprises were not supplied.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation data was supplied, so valuation cannot be judged as a support or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date and forward estimates are unavailable, so no earnings catalyst or event-risk direction can be assessed.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: The broader sector snapshot is mildly weak, but it offers limited guidance for this gasoline-linked ETF and neither materially supports nor undermines the setup.\n🧠 Macro: Risk-on conditions and low volatility are supportive, but elevated yields may limit risk appetite and no clearly relevant near-term macro catalyst is identified.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 Technicals strongly support a pullback-continuation setup, with a durable uptrend, positive relative strength, and defended VWAP. Fundamental, earnings, valuation, and news confirmation are largely unavailable, while elevated yields and low volume warrant caution on follow-through.\n🟢 Key Positive: Strong trend quality and substantial outperformance versus SPY provide the clearest support.\n🔴 Key Risk: Drying volume and limited fundamental visibility increase the risk of a failed continuation or sharp commodity-driven reversal.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 UGA — United States Gasoline Fund, LP\nEntry: $148.63\neToro TP Value: $35.52\nShares: 1.68 ($250)\nScanner Potential: +14.2%\nTimeframe: 10–30 days\n\n═══ BUY CONFIDENCE: 50% ═══\n🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n⚪ Unknown\n🧠 Analyst ratings and estimate direction are unavailable.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a strong established uptrend, with price above rising short- and long-term EMAs and strong relative strength. Reclaiming VWAP and moderate RSI support continuation, although drying volume and extension above VWAP warrant caution.\n🕒 Technical timestamp: 2026-10-07 15:36:22 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2023 — 🟡 Mixed\nQ2 2023 — 🟡 Mixed\nQ1 2023 — 🟡 Mixed\n🧠 UGA is an exchange-traded commodity fund, so the supplied historical EPS figures are not a meaningful operating-fundamental record for this instrument. Revenue, margins, cash flow, and balance-sheet data are unavailable, and the reported periods are too limited to establish acceleration or deceleration.\n\n═══ VALUATION ═══\n⚪ Unknown\n🧠 No valuation metrics are supplied, so valuation cannot be judged as a support or headwind.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 No next earnings date or forward estimate is available. Earnings-event risk cannot be assessed reliably from the supplied data.\n\n═══ RECENT NEWS ═══\n⚪ No recent usable company-specific news.\n\n═══ SECTOR & MACRO ═══\nSector: 🟡 Neutral\nMacro: 🟡 Neutral\n🧠 Sector: The broader classified sector was modestly weaker, but its relevance to this gasoline-fund setup is limited.\n🧠 Macro: Risk-on conditions are supportive, but elevated Treasury yields remain a meaningful headwind for risk assets and commodity positioning.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is well supported by a strong, persistent uptrend, market outperformance, and a defended pullback. Fundamental, earnings, analyst, valuation, and news confirmation are largely unavailable, while low volume, elevated extension, and high yields argue for caution rather than strong confirmation.\n🟢 Key Positive: Strong trend structure and relative strength favor continuation if the pullback remains supported.\n🔴 Key Risk: The move is extended with drying volume, and the absence of current fundamental or catalyst data leaves the setup vulnerable to a technical reversal.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
