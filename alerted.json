@@ -122,11 +122,5 @@
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-29T18:06:22.817209+00:00",
     "tp": 429.71
-  },
-  "UGA": {
-    "alerted": "2026-10-08T15:35:19.738826+00:00",
-    "entry": 150.25,
-    "thesis_warned": false,
-    "tp": 187.73
   }
 }
