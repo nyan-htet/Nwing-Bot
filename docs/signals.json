@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-07T21:19:04.399318+00:00",
+  "generated": "2026-10-08T05:59:04.097656+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 10.4
@@ -64,7 +64,7 @@
         "\u26a1 THIS IS A 3x LEVERAGED ETF \u2014 volatility decay erodes value on multi-week holds; extra caution with no-stoploss style",
         "(semiconductors bull 3x)"
       ],
-      "time": "2026-10-07T21:18:41.948527+00:00"
+      "time": "2026-10-08T05:58:43.917512+00:00"
     }
   ],
   "position_alerts": []

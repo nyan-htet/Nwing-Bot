@@ -18,7 +18,7 @@
   "BMY": {
     "alerted": "2026-08-18T08:54:04.601248+00:00",
     "entry": 64.64,
-    "scans_muted": 33,
+    "scans_muted": 34,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-17T19:58:29.287771+00:00",
     "tp": 77.16
@@ -41,7 +41,7 @@
   "COPX": {
     "alerted": "2026-09-01T05:06:08.071048+00:00",
     "entry": 92.9,
-    "scans_muted": 97,
+    "scans_muted": 98,
     "thesis_warned": true,
     "thesis_warned_on": "2026-09-16T19:35:34.199092+00:00",
     "tp": 115.57
@@ -110,9 +110,15 @@
   "RIGL": {
     "alerted": "2026-09-21T20:27:22.873509+00:00",
     "entry": 47.03,
-    "scans_muted": 4,
+    "scans_muted": 5,
     "thesis_warned": false,
     "tp": 56.4
+  },
+  "SOXL": {
+    "alerted": "2026-10-08T05:58:43.917542+00:00",
+    "entry": 158.87,
+    "thesis_warned": false,
+    "tp": 191.29
   },
   "TRV": {
     "alerted": "2026-08-26T01:59:37.555016+00:00",
