@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-08T21:19:46.879712+00:00",
+  "generated": "2026-10-09T06:06:28.887837+00:00",
   "macro": {
     "risk": "risk-on",
     "vol": 10.2
@@ -9,6 +9,60 @@
     "label": "neutral",
     "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.4%, decade-pos 6 avg +11.6% (informative only)"
   },
-  "signals": [],
+  "signals": [
+    {
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "setup": "pullback",
+      "entry": 1169.85,
+      "tp": 1412.91,
+      "tp_pct": 0.20777024760046592,
+      "shares": 0.21,
+      "value": 245.6684958,
+      "pl_amount": 51.04,
+      "eta_days_low": 16,
+      "eta_days_high": 48,
+      "fee_pct": 0.03918295375689313,
+      "trend_score": 3,
+      "adx": 38.0,
+      "rs": -0.046,
+      "runner": false,
+      "regime": "uptrend",
+      "regime_weeks": 1,
+      "ema20": 1163.89,
+      "ema50": 1163.54,
+      "ema200": 1105.96,
+      "above_ema200": true,
+      "quality": 0.84,
+      "q_detail": {
+        "rsi": 1.0,
+        "bollinger": 1.0,
+        "vwap": 1.0,
+        "volume": 0.5,
+        "extension": 0.6
+      },
+      "q_notes": {
+        "rsi": "RSI 51.5 rising",
+        "bollinger": "band position 55%, contracting",
+        "vwap": "reclaimed VWAP after dip (buyers defended)",
+        "volume": "1.2x average, surging",
+        "extension": "+0.2 ATR from 20 EMA, slope -0.1%, mixed / tangled"
+      },
+      "context_notes": [],
+      "ext_atr": null,
+      "rsi": 51.5,
+      "options_note": "",
+      "sector": "",
+      "warnings": [],
+      "reasons": [
+        "daily uptrend (score 3/5)",
+        "4h pullback",
+        "1h momentum trigger",
+        "quality +0.84 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=51.5)",
+        "hard-eligible; ranked in Step 2"
+      ],
+      "time": "2026-10-09T06:06:10.103795+00:00"
+    }
+  ],
   "position_alerts": []
 }
