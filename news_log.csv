@@ -556,3 +556,5 @@ scan_time_utc,ticker,entry,tp,risk,company_specific,summary,reason,n_headlines
 2026-10-08 05:59 UTC,SOXL,openai,True,0,0,NO_NEWS,mixed,pullback continuation,48
 2026-10-08 15:36 UTC,UGA,openai,True,3,0,NO_NEWS,supportive,pullback continuation,58
 2026-10-09 06:07 UTC,LLY,openai,True,3,8,OK,mixed,pullback continuation,55
+2026-10-09 20:55 UTC,LLY,openai,True,3,8,OK,mixed,pullback continuation,58
+2026-10-09 20:55 UTC,ADI,openai,True,3,1,OK,mixed,pullback continuation,55

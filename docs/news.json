@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09 06:07 UTC",
+  "generated": "2026-10-09 20:55 UTC",
   "provider": "openai",
   "openai_model_default": "gpt-5.6-luna",
   "anthropic_model_default": "claude-haiku-4-5",
@@ -12,8 +12,8 @@
     {
       "ticker": "LLY",
       "alert": {
-        "alerted": "2026-10-09T06:06:10.103841+00:00",
-        "entry": 1169.85,
+        "alerted": "2026-10-09T20:54:01.589727+00:00",
+        "entry": 1178.51,
         "thesis_warned": false,
         "tp": 1412.91
       },
@@ -21,43 +21,43 @@
         "ticker": "LLY",
         "name": "Eli Lilly and Company",
         "setup": "pullback",
-        "entry": 1169.85,
+        "entry": 1178.51,
         "tp": 1412.91,
-        "tp_pct": 0.20777024760046592,
+        "tp_pct": 0.19890030165336592,
         "shares": 0.21,
-        "value": 245.6684958,
-        "pl_amount": 51.04,
+        "value": 247.48605,
+        "pl_amount": 49.23,
         "eta_days_low": 16,
         "eta_days_high": 48,
-        "fee_pct": 0.03918295375689313,
+        "fee_pct": 0.040629720030756704,
         "trend_score": 3,
-        "adx": 38.0,
-        "rs": -0.046,
+        "adx": 34.6,
+        "rs": -0.014,
         "runner": false,
         "regime": "uptrend",
         "regime_weeks": 1,
-        "ema20": 1163.89,
-        "ema50": 1163.54,
-        "ema200": 1105.96,
+        "ema20": 1165.29,
+        "ema50": 1164.12,
+        "ema200": 1105.25,
         "above_ema200": true,
-        "quality": 0.84,
+        "quality": 1.0,
         "q_detail": {
           "rsi": 1.0,
           "bollinger": 1.0,
           "vwap": 1.0,
-          "volume": 0.5,
-          "extension": 0.6
+          "volume": 1.0,
+          "extension": 1.0
         },
         "q_notes": {
-          "rsi": "RSI 51.5 rising",
-          "bollinger": "band position 55%, contracting",
+          "rsi": "RSI 53.4 rising",
+          "bollinger": "band position 65%, contracting",
           "vwap": "reclaimed VWAP after dip (buyers defended)",
-          "volume": "1.2x average, surging",
-          "extension": "+0.2 ATR from 20 EMA, slope -0.1%, mixed / tangled"
+          "volume": "0.1x average, drying up",
+          "extension": "+0.5 ATR from 20 EMA, slope +0.5%, bullish stack (20>50>200)"
         },
         "context_notes": [],
         "ext_atr": null,
-        "rsi": 51.5,
+        "rsi": 53.4,
         "options_note": "",
         "sector": "",
         "warnings": [],
@@ -65,21 +65,21 @@
           "daily uptrend (score 3/5)",
           "4h pullback",
           "1h momentum trigger",
-          "quality +0.84 (rsi +1.0, bb +1.0, vwap +1.0, vol +0.5, opt +0.0; RSI=51.5)",
+          "quality +1.00 (rsi +1.0, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=53.4)",
           "hard-eligible; ranked in Step 2"
         ],
-        "time": "2026-10-09T06:06:10.103795+00:00"
+        "time": "2026-10-09T20:54:01.589687+00:00"
       },
       "profile": {
         "symbol": "LLY",
-        "price": 1169.93,
-        "marketCap": 1101771048130,
+        "price": 1179.27,
+        "marketCap": 1110566909070,
         "beta": 0.454,
         "lastDividend": 6.69,
         "range": "783.85-1292.65",
-        "change": -18.79,
-        "changePercentage": -1.58069,
-        "volume": 3064878,
+        "change": 9.67,
+        "changePercentage": 0.82678,
+        "volume": 1383506,
         "averageVolume": 2709451,
         "companyName": "Eli Lilly and Company",
         "currency": "USD",
@@ -167,48 +167,48 @@
           {
             "date": "2030-12-31",
             "period": null,
-            "revenue_avg": 132945416667.0,
-            "eps_avg": 66.88583,
-            "revenue_low": 123833330809.0,
-            "revenue_high": 141526752332.0,
-            "eps_low": 60.92616,
-            "eps_high": 72.49836,
+            "revenue_avg": 133735833332.0,
+            "eps_avg": 67.2875,
+            "revenue_low": 124560377359.0,
+            "revenue_high": 142357679969.0,
+            "eps_low": 61.28603,
+            "eps_high": 72.92687,
             "num_analysts_revenue": 12,
             "num_analysts_eps": 3
           },
           {
             "date": "2029-12-31",
             "period": null,
-            "revenue_avg": 123399049480.0,
-            "eps_avg": 60.97133,
-            "revenue_low": 114941272132.0,
-            "revenue_high": 131364188037.0,
-            "eps_low": 55.53866,
-            "eps_high": 66.08757,
+            "revenue_avg": 123778818711.0,
+            "eps_avg": 61.19287,
+            "revenue_low": 115286501632.0,
+            "revenue_high": 131758744250.0,
+            "eps_low": 55.73499,
+            "eps_high": 66.32144,
             "num_analysts_revenue": 12,
             "num_analysts_eps": 3
           },
           {
             "date": "2028-12-31",
             "period": null,
-            "revenue_avg": 114259607251.0,
-            "eps_avg": 53.86248,
-            "revenue_low": 102240500799.0,
-            "revenue_high": 128768310012.0,
-            "eps_low": 47.26824,
-            "eps_high": 59.22725,
+            "revenue_avg": 114457857251.0,
+            "eps_avg": 54.01206,
+            "revenue_low": 102417896642.0,
+            "revenue_high": 128991733828.0,
+            "eps_low": 47.39951,
+            "eps_high": 59.39173,
             "num_analysts_revenue": 25,
             "num_analysts_eps": 9
           },
           {
             "date": "2027-12-31",
             "period": null,
-            "revenue_avg": 102288312482.0,
-            "eps_avg": 46.90034,
-            "revenue_low": 98354146617.0,
-            "revenue_high": 105425557568.0,
-            "eps_low": 43.83397,
-            "eps_high": 50.36885,
+            "revenue_avg": 102329312482.0,
+            "eps_avg": 46.9332,
+            "revenue_low": 98393569694.0,
+            "revenue_high": 105467815064.0,
+            "eps_low": 43.8271,
+            "eps_high": 50.36096,
             "num_analysts_revenue": 20,
             "num_analysts_eps": 15
           }
@@ -226,14 +226,14 @@
         },
         "estimate_direction": {
           "revenueAvg": {
-            "latest": 132945416667,
-            "prior": 123399049480,
-            "change": 0.07736175624713582
+            "latest": 133735833332,
+            "prior": 123778818711,
+            "change": 0.08044199100209326
           },
           "epsAvg": {
-            "latest": 66.88583,
-            "prior": 60.97133,
-            "change": 0.09700460855946558
+            "latest": 67.2875,
+            "prior": 61.19287,
+            "change": 0.09959706089941522
           }
         }
       },
@@ -257,15 +257,15 @@
           "quickRatioTTM": 1.0028905971806203,
           "solvencyRatioTTM": 0.2657669458691561,
           "cashRatioTTM": 0.18621310822982343,
-          "priceToEarningsRatioTTM": 39.1411843425895,
-          "priceToEarningsGrowthRatioTTM": 0.4137705378542152,
-          "forwardPriceToEarningsGrowthRatioTTM": 0.710456888192596,
-          "priceToEarningsDilutedRatioTTM": 39.25939597315436,
-          "priceToEarningsDilutedGrowthRatioTTM": 0.4142543161305254,
-          "priceToBookRatioTTM": 30.816893414799726,
-          "priceToSalesRatioTTM": 13.82991256135004,
-          "priceToFreeCashFlowRatioTTM": 54.94048779190083,
-          "priceToOperatingCashFlowRatioTTM": 37.17647486958534,
+          "priceToEarningsRatioTTM": 39.453663432586154,
+          "priceToEarningsGrowthRatioTTM": 0.4170738267890732,
+          "forwardPriceToEarningsGrowthRatioTTM": 0.7232266699471213,
+          "priceToEarningsDilutedRatioTTM": 39.57281879194631,
+          "priceToEarningsDilutedGrowthRatioTTM": 0.4175614672529508,
+          "priceToBookRatioTTM": 31.062916496945007,
+          "priceToSalesRatioTTM": 13.940322058775536,
+          "priceToFreeCashFlowRatioTTM": 55.37909878228175,
+          "priceToOperatingCashFlowRatioTTM": 37.47326893015471,
           "debtToAssetsRatioTTM": 0.3859069600725315,
           "debtToEquityRatioTTM": 1.6207089937719532,
           "debtToCapitalRatioTTM": 0.6184238683591067,
@@ -282,8 +282,8 @@
           "capitalExpenditureCoverageRatioTTM": 3.4974967619806714,
           "dividendPaidAndCapexCoverageRatioTTM": 2.0329296453674814,
           "dividendPayoutRatioTTM": 0.21656458713947707,
-          "dividendYieldTTM": 0.00571829,
-          "enterpriseValueTTM": 1147789048130,
+          "dividendYieldTTM": 0.005673,
+          "enterpriseValueTTM": 1156584909070,
           "revenuePerShareTTM": 89.27140295831465,
           "netIncomePerShareTTM": 29.931869116987897,
           "interestDebtPerShareTTM": 62.626176602420436,
@@ -296,20 +296,20 @@
           "freeCashFlowPerShareTTM": 22.471873599282834,
           "netIncomePerEBTTTM": 0.7950803081355892,
           "ebtPerEbitTTM": 0.8481916760291351,
-          "priceToFairValueTTM": 30.816893414799726,
-          "debtToMarketCapTTM": 0.049836125294083156,
+          "priceToFairValueTTM": 31.062916496945007,
+          "debtToMarketCapTTM": 0.04944141550731105,
           "effectiveTaxRateTTM": 0.2049196918644108,
-          "enterpriseValueMultipleTTM": 26.504892024209788,
+          "enterpriseValueMultipleTTM": 26.708007174031515,
           "dividendPerShareTTM": 6.69
         },
         "metrics": {
           "symbol": "LLY",
-          "marketCap": 1101771048130,
-          "enterpriseValueTTM": 1147789048130,
-          "evToSalesTTM": 14.407550644442157,
-          "evToOperatingCashFlowTTM": 40.87058408424876,
-          "evToFreeCashFlowTTM": 57.23520353297862,
-          "evToEBITDATTM": 26.504892024209788,
+          "marketCap": 1110566909070,
+          "enterpriseValueTTM": 1156584909070,
+          "evToSalesTTM": 14.517960141867652,
+          "evToOperatingCashFlowTTM": 41.18378795627326,
+          "evToFreeCashFlowTTM": 57.673814523359546,
+          "evToEBITDATTM": 26.708007174031515,
           "netDebtToEBITDATTM": 1.0626535626535627,
           "currentRatioTTM": 1.3546427598919168,
           "incomeQualityTTM": 1.0513754529935009,
@@ -325,8 +325,8 @@
           "returnOnEquityTTM": 0.9258222975894521,
           "returnOnInvestedCapitalTTM": 0.3099844316952957,
           "returnOnCapitalEmployedTTM": 0.41895136553066364,
-          "earningsYieldTTM": 0.025584324803183008,
-          "freeCashFlowYieldTTM": 0.018201512949570446,
+          "earningsYieldTTM": 0.025381693010920227,
+          "freeCashFlowYieldTTM": 0.01805735416409385,
           "capexToOperatingCashFlowTTM": 0.2859187779301013,
           "capexToDepreciationTTM": 3.825440686040972,
           "capexToRevenueTTM": 0.10079105463071983,
@@ -350,6 +350,36 @@
       },
       "news": [
         {
+          "date": "2026-10-09 14:00 UTC",
+          "title": "Record Highs Beckon for Big Caps as Small Caps Lag and Deal Flow Builds",
+          "site": "gurufocus.com",
+          "text": "Record Highs Beckon for Big Caps as Small Caps Lag and Deal Flow BuildsPR NewswireNEW YORK, Oct. 9, 2026Stock Preachers News Commentary NEW YORK, Oct. 9, 2026 /"
+        },
+        {
+          "date": "2026-10-09 10:01 UTC",
+          "title": "Here is What to Know Beyond Why Eli Lilly and Company (LLY) is a Trending Stock",
+          "site": "zacks.com",
+          "text": "Lilly (LLY) has been one of the stocks most watched by Zacks.com users lately. So, it is worth exploring what lies ahead for the stock."
+        },
+        {
+          "date": "2026-10-09 09:20 UTC",
+          "title": "Eli Lilly's Biggest Shareholder Just Filed to Sell $347 Million of Stock",
+          "site": "247wallst.com",
+          "text": "Lilly's largest shareholder just filed to unload nearly $350 million in stock while analysts keep raising their price targets, and those two facts point in opposite directions for investors trying to read the room."
+        },
+        {
+          "date": "2026-10-09 08:00 UTC",
+          "title": "Cantor Fitzgerald Lifts Price Targets on Four Pharma Giants Amid Mixed Growth Outlooks",
+          "site": "247wallst.com",
+          "text": "Cantor Fitzgerald just bumped price targets on Eli Lilly, AbbVie, Merck, and Pfizer, but higher targets do not mean equal conviction."
+        },
+        {
+          "date": "2026-10-09 06:45 UTC",
+          "title": "New Phase 3b data on Lilly's Taltz (ixekizumab) and Zepbound (tirzepatide) advance understanding of the interconnected immune and metabolic biology in adults with psoriasis and obesity",
+          "site": "prnewswire.com",
+          "text": "Exploratory data presented at Fall Clinical 2026 showed broader biomarker changes with Taltz and Zepbound vs. Taltz alone as early as Week 12 in first-of-its-kind TOGETHER-PsO study INDIANAPOLIS, Oct. 9, 2026 /PRNewswire/ -- Eli Lilly and Company (NYSE: LLY) today announced new exploratory data from the TOGETHER-PsO Phase 3b clinical trial evaluating the concomitant use of Taltz (ixekizumab) and Zepbound (tirzepatide) compared with Taltz alone in adults with moderate-to-severe plaque psoriasis and obesity or overweight with at least one additional weight-related comorbid condition."
+        },
+        {
           "date": "2026-10-08 11:33 UTC",
           "title": "Eli Lilly's Obesity Business Could Become a Much Bigger Healthcare Platform",
           "site": "fool.com",
@@ -366,36 +396,6 @@
           "title": "Only 20 Stocks Are Holding Up the Market: 3 Bargains Outside AI",
           "site": "marketbeat.com",
           "text": "That gap is where Whitney Tilson of Stansberry Research is doing his shopping. His case is that the index is masking a broad bear market underneath, and that the cleanest values right now sit entirely outside artificial intelligence."
-        },
-        {
-          "date": "2026-10-08 08:58 UTC",
-          "title": "Eli Lilly To Rally Over 21%? Here Are 10 Top Analyst Forecasts For Thursday",
-          "site": "benzinga.com",
-          "text": "Top Wall Street analysts changed their outlook on these top names. For a complete view of all analyst rating changes, including upgrades and downgrades, please see our analyst ratings page."
-        },
-        {
-          "date": "2026-10-07 23:33 UTC",
-          "title": "Novo Nordisk Vs. Eli Lilly: Judged Against Big Pharma, Only One Needs A Premium",
-          "site": "seekingalpha.com",
-          "text": "Novo Nordisk is rated Buy versus Hold for Eli Lilly, anchored by a compelling valuation discount to big pharma peers. NVO trades at ~11.2x 2027 earnings, a ~26% discount to peer median, despite consensus growth rates in line with peers and a robust yield. The investment case does not require a rerating; ~10% annual returns are achievable if current discounted valuations hold and yield continues."
-        },
-        {
-          "date": "2026-10-07 17:11 UTC",
-          "title": "Moderna, Eli Lilly Lead Healthcare Stocks Higher on a Down Day for Markets",
-          "site": "investopedia.com",
-          "text": "The healthcare sector stood out as one of the few bright spots in Wednesday's trading."
-        },
-        {
-          "date": "2026-10-07 15:18 UTC",
-          "title": "Where Will Eli Lilly Stock Be in 5 Years? Follow the Pipeline Beyond Zepbound",
-          "site": "fool.com",
-          "text": "Eli Lilly has attractive pipeline candidates within its core therapeutic area. The company is well-positioned to remain the leader in the weight loss market."
-        },
-        {
-          "date": "2026-10-07 12:15 UTC",
-          "title": "Eli Lilly Stocks Jump 3.7% as $870 Million Protein Deal Expands",
-          "site": "gurufocus.com",
-          "text": "Eli Lilly (LLY), the medicines and metabolic-disease company, expanded its drug-discovery partnership with Gate Bioscience, with shares up approximately 3.6% at"
         }
       ],
       "news_diag": {
@@ -409,24 +409,24 @@
           "date": "2026-10-09",
           "sector": "Healthcare",
           "exchange": "NASDAQ",
-          "averageChange": -0.1745856978291105
+          "averageChange": 2.095100704043662
         },
         "industry_snapshot": {
           "date": "2026-10-09",
           "industry": "Drug Manufacturers - General",
           "exchange": "NASDAQ",
-          "averageChange": -0.23351109121086955
+          "averageChange": 2.399324347169407
         }
       },
       "macro": {
         "hourly_scan_macro": {
           "risk": "risk-on",
-          "vol": 10.2
+          "vol": 10.0
         },
         "hourly_scan_cycles": {
-          "score": -0.19,
+          "score": -0.18,
           "label": "neutral",
-          "line": "Cycles [neutral]: month 10 avg +1.0%, presidential-cycle year 2 avg +2.4%, decade-pos 6 avg +11.6% (informative only)"
+          "line": "Cycles [neutral]: month 10 avg +1.1%, presidential-cycle year 2 avg +2.5%, decade-pos 6 avg +11.9% (informative only)"
         },
         "treasury": {
           "date": "2026-10-07",
@@ -492,14 +492,14 @@
           },
           {
             "date": "2026-10-09 00:00:00",
-            "country": "EU",
-            "event": "EcoFin Meeting",
-            "currency": "EUR",
+            "country": "TW",
+            "event": "National Day/Double Tenth Day",
+            "currency": "TWD",
             "previous": null,
             "estimate": null,
             "actual": null,
             "change": null,
-            "impact": "Low",
+            "impact": "None",
             "changePercentage": 0,
             "unit": null
           },
@@ -531,14 +531,14 @@
           },
           {
             "date": "2026-10-09 00:00:00",
-            "country": "TW",
-            "event": "National Day/Double Tenth Day",
-            "currency": "TWD",
+            "country": "EU",
+            "event": "EcoFin Meeting",
+            "currency": "EUR",
             "previous": null,
             "estimate": null,
             "actual": null,
             "change": null,
-            "impact": "None",
+            "impact": "Low",
             "changePercentage": 0,
             "unit": null
           },
@@ -557,19 +557,6 @@
           },
           {
             "date": "2026-10-09 03:00:00",
-            "country": "ID",
-            "event": "Retail Sales YoY (Aug)",
-            "currency": "IDR",
-            "previous": 1.1,
-            "estimate": 1.3,
-            "actual": 1.3,
-            "change": 0.2,
-            "impact": "Low",
-            "changePercentage": 18.182,
-            "unit": "%"
-          },
-          {
-            "date": "2026-10-09 03:00:00",
             "country": "BD",
             "event": "Inflation Rate YoY (Sep)",
             "currency": "BDT",
@@ -579,6 +566,19 @@
             "change": 0.08,
             "impact": "Low",
             "changePercentage": 0.969,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-09 03:00:00",
+            "country": "ID",
+            "event": "Retail Sales YoY (Aug)",
+            "currency": "IDR",
+            "previous": 1.1,
+            "estimate": 1.3,
+            "actual": 1.3,
+            "change": 0.2,
+            "impact": "Low",
+            "changePercentage": 18.182,
             "unit": "%"
           },
           {
@@ -637,25 +637,25 @@
       },
       "llm": {
         "technical_lookalike": "pullback continuation",
-        "technical_interpretation": "The setup resembles a bullish pullback within a developing uptrend, with price above the 200 EMA and buyers reclaiming VWAP. Rising RSI, contracting Bollinger Bands, and above-average volume support stabilization, although the trend score is moderate and relative strength versus SPY is weak.",
+        "technical_interpretation": "The setup resembles a bullish pullback within an uptrend, with price above rising short- and long-term EMAs. Reclaimed VWAP, rising RSI, contracting bands, and low selling volume suggest buyers defended the dip, although relative strength versus SPY is slightly negative.",
         "financial_assessment": "positive",
-        "financial_interpretation": "The last three reports all exceeded EPS estimates, with surprises widening from 9.1% to 30.9%, suggesting improving earnings delivery. Reported margins and cash generation are strong, although unchanged revenue and net-income fields limit evidence of operating acceleration.",
-        "earnings_assessment": "positive",
-        "earnings_interpretation": "The next earnings date is unavailable, creating timing uncertainty, but forward revenue and EPS estimates have risen versus the prior forecast. Any upcoming report remains a material event risk given the stock's elevated valuation.",
+        "financial_interpretation": "LLY has delivered three consecutive EPS beats, with reported surprises improving from 9.1% to 30.9%, while margins remain exceptionally strong. Positive operating and free cash flow support the fundamental case, though debt is substantial relative to cash.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "The next earnings date is unavailable, creating uncertainty around near-term event risk. Longer-dated analyst estimates point to rising revenue and EPS expectations, but they are not a substitute for a confirmed upcoming catalyst.",
         "analyst_assessment": "positive",
-        "analyst_interpretation": "Ratings are firmly tilted toward Buy, and forward revenue and EPS estimates increased by roughly 7.7% and 9.7%, respectively.",
+        "analyst_interpretation": "Analyst sentiment is firmly positive with a Buy consensus, and the latest forward revenue and EPS estimates increased versus the prior forecast.",
         "valuation_assessment": "very_expensive",
-        "valuation_interpretation": "The valuation is a substantial headwind, with elevated trailing P/E, price-to-sales, and price-to-book multiples. Strong projected growth may justify some premium, but the setup remains sensitive to any slowdown or disappointment.",
+        "valuation_interpretation": "The high P/E, price-to-sales, and price-to-book multiples make valuation a meaningful headwind. Strong growth expectations and earnings execution provide support, but the stock has limited tolerance for disappointment.",
         "news_assessment": "mixed",
-        "news_interpretation": "Recent coverage supports the obesity platform, pipeline, and partnership outlook, but also highlights pricing pressure, manufacturing execution, and the demanding valuation. The news flow is constructive overall but leaves meaningful execution risk.",
-        "sector_assessment": "headwind",
-        "sector_interpretation": "Recent sector and industry performance has been slightly negative, modestly weakening the setup despite healthcare's relative defensive qualities.",
-        "macro_assessment": "headwind",
-        "macro_interpretation": "Risk appetite and low volatility are supportive, but elevated long-term yields create a meaningful valuation headwind for a high-multiple growth stock.",
+        "news_interpretation": "New Taltz and Zepbound data and higher analyst targets are constructive, but a major shareholder's planned stock sale and ongoing concerns about pricing, manufacturing scale, and valuation add caution.",
+        "sector_assessment": "supportive",
+        "sector_interpretation": "Healthcare and drug manufacturers are advancing strongly, providing a supportive backdrop for the setup.",
+        "macro_assessment": "neutral",
+        "macro_interpretation": "Risk-on conditions and low volatility help, but elevated longer-term yields remain a valuation headwind; no major upcoming macro catalyst is supplied.",
         "overall_assessment": "mixed",
-        "overall_summary": "The technical signal is reasonably supported as a pullback continuation, backed by strong earnings beats, positive estimate revisions, and constructive company news. However, weak relative strength, soft sector breadth, elevated yields, and very expensive valuation argue for caution around any earnings or guidance disappointment.",
-        "key_positive": "Repeated EPS beats, strong margins, positive free cash flow, and upward estimate revisions provide solid fundamental support.",
-        "key_risk": "The stock's demanding valuation leaves limited room for weaker growth, pricing pressure, or execution setbacks.",
+        "overall_summary": "The technical signal is supported by a defended pullback, strong recent earnings beats, positive estimate revisions, and a firm industry backdrop. However, very expensive valuation, shareholder selling, unavailable earnings timing, and elevated yields make the setup sensitive to negative surprises.",
+        "key_positive": "Consistent EPS outperformance, strong margins and cash generation, and supportive sector momentum reinforce the bullish technical structure.",
+        "key_risk": "The main risk is that a demanding valuation leaves little room for weaker guidance, an earnings surprise, or continued shareholder selling.",
         "technical_assessment": ""
       },
       "llm_provider": "openai",
@@ -666,12 +666,642 @@
           "provider_name": "OpenAI",
           "model": "gpt-5.6-luna",
           "status": "received",
-          "chars": 2926
+          "chars": 2811
+        }
+      ],
+      "is_etf": false,
+      "buy_confidence": 58,
+      "report": "🟡 LLY — Eli Lilly and Company\nEntry: $1178.51\neToro TP Value: $49.23\nShares: 0.21 ($247)\nScanner Potential: +19.9%\nTimeframe: 16–48 days\n\n═══ BUY CONFIDENCE: 58% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 33 | Hold: 9 | Sell: 3 | Strong Sell: 0\n🧠 Analyst sentiment is firmly positive with a Buy consensus, and the latest forward revenue and EPS estimates increased versus the prior forecast.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an uptrend, with price above rising short- and long-term EMAs. Reclaimed VWAP, rising RSI, contracting bands, and low selling volume suggest buyers defended the dip, although relative strength versus SPY is slightly negative.\n🕒 Technical timestamp: 2026-10-09 20:54:01 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 LLY has delivered three consecutive EPS beats, with reported surprises improving from 9.1% to 30.9%, while margins remain exceptionally strong. Positive operating and free cash flow support the fundamental case, though debt is substantial relative to cash.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The high P/E, price-to-sales, and price-to-book multiples make valuation a meaningful headwind. Strong growth expectations and earnings execution provide support, but the stock has limited tolerance for disappointment.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating uncertainty around near-term event risk. Longer-dated analyst estimates point to rising revenue and EPS expectations, but they are not a substitute for a confirmed upcoming catalyst.\n\n═══ RECENT NEWS ═══\n• 2026-10-09 14:00 UTC — Record Highs Beckon for Big Caps as Small Caps Lag and Deal Flow Builds\n• 2026-10-09 10:01 UTC — Here is What to Know Beyond Why Eli Lilly and Company (LLY) is a Trending Stock\n• 2026-10-09 09:20 UTC — Eli Lilly's Biggest Shareholder Just Filed to Sell $347 Million of Stock\n• 2026-10-09 08:00 UTC — Cantor Fitzgerald Lifts Price Targets on Four Pharma Giants Amid Mixed Growth Outlooks\n• 2026-10-09 06:45 UTC — New Phase 3b data on Lilly's Taltz (ixekizumab) and Zepbound (tirzepatide) advance understanding of the interconnected immune and metabolic biology in adults with psoriasis and obesity\n🟡 New Taltz and Zepbound data and higher analyst targets are constructive, but a major shareholder's planned stock sale and ongoing concerns about pricing, manufacturing scale, and valuation add caution.\n\n═══ SECTOR & MACRO ═══\nSector: 🟢 Supportive\nMacro: 🟡 Neutral\n🧠 Sector: Healthcare and drug manufacturers are advancing strongly, providing a supportive backdrop for the setup.\n🧠 Macro: Risk-on conditions and low volatility help, but elevated longer-term yields remain a valuation headwind; no major upcoming macro catalyst is supplied.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is supported by a defended pullback, strong recent earnings beats, positive estimate revisions, and a firm industry backdrop. However, very expensive valuation, shareholder selling, unavailable earnings timing, and elevated yields make the setup sensitive to negative surprises.\n🟢 Key Positive: Consistent EPS outperformance, strong margins and cash generation, and supportive sector momentum reinforce the bullish technical structure.\n🔴 Key Risk: The main risk is that a demanding valuation leaves little room for weaker guidance, an earnings surprise, or continued shareholder selling.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+    },
+    {
+      "ticker": "ADI",
+      "alert": {
+        "alerted": "2026-10-09T20:54:01.060757+00:00",
+        "entry": 406.15,
+        "thesis_warned": false,
+        "tp": 490.56
+      },
+      "signal": {
+        "ticker": "ADI",
+        "name": "Analog Devices, Inc.",
+        "setup": "pullback",
+        "entry": 406.15,
+        "tp": 490.56,
+        "tp_pct": 0.2078296195986704,
+        "shares": 0.62,
+        "value": 251.813,
+        "pl_amount": 52.33,
+        "eta_days_low": 19,
+        "eta_days_high": 40,
+        "fee_pct": 0.03821592763431942,
+        "trend_score": 4,
+        "adx": 38.8,
+        "rs": -0.001,
+        "runner": false,
+        "regime": "uptrend",
+        "regime_weeks": 2,
+        "ema20": 396.26,
+        "ema50": 386.59,
+        "ema200": 362.41,
+        "above_ema200": true,
+        "quality": 0.82,
+        "q_detail": {
+          "rsi": 0.3,
+          "bollinger": 1.0,
+          "vwap": 1.0,
+          "volume": 1.0,
+          "extension": 1.0
+        },
+        "q_notes": {
+          "rsi": "RSI 55.2 falling, peaked 77",
+          "bollinger": "band position 49%, stable",
+          "vwap": "reclaimed VWAP after dip (buyers defended)",
+          "volume": "0.1x average, drying up",
+          "extension": "+0.2 ATR from 20 EMA, slope +2.5%, bullish stack (20>50>200)"
+        },
+        "context_notes": [],
+        "ext_atr": null,
+        "rsi": 55.2,
+        "options_note": "",
+        "sector": "",
+        "warnings": [],
+        "reasons": [
+          "daily uptrend (score 4/5)",
+          "4h pullback",
+          "1h momentum trigger",
+          "quality +0.82 (rsi +0.3, bb +1.0, vwap +1.0, vol +1.0, opt +0.0; RSI=55.2)",
+          "hard-eligible; ranked in Step 2"
+        ],
+        "time": "2026-10-09T20:54:01.060719+00:00"
+      },
+      "profile": {
+        "symbol": "ADI",
+        "price": 406.19,
+        "marketCap": 197849868530,
+        "beta": 1.232,
+        "lastDividend": 4.29,
+        "range": "223.47-445.91",
+        "change": 0.26,
+        "changePercentage": 0.06405045,
+        "volume": 2003352,
+        "averageVolume": 4080151,
+        "companyName": "Analog Devices, Inc.",
+        "currency": "USD",
+        "cik": "0000006281",
+        "isin": "US0326541051",
+        "cusip": "032654105",
+        "exchangeFullName": "NASDAQ Global Select",
+        "exchange": "NASDAQ",
+        "industry": "Semiconductors",
+        "website": "https://www.analog.com",
+        "description": "Analog Devices, Inc. (ADI) is a technology leader specializing in the conception, production, validation, and global marketing of integrated circuits (ICs), software solutions, and advanced subsystems. Their offerings leverage sophisticated analog, mixed-signal, and digital signal processing technologies. The company's comprehensive product lineup features data converters, which are critical for transforming real-world analog signals into digital data and subsequently converting digital data back into analog signals. They also provide power management and reference devices, essential for power conversion, driver supervision, system sequencing, and energy optimization in industries such as automotive, telecommunications, industrial applications, and premium consumer markets. These power ICs are supported by integrated performance, integration, and software design simulation tools for precise power supply development. ADI's portfolio further includes high-performance amplifiers, designed for conditioning analog signals, as well as radio frequency (RF) and microwave ICs that underpin cellular infrastructure. They also develop microelectromechanical systems (MEMS) technology, encompassing accelerometers for sensing acceleration, gyroscopes for measuring rotation, inertial measurement units (IMUs) for detecting multi-axis movement, broadband switches for radio and instrumentation systems, and isolators. Moreover, the company supplies digital signal processing (DSP) and system products engineered for rapid numeric calculations. Serving a wide array of clients across the industrial, automotive, consumer, instrumentation, aerospace, and communications sectors, Analog Devices distributes its products globally. This is accomplished via a multifaceted approach, including a direct sales force, authorized third-party distributors, independent sales representatives throughout the United States, the Americas, Europe, Japan, China, and other regions of Asia, in addition to its online platform. Analog Devices, Inc. was founded in 1965 and is headquartered in Wilmington, Massachusetts.",
+        "ceo": "Vincent T. Roche",
+        "sector": "Technology",
+        "country": "US",
+        "fullTimeEmployees": "24500",
+        "phone": "781 935 5565",
+        "address": "One Analog Way",
+        "city": "Wilmington",
+        "state": "MA",
+        "zip": "01887",
+        "image": "https://images.financialmodelingprep.com/symbol/ADI.png",
+        "ipoDate": "1980-03-17",
+        "defaultImage": false,
+        "isEtf": false,
+        "isActivelyTrading": true,
+        "isAdr": false,
+        "isFund": false
+      },
+      "financials": [
+        {
+          "date": "2026-08-19",
+          "fiscal_period": "",
+          "eps_actual": 3.45,
+          "eps_estimate": 3.34,
+          "eps_surprise": 0.11000000000000032,
+          "eps_surprise_pct": 0.032934131736527046,
+          "revenue": 4021899000.0,
+          "net_income": 1340090000.0,
+          "operating_margin": 0.4010466200170616,
+          "gross_margin": 0.6732003961312802,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-05-20",
+          "fiscal_period": "",
+          "eps_actual": 3.09,
+          "eps_estimate": 2.89,
+          "eps_surprise": 0.19999999999999973,
+          "eps_surprise_pct": 0.06920415224913486,
+          "revenue": 4021899000.0,
+          "net_income": 1340090000.0,
+          "operating_margin": 0.4010466200170616,
+          "gross_margin": 0.6732003961312802,
+          "revenue_yoy": 0.0,
+          "net_income_yoy": 0.0
+        },
+        {
+          "date": "2026-02-18",
+          "fiscal_period": "",
+          "eps_actual": 2.46,
+          "eps_estimate": 2.31,
+          "eps_surprise": 0.1499999999999999,
+          "eps_surprise_pct": 0.0649350649350649,
+          "revenue": 4021899000.0,
+          "net_income": 1340090000.0,
+          "operating_margin": 0.4010466200170616,
+          "gross_margin": 0.6732003961312802,
+          "revenue_yoy": null,
+          "net_income_yoy": null
+        }
+      ],
+      "financial_health": {
+        "cash": 2165870000.0,
+        "total_debt": 9121583000.0,
+        "total_liabilities": 14873520000.0,
+        "equity": 33550897000.0,
+        "operating_cash_flow": 1603959000.0,
+        "capital_expenditure": -145662000.0,
+        "free_cash_flow": 1458297000.0
+      },
+      "forward": {
+        "next_earnings": {
+          "symbol": "ADI",
+          "date": "2026-11-24",
+          "epsActual": null,
+          "epsEstimated": 3.84,
+          "revenueActual": null,
+          "revenueEstimated": 4296432000,
+          "lastUpdated": "2026-10-09"
+        },
+        "estimates": [
+          {
+            "date": "2030-11-01",
+            "period": null,
+            "revenue_avg": 25087000000.0,
+            "eps_avg": 23.9,
+            "revenue_low": 23640787054.0,
+            "revenue_high": 28881452631.0,
+            "eps_low": 22.10888,
+            "eps_high": 28.59939,
+            "num_analysts_revenue": 9,
+            "num_analysts_eps": 3
+          },
+          {
+            "date": "2029-11-01",
+            "period": null,
+            "revenue_avg": 21852675000.0,
+            "eps_avg": 20.4898,
+            "revenue_low": 20592914109.0,
+            "revenue_high": 25157930318.0,
+            "eps_low": 18.95425,
+            "eps_high": 24.51865,
+            "num_analysts_revenue": 9,
+            "num_analysts_eps": 3
+          },
+          {
+            "date": "2028-11-01",
+            "period": null,
+            "revenue_avg": 20579227554.0,
+            "eps_avg": 19.6551,
+            "revenue_low": 18654518338.0,
+            "revenue_high": 26600065608.0,
+            "eps_low": 16.4917,
+            "eps_high": 21.76751,
+            "num_analysts_revenue": 19,
+            "num_analysts_eps": 9
+          },
+          {
+            "date": "2027-11-01",
+            "period": null,
+            "revenue_avg": 18445500272.0,
+            "eps_avg": 16.65755,
+            "revenue_low": 17714092602.0,
+            "revenue_high": 20960340341.0,
+            "eps_low": 15.00303,
+            "eps_high": 17.35204,
+            "num_analysts_revenue": 22,
+            "num_analysts_eps": 19
+          }
+        ]
+      },
+      "analysts": {
+        "grades_consensus": {
+          "symbol": "ADI",
+          "strongBuy": 0,
+          "buy": 45,
+          "hold": 9,
+          "sell": 0,
+          "strongSell": 0,
+          "consensus": "Buy"
+        },
+        "estimate_direction": {
+          "revenueAvg": {
+            "latest": 25087000000,
+            "prior": 21852675000,
+            "change": 0.14800590774356004
+          },
+          "epsAvg": {
+            "latest": 23.9,
+            "prior": 20.4898,
+            "change": 0.1664340305908305
+          }
+        }
+      },
+      "valuation": {
+        "ratios": {
+          "symbol": "ADI",
+          "grossProfitMarginTTM": 0.6579962143085192,
+          "ebitMarginTTM": 0.3641196668084356,
+          "ebitdaMarginTTM": 0.506104636420323,
+          "operatingProfitMarginTTM": 0.355494669833992,
+          "pretaxProfitMarginTTM": 0.3388455369872834,
+          "continuousOperationsProfitMarginTTM": 0.2978735236725299,
+          "netProfitMarginTTM": 0.2978735236725299,
+          "bottomLineProfitMarginTTM": 0.2978735236725299,
+          "receivablesTurnoverTTM": 5.809289259145029,
+          "payablesTurnoverTTM": 6.9595993356465495,
+          "inventoryTurnoverTTM": 2.4579957711535516,
+          "fixedAssetTurnoverTTM": 4.141355216512266,
+          "assetTurnoverTTM": 0.28666827315649457,
+          "currentRatioTTM": 1.250391159944373,
+          "quickRatioTTM": 0.9089114456316849,
+          "solvencyRatioTTM": 0.4105284424937742,
+          "cashRatioTTM": 0.38291597230251684,
+          "priceToEarningsRatioTTM": 47.95631641086186,
+          "priceToEarningsGrowthRatioTTM": 0.4190872783692573,
+          "forwardPriceToEarningsGrowthRatioTTM": 0.7290564191625617,
+          "priceToEarningsDilutedRatioTTM": 48.183867141162516,
+          "priceToEarningsDilutedGrowthRatioTTM": 0.418804344109439,
+          "priceToBookRatioTTM": 5.902006882260108,
+          "priceToSalesRatioTTM": 14.252522487808447,
+          "priceToFreeCashFlowRatioTTM": 40.07090002724053,
+          "priceToOperatingCashFlowRatioTTM": 35.70893049550748,
+          "debtToAssetsRatioTTM": 0.18836743042254903,
+          "debtToEquityRatioTTM": 0.2718729994014765,
+          "debtToCapitalRatioTTM": 0.21375797703812854,
+          "longTermDebtToCapitalRatioTTM": 0.16793652361170572,
+          "financialLeverageRatioTTM": 1.4433121415501946,
+          "workingCapitalTurnoverRatioTTM": 5.821484870863564,
+          "operatingCashFlowRatioTTM": 0.9803882569630006,
+          "operatingCashFlowSalesRatioTTM": 0.3994688995849513,
+          "freeCashFlowOperatingCashFlowRatioTTM": 0.8903887508847542,
+          "debtServiceCoverageRatioTTM": 2.3907112241966106,
+          "interestCoverageRatioTTM": 14.065555267365733,
+          "shortTermOperatingCashFlowCoverageRatioTTM": 2.3597539361325026,
+          "operatingCashFlowCoverageRatioTTM": 0.607934499965631,
+          "capitalExpenditureCoverageRatioTTM": 9.123151210042282,
+          "dividendPaidAndCapexCoverageRatioTTM": 2.0919834009242666,
+          "dividendPayoutRatioTTM": 0.4940551448075987,
+          "dividendYieldTTM": 0.01056156,
+          "enterpriseValueTTM": 204805581530,
+          "revenuePerShareTTM": 28.475372307692307,
+          "netIncomePerShareTTM": 8.482059487179487,
+          "interestDebtPerShareTTM": 19.430629743589744,
+          "cashPerShareTTM": 4.769095384615385,
+          "bookValuePerShareTTM": 68.82235282051282,
+          "tangibleBookValuePerShareTTM": -3.909866666666667,
+          "shareholdersEquityPerShareTTM": 68.82235282051282,
+          "operatingCashFlowPerShareTTM": 11.37502564102564,
+          "capexPerShareTTM": 1.2468307692307692,
+          "freeCashFlowPerShareTTM": 10.128194871794872,
+          "netIncomePerEBTTTM": 0.879083509025851,
+          "ebtPerEbitTTM": 0.9531662940136814,
+          "priceToFairValueTTM": 5.902006882260108,
+          "debtToMarketCapTTM": 0.046103558560701766,
+          "effectiveTaxRateTTM": 0.12091649097414901,
+          "enterpriseValueMultipleTTM": 29.151267402213186,
+          "dividendPerShareTTM": 4.29
+        },
+        "metrics": {
+          "symbol": "ADI",
+          "marketCap": 197849868530,
+          "enterpriseValueTTM": 204805581530,
+          "evToSalesTTM": 14.753591589788718,
+          "evToOperatingCashFlowTTM": 36.93301682588486,
+          "evToFreeCashFlowTTM": 41.47965345382628,
+          "evToEBITDATTM": 29.151267402213186,
+          "netDebtToEBITDATTM": 0.9900504083984106,
+          "currentRatioTTM": 1.250391159944373,
+          "incomeQualityTTM": 1.3410685114044603,
+          "grahamNumberTTM": 114.60582027149844,
+          "grahamNetNetTTM": -20.083395384615386,
+          "taxBurdenTTM": 0.879083509025851,
+          "interestBurdenTTM": 0.9305883968238141,
+          "workingCapitalTTM": 1416276000,
+          "investedCapitalTTM": 40225214000,
+          "returnOnAssetsTTM": 0.08539088865024436,
+          "operatingReturnOnAssetsTTM": 0.10241166680736923,
+          "returnOnTangibleAssetsTTM": 0.31887540042537244,
+          "returnOnEquityTTM": 0.12261314543304579,
+          "returnOnInvestedCapitalTTM": 0.0961515397631698,
+          "returnOnCapitalEmployedTTM": 0.11538690590942613,
+          "earningsYieldTTM": 0.02088199977148499,
+          "freeCashFlowYieldTTM": 0.024955765887968367,
+          "capexToOperatingCashFlowTTM": 0.10961124911524572,
+          "capexToDepreciationTTM": 0.30838676224594735,
+          "capexToRevenueTTM": 0.04378628506619917,
+          "salesGeneralAndAdministrativeToRevenueTTM": 0.10427774781036157,
+          "researchAndDevelopementToRevenueTTM": 0.1424334002989826,
+          "stockBasedCompensationToRevenueTTM": 0.025220390175758896,
+          "intangiblesToTotalAssetsTTM": 0.7322123671617977,
+          "averageReceivablesTTM": 2220655000,
+          "averagePayablesTTM": 640403500,
+          "averageInventoryTTM": 1889950500,
+          "daysOfSalesOutstandingTTM": 62.83040553117822,
+          "daysOfPayablesOutstandingTTM": 52.44554785366697,
+          "daysOfInventoryOutstandingTTM": 148.49496662425233,
+          "operatingCycleTTM": 211.32537215543056,
+          "cashConversionCycleTTM": 158.8798243017636,
+          "freeCashFlowToEquityTTM": 5393935000,
+          "freeCashFlowToFirmTTM": 5245920570.05821,
+          "tangibleAssetValueTTM": -1906060000,
+          "netCurrentAssetValueTTM": -7800990000
+        }
+      },
+      "news": [
+        {
+          "date": "2026-10-08 17:20 UTC",
+          "title": "Key Robotics Stocks for 2026 and Beyond",
+          "site": "fxempire.com",
+          "text": "We've seen on-screen AI and what it can do. In this age of robotics, physical AI is when intelligence and the physical world intersect."
+        }
+      ],
+      "news_diag": {
+        "status": "OK",
+        "message": "1 usable article(s)"
+      },
+      "sector": {
+        "sector": "Technology",
+        "industry": "Semiconductors",
+        "sector_snapshot": {
+          "date": "2026-10-09",
+          "sector": "Technology",
+          "exchange": "NASDAQ",
+          "averageChange": -0.6326706129798354
+        },
+        "industry_snapshot": {
+          "date": "2026-10-09",
+          "industry": "Semiconductors",
+          "exchange": "NASDAQ",
+          "averageChange": -2.042647972414957
+        }
+      },
+      "macro": {
+        "hourly_scan_macro": {
+          "risk": "risk-on",
+          "vol": 10.0
+        },
+        "hourly_scan_cycles": {
+          "score": -0.18,
+          "label": "neutral",
+          "line": "Cycles [neutral]: month 10 avg +1.1%, presidential-cycle year 2 avg +2.5%, decade-pos 6 avg +11.9% (informative only)"
+        },
+        "treasury": {
+          "date": "2026-10-07",
+          "month1": 4.07,
+          "month2": 4.14,
+          "month3": 4.22,
+          "month6": 4.28,
+          "year1": 4.42,
+          "year2": 4.77,
+          "year3": 4.87,
+          "year5": 5.03,
+          "year7": 5.15,
+          "year10": 5.28,
+          "year20": 5.71,
+          "year30": 5.67
+        },
+        "indicators": {
+          "GDP": [
+            {
+              "name": "GDP",
+              "date": "2026-01-01",
+              "value": 31906.274
+            }
+          ],
+          "CPI": [
+            {
+              "name": "CPI",
+              "date": "2026-01-01",
+              "value": 326.588
+            },
+            {
+              "name": "CPI",
+              "date": "2025-12-01",
+              "value": 326.031
+            }
+          ],
+          "unemploymentRate": [
+            {
+              "name": "unemploymentRate",
+              "date": "2026-01-01",
+              "value": 4.3
+            },
+            {
+              "name": "unemploymentRate",
+              "date": "2025-12-01",
+              "value": 4.4
+            }
+          ]
+        },
+        "calendar": [
+          {
+            "date": "2026-10-09 00:00:00",
+            "country": "KR",
+            "event": "Hangeul Proclamation Day",
+            "currency": "KRW",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-09 00:00:00",
+            "country": "TW",
+            "event": "National Day/Double Tenth Day",
+            "currency": "TWD",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-09 00:00:00",
+            "country": "UG",
+            "event": "Independence Day",
+            "currency": "UGX",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-09 00:00:00",
+            "country": "EC",
+            "event": "Independence of Guayaquil",
+            "currency": "USD",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "None",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-09 00:00:00",
+            "country": "EU",
+            "event": "EcoFin Meeting",
+            "currency": "EUR",
+            "previous": null,
+            "estimate": null,
+            "actual": null,
+            "change": null,
+            "impact": "Low",
+            "changePercentage": 0,
+            "unit": null
+          },
+          {
+            "date": "2026-10-09 03:00:00",
+            "country": "BD",
+            "event": "Inflation Rate MoM (Sep)",
+            "currency": "BDT",
+            "previous": 2.31,
+            "estimate": 1.1,
+            "actual": 1.12,
+            "change": -1.19,
+            "impact": "Low",
+            "changePercentage": -51.515,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-09 03:00:00",
+            "country": "BD",
+            "event": "Inflation Rate YoY (Sep)",
+            "currency": "BDT",
+            "previous": 8.26,
+            "estimate": 8.4,
+            "actual": 8.34,
+            "change": 0.08,
+            "impact": "Low",
+            "changePercentage": 0.969,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-09 03:00:00",
+            "country": "ID",
+            "event": "Retail Sales YoY (Aug)",
+            "currency": "IDR",
+            "previous": 1.1,
+            "estimate": 1.3,
+            "actual": 1.3,
+            "change": 0.2,
+            "impact": "Low",
+            "changePercentage": 18.182,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-09 03:35:00",
+            "country": "JP",
+            "event": "3-Month Bill Auction",
+            "currency": "JPY",
+            "previous": 1.279,
+            "estimate": null,
+            "actual": 1.274,
+            "change": -0.005,
+            "impact": "Low",
+            "changePercentage": -0.391,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-09 04:00:00",
+            "country": "MY",
+            "event": "Unemployment Rate (Aug)",
+            "currency": "MYR",
+            "previous": 3,
+            "estimate": 3,
+            "actual": 2.9,
+            "change": -0.1,
+            "impact": "Low",
+            "changePercentage": -3.333,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-09 04:00:00",
+            "country": "MY",
+            "event": "Industrial Production YoY (Aug)",
+            "currency": "MYR",
+            "previous": 4.7,
+            "estimate": 3.5,
+            "actual": 5,
+            "change": 0.3,
+            "impact": "Low",
+            "changePercentage": 6.383,
+            "unit": "%"
+          },
+          {
+            "date": "2026-10-09 04:00:00",
+            "country": "MY",
+            "event": "Retail Sales YoY (Aug)",
+            "currency": "MYR",
+            "previous": 6.4,
+            "estimate": 6,
+            "actual": 6.5,
+            "change": 0.1,
+            "impact": "Low",
+            "changePercentage": 1.563,
+            "unit": "%"
+          }
+        ]
+      },
+      "llm": {
+        "technical_lookalike": "pullback continuation",
+        "technical_interpretation": "The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term averages. VWAP recovery, stable Bollinger positioning, moderate RSI, and strong ADX support continuation, though fading RSI and light volume suggest limited immediate momentum.",
+        "financial_assessment": "positive",
+        "financial_interpretation": "The last three reports all beat EPS expectations, with surprises ranging from modest to strong, supporting execution consistency. Margins remain robust and cash generation is healthy, although the supplied periods show little change in revenue or net income, so acceleration is not evident.",
+        "earnings_assessment": "mixed",
+        "earnings_interpretation": "Next earnings are scheduled for 2026-11-24, beyond the scanner's estimated holding window, with expectations for higher EPS and revenue than the latest report. The event is not an immediate catalyst but remains a future gap and volatility risk.",
+        "analyst_assessment": "positive",
+        "analyst_interpretation": "Analyst sentiment is strongly Buy-oriented, and longer-term revenue and EPS estimates have moved higher.",
+        "valuation_assessment": "very_expensive",
+        "valuation_interpretation": "The elevated earnings, sales, and book-value multiples are a meaningful headwind and leave limited room for disappointment. The higher forward estimates provide some justification, but no supplied industry or historical valuation comparison confirms that premium.",
+        "news_assessment": "no_major_risk",
+        "news_interpretation": "Recent coverage is a broad robotics and physical-AI theme rather than a material company-specific development. It may offer thematic support, but it does not provide a clear near-term catalyst or risk signal for ADI.",
+        "sector_assessment": "headwind",
+        "sector_interpretation": "Recent semiconductor weakness is working against the setup despite the stock's individual technical strength.",
+        "macro_assessment": "headwind",
+        "macro_interpretation": "Risk appetite and low volatility are supportive, but elevated long-term yields can pressure richly valued technology stocks.",
+        "overall_assessment": "mixed",
+        "overall_summary": "The technical signal is supported by a credible uptrend, repeated earnings beats, strong margins, and constructive analyst expectations. However, very rich valuation, recent semiconductor weakness, and elevated yields reduce the margin for error, making this a technically favorable but fundamentally more selective setup.",
+        "key_positive": "Repeated EPS beats, strong profitability, healthy cash flow, and bullish trend structure support continuation.",
+        "key_risk": "High valuation combined with semiconductor-sector weakness and rising-yield sensitivity could undermine the setup if momentum fades.",
+        "technical_assessment": ""
+      },
+      "llm_provider": "openai",
+      "llm_ok": true,
+      "llm_diagnostics": [
+        {
+          "provider": "openai",
+          "provider_name": "OpenAI",
+          "model": "gpt-5.6-luna",
+          "status": "received",
+          "chars": 2871
         }
       ],
       "is_etf": false,
       "buy_confidence": 55,
-      "report": "🟡 LLY — Eli Lilly and Company\nEntry: $1169.85\neToro TP Value: $51.04\nShares: 0.21 ($246)\nScanner Potential: +20.8%\nTimeframe: 16–48 days\n\n═══ BUY CONFIDENCE: 55% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 33 | Hold: 9 | Sell: 3 | Strong Sell: 0\n🧠 Ratings are firmly tilted toward Buy, and forward revenue and EPS estimates increased by roughly 7.7% and 9.7%, respectively.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within a developing uptrend, with price above the 200 EMA and buyers reclaiming VWAP. Rising RSI, contracting Bollinger Bands, and above-average volume support stabilization, although the trend score is moderate and relative strength versus SPY is weak.\n🕒 Technical timestamp: 2026-10-09 06:06:10 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟢 Strong\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all exceeded EPS estimates, with surprises widening from 9.1% to 30.9%, suggesting improving earnings delivery. Reported margins and cash generation are strong, although unchanged revenue and net-income fields limit evidence of operating acceleration.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The valuation is a substantial headwind, with elevated trailing P/E, price-to-sales, and price-to-book multiples. Strong projected growth may justify some premium, but the setup remains sensitive to any slowdown or disappointment.\n\n═══ NEXT FINANCIAL REPORT ═══\n⚪ Expected date unavailable.\n🧠 The next earnings date is unavailable, creating timing uncertainty, but forward revenue and EPS estimates have risen versus the prior forecast. Any upcoming report remains a material event risk given the stock's elevated valuation.\n\n═══ RECENT NEWS ═══\n• 2026-10-08 11:33 UTC — Eli Lilly's Obesity Business Could Become a Much Bigger Healthcare Platform\n• 2026-10-08 10:31 UTC — Eli Lilly (LLY) Just Overtook the 50-Day Moving Average\n• 2026-10-08 09:55 UTC — Only 20 Stocks Are Holding Up the Market: 3 Bargains Outside AI\n• 2026-10-08 08:58 UTC — Eli Lilly To Rally Over 21%? Here Are 10 Top Analyst Forecasts For Thursday\n• 2026-10-07 23:33 UTC — Novo Nordisk Vs. Eli Lilly: Judged Against Big Pharma, Only One Needs A Premium\n🟡 Recent coverage supports the obesity platform, pipeline, and partnership outlook, but also highlights pricing pressure, manufacturing execution, and the demanding valuation. The news flow is constructive overall but leaves meaningful execution risk.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent sector and industry performance has been slightly negative, modestly weakening the setup despite healthcare's relative defensive qualities.\n🧠 Macro: Risk appetite and low volatility are supportive, but elevated long-term yields create a meaningful valuation headwind for a high-multiple growth stock.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is reasonably supported as a pullback continuation, backed by strong earnings beats, positive estimate revisions, and constructive company news. However, weak relative strength, soft sector breadth, elevated yields, and very expensive valuation argue for caution around any earnings or guidance disappointment.\n🟢 Key Positive: Repeated EPS beats, strong margins, positive free cash flow, and upward estimate revisions provide solid fundamental support.\n🔴 Key Risk: The stock's demanding valuation leaves limited room for weaker growth, pricing pressure, or execution setbacks.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
+      "report": "🟡 ADI — Analog Devices, Inc.\nEntry: $406.15\neToro TP Value: $52.33\nShares: 0.62 ($252)\nScanner Potential: +20.8%\nTimeframe: 19–40 days\n\n═══ BUY CONFIDENCE: 55% ═══\n🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜\nBased on the full assessment stack; not a probability or new trading signal.\n────────────────────────\n═══ ANALYST VIEW ═══\n🟢 Positive\nStrong Buy: 0 | Buy: 45 | Hold: 9 | Sell: 0 | Strong Sell: 0\n🧠 Analyst sentiment is strongly Buy-oriented, and longer-term revenue and EPS estimates have moved higher.\n\n═══ TECHNICAL SETUP ═══\n⚪ Unknown\nSetup: Pullback Continuation\n🧠 The setup resembles a bullish pullback within an established uptrend, with price above rising short- and long-term averages. VWAP recovery, stable Bollinger positioning, moderate RSI, and strong ADX support continuation, though fading RSI and light volume suggest limited immediate momentum.\n🕒 Technical timestamp: 2026-10-09 20:54:01 UTC\n────────────────────────\n\n═══ FINANCIAL RESULTS ═══\nQ3 2026 — 🟡 Mixed\nQ2 2026 — 🟢 Strong\nQ1 2026 — 🟢 Strong\n🧠 The last three reports all beat EPS expectations, with surprises ranging from modest to strong, supporting execution consistency. Margins remain robust and cash generation is healthy, although the supplied periods show little change in revenue or net income, so acceleration is not evident.\n\n═══ VALUATION ═══\n🔴 Very Expensive\n🧠 The elevated earnings, sales, and book-value multiples are a meaningful headwind and leave limited room for disappointment. The higher forward estimates provide some justification, but no supplied industry or historical valuation comparison confirms that premium.\n\n═══ NEXT FINANCIAL REPORT ═══\nExpected: 2026-11-24 (+46 days)\n🟡 Mixed\n🧠 Next earnings are scheduled for 2026-11-24, beyond the scanner's estimated holding window, with expectations for higher EPS and revenue than the latest report. The event is not an immediate catalyst but remains a future gap and volatility risk.\n\n═══ RECENT NEWS ═══\n• 2026-10-08 17:20 UTC — Key Robotics Stocks for 2026 and Beyond\n⚪ Recent coverage is a broad robotics and physical-AI theme rather than a material company-specific development. It may offer thematic support, but it does not provide a clear near-term catalyst or risk signal for ADI.\n\n═══ SECTOR & MACRO ═══\nSector: 🔴 Headwind\nMacro: 🔴 Headwind\n🧠 Sector: Recent semiconductor weakness is working against the setup despite the stock's individual technical strength.\n🧠 Macro: Risk appetite and low volatility are supportive, but elevated long-term yields can pressure richly valued technology stocks.\n\n═══ OVERALL ASSESSMENT ═══\n🟡 Mixed\n🧠 The technical signal is supported by a credible uptrend, repeated earnings beats, strong margins, and constructive analyst expectations. However, very rich valuation, recent semiconductor weakness, and elevated yields reduce the margin for error, making this a technically favorable but fundamentally more selective setup.\n🟢 Key Positive: Repeated EPS beats, strong profitability, healthy cash flow, and bullish trend structure support continuation.\n🔴 Key Risk: High valuation combined with semiconductor-sector weakness and rising-yield sensitivity could undermine the setup if momentum fades.\n\n(Technical: Hourly-Scan | Fundamentals/News/Macro: FMP | Interpretation: openai)"
     }
   ]
 }
